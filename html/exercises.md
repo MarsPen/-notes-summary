@@ -12,12 +12,12 @@
 ### 3.标准模式和混杂模式？
   1.标准模式：html排版和js渲染工作模式都是以改浏览器支持的最高标准运行。
   2.兼容模式：页面已宽松的向后兼容的方式显示，模拟老浏览器的行为。
-### 4.HTML5 为什么只需要写 <!DOCTYPE HTML>?
+### 4.HTML5 为什么只需要写 `<!DOCTYPE HTML>`?
   html5不是基于SGML,所以不需要对DTD进行引用，但是它需要对文档类型声明，需要doctype来规范浏览器行为。
 ### 4.行内元素-块级元素-空元素？
   css中规定每个元素都有默认的display属性和值
-  1.该元素的属性的值为‘inline’的则为行内元素（如:span,a img,input等）
-  2.该元素的属性的值为‘block’的则为块级元素（div，ul,li h1...p等）
+  1.该元素的属性的值为‘inline’的则为行内元素（如:`span,a img,input`等）
+  2.该元素的属性的值为‘block’的则为块级元素（`div，ul,li h1...p`等）
   3.空（void）元素 `<br> <hr> <img> <input> <link> <meta>` 等
 ### 5.html语义化？
 
