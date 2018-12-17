@@ -58,7 +58,7 @@
   1. 概念：受到浏览器同源策略的影响，要操作其他源下面的脚本，就需要跨域。
 ### Ajax跨域的解决方案
   1. JSONP：网页添加一个`<script>`元素，向服务器请求JSON数据。服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。
-     ```
+  ```
     //动态创建script，用于跨越操作
     function creatScriptTag(src) {
       var script = document.createElement('script');
@@ -66,10 +66,11 @@
       script.src = src;`
       document.body.appendChild(script);
     }
+    // 调用creatScriptTag函数
     window.onload = function () {
       creatScriptTag('http://studyfe.cn?callback=foo');
     }
-    ```
+  ```
   2. WebSocket
   3. CORS
 
