@@ -68,20 +68,27 @@
     }
     // 调用creatScriptTag函数
     window.onload = function () {
-      creatScriptTag('http://studyfe.cn?jsoncallback=foo');
+       creatScriptTag('http://studyfe.cn?jsoncallback=foo');
+    }
+    // 定义回调函数
+    function foo (data) {
+      consle.log('请求成功' + data);
     }
   ```
   ```
-   // php端
-   <?php
+  // php jsonp demo代码
+  <?php
     header('Content-type: application/json');
     //获取回调函数名
     $jsoncallback = htmlspecialchars($_REQUEST ['jsoncallback']);
-    //json数据
-    $json_data = '["data1","data2"]';
+    //取数据
+	  $data = [
+		  'data'=>'123',
+	  ];
+	  $json_data = json_encode(array('code'=>'200','msg'=>'请求成功','data' => $data),JSON_UNESCAPED_UNICODE);
     //输出jsonp格式的数据
     echo $jsoncallback . "(" . $json_data . ")";
-    ?>
+  ?>
   ```
   2. WebSocket
   3. CORS
