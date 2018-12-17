@@ -2,7 +2,7 @@
 
 **这是html基础思维导图**  
 ![这是html基础思维导图]
-(./images/html.svg "Title")
+(https://github.com/MarsPen/-notes-summary/blob/master/images/html.svg "Title")
 
 ## 基础知识概念
 
