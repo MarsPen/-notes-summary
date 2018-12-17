@@ -95,8 +95,18 @@
     echo $jsoncallback . "(" . $json_data . ")";
   ?>
   ```
-  2. WebSocket
-  3. CORS
+  -  缺点只支持get请求
+  2. WebSocket:WebSocket是一种通信协议，使用ws://（非加密）和wss://（加密）作为协议前缀。该协议不实行同源政策，只要服务器设置利用origin字段设置白名单，就可以通过它进行跨源通信。
+  3. CORS（Cross-Origin Resource Sharing）：
+   - 在请求头信息中增加Origin字段，用来说明此次请求来自那个源（协议+域名+端口），此字段可以设置相应白名单
+   - 必须设置`Access-Control-Allow-Origin`字段，值要求是`Origin`字段的值或者是*，*的意思是接受任意域名的请求
+   - CORS请求默认不发送cookie和http认证信息，如果要发送，要在服务器端指`Access-Control-Allow-Credentials: true`,并且ajax请求必须打开withCredentials属性
+   ```
+   var xhr = new XMLHttpRequest();
+   xhr.withCredentials = true;
+   ```
+   - 如果选择发送cookie,`Access-Control-Allow-Origin`字段不能设为*，必须指定明确的，与当前网页一致的域名
+
 
 
 
