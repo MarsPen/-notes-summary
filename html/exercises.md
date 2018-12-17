@@ -1,7 +1,6 @@
 # 第一部分html基础知识
-
-**这是html基础思维导图**  
-![这是html基础思维导图](https://github.com/MarsPen/-notes-summary/blob/master/images/html.png "Title")
+ 
+![这是html基础思维导图](https://github.com/MarsPen/-notes-summary/blob/master/images/html.png "这是html基础思维导图")
 
 ## 基础知识概念
 
@@ -14,8 +13,8 @@
 
 ## 跨域
 
-### 什么是跨域？
-### 跨域的解决方案？
+### 1.什么是跨域？
+### 2.跨域的解决方案？
 
 
 
