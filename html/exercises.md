@@ -61,7 +61,7 @@
   - 缺点只支持get请求
   - 如下示例代码
   ```
-    //动态创建script，用于跨越操作
+    //动态创建script，用于跨域操作
     function creatScriptTag(src) {
       var script = document.createElement('script');
       script.setAttribute("type","text/javascript");
@@ -78,7 +78,7 @@
     }
   ```
   ```
-  // php jsonp demo代码
+  // php jsonp
   <?php
     header('Content-type: application/json');
     //获取回调函数名
