@@ -84,15 +84,8 @@
     //获取回调函数名
     $jsoncallback = htmlspecialchars($_REQUEST ['jsoncallback']);
     //取数据
-	  $data = [
-		  'data'=>'123',
-	  ];
-	  $json_data = json_encode(
-      array(
-        'code'=>'200',
-        'msg'=>'请求成功',
-        'data' => $data
-      ),JSON_UNESCAPED_UNICODE);
+	  $data = ['data'=>'123'];
+	  $json_data = json_encode(array('code'=>'200','msg'=>'请求成功','data' => $data),JSON_UNESCAPED_UNICODE);
     //输出jsonp格式的数据
     echo $jsoncallback . "(" . $json_data . ")";
   ?>
