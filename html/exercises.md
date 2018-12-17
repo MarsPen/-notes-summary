@@ -45,12 +45,20 @@
   1. 概念：如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的源。
   2. 目的：保证用户信息安全，防止恶意网站窃取数据，防止cookie共享
   3. 限制范围
-   -  cookie、localStorage、indexedDB无法读取
-   -  dom 无法获取
-   -  ajax不能发送
-   -  form表单没有限制
+   - cookie、localStorage、indexedDB无法读取
+   - dom 无法获取
+   - ajax不能发送
+   - form表单没有限制
   4. 如何设置同源策略(host)：document.domain
+  5. 不受同源策略限制的：
+   - 页面中的链接，重定向以及表单提交是不会受到同源策略限制的。
+   - 跨域资源的引入是可以的。但是js不能读写加载的内容。如嵌入到页面中的`<script src="..."></script>，<img>，<link>，<iframe>`等。
+
+### 跨域
+  
+
 ### 跨域的解决方案
+
 
 
 
