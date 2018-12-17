@@ -17,7 +17,7 @@
 * [第十五部分linx私房菜记录][15] *未完成*
 
 
-[1]: https://github.com/MarsPen/notes-summary/html/exercises.md
+[1]: https://github.com/MarsPen/-notes-summary/blob/master/html/exercises.md
 [2]: https://github.com/MarsPen/notes-summary/css/exercises.md
 [3]: https://github.com/MarsPen/notes-summary/
 [4]: https://github.com/MarsPen/notes-summary/

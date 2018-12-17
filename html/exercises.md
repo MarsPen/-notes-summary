@@ -1,8 +1,7 @@
 # 第一部分html基础知识
 
 **这是html基础思维导图**  
-![这是html基础思维导图]
-(https://github.com/MarsPen/-notes-summary/blob/master/images/html.svg "Title")
+![这是html基础思维导图](./images/html.png "Title")
 
 ## 基础知识概念
 
