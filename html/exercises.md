@@ -1,7 +1,8 @@
 # 第一部分html基础知识
 
-**下面是html知识点思维导图**  
-![alt text](./images/html.svg "Title")
+**这是html基础思维导图**  
+![这是html基础思维导图]
+(./images/html.svg "Title")
 
 ## 基础知识概念
 
