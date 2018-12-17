@@ -68,10 +68,10 @@
     }
     // 调用creatScriptTag函数
     window.onload = function () {
-       creatScriptTag('http://studyfe.cn?jsoncallback=foo');
+       creatScriptTag('http://studyfe.cn?jsoncallback=result');
     }
     // 定义回调函数
-    function foo (data) {
+    function result (data) {
       consle.log('请求成功' + data);
     }
   ```
@@ -85,7 +85,12 @@
 	  $data = [
 		  'data'=>'123',
 	  ];
-	  $json_data = json_encode(array('code'=>'200','msg'=>'请求成功','data' => $data),JSON_UNESCAPED_UNICODE);
+	  $json_data = json_encode(
+      array(
+        'code'=>'200',
+        'msg'=>'请求成功',
+        'data' => $data
+      ),JSON_UNESCAPED_UNICODE);
     //输出jsonp格式的数据
     echo $jsoncallback . "(" . $json_data . ")";
   ?>
