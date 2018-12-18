@@ -61,7 +61,7 @@
   - 缺点只支持get请求
   - 如下示例代码
   ```
-    //动态创建script，用于跨域操作
+    //动态创建script，用于跨越操作
     function creatScriptTag(src) {
       var script = document.createElement('script');
       script.setAttribute("type","text/javascript");
@@ -70,25 +70,28 @@
     }
     // 调用creatScriptTag函数
     window.onload = function () {
-       creatScriptTag('http://studyfe.cn?jsoncallback=result');
+      var url = '/index.php?jsoncallback=result';
+      creatScriptTag(url);
     }
     // 定义回调函数
     function result (data) {
-      consle.log('请求成功' + data);
-    }
+      console.log(data);
+    } 
   ```
   ```
-  // php jsonp
-  <?php
+    // index.php 
+    <?php
     header('Content-type: application/json');
     //获取回调函数名
     $jsoncallback = htmlspecialchars($_REQUEST ['jsoncallback']);
     //取数据
-	  $data = ['data'=>'123'];
-	  $json_data = json_encode(array('code'=>'200','msg'=>'请求成功','data' => $data),JSON_UNESCAPED_UNICODE);
+    $data = [
+      'data'=>'123',
+    ];
+    $json_data = json_encode(array('code'=>'200','msg'=>'请求成功','data' => $data),JSON_UNESCAPED_UNICODE);
     //输出jsonp格式的数据
-    echo $jsoncallback . "(" . $json_data . ")";
-  ?>
+    echo $jsoncallback ."(" . $json_data . ")";
+    ?>
   ```
   2. WebSocket:是一种通信协议，使用ws://（非加密）和wss://（加密）作为协议前缀。该协议不实行同源政策，只要服务器设置利用origin字段设置白名单，就可以通过它进行跨源通信。
   3. CORS（Cross-Origin Resource Sharing）
