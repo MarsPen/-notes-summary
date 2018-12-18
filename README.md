@@ -1,7 +1,7 @@
 # 前端技术学习总结，记录点滴记录成长。
 
 * [第一部分Html][1]
-* [第二部分Css][2] *未完成*
+* [第二部分Css][2]
 * [第三部分javascript][3] *未完成*
 * [第四部分打包工具][4] *未完成*
 * [第五部分node][5] *未完成*
@@ -18,7 +18,7 @@
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/html/exercises.md
-[2]: https://github.com/MarsPen/notes-summary/css/exercises.md
+[2]: https://github.com/MarsPen/notes-summary/css/index.md
 [3]: https://github.com/MarsPen/notes-summary/
 [4]: https://github.com/MarsPen/notes-summary/
 [5]: https://github.com/MarsPen/notes-summary/
