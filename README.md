@@ -18,7 +18,7 @@
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/html/exercises.md
-[2]: https://github.com/MarsPen/notes-summary/css/index.md
+[2]: https://github.com/MarsPen/-notes-summary/blob/master/css/index.md
 [3]: https://github.com/MarsPen/notes-summary/
 [4]: https://github.com/MarsPen/notes-summary/
 [5]: https://github.com/MarsPen/notes-summary/
