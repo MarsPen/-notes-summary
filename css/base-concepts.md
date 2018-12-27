@@ -23,7 +23,7 @@
   <div align="left">
     <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png" height="100%" width="70%" align="left">
   </div>
-### 3.BFC IFC GFC FFC
+### 3. BFC IFC GFC FFC
 1. BFC
   - 定义（Block fomatting context）：块级格式化上下文
   - block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；
