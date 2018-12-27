@@ -90,26 +90,26 @@
       </div>
     ```
   - 防止margin重叠,根据生成BFC第4条规则<
-   ```
-    /****css****/
-    .box{
-      width: 300px;
-      height: auto;
-    }
-    .content{
-      width: 300px;
-      height: 200px;
-      margin: 100px;
-      background: red;
-    }
-    .warp{
-      display: inline-block;
-    }
+    ```
+      /****css****/
+      .box{
+        width: 300px;
+        height: auto;
+      }
+      .content{
+        width: 300px;
+        height: 200px;
+        margin: 100px;
+        background: red;
+      }
+      .warp{
+        display: inline-block;
+      }
 
-    <!--html-->
-    <div class="box">
-      <div class="content"></div>
-      <div class="content warp"></div>
-    </div>
-   ```
+      <!--html-->
+      <div class="box">
+        <div class="content"></div>
+        <div class="content warp"></div>
+      </div>
+    ```
 
