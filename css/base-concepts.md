@@ -67,8 +67,8 @@
         <div class="main">内容区域</div>
       </div>
       ```
-  根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题
-    ```
+  根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题</br>
+   ```
       /****css****/
       .parent{
         border: 1px solid red;
@@ -88,8 +88,8 @@
         <div class="child"></div>
         <div class="child"></div>
       </div>
-    ```
-  防止margin重叠,根据生成BFC第4条规则
+   ```
+  防止margin重叠,根据生成BFC第4条规则</br>
    ```
     /****css****/
     .box{
