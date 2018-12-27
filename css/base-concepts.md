@@ -135,6 +135,7 @@
     <span class="break">这是一个行内盒子这是一个行内盒子这是一个行内盒子</span>
    ```
    ![css-IFC](https://github.com/MarsPen/-notes-summary/blob/master/images/css-IFC.jpg "css-IFC")
+   
 3. FFC
   - 定义(Flex Formatting Contexts)：自适应格式化上下文
   - display值为flex或者inline-flex的元素将会生成自适应容器（flex container）
