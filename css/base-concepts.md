@@ -6,8 +6,9 @@
   1. 在html文档中，每一个渲染在页面中的标签都是一个个盒子模型；
   2. 盒子模型分为w3c标准盒子模型和IE标准盒子模型；当不对Doctype进行定义时，会触发怪异模式。
   3. 盒子模型公式
-  - 在标准模式下盒子的总宽度 = width+margin（左右）+ padding（左右）+border（左右）
-  - 在怪异模式下盒子的总宽度 = width+margin（左右）（既width已经包含了padding和border值）
+  - 盒子占位width = width + 2margin + 2padding + 2*border;
+  - 盒子真正的宽度 width = width + 2padding + 2border;margin可以改变盒子的占位大小，但是盒子真正的宽高并没有改变
+  - 在怪异模式下盒子占位width = width+2margin（既width已经包含了padding和border值）
 
   ```
    <!--html-->
