@@ -8,18 +8,18 @@
   3. 盒子模型
   - 代码示例
   ```
-   <!--html-->
-   <div class="box"></div>
+  /****css****/
+  .box{
+    width:100px;
+    height:100px;
+    border:10px;
+    background-color:red;
+    padding:20px;
+    margin:20px;
+  }
 
-   <!--css-->
-   .box{
-     width:100px;
-     height:100px;
-     border:10px;
-     background-color:red;
-     padding:20px;
-     margin:20px;
-   }
+  <!--html-->
+  <div class="box"></div>
   ```
   ![css盒子模型](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png "css盒子模型")
 ### 3. BFC IFC GFC FFC
@@ -45,10 +45,46 @@
     2. 清除内部浮动
     3. 防止margin重叠
 
-
-  
-
- 
-
-
- 
+  - 例子说明
+    1. 根据以上BFC布局规则第3条、第4条来触发main生成BFC，来实现自适应两栏布局
+    ```
+    /****css****/
+    .main{
+      overflow: hidden;
+      height: 500px;
+      background: yellow;
+    }
+    .aside{
+      float: left;
+      width: 200px;
+      height: 500px;
+      background-color: red;
+    }
+    
+    <!--html-->
+    <div class="box">
+      <div class="aside">侧边栏区域</div>
+      <div class="main">内容区域</div>
+    </div>
+    ```
+    2. 根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题
+     ```
+    /****css****/
+    .parent{
+      border: 1px solid red;
+      width: 400px;
+      overflow: hidden;
+      padding: 10px;
+    }
+    .child{
+      float: left;
+      height: 300px;
+      width: 198px;
+      border: 1px solid green;
+    }
+    
+    <!--html-->
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
