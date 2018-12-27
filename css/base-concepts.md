@@ -24,7 +24,7 @@
    }
   ```
   <div align="left">
-    <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png" height="300" width="300" >
+    <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png" height="700" width="700" >
   </div>
  
 
