@@ -25,10 +25,9 @@
      background-color:yellow;
    }
   ```
-  <div align="left">
+  - <div align="left">
     <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.jpg" height="150" width="150" >
     <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型1.jpg" height="160" width="160" >
-     <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型1.jpg" height="160" width="160" >
   </div>
   - 在标准模式下盒子的总宽度 = width+margin（左右）+ padding（左右）+border（左右）
   - 在怪异模式下盒子的总宽度 = width+margin（左右）（既width已经包含了padding和border值）
