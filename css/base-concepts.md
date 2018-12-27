@@ -25,6 +25,6 @@
      background-color:yellow;
    }
   ```
-  <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.jpg" width="150" height="150"/>
-   <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型1.jpg" width="150" height="150"/>
+  ![css盒子模型](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.jpg = 150x150)
+  ![css盒子模型](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型1.jpg = 150x150)
  
