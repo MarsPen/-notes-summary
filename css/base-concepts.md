@@ -117,6 +117,11 @@
   - IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)
   - inline-level box:display 属性为 inline, inline-box，inline-table，table-cell，table-column-group等，会生成 inline-level box。并且参与 inline fomatting context；
   -  当inline-level box的宽度大于containing block，且达到内容换行条件时，会将inline-level拆散为多个inline-level box并分布到多行中
+  - inline-level box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。float元素会位于IFC与与line box之间，使得line box宽度缩短
+  -  IFC中不可能有块级元素，当插入块级元素时（如p中插入div）会产生两个匿名块与div分隔开，即产生两个IFC，每个IFC对外表现为块级元素，与div垂直排列。
+  - 作用
+    1. 水平居中：当一个块要在环境中水平居中时，设置其为inline-block则会在外层产生IFC，通过text-align则可以使其水平居中。
+    2. 垂直居中：创建一个IFC，用其中一个元素撑开父元素的高度，然后设置其vertical-align:middle，其他行内元素则可以在此父元素下垂直居中。
 
   - 示例
    ```
@@ -130,5 +135,18 @@
     <span class="break">这是一个行内盒子这是一个行内盒子这是一个行内盒子</span>
    ```
    ![css-IFC](https://github.com/MarsPen/-notes-summary/blob/master/images/css-IFC.jpg "css-IFC")
+3. FFC
+  - 定义(Flex Formatting Contexts)：自适应格式化上下文
+  - display值为flex或者inline-flex的元素将会生成自适应容器（flex container）
+  - FFC和BFC区别
+    1. Flexbox 不支持 ::first-line 和 ::first-letter 这两种伪元素
+    2. vertical-align 对 Flexbox 中的子元素失效
+    3. float 和 clear 属性对 Flexbox 中的子元素是没有效果的，也不会使子元素脱离文档流
+    4. 多栏布局（column-*） 在 Flexbox 中失效
+    5. Flexbox 下的子元素不会继承父级容器的宽
+4. GFC
+  - 定义(GridLayout Formatting Contexts)：网格布局格式化上下文
+  - display值为grid的时候，此元素将会获得一个独立的渲染区域，可在网格内定义项目（item）,行（row），列（columns）
+
 
 
