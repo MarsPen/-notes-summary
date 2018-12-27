@@ -21,7 +21,7 @@
    }
   ```
   <div align="left">
-    <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png" height="100%" width="70%" >
+    <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png" height="100%" width="70%" align="left">
   </div>
 ### 3.BFC IFC GFC FFC
 1. BFC
