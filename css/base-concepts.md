@@ -89,7 +89,7 @@
         <div class="child"></div>
       </div>
     ```
-  - 防止margin重叠,根据生成BFC第4条规则<
+  - 防止margin重叠,根据生成BFC第4条规则
     ```
       /****css****/
       .box{
