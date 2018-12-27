@@ -46,45 +46,46 @@
     3. 防止margin重叠
 
   - 例子说明
-    1. 根据以上BFC布局规则第3条、第4条来触发main生成BFC，来实现自适应两栏布局
-    ```
-    /****css****/
-    .main{
-      overflow: hidden;
-      height: 500px;
-      background: yellow;
-    }
-    .aside{
-      float: left;
-      width: 200px;
-      height: 500px;
-      background-color: red;
-    }
-    
-    <!--html-->
-    <div class="box">
-      <div class="aside">侧边栏区域</div>
-      <div class="main">内容区域</div>
-    </div>
-    ```
+    1. 根据以上BFC布局规则第3条、第4条来触发main生成BFC，来实现自适应两栏布局
+      ```
+      /****css****/
+      .main{
+        overflow: hidden;
+        height: 500px;
+        background: yellow;
+      }
+      .aside{
+        float: left;
+        width: 200px;
+        height: 500px;
+        background-color: red;
+      }
+      
+      <!--html-->
+      <div class="box">
+        <div class="aside">侧边栏区域</div>
+        <div class="main">内容区域</div>
+      </div>
+      ```
     2. 根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题
+      ```
+      /****css****/
+      .parent{
+        border: 1px solid red;
+        width: 400px;
+        overflow: hidden;
+        padding: 10px;
+      }
+      .child{
+        float: left;
+        height: 300px;
+        width: 198px;
+        border: 1px solid green;
+      }
+      
+      <!--html-->
+      <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+      </div>
      ```
-    /****css****/
-    .parent{
-      border: 1px solid red;
-      width: 400px;
-      overflow: hidden;
-      padding: 10px;
-    }
-    .child{
-      float: left;
-      height: 300px;
-      width: 198px;
-      border: 1px solid green;
-    }
-    
-    <!--html-->
-    <div class="parent">
-      <div class="child"></div>
-      <div class="child"></div>
-    </div>
