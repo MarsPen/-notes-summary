@@ -6,6 +6,7 @@
   1. 在html文档中，每一个渲染在页面中的标签都是一个个盒子模型；
   2. 盒子模型分为w3c标准盒子模型和IE标准盒子模型；当不对Doctype进行定义时，会触发怪异模式。
   3. 盒子模型
+  - 代码示例
   ```
    <!--html-->
    <div class="box"></div>
@@ -20,9 +21,8 @@
      margin:20px;
    }
   ```
-  <div align="left">
-    <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png" height="100%" width="70%" align="left">
-  </div>
+  - 图片示例
+  <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png" height="100%" width="70%" align="left">
 ### 3. BFC IFC GFC FFC
 1. BFC
   - 定义（Block fomatting context）：块级格式化上下文
