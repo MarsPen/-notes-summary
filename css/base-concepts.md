@@ -25,5 +25,5 @@
      background-color:yellow;
    }
   ```
-  ![这是html基础思维导图](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png "这是html基础思维导图")
-   ![这是html基础思维导图](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型1.png "这是html基础思维导图")
+  ![这是html基础思维导图](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.jpg "这是html基础思维导图")
+   ![这是html基础思维导图](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型1.jpg "这是html基础思维导图")
