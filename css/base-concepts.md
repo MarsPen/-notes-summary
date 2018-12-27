@@ -40,7 +40,7 @@
     3. position为 absolute或者fixed
     4. display为inline-block, table-cell, table-caption, flex, inline-flex
     5. overflow不为visible
-  - BFC作用及原理
+  - BFC作用
     1. 自适应两栏布局
     2. 清除内部浮动
     3. 防止margin重叠
@@ -67,8 +67,8 @@
         <div class="main">内容区域</div>
       </div>
       ```
-    根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题
-      ```
+  根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题
+    ```
       /****css****/
       .parent{
         border: 1px solid red;
@@ -88,4 +88,28 @@
         <div class="child"></div>
         <div class="child"></div>
       </div>
-     ```
+    ```
+  防止margin重叠,根据生成BFC第4条规则
+   ```
+    /****css****/
+    .box{
+      width: 300px;
+      height: auto;
+    }
+    .content{
+      width: 300px;
+      height: 200px;
+      margin: 100px;
+      background: red;
+    }
+    .warp{
+      display: inline-block;
+    }
+
+    <!--html-->
+    <div class="box">
+      <div class="content"></div>
+      <div class="content warp"></div>
+    </div>
+   ```
+
