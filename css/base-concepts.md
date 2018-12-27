@@ -137,7 +137,7 @@
       <span class="break">这是一个行内盒子这是一个行内盒子这是一个行内盒子</span>
     ```
     ![css-IFC](https://github.com/MarsPen/-notes-summary/blob/master/images/css-IFC.jpg "css-IFC")
-  - 根据作用第1条,设置span为inline-block,则会在box上产生ifc,在box上设置text-align使span元素水平居中。
+  - 根据作用第1条,设置span为inline-block,则会在box上产生ifc,在box上设置text-align使span元素水平居中。
     ```
       /****css****/
       .box{text-align: center;}
