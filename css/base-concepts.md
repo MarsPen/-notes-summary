@@ -29,7 +29,7 @@
   - block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；
   - 是一个独立的渲染区域，只有Block-level box参与
   - 布局规则
-    1. 内部的Box会在垂直方向，一个接一个地放置
+    1. 内部的Box会在垂直方向链接放置
     2. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
     3. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
     4. BFC的区域不会与float box重叠
@@ -41,6 +41,13 @@
     3. position为 absolute或者fixed
     4. display为inline-block, table-cell, table-caption, flex, inline-flex
     5. overflow不为visible
+  - BFC作用及原理
+    1. 自适应两栏布局
+    2. 清除内部浮动
+    3. 防止margin重叠
+    
+
+  
 
  
 
