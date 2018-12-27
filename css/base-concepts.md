@@ -21,7 +21,6 @@
      margin:20px;
    }
   ```
-  - 图片示例
   ![css盒子模型](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png "css盒子模型")
 ### 3. BFC IFC GFC FFC
 1. BFC
