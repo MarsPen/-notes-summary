@@ -41,11 +41,11 @@
     3. position为 absolute或者fixed
     4. display为inline-block, table-cell, table-caption, flex, inline-flex
     5. overflow不为visible
-  - BFC作用及原理
-    1. 自适应两栏布局
+  - BFC作用及原理
+    1. 自适应两栏布局
     2. 清除内部浮动
     3. 防止margin重叠
-    
+
 
   
 
