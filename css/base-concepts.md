@@ -24,7 +24,7 @@
   ![css盒子模型](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png "css盒子模型")
 ### 3. BFC IFC GFC FFC
 1. BFC
-  - 定义（Block fomatting context）：块级格式化上下文
+  - 定义（Block fomatting context）：块级格式化上下文(每一个元素盒子从上向下排列)
   - block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；
   - 是一个独立的渲染区域，只有Block-level box参与
   - 布局规则
@@ -112,4 +112,23 @@
         <div class="content warp"></div>
       </div>
     ```
+2. IFC
+  - 定义(Inline Formatting Contexts)：内联格式化上下文（每一个元素盒子从左到右排列）
+  - IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)
+  - inline-level box:display 属性为 inline, inline-box，inline-table，table-cell，table-column-group等，会生成 inline-level box。并且参与 inline fomatting context；
+  -  当inline-level box的宽度大于containing block，且达到内容换行条件时，会将inline-level拆散为多个inline-level box并分布到多行中
+
+  - 示例
+   ```
+    /****css****/
+    .break{
+      border: 1px solid red;
+      background: yellow;
+    }
+    
+    <!--html-->
+    <span class="break">这是一个行内盒子这是一个行内盒子这是一个行内盒子</span>
+   ```
+   ![css-IFC](https://github.com/MarsPen/-notes-summary/blob/master/images/css-IFC.jpg "css-IFC")
+
 
