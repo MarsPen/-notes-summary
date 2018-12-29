@@ -32,15 +32,51 @@
 - 双飞翼布局，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。
 4. 圣杯布局代码
 ```
+/****css****/
+.main{
+  width: 100%;
+  background: green;
+}
+.left{
+  left: -200px;
+  width: 200px;
+  margin-left: -100%;
+  background: yellowgreen;
+}
+.right{
+  right: -200px;
+  width: 200px;
+  margin-left: -200px;
+  background-color: red;
+}
+.main,.left,.right{
+  position: relative;
+  float: left;
+  min-height: 500px;
+}
+.container{
+  padding: 0 200px;
+  overflow: hidden;
+  border: 5px solid #ccc;
+}
+
+<!--html-->
+<div class="container">
+  <div class="main">中间栏目</div>
+  <div class="left">左侧栏目</div>
+  <div class="right">右侧栏目</div>
+</div>
 ```
 5. 双飞翼布局代码
 
 6. 效果图
+![三栏布局](https://github.com/MarsPen/-notes-summary/blob/master/images/圣杯布局.gif "三栏布局")
 
+### 3.flex弹性盒子布局
 
-### 3.弹性盒子模型
+### 4.绝对定位布局
 
-### 4.响应式布局
+### 4.media响应式布局
 
 ### 5.移动端rem布局
 
