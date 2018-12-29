@@ -68,6 +68,39 @@
 </div>
 ```
 5. 双飞翼布局代码
+```
+/****css****/
+.main,.left,.right{
+  float: left;
+  min-height: 500px;
+}
+.main{
+  width:100%;
+  background-color: red;
+}
+.left{
+  width: 200px;
+  margin-left: -100%;
+  background-color: yellow;
+}
+.right{
+  width: 200px;
+  background-color: green;
+  margin-left: -200px;
+}
+.content{
+  margin: 0 200px;
+}
+
+<!--html-->
+<div class="container"> 
+　　<div class="main">
+    　　<div class="content">中间栏目</div> 
+    </div>
+　　<div class="left">左侧栏目</div> 
+　　<div class="right">右侧栏目</div> 
+</div>
+```
 
 6. 效果图
 ![三栏布局](https://github.com/MarsPen/-notes-summary/blob/master/images/圣杯布局.gif "三栏布局")
