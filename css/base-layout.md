@@ -106,9 +106,9 @@
 ![三栏布局](https://github.com/MarsPen/-notes-summary/blob/master/images/圣杯布局.gif "三栏布局")
 
 ### 3.flex弹性盒子布局
-定义：Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
+1. 定义：Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
 2. 优点：相对于传统布局更具有灵活性。
-3. 缺点：虽然现代浏览器都支持，但是还有少部分浏览器需要单独处理其兼容性
+3. 缺点：虽然现代浏览器都支持，但是还有少部分浏览器需要单独处理其兼容性
 4. 问题：
   - 绝对定位与固定定位的盒子不参与flex布局
   - 使用Flex布局以后，子元素的float、clear和vertical-align等属性将失效
