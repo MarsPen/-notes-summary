@@ -106,10 +106,48 @@
 ![三栏布局](https://github.com/MarsPen/-notes-summary/blob/master/images/圣杯布局.gif "三栏布局")
 
 ### 3.flex弹性盒子布局
+定义：Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
+2. 优点：相对于传统布局更具有灵活性。
+3. 缺点：虽然现代浏览器都支持，但是还有少部分浏览器需要单独处理其兼容性
+4. 问题：
+  - 绝对定位与固定定位的盒子不参与flex布局
+  - 使用Flex布局以后，子元素的float、clear和vertical-align等属性将失效
+  - 具体语法参考阮大大flex布局语法篇和实例篇
+  - http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+  - http://www.ruanyifeng.com/blog/2015/07/flex-examples.html
+5. 三栏布局示例 
+```
+/****css****/
+.container{
+  display: flex;
+  min-height: 500px;
+}
+.main{
+  flex-grow:1;
+  background-color: red;
+}
+.left{
+  order: -1;
+  flex-basis: 200px;
+  background-color: yellow;
+}
+.right{
+  flex-basis: 200px;
+  background-color: green;
+}
 
-### 4.绝对定位布局
+<!--html-->
+<div class="container">
+  <div class="main">中间内容区域</div>
+  <div class="left">左边栏区域</div>
+  <div class="right">右边栏区域</div>
+</div>
+```
 
-### 4.media响应式布局
 
-### 5.移动端rem布局
+### 5.绝对定位布局
+
+### 6.media响应式布局
+
+### 7.移动端rem布局
 
