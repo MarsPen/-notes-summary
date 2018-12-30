@@ -144,9 +144,42 @@
 </div>
 ```
 
-
 ### 4.绝对定位布局
+1. position:absolute绝对定位使元素脱离文档流，因此不占据当前层级的空间
+2. 
+```
+/****css****/
+.container{
+  position: relative;
+}
+.main,.left,.right{
+  min-height: 500px;
+  top: 0;
+}
+.main{
+  background-color: red;
+  margin: 0 200px;
+}
+.left{
+  position: absolute;
+  left: 0px;
+  width: 200px;
+  background-color: green;
+}
+.right{
+  position:absolute;
+  right: 0px;
+  width: 200px;
+  background: yellow;
+}
 
+<!--html-->
+<div class="container">
+  <div class="main">中间内容区域</div>
+  <div class="left">左边区域</div>
+  <div class="right">右边区域</div>
+</div>
+```
 ### 5.media响应式布局
 
 ### 6.移动端rem布局
