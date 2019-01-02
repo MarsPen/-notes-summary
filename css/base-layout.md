@@ -193,5 +193,4 @@
 ### 6.移动端rem布局
 1. 定义（font size of the root element）：相对于根元素的字体大小的单位
 2. 作用：通过js动态计算html font-size 能够使html页面比响应式布局，流式布局，设置最大宽度布局等效果更完善
-3. 代码
 
