@@ -53,7 +53,7 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义
 
 ### ACSS
 1. 定义： 考虑如何设计一个系统的接口。原子(Atoms)是创建一个区块的最基本的特质，比如说表单按钮。分子(Molecules)是很多个原子(Atoms)的组合，比如说一个表单中包括了一个标签，输入框和按钮。生物(Organisms)是众多分子(Molecules)的组合物，比如一个网站的顶部区域，它包括了网站的标题、导航等。而模板(Templates)又是众多生物(Organisms)的结合体。比如一个网站页面的布局。而最后的页面就是特殊的模板。
-![ACSS](https://github.com/MarsPen/-notes-summary/blob/master/images/ACSS.jpg "ACSS")
+![ACSS](https://github.com/MarsPen/-notes-summary/blob/master/images/Acss.jpg "ACSS")
 
 ### ITCSS
 1. 定义：创造了一系列的层次来管理依赖关系和促进可扩展性。基础的层次包括通用和广泛的选择器。顶部的层次包含了局部模块具体化的选择器。
