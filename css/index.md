@@ -7,8 +7,6 @@
 * [第三部分css分层与面向对象理论][3]
 * [第四部分css动画与3D][4] *未完成*
 * [第五部分css与处理器][5] *未完成*
-* [第六部分css绘制高级技巧][6] *未完成*
-* [第七部分转载css好文][7] *未完成*
 
 
 
@@ -17,5 +15,4 @@
 [3]: https://github.com/MarsPen/-notes-summary/blob/master/css/css-layered.md
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/css/css-animation.md
 [5]: https://github.com/MarsPen/-notes-summary/blob/master/css/css-preprocessor.md
-[6]: https://github.com/MarsPen/-notes-summary/blob/master/css/css-skill.md
-[7]: https://github.com/MarsPen/-notes-summary/blob/master/css/css-notes.md
+
