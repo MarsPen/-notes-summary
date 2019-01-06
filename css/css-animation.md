@@ -5,7 +5,7 @@
 ### 3D转换（transform）
 1. 定义向元素应用 2D 或 3D 转换，可以对元素进行移动、缩放、转动、拉长或拉伸
   - 转换方法 
-    -  translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动
+    - translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动
       ```
       transform: translate(100px,200px);
       ```
@@ -25,17 +25,17 @@
 3. transform-style：规定被嵌套元素如何在 3D 空间中显示
   - preserve-3d	：表示所有子元素在3D空间中呈现
   - flat：表示所有子元素在2D平面呈现 
-  ```
-  transform-style: flat|preserve-3d;
-  ```
+    ```
+    transform-style: flat|preserve-3d;
+    ```
 4. perspective:设置元素距离视图的距离，以像素计，与 perspective-origin 属性一同使用，能够改变 3D 元素的底部位置
-  ```
-  perspective: number|none;
-  ``` 
+    ```
+    perspective: number|none;
+    ``` 
 5. backface-visibility:定义当元素不面向屏幕时是否可见，在旋转元素不希望看到其背面时，该属性很有用
-  ```
-  backface-visibility: visible|hidden;
-  ```
+    ```
+    backface-visibility: visible|hidden;
+    ```
 ### CSS3过渡（transition）
 ### CSS3 动画（animation及@keyframes）
 
