@@ -85,100 +85,75 @@ CSS 预处理器赋予我们很多css强大的功能，并且是提高开发效�
 ```
 
 
-### 混入(mixin)
+### 混入(Mixins)
 
-- 作用：提供了 CSS 缺失的最关键的东西：样式层面的抽象。
+- 作用: 样式层面的抽象。
 - Sass
 ```
-  @mixin large-text {
+  @mixin product-public-text {
     font: {
-      family: Arial;
       size: 20px;
-      weight: bold;
+      weight: 600;
+      family: PingFangSC;
     }
-    color: #ff0000;
+    color: rgba(72,72,72,1);
   }
-
-  .page-title {
-    @include large-text;
-    padding: 4px;
-    margin-top: 10px;
+  .product-header-title {
+    @include product-public-text;
+    padding: 10px;
   }
 ```
 
-- Less 的混入有两种方式：
-1. 直接在目标位置混入另一个类样式（输出已经确定，无法使用参数）；
-2. 定义一个不输出的样式片段（可以输入参数），在目标位置输出。
-.alert {
-  font-weight: 700;
-}
+- Less
+```
+  .product-public-font-weight {
+    font-weight: 600;
+  }
 
-.highlight(@color: red) {
-  font-size: 1.2em;
-  color: @color;
-}
+  .product-public-font(@color: red) {
+    font-size: 20px;
+    color: @color;
+  }
 
-.heads-up {
-  .alert;
-  .highlight(red);
-}
+  .product-header-title{
+    .product-public-font-weight;
+    .product-public-font(red);
+  }
+```
 
-编译后
-.alert {
-  font-weight: 700;
-}
-.heads-up {
-  font-weight: 700;
-  font-size: 1.2em;
-  color: red;
-}
 ### 继承
 
 - Sass
 ```
-  .active {
-    color: red;
+  .header {
+    background-color: red;
   }
-  button.active {
-    @extend .active;
+  .main.active {
+    @extend .header;
   }
 ```
 
 - less
 ```
-  .message {
-    padding: 10px;
-    border: 1px solid #eee;
+  .header {
+    background-color: red;
   }
-
-  .warning {
-    &:extend(.message);
-    color: #e2e21e;
+  .main {
+    &:extend(.header);
   }
 ```
 
 - Stylus,Scss
 ```
-  .message
-    padding: 10px
-    border: 1px solid #eee
+  .header
+    background-color: red;
 
-  .warning
-    @extend .message
-    color: #e2e21e
+  .main
+    @extend .header
 ```
 
-### 函数
-三种预处理器都自带了诸如色彩处理、类型判断、数值计算等内置函数
-stylus
-@function golden-ratio($n) {
-  @return $n * 0.618;
-}
-
-.golden-box {
-  width: 200px;
-  height: golden-ratio(200px);
-}
+### 高级用法（函数）
+三种预处理器都自带了诸如色彩处理（darken等）、类型判断（if each for while 等）、数值计算等内置函数
 
 ### 三种预处理器手册
 - Sass：http://sass.bootcss.com/
