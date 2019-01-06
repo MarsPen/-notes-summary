@@ -1,5 +1,7 @@
-### 3D转换 :
-1. transform：定义向元素应用 2D 或 3D 转换，可以对元素进行移动、缩放、转动、拉长或拉伸
+##CSS 动画
+API的简介及简单动画的实现
+### 3D转换（transform） :
+1. 定义向元素应用 2D 或 3D 转换，可以对元素进行移动、缩放、转动、拉长或拉伸
   - 转换方法 
     1. translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动
       ```
@@ -33,8 +35,7 @@
   ```
   backface-visibility: visible|hidden;
   ```
-### CSS3过渡
-
-### CSS3 动画
+### CSS3过渡（transition）
+### CSS3 动画（animation及@keyframes）
 
   
