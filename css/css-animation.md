@@ -23,14 +23,14 @@
 
 2. transform-origin：允许改变被转换元素的位置
       ```
-        transform-origin: x-axis y-axis z-axis;
+      transform-origin: x-axis y-axis z-axis;
       ```
 
 3. transform-style：规定被嵌套元素如何在 3D 空间中显示
       ```
-        // preserve-3d所有子元素在3D空间中呈现
-        // flat所有子元素在2D平面呈现
-        transform-style: flat|preserve-3d;
+      // preserve-3d所有子元素在3D空间中呈现
+      // flat所有子元素在2D平面呈现
+      transform-style: flat|preserve-3d;
       ```
 
 4. perspective:设置元素距离视图的距离，以像素计，与 perspective-origin 属性一同使用，能够改变 3D 元素的底部位置
@@ -44,7 +44,33 @@
       ```
 
 ### 二.CSS3过渡（transition）
+1. 某种效果可以从一种样式转变到另一种样式的效果
+   ```
+   transition: property duration timing-function delay;
+   ```
+   ```
+   transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);
+   ```
 ### 三.CSS3 动画（animation及@keyframes）
+1. 使元素从一种样式逐渐变化为另一种样式的效果
+   - animation
+   - @keyframes
+   - 语法规则
+   ```
+    animation: animation-name animation-duration animation-timing-function animation-fill-mode animation-delay animation-iteration-count	animation-direction animation-play-state;
+   ```
+   - 拆解
+   ```
+   animation-name(keyframe名字): keyframename|none;
+   animation-duration(动画完成一个周期需要多少秒或毫秒):animation-duration: time | 0;
+   animation-timing-function(动画的速度曲线,使用的数学函数，称为三次贝塞尔曲线，速度曲线): linear	| ease	| ease-in | ease-out	| ease-in-out	 | cubic-bezier(n,n,n,n);
+   animation-fill-mode(当动画完成时或又一个延迟未开始播放时的样式): none|forwards|backwards|both|initial|inherit;
+   animation-delay(动画什么时候开始): time;
+   animation-iteration-count(动画被播放的次数):n |infinite
+   animation-direction(是否循环交替反向播放动画): normal|reverse|alternate|alternate-reverse|initial|inherit;
+   animation-play-state(动画是否正在运行或暂停):paused|running;
+   ```
+   
 ### 四.简单动画实现（未完待续...）
 
   
