@@ -23,10 +23,10 @@
         ```
 2. transform-origin：允许改变被转换元素的位置
 3. transform-style：规定被嵌套元素如何在 3D 空间中显示
-    - preserve-3d	：表示所有子元素在3D空间中呈现
-    - flat：表示所有子元素在2D平面呈现 
       ```
-      transform-style: flat|preserve-3d;
+        // preserve-3d所有子元素在3D空间中呈现
+        // flat所有子元素在2D平面呈现
+        transform-style: flat|preserve-3d;
       ```
 4. perspective:设置元素距离视图的距离，以像素计，与 perspective-origin 属性一同使用，能够改变 3D 元素的底部位置
       ```
