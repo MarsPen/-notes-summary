@@ -19,7 +19,7 @@
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/html/exercises.md
 [2]: https://github.com/MarsPen/-notes-summary/blob/master/css/index.md
-[3]: https://github.com/MarsPen/notes-summary/
+[3]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md
 [4]: https://github.com/MarsPen/notes-summary/
 [5]: https://github.com/MarsPen/notes-summary/
 [6]: https://github.com/MarsPen/notes-summary/
