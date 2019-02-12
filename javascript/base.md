@@ -174,7 +174,6 @@
    function fn(){} //函数声明方式 
    ```
    - 只有声明方式的函数才会有函数提升
-   - demo1
    ```
     test();
     function test(){
