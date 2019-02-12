@@ -31,7 +31,7 @@
     console.log(a); // 2
     console.log(b); // 1
     ```
-    <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/javascript-stack.png' height="200"></image>
+    <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/javascript-stack.png'></image>
 2. 引用数据类型
   - 概念：引用类型的值是保存在堆内存（Heap）中的对象（Object）
   - 种类：统称为Object，细分有：Object，Array，Function，Data，RegExp等
@@ -120,8 +120,61 @@
     a = /renbo/g;
     a instanceof RegExp ; // true    
     ```
-### 变量提升
-### 函数提升
+### 变量提升与函数提升
+  1. js代码虽然是逐行向下执行的，但执行的时候分为两个步骤
+     - 编译阶段（词法解释/预解释）
+     - 执行
+  2. 函数声明和变量声明总是会被解释器(编译阶段)悄悄地被“提升”到最顶部，最后执行
+  3. 在js中变量解析的顺序
+    - this和arguments（语言内置）
+    - 函数的形式参数
+    - 函数声明
+    - 变量声明
+  4. 函数的声明比变量的声明的优先级要高
+  5. es6中let关键字及块及作用域
+  5. 变量提升
+    - 
+     ```
+     a = 'renbo';
+     var a;
+     console.log( a ); 
+     ```
+     ```
+     // 编译后的代码
+     var a;
+     a = 'renbo';
+     console.log(a); // renbo
+     ```
+    - 
+    ```
+    function demo() {
+      a = 'renbo';
+      console.log(a);
+      console.log(window.a);
+      var a = 'wanghaixia';
+      console.log(a);
+    }
+    demo(); 
+    ```
+    ```
+    // 编译后的代码
+    function demo() {
+      var a;
+      a = 'renbo';
+      console.log(a);
+      console.log(window.a);
+      a = 'wanghaixia';
+      console.log(a);
+    }
+    demo(); // renbo undefined wanghaixia
+    ``` 
+  6. 函数提升
+   - 
+   ```
+   // 两种函数的书写方式
+   var fn = function fn(){} //函数表达式
+   function fn(){} //函数声明方式 
+   ```
 ### 闭包
 ### 关键字this
 ### 原型及原型链
