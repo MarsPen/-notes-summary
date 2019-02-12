@@ -31,7 +31,7 @@
     console.log(a); // 2
     console.log(b); // 1
     ```
-    - <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/javascript-stack.png'></image>
+    <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/javascript-stack.png' height="200"></image>
 ### 变量提升
 ### 函数提升
 ### 闭包
