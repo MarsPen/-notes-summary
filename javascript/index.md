@@ -1,6 +1,6 @@
 # 第三部分javascript知识
  
-![这是javascript思维导图](https://github.com/MarsPen/-notes-summary/blob/master/images/javaScript.png "这是javascript思维导图")
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/javaScript.png" width="550"></image>
 
 * [第一部分基础知识][1]
 * [第二部分面向对象编程][2]
