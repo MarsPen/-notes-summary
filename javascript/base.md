@@ -173,6 +173,24 @@
    var fn = function fn(){} //函数表达式
    function fn(){} //函数声明方式 
    ```
+   - 只有声明方式的函数才会有函数提升
+   - demo1
+   ```
+    test();
+    function test(){
+      console.log( a );
+      var a = 'renbo';
+    }
+
+    // 编译后
+    function test () {
+      var a; // 在函数作用域内，被提升最前面
+      console.log(a); // undefined
+      a = renbo; 
+    }
+    test();
+   ```
+
 ### 闭包
 ### 关键字this
 ### 原型及原型链
