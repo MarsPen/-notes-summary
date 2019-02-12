@@ -70,7 +70,7 @@
     age:28
   }
   ```
-  <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/javascript-stack1.png' height="200"></image>
+  <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/javascript-stack1.png'></image>
 3. 类型检测
   - typeof：经常检查变量是不是基本数据类型
     ```
