@@ -133,19 +133,18 @@
   4. 函数的声明比变量的声明的优先级要高
   5. es6中let关键字及块及作用域
   5. 变量提升
-    - 
+    - demo1
      ```
      a = 'renbo';
      var a;
      console.log( a ); 
-     ```
-     ```
+
      // 编译后的代码
      var a;
      a = 'renbo';
      console.log(a); // renbo
      ```
-    - 
+    - demo2
     ```
     function demo() {
       a = 'renbo';
@@ -155,8 +154,7 @@
       console.log(a);
     }
     demo(); 
-    ```
-    ```
+
     // 编译后的代码
     function demo() {
       var a;
