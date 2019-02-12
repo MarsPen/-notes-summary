@@ -144,28 +144,29 @@
       a = 'renbo';
       console.log(a); // renbo
     ```
+
     ```
-    // demo2
+      // demo2
 
-    function demo() {
-      a = 'renbo';
-      console.log(a);
-      console.log(window.a);
-      var a = 'wanghaixia';
-      console.log(a);
-    }
-    demo(); 
+      function demo() {
+        a = 'renbo';
+        console.log(a);
+        console.log(window.a);
+        var a = 'wanghaixia';
+        console.log(a);
+      }
+      demo(); 
 
-    // 编译后的代码
-    function demo() {
-      var a;
-      a = 'renbo';
-      console.log(a);
-      console.log(window.a);
-      a = 'wanghaixia';
-      console.log(a);
-    }
-    demo(); // renbo undefined wanghaixia
+      // 编译后的代码
+      function demo() {
+        var a;
+        a = 'renbo';
+        console.log(a);
+        console.log(window.a);
+        a = 'wanghaixia';
+        console.log(a);
+      }
+      demo(); // renbo undefined wanghaixia
     ``` 
   6. 函数提升
   
