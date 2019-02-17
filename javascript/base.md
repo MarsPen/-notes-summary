@@ -288,17 +288,17 @@
        ```
        * 封装,管理私有方法和变量，避免全局变量冲突污染
          ```
-          var person = function(){    
-            var name = "renbo";       
-            return {    
-              getName : function(){    
-                  return name;    
-              },    
-              setName : function(newName){    
-                  name = newName;    
-              }    
+        var person = function(){    
+          var name = "renbo";       
+          return {    
+            getName : function(){    
+                return name;    
+            },    
+            setName : function(newName){    
+                name = newName;    
             }    
-          }();  
+          }    
+        }();  
          ```
        * 实现类和继承
 ### 关键字this
