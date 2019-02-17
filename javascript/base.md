@@ -317,38 +317,39 @@
      var a = 1;
      fun(); 
      ```
-  4. 隐式调用，作为对象方法调用，this 指代上下文对象
-    ```
-    function fun() { 
-      console.log( this.a );
-    }
-    var a = 1;
-    var obj = { 
-      a: 2,
-      fun: fun 
-    };
-    obj.fun(); // 2
-    var c = obj.fun;
-    console.log(c()); // 1
 
-    ```
+  4. 隐式调用，作为对象方法调用，this 指代上下文对象
+     ```
+      function fun() { 
+        console.log( this.a );
+      }
+      var a = 1;
+      var obj = { 
+        a: 2,
+        fun: fun 
+      };
+      obj.fun(); // 2
+      var c = obj.fun;
+      console.log(c()); // 1
+     ```
+
   5. apply,call,改变对象的prototype关联对象来改变this,对于null，undefined绑定会失效
-    ```
-    function fun() { 
-      console.log( this.a );
-    }
-    var a = 1;
-    var obj1 = { 
-      a: 2,
-    };
-    var obj2 = { 
-      a: 3,
-    };
-    fun.call( obj1 ); // 2
-    fun.call( obj2 ); // 3
-    fun.call( null ); // 1
-    fun.call( undefined ); // 1
-    ```
+      ```
+      function fun() { 
+        console.log( this.a );
+      }
+      var a = 1;
+      var obj1 = { 
+        a: 2,
+      };
+      var obj2 = { 
+        a: 3,
+      };
+      fun.call( obj1 ); // 2
+      fun.call( obj2 ); // 3
+      fun.call( null ); // 1
+      fun.call( undefined ); // 1
+      ```
   6. 作为构造函数调用，this 指代new 出的对象
     - 使用new来调用函数，会自动执行如下操作：
        * 创建一个全新的对象。
