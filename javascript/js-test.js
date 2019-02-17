@@ -33,6 +33,21 @@
   function fun(){ var a=b=3;}
  console.log(b)//B是全局变量 var a是局部变量  b=3;b=undefine
 
+ /*
+   *demo5:
+   */
+  var x = 10;
+  function fn () {
+    console.log(x);
+  }
+  function show (fn) {
+    var x = 20;
+    fn();
+  }
+  show(fn);
+
+
+
 
 
 
