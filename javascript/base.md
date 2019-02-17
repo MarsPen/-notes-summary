@@ -255,51 +255,51 @@
   3. 作用域链
       - 从内到外多个作用域形成的链
       - 包含父级(**[[scope]]**)变量对象与作用域链和自身的变量对象(**如果是函数则为活动对象AO**)
-      ```
-      var x = 10;
-      function fn () {
-        console.log(x);
-      }
-      function show (fn) {
-        var x = 20;
-        fn();
-      }
-      show(fn) // 10;
-      ```
+        ```
+        var x = 10;
+        function fn () {
+          console.log(x);
+        }
+        function show (fn) {
+          var x = 20;
+          fn();
+        }
+        show(fn) // 10;
+        ```
   4. 闭包
      - 概念： 能够访问其他函数内变量的函数，是一个比较特殊的作用域函数
      - 作用
        * 匿名自执行函数,减少内存消耗
-       ```
-       (function ($) {})(jQuery);
-       ```
+        ```
+        (function ($) {})(jQuery);
+        ```
        * 缓存计算结果
-       ```
-        var fun1 = function(){
-          var a=1;
-          return function fun2(){
-            a++;
-            alert(a)
+        ```
+          var fun1 = function(){
+            var a=1;
+            return function fun2(){
+              a++;
+              alert(a)
+            }
           }
-        }
-        var b = fun1();
-        b(); // 2       
-        b(); // 3           
-       ```
+          var b = fun1();
+          b(); // 2       
+          b(); // 3           
+        ```
        * 封装,管理私有方法和变量，避免全局变量冲突污染
-        ```
-        var person = function(){    
-          var name = "renbo";       
-          return {    
-            getName : function(){    
-              return name;    
-            },    
-            setName : function(newName){    
-              name = newName;    
+          ```
+          var person = function(){    
+            var name = "renbo";       
+            return {    
+              getName : function(){    
+                return name;    
+              },    
+              setName : function(newName){    
+                name = newName;    
+              }    
             }    
-          }    
-        }() 
-        ```
+          }() 
+          ```
        * 实现类和继承等等
      - 缺点：
        * 由于变量对象一直在内存中引用不被释放，导致内存过高。
