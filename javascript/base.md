@@ -226,12 +226,15 @@
             /*
             *demo3:
             */
-            var c = 1
-            function c(c) {
-              console.log(c)
-              var c = 3
-            } 
-            c(2) // 报错
+            console.log(a);    // f a() {console.log(10)}
+            console.log(a());    //  undefined
+            var a = 1;
+            function a() {
+              console.log('nihao') //nihao
+            }
+            console.log(a)   //1
+            a = 3;
+            console.log(a());  //a is not a function;
 
             /*
             *demo4:
@@ -240,7 +243,16 @@
             console.log(b)//B是全局变量 var a是局部变量  b=3;a=undefine
           ```
    2. 作用域
-   3. 作用域链
+      - 概念： 执行上下文中声明的变量和声明的作用范围。
+      - 分类：
+        * 全局作用域
+        * 函数作用域
+        * es6块级作用域
+      - 作用： 隔离变量，不同作用域下同名变量不会有冲突
+      - 区别：
+        * 创建时机不同，全局执行上下文是在全局作用域确定后js代码执行前创建而函数执行上下文是在调用函数时, 函数体代码执行之前创建
+        * 作用域是静态的，执行上下文是动态的。
+    3. 作用域链
   
 ### 关键字this
 ### 原型及原型链

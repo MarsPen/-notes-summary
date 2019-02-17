@@ -17,12 +17,15 @@
   /*
    demo3:
    */
-  var c = 1
-  function c(c) {
-    console.log(c)
-    var c = 3
-  } 
-  c(2) // 报错
+  console.log(a);    // f a() {console.log(10)}
+  console.log(a());    //  undefined
+  var a = 1;
+  function a() {
+    console.log('nihao') //nihao
+  }
+  console.log(a)   //1
+  a = 3;
+  console.log(a());  //a is not a function;
 
   /*
    *demo4:
