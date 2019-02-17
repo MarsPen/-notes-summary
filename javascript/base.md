@@ -357,16 +357,16 @@
        * 这个新对象会绑定到函数调用的this。
        * 如果函数没有返回其他对象,那么new表达式中的函数调用会自动返回这个新对象。
     - this指向的就是对象本身
-    ```
-    function fun(a) { 
-	    this.a = a;
-    }
-    var a = 1;
-    var obj = new fun(3);
-    console.log(obj.a); // 3
-    var obj1 = new fun(4);
-    console.log(obj1.a); // 4
-    ```
+      ```
+      function fun(a) { 
+        this.a = a;
+      }
+      var a = 1;
+      var obj = new fun(3);
+      console.log(obj.a); // 3
+      var obj1 = new fun(4);
+      console.log(obj1.a); // 4
+      ```
   7. es6中箭头函数this指向
     - 取决于外层（函数或全局）作用域。
 ### 原型及原型链
