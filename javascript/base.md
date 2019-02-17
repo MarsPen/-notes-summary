@@ -270,22 +270,22 @@
      - 概念： 能够访问其他函数内变量的函数，是一个比较特殊的作用域函数
      - 作用
        * 匿名自执行函数,减少内存消耗
-        ```
-        (function ($) {})(jQuery);
-        ```
+          ```
+          (function ($) {})(jQuery);
+          ```
        * 缓存计算结果
-        ```
-          var fun1 = function(){
-            var a=1;
-            return function fun2(){
-              a++;
-              alert(a)
+          ```
+            var fun1 = function(){
+              var a=1;
+              return function fun2(){
+                a++;
+                alert(a)
+              }
             }
-          }
-          var b = fun1();
-          b(); // 2       
-          b(); // 3           
-        ```
+            var b = fun1();
+            b(); // 2       
+            b(); // 3           
+          ```
        * 封装,管理私有方法和变量，避免全局变量冲突污染
           ```
           var person = function(){    
