@@ -1,5 +1,4 @@
-### 在mac中配置多哥github账号提交
-
+### 在mac中配置多个github账号ssh密钥
 ## 概述
 很多时候我们本地生成的只有一个自己的ssh，但是多个ssh配置的场景也是蛮多的，所以想要commit，push等操作需要配置私钥ssh或者http，才能连接远程git仓库
 
