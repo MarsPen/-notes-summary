@@ -13,7 +13,7 @@
 * [第十一部分数据结构与算法基础][11] *未完成*
 * [第十二部分前端性能优化][12] *未完成*
 * [第十三部分设计模式基础][13] *未完成*
-* [第十四部分linx私房菜记录][14] *未完成*
+* [第十四部分linx私房菜记录][14]
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/html/exercises.md
