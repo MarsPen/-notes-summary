@@ -406,17 +406,16 @@
       - 寄生构造函数模式
       - 稳妥构造函数模式
     当然这几种模式在这里暂时不展开说明，后续继承的时候在分别用讨论，我们这里简单的回忆一下用构造函数创建对象
-    
   ```
-  function Person(name, age) {
-    this.name = name;
-    this.age = age;
-    this.sayName = function() { console.log(this.name) } 
-  }
-  var person1 = new Person('zhansan', 29);
-  var person2 = new Person('lisi', 29);
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.sayName = function() { console.log(this.name) } 
+    }
+    var person1 = new Person('zhansan', 29);
+    var person2 = new Person('lisi', 29);
   ```
-    // 未完待续
+  // 未完待续
 
   
 ### ES6新增api方法
