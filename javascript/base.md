@@ -397,7 +397,7 @@
 
 
   2. 通过构造函数模式创建对象
-    在js高程中我们知道创建对象有很多种模式如下：
+      <div>在js高程中我们知道创建对象有很多种模式如下：</div>
       - 工厂模式
       - 构造函数模式
       - 原型模式
@@ -405,16 +405,16 @@
       - 动态原型模式
       - 寄生构造函数模式
       - 稳妥构造函数模式
-  当然这几种模式在这里暂时不展开说明，后续继承的时候在分别用讨论，我们这里简单的回忆一下用构造函数创建对象
-  ```
-    function Person(name, age) {
-      this.name = name;
-      this.age = age;
-      this.sayName = function() { console.log(this.name) } 
-    }
-    var person1 = new Person('zhansan', 29);
-    var person2 = new Person('lisi', 29);
-  ```
+      <div>当然这几种模式在这里暂时不展开说明，后续继承的时候在分别用讨论，我们这里简单的回忆一下用构造函数创建对象</div>
+      ```
+        function Person(name, age) {
+          this.name = name;
+          this.age = age;
+          this.sayName = function() { console.log(this.name) } 
+        }
+        var person1 = new Person('zhansan', 29);
+        var person2 = new Person('lisi', 29);
+      ```
   // 未完待续
 
   
