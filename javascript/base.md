@@ -369,42 +369,46 @@
   7. es6中箭头函数this指向
     - 取决于外层（函数或全局）作用域。
 ### 原型及原型链
-  1. 普通对象和函数对象
-  ```
-    // 普通对象
-    var obj1 = {}; 
-    var obj2 = new Object();
-    var obj3 = new person();
-    // 函数对象
-    function person(){}; 
-    var person1 = function(){};
-    var person2 = new Function('aaa','console.warn(aaaa)');
-  
-    console.log(typeof Object); //function 
-    console.log(typeof Function); //function 
+  1. 普通对象和函数对象</br>
+    ```
+      // 普通对象
+      var obj1 = {}; 
+      var obj2 = new Object();
+      var obj3 = new person();
+      // 函数对象
+      function person(){}; 
+      var person1 = function(){};
+      var person2 = new Function('aaa','console.warn(aaaa)');
     
-    console.log(typeof person); //function 
-    console.log(typeof person1); //function 
-    console.log(typeof person2); //function  
-    console.log(person instanceof Function) // true 
+      console.log(typeof Object); //function 
+      console.log(typeof Function); //function 
+      
+      console.log(typeof person); //function 
+      console.log(typeof person1); //function 
+      console.log(typeof person2); //function  
+      console.log(person instanceof Function) // true 
 
-    console.log(typeof obj1); //object 
-    console.log(typeof obj2); //object 
-    console.log(typeof obj3); //object
-    console.log(obj3 instanceof Object)  // true
-  ```
-  通过以上实例我们知道 new Function 构建的都是函数对象(关于普通函数与new Function的区别请参考 <a href= "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">mozilla开发者</a>), 其余都是普通对象,关于Object与Function的区别会在这章节最后总结
+      console.log(typeof obj1); //object 
+      console.log(typeof obj2); //object 
+      console.log(typeof obj3); //object
+      console.log(obj3 instanceof Object)  // true
+    ```
+    </br>
+    通过以上实例我们知道 new Function 构建的都是函数对象(关于普通函数与new Function的区别请参考 <a href= "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">mozilla开发者</a>), 其余都是普通对象,关于Object与Function的区别会在这章节最后总结
 
 
-  2. 通过构造函数模式创建对象<br/>
-      在js高程中我们知道创建对象有很多种模式如下：<br/>
+  2. 通过构造函数模式创建对象
+      <br/>
+      在js高程中我们知道创建对象有很多种模式如下：
+      <br/>
       - 工厂模式
       - 构造函数模式
       - 原型模式
       - 组合使用构造函数和原型模式
       - 动态原型模式
       - 寄生构造函数模式
-      - 稳妥构造函数模式<br/>
+      - 稳妥构造函数模式
+      <br/>
       当然这几种模式在这里暂时不展开说明，后续继承的时候在分别用讨论，我们这里简单的回忆一下用构造函数创建对象<br/>
       ```
         function Person(name, age) {
