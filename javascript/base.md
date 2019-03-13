@@ -394,6 +394,8 @@
     console.log(obj3 instanceof Object)  // true
   ```
   通过以上实例我们知道 new Function 构建的都是函数对象(关于普通函数与new Function的区别请参考 <a href= "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">mozilla开发者</a>), 其余都是普通对象,关于Object与Function的区别会在这章节最后总结
+
+
   2. 通过构造函数模式创建对象
     在js高程中我们知道创建对象有很多种模式如下：
       - 工厂模式
@@ -404,6 +406,7 @@
       - 寄生构造函数模式
       - 稳妥构造函数模式
     当然这几种模式在这里暂时不展开说明，后续继承的时候在分别用讨论，我们这里简单的回忆一下用构造函数创建对象
+    
   ```
   function Person(name, age) {
     this.name = name;
