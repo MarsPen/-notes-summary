@@ -370,30 +370,29 @@
     - 取决于外层（函数或全局）作用域。
 ### 原型及原型链
   1. 普通对象和函数对象
-    ```
-      // 普通对象
-      var obj1 = {}; 
-      var obj2 = new Object();
-      var obj3 = new person();
-      // 函数对象
-      function person(){}; 
-      var person1 = function(){};
-      var person2 = new Function('aaa','console.warn(aaaa)');
-    
-      console.log(typeof Object); //function 
-      console.log(typeof Function); //function 
+      ```
+        // 普通对象
+        var obj1 = {}; 
+        var obj2 = new Object();
+        var obj3 = new person();
+        // 函数对象
+        function person(){}; 
+        var person1 = function(){};
+        var person2 = new Function('aaa','console.warn(aaaa)');
       
-      console.log(typeof person); //function 
-      console.log(typeof person1); //function 
-      console.log(typeof person2); //function  
-      console.log(person instanceof Function) // true 
+        console.log(typeof Object); //function 
+        console.log(typeof Function); //function 
+        
+        console.log(typeof person); //function 
+        console.log(typeof person1); //function 
+        console.log(typeof person2); //function  
+        console.log(person instanceof Function) // true 
 
-      console.log(typeof obj1); //object 
-      console.log(typeof obj2); //object 
-      console.log(typeof obj3); //object
-      console.log(obj3 instanceof Object)  // true
-    ```
-    </br>
+        console.log(typeof obj1); //object 
+        console.log(typeof obj2); //object 
+        console.log(typeof obj3); //object
+        console.log(obj3 instanceof Object)  // true
+      ```
     通过以上实例我们知道 new Function 构建的都是函数对象(关于普通函数与new Function的区别请参考 <a href= "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">mozilla开发者</a>), 其余都是普通对象,关于Object与Function的区别会在这章节最后总结
 
 
