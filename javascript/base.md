@@ -410,7 +410,9 @@
         function Person(name, age) {
           this.name = name;
           this.age = age;
-          this.sayName = function() { console.log(this.name) } 
+        }
+        Person.prototype.sayName = function () {
+          console.log(this.name)
         }
         var person1 = new Person('zhansan', 29);
         var person2 = new Person('lisi', 29);
@@ -423,10 +425,12 @@
 
       通过上述三点我们针对2中的代码解释为<br/>
 
-      当创建Person函数时，JS会自动这个函数自动添加prototype属性，值是constructor属性指向关联的Person。当我们通过new关键字调用时，JS就会创建该构造函数的实例person1或person2，此时我们就可以通过prototype来存储要共享的属性和方法来实现继承<br/>
+      当创建`Person`函数时，JS会自动为该函数创建`prototype`属性，这个属性指向函数的原型对象，函数的原型对象（`Person.prototype`）会自动获取一个`constructor`属性指向关联的Person。当我们通过new关键字调用时，JS就会创建该构造函数的实例`person1`或`person2`，此时我们就可以通过`prototype`来存储要共享的属性和方法<br/>
 
-      下面我们通过图例来说明我们上面的文字
-  // 未完待续
+      下面我们通过图例来说明我们上面的文字</br>
+      <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/prototype.png'></image>
+      
+  
 
   
 ### ES6新增api方法
