@@ -420,7 +420,7 @@
 
   3. 这里我们清楚三个概念__proto__,prototype,constructor 
       - `__proto__`:在JavaScript权威指南中指出每个js对象一定对应一个原型对象，并从原型对象继承属性和方法。
-      - `prototype`: 当创建函数对象时，JS会自动这个函数添加prototype属性（**这里明确一下只有函数对象才会有此属性**）
+      - `prototype`: 当创建函数对象时，JS会自动为这个函数添加prototype属性（**这里明确一下只有函数对象才会有此属性**）
       - 每个原型都有一个 constructor 属性指向关联的构造函数。<br/>
 
       通过上述三点我们针对2中的代码解释为<br/>
@@ -429,21 +429,22 @@
 
       下面我们通过图例来说明我们上面的文字</br>
       <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/prototype.png'></image><br/>
-      通过上面的图例我们清晰的了解到<br/>
-      ```
-      person1.__proto__ === Person.prototype
-      Person.prototype.constructor == Person
-      ```
       这里我们注意虽然person1和person2这两个个实例都不包含属性和方法，但是我们可以通过查找对象属性来实现调用person1.sayName()<br/>
       此时我们来确定两个实例对象返回的原型指针是否一样(**Object.getPrototypeOf 此方法可以获取对象的原型**)
       ```
       Object.getPrototypeOf(person1) === Person.prototype (true)
       Object.getPrototypeOf(person1) === Person.prototype (true)
       ```
-      通过如上输出结果得知他们内部都有一个指向Person.prototype的指针也就是
+      通过如上输出结果得知他们内部都有一个指向Person.prototype的指针也就是</br>
       ```
       person1.__proto__ === Person.prototype
       person2.__proto__ === Person.prototype
+      ```
+
+       经过上面解释这么多我们得出的结果就是如下 <br/>
+      ```
+      person1.__proto__ === Person.prototype
+      Person.prototype.constructor == Person
       ```
 ****未完待续*****
 ### ES6新增api方法
