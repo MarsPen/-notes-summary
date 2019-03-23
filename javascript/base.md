@@ -434,11 +434,16 @@
       person1.__proto__ === Person.prototype
       Person.prototype.constructor == Person
       ```
-      这里我们注意虽然person1和person2这来那个实例都不包含属性和方法，但是我们可以通过查找对象属性来实现调用person1.sayName()<br/>
+      这里我们注意虽然person1和person2这两个个实例都不包含属性和方法，但是我们可以通过查找对象属性来实现调用person1.sayName()<br/>
       此时我们来确定两个实例对象返回的原型指针是否一样(**Object.getPrototypeOf 此方法可以获取对象的原型**)
       ```
       Object.getPrototypeOf(person1) === Person.prototype (true)
       Object.getPrototypeOf(person1) === Person.prototype (true)
+      ```
+      通过如上输出结果得知他们内部都有一个指向Person.prototype的指针也就是
+      ```
+      person1.__proto__ === Person.prototype
+      person2.__proto__ === Person.prototype
       ```
 ****未完待续*****
 ### ES6新增api方法
