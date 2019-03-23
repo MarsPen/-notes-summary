@@ -420,7 +420,7 @@
 
   3. 这里我们清楚三个概念__proto__,prototype,constructor 
       - `__proto__`:在JavaScript权威指南中指出每个js对象一定对应一个原型对象，并从原型对象继承属性和方法。
-      - `prototype`: 当创建函数对象时，JS会自动这个函数添加prototype属性（这里明确一下只有函数对象才会有此属性）
+      - `prototype`: 当创建函数对象时，JS会自动这个函数添加prototype属性（**这里明确一下只有函数对象才会有此属性**）
       - 每个原型都有一个 constructor 属性指向关联的构造函数。<br/>
 
       通过上述三点我们针对2中的代码解释为<br/>
