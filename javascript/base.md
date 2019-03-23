@@ -415,6 +415,19 @@
         var person1 = new Person('zhansan', 29);
         var person2 = new Person('lisi', 29);
       ```
+
+  3. 这里我们清楚三个概念__proto__,prototype,constructor 
+      - _proto__:在JavaScript权威指南中指出每个js对象一定对应一个原型对象，并从原型对象继承属性和方法。
+      - prototype: 当创建函数对象时，JS会自动这个函数添加prototype属性（这里明确一下只有函数对象才会有此属性）
+      - 每个原型都有一个 constructor 属性指向关联的构造函数。<br/>
+      通过上述三点我们针对2中的代码解释为   <br/>   
+      当创建Person函数时，JS会自动这个函数自动添加prototype属性，值是constructor属性指向关联的Person。当我们通过new关键字调用时，JS就会帮你创建该构造函数的实例person1或person2，此时我们就可以通过prototype来存储要共享的属性和方法来实现继承<br/>
+      下面我们图例来说明我们上面的文字
+      
+      
+
+
+
   // 未完待续
 
   
