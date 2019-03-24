@@ -501,9 +501,16 @@
      此时我们同样通过图例的形式将上面整合起来。来看看整个链路是什么样子。<br/>
      <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/prototype.png'></image><br/>
      通过以上图例我们可以观察到其实js原型链就是由相互关联的链条组成，查找属性或者方法的过程就是图中红色链条的过程，如果找到则终止否则直到返回null<br/>
-     `person1`--> `person1.__proto__` -->`Person.prototype` --> `Person.prototype.__proto__` --> `Object.prototype` --> `Object.prototype.__proto__` --> `null`
-    
-****未完待续*****
-### ES6新增api方法
-### 操作常规数据ES5与ES6对比
+     `person1`--> `person1.__proto__` -->`Person.prototype` --> `Person.prototype.__proto__` --> `Object.prototype` --> `Object.prototype.__proto__` --> `null`<br/>
+
+      最后我们来看一下Object和Function的关系，上面已经提到`Object.prototype === Function.prototype.__proto__`，那么
+      - `Function.__proto__`--> `Function.prototype` -->`Function.prototype.__proto__` --> `Object.prototype` --> `Object.prototype.__proto__` --> 'null';简写为`Function.__proto__.__proto__.__proto__` ==> `null`
+
+      - `Object.__proto__` --> `Funtion.prototype` --> `Function.prototype.__proto__`-->`Object.prototype` -->`Object.prototype.__proto__`--> 'null';简写为`Object.__proto__.__proto__.__proto__` ==> `null`
+      通过上面我们可以得出结论<br/>
+      - 只有函数对象才有prototype，但是每个对象（普通对象和函数对象）都拥有__proto__属性
+      - 原型对象都有一个constructor属性指向它们的构造函数（也就是自己）
+      - 原生对象既是对象，也是构造函数
+      - 实例对象的隐式原型始终指向构造函数的显式原型（`person1.__proto__` --> `Person.prototype`）
+      - 原型链的查找过程链接依赖__proto__指针逐级向上，并且原型链的尽头始终为null
 
