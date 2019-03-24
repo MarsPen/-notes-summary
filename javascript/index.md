@@ -3,7 +3,6 @@
 <image src="https://github.com/MarsPen/-notes-summary/blob/master/images/javaScript.png" width="550"></image>
 
 ## JS基础系列
-<hr>
 * [JS基础系列之-基本数据类型][1]
 * [JS基础系列之-变量提升与函数提升][2]
 * [JS基础系列之-闭包][3]
@@ -13,14 +12,12 @@
 * [JS基础系列之-API操作数组或对象方法][7] *未完成*
 
 ## JS高级系列
-<hr>
 * [JS高级系列之-函数式编程][8] *未完成*
 * [JS高级系列之-面向切面编程][9] *未完成*
 * [JS高级系列之-工具库源码分析][10] *未完成*
 <hr>
 
 ## JS专题系列
-<hr>
 * [JS专题系列之-call和apply][11] *未完成*
 * [JS专题系列之-bind][12] *未完成*
 * [JS专题系列之-new][13] *未完成*
