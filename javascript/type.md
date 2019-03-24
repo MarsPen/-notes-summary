@@ -1,4 +1,4 @@
-### 基本数据类型与引用数据类型
+## 基本数据类型与引用数据类型
 1. **基本数据类型**
   - 概念：基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里
   - 种类：Undefined、Null、Boolean、String、Number、Symbol（es6） 
@@ -119,9 +119,9 @@
     a instanceof RegExp ; // true    
     ```
 
-### 下一篇文章
+## 下一篇文章
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/voao.md'>JS基础系列之-变量提升与函数提升</a>
 
-### JS基础列系列目录
+## JS基础列系列目录
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/'>JS基础系列</a>
 
