@@ -72,4 +72,4 @@
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/closure.md'>JS基础系列之-闭包</a>
 
 ## JS基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/'>JS基础系列</a>
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>

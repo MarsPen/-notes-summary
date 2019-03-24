@@ -20,7 +20,7 @@
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/api.md'>JS基础系列之-操作数组或对象的API方法集合</a>
 
 ## JS基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/'>JS基础系列</a>
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>
 
 
 
