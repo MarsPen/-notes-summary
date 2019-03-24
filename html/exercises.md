@@ -57,7 +57,7 @@
 ### 跨域
   1. 概念：受到浏览器同源策略的影响，要操作其他源下面的脚本，就需要跨域。
 ### Ajax跨域的解决方案
-  1. JSONP：网页添加一个`<script>`元素，向服务器请求JSON数据。服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。
+  1. JSONP：网页添加一个`<script>`元素，向服务器请求jsON数据。服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。
   - 缺点只支持get请求
   - 优点简单方便，易理解，兼容性良好
   - 如下示例代码
@@ -89,7 +89,7 @@
     $data = [
       'data'=>'123',
     ];
-    $json_data = json_encode(array('code'=>'200','msg'=>'请求成功','data' => $data),JSON_UNESCAPED_UNICODE);
+    $json_data = json_encode(array('code'=>'200','msg'=>'请求成功','data' => $data),jsON_UNESCAPED_UNICODE);
     //输出jsonp格式的数据
     echo $jsoncallback ."(" . $json_data . ")";
     ?>

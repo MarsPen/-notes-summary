@@ -201,7 +201,7 @@
           - 全局执行环境
           - 局部执行环境
       - 执行过程          
-          - 在全局代码执行前, JS引擎就会创建一个栈来存储管理所有的执行上下文对象
+          - 在全局代码执行前, js引擎就会创建一个栈来存储管理所有的执行上下文对象
           - 在全局执行环境(window)确定后, 将其push到栈中
           - 在函数执行环境创建后, 将其push到栈中
           - 在当前函数执行完后,将栈顶的对象pop
@@ -420,12 +420,12 @@
 
   3. **这里我们清楚三个概念__proto__,prototype,constructor**
       - `__proto__`:在JavaScript权威指南中指出每个js对象一定对应一个原型对象，并从原型对象继承属性和方法。
-      - `prototype`: 当创建函数对象时，JS会自动为这个函数添加prototype属性（**这里明确一下只有函数对象才会有此属性**）
+      - `prototype`: 当创建函数对象时，js会自动为这个函数添加prototype属性（**这里明确一下只有函数对象才会有此属性**）
       - 每个原型都有一个 constructor 属性指向关联的构造函数。<br/>
 
       通过上述三点我们针对2中的代码解释为<br/>
 
-      当创建`Person`函数时，JS会自动为该函数创建`prototype`属性，这个属性指向函数的原型对象，函数的原型对象（`Person.prototype`）会自动获取一个`constructor`属性指向关联的Person。当我们通过new关键字调用时，JS就会创建该构造函数的实例`person1`或`person2`，此时我们就可以通过`prototype`来存储要共享的属性和方法<br/>
+      当创建`Person`函数时，js会自动为该函数创建`prototype`属性，这个属性指向函数的原型对象，函数的原型对象（`Person.prototype`）会自动获取一个`constructor`属性指向关联的Person。当我们通过new关键字调用时，js就会创建该构造函数的实例`person1`或`person2`，此时我们就可以通过`prototype`来存储要共享的属性和方法<br/>
 
       下面我们通过图例来说明我们上面的文字</br>
       <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/Person.png'></image><br/>
