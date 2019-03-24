@@ -497,12 +497,12 @@
      <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/Function.png'></image><br/>
      通过以上图例我们得出结论`Object.prototype === Function.prototype.__proto__`
 
-  6. **接下来我们进行最后一步将上面Function，Object，Person链接起来，解释解释一下原型，原型链**<br/>
+  6. **接下来我们进行最后一步将上面Function，Object，Person链接起来**<br/>
      此时我们同样通过图例的形式将上面整合起来。来看看整个链路是什么样子。<br/>
      <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/prototype.png'></image><br/>
+     通过以上图例我们可以观察到其实js原型链就是由相互关联的链条组成，查找属性或者方法的过程就是图中红色链条的过程，如果查找到则终止查找否则直到查找返回null<br/>
+     person1--> person1.__proto__ --> Person.prototype --> Person.prototype.__proto__ --> Object.prototype --> Object.prototype.__proto__ --> null
     
-
-   
 ****未完待续*****
 ### ES6新增api方法
 ### 操作常规数据ES5与ES6对比
