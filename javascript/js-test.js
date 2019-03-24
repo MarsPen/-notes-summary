@@ -47,6 +47,27 @@
   show(fn);
 
 
+  function Object(name,age){
+    this.name  = name
+    this.age = age
+  }
+  Object.prototype.sayName = function () {
+    console.log(this.name)
+  }
+
+  function Person(name,age){
+    this.name  = name
+    this.age = age
+  }
+  Person.prototype.sayName = function () {
+    console.log(this.name)
+  }
+  var p = new Person('zhangsan', 20)
+  var o = new Object('zhangsan', 20)
+
+  Person.prototype.__proto__ === Object.prototype
+
+
 
 
 

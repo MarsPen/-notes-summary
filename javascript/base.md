@@ -448,8 +448,9 @@
       ```
   4. **我们清楚了简单的构造函数的__proto__,prototype,constructor三者之间的关系，那么接下来我们了解一下Object，清楚以下概念**
      - js几乎所有对象都是Object; 典型对象继承属性（包括方法）
+     - 所有引用类型的原型链上必然存在Object的原型
      - new Object 出来的实例是普通对象我们前面说过只有函数对象才有prototype，
-     - Object 实际是function Object跟FUNCTION 类似
+     - Object 实际是function Object跟function Function 类似
      - Object.prototype是Object构造函数的属性。它也是原型链的终结。<br/>
      ```
      function Object (name,age) {
@@ -471,7 +472,34 @@
      - null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。
      - null表示变量未指向任何对象，undefined表示变量被声明但是没有被赋值
 
-  5. **前面我们了解到Object和构造函数的`__proto__,prototype,constructor`，那么接下来我们继续深入FUNCTION**
+  5. **前面我们了解到Object和构造函数的`__proto__,prototype,constructor`，那么接下来我们继续深入Function**
+    - 在js中每个函数实际上都是一个Function对象。
+    - 使用Function构造器生成的Function对象是在函数创建时解析的,而其他函数方式是跟其他代码一起解析，所以较为低效
+    - 全局的Function对象没有自己的属性和方法，通过Function.prototype上继承部分属性和方法。
+    - 我们说js中万物皆对象，Function也也是对象，只不过是函数对象所以**Function.prototype.__proto__**指针指向Object.prototype
+    - **Object.__proto__** 指针指向Function.prototype()
+
+    **Function创建的函数一般在全局作用域中被创建，但并不会像其他函数一样产生闭包，所以只能自己内部和全局的变量**<br/>
+      
+    ```
+    function Function (name,age){
+      this.name  = name
+      this.age = age
+    }
+    Function.prototype.sayName = function () {
+      console.log(this.name)
+    }
+    f = new Function('zhangsan', 20)
+    f.sayName ()
+    
+    ```
+    接下来我们通样以图例的形式来说明Function的__proto__,prototype,constructor<br/>
+    <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/Function.png'></image><br/>
+
+  
+    
+
+   
 
 
 
