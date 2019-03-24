@@ -8,8 +8,8 @@
 * [JS基础系列之-闭包][3]
 * [JS基础系列之-this][4]
 * [JS基础系列之-原型及原型链][5]
-* [JS基础系列之-继承][6] *未完成*
-* [JS基础系列之-API操作数组或对象方法][7] *未完成*
+* [JS基础系列之-继承][6] 
+* [JS基础系列之-API操作数组或对象方法][7]
 
 ## JS高级系列
 * [JS高级系列之-函数式编程][8] *未完成*
@@ -29,11 +29,10 @@
 
 
 
-
-
-
-[1]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/base.md
-[2]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/oop.md
-[3]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/function.md
-[4]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/aop.md
-[5]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/unit.md
+[1]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/type.md
+[2]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/voao.md
+[3]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/closure.md
+[4]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/this.md
+[5]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/prototype.md
+[6]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/inheritance.md
+[7]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/api.md
