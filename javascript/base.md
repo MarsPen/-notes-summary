@@ -446,6 +446,26 @@
       person1.__proto__ === Person.prototype
       Person.prototype.constructor == Person
       ```
+  4. 我们清楚了简单的构造函数的__proto__,prototype,constructor三者之间的关系，那么接下来我们了解一下Object，清楚以下概念
+     - js几乎所有对象都是Object; 典型对象继承属性（包括方法）
+     - new Object 出来的实例是普通对象我们前面说过只有函数对象才有prototype，
+     - Object 实际是function Object跟FUNCTION 类似
+     - Object.prototype是Object构造函数的属性。它也是原型链的终结。<br/>
+     ```
+     function Object (name,age) {
+       this.name = name;
+       this.age = age;
+     }
+     Object.prototype.sayName = function () {
+       console.log(this.name)
+     }
+     object = new Object('zhangsan',20)
+     object.sayName()
+     ```
+     接下来我们通样以图例的形式来说明Object的__proto__,prototype,constructor</br>
+      <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/Object.png'></image><br/>
+
+
 ****未完待续*****
 ### ES6新增api方法
 ### 操作常规数据ES5与ES6对比
