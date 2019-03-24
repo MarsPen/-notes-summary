@@ -119,3 +119,11 @@
     a instanceof RegExp ; // true    
     ```
 
+### 下一篇
+* [JS基础系列之-变量提升与函数提升]
+https://github.com/MarsPen/-notes-summary/blob/master/javascript/voao.md
+
+### JS基础列系列目录
+* [JS基础系列]
+https://github.com/MarsPen/-notes-summary/blob/master/javascript/
+
