@@ -76,6 +76,9 @@
     animation-play-state(动画是否正在运行或暂停):paused|running;
    ```
  
-### 四.简单动画实现（未完待续...）
+### 四.css动画库以及动画工具
+   - matrix3d(http://ds-overdesign.com/transform/matrix3d.html)
+   - matrix(http://meyerweb.com/eric/tools/matrix)
+   - tools(http://www.f2e.name/case/css3/tools.html)
 
   
