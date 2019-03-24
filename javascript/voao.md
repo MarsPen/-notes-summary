@@ -1,4 +1,4 @@
-### 变量提升与函数提升
+## 变量提升与函数提升
   1. **js代码虽然是逐行向下执行的，但执行的时候分为两个步骤**
      - 编译阶段（词法解释/预解释）
      - 执行
@@ -67,3 +67,9 @@
     }
     test();
    ```
+
+## 下一篇文章
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/closure.md'>JS基础系列之-闭包</a>
+
+## JS基础列系列目录
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/'>JS基础系列</a>

@@ -61,3 +61,9 @@
       ```
   7. **es6中箭头函数this指向**
     - 取决于外层（函数或全局）作用域。
+
+## 下一篇文章
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/prototype.md'>JS基础系列之-原型及原型链</a>
+
+## JS基础列系列目录
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/'>JS基础系列</a>

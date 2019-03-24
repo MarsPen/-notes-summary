@@ -1,4 +1,4 @@
-### 原型及原型链
+## 原型及原型链
   1. **普通对象和函数对象**
       ```
         // 普通对象
@@ -143,3 +143,9 @@
       - 原生对象既是对象，也是构造函数
       - 实例对象的隐式原型始终指向构造函数的显式原型（`person1.__proto__` > `Person.prototype`）
       - 原型链的查找过程链接依赖__proto__指针逐级向上，并且原型链的尽头始终为null
+      
+## 下一篇文章
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/inheritance.md'>JS基础系列之-继承</a>
+
+## JS基础列系列目录
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/'>JS基础系列</a>

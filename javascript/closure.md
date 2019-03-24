@@ -1,4 +1,4 @@
-### 闭包
+## 闭包
   说起闭包那么首先先来了解一下js执行环境（execution context）、作用域以及作用域链（scope chain）
    1. **执行环境定义了变量或者函数有权访问的其他数据，决定了各自的行为**
       - 组成部分
@@ -112,3 +112,9 @@
      - 缺点：
        * 由于变量对象一直在内存中引用不被释放，导致内存过高。
        * 由于多个函数共享一个父级，当父级有变量更改时，所有子函数受影响
+
+## 下一篇文章
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/this.md'>JS基础系列之-this</a>
+
+## JS基础列系列目录
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/'>JS基础系列</a>
