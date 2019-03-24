@@ -1,4 +1,4 @@
-# 前端技术学习总结，记录点滴记录成长。
+## 前端技术学习总结，记录点滴记录成长。
 
 * [第一部分html系列][1]
 * [第二部分css系列][2]
@@ -20,5 +20,11 @@
 [3]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/node/index.md
 [5]: https://github.com/MarsPen/notes-summary/blob/master/typescript/index.md
+[6]: https://github.com/MarsPen/notes-summary/
+[7]: https://github.com/MarsPen/notes-summary/
+[8]: https://github.com/MarsPen/notes-summary/
+[9]: https://github.com/MarsPen/notes-summary/ 
 [10]: https://github.com/MarsPen/-notes-summary/blob/master/linx/index.md
-
+[11]: https://github.com/MarsPen/notes-summary/ 
+[12]: https://github.com/MarsPen/notes-summary/
+[13]: https://github.com/MarsPen/notes-summary/
