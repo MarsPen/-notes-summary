@@ -463,13 +463,13 @@
      object.sayName()
      ```
      接下来我们通样以图例的形式来说明Object的__proto__,prototype,constructor<br/>
-      <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/Object.png'></image><br/>
-    通过以上图例我们得出结论`Object.prototype.__proto__ === null`
+     <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/Object.png'></image><br/>
+     通过以上图例我们得出结论`Object.prototype.__proto__ === null`
 
-    这里面扩展一下null和undefined区别<br/>
-    - null === undefined为false，null == undefined为true 说明只是值相等
-    - null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。
-    - null表示变量未指向任何对象，undefined表示变量被声明但是没有被赋值
+     这里面扩展一下null和undefined区别<br/>
+     - null === undefined为false，null == undefined为true 说明只是值相等
+     - null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。
+     - null表示变量未指向任何对象，undefined表示变量被声明但是没有被赋值
 
   5. 前面我们了解到Object和构造函数的`__proto__,prototype,constructor`，那么接下来我们继续深入FUNCTION
 
