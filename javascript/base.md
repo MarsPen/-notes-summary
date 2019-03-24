@@ -462,10 +462,9 @@
      object = new Object('zhangsan',20)
      object.sayName()
      ```
-     接下来我们通样以图例的形式来说明Object的__proto__,prototype,constructor</br>
+     接下来我们通样以图例的形式来说明Object的__proto__,prototype,constructor<br/>
       <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/Object.png'></image><br/>
-    
-    通过以上图例我们得出结论**Object.prototype.__proto__ === null** </br>
+    通过以上图例我们得出结论**Object.prototype.__proto__ === null** <br/>
 
     这里面扩展一下null和undefined区别</br>
     - **null === undefined**为false，**null == undefined**为true 说明只是值相等
