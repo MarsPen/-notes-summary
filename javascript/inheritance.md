@@ -192,7 +192,7 @@
   ```
 
   优点：<br/>
-    在语法糖下面代码量明显减少，和ES5区别ES5继承首先是在子类中创建自己的this指向，最后将方法添加到this中<br/>
+    在语法糖下代码量明显减少，和ES6区别ES5继承首先是在子类中创建自己的this指向，最后将方法添加到this中<br/>
     ```
     Child.prototype=new Parent() || Parent.apply(this) || Parent.call(this)
     ```
