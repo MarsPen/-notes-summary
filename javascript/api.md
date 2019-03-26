@@ -69,7 +69,7 @@ console.log(arrObj); //[1,5,4]
 arrObj.reverse(); //[4,5,1]
 ```
 
-**sort()-该方法用于对数组的元素进行排序。**
+**sort()-该方法用于对数组的元素进行排序。**<br/>
 注意：该方法是按照字符编码顺序进行排序，如果想要实现业务逻辑排序需要自定义比较函数<br/>
 ```
 var arrObjSort = [1,5,4,2,3];
@@ -136,7 +136,7 @@ __upDataCollection(arr,8); //[1, 2, 3, 4, 5, 6, 7, 8]
 __upDataCollection(arr,2); //'元素中存在相同的值'
 ```
 
-**forEach()- 该方法按升序为数组中含有效值的每一项执行一次callback 函数（遍历数组）**
+**forEach()- 该方法按升序为数组中含有效值的每一项执行一次callback 函数（遍历数组）** <br/>
 `forEach()` 为每个数组元素执行callback函数；不像`map()` 或者`reduce()` ，它总是返回 `undefined`值，也没有办法终止或跳出正在运行循环的`forEach`。如果常规的遍历想要检测条件返回bool , 并且可以终止循环，可使用`Array.some,Ayyay.every`.或者es6新方法`Array.find()`等等
 ```
 var arrayObj = [1,2,3,,5];
@@ -224,7 +224,7 @@ console.log(flag);//false
 
 ## ECMAScript6:
 
-**扩展运算符(...)-该运算符将一个数组转为用逗号分隔的参数序列。**
+**扩展运算符(...)-该运算符将一个数组转为用逗号分隔的参数序列。**<br/>
 扩展运算符即可以复制，合并数组，操作分割字符串与结构赋值结合还可以当函数的形参<br/>
 ```
 console.log(...[1,2,3,4,5]);//1 2 3 4 5
@@ -304,7 +304,7 @@ Array.from('foo');//['f','o','o']
 ```
 
 
-**of()- 该方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。**
+**of()- 该方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。**<br/>
 Array.of() 和 Array 构造函数之间的区别在于处理整数参数：Array.of(7) 创建一个具有单个元素 7 的数组，而 Array(7) 创建一个包含 7 个 undefined 元素的数组。<br/>
 ```
 Array.of(7);       // [7] 
@@ -315,7 +315,7 @@ Array(1, 2, 3);    // [1, 2, 3]
 ```
 
 
-**copyWithin()-该方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，而不修改其大小。**
+**copyWithin()-该方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，而不修改其大小。**<br/>
 arr.copyWithin(target)<br/>
 
 arr.copyWithin(target, start)<br/>
@@ -341,7 +341,7 @@ arr.copyWithin(目标索引, [源开始索引], [结束源索引])<br/>
 ```
 
 
-**find()-该方法返回数组中满足提供的callback的第一个元素的值。否则返回 undefined。**
+**find()-该方法返回数组中满足提供的callback的第一个元素的值。否则返回 undefined。**<br/>
 如果你需要找到一个元素的位置或者一个元素是否存在于数组中，使用`Array.prototype.indexOf()` 或 `Array.prototype.includes()`。
 
 如果你需要找到元素的索引，而不是其值`Array.prototype.findIndex() `;
@@ -352,7 +352,7 @@ console.log(backValue); //60
 ```
 
 
-**fill()-该方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。**
+**fill()-该方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。**<br/>
 语法：<br/>
 arr.fill(value) <br/>
 arr.fill(value, start) <br/>
@@ -385,7 +385,7 @@ console.log(iterator.next().value);
 // [2, "c"]
 ```
 
-**includes()-该方法用来判断一个数组是否包含一个指定的值，如果是，酌情返回 true或 false。**
+**includes()-该方法用来判断一个数组是否包含一个指定的值，如果是，酌情返回 true或 false。**<br/>
 语法：<br/>
 arr.includes(searchElement)<br/>
 arr.includes(searchElement, fromIndex)<br/>
