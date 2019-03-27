@@ -1,6 +1,7 @@
 ## linux基础系列之-常见指令
 
-## 常用指令
+## 常用指令<br/>
+作为一名合格的前端开发工程师，掌握一些基础的linux命令是有必要的。以便于我们在服务器上操作。如果有精力的话强烈推荐《鸟哥的Linux私房菜》写的非常详细，易懂。
 
 **ls显示文件或目录**<br/>
 ```
@@ -43,57 +44,75 @@ cat -n temp  //标示文件的行数
 
 **cp拷贝**
 ```
-cp temp temp1  //复制temp文件
+cp temp newtemp  //复制temp文件
 cp temp/* .  //复制temp目录下的所有文件到当前工作目录 
 cp -a /temp/dir1 . //复制/temp/dir1目录到当前工作目录 
-cp -a temp temp1 //复制temp目录 
+cp -a temp newtemp //复制temp目录 
 ```
 
 **mv移动或重命名**
 ```
+mv temp newtemp //重命名/移动一个目录 
 ```
 
 **rm删除文件**
 ```
+rm -f file  //删除file文件' 
+rmdir dir1  //删除dir1的目录' 
+rm -rf dir1 //递归删除dir1目录所有的内容
+rm -rf dir1 dir2 //同时删除两个目录及它们的内容 
 ```
 
-**find在文件系统中搜索某文件**
+**find在文件系统中查找某文件**
 ```
+find / -name file1  //从根文件系统查找文件和目录 
+find / -user renbo  //查找属于用户 'renbo' 的文件和目录 
+find /home/renbo -name \*.bin  // 查找带home/renbo目录中有.bin结尾的文件 
+find / -name \*.rpm -exec chmod 755 '{}' \ //查找以.rpm结尾的文件并定义其权限 
+find / -xdev -name \*.rpm  //查找所有以.rpm结尾的文件
 ```
 
 **wc统计文本中行数、字数、字符数**
 ```
+wc gitcommit.sh  //3   13  73 gitcommit.sh
 ```
 
 **grep在文本文件中查找某个字符串**
 ```
-```
-
-**rmdir删除空目录**
-```
+grep Aug /var/log/messages  //在文件 '/var/log/messages'中查找关键词"Aug" 
+grep ^Aug /var/log/messages  //在文件 '/var/log/messages'中查找以"Aug"开始的词汇 
+grep [0-9] /var/log/messages //选择 '/var/log/messages' 文件中所有包含数字的行 
+grep Aug -R /var/log/*  //在目录 '/var/log' 及随后的目录中搜索字符串"Aug" 
 ```
 
 **tree树形结构显示目录，需要安装tree包**
 ```
+tree  //显示文件和目录由根目录开始的树形结构 
 ```
 
 **pwd显示当前目录**
 ```
+pwd 显示当前路径
 ```
 
 **ln创建链接文件**
 ```
+ln -s file1 lnk1  //创建一个指向文件或目录的软链接 
+ln file1 lnk1  //创建一个指向文件或目录的物理链接 
 ```
 
 **more、less  分页显示文本文件内容**
 ```
+more file1  //查看一个长文件的内容 
+less file1  //类似于 'more' 命令，但是它允许在文件中和正向操作一样的反向操作 
 ```
 
 **head、tail**
 ```
+head -2 file1 //查看一个文件的前两行 
+tail -2 file1 //查看一个文件的最后两行 
+tail -f /var/log/messages //实时查看被添加到一个文件中的内容 
 ```
-
-**ctrl+alt+F1  命令行全屏模式**
 
 
 
