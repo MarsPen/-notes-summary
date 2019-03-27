@@ -24,7 +24,7 @@
 [7]: https://github.com/MarsPen/notes-summary/
 [8]: https://github.com/MarsPen/notes-summary/
 [9]: https://github.com/MarsPen/notes-summary/ 
-[10]: https://github.com/MarsPen/-notes-summary/blob/master/linx/index.md
+[10]: https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md
 [11]: https://github.com/MarsPen/notes-summary/ 
 [12]: https://github.com/MarsPen/notes-summary/
 [13]: https://github.com/MarsPen/notes-summary/

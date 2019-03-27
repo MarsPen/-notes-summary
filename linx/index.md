@@ -29,20 +29,20 @@
 * [linux专题系列之-目录结构][16] *未完成*
 * [linux专题系列之-配置git多个ssh][17]
 
-[1]: https://github.com/MarsPen/-notes-summary/blob/master/linx/instructions.md
-[2]: https://github.com/MarsPen/-notes-summary/blob/master/linx/system.md
-[3]: https://github.com/MarsPen/-notes-summary/blob/master/linx/compression.md
-[4]: https://github.com/MarsPen/-notes-summary/blob/master/linx/pipe.md
-[5]: https://github.com/MarsPen/-notes-summary/blob/master/linx/package.md
-[6]: https://github.com/MarsPen/-notes-summary/blob/master/linx/backup.md
-[7]: https://github.com/MarsPen/-notes-summary/blob/master/linx/shutdown.md
-[8]: https://github.com/MarsPen/-notes-summary/blob/master/linx/user.md
-[9]: https://github.com/MarsPen/-notes-summary/blob/master/linx/fileauth.md
-[10]: https://github.com/MarsPen/-notes-summary/blob/master/linx/vim.md
-[11]: https://github.com/MarsPen/-notes-summary/blob/master/linx/bash.md
-[12]: https://github.com/MarsPen/-notes-summary/blob/master/linx/variable.md
-[13]: https://github.com/MarsPen/-notes-summary/blob/master/linx/alias.md
-[14]: https://github.com/MarsPen/-notes-summary/blob/master/linx/operating.md
-[15]: https://github.com/MarsPen/-notes-summary/blob/master/linx/redirect.md
-[16]: https://github.com/MarsPen/-notes-summary/blob/master/linx/directory.md
-[17]: https://github.com/MarsPen/-notes-summary/blob/master/linx/git.md
+[1]: https://github.com/MarsPen/-notes-summary/blob/master/linux/instructions.md
+[2]: https://github.com/MarsPen/-notes-summary/blob/master/linux/system.md
+[3]: https://github.com/MarsPen/-notes-summary/blob/master/linux/compression.md
+[4]: https://github.com/MarsPen/-notes-summary/blob/master/linux/pipe.md
+[5]: https://github.com/MarsPen/-notes-summary/blob/master/linux/package.md
+[6]: https://github.com/MarsPen/-notes-summary/blob/master/linux/backup.md
+[7]: https://github.com/MarsPen/-notes-summary/blob/master/linux/shutdown.md
+[8]: https://github.com/MarsPen/-notes-summary/blob/master/linux/user.md
+[9]: https://github.com/MarsPen/-notes-summary/blob/master/linux/fileauth.md
+[10]: https://github.com/MarsPen/-notes-summary/blob/master/linux/vim.md
+[11]: https://github.com/MarsPen/-notes-summary/blob/master/linux/bash.md
+[12]: https://github.com/MarsPen/-notes-summary/blob/master/linux/variable.md
+[13]: https://github.com/MarsPen/-notes-summary/blob/master/linux/alias.md
+[14]: https://github.com/MarsPen/-notes-summary/blob/master/linux/operating.md
+[15]: https://github.com/MarsPen/-notes-summary/blob/master/linux/redirect.md
+[16]: https://github.com/MarsPen/-notes-summary/blob/master/linux/directory.md
+[17]: https://github.com/MarsPen/-notes-summary/blob/master/linux/git.md
