@@ -1,5 +1,7 @@
 # 第十部分linux
- 
+
+ 作为一名合格的前端开发工程师，掌握一些基础的linux命令是有必要的。以便于我们在服务器上操作。如果有精力的话强烈推荐《鸟哥的Linux私房菜》写的非常详细，易懂。<br/>
+
  <image src="https://github.com/MarsPen/-notes-summary/blob/master/images/linux.png" width="550"></image>
 
 
