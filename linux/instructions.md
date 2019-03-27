@@ -112,7 +112,11 @@ tail -f /var/log/messages //实时查看被添加到一个文件中的内容
 ```
 
 
+## 下一篇文章
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/system.md'>linux基础系列之-系统管理系列</a>
 
+## linux基础命令系列目录
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md'>linux基础命令系列</a>
 
 
 
