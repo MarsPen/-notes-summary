@@ -14,11 +14,11 @@
 * [linux基础系列之-备份][5]
 * [linux基础系列之-关机/重启机器][6]
 * [linux基础系列之-用户及用户组管理][7]
-* [linux基础系列之-文件权限管理][8] *未完成*
+* [linux基础系列之-文件权限管理][8]
 
 ## shell系列
 
-* [shell系列之-vim使用][9] *未完成*
+* [shell系列之-vim使用][9]
 * [shell系列之-bash shell的功能][10] *未完成*
 * [shell系列之-变量功能][11] *未完成*
 * [shell系列之-命令别名与历史命令][12] *未完成*
@@ -27,8 +27,7 @@
 
 
 ## linux专题系列
-* [linux专题系列之-目录结构][15] *未完成*
-* [linux专题系列之-配置git多个ssh][16]
+* [linux专题系列之-配置git多个ssh][15]
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/linux/instructions.md
 [2]: https://github.com/MarsPen/-notes-summary/blob/master/linux/system.md
@@ -44,5 +43,4 @@
 [12]: https://github.com/MarsPen/-notes-summary/blob/master/linux/alias.md
 [13]: https://github.com/MarsPen/-notes-summary/blob/master/linux/operating.md
 [14]: https://github.com/MarsPen/-notes-summary/blob/master/linux/redirect.md
-[15]: https://github.com/MarsPen/-notes-summary/blob/master/linux/directory.md
-[16]: https://github.com/MarsPen/-notes-summary/blob/master/linux/git.md
+[15]: https://github.com/MarsPen/-notes-summary/blob/master/linux/git.md
