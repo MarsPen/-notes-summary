@@ -19,7 +19,6 @@
 [2]: https://github.com/MarsPen/-notes-summary/blob/master/css/index.md
 [3]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/node/index.md
-[5]: https://github.com/MarsPen/notes-summary/blob/master/typescript/index.md
 [10]: https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md
 [11]: https://github.com/MarsPen/-notes-summary/blob/master/php/index.md 
 
