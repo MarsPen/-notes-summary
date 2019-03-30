@@ -4,15 +4,15 @@
 * [第二部分css系列][2]
 * [第三部分javascript系列][3]
 * [第四部分node系列][4] *进行中...*
-* [第五部分typescript系列][5] *未完成*
-* [第六部分前端常见框架系列][6] *未完成*
-* [第七部分数据结构与算法系列][7] *未完成*
-* [第八部分前端性能优化系列][8] *未完成*
-* [第九部分设计模式系列][9] *未完成*
+* [第五部分typescript系列][5] 
+* [第六部分前端常见框架系列][6] 
+* [第七部分数据结构与算法系列][7] 
+* [第八部分前端性能优化系列][8]
+* [第九部分设计模式系列][9]
 * [第十部分linux系列][10]
-* [第十一部分php基础系列][11] *未完成*
-* [第十二部分mySql基础系列][12] *未完成*
-* [第十三部分服务器基础系列][13] *未完成*
+* [第十一部分php基础系列][11] *进行中...*
+* [第十二部分mySql基础系列][12]
+* [第十三部分服务器基础系列][13]
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/html/exercises.md
@@ -20,11 +20,6 @@
 [3]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/node/index.md
 [5]: https://github.com/MarsPen/notes-summary/blob/master/typescript/index.md
-[6]: https://github.com/MarsPen/notes-summary/
-[7]: https://github.com/MarsPen/notes-summary/
-[8]: https://github.com/MarsPen/notes-summary/
-[9]: https://github.com/MarsPen/notes-summary/ 
 [10]: https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md
-[11]: https://github.com/MarsPen/notes-summary/ 
-[12]: https://github.com/MarsPen/notes-summary/
-[13]: https://github.com/MarsPen/notes-summary/
+[11]: https://github.com/MarsPen/-notes-summary/blob/master/php/index.md 
+
