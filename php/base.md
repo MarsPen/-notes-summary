@@ -109,4 +109,4 @@ String（字符串）, Integer（整型）, Float（浮点型）, Boolean（布�
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/php/method.md'>php基础系列之-常见操作方法</a>
 
 ## linux基础命令系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/php/index.md'>linux基础命令系列</a>
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/php/index.md'>php基础系列</a>
