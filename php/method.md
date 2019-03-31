@@ -125,14 +125,20 @@ print_r(array_keys($people)); // name age
 ```
 
 **时间内置函数**<br/>
-(1) date(format[,timestamp])
-(2) mktime(hour,minute,second,month,day,year) 省略的参数将以本地日期和时间代替。
-(3) getdate([timestamp]) 
+```
+date(format[,timestamp])
+
+mktime(hour,minute,second,month,day,year) //省略的参数将以本地日期和时间代替
+
+getdate([timestamp]) 
+``` 
 
 **URL处理内置函数**<br/>
-(1) urlencode(str) 返回值字符串中所有的非字母和数字字符变成一个百分号(%) 和一个两位的十六进制数，空格被转换成+,-、_和.不做任何转换
-(2) urldecode(str) 
+```
+urlencode(str) 返回值字符串中所有的非字母和数字字符变成一个百分号(%) 和一个两位的十六进制数，空格被转换成+,-、_和.不做任何转换
 
+urldecode(str) 
+```
 
 
 其实还有好多比如字符串的内置函数、文件操作的内置函数、数据库连接的内置函数等等。其实PHP方法还是比JS多用到的时候查看API即可...<br/>
