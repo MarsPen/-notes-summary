@@ -413,19 +413,69 @@ $grape->eat('紫');
 
 它们的区别：<br/>
 
-1.抽象类继承用extends,接口继承用implements<br/>
+抽象类继承用extends,接口继承用implements<br/>
 
-2.抽象类能多重继承,接口多重继承用","隔开<br/>
+抽象类能多重继承,接口多重继承用","隔开<br/>
 
-3.抽象类中的方法不必全部重载,接口方法必须声明或者重载<br/>
+抽象类中的方法不必全部重载,接口方法必须声明或者重载<br/>
 
-4.抽象类不必只包含抽象方法,可以定义完整的方法,接口不能包含任何完整定义方法<br/>
+抽象类不必只包含抽象方法,可以定义完整的方法,接口不能包含任何完整定义方法<br/>
+
+
+**__set,__get,__isset,__unset,__call,__sleep(),__wakeup()等魔术方法**
+
+1. __sleep() 方法常用于提交未提交的数据，或类似的清理操作。同时，如果有一些很大的对象，但不需要全部保存，这个功能就很好用<br/>
+
+__wakeup() 经常用在反序列化操作中，例如重新建立数据库连接，或执行其它初始化操作<br/>
+
+引入php手册中的例子<br/>
+```
+  class Connection 
+  {
+      protected $link;
+      private $server, $username, $password, $db;
+      
+      public function __construct($server, $username, $password, $db)
+      {
+          $this->server = $server;
+          $this->username = $username;
+          $this->password = $password;
+          $this->db = $db;
+          $this->connect();
+      }
+      
+      private function connect()
+      {
+          $this->link = mysql_connect($this->server, $this->username, $this->password);
+          mysql_select_db($this->db, $this->link);
+      }
+      
+      public function __sleep()
+      {
+          return array('server', 'username', 'password', 'db');
+      }
+      
+      public function __wakeup()
+      {
+          $this->connect();
+      }
+  }
+```
+
+2. 属性重载__set,__get,__isset,__unset
+说明<br/>
+```
+public __set ( string $name , mixed $value ) : void // 设置私有属性值的时候调用
+public __get ( string $name ) : mixed  // 获取私有属性值的时候调用
+public __isset ( string $name ) : bool // 当判断一个私有成员属性是否被设置过时调用
+public __unset ( string $name ) : void // 当销毁一个私有成员属性的时候调用
+```
 
 
 ## 下一篇文章
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/php/keyword.md'>php基础系列之-常见关键字</a>
 
-##PHP基础命令系列目录
+## PHP基础命令系列目录
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/php/index.md'>php基础系列</a>
 
 

@@ -11,11 +11,9 @@
 * [php基础系列之-常用方法][2]
 * [php基础系列之-面向对象][3]
 * [php基础系列之-常见关键字][4]
-* [php基础系列之-错误处理][5]
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/php/base.md
 [2]: https://github.com/MarsPen/-notes-summary/blob/master/php/method.md
 [3]: https://github.com/MarsPen/-notes-summary/blob/master/php/oop.md
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/php/keyword.md
-[5]: https://github.com/MarsPen/-notes-summary/blob/master/php/try.md
