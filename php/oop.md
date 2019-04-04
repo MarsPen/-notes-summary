@@ -462,18 +462,21 @@ __wakeup() 经常用在反序列化操作中，例如重新建立数据库连接
   }
 ```
 
-2. 属性重载__set,__get,__isset,__unset
-说明<br/>
+2. 属性重载__set,__get,__isset,__unset<br/>
 ```
 public __set ( string $name , mixed $value ) : void // 设置私有属性值的时候调用
 public __get ( string $name ) : mixed  // 获取私有属性值的时候调用
 public __isset ( string $name ) : bool // 当判断一个私有成员属性是否被设置过时调用
 public __unset ( string $name ) : void // 当销毁一个私有成员属性的时候调用
 ```
+当实例化一个对象后，调用类中不存在或者没有权限访问的属性的时候，默认调用__get()方法。可以访问内部属性<br/>
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/php/keyword.md'>php基础系列之-常见关键字</a>
+3. 方法重载__call和__callStatic<br/>
+```
+call 和 callStatic 是类似的方法，前者是调用类不存在的方法时执行，而后者是调用类不存在的静态方式方法时执行。正常情况下如果调用一个类不存在的方法 PHP 会抛出致命错误，而使用这两个魔术方法我们可以替换一些更友好的提示或者记录错误调用日志信息、将用户重定向、抛出异常等等，亦或者是如同set 和 get 那样做方法的重命名。
+```
+
 
 ## PHP基础命令系列目录
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/php/index.md'>php基础系列</a>
