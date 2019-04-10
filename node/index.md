@@ -20,13 +20,13 @@
 
 
 ## node高级系列
-* [第一部分用node框架介绍][1] *未完成*
-* [第二部分node爬虫相关][2] *未完成*
-* [第三部分数据推送相关][3] *未完成*
-* [第四部前端构建工具[4]*未完成*
+* [node高级系列-构建核心模块][14]
+* [node高级系列-npm包管理][14]
+* [node高级系列-v8与异步I/O][16]
+* [node高级系列-框架介绍][17] 
+* [node高级系列-爬虫相关][18] 
+* [node高级系列-数据推送][19] 
+* [node高级系列-前端构建工具][20]
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/node/http.md
-<!-- [2]: https://github.com/MarsPen/-notes-summary/blob/master/node/oop.md
-[3]: https://github.com/MarsPen/-notes-summary/blob/master/node/function.md
-[4]: https://github.com/MarsPen/-notes-summary/blob/master/node/aop.md -->
