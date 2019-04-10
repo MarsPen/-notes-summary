@@ -96,21 +96,18 @@ client.send(message, 0, message.length, 41234, 'localhost', function (err, bytes
 })
 ```
 
-### 构建HTTP服务
+### 构建HTTP服务<br/>
 
-**什么是HTTP**
 
-**HTTP报文**
-**HTTP模块**
-**HTTP请求**
-**HTTP响应**
-**HTTP代理**
-**HTTP服务事件**
+**HTTP报文**<br/>
+**HTTP模块**<br/>
+**HTTP请求**<br/>
+**HTTP响应**<br/>
+**HTTP代理**<br/>
+**HTTP服务事件**<br/>
 
 
 ### 构建WebSocket服务
 
-**什么是WebSocket**
-
-**WebSocket握手**
-**WebSocket数据传输**
+**WebSocket握手**<br/>
+**WebSocket数据传输**<br/>
