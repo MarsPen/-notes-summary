@@ -1,14 +1,13 @@
 ## node 网络编程
 
-### 构建TCP服务
-**什么是TCP**
+### 构建TCP服务<br/>
  tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br/>
  <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/tcp.png'></image><br/>
 
  tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br/>
  <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/ack.png'></image><br/>
 
-**创建TCP服务端**
+**创建TCP服务端**<br/>
 1、创建TCP服务端接受网络请求<br/>
 1.1服务器事件<br/>
 
@@ -64,11 +63,10 @@ client.on('end', function () {
 
 **node中 TCP默认开启Nagle算法（优化网络数据包）此算法由于要求缓冲数据达到一定数量或一定时间后才发送，所以可能会造成延迟发送**
 
-### 构建UDP服务
-**什么是UDP**
-UDP用户数据包协议，和TCP一样属于网络传输层
+### 构建UDP服务<br/>
+UDP用户数据包协议，和TCP一样属于网络传输层<br/>
 
-**创建UDP服务端**
+**创建UDP服务端**<br/>
 ```
 var dgram = require('dgram');
 // 创建server对象
@@ -87,7 +85,7 @@ server.on('listening', function () {
 server.bind(41234);
 
 ```
-**创建UDP客户端**
+**创建UDP客户端**<br/>
 ```
 var dgram = require('dgram');
 
