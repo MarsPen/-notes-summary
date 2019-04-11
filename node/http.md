@@ -151,10 +151,24 @@ http模块将所有读写抽象为ServerRequest和ServerResponse对象<br/>
 <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/http.png'></image><br/>
 
 **HTTP代理**<br/>
+
 http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br/>
 http 模块包含一个默认的客户端代理对象http.globalAgent<br/>
 通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br/>
 <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/http代理.png'></image><br/>
+```
+// 可以通过http.Agent修改连接数量，但连接数量过大会影响服务器性能
+var agent = new http.Agent({
+  maxSockets: 10
+})
+var option = {
+  hostname: '127.0.0.1',
+  port: 1334,
+  path: '/',
+  method: 'GET',
+  agent: agent
+}
+```
 
 ### 构建WebSocket服务
 
