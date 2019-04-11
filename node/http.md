@@ -98,14 +98,63 @@ client.send(message, 0, message.length, 41234, 'localhost', function (err, bytes
 
 ### 构建HTTP服务<br/>
 
+HTTP是超文本传输协议，是构建在TCP之上的，属于应用层协议，在HTTP的两端是服务端和浏览器也就是B/S模式<br/>
 
 **HTTP报文**<br/>
-**HTTP模块**<br/>
-**HTTP请求**<br/>
-**HTTP响应**<br/>
-**HTTP代理**<br/>
-**HTTP服务事件**<br/>
+我们可以在命令行利用curl -v http://localhost:8080/ 来模拟请求，产生如下报文信息<br/>
 
+第一部分其实就是标准的TCP3次握手过程<br/>
+```
+* About to connect() to localhost (127.0.0.1) port 8080 (#0)
+*   Trying 127.0.0.1...
+* TCP_NODELAY set
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+```
+
+第二部分在握手完成之后，客户端向服务端发送的请求报文<br/>
+```
+> GET / HTTP/1.1
+> Host: 127.0.0.1:8080
+> User-Agent: curl/7.54.0
+> Accept: */*
+>
+```
+
+第三部分是服务端处理结束后，向客户端发送的响应内容包括响应头和响应体<br/>
+```
+< HTTP/1.1 200 OK
+< X-Powered-By: Express
+< Accept-Ranges: bytes
+< Content-Type: text/html; charset=UTF-8
+< Content-Length: 820
+< ETag: W/"334-dKswJvgc24O5QPXd939SLJD+BhM"
+< Date: Thu, 11 Apr 2019 10:33:03 GMT
+< Connection: keep-alive
+<
+hello
+```
+
+第四部分是结束此会话<br/>
+```
+* Connection #0 to host 127.0.0.1 left intact
+* Closing connection #0
+```
+
+通过上面的信息中我们可以看出虽然是基于 TCP，但是本身确实基于请求响应式的，一问一答模式并不是会话模式。<br/>
+
+**HTTP模块**<br/>
+
+node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br/>
+<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/request.png'></image><br/>
+
+http模块将所有读写抽象为ServerRequest和ServerResponse对象<br/>
+<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/http.png'></image><br/>
+
+**HTTP代理**<br/>
+http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br/>
+http 模块包含一个默认的客户端代理对象http.globalAgent<br/>
+通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br/>
+<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/http代理.png'></image><br/>
 
 ### 构建WebSocket服务
 
