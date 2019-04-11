@@ -1,4 +1,4 @@
-## node 网络编程
+## node tcp udp http
 
 ### 构建TCP服务<br/>
  tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br/>
@@ -6,6 +6,10 @@
 
  tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br/>
  <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/ack.png' width="300px"></image><br/>
+
+  第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认;<br/>
+  第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态;</br>
+  第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。<br/>
 
 **创建TCP服务端**<br/>
 1、创建TCP服务端接受网络请求<br/>
@@ -170,7 +174,6 @@ var option = {
 }
 ```
 
-### 构建WebSocket服务
 
-**WebSocket握手**<br/>
-**WebSocket数据传输**<br/>
+
+
