@@ -7,9 +7,11 @@
  tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br/>
  <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/ack.png' width="300px"></image><br/>
 
-  第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认;<br/>
-  第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态;</br>
-  第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。<br/>
+  第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认<br/>
+  第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态<br/>
+  第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手<br/>
+
+  当然tcp也会有四次挥手，在这里就不具体说明了<br/>
 
 **创建TCP服务端**<br/>
 1、创建TCP服务端接受网络请求<br/>
@@ -57,7 +59,7 @@ client.on('end', function () {
   console.log('此连接结束');
 })
 ```
-通过上面代码创建连接事件，服务器可以同时与多个客户端保持连接，对于每个连接其实都是**Stream**对象，它用于服务起端和客户端之间的通讯，自定义事件如下<br/>
+通过上面代码创建连接事件，服务器可以同时与多个客户端保持连接，对于每个连接其实都是**Stream**对象，它用于服务器端和客户端之间的通讯，自定义事件如下<br/>
 - data 当一端调用write()发送数据时，另一端会触发data，事件传递的数据是write()发送的数据
 - end 当连接中的任意一端发送**FIN** 数据时，触发此事件
 - drain 当一端调用write()发送数据时，触发此事件
@@ -153,6 +155,12 @@ node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端
 
 http模块将所有读写抽象为ServerRequest和ServerResponse对象<br/>
 <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/http.png' width="400px"></image><br/>
+```
+function (req, res) {
+  res.writeHead(200, {'Content-Type' : 'text/plain'});
+  res.end('Hello Word');
+}
+```
 
 **HTTP代理**<br/>
 
@@ -173,6 +181,54 @@ var option = {
   agent: agent
 }
 ```
+
+### 构建 WebSocket 服务<br/>
+Websocket 协议解决了服务器与客户端全双工通信的问题,也就是客户端和服务端之间的长连接<br/>
+
+**WebSocket协议解析**<br/>
+
+WebSocket协议主要分为两个部分第一部分 http **握手**连接，第二部分协议升级为 WebSocket 进行**数据传输**<br/>
+<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/websocket.png' width="400px"></image><br/>
+
+
+
+### TCP UDP HTTP WebSocket区别
+1. TCP UDP HTTP WebSocket都是协议，而TCP/IP是不同协议的组合 <br/>
+2. Socket的本质是API，只不过是对TCP/IP协议族的抽象或者说封装<br/>
+3. 从分层上来区分，HTTP，WebSocket是应用层协议，TCP，UDP是传输层协议，IP是网络层协议<br/>
+
+**1.TCP和UDP**<br/>
+
+TCP是面向连接的传输控制协议。TCP连接之后，客户端和服务器可以互相发送和接收消息，在客户端或者服务器没有主动断开之前，连接一直存在，故称为长连接。特点：连接有耗时，传输数据无大小限制，准确可靠，先发先至。<br/>
+UDP是无连接的用户数据报协议，所谓的无连接就是在传输数据之前不需要交换信息，没有握手建立连接的过程，只需要直接将对应的数据发送到指定的地址和端口就行。故UDP的特点是不稳定，速度快，可广播，一般数据包限定64KB之内，先发未必先至。<br/>
+
+**2.HTTP**<br/>
+
+HTTP是基于TCP协议的应用，请求时需建立TCP连接，而且请求包中需要包含请求方法，URI，协议版本等信息，请求结束后断开连接，完成一次请求/响应操作。故称为短连接。
+而HTTP/1.1中的keep-alive所保持的长连接则是为了优化每次HTTP请求中TCP连接三次握手的麻烦和资源开销，只建立一次TCP连接，多次的在这个通道上完成请求/响应操作。
+值得一提的是，服务器无法主动给客户端推送消息。<br/>
+
+**3.WebSocket**<br/>
+
+WebSocket也是一种协议，并且也是基于TCP协议的。具体流程是WebSocket通过HTTP先发送一个标记了 Upgrade 的请求，服务端解析后开始建立TCP连接，省去了HTTP长连接每次请求都要上传header的冗余，可以理解为WebSocket是HTTP的优化，但WebSocket不仅仅在Web应用程序上得到支持。<br/>
+
+
+**4.HTTP、WebSocket与TCP的关系**<br/>
+
+HTTP通信过程是客户端不发请求则服务器永远无法发送数据给客户端，而WebSocket则在进行第一次HTTP请求之后，其他全部采用TCP通道进行双向通讯<br/>
+HTTP和WebSocket虽都是基于TCP协议<br/>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
