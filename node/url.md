@@ -51,7 +51,7 @@ const myURL = new URL('https://example.org:81/foo/abc?name=123');
 console.log(myURL.searchParams);  // 123
 ```
 
-<a href="https://nodejs.org/api/url.html#url_class_urlsearchparams">其他方法请参考 Node Api </a><br/>
+<a href="https://nodejs.org/api/url.html">更多方法请参考 Node Api </a><br/>
 
 
 
