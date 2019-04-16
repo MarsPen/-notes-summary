@@ -3,13 +3,13 @@
 模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。前端模块化组件化也是在这几年逐渐的流行，在 web2.0 发展过程如下<br/>
 
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module.png" width="550"></image><br/>
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module.png" width="350"></image><br/>
 
 ### CommonJS 规范<br/>
 
 CommonJS（<a href="http://www.commonjs.org">http://www.commonjs.org</a>）规范的出现解决了JavaScript 没有模块系统，标准库等等问题，而 Node.js 自身实现了 require 作为其引入模块的方法，同时 NPM 也基于 CommonJS 定义的包规范，实现了依赖管理和模块自动安装等功能。下图展现Node与浏览器以及W3C组织、CommonJS组织、ECMAScript之间的关系<br/>
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/commmonjs.png" width="550"></image><br/>
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/commonjs.png" width="350"></image><br/>
 
 ### CommonJS 模块
 1、模块引用 require 关键字 <br/>
