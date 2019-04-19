@@ -104,7 +104,7 @@ function Module(id, parent) {
 1、C/C++内建模块属于最底层的模块，它属于核心模块，主要提供API给JavaScript核心模块和第三方JavaScript文件模块调用。<br/>
 2、JavaScript核心模块主要扮演的职责有两类：一类是作为C/C++内建模块的封装层和桥接层，供文件模块调用；一类是纯粹的功能模块，它不需要跟底层打交道，但是又十分重要<br/>
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-p.png" width="300"></image><br/>
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-p.png" width="350"></image><br/>
 
 
 **核心模块调用流程**<br/>
@@ -176,7 +176,7 @@ function Module(id, parent) {
 
 3、核心模块的引入流程<br/>
 如 os 原生模块的引入流程<br/>
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-os.png" width="300"></image><br/>
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-os.png" width="350"></image><br/>
 
 通过以上我们大致了解了 Node 中模块的编译、加载、引入流程。当然还有核心模块的编写，在这里就不过多的阐述了。更多请参考朴灵老师编著的《深入浅出 node》，相信会有更多的收获。<br/>
 
