@@ -34,3 +34,4 @@
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/node/path.md
 [5]: https://github.com/MarsPen/-notes-summary/blob/master/node/querystring.md
 [6]: https://github.com/MarsPen/-notes-summary/blob/master/node/module.md
+[7]: https://github.com/MarsPen/-notes-summary/blob/master/node/crypto.md

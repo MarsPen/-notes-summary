@@ -104,36 +104,84 @@ function Module(id, parent) {
 1、C/C++内建模块属于最底层的模块，它属于核心模块，主要提供API给JavaScript核心模块和第三方JavaScript文件模块调用。<br/>
 2、JavaScript核心模块主要扮演的职责有两类：一类是作为C/C++内建模块的封装层和桥接层，供文件模块调用；一类是纯粹的功能模块，它不需要跟底层打交道，但是又十分重要<br/>
 
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-p.png" width="300"></image><br/>
 
 
+**核心模块调用流程**<br/>
 
+1、 JavaScript 核心模块编译过程<br/>
+  - 转存为转存为C/C++代码（Node采用了V8附带的js2c.py工具，将所有内置的JavaScript代码（src/node.js和lib/*.js）转换成C++里的数组，生成node_natives.h头文件，以字符串的形式存储在 node 的命令空间中）<br/>
+  - 启动 node 进程 JavaScript 代码直接加载进内存中<br/>
+  - 编译 JavaScript 核心模块（lib目录下的所有模块文件也没有定义require、module、exports这些变量。上面说过在引入 JavaScript 核心模块过程进行头尾包装，才可以执行exports对象）<br/>
 
+  ```
+  // node_natives.h 头文件代码
+  namespace node {
+    const char node_native[] = { 47, 47, ..};
+    const char dgram_native[] = { 47, 47, ..};
+    const char console_native[] = { 47, 47, ..};
+    const char buffer_native[] = { 47, 47, ..};
+    const char querystring_native[] = { 47, 47, ..};
+    const char punycode_native[] = { 47, 42, ..};
+    ...
+    struct _native {
+      const char* name;
+      const char* source;
+      size_t source_len;
+    };
+    static const struct _native natives[] = {
+      { "node", node_native, sizeof(node_native)-1 },
+      { "dgram", dgram_native, sizeof(dgram_native)-1 },
+      ...
+    };
+  }
 
+  // JavaScript 核心模块通过process.binding('natives')取出，编译成功的模块缓存到 NativeModule._cache 对象上，文件模块则缓存到 Module._cache 对象上
+  function NativeModule(id) {
+    this.filename = id + '.js';
+    this.id = id;
+    this.exports = {};
+    this.loaded = false;
+  }
+  NativeModule._source = process.binding('natives');
+  NativeModule._cache = {}; 
+  ```
 
+2、 C/C++核心模块的编译过程<br/>
+   - 定义内建模块内部结构
+   - 通过NODE_MODULE宏将模块定义到node命名空间中，模块的具体初始化方法挂载为结构的register_func成员<br/>
+   - node_extensions.h文件将这些散列的内建模块统一放进了一个叫node_module_list的数组中<br/>
+   - Node 通过 get_builtin_module() 方法从 node_module_list 数组中取出这些模块<br/>
+  ```
+  // 内建模块的内部结构定义
+  struct node_module_struct {
+    int version;
+    void *dso_handle;
+    const char *filename;
+    void (*register_func) (v8::Handle<v8::Object> target);
+    const char *modname;
+  };
 
+  // 挂载为结构的register_func成员
+  #define NODE_MODULE(modname, regfunc) 
+    extern "C" { 
+      NODE_MODULE_EXPORT node::node_module_struct modname ## _module = 
+      { 
+        NODE_STANDARD_MODULE_STUFF, 
+        regfunc, 
+        NODE_STRINGIFY(modname) 
+      }; 
+    } 
+  ```
 
+3、核心模块的引入流程<br/>
+如 os 原生模块的引入流程<br/>
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-os.png" width="300"></image><br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="https://nodejs.org/docs/latest-v9.x/api/querystring.html">其他方法请参考 Node Api </a><br/>
-
-
+通过以上我们大致了解了 Node 中模块的编译、加载、引入流程。当然还有核心模块的编写，在这李就不过多的阐述了。更多请参考朴灵老师编著的《深入浅出 node》，相信会有更多的收获。<br/>
 
 ## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/module.md'>node基础API-module模块</a>
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/crypto.md'>node基础API-crypto加密模块</a>
 
 ## node系列
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node系列</a>
