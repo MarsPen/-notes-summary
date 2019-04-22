@@ -108,7 +108,7 @@ console.log("程序执行完毕。");
 
 
 ## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/event.md'>node 基础API-事件驱动模型</a>
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/event.md'>node 基础API-process进程</a>
 
 ## node系列
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node 系列</a>
