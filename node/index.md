@@ -15,17 +15,16 @@
 * [node基础API-process进程][9]
 * [node基础API-os操作系统][10]
 * [node基础API-Error异常][11]
-* [node基础API-同步异步][12]
 
 
 ## node高级系列
-* [node高级系列-构建核心模块][13]
-* [node高级系列-npm包管理][14]
-* [node高级系列-v8与异步I/O][15]
-* [node高级系列-框架介绍][16] 
-* [node高级系列-爬虫相关][17] 
-* [node高级系列-数据推送][18] 
-* [node高级系列-前端构建工具][19]
+* [node高级系列-构建核心模块][12]
+* [node高级系列-npm包管理][13]
+* [node高级系列-v8与异步I/O][14]
+* [node高级系列-框架介绍][15] 
+* [node高级系列-爬虫相关][16] 
+* [node高级系列-数据推送][17] 
+* [node高级系列-前端构建工具][18]
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/node/http.md
@@ -36,3 +35,4 @@
 [6]: https://github.com/MarsPen/-notes-summary/blob/master/node/module.md
 [7]: https://github.com/MarsPen/-notes-summary/blob/master/node/crypto.md
 [8]: https://github.com/MarsPen/-notes-summary/blob/master/node/event.md
+[9]: https://github.com/MarsPen/-notes-summary/blob/master/node/process.md
