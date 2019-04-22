@@ -62,7 +62,8 @@
 
 <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/event.png"><br/>
 
-2、Node 在启动进程中会创建一个循环，每次循环运行就是一个Tick周期，每个Tick周期中会从事件队列查看是否有事件需要处理，直到事件队列全部执行完毕，node应用就会终3、Node 对于堵塞 I/O 使用线程池来在操作，通过取其中一个子线程线程来执行复杂任务，而不占用主循环线程。当堵塞任务执行完毕通过添加到事件队列中的回调函数来处理接下来的工作，这样就防止堵塞 I/O 占用空闲资源，这就是所谓的非阻塞式 I/O<br/>
+2、Node 在启动进程中会创建一个循环，每次循环运行就是一个Tick周期，每个Tick周期中会从事件队列查看是否有事件需要处理，直到事件队列全部执行完毕，node应用就会终<br/>
+3、Node 对于堵塞 I/O 使用线程池来在操作，通过取其中一个子线程线程来执行复杂任务，而不占用主循环线程。当堵塞任务执行完毕通过添加到事件队列中的回调函数来处理接下来的工作，这样就防止堵塞 I/O 占用空闲资源，这就是所谓的非阻塞式 I/O<br/>
 
 <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/event-loop.png"><br/>
 
