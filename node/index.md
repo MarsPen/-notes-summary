@@ -35,3 +35,4 @@
 [7]: https://github.com/MarsPen/-notes-summary/blob/master/node/crypto.md
 [8]: https://github.com/MarsPen/-notes-summary/blob/master/node/event.md
 [9]: https://github.com/MarsPen/-notes-summary/blob/master/node/process.md
+[10]: https://github.com/MarsPen/-notes-summary/blob/master/node/error.md
