@@ -29,7 +29,7 @@ try {
 ```
 
 ## 更多处理 Error 方法请参考
-<a href='http://nodejs.cn/api/error.html'>Node Api Error 异常模块 </a>
+<a href='http://nodejs.cn/api/errors.html'>Node Api Error 异常模块 </a>
 
 
 ## node系列
