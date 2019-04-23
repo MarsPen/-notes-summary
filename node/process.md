@@ -1,9 +1,10 @@
 ## node API 之 process进程 
 
 process 对象是一个全局变量，它提供有关当前 Node.js 进程的信息并对其进行控制。 作为一个全局变量，它始终可供 Node.js 应用程序使用，无需使用 require()<br/>
+
 上文中提到过事件队列调度可以通过process的.nextTick()来实现<br/>
 
-上述文章中说到过 Node 单进程单线程架构，对多核使用不足，那么前人的经验是启动多进程。在理想的情况下每个进程利用一个 CPU 以此实现多核 CPU 的利用<br/>
+上述文章中说到过 Node 是单进程单线程架构，对多核使用不足，所以启动多进程。每个进程一个 CPU 以此实现多核 CPU 的利用<br/>
 
 **Master-Worker模式（主从模式）**
 
@@ -56,7 +57,8 @@ for (let i = 0; i < cpus.length; i++) {
 ```
 
 
-**进程间通信**
+**进程间通信**<br/>
+
 说起进程通信，其实我们都熟悉浏览器的 Javascript 主线程与 UI 渲染，共用一个线程。两个是互斥关系，当 UI 渲染时Js引擎线程暂时挂起。所以为了解决这个问题 HTML5 提出WebWork API 主线程与工作线程之间通过onmessage()和postMessage()进行通讯，使计算 JS 阻塞较为严重的计算不影响主线程上的UI渲染<br/>
 
 在 node 中为了实现父子进程通讯，父子之间将会创建IPC通道，通过IPC通道，父子进程才能通过message和send()传递函数<br/>
@@ -71,7 +73,7 @@ IPC通道创建、连接<br/>
 1、父进程在实际创建子进程之前，首先创建IPC通道并监听，然后在创建子进程<br/>
 2、通过环境变量（NODE_CHAMMEL_FD）通知子进程 IPC 通道的文件描述符<br/>
 3、子进程启动过程中通过文件描述符连接已经存在的 IPC 通道<br/>
-4、建立连接后就可以在内核中完成双向通信，不经过网络层
+4、建立连接后就可以在内核中完成双向通信，不经过网络层<br/>
 5、在 Node 中，IPC 被抽象成为 Stream 对象，调用 send（）发送数据，通过 message 事件接收数据<br/>
 
 <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/ipc-create.png"><br/>
