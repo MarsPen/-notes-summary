@@ -68,6 +68,37 @@
 
 
 // 引入 path 模块
-const path = require('path');
+// const path = require('path');
 
-console.log(path.reslove(''));
+// console.log(path.reslove(''));
+
+
+/**
+ * 创建主进程
+ * master
+ */
+
+// 引入核心模块http
+let http = require('http');
+
+// 创建服务
+let server = http.createServer(function (req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World !')
+})
+
+// 指定域名
+let domain = '127.0.0.1';
+
+// 随机创建端口
+let port = Math.round((1 + Math.random()) * 1000);
+
+// 监听启动服务
+server.listen(port, domain)
+
+let childProcess = require('child_process');
+let os = require('os');
+for (let i = 0; i < os.cpus().length; i++) {
+  childProcess.fork('./worker.js')
+}
+

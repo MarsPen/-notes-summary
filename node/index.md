@@ -13,18 +13,17 @@
 * [node基础API-crypto加密][7]
 * [node基础API-events事件驱动模型][8]
 * [node基础API-process进程][9]
-* [node基础API-os操作系统][10]
-* [node基础API-Error异常][11]
+* [node基础API-Error异常][10]
 
 
 ## node高级系列
-* [node高级系列-构建核心模块][12]
-* [node高级系列-npm包管理][13]
-* [node高级系列-v8与异步I/O][14]
-* [node高级系列-框架介绍][15] 
-* [node高级系列-爬虫相关][16] 
-* [node高级系列-数据推送][17] 
-* [node高级系列-前端构建工具][18]
+* [node高级系列-构建核心模块][11]
+* [node高级系列-npm包管理][12]
+* [node高级系列-v8与异步I/O][13]
+* [node高级系列-框架介绍][14] 
+* [node高级系列-爬虫相关][15] 
+* [node高级系列-数据推送][16] 
+* [node高级系列-前端构建工具][17]
 
 
 [1]: https://github.com/MarsPen/-notes-summary/blob/master/node/http.md
