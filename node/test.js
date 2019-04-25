@@ -102,3 +102,14 @@ for (let i = 0; i < os.cpus().length; i++) {
   childProcess.fork('./worker.js')
 }
 
+
+
+let obj = {
+  value: 20,
+  fun: function () {
+    this.value
+  }
+}
+
+obj.fun() // 20
+

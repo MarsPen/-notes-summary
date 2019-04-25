@@ -17,7 +17,7 @@
 * [JS高级系列之-工具库源码分析][10] *未完成*
 
 ## JS专题系列
-* [JS专题系列之-call和apply][11] *未完成*
+* [JS专题系列之-call和apply][11]
 * [JS专题系列之-bind][12] *未完成*
 * [JS专题系列之-new][13] *未完成*
 * [JS专题系列之-promise][14] *未完成*
@@ -36,3 +36,4 @@
 [5]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/prototype.md
 [6]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/inheritance.md
 [7]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/api.md
+[11]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/call.md
