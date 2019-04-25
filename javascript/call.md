@@ -91,7 +91,7 @@ function fun () {
 fun.newCall(obj) // 20
 ```
 
-**模拟实现第二步**
+**模拟实现第二步**<br/>
 第一步的我们只实现了基础。没有考虑参数的情况。call，apply 的基本区别就是在参数上 call 参数数量不确定，apply 只接受两个参数。接下来我们继续优化上面的例子
 
 1、将函数设为对象的属性用来改变 this 指向<br/>
@@ -136,7 +136,7 @@ bar.newCall(obj, 'renbo', 27);
 
 通过以上 call 的实现我们对apply的实现应该说也清楚了， 上述说过call 和 apply 的区别就在与参数上面，通过ES6实现的方法实际上 call, apply 一样<br/>
 
-**模拟实现 apply**
+**模拟实现 apply**<br/>
 ```
 Function.prototype.newApply = function (context, args) {
   // 如果传入参数 this 为 null，则默认为当前宿主环境
