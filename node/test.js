@@ -113,3 +113,46 @@ let obj = {
 
 obj.fun() // 20
 
+
+/**
+ * 缓存封装
+ * @msg 
+ */
+class GetCache {
+  constructor() {
+    let getItemKey = window.localStorage.getItem(key)
+    this.plat = window.navigator.platform
+    this.getKey = getItemKey == 'Win32' || getItemKey == 'MacIntel'
+  }
+  /**
+   * 初始化方法
+   */
+  init() {
+    return new Promise((reslove, reject) => {
+      this.getKey ? reslove(this.getKey) : this.getUapReady(reject)
+    })
+  }
+  /**
+   * 配置状态码map
+   * @param  {...any} args 
+   */
+  getStatusCode(...args) {
+    xxxxx
+  }
+  /**
+   * 处理缓存状态
+   * @param {*} reject 
+   */
+  getUapReady(reject) {
+    uap.ready(() => {
+      try {
+        uexCore.getH5Value(key, res => {
+          getStatusCode(reject, res)
+        })
+      } catch (err) {
+        console.err(xxxxx)
+      }
+    })
+  }
+}
+
