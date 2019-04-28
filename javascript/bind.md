@@ -3,8 +3,6 @@
 bind 方法其实和 call apply 功能上差不多，只不过 bind() 方法会绑定一个新的函数，通过这个新的函数我们可以当作构造函数、
 偏函数等等去使用<br/>
 
-### bind 使用场景
-
 **作为绑定函数使用**<br/>
 
 例子一 <br/>
@@ -129,6 +127,7 @@ let foo1 = {
 
 let func = bar.bind(foo).bind(foo1);
 console.log(func()); // 1
+
 ```
 
 **模拟第一步**
@@ -151,6 +150,7 @@ Function.prototype.newBind = function (context) {
     return self.apply(context, _args.concat(_bindArgs));
   }
 }
+
 ```
 
 **模拟第二步**
@@ -184,7 +184,8 @@ Function.prototype.newBind  = function (context) {
   }
 
   // 让 _fBound 构造的实例继承绑定函数原型中的值，否则会修改绑定函数的原型的值
-  _fBound.prototype = Object.create(this.prototype);
+  _fNOP.prototype = this.prototype;
+  _fBound.prototype = new _fNOP();
 
   return _fBound;
 }
