@@ -156,3 +156,31 @@ class GetCache {
   }
 }
 
+/**
+ * 定义构造函数
+ * @param {*} name 
+ * @param {*} age 
+ */
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.sayName = function () {
+  console.log(`my name is ${this.name}, I'm ${this.age} years old`);
+}
+
+Person.prototype.study = function () {
+  console.log(`my name is ${this.name}, I'm learning to swim`);
+}
+
+let person = new Person(renbo, '28');
+console.log(person.name)
+console.log(person.sayName())
+
+
+/**
+ * 调用内置函数
+ */
+let array = new Array();
+let obj = new Object();
