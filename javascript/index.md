@@ -12,7 +12,7 @@
 * [JS基础系列之-操作数组的API方法集合][7]
 
 ## JS高级系列
-* [JS高级系列之-函数式编程][8] *未完成*
+* [JS高级系列之-函数式编程][8]
 * [JS高级系列之-面向切面编程][9] *未完成*
 * [JS高级系列之-工具库源码分析][10] *未完成*
 
@@ -20,7 +20,7 @@
 * [JS专题系列之-call和apply][11]
 * [JS专题系列之-bind][12] 
 * [JS专题系列之-new][13]
-* [JS专题系列之-promise][14]
+* [JS专题系列之-promise][14] *未完成*
 * [JS专题系列之-Async][15] *未完成*
 * [JS专题系列之-数组去重][16] *未完成*
 * [JS专题系列之-深浅拷贝][17] *未完成*
@@ -36,7 +36,8 @@
 [5]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/prototype.md
 [6]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/inheritance.md
 [7]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/api.md
+[8]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/functional.md
 [11]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/call.md
 [12]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/bind.md
 [13]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/new.md
-[14]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/promise.md
+
