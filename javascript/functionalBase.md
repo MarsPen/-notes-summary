@@ -34,7 +34,7 @@ var c = subtract(b, 4);
 
 
 ## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalPurity.md'>函数式编程-纯函数</a>
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalCombination.md'>函数式编程-函数组合</a>
 
 ## JS 函数式编程系列目录
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functional.md'>JS 函数式编程系列</a>
