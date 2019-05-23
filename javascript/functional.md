@@ -6,7 +6,7 @@
 * [函数式编程-纯函数][2]
 * [函数式编程-偏应用函数、函数的柯里化][3]
 * [函数式编程-函数组合][4]
-* [函数式编程-Point Free][5] *未完成*
+* [函数式编程-Point Free][5]
 * [函数式编程-声明式与命令式代码][6]  *未完成*
 * [函数式编程-惰性求值][7] *未完成*
 
@@ -27,3 +27,4 @@
 [2]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalPurity.md
 [3]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionCurrying.md
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalCombination.md
+[5]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalPoint.md
