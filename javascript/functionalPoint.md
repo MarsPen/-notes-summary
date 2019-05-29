@@ -114,7 +114,6 @@ getIncompleteTaskSummaries('Scott')
 2. 使用 Point-free 模式<br/>
 ```
 // 拆分基础函数
-/ 编写基本函数
 var prop = curry(function(name, obj) {
     return obj[name];
 });
