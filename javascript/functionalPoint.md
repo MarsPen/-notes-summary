@@ -114,6 +114,7 @@ getIncompleteTaskSummaries('Scott')
 2. 使用 Point-free 模式<br/>
 ```
 // 拆分基础函数
+curry 为封装的通用 curry 韩式
 var prop = curry(function(name, obj) {
     return obj[name];
 });
@@ -153,7 +154,6 @@ var getIncompleteTaskSummaries = function(membername) {
         .then(filter(propEq('complete', false)))
         .then(map(pick(['id', 'dueDate', 'title', 'priority'])))
         .then(sortBy(prop('dueDate')))
-        .then(console.log)
 };
 
 getIncompleteTaskSummaries('Scott')
@@ -168,7 +168,6 @@ var getIncompleteTaskSummaries = function(membername) {
         .then(R.filter(R.propEq('complete', false)))
         .then(R.map(R.pick(['id', 'dueDate', 'title', 'priority'])))
         .then(R.sortBy(R.prop('dueDate')))
-        .then(console.log)
 };
 
 getIncompleteTaskSummaries('Scott')
@@ -180,11 +179,10 @@ var getIncompleteTaskSummaries = function(membername) {
     return fetchData()
         .then(R.compose(
             R.sortBy(R.prop('dueDate')),
-            R.map(R.pick(['id', 'dueDate', 'title', 'priority'])
-            ),
+            R.map(R.pick(['id', 'dueDate', 'title', 'priority'])),
             R.filter(R.propEq('complete', false)),
             R.filter(R.propEq('username', membername)),
-            R.prop('tasks'),
+            R.prop('tasks')
         ))
 };
 
@@ -199,9 +197,8 @@ var getIncompleteTaskSummaries = function(membername) {
           R.prop('tasks'),
           R.filter(R.propEq('username', membername)),
           R.filter(R.propEq('complete', false)),
-          R.map(R.pick(['id', 'dueDate', 'title', 'priority'])
-          R.sortBy(R.prop('dueDate')),
-          console.log,
+          R.map(R.pick(['id', 'dueDate', 'title', 'priority']),
+          R.sortBy(R.prop('dueDate'))
       ))
 };
 ```
