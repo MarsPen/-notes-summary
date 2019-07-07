@@ -26,7 +26,7 @@
 
 
 
-[1]: https://github.com/MarsPen/-notes-summary/blob/master/typeScript/envConfig.md
-[2]: https://github.com/MarsPen/-notes-summary/blob/master/typeScript/baseDataType.md
+[1]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/envConfig.md
+[2]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/baseDataType.md
 
 
