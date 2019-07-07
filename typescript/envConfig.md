@@ -23,7 +23,9 @@
  - 下载并安装 node <a href="https://nodejs.org/en/">相关 node 官网</a>
  - 查看 node 是否安装成功，在命令行中执行 `node -v` 如果出现版本号则证明 node 安装成功 
  - 通过 npm 安装 typescript `npm install -g typescript` 
- - 执行 `tsc filename.ts` 编译过后默认会在当前目录产生js文件引入页面引入js文件即可
+ - 创建 filename.ts 文件在文件中书写相应ts代码
+ - 执行 `tsc filename.ts` 编译过后默认会在当前目录产生js文件,在页面中引入js文件即可
+ - 后续在tsconfig.json 中讨论配置监听属性
 
 
 
