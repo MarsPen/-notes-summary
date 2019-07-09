@@ -2,7 +2,7 @@
 
 **每种语言都会有属于自己的数据类型，ts的基本数据类型基本上是继承了js，但也在基础之上增加了几个不一样的类型** 
 
-> 1.布尔型 true／false
+> **1.布尔型 true／false**
 ```
 //在js中声明boolean型的方法和ts中的不同之处
 let flag = true;
@@ -16,14 +16,14 @@ let age = 26;
 let age: number = 26;
 ```
 
-> 3.字符型 String
+> **3.字符型 String**
 ```
 //在js中声明number型的方法和ts中的不同之处
 let name = 'boren';
 let name: string = 'boren';
 ```
 
-> 4.数组 Array
+> **4.数组 Array**
 ```
 //在js中声明数组的方法和ts中的不同之处
 //1.js中声明数组的两种方式
@@ -35,7 +35,7 @@ let city:Array<string> = []
 //在ts中声明数组必须提前指定其数据类型，如果其数组中的元素其数据类型不相同，声明的方式会在后面介绍
 ```
 
-> 5.元组 Tuple
+> **5.元组 Tuple**
 ```
 //可以定义数组中元素不相同的数据类型
 let people = ['boren',26];//js
@@ -43,7 +43,7 @@ let people:[string,number];
 people = ['boren',26];//ts
 ```
 
-> 6.枚举 Enum
+> **6.枚举 Enum**
 ```
 //js中没有此方法，都是以object或者json的形式去实现枚举的特性如：
 let school = {
@@ -73,7 +73,7 @@ let teacher:classMember = classMember.luxuesong
 我们也可以给枚举中的成员进行编号等等，以便于更方便的去找到相应的对象元素
 ```
 
-> 7.通用数据类型 Any
+> **7.通用数据类型 Any**
 ```
 这种数据类型个人认为是万能的，它可以在你不知道这个变量为什么数据类型的情况下，并且项目比较急的时候标注为Any，它可以通过编译时的类型检查，有人会说那我所有的类型都写Any，如果你非要这么干，也无妨，那就失去了ts这么语言本身的意义所在，可以用这种方法去解决一个上述声明数组类型时很麻烦的问题
 let lists: any[] = ['boren',26,'body']; 
@@ -82,7 +82,7 @@ let age: any = 26;
 let name: any = 'boren';
 ```
 
-> 8.空值Void
+> **8.空值Void**
 ```
 在js中我们其实对void不是那么的陌生，它被认为是一个操作符，这个操作符可以计算表达式但不会返回任何值，在js中常常出现的位置就是在a标签的链接中，我们不想让页面刷新，更不想链接到某些位置只是简简单单的a标签，有时候会调用一个简单的函数，仅此而已，那么我们就会
 <a href="javascript:void(0)" onclick="people()">点我</a>
@@ -95,7 +95,7 @@ function student(): void{
 在上述函数中没有返回任何值，所以类型为void，其实void的变量没什么用处和null,undefined一样职能作为数据的类型的判断。
 ```
 
-> 9.永不存在值的类型Never
+> **9.永不存在值的类型Never**
 ```
 官网解释
 never is the return type for a function expression or an 
@@ -106,7 +106,7 @@ never类型是那些总是会抛出异常或根本就不会有返回值的函数
 个人觉得没什么太大用这里就不做深究。
 ```
 
-> 10.类型断言
+> **10.类型断言**
 ```
 在ts中类型断言这种方式还是比较有用处的，其相当于js中的类型转换。但是只在编译的时候起作用。并不会改变其数据的本身结构。
 let city: any = "beijing";
