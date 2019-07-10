@@ -34,6 +34,7 @@ const add: (x: number, y: number) => number = (x: number, y: number):number => x
 3. ⚠️没有传递参数或传递的值是undefined，这种叫做默认初始化值的参数
 4. ⚠️所有必须参数**后面**的带默认初始化的参数都是可选的，调用时可省略
 5. ⚠️带默认值的参数如果出现在必须参数**前面**，用户必须明确的传入 undefined 值来获得默认值
+6. ⚠️当传入的参数个数不固定时，将所有参数收集到一个变量里和 js 中的 arguments 类似，剩余参数会被当做个数不限的可选参数。 可以一个都没有，同样也可以有任意个表达方式为（...）
 
 ```
 // 上述⚠️1
@@ -62,9 +63,46 @@ console.log(yourName('ren')) // ren+bo
 const yourName = ( lastName='bo', firstName: string): string => `${firstName}+${lastName} `;
 console.log(yourName('ren', 'bo')) //bo+ren
 console.log(yourName(undefined, 'ren')) // ren+bo
+
+
+// 上述⚠️6
+const people = ( name: string, ...otherProperty: string[]): string => {
+  return name + " " + otherProperty.join(" ");
+}
+console.log(people('renbo', '28','170'))  // renbo 28 170 
 ```
 
+> **4.函数的重载**
 
+重载允许一个函数接受不同数量或类型的参数时，作出不同的处理
 
+```
+// 我们来实现一下通过传入不同的 type 来实现函数的加操作和乘法操作并返回相应的类型
+const compute = (type: number, ...resetData: number[]):number | string => {
+  if (type === 1 ) {
+    return resetData.reduce((a:number, b:number):number => a + b);
+  } else if (type === 2) {
+    return String(resetData.reduce((a:number, b:number):number => a * b));
+  }
+} 
+console.log(compute(1, 3, 4, 5, 6)) // 18
+console.log(compute(2, 3, 4, 5, 6)) // '360'
+
+// 通过上面的实现唯一的缺点就是不能明确通过type返回的相对应的计算的值和类型
+
+const compute = (type: number, ...resetData: number[]):number;
+const compute = (type: number, ...resetData: number[]):string;
+const compute = (type: number, ...resetData: number[]):number | string => {
+  if (type === 1 ) {
+    return resetData.reduce((a:number, b:number):number => a + b);
+  } else if (type === 2) {
+    return String(resetData.reduce((a:number, b:number):number => a * b));
+  }
+} 
+console.log(compute(1, 3, 4, 5, 6)) // 18
+console.log(compute(2, 3, 4, 5, 6)) // '360'
+
+// 上例中，我们重复定义了多次函数 compute，前几次都是函数定义，最后一次是函数实现。
+```
 
 
