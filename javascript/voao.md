@@ -28,7 +28,7 @@
         a = 'renbo';
         console.log(a);
         console.log(window.a);
-        var a = 'wanghaixia';
+        var a = 'zhangsan';
         console.log(a);
       }
       demo(); 
@@ -39,10 +39,10 @@
         a = 'renbo';
         console.log(a);
         console.log(window.a);
-        a = 'wanghaixia';
+        a = 'zhangsan';
         console.log(a);
       }
-      demo(); // renbo undefined wanghaixia
+      demo(); // renbo undefined zhangsan
       ``` 
   7. **函数提升**
   

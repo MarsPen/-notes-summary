@@ -36,12 +36,12 @@
   - 引用类型的值式可变化的
     ```
     var obj = {name:'renbo'};
-    obj.name = 'wanghaixia';
+    obj.name = 'zhangsan';
     obj.age = 28;
     obj.say = function () {
       return 'My name is' + this.name + 'I‘m' + this.age+ 'years old';
     }
-    obj.say(); //My name is wanghaixia I‘m 28 years old
+    obj.say(); //My name is zhangsan I‘m 28 years old
     ```
   - 按引用地址比较
     ```
@@ -55,14 +55,14 @@
   ```
   var a = {name: 'renbo'};
   var b = a;
-  a.name = 'wanghaixia';
-  console.log(b.name); // wanghaixia
+  a.name = 'zhangsan';
+  console.log(b.name); // zhangsan
   b.age = 28;
   console.log(b.age) // 28
   b.say = function () {
     return 'My name is' + this.name + 'I‘m' + this.age+ 'years old';
   }
-  console.log(a.say()); //My name is wanghaixia I‘m 28 years old
+  console.log(a.say()); //My name is zhangsan I‘m 28 years old
   var c = {
     name:'zhangsan',
     age:28

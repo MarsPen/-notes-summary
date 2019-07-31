@@ -106,3 +106,10 @@ console.log(compute(2, 3, 4, 5, 6)) // '360'
 ```
 
 
+## 下一篇文章
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/class.md'>类</a>
+
+## TypeScript基础列系列目录
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>
+
+
