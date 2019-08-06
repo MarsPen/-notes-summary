@@ -109,14 +109,15 @@ for (let s of strings) {
 - 模块文件之间引用用关键字 import 或被 export
 
 **1.使用 export 关键字来导出声明**
-1.单模块导出
+
+单模块导出
 ```
 export interface StringValidator {
   isAcceptable(s: string): boolean;
 }
 ```
 
-2.重命名导出
+重命名导出
 ```
 class ZipCodeValidator implements StringValidator {
   isAcceptable(s: string) {
@@ -126,7 +127,7 @@ class ZipCodeValidator implements StringValidator {
 export { ZipCodeValidator };
 export { ZipCodeValidator as mainValidator };
 ```
-3.导出所有模块
+导出所有模块
 ```
 export * from "./StringValidator";
 
@@ -134,35 +135,35 @@ export * from "./ZipCodeValidator";
 ```
 
 **2.使用 import 关键字来导入声明**
-1.从模块导入单个导出
+从模块导入单个导出
 ```
 import { ZipCodeValidator } from "./ZipCodeValidator";
 
 let myValidator = new ZipCodeValidator();
 ```
-2.重命名导入
+重命名导入
 ```
 import { ZipCodeValidator as ZCV } from "./ZipCodeValidator";
 let myValidator = new ZCV();
 ```
-3.将整个模块导入单个变量，并使用它来访问模块导出
+将整个模块导入单个变量，并使用它来访问模块导出
 ```
 import * as validator from "./ZipCodeValidator";
 
 let myValidator = new validator.ZipCodeValidator();
 ```
-4.仅使用这个文件
+仅使用这个文件
 ```
 import "./my-module.js";
 ```
 **3.模块的代码生成**
 编译器将为Node.js（CommonJS），require.js（AMD），UMD，SystemJS或ECMAScript 2015本机模块（ES6）模块加载系统生成适当的代码
 
-1.编译 commonjs 规范
+编译 commonjs 规范
 ```
 tsc --module commonjs Test.ts
 ```
-2.编译 amd 规范
+编译 amd 规范
 ```
 tsc --module amd Test.ts
 ```
