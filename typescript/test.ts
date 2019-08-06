@@ -1,27 +1,21 @@
-
-// 定义规则
-interface Counter {
-  (start: number): string;
-  interval: number;
-  reset(): void;
-}
-// 实现规则
-function getCounter(): Counter {
-  
-  let counter = <Counter>function (start: number) { 
-    console.log(start)
-  };
-
-  counter.interval = 0;
-
-  counter.reset = function () {
-    console.log('reset')
-  };
-
-  return counter;
+// 定义泛型结构
+interface CreatePeopleFunc {
+  <T>(name: string, age: T): Array<T>;
 }
 
-let counter = getCounter()
-counter(20); // 20
-counter.reset(); // reset 
-counter.interval = 5; // 5
+// 创建泛型
+let createPeople:CreatePeopleFunc;
+createPeople = function<T>(name: string, age: T): Array<T> {
+  private people: T[] = []
+  let temp:any = {
+    name : name,
+    age: age
+  }
+  people.push(temp)
+  return people
+}
+// 调用函数
+createPeople('zhangsan', 28)
+
+
+
