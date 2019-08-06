@@ -19,7 +19,7 @@
 
 ### ES6中类的用法 <br/>
 
-1. **定义属性和方法**<hr>
+1. **定义属性和方法**
     ```
     // 定义类
     class Parent{
@@ -36,7 +36,7 @@
     }
 
     ```
-2. **利用关键字extends 和 super 继承**<hr>
+2. **利用关键字extends 和 super 继承**
     ```
     class Child extends Parent{ 
         constructor(name = 'ren',age = '27'){ 
@@ -51,7 +51,7 @@
       let child =new Child('xiaoxiami'); 
       child.eat();
     ```
-3. **存储器getter,setter改变属性和读取**<hr>
+3. **存储器getter,setter改变属性和读取**
 
     ```
     class People{
@@ -75,7 +75,7 @@
     people.name = 'zhangsan'; // setter: zhangsan
     console.log(people.name); // renbo
     ```
-4. **静态方法使用static修饰符（由于分配在静态内存空间中，所以不需要实例化，只需要吊影即可）**<hr>
+4. **静态方法使用static修饰符（由于分配在静态内存空间中，所以不需要实例化，只需要吊影即可）**
     ```
     class People{
       // 定义静态方法
@@ -88,7 +88,7 @@
 
 ### ES7中类的用法 <br/>
 
-1. **定义属性可以直接在类中定义**<hr>
+1. **定义属性可以直接在类中定义**
   ```
     class People{
       name = 'zhangsan'
@@ -100,7 +100,7 @@
     console.log(npeople.name) // zhangsan
   ```
 
-2. **定义静态属性**<hr>
+2. **定义静态属性**
 ```
   class People{
    static  name = 'zhangsan'
@@ -113,7 +113,7 @@
 
 ### TypeScript 中类的用法 <br/>
 
-1. **说起 ts 中的类不得不说访问修饰符 public private protected**<hr>
+1. **说起 ts 中的类不得不说访问修饰符 public private protected**
 
 - public 说明属性或方法是公有的，在任何地方被访问到，在 ts 中方法和属性默认的是 public
 - private 说明属性或方法是私有的，不能在类的外部访问
@@ -200,7 +200,7 @@ let smilePeople = new SmilePeople('wangwu'); // wangwu
 
 ```
 
-2. **抽象类（ abstract 用于定义抽象类以及抽象类中的抽象方法）**<hr>
+2. **抽象类（ abstract 用于定义抽象类以及抽象类中的抽象方法）**
 
 - 抽象类可以作为派生其他类的基类
 - 抽象类中的抽象方法必须被子类实现
