@@ -135,34 +135,40 @@ export * from "./ZipCodeValidator";
 ```
 
 **2.使用 import 关键字来导入声明**
+
 从模块导入单个导出
 ```
 import { ZipCodeValidator } from "./ZipCodeValidator";
 
 let myValidator = new ZipCodeValidator();
 ```
+
 重命名导入
 ```
 import { ZipCodeValidator as ZCV } from "./ZipCodeValidator";
 let myValidator = new ZCV();
 ```
+
 将整个模块导入单个变量，并使用它来访问模块导出
 ```
 import * as validator from "./ZipCodeValidator";
 
 let myValidator = new validator.ZipCodeValidator();
 ```
+
 仅使用这个文件
 ```
 import "./my-module.js";
 ```
 **3.模块的代码生成**
+
 编译器将为Node.js（CommonJS），require.js（AMD），UMD，SystemJS或ECMAScript 2015本机模块（ES6）模块加载系统生成适当的代码
 
 编译 commonjs 规范
 ```
 tsc --module commonjs Test.ts
 ```
+
 编译 amd 规范
 ```
 tsc --module amd Test.ts
