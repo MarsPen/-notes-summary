@@ -2,7 +2,7 @@
 
 在JavaScript 通过构造函数和原型链来实现类和继承。而在 ES6 中，也用语法糖实现了class，下面介绍一下在 ts 中的类。
 
-> 类的概念
+### 类的概念 <br/>
 
 类是面向对象程序设计中的概念，是面向对象编程的基础，由于是一种数据类型，而不是数据，所以不存在于内存中。
 
@@ -17,7 +17,7 @@
 - 抽象类（Abstract Class）：抽象类是供其他类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现
 - 接口（Interfaces）：不同类之间公有的属性或方法，可以抽象成一个接口。接口可以被类实现（implements）。一个类只能继承自另一个类，但是可以实现多个接口
 
-> ES6中类的用法
+### ES6中类的用法 <br/>
 
 1. **定义属性和方法**<hr>
     ```
@@ -75,7 +75,6 @@
     people.name = 'zhangsan'; // setter: zhangsan
     console.log(people.name); // renbo
     ```
-
 4. **静态方法使用static修饰符（由于分配在静态内存空间中，所以不需要实例化，只需要吊影即可）**<hr>
     ```
     class People{
@@ -87,21 +86,21 @@
     console.log(People.eat('renbo')) // renbo eat food
     ```
 
-> ES7中类的用法
+### ES7中类的用法 <br/>
 
-1. **定义属性可以直接在类中定义**
-```
-  class People{
-    name = 'zhangsan'
-    constructor () {
-      // 
+1. **定义属性可以直接在类中定义**<hr>
+  ```
+    class People{
+      name = 'zhangsan'
+      constructor () {
+        // 
+      }
     }
-  }
-  let people = new People();
-  console.log(npeople.name) // zhangsan
-```
+    let people = new People();
+    console.log(npeople.name) // zhangsan
+  ```
 
-2. **定义静态属性**
+2. **定义静态属性**<hr>
 ```
   class People{
    static  name = 'zhangsan'
@@ -112,9 +111,9 @@
   console.log(People.name) // zhangsan
 ```
 
-> TypeScript 中类的用法
+### TypeScript 中类的用法 <br/>
 
-1. **说起 ts 中的类不得不说访问修饰符 public private protected**
+1. **说起 ts 中的类不得不说访问修饰符 public private protected**<hr>
 
 - public 说明属性或方法是公有的，在任何地方被访问到，在 ts 中方法和属性默认的是 public
 - private 说明属性或方法是私有的，不能在类的外部访问
@@ -201,7 +200,7 @@ let smilePeople = new SmilePeople('wangwu'); // wangwu
 
 ```
 
-2. **抽象类（ abstract 用于定义抽象类以及抽象类中的抽象方法）**
+2. **抽象类（ abstract 用于定义抽象类以及抽象类中的抽象方法）**<hr>
 
 - 抽象类可以作为派生其他类的基类
 - 抽象类中的抽象方法必须被子类实现

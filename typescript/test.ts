@@ -5,8 +5,9 @@ interface CreatePeopleFunc {
 
 // 创建泛型
 let createPeople:CreatePeopleFunc;
+let people: T[] = []
 createPeople = function<T>(name: string, age: T): Array<T> {
-  private people: T[] = []
+  
   let temp:any = {
     name : name,
     age: age
@@ -16,6 +17,10 @@ createPeople = function<T>(name: string, age: T): Array<T> {
 }
 // 调用函数
 createPeople('zhangsan', 28)
+// 调用函数
+createPeople('', 28)
 
-
-
+let obj = {
+  ['name': '1111','age': 23],
+  ['name': 'lisi','age': '29']
+}

@@ -31,6 +31,7 @@
 [4]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/class.md
 [5]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/interfaces.md
 [6]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/generics.md
+[7]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/module.md
 
 
 

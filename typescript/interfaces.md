@@ -2,7 +2,7 @@
 
 在面向对象语言中接口 (Interfaces) 是对类的行为的抽象，在TypeScript中也常用于定义结构子类型，方便进行类型检查
 
-> 定义一个简单的接口
+### 定义一个简单的接口<br/>
 ```
 interface IPeople {
   name: string;
@@ -31,7 +31,7 @@ let zhangsan: IPeople = {
 Property 'age' is missing in type '{ name: string; }' but required in type 'IPeople'
 ```
 
-> 可选属性
+### 可选属性 <br/>
 
 当我们定义接口属性的时候不是必须的那么可选属性就起到了作用
 
@@ -45,7 +45,7 @@ let zhangsan: IPeople = {
   name: 'zhangsan',
 };
 ```
-> 任意属性
+### 任意属性<br/>
 
 当我们需要定义或增加一些未知的属性，那么任意属性就起到了作用
 
@@ -82,7 +82,7 @@ Property 'age' is incompatible with index signature.
 Type 'number' is not assignable to type 'string'.
 ```
 
-> 只读属性
+### 只读属性<br/>
 
 当我们需要对象中字段只能在创建的时候被赋值，那么只读属性就起到了作用
 
@@ -104,7 +104,8 @@ zhangsan.id = 2;
 
 Cannot assign to 'id' because it is a read-only property.
 ```
-> 可以为接口定义函数类型
+
+### 可以为接口定义函数类型<br/>
 
 ```
 interface IPeople {
@@ -122,7 +123,7 @@ hello('zhangsan', 28) //my name is zhangsan I,m years old 28
 
 上面简单的介绍了接口的基本用法，也就是对对象的结构进行性约定，接下来我们来用 Interface 对类的行为进行抽象
 
-> 用类实现接口
+### 用类实现接口<br/>
 
 用类实现接口主要应用的场景就是类与类之间有一些公有的功能及特性，要实现高度抽象这也是面向对象的基本。在 TypeScript 中用关键字 implements 去实现。
 
@@ -178,7 +179,7 @@ let people = new People()
 console.log(people.drink())
 ```
 
-> 接口的继承
+### 接口的继承<br/>
 
 在 JS ECMA6 中类的继承用 extends 关键字， 那么在 TS 中我们依然同样用这个关键字
 
@@ -194,7 +195,7 @@ interface People extends Eat {
 
 ```
 
-> 混合类型
+### 混合类型<br/>
 
 混合类型实际上就是在接口中存在多种规则，利用这种规则去实现自己的属性和方法
 

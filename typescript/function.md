@@ -1,6 +1,6 @@
 ## TS基础系列之-函数
 
-> **1.函数的创建**
+### 函数的创建 <br/>
 
 在 ts 中函数创建也氛围两种匿名函数和有命名的函数
 ```
@@ -11,10 +11,10 @@ function people () {}
 const people = function () {}
 ```
 
-> **2.函数的参数类型和返回值类型**
-1. ⚠️只要参数类型是匹配的，那么就认为它是有效的函数类型，而不在乎参数名是否正
-2. ⚠️设定了类型之后必须要返回相对应的类型，否则会报错
-3. ⚠️如果函数没有返回任何值，也必须指定返回值类型为 void而不能留空
+### 函数的参数类型和返回值类型 <br/>
+- 只要参数类型是匹配的，那么就认为它是有效的函数类型，而不在乎参数名是否正
+- 设定了类型之后必须要返回相对应的类型，否则会报错
+- 如果函数没有返回任何值，也必须指定返回值类型为 void而不能留空
 ```
 /**
  * 
@@ -28,51 +28,51 @@ const add = (x: number, y: number): number => x + y;
 const add: (x: number, y: number) => number = (x: number, y: number):number => x + y 
 ```
 
-> **3.函数的可选参数和默认参数**
-1. ⚠️传递给一个函数的参数个数必须与函数期望的参数个数一致，否则会报错
-2. ⚠️可选参数用`?argname`表示，必须跟在必须参数后面
-3. ⚠️没有传递参数或传递的值是undefined，这种叫做默认初始化值的参数
-4. ⚠️所有必须参数**后面**的带默认初始化的参数都是可选的，调用时可省略
-5. ⚠️带默认值的参数如果出现在必须参数**前面**，用户必须明确的传入 undefined 值来获得默认值
-6. ⚠️当传入的参数个数不固定时，将所有参数收集到一个变量里和 js 中的 arguments 类似，剩余参数会被当做个数不限的可选参数。 可以一个都没有，同样也可以有任意个表达方式为（...）
+### 函数的可选参数和默认参数<br/>
+- 传递给一个函数的参数个数必须与函数期望的参数个数一致，否则会报错
+- 可选参数用`?argname`表示，必须跟在必须参数后面
+- 没有传递参数或传递的值是undefined，这种叫做默认初始化值的参数
+- 所有必须参数**后面**的带默认初始化的参数都是可选的，调用时可省略
+- 带默认值的参数如果出现在必须参数**前面**，用户必须明确的传入 undefined 值来获得默认值
+- 当传入的参数个数不固定时，将所有参数收集到一个变量里和 js 中的 arguments 类似，剩余参数会被当做个数不限的可选参数。 可以一个都没有，同样也可以有任意个表达方式为（...）
 
 ```
-// 上述⚠️1
+// 上述1
 const add: (x: number, y: number) => number = (x: number, y: number):number => x + y 
 add(1, 2) // 3
 add(1) // 报错
 add(1,2,3) // 报错
 
-// 上述⚠️2
+// 上述2
 const yourName = (firstName: string, lastName?: string): string => `${firstName}+${lastName} `;
 console.log(yourName('ren', 'bo')) //ren+bo
 console.log(yourName('ren')) // ren+undefined
 
 
-// 上述⚠️3
+// 上述3
 const yourName = (firstName: string, lastName?: string): string => `${firstName}+${lastName} `;
 console.log(yourName('ren', 'bo')) //ren+bo
 console.log(yourName('ren', undefined)) // ren+undefined
 
-//上述⚠️4
+//上述4
 const yourName = (firstName: string, lastName='bo'): string => `${firstName}+${lastName} `;
 console.log(yourName('ren', 'bo')) //ren+bo
 console.log(yourName('ren')) // ren+bo
 
-// 上述⚠️5
+// 上述5
 const yourName = ( lastName='bo', firstName: string): string => `${firstName}+${lastName} `;
 console.log(yourName('ren', 'bo')) //bo+ren
 console.log(yourName(undefined, 'ren')) // ren+bo
 
 
-// 上述⚠️6
+// 上述6
 const people = ( name: string, ...otherProperty: string[]): string => {
   return name + " " + otherProperty.join(" ");
 }
 console.log(people('renbo', '28','170'))  // renbo 28 170 
 ```
 
-> **4.函数的重载**
+### 函数的重载 <br/>
 
 重载允许一个函数接受不同数量或类型的参数时，作出不同的处理
 
