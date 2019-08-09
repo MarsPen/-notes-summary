@@ -1,8 +1,7 @@
-var People = /** @class */ (function () {
-    function People(name) {
-        this.name = name;
-    }
-    return People;
-}());
-var people = new People('renbo');
-console.log(people.name); // renbo
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-07-31 16:46:57
+ * @LastEditTime: 2019-07-31 16:46:57
+ * @LastEditors: your name
+ */
