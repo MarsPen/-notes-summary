@@ -33,6 +33,7 @@
 [7]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/module.md
 [8]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/decorators.md
 [9]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/mixinx.md
+[10]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/declareFile.md
 
 
 
