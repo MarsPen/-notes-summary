@@ -2,7 +2,7 @@
 
 ### 识别库的类型
 
-1.全局库(全局命名空间下能访问)
+全局库(全局命名空间下能访问)
 
 - 顶级的var语句或function声明
 - 一个或多个赋值语句到window上
@@ -17,7 +17,7 @@ window.test = function(){
 
 ```
 
-2.模块化库（只能工作在模块加载器的环境下）
+模块化库（只能工作在模块加载器的环境下）
 
 - 无条件的调用require或define
 - 像import * as a from 'b'; or export c;这样的声明
@@ -92,7 +92,7 @@ declare namespace cats {
 
 ### 定义全局库模版
 
-模版文件<a href=""> global.d.ts </a>定义了myLib库作为例子
+模版文件<a href="global.d.ts.md"> global.d.ts </a>定义了myLib库作为例子
 
 ### 定义模块化库模版
 
