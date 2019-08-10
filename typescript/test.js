@@ -46,3 +46,6 @@ function applyMixins(derivedCtor, baseCtors) {
 var smartObject = new SmartObject();
 smartObject.dispose(); // false
 smartObject.activate(); // false
+
+
+
