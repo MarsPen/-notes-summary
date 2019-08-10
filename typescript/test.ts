@@ -8,7 +8,7 @@
 
  // Disposable Mixin
 class Disposable {
-    isDisposed: boolean;
+    isDisposed!: boolean;
     dispose() {
     console.log(this.isDisposed);
     }
@@ -16,7 +16,7 @@ class Disposable {
 
 // Activatable Mixin
 class Activatable {
-    isActive: boolean;
+    isActive!: boolean;
     activate() {
        console.log(this.isActive)
     }
@@ -26,10 +26,10 @@ class Activatable {
 class SmartObject implements Disposable, Activatable {
     // Disposable
     isDisposed: boolean = false;
-    dispose: () => void;
+    dispose!: () => void;
     // Activatable
     isActive: boolean = false;
-    activate: () => void;
+    activate!: () => void;
 }
 
 // mixins混入定义的类，完成全部实现部分
