@@ -32,6 +32,8 @@
 [6]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/generics.md
 [7]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/module.md
 [8]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/decorators.md
+[9]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/mixinx.md
+
 
 
 
