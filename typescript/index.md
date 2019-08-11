@@ -35,6 +35,7 @@
 [9]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/mixinx.md
 [10]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/declareFile.md
 [11]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/tsConfig.md
+[12]: https://github.com/MarsPen/-notes-summary/blob/master/typescript/compilationPrinciple.md
 
 
 

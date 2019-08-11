@@ -4,7 +4,7 @@ TypeScript 编译器源文件位于 <a href="https://github.com/Microsoft/TypeSc
 
 主要的应用文件
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/TypeScript 编译原理.png" width="550" />
+<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/TypeScript 编译原理.png" />
 
 
 ### 编译器的大概工作流
