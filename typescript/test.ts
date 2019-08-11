@@ -49,3 +49,6 @@ let smartObject = new SmartObject()
 
 smartObject.dispose() // false
 smartObject.activate() // false
+
+
+

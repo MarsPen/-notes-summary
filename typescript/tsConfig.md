@@ -69,7 +69,7 @@ tsc test.ts
 
 
 ## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/buildingTools.md'>构建工具集成</a>
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/compilationPrinciple.md'>TypeScript编译原理</a>
 
 ## TypeScript基础列系列目录
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>
