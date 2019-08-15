@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 17:53:15
+ * @LastEditTime: 2019-08-15 18:04:25
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -336,12 +336,12 @@ var throttle = /** @class */ (function () {
 
 调用例子
 ```
-ontainer.onmousemove = throttle(getUserAction, 1000);
-container.onmousemove = throttle(getUserAction, 1000, {
-    leading: false
+ontainer.onmousemove = throttle(getContent, 1000);
+container.onmousemove = throttle(getContent, 1000, {
+  leading: false
 });
-container.onmousemove = throttle(getUserAction, 1000, {
-    trailing: false
+container.onmousemove = throttle(getContent, 1000, {
+  trailing: false
 });
 ```
 
