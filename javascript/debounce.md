@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 13:34:52
+ * @LastEditTime: 2019-08-15 14:25:49
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -23,7 +23,7 @@
 - 服务器响应
 - 客户端渲染
 
-这篇文章我们不讨论 Resource Timing 阶段，会在后续文章中讨论前端性能的时候重新提起
+这篇文章我们不讨论 Resource Timing 阶段，会在后续文章前端性能的时候重新提起
 
 通过第五个阶段客户端渲染简单的回忆一下网页的生成过程，大致分为几个步骤
 
@@ -32,6 +32,54 @@
 - 结合DOM树和CSSOM树，生成一棵渲染树(Render Tree)
 - 生成布局（flow），根据渲染树来布局，以计算每个节点的几何信息
 - 最后一步是绘制（paint），使用最终渲染树将像素渲染到在屏幕上
+
+
+HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
+
+```
+字节 -> 字符 -> 令牌 -> 节点对象 -> 对象模型
+
+编码阶段将 HTML 的原始字节数据转换为文件指定编码
+
+令牌阶段根据HTML规范来将字符串转换成各种令牌也就是标签节点
+
+生成节点对象阶段是根据每个令牌转换定义其属性和规则的对象（节点对象）
+
+最后阶段 DOM 树构建完成，整个对象集合就像是一棵树形结构（对象模型）
+```
+
+下面通过代码和图片来解释上面的步骤
+
+```
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <p>Hello <span>web performance</span> students!</p>
+    <div><img src=""></div>
+  </body>
+</html>
+```
+
+<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/dom-render.jpg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
