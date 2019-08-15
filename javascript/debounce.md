@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 14:50:25
+ * @LastEditTime: 2019-08-15 14:51:25
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -78,7 +78,6 @@ HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
 
 渲染树构建后浏览器根据节点对象的规则进行flow（布局）阶段，布局阶段会从渲染树的根节点开始遍历，然后确定每个节点对象在页面上的确切大小与位置最后生成我们大家知道的浏览器盒模型
 
-<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/render-module.jpg">
 
 最后当Layout布局事件完成后，浏览器会立即发出Paint Setup与Paint事件，开始将渲染树绘制成像素，最后渲染到在屏幕上
 
