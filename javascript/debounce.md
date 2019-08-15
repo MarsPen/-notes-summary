@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 14:51:25
+ * @LastEditTime: 2019-08-15 14:54:44
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -32,6 +32,10 @@
 - 结合DOM树和CSSOM树，生成一棵渲染树(Render Tree)
 - 生成布局（flow），根据渲染树来布局，以计算每个节点的几何信息
 - 最后一步是绘制（paint），使用最终渲染树将像素渲染到在屏幕上
+
+
+<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/render-process.jpg">
+
 
 
 HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
