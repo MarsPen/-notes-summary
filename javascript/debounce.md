@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 14:25:49
+ * @LastEditTime: 2019-08-15 14:46:52
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -66,6 +66,21 @@ HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
 
 <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/dom-render.jpg" />
 
+浏览器获得 CSS 文件的数据后 CSS 解析器根据具体的样式将渲染 CSSDOM 树
+
+<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/css-dom-render.jpg" />
+
+
+构建 两个树之后渲染树出场，浏览器会先从DOM树的根节点开始遍历，对每个可见节点，找到对应的 CSS 样式规则，进行匹配形成构建完成的渲染树
+
+<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/render-tree">
+
+
+渲染树构建后浏览器根据节点对象的规则进行flow（布局）阶段，布局阶段会从渲染树的根节点开始遍历，然后确定每个节点对象在页面上的确切大小与位置最后生成我们大家知道的浏览器盒模型
+
+<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/render-module">
+
+最后当Layout布局事件完成后，浏览器会立即发出Paint Setup与Paint事件，开始将渲染树绘制成像素，最后渲染到在屏幕上
 
 
 
@@ -94,4 +109,15 @@ HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
 
 
 
-重绘(repaint)：当元素简单的样式改变不影响布局时，浏览器将使用重绘对元素进行更新，此时由于只需要 UI 层面的重新像素绘制，因此损耗较少。
+
+
+
+
+
+
+
+
+
+
+
+
