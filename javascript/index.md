@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2018-12-17 14:48:04
- * @LastEditTime: 2019-08-14 18:43:45
+ * @LastEditTime: 2019-08-15 11:42:44
  * @LastEditors: Please set LastEditors
  -->
 # 第三部分javascript知识
@@ -24,14 +24,17 @@
 * [JS高级系列之-工具库源码分析][10] *未完成*
 
 ## JS专题系列
-* [JS专题系列之-call和apply][11]
-* [JS专题系列之-bind][12] 
-* [JS专题系列之-new][13]
-* [JS专题系列之-promise][14]
-* [JS专题系列之-Async][15] *未完成*
-* [JS专题系列之-数组去重][16] *未完成*
-* [JS专题系列之-深浅拷贝][17] *未完成*
-* [JS专题系列之-节流与防抖动][18] *未完成*
+* [JS专题系列之-节流与防抖动][11]
+* [JS专题系列之-call和apply][12]
+* [JS专题系列之-bind][13] 
+* [JS专题系列之-new][14]
+* [JS专题系列之-promise][15]
+* [JS专题系列之-Generator][16] *未完成*
+* [JS专题系列之-Async][17] *未完成*
+* [JS专题系列之-数组去重][18] *未完成*
+* [JS专题系列之-数组扁平化][19] *未完成*
+* [JS专题系列之-深浅拷贝][20] *未完成*
+
 
 
 
@@ -44,8 +47,9 @@
 [6]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/inheritance.md
 [7]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/api.md
 [8]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/functional.md
-[11]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/call.md
-[12]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/bind.md
-[13]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/new.md
-[14]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/promise.md
+[11]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/debounce.md
+[12]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/call.md
+[13]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/bind.md
+[14]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/new.md
+[15]: https://github.com/MarsPen/-notes-summary/blob/master/javascript/promise.md
 
