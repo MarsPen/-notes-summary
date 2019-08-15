@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 13:17:45
+ * @LastEditTime: 2019-08-15 13:32:48
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -11,17 +11,33 @@
 
 我们所说的都是在浏览器的环境内，但是浏览器有各种进程，来保证浏览器正常的，流畅的呈现在用户的眼前。例如渲染进程，其中非常重要的一个进程，那么 web 页面在渲染的时候就涉及到两个非常重要的概念重（repaint）绘与回流（reflow）
 
-我们先来看下面一张来至于 W3C 的图
+我们先来看下面一张来至 W3C 的图
 
 <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/timestamp-diagram.svg"></img>
 
-我们来简单的回忆一下网页的生成过程
+
+从图中我们看到浏览器处理模型大概分为如下几个阶段
+- DNS 查询
+- TCP 连接
+- HTTP 请求即响应
+- 服务器响应
+- 客户端渲染
+
+这篇文章我们不讨论 Resource Timing 阶段，会在后续文章中讨论前端性能的时候重新提起
+
+通过第五个阶段客户端渲染简单的回忆一下网页的生成过程，大致分为几个步骤
 
 - HTML解析器解析成DOM 树
 - CSS解析器解析成CSSOM 树
 - 结合DOM树和CSSOM树，生成一棵渲染树(Render Tree)
 - 生成布局（flow），根据渲染树来布局，以计算每个节点的几何信息
 - 最后一步是绘制（paint），使用最终渲染树将像素渲染到在屏幕上
+
+
+
+
+
+
 
 
 
