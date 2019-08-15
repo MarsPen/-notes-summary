@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 14:54:44
+ * @LastEditTime: 2019-08-15 14:55:55
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -36,6 +36,7 @@
 
 <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/render-process.jpg">
 
+下面我们详解一下每一个步骤更加深入的了解浏览器渲染过程
 
 
 HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
