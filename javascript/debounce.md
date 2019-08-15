@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 13:32:48
+ * @LastEditTime: 2019-08-15 13:34:52
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -16,7 +16,7 @@
 <img src="https://github.com/MarsPen/-notes-summary/blob/master/images/timestamp-diagram.svg"></img>
 
 
-从图中我们看到浏览器处理模型大概分为如下几个阶段
+从图中我们看到处理模型大概分为如下几个阶段
 - DNS 查询
 - TCP 连接
 - HTTP 请求即响应
