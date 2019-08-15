@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-04-28 23:48:38
- * @LastEditTime: 2019-08-14 18:42:13
+ * @LastEditTime: 2019-08-15 10:37:14
  * @LastEditors: Please set LastEditors
  -->
 ## JS专题系列之-promise
@@ -419,10 +419,10 @@ function Promise () {
  * @Description: promise 
  * @Author: renbo
  * @Date: 2019-08-12 15:13:40
- * @LastEditTime: 2019-08-14 18:40:10
+ * @LastEditTime: 2019-08-15 10:34:44
  */
 
-var Promise = /** @class */ (function (window, undefined) {
+var Promise = /** @class */ (function () {
 
   function Promise (fn) {
 
@@ -443,11 +443,11 @@ var Promise = /** @class */ (function (window, undefined) {
     
    function resolve(value) {
       //由於apply參數是數組
-      _this.final.apply(promise,['FULFILLED'].concat([value]));
+      _this.final.apply(_this,['FULFILLED'].concat([value]));
     }
 
     function reject(reason){
-      _this.final.apply(promise,['REJECTED'].concat([reason]));
+      _this.final.apply(_this,['REJECTED'].concat([reason]));
     }
     
     fn(resolve,reject);
@@ -601,8 +601,9 @@ var Promise = /** @class */ (function (window, undefined) {
       reject(arg)
     })
   }
-})(window)
 
+  return Promise;
+}())
 ```
 
 

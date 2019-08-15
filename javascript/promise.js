@@ -2,10 +2,10 @@
  * @Description: promise 
  * @Author: renbo
  * @Date: 2019-08-12 15:13:40
- * @LastEditTime: 2019-08-14 18:40:10
+ * @LastEditTime: 2019-08-15 10:34:44
  */
 
-var Promise = /** @class */ (function (window, undefined) {
+var Promise = /** @class */ (function () {
 
   function Promise (fn) {
 
@@ -26,11 +26,11 @@ var Promise = /** @class */ (function (window, undefined) {
     
    function resolve(value) {
       //由於apply參數是數組
-      _this.final.apply(promise,['FULFILLED'].concat([value]));
+      _this.final.apply(_this,['FULFILLED'].concat([value]));
     }
 
     function reject(reason){
-      _this.final.apply(promise,['REJECTED'].concat([reason]));
+      _this.final.apply(_this,['REJECTED'].concat([reason]));
     }
     
     fn(resolve,reject);
@@ -184,4 +184,49 @@ var Promise = /** @class */ (function (window, undefined) {
       reject(arg)
     })
   }
-})(window)
+
+  return Promise;
+}())
+
+var getData100 = function(){
+  return new Promise(function(resolve,reject){
+      setTimeout(function(){
+          resolve('100ms');
+      },1000);
+  });
+}
+
+var getData200 = function(){
+  return new Promise(function(resolve,reject){
+      setTimeout(function(){
+          resolve('200ms');
+      },2000);
+  });
+}
+var getData300 = function(){
+  return new Promise(function(resolve,reject){
+      setTimeout(function(){
+          reject('reject');
+      },3000);
+  });
+}
+
+getData100().then(function(data){
+  console.log(data); // 100ms
+  return getData200();
+}).then(function(data){
+  console.log(data); // 200ms
+  return getData300();
+}).then(function(data){
+  console.log(data); // 100ms
+}, function(data){
+  console.log(data);
+});
+
+Promise.all([getData100(), getData200()]).then(function(data){
+  console.log(data); // 100ms
+});
+
+Promise.race([getData100(), getData200(), getData300()]).then(function(data){
+  console.log(data); // 100ms
+});
