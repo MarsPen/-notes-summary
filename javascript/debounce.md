@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 13:16:00
+ * @LastEditTime: 2019-08-15 13:17:45
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -13,7 +13,7 @@
 
 我们先来看下面一张来至于 W3C 的图
 
-<svg src="https://github.com/MarsPen/-notes-summary/blob/master/images/timestamp-diagram.svg"></svg>
+<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/timestamp-diagram.svg"></img>
 
 我们来简单的回忆一下网页的生成过程
 
