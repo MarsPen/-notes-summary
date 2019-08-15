@@ -2,7 +2,7 @@
  * @Description: promise 
  * @Author: renbo
  * @Date: 2019-08-12 15:13:40
- * @LastEditTime: 2019-08-15 10:34:44
+ * @LastEditTime: 2019-08-15 17:48:24
  */
 
 var Promise = /** @class */ (function () {
@@ -188,45 +188,106 @@ var Promise = /** @class */ (function () {
   return Promise;
 }())
 
-var getData100 = function(){
-  return new Promise(function(resolve,reject){
-      setTimeout(function(){
-          resolve('100ms');
-      },1000);
-  });
+
+var debounce = /** @class */ (function () {
+  /**
+   * @desc 函数防抖
+   * @param {*} func 回调函数
+   * @param {*} wait 延迟执行毫秒数
+   * @param {*} immediate  true 表立即执行，false 表非立即执行
+   */
+  function debounce(func, wait, immediate) {
+
+    // 创建一个标记用来存放定时器的返回值
+    var timeout = null,result= null;
+    
+    return function () {
+
+      // 指定this 作用域
+      var context = this;
+      // event 对象
+      var args = arguments;
+
+      // 当用户点击/输入的时候，清除上一个定时器
+      if (timeout) clearTimeout(timeout);
+      
+      if (immediate) {
+        // 如果已经执行过，将不再执行
+        var callNow = !timeout;
+        timeout = setTimeout(function(){
+          timeout = null;
+        }, wait)
+        
+        if (callNow) func.apply(context, args)
+      }
+      else {
+        
+        timeout = setTimeout(function(){
+          func.apply(context, args)
+        }, wait);
+      }
+
+      return result;
+    }
+  }
+
+  return debounce;
+  
+}())
+
+var throttle = /** @class */ (function () {
+
+  /**
+   * throttle 节流
+   * @param {*} func  回调函数
+   * @param {*} wait  执行时间间隔
+   * @param {*} options  如果想忽略开始函数的的调用，传入{leading: false}
+   *                     如果想忽略结尾函数的调用，传入{trailing: false}
+   *                     两者不能共存，否则函数不能执行
+   */
+  function throttle(func, wait, options) {
+
+    var timeout, context, args;
+    var previous = 0;
+    if (!options) options = {};
+
+    var later = function() {
+      // 如果设置了 leading，就将 previous 设为 0
+      previous = options.leading === false ? 0 : new Date().getTime();
+      // 置空一是为了防止内存泄漏，二是为了下面的定时器判断
+      timeout = null;
+      func.apply(context, args);
+      if (!timeout) context = args = null;
+    };
+
+    var throttled = function() {
+      var now = new Date().getTime();
+      
+      if (!previous && options.leading === false) previous = now;
+      // 计算剩余时间
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0 || remaining > wait) {
+        // 如果存在定时器就清理掉否则会调用二次回调
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        func.apply(context, args);
+        if (!timeout) context = args = null;
+      } else if (!timeout && options.trailing !== false) {
+        // 判断是否设置了定时器和 trailing，没有就开启一个定时器
+        timeout = setTimeout(later, remaining);
+      }
+    };
+    return throttled;
 }
 
-var getData200 = function(){
-  return new Promise(function(resolve,reject){
-      setTimeout(function(){
-          resolve('200ms');
-      },2000);
-  });
-}
-var getData300 = function(){
-  return new Promise(function(resolve,reject){
-      setTimeout(function(){
-          reject('reject');
-      },3000);
-  });
-}
+  return throttle
+}())
 
-getData100().then(function(data){
-  console.log(data); // 100ms
-  return getData200();
-}).then(function(data){
-  console.log(data); // 200ms
-  return getData300();
-}).then(function(data){
-  console.log(data); // 100ms
-}, function(data){
-  console.log(data);
-});
 
-Promise.all([getData100(), getData200()]).then(function(data){
-  console.log(data); // 100ms
-});
 
-Promise.race([getData100(), getData200(), getData300()]).then(function(data){
-  console.log(data); // 100ms
-});
+

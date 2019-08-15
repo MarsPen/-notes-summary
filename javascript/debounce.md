@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-15 11:41:05
- * @LastEditTime: 2019-08-15 15:44:27
+ * @LastEditTime: 2019-08-15 17:53:15
  * @LastEditors: Please set LastEditors
  -->
 ## 函数节流与抖动
@@ -26,7 +26,8 @@ JS引擎线程(JS内核，负责处理JavaScript脚本程序)
 这里我们大概了解一下着几个概念，关于更过的相关知识会在后续的文章中介绍
 
 
-### 浏览器渲染过程
+### 浏览器渲染过程<hr/>
+
 
 我们先来看下面一张来至 W3C 的图
 
@@ -116,13 +117,273 @@ HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
 浏览器的reflow + repaint 对性能是个巨大的消耗，所以我们经常说尽可能的减少重排次数、重排范围，这样就能呈现给用户更改的感官（关于优化手段会在后续的性能优化文章中介绍）
 
 
-### debounce（防抖）和throttle（节流）
+### debounce（防抖）和throttle（节流）<hr/>
 
 根据上面说了这么多，我们来进入文章的主题**防抖和节流**当我们窗口发生改变，浏览器的滚动条执行scroll，输入框校验，搜索请求接口等这些都会使页面频繁重新渲染，加重浏览器的负担，这是我们通过**防抖和节流**的方式减少触发频率，这样就会大大的提高用户体验
 
-**debounce（防抖）：**
+**debounce（防抖）：**<hr/>
 
-频繁的触发一个任务下（如获取联想词的搜索输入框），只有任务触发的间隔超过指定间隔的时候（合并任务），任务才会执行
+动作发生一定时间后触发事件，在这段时间内，如果该动作又发生，则重新等待一定时间再触发事件。
+
+html 
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>防抖</title>
+  <style>
+    #container{
+      width: 100%; 
+      height: 500px; 
+      background: #000; 
+      font-size: 50px;
+      color: #fff;
+      line-height: 500px; 
+      text-align: center; 
+    }
+  </style>
+</head>
+<body>
+  <div id="content"><div>
+  <script src="debounce.js"></script>
+  <script>
+    var count = 1;
+    var container = document.getElementById('container');
+    function getContent(e) {
+      container.innerHTML = count++;
+    };
+    // container.onmousemove = getContent
+    container.onmousemove = debounce(getContent, 500, true);
+  </script>
+</body>
+</html>
+```
+
+debounce.js 
+
+```
+@underscore.js
+
+var debounce = /** @class */ (function () {
+  
+  /**
+   * @desc 函数防抖
+   * @param {*} func 回调函数
+   * @param {*} wait 延迟执行毫秒数
+   * @param {*} immediate  true 表立即执行，false 表非立即执行
+   */
+  function debounce(func, wait, immediate) {
+
+    // 创建一个标记用来存放定时器的返回值
+    var timeout,result;
+    
+    return function () {
+
+      // 指定this 作用域
+      var context = this;
+      // event 对象
+      var args = arguments;
+
+      // 再次执行事件的时候，清除上一个定时器
+      if (timeout) clearTimeout(timeout);
+      
+      if (immediate) {
+        // 如果已经执行过，将不再执行
+        var callNow = !timeout;
+        timeout = setTimeout(function(){
+          timeout = null;
+        }, wait)
+        
+        if (callNow) result = func.apply(context, args)
+      }
+      else {
+        
+        timeout = setTimeout(function(){
+          func.apply(context, args)
+        }, wait);
+      }
+      // func 这个函数，可能有返回值
+      return result;
+    }
+  }
+
+  return debounce;
+  
+}())
+
+```
+
+
+**throttle（节流）**<hr/>
+
+动作执行一段时间后触发事件，在这段时间内，如果动作又发生，则无视该动作，直到事件执行完后，才能重新执行
+
+关于节流的实现，有两种主流的实现方式，一种是使用时间戳，一种是设置定时器
+
+使用时间戳
+
+当触发事件的时候，取出当前的时间戳，之后减去之前的时间戳(最一开始值设为 0 )，如果大于设置的时间周期，执行函数并更新当前时间戳，反之就不执行。
+
+```
+var throttle = /** @class */ (function () {
+  
+  function throttle(func, wait) {
+    var args;
+    var previous = 0;
+  
+    return function() {
+      var now = +new Date();
+      args = arguments;
+      if (now - previous > wait) {
+        func.apply(this, args);
+        previous = now;
+      }
+    }
+  }
+
+  return throttle
+}())
+```
+
+使用定时器
+
+事件触发的时候，设置一个定时器，如果定时器存在，就不执行，等定时器到指定的时间，清空定时器，执行事件
+
+```
+function throttle(func, wait) {
+  var timeout;
+  var previous = 0;
+
+  return function() {
+    context = this;
+    args = arguments;
+    if (!timeout) {
+      timeout = setTimeout(function(){
+        timeout = null;
+        func.apply(context, args)
+      }, wait)
+    }
+  }
+}
+```
+
+对比两种实现方式
+
+- 第一种会立刻执行，第二种会在设定的时间后第一次执行
+- 第一种停止触发后不会再执行，第二种停止触发后依然会再执行一次
+
+现在我们要结合上面两种方式实现一个开始触发立刻执行，停止触发的时候还能再执行一次
+
+```
+@underscore.js
+
+var throttle = /** @class */ (function () {
+
+  /**
+   * throttle 节流
+   * @param {*} func  回调函数
+   * @param {*} wait  执行时间间隔
+   * @param {*} options  如果想忽略开始函数的的调用，传入{leading: false}
+   *                     如果想忽略结尾函数的调用，传入{trailing: false}
+   *                     两者不能共存，否则函数不能执行
+   */
+  function throttle(func, wait, options) {
+
+    var timeout, context, args;
+    var previous = 0;
+    if (!options) options = {};
+
+    var later = function() {
+      // 如果设置了 leading，就将 previous 设为 0
+      previous = options.leading === false ? 0 : new Date().getTime();
+      // 置空一是为了防止内存泄漏，二是为了下面的定时器判断
+      timeout = null;
+      func.apply(context, args);
+      if (!timeout) context = args = null;
+    };
+
+    var throttled = function() {
+      var now = new Date().getTime();
+      
+      if (!previous && options.leading === false) previous = now;
+      // 计算剩余时间
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0 || remaining > wait) {
+        // 如果存在定时器就清理掉否则会调用二次回调
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        func.apply(context, args);
+        if (!timeout) context = args = null;
+      } else if (!timeout && options.trailing !== false) {
+        // 判断是否设置了定时器和 trailing，没有就开启一个定时器
+        timeout = setTimeout(later, remaining);
+      }
+    };
+    return throttled;
+}
+
+  return throttle
+}())
+```
+
+调用例子
+```
+ontainer.onmousemove = throttle(getUserAction, 1000);
+container.onmousemove = throttle(getUserAction, 1000, {
+    leading: false
+});
+container.onmousemove = throttle(getUserAction, 1000, {
+    trailing: false
+});
+```
+
+### 总结 <hr/>
+
+上面的就是函数的节流与抖动的全部，我们在面试和工作中会经常的遇到。这也是性能优化的一种方案。当然还有很多版本比如多 promise 版本的就不再这里叙述了，有兴趣的可以找找技术论坛
+
+## 下一篇文章
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/call.md'>JS专题系列-call和apply</a>
+
+## JS基础列系列目录
+<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
