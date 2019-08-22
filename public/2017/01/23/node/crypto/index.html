@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="crypto 加密模块, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="crypto 加密模块, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="crypto 模块也是核心模块之一，提供了加密功能，包括对 OpenSSL 的哈希、HMAC、加密、解密、签名、以及验证功能的一整套封装。上文中提到过核心 C/C++ 模块运行速度比其他模块要快。
@@ -821,23 +821,21 @@ console.log(&#39;decrypted by private key: &#39; + dec_by_prv.toString(&#39;utf8
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/linux/instructions/">
+                <a href="/2017/01/23/node/event/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="常用指令">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="event 事件驱动模型">
                         
-                        <span class="card-title">常用指令</span>
+                        <span class="card-title">event 事件驱动模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ls显示文件或目录
-ls -F  //显示文件或目录
-ls -l  //列出文件详细信息l(list)
-ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)mkdir创建目录
-mkdir dir  //创建一个dir的目录
+                            说起node的事件驱动模型首先我们来搞清楚几个概念CPU，线程、进程、调度、事件驱动
+CPU
+1、CPU 是中央处理器，是计算机的核心2、CPU 通过和寄存器，高速缓存，以及内存交互来执行程序3、32位 CPU 最多寻址4g内存，而64位 
                         
                     </div>
                     <div class="publish-info">
@@ -848,8 +846,8 @@ mkdir dir  //创建一个dir的目录
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
+                            <a href="/categories/Node/" class="post-category" target="_blank">
+                                    Node
                                 </a>
                             
                             
@@ -859,8 +857,8 @@ mkdir dir  //创建一个dir的目录
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/" target="_blank">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/Node/" target="_blank">
+                        <span class="chip bg-color">Node</span>
                     </a>
                     
                 </div>
@@ -874,21 +872,20 @@ mkdir dir  //创建一个dir的目录
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/node/error/">
+                <a href="/2017/01/23/node/fs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Error 异常模块">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="fs 文件操作">
                         
-                        <span class="card-title">Error 异常模块</span>
+                        <span class="card-title">fs 文件操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            错误处理是所有应用程序的重要组成部分。要抛出异常，请使用 JavaScript 的 throw  关键字。在 JavaScript 中，通常使用 Error 对象和消息来表示错误
-捕获异常try/catch
-  function fun (
+                            在 node 中文件交互是非常重要的，例如文件的打开、读取、写入文件、以及与其交互等等，这其中围绕着异步模式和同步模式读取的话题。下面就 node 的 fs 文件操作模举例说明
+fs使用特点1、同步的版本将阻塞整个进程，直到它们完成（停止所
                         
                     </div>
                     <div class="publish-info">

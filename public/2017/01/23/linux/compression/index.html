@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux打包压缩相关指令, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="Linux打包压缩相关指令, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="bzip2(选项)(参数)命令用于创建和管理（包括解压缩）
@@ -851,23 +851,24 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/linux/fileauth/">
+                <a href="/2017/01/23/linux/backup/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Linux文件权限管理">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Linux备份操作">
                         
-                        <span class="card-title">Linux文件权限管理</span>
+                        <span class="card-title">Linux备份操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三种基本权限
-R  读  数值表示为4
-W  写  数值表示为2
-X  可执行  数值表示为11.执行ls -al命令行会出现
-drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-s
+                            tar
+tar -cvf log.tar log2012.log    仅打包，不压缩！ 
+
+tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
+
+tar -jcvf log.tar.bz2 
                         
                     </div>
                     <div class="publish-info">

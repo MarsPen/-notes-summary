@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="在mac中配置多个github账号ssh密钥, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="在mac中配置多个github账号ssh密钥, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="概述很多时候我们本地生成的只有一个自己的ssh，但是多个ssh配置的场景也是蛮多的，所以想要commit，push等操作需要配置私钥ssh或者http，才能连接远程git仓库
@@ -744,24 +744,23 @@ git config user.email &quot;youremail&quot;</code></pre><p>在自己的github的
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/linux/package/">
+                <a href="/2017/01/23/linux/fileauth/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux软件包管理">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Linux文件权限管理">
                         
-                        <span class="card-title">Linux软件包管理</span>
+                        <span class="card-title">Linux文件权限管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            dpkg (Debian Package)管理工具，软件包名以.deb后缀
-sudo dpkg -i package.deb 安装/更新 deb 包 
-
-sudo dpkg -r package 删除 deb 包 
-
-sudo dpkg -
+                            三种基本权限
+R  读  数值表示为4
+W  写  数值表示为2
+X  可执行  数值表示为11.执行ls -al命令行会出现
+drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-s
                         
                     </div>
                     <div class="publish-info">
@@ -798,25 +797,23 @@ sudo dpkg -
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/linux/system/">
+                <a href="/2017/01/23/linux/instructions/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="系统管理指令">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="常用指令">
                         
-                        <span class="card-title">系统管理指令</span>
+                        <span class="card-title">常用指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            stat  显示指定文件的详细信息
-who   显示在线登陆用户
-whoami 显示当前操作用户 
-hostname  显示主机名 
-uname  显示系统信息
-top  动态显示当前耗费资源最多进程信息
-ps  查看进程状态 ps -au
+                            ls显示文件或目录
+ls -F  //显示文件或目录
+ls -l  //列出文件详细信息l(list)
+ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)mkdir创建目录
+mkdir dir  //创建一个dir的目录
                         
                     </div>
                     <div class="publish-info">

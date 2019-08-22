@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="常用指令, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="常用指令, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="ls显示文件或目录
@@ -738,25 +738,21 @@ tail -f /var/log/messages //实时查看被添加到一个文件中的内容 </c
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/linux/user/">
+                <a href="/2017/01/23/linux/git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Linux用户及用户组管理">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="在mac中配置多个github账号ssh密钥">
                         
-                        <span class="card-title">Linux用户及用户组管理</span>
+                        <span class="card-title">在mac中配置多个github账号ssh密钥</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            查看存储用户账号
-cat /etc/passwd
-
-输出的结构
-用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell查看存储组账号
-cat /etc/group  查看存储用户账号的密码
-cat /etc/shadow  
+                            概述很多时候我们本地生成的只有一个自己的ssh，但是多个ssh配置的场景也是蛮多的，所以想要commit，push等操作需要配置私钥ssh或者http，才能连接远程git仓库
+步骤
+我们假设原来在~/.ssh目录下已经生成了一对密钥,此密钥
                         
                     </div>
                     <div class="publish-info">
@@ -793,20 +789,24 @@ cat /etc/shadow
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/node/crypto/">
+                <a href="/2017/01/23/linux/package/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="crypto 加密模块">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux软件包管理">
                         
-                        <span class="card-title">crypto 加密模块</span>
+                        <span class="card-title">Linux软件包管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            crypto 模块也是核心模块之一，提供了加密功能，包括对 OpenSSL 的哈希、HMAC、加密、解密、签名、以及验证功能的一整套封装。上文中提到过核心 C/C++ 模块运行速度比其他模块要快。
-MD5和SHA1MD5是一种常用的哈希算法
+                            dpkg (Debian Package)管理工具，软件包名以.deb后缀
+sudo dpkg -i package.deb 安装/更新 deb 包 
+
+sudo dpkg -r package 删除 deb 包 
+
+sudo dpkg -
                         
                     </div>
                     <div class="publish-info">
@@ -817,8 +817,8 @@ MD5和SHA1MD5是一种常用的哈希算法
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Node/" class="post-category" target="_blank">
-                                    Node
+                            <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
                                 </a>
                             
                             
@@ -828,8 +828,8 @@ MD5和SHA1MD5是一种常用的哈希算法
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Node/" target="_blank">
-                        <span class="chip bg-color">Node</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

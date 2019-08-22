@@ -1,6 +1,6 @@
 ---
 title: CSS 基础知识概念
-date: 2019-01-20 12:32:09
+date: 2017-6-11 20:32:09
 top: false
 cover: false
 password:
@@ -14,29 +14,31 @@ categories:
 ---
 
 ### 1．什么是css
- &nbsp;层叠样式表(英文全称：Cascading Style Sheets),是一种用来表现html或者xml等文件样式的计算机语言。
-### 2. 标准盒子模型-怪异盒模型
-  1. 在html文档中，每一个渲染在页面中的标签都是一个个盒子模型；
-  2. 盒子模型分为w3c标准盒子模型和IE标准盒子模型；当不对Doctype进行定义时，会触发怪异模式。
-  3. 盒子模型
-  - 代码示例
-  ```
-  /****css****/
-  .box{
-    width:100px;
-    height:100px;
-    border:10px;
-    background-color:red;
-    padding:20px;
-    margin:20px;
-  }
+层叠样式表(英文全称：Cascading Style Sheets),是一种用来表现html或者xml等文件样式的计算机语言。
 
-  <!--html-->
-  <div class="box"></div>
-  ```
-  ![css盒子模型](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png "css盒子模型")
+### 2. 标准盒子模型-怪异盒模型
+1. 在html文档中，每一个渲染在页面中的标签都是一个个盒子模型；
+2. 盒子模型分为w3c标准盒子模型和IE标准盒子模型；当不对Doctype进行定义时，会触发怪异模式。
+3. 盒子模型
+```
+/****css****/
+.box{
+  width:100px;
+  height:100px;
+  border:10px;
+  background-color:red;
+  padding:20px;
+  margin:20px;
+}
+
+<div class="box"></div>
+```
+
+![css盒子模型](https://github.com/MarsPen/-notes-summary/blob/master/images/css盒子模型.png "css盒子模型")
+
 ### 3. BFC IFC GFC FFC
-1. BFC
+
+ BFC
   - 定义（Block fomatting context）：块级格式化上下文(每一个元素盒子从上向下排列)
   - block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；
   - 是一个独立的渲染区域，只有Block-level box参与

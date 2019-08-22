@@ -1,23 +1,23 @@
 [
 	{
-		"name": "夜曲",
-		"artist": "周杰伦",
-		"url": "/medias/music/yequ.mp3",
-		"cover": "/medias/music/avatars/yequ.jpg"
+		"name": "画",
+		"artist": "赵雷",
+		"url": "/medias/music/hua.mp3",
+		"cover": "/medias/music/avatars/zhaolei.jpg"
 	},{
-		"name": "一路向北",
-		"artist": "周杰伦",
-		"url": "/medias/music/yiluxiangbei.mp3",
-		"cover": "/medias/music/avatars/yiluxiangbei.jpg"
+		"name": "多想在平庸的生活拥抱你",
+		"artist": "隔壁老樊",
+		"url": "/medias/music/yongbaoni.mp3",
+		"cover": "/medias/music/avatars/laofan.jpg"
 	},{
-		"name": "来自天堂的魔鬼",
-		"artist": "邓紫棋",
-		"url": "/medias/music/tiantangdemogui.mp3",
-		"cover": "/medias/music/avatars/tiantangdemogui.jpg"
+		"name": "往后余生",
+		"artist": "马良",
+		"url": "/medias/music/wanghouyusheng.mp3",
+		"cover": "/medias/music/avatars/maliang.jpg"
 	},{
-		"name": "倒数",
-		"artist": "邓紫棋",
-		"url": "/medias/music/daoshu.mp3",
-		"cover": "/medias/music/avatars/daoshu.jpg"
+		"name": "理想三寻",
+		"artist": "陈鸿宇",
+		"url": "/medias/music/lixiangsanxun.mp3",
+		"cover": "/medias/music/avatars/chenhouyu.jpg"
 	}
 ]

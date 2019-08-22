@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="process进程, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="process进程, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="process 对象是一个全局变量，它提供有关当前 Node.js 进程的信息并对其进行控制。 作为一个全局变量，它始终可供 Node.js 应用程序使用，无需使用 require()
@@ -821,23 +821,21 @@ process.on(&#39;message&#39;, function (m, tcp) {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/php/base/">
+                <a href="/2017/01/23/node/querystring/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="语法、变量、数据类型">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="querystring 路径操作">
                         
-                        <span class="card-title">语法、变量、数据类型</span>
+                        <span class="card-title">querystring 路径操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基础语法
-PHP 脚本以 &lt;?php 开始，以 ?&gt; 结束
-PHP 文件的默认文件扩展名是 “.php”
-PHP 文件通常包含 HTML 标签和一些 PHP 脚本代码
-PHP 中的每个代码行都必须以分号结束，否则输出错误&lt;
+                            querystring 模块提供用于解析和格式化 URL 查询字符串
+解析 URL 字符串 querystring.parse(str[, sep[, eq[, options]]]) // 引入模块
+const querystring =
                         
                     </div>
                     <div class="publish-info">
@@ -848,8 +846,8 @@ PHP 中的每个代码行都必须以分号结束，否则输出错误&lt;
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/PHP/" class="post-category" target="_blank">
-                                    PHP
+                            <a href="/categories/Node/" class="post-category" target="_blank">
+                                    Node
                                 </a>
                             
                             
@@ -859,8 +857,8 @@ PHP 中的每个代码行都必须以分号结束，否则输出错误&lt;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PHP/" target="_blank">
-                        <span class="chip bg-color">PHP</span>
+                    <a href="/tags/Node/" target="_blank">
+                        <span class="chip bg-color">Node</span>
                     </a>
                     
                 </div>
@@ -874,20 +872,21 @@ PHP 中的每个代码行都必须以分号结束，否则输出错误&lt;
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/node/path/">
+                <a href="/2017/01/23/node/url/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="path 路径操作">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="url">
                         
-                        <span class="card-title">path 路径操作</span>
+                        <span class="card-title">url</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            path 模块提供用于处理文件路径和目录路径的实用工具
-path使用特点path 模块的默认操作因 Node.js 应用程序运行所在的操作系统而异。 具体来说，当在 Windows 操作系统上运行时， path 模块将假定正在使用 Wind
+                            url模块提供用于URL解析和解析的实用程序
+const url = require(&#39;url&#39;);获取并设置URL的片段部分url.hash
+const myURL = new URL(&#39;https://examp
                         
                     </div>
                     <div class="publish-info">

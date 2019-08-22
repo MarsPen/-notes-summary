@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="path 路径操作, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="path 路径操作, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="path 模块提供用于处理文件路径和目录路径的实用工具
@@ -748,20 +748,21 @@ path.normalize(&#39;/foo/bar//baz/asdf/quux/..&#39;);</code></pre><p><a href="ht
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/node/process/">
+                <a href="/2017/01/23/node/http/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="process进程">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="tcp udp http">
                         
-                        <span class="card-title">process进程</span>
+                        <span class="card-title">tcp udp http</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            process 对象是一个全局变量，它提供有关当前 Node.js 进程的信息并对其进行控制。 作为一个全局变量，它始终可供 Node.js 应用程序使用，无需使用 require()
-上文中提到过事件队列调度可以通过process的.ne
+                            构建TCP服务 tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图 
+ tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图 
+  第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等
                         
                     </div>
                     <div class="publish-info">
@@ -798,21 +799,21 @@ path.normalize(&#39;/foo/bar//baz/asdf/quux/..&#39;);</code></pre><p><a href="ht
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/node/querystring/">
+                <a href="/2017/01/23/node/module/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="querystring 路径操作">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="module 模块机制">
                         
-                        <span class="card-title">querystring 路径操作</span>
+                        <span class="card-title">module 模块机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            querystring 模块提供用于解析和格式化 URL 查询字符串
-解析 URL 字符串 querystring.parse(str[, sep[, eq[, options]]]) // 引入模块
-const querystring =
+                            模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。前端模块化组件化也是在这几年逐渐的流行，在 web2.0 发展过程如下
+
+CommonJS 规范CommonJS（http://www.commonjs.org）规范的出
                         
                     </div>
                     <div class="publish-info">

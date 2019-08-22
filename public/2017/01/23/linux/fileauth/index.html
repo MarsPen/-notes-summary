@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux文件权限管理, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="Linux文件权限管理, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="三种基本权限
@@ -731,22 +731,24 @@ sudo chmod 765 filename
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/linux/compression/">
+                <a href="/2017/01/23/linux/backup/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Linux打包压缩相关指令">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Linux备份操作">
                         
-                        <span class="card-title">Linux打包压缩相关指令</span>
+                        <span class="card-title">Linux备份操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            bzip2(选项)(参数)命令用于创建和管理（包括解压缩）
-  -c或——stdout：将压缩与解压缩的结果送到标准输出；
-  -d或——decompress：执行解压缩；
-  -f或-force：bzip2在压缩或解压缩时，若输出文件与现
+                            tar
+tar -cvf log.tar log2012.log    仅打包，不压缩！ 
+
+tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
+
+tar -jcvf log.tar.bz2 
                         
                     </div>
                     <div class="publish-info">
@@ -783,24 +785,21 @@ sudo chmod 765 filename
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/linux/backup/">
+                <a href="/2017/01/23/linux/git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Linux备份操作">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="在mac中配置多个github账号ssh密钥">
                         
-                        <span class="card-title">Linux备份操作</span>
+                        <span class="card-title">在mac中配置多个github账号ssh密钥</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            tar
-tar -cvf log.tar log2012.log    仅打包，不压缩！ 
-
-tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
-
-tar -jcvf log.tar.bz2 
+                            概述很多时候我们本地生成的只有一个自己的ssh，但是多个ssh配置的场景也是蛮多的，所以想要commit，push等操作需要配置私钥ssh或者http，才能连接远程git仓库
+步骤
+我们假设原来在~/.ssh目录下已经生成了一对密钥,此密钥
                         
                     </div>
                     <div class="publish-info">

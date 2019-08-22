@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux关机重启操作, 前端 typescript web php基础 js基础">
+    <meta name="keywords" content="Linux关机重启操作, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="shutdown
@@ -705,24 +705,24 @@ shutdown now  立刻关机
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/linux/backup/">
+                <a href="/2017/01/23/linux/package/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Linux备份操作">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux软件包管理">
                         
-                        <span class="card-title">Linux备份操作</span>
+                        <span class="card-title">Linux软件包管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            tar
-tar -cvf log.tar log2012.log    仅打包，不压缩！ 
+                            dpkg (Debian Package)管理工具，软件包名以.deb后缀
+sudo dpkg -i package.deb 安装/更新 deb 包 
 
-tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
+sudo dpkg -r package 删除 deb 包 
 
-tar -jcvf log.tar.bz2 
+sudo dpkg -
                         
                     </div>
                     <div class="publish-info">
@@ -759,24 +759,25 @@ tar -jcvf log.tar.bz2
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/linux/package/">
+                <a href="/2017/01/23/linux/system/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Linux软件包管理">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="系统管理指令">
                         
-                        <span class="card-title">Linux软件包管理</span>
+                        <span class="card-title">系统管理指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            dpkg (Debian Package)管理工具，软件包名以.deb后缀
-sudo dpkg -i package.deb 安装/更新 deb 包 
-
-sudo dpkg -r package 删除 deb 包 
-
-sudo dpkg -
+                            stat  显示指定文件的详细信息
+who   显示在线登陆用户
+whoami 显示当前操作用户 
+hostname  显示主机名 
+uname  显示系统信息
+top  动态显示当前耗费资源最多进程信息
+ps  查看进程状态 ps -au
                         
                     </div>
                     <div class="publish-info">
