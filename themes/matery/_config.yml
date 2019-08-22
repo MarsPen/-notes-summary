@@ -160,7 +160,7 @@ clicklove:
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: /medias/avatars/avatar.jpg
-  career: 璧合科技 | 白日梦旅行 
+  career: 前端工程师 
   introduction:
 
 # config my projects informations in about page.
@@ -191,34 +191,40 @@ myProjects:
 mySkills:
   enable: true
   data:
-    算法:
-      background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 90%
-    C++:
-      background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 80%
-    Python:
-      background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
-    Java:
-      background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
-      percent: 50%
-    SQL:
-      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 50%
     HTML:
+      background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
+      percent: 100%
+    CSS:
+      background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
+      percent: 90%
+    JavaScript:
+      background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
+      percent: 90%
+    Node:
+      background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
+      percent: 75%
+    Vue:
+      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
+      percent: 90%
+    React:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 45%
+      percent: 85%
+    TypeSceipt:
+      background: 'linear-gradient(to right, #4EEB3B 0%, #FFF176 100%)'
+      percent: 85%
+    PHP:
+      background: 'linear-gradient(to right, #1FEB3B 0%, #FFF176 100%)'
+      percent: 50%
 
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myGallery:
-  enable: false
+  enable: true
   data:
-    - /medias/featureimages/2.jpg
-    - /medias/featureimages/5.jpg
-    - /medias/featureimages/6.jpg
+    - /medias/featureimages/32.jpg
+    - /medias/featureimages/34.jpg
+    - /medias/featureimages/35.jpg
 
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面中是否显示'文章日历'控件
