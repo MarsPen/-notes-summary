@@ -211,11 +211,6 @@ categories:
     ```
     es6继承是使用关键字先创建父类的实例对象this，最后在子类class中修改this
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/api.md'>JS基础系列之-操作数组或对象的API方法集合</a>
-
-## JS基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>
 
 
 

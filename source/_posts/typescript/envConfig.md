@@ -44,8 +44,6 @@ categories:
 ## 下一篇文章
 <a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/baseDataType.md'>基本数据类型</a>
 
-## TypeScript基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>
 
 
 

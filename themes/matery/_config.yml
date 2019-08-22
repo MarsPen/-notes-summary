@@ -98,6 +98,9 @@ socialLink:
   qq: 1605275889
   github: MarsPen
   email: 15210713603@163.com
+  zhihu: ren-bo-Lonely-City/activities
+  juejin: user/5b6406966fb9a04fd73a67c8
+  
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -164,7 +167,7 @@ profile:
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的项目"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myProjects:
-  enable: true
+  enable: false
   data:
     hexo-matery-modified:
       icon: fa-meetup
@@ -226,7 +229,7 @@ postCalendar: true
 gitalk:
   enable: true
   owner: renbo
-  repo: Marspen.github.io
+  repo: marspen.github.io
   oauth:
     clientId: f4ed0b6940188e62a449
     clientSecret: b6af683cf2760586c043d59635b7ed82b180e2ff
@@ -272,7 +275,7 @@ valine:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://github.com/godweiyang
+  url: https://github.com/marspen
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,

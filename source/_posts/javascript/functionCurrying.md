@@ -155,14 +155,7 @@ var addEvent = function(el, type, fn, capture) {
 
 当然应用场景还有很多，比如我们经常提到的防抖和节流问题，充分的利用了函数式编程的延迟执行特性，将多个间隔接近的函数执行合并成一次函数执行来提高性能问题。<br/>
 关于事件节流和防抖动将会在后续的专题中单独指出<br/>
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalPurity.md'>函数式编程-纯函数</a>
 
-## JS 函数式编程系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functional.md'>JS 函数式编程系列</a>
-
-## JS 基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>
 
 
 

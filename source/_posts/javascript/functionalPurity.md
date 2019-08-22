@@ -67,13 +67,3 @@ person.sayName();
 1. 法调用多次对内部的状态影响是一样的，则这么方法就具有幂等性，在函数式编程中，纯函数也具有幂等性，但具有幂等性的函数却不一定是纯函数。
 2. 纯函数主要强调相同的输入，多次调用，输出也相同且无副作用，而幂等主要强调多次调用，对内部的状态的影响是一样的，调用返回值可能不同。
 
-
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalPartial.md'>函数式编程-偏应用函数、函数的柯里化</a>
-
-## JS 函数式编程系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functional.md'>JS 函数式编程系列</a>
-
-## JS 基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>

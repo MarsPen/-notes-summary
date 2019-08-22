@@ -122,11 +122,6 @@ console.log("程序执行完毕。");
 <a href='http://nodejs.cn/api/events.html'>Node Api events 事件模块 </a>
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/process.md'>node 基础API-process进程</a>
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node 系列</a>
 
 
 

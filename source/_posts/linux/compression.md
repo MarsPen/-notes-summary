@@ -148,9 +148,3 @@ categories:
 
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/package.md'>linux基础系列之-软件包管理</a>
-
-## linux基础命令系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md'>linux基础命令系列</a>
-

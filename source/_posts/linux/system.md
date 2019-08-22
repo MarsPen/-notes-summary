@@ -56,10 +56,3 @@ alias l="ls"
 <br/>
 
 **kill**   杀死进程，可以先用ps 或 top命令查看进程的id，然后再用kill命令杀死进程。<br/>
-
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/compression.md'>linux基础系列之-打包压缩相关系列</a>
-
-## linux基础命令系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md'>linux基础命令系列</a>

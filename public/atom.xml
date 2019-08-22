@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>任博的博客</title>
+  
+  <subtitle>不念过往 不惧未来</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.studyfe.cn/"/>
+  <updated>2019-08-22T14:52:37.845Z</updated>
+  <id>http://blog.studyfe.cn/</id>
+  
+  <author>
+    <name>任博</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现 promise</title>
+    <link href="http://blog.studyfe.cn/2019/06/14/javascript/promise/"/>
+    <id>http://blog.studyfe.cn/2019/06/14/javascript/promise/</id>
+    <published>2019-06-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:52:37.845Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 &lt;a href=&quot;http://es6.ruanyifeng.com/#docs/promise&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ES6
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>this</title>
+    <link href="http://blog.studyfe.cn/2019/06/14/javascript/this/"/>
+    <id>http://blog.studyfe.cn/2019/06/14/javascript/this/</id>
+    <published>2019-06-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:52:50.438Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;this&quot;&gt;&lt;a href=&quot;#this&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型及原型链</title>
+    <link href="http://blog.studyfe.cn/2019/06/14/javascript/prototype/"/>
+    <id>http://blog.studyfe.cn/2019/06/14/javascript/prototype/</id>
+    <published>2019-06-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:52:44.309Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;原型及原型链&quot;&gt;&lt;a href=&quot;#原型及原型链&quot; class=&quot;headerlink&quot; title=&quot;原型及原型链&quot;&gt;&lt;/a&gt;原型及原型链&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;普通对象和函数对象&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据类型</title>
+    <link href="http://blog.studyfe.cn/2019/06/14/javascript/type/"/>
+    <id>http://blog.studyfe.cn/2019/06/14/javascript/type/</id>
+    <published>2019-06-14T04:32:09.000Z</published>
+    <updated>2019-08-22T13:29:45.634Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;基本数据类型与引用数据类型&quot;&gt;&lt;a href=&quot;#基本数据类型与引用数据类型&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vo Ao</title>
+    <link href="http://blog.studyfe.cn/2019/06/14/javascript/voao/"/>
+    <id>http://blog.studyfe.cn/2019/06/14/javascript/voao/</id>
+    <published>2019-06-14T04:32:09.000Z</published>
+    <updated>2019-08-22T13:30:21.176Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;变量提升与函数提升&quot;&gt;&lt;a href=&quot;#变量提升与函数提升&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>偏应用函数、函数的柯里化</title>
+    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functioncurrying/"/>
+    <id>http://blog.studyfe.cn/2019/05/14/javascript/functioncurrying/</id>
+    <published>2019-05-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:52:09.551Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;偏应用函数简称偏函数，在模拟 bind 的时候已经说明其概念和作为主要 bind
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-函数组合</title>
+    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functionalcombination/"/>
+    <id>http://blog.studyfe.cn/2019/05/14/javascript/functionalcombination/</id>
+    <published>2019-05-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:51:45.334Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;函数组合是将两个或多个函数组合以产生新函数的过程。将功能组合在一起就像将一系列管道拼凑在一起，以便我们的数据流过&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;简而言之，函数&lt;code&gt;f&lt;/code&gt;和&lt;code&gt;g&lt;/code&gt;的组合可以定义为&lt;code&gt;f（g（x））&lt;/code&gt;，它从内到
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-Point Free</title>
+    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functionalpoint/"/>
+    <id>http://blog.studyfe.cn/2019/05/14/javascript/functionalpoint/</id>
+    <published>2019-05-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:51:57.334Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript 中的函数定义：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 表达式
+function foo (/* parameters are
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-纯函数</title>
+    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functionalpurity/"/>
+    <id>http://blog.studyfe.cn/2019/05/14/javascript/functionalpurity/</id>
+    <published>2019-05-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:52:03.026Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;说纯函数概念之前我们再来复习一下什么是函数&lt;br&gt;&lt;br&gt;函数是一个方法，有一些输入，称为变量，并产生一些输出称为返回值&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;函数可以用于以下目的&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;映射：根据给定的输入生成一些输出，函数将输入值映射到输出值上&lt;/li&gt;
+&lt;li&gt;过
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象之继承</title>
+    <link href="http://blog.studyfe.cn/2019/05/14/javascript/inheritance/"/>
+    <id>http://blog.studyfe.cn/2019/05/14/javascript/inheritance/</id>
+    <published>2019-05-14T04:32:09.000Z</published>
+    <updated>2019-08-22T14:52:20.047Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;原型链虽然很强大，也可以用它来实现继承，但是总会有这样那样的问题。其中最主要的问题是原型链的引用问题。下面借鉴JS高程中的几种方式来学习JS继承,JS继承也是面向对象（oo）编程，但不使用类或者接口，而是使用创建对象的形式。虽然在ES6中实现了Class但其实只是语法糖，原
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-基本理论</title>
+    <link href="http://blog.studyfe.cn/2019/05/13/javascript/functionalbase/"/>
+    <id>http://blog.studyfe.cn/2019/05/13/javascript/functionalbase/</id>
+    <published>2019-05-13T04:32:09.000Z</published>
+    <updated>2019-08-22T13:22:56.563Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;什么是函数式编程&quot;&gt;&lt;a href=&quot;#什么是函数式编程&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS 动画</title>
+    <link href="http://blog.studyfe.cn/2019/01/23/css/css-animation/"/>
+    <id>http://blog.studyfe.cn/2019/01/23/css/css-animation/</id>
+    <published>2019-01-23T04:32:09.000Z</published>
+    <updated>2019-08-22T10:04:07.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;API的简介及简单动画的实现&lt;/p&gt;
+&lt;h3 id=&quot;一-3D转换（transform）&quot;&gt;&lt;a href=&quot;#一-3D转换（transform）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS 基本布局</title>
+    <link href="http://blog.studyfe.cn/2019/01/23/css/base-layout/"/>
+    <id>http://blog.studyfe.cn/2019/01/23/css/base-layout/</id>
+    <published>2019-01-23T04:32:09.000Z</published>
+    <updated>2019-08-22T10:03:44.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-自适应两栏布局&quot;&gt;&lt;a href=&quot;#1-自适应两栏布局&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css分层理论</title>
+    <link href="http://blog.studyfe.cn/2019/01/23/css/css-layered/"/>
+    <id>http://blog.studyfe.cn/2019/01/23/css/css-layered/</id>
+    <published>2019-01-23T04:32:09.000Z</published>
+    <updated>2019-08-22T10:04:24.857Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;css分层理论和命令规则将有助于它的可扩展性，性能的提高和代码的组织管理。&lt;/p&gt;
+&lt;h3 id=&quot;OOSS&quot;&gt;&lt;a href=&quot;#OOSS&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS预处理器</title>
+    <link href="http://blog.studyfe.cn/2019/01/23/css/css-preprocessor/"/>
+    <id>http://blog.studyfe.cn/2019/01/23/css/css-preprocessor/</id>
+    <published>2019-01-23T04:32:09.000Z</published>
+    <updated>2019-08-22T10:04:44.549Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现代码的分层、复用和依赖管理，提高开发效率&lt;/p&gt;
+&lt;h3 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML 系列总结</title>
+    <link href="http://blog.studyfe.cn/2019/01/23/html/html/"/>
+    <id>http://blog.studyfe.cn/2019/01/23/html/html/</id>
+    <published>2019-01-23T04:32:09.000Z</published>
+    <updated>2019-08-22T13:21:09.070Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div align=&quot;middle&quot;&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="HTML" scheme="http://blog.studyfe.cn/categories/HTML/"/>
+    
+    
+      <category term="HTML" scheme="http://blog.studyfe.cn/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS 基础知识概念</title>
+    <link href="http://blog.studyfe.cn/2019/01/20/css/base-concepts/"/>
+    <id>http://blog.studyfe.cn/2019/01/20/css/base-concepts/</id>
+    <published>2019-01-20T04:32:09.000Z</published>
+    <updated>2019-08-22T10:55:07.158Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1．什么是css&quot;&gt;&lt;a href=&quot;#1．什么是css&quot; class=&quot;headerlink&quot; title=&quot;1．什么是css&quot;&gt;&lt;/a&gt;1．什么是css&lt;/h3&gt;&lt;p&gt; &amp;nbsp;层叠样式表(英文全称：Cascading Style
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>闭包</title>
+    <link href="http://blog.studyfe.cn/2018/11/23/javascript/closure/"/>
+    <id>http://blog.studyfe.cn/2018/11/23/javascript/closure/</id>
+    <published>2018-11-23T04:32:09.000Z</published>
+    <updated>2019-08-22T13:15:16.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;说起闭包那么首先先来了解一下js执行环境（execution context）、作用域以及作用域链（scope chain）&lt;/p&gt;
+&lt;h2 id=&quot;上下文执行环境&quot;&gt;&lt;a href=&quot;#上下文执行环境&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>call 和 apply</title>
+    <link href="http://blog.studyfe.cn/2018/11/23/javascript/call/"/>
+    <id>http://blog.studyfe.cn/2018/11/23/javascript/call/</id>
+    <published>2018-11-23T04:32:09.000Z</published>
+    <updated>2019-08-22T12:59:59.963Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;谈起 call 和 apply 这两个 Function.prototype 上的方法可能很熟悉了，它在继承，改变this指针上有很多的应用场景。接下来我们简单的来重新回忆一下 call 和 apply 这两个函数的功能 &lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;例子一&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bind 函数的实现</title>
+    <link href="http://blog.studyfe.cn/2018/10/23/javascript/bind/"/>
+    <id>http://blog.studyfe.cn/2018/10/23/javascript/bind/</id>
+    <published>2018-10-23T04:32:09.000Z</published>
+    <updated>2019-08-22T12:59:33.820Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;bind 方法其实和 call apply 功能上差不多，只不过 bind() 方法会绑定一个新的函数，通过这个新的函数我们可以当作构造函数、偏函数等等去使用&lt;/p&gt;
+&lt;h3 id=&quot;作为绑定函数使用&quot;&gt;&lt;a href=&quot;#作为绑定函数使用&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+</feed>

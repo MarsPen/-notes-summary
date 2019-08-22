@@ -16,6 +16,13 @@
     </a>
 <% } %>
 
+<% if (theme.socialLink.juejin) { %>
+  <a href="https://juejin.im/<%= theme.socialLink.juejin %>" class="tooltipped" target="_blank" data-tooltip="访问我的掘金" data-position="top" data-delay="50">
+      <i class="fa fa-inverse">掘</i>
+  </a>
+<% } %>
+
+
 <% if (theme.socialLink.qq) { %>
     <a href="https://user.qzone.qq.com/<%= theme.socialLink.qq %>" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
         <i class="fa fa-qq"></i>
@@ -27,6 +34,7 @@
         <i class="fa fa-weibo"></i>
     </a>
 <% } %>
+
 
 <% if (config.feed && config.feed.path == 'atom.xml') { %>
     <a href="<%- url_for('/atom.xml') %>" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">

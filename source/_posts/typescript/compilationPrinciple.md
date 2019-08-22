@@ -45,7 +45,3 @@ AST + 检查器 ~~ 发射器 ~~> JavaScript 代码
 
 
 
-## TypeScript基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>
-
-

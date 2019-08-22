@@ -217,18 +217,6 @@ var getIncompleteTaskSummaries = function(membername) {
 ```
 
 
-Point Free 风格能够帮助我们减少不必要的命名，让代码保持简洁和通用<br/>
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionLazyChain.md'>函数式编程-惰性求值</a>
-
-## JS 函数式编程系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functional.md'>JS 函数式编程系列</a>
-
-## JS 基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>
-
-
 
 
 

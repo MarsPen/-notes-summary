@@ -138,10 +138,4 @@ myGenericNumber.add = function(x, y) { return x + y; };
 ```
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/module.md'>module和nameSpace</a>
-
-## TypeScript基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>
-
 

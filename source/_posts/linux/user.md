@@ -136,13 +136,6 @@ sudo chown root:root jdk-7u21-linux-i586.tar.gz
 
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/fileauth.md'>linux基础系列之-文件权限管理</a>
-
-## linux基础命令系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md'>linux基础命令系列</a>
-
-
 
 
 

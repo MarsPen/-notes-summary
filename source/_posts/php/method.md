@@ -155,10 +155,3 @@ urldecode(str)
 
 
 其实还有好多比如字符串的内置函数、文件操作的内置函数、数据库连接的内置函数等等。其实PHP方法还是比JS多用到的时候查看API即可...<br/>
-
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/php/oop.md'>php基础系列之-面向对象</a>
-
-## linux基础命令系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/php/index.md'>php基础系列</a>

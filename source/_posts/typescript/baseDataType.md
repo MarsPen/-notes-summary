@@ -134,13 +134,7 @@ let strLength: number = (<string>city).length;
 <hr/>
 总结：通过以上的介绍相信大家对ts的数据类型已经有了大概的了解，其实相对于js,ts的数据类型并没有做什么变更，只是在声明其数据类型的时候必须明确的指定其相应的数据类型，否则代码编译会报错。虽然 ts的文件是xxx.ts 但由于编译过后和js 没有什么大的不同点，能够很好的运行在浏览器端，其中class、public等等函数及模块编译过后的js能后让你更深入的了解js
 
-<hr/>
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/function.md'>函数</a>
-
-## TypeScript基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>
 
 
 

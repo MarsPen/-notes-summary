@@ -232,13 +232,6 @@ HTTP和WebSocket虽都是基于TCP协议<br/>
 
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/url.md'>node基础API-url</a>
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node系列</a>
-
-
 
 
 

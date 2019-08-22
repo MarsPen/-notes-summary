@@ -151,9 +151,3 @@ _.padStart("Hello TypeScript!", 20, " ");
 
 
 
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/tsConfig.md'>tsconfig.json</a>
-
-## TypeScript基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>

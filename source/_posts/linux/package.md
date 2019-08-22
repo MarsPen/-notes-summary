@@ -76,11 +76,3 @@ rpm文件是Redhat支持的软件包格式，而.deb是Debian上支持软件包�
 2.使用alien，执行`sudo alien abc.rpm`
 3.执行完成后，目录下会生成一个abc.deb文件
 4.安装并使用dpkg
-
-
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/backup.md'>linux基础系列之-备份</a>
-
-## linux基础命令系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/linux/index.md'>linux基础命令系列</a>

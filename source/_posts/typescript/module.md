@@ -187,11 +187,3 @@ tsc --module commonjs Test.ts
 tsc --module amd Test.ts
 ```
 
-## 参考
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/decorators.md'>namespaces</a>
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/decorators.md'>装饰器</a>
-
-## TypeScript基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>

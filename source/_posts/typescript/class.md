@@ -257,12 +257,6 @@ let people = new People('zhangsan') // Cannot create an instance of an abstract 
 ```
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/interfaces.md'>接口</a>
-
-## TypeScript基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/index.md'>TypeScript基础</a>
-
 
 
 

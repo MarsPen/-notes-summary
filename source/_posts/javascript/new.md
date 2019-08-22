@@ -94,12 +94,6 @@ console.log(person.sayName()); // my name is renbo, I'm 28 years old
 console.log(person.study()); // my name is renbo, I'm learning to swim
 ```
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/promise.md'>JS基础系列之-promise</a>
-
-## JS基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>
-
 
 
 

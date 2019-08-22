@@ -491,10 +491,6 @@ call 和 callStatic 是类似的方法，前者是调用类不存在的方法时
 ```
 
 
-## PHP基础命令系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/php/index.md'>php基础系列</a>
-
-
 
 
 

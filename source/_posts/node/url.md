@@ -68,10 +68,3 @@ console.log(myURL.searchParams);  // 123
 
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/fs.md'>node基础API-fs</a>
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node系列</a>
-
-

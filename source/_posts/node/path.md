@@ -110,9 +110,3 @@ path.normalize('/foo/bar//baz/asdf/quux/..');
 <a href="https://nodejs.org/docs/latest-v9.x/api/path.html">其他方法请参考 Node Api </a><br/>
 
 
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/querystring.md'>node基础API-querystring查询字符串</a>
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node系列</a>

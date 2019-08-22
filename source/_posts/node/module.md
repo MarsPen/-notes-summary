@@ -193,8 +193,3 @@ function Module(id, parent) {
 
 通过以上我们大致了解了 Node 中模块的编译、加载、引入流程。当然还有核心模块的编写，在这里就不过多的阐述了。更多请参考朴灵老师编著的《深入浅出 node》，相信会有更多的收获。<br/>
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/crypto.md'>node基础API-crypto加密模块</a>
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node系列</a>

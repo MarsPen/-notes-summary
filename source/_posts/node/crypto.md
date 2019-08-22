@@ -191,11 +191,3 @@ crypto模块也可以处理数字证书。数字证书通常用在SSL连接，�
 <a href='https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501504929883d11d84a1541c6907eefd792c0da51000'>廖雪峰老师的Crypto</a>
 
 <a href='http://nodejs.cn/api/crypto.html'>Node Api crypto 加密模块 </a>
-
-
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/process.md'>node 基础API-process进程</a>
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node 系列</a>

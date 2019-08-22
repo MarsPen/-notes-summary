@@ -198,12 +198,6 @@ process.on('message', function (m, tcp) {
 
 
 
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/error.md'>node基础API-error</a>
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node系列</a>
-
 
 
 

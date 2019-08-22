@@ -191,15 +191,4 @@ const trace = label => {
 ```
 
 
-这样我们就大概了解到函数式编程的函数组合模式，在后续的文章中会有更多关于函数式编程介绍<br/>
-
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalPoint.md'>函数式编程-Point Free</a>
-
-## JS 函数式编程系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/functional.md'>JS 函数式编程系列</a>
-
-## JS 基础列系列目录
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md'>JS基础系列</a>
 

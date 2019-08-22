@@ -41,12 +41,6 @@ try {
 } 
 ```
 
-## 更多处理 Error 方法请参考
-<a href='http://nodejs.cn/api/errors.html'>Node Api Error 异常模块 </a>
-
-
-## node系列
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/node/index.md'>node 系列</a>
 
 
 
