@@ -19,9 +19,6 @@ menu:
   Friends:
     url: /friends
     icon:
-  Contact:
-    url: /contact
-    icon:
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -254,7 +251,7 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: true
+  enable: false
   owner: MarsPen
   repo: marspen.github.io/-notes-summary/
   oauth:
@@ -375,7 +372,6 @@ featureImages:
 - /medias/featureimages/8.jpg
 - /medias/featureimages/9.jpg
 - /medias/featureimages/10.jpg
-- /medias/featureimages/11.jpg
 - /medias/featureimages/12.jpg
 - /medias/featureimages/13.jpg
 - /medias/featureimages/14.jpg

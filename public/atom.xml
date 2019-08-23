@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>任博的博客</title>
+  <title></title>
   
-  <subtitle>不念过往 不惧未来</subtitle>
+  <subtitle>知识改变命运</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.studyfe.cn/"/>
-  <updated>2019-08-23T09:25:15.497Z</updated>
+  <updated>2019-08-23T15:11:27.782Z</updated>
   <id>https://blog.studyfe.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
     <id>https://blog.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-23T09:25:15.497Z</updated>
+    <updated>2019-08-23T15:11:27.782Z</updated>
     
     <summary type="html">
     
@@ -49,7 +49,7 @@
     <link href="https://blog.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
     <id>https://blog.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-23T09:25:13.763Z</updated>
+    <updated>2019-08-23T15:11:27.783Z</updated>
     
     <summary type="html">
     
@@ -75,7 +75,7 @@
     <link href="https://blog.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
     <id>https://blog.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-23T09:25:21.582Z</updated>
+    <updated>2019-08-23T15:11:27.783Z</updated>
     
     <summary type="html">
     
@@ -101,7 +101,7 @@
     <link href="https://blog.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
     <id>https://blog.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-23T09:25:26.920Z</updated>
+    <updated>2019-08-23T15:11:27.783Z</updated>
     
     <summary type="html">
     
@@ -129,7 +129,7 @@
     <link href="https://blog.studyfe.cn/2019/08/05/typescript/compilationprinciple/"/>
     <id>https://blog.studyfe.cn/2019/08/05/typescript/compilationprinciple/</id>
     <published>2019-08-05T10:20:27.000Z</published>
-    <updated>2019-08-23T09:24:43.231Z</updated>
+    <updated>2019-08-23T15:11:27.780Z</updated>
     
     <summary type="html">
     
@@ -155,7 +155,7 @@
     <link href="https://blog.studyfe.cn/2019/07/25/javascript/functionalpoint/"/>
     <id>https://blog.studyfe.cn/2019/07/25/javascript/functionalpoint/</id>
     <published>2019-07-25T04:32:09.000Z</published>
-    <updated>2019-08-23T08:21:40.151Z</updated>
+    <updated>2019-08-23T15:11:27.769Z</updated>
     
     <summary type="html">
     
@@ -181,7 +181,7 @@
     <link href="https://blog.studyfe.cn/2019/07/22/javascript/functionalcombination/"/>
     <id>https://blog.studyfe.cn/2019/07/22/javascript/functionalcombination/</id>
     <published>2019-07-22T04:32:09.000Z</published>
-    <updated>2019-08-23T08:23:32.906Z</updated>
+    <updated>2019-08-23T15:11:27.769Z</updated>
     
     <summary type="html">
     
@@ -207,7 +207,7 @@
     <link href="https://blog.studyfe.cn/2019/07/18/typescript/decorators/"/>
     <id>https://blog.studyfe.cn/2019/07/18/typescript/decorators/</id>
     <published>2019-07-18T10:20:27.000Z</published>
-    <updated>2019-08-23T09:27:36.022Z</updated>
+    <updated>2019-08-23T15:11:27.781Z</updated>
     
     <summary type="html">
     
@@ -234,7 +234,7 @@
     <link href="https://blog.studyfe.cn/2019/07/17/javascript/functioncurrying/"/>
     <id>https://blog.studyfe.cn/2019/07/17/javascript/functioncurrying/</id>
     <published>2019-07-17T04:32:09.000Z</published>
-    <updated>2019-08-23T06:59:03.653Z</updated>
+    <updated>2019-08-23T15:11:27.768Z</updated>
     
     <summary type="html">
     
@@ -260,7 +260,7 @@
     <link href="https://blog.studyfe.cn/2019/07/15/typescript/tsconfig/"/>
     <id>https://blog.studyfe.cn/2019/07/15/typescript/tsconfig/</id>
     <published>2019-07-15T10:20:27.000Z</published>
-    <updated>2019-08-23T09:24:21.619Z</updated>
+    <updated>2019-08-23T15:11:27.784Z</updated>
     
     <summary type="html">
     
@@ -288,7 +288,7 @@
     <link href="https://blog.studyfe.cn/2019/07/15/javascript/functionalpurity/"/>
     <id>https://blog.studyfe.cn/2019/07/15/javascript/functionalpurity/</id>
     <published>2019-07-15T04:32:09.000Z</published>
-    <updated>2019-08-23T08:22:37.103Z</updated>
+    <updated>2019-08-23T15:11:27.770Z</updated>
     
     <summary type="html">
     
@@ -314,7 +314,7 @@
     <link href="https://blog.studyfe.cn/2019/07/12/javascript/functionalbase/"/>
     <id>https://blog.studyfe.cn/2019/07/12/javascript/functionalbase/</id>
     <published>2019-07-12T04:32:09.000Z</published>
-    <updated>2019-08-23T06:58:09.903Z</updated>
+    <updated>2019-08-23T15:11:27.769Z</updated>
     
     <summary type="html">
     
@@ -340,7 +340,7 @@
     <link href="https://blog.studyfe.cn/2019/07/02/typescript/mixinx/"/>
     <id>https://blog.studyfe.cn/2019/07/02/typescript/mixinx/</id>
     <published>2019-07-02T10:20:27.000Z</published>
-    <updated>2019-08-23T09:23:55.557Z</updated>
+    <updated>2019-08-23T15:11:27.782Z</updated>
     
     <summary type="html">
     
@@ -367,7 +367,7 @@
     <link href="https://blog.studyfe.cn/2019/06/20/typescript/declarefile/"/>
     <id>https://blog.studyfe.cn/2019/06/20/typescript/declarefile/</id>
     <published>2019-06-20T10:20:27.000Z</published>
-    <updated>2019-08-23T09:23:39.533Z</updated>
+    <updated>2019-08-23T15:11:27.780Z</updated>
     
     <summary type="html">
     
@@ -393,7 +393,7 @@
     <link href="https://blog.studyfe.cn/2019/06/15/typescript/module/"/>
     <id>https://blog.studyfe.cn/2019/06/15/typescript/module/</id>
     <published>2019-06-15T10:20:27.000Z</published>
-    <updated>2019-08-23T09:23:16.980Z</updated>
+    <updated>2019-08-23T15:11:27.783Z</updated>
     
     <summary type="html">
     
@@ -420,7 +420,7 @@
     <link href="https://blog.studyfe.cn/2019/06/11/javascript/promise/"/>
     <id>https://blog.studyfe.cn/2019/06/11/javascript/promise/</id>
     <published>2019-06-11T04:32:09.000Z</published>
-    <updated>2019-08-23T08:13:34.397Z</updated>
+    <updated>2019-08-23T15:11:27.771Z</updated>
     
     <summary type="html">
     
@@ -446,7 +446,7 @@
     <link href="https://blog.studyfe.cn/2019/05/23/typescript/basedatatype/"/>
     <id>https://blog.studyfe.cn/2019/05/23/typescript/basedatatype/</id>
     <published>2019-05-23T14:28:09.000Z</published>
-    <updated>2019-08-23T09:20:52.039Z</updated>
+    <updated>2019-08-23T15:11:27.779Z</updated>
     
     <summary type="html">
     
@@ -473,7 +473,7 @@
     <link href="https://blog.studyfe.cn/2019/05/22/typescript/generics/"/>
     <id>https://blog.studyfe.cn/2019/05/22/typescript/generics/</id>
     <published>2019-05-22T10:20:27.000Z</published>
-    <updated>2019-08-23T09:22:49.842Z</updated>
+    <updated>2019-08-23T15:11:27.782Z</updated>
     
     <summary type="html">
     
@@ -500,7 +500,7 @@
     <link href="https://blog.studyfe.cn/2019/05/18/typescript/interfaces/"/>
     <id>https://blog.studyfe.cn/2019/05/18/typescript/interfaces/</id>
     <published>2019-05-18T10:20:27.000Z</published>
-    <updated>2019-08-23T09:25:14.691Z</updated>
+    <updated>2019-08-23T15:11:27.782Z</updated>
     
     <summary type="html">
     
@@ -528,7 +528,7 @@
     <link href="https://blog.studyfe.cn/2019/05/17/typescript/class/"/>
     <id>https://blog.studyfe.cn/2019/05/17/typescript/class/</id>
     <published>2019-05-17T10:20:27.000Z</published>
-    <updated>2019-08-23T09:22:23.102Z</updated>
+    <updated>2019-08-23T15:11:27.780Z</updated>
     
     <summary type="html">
     
