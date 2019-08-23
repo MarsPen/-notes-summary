@@ -103,13 +103,6 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
-        <a href="/contact" class="waves-effect waves-light">
-            
-            <span>留言板</span>
-        </a>
-    </li>
-    
     <li>
         <a href="#searchModal" class="modal-trigger waves-effect waves-light">
             <i id="searchIcon" class="fa fa-search" title="搜索"></i>
@@ -186,15 +179,6 @@
                 <i class="fa fa-fw fa-link"></i>
                 
                 友情链接
-            </a>
-        </li>
-        
-        <li>
-            <a href="/contact" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                留言板
             </a>
         </li>
         
@@ -560,7 +544,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"CSS","value":5},{"name":"JavaScript","value":12},{"name":"HTML","value":1},{"name":"函数式编程","value":5},{"name":"Linux","value":10},{"name":"Node","value":10},{"name":"TypeScript","value":16},{"name":"PHP","value":3}],
+                data: [{"name":"HTML","value":1},{"name":"CSS","value":5},{"name":"JavaScript","value":12},{"name":"函数式编程","value":5},{"name":"Linux","value":10},{"name":"Node","value":10},{"name":"PHP","value":3},{"name":"TypeScript","value":16}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -778,11 +762,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
+            
+            
             <a href="/tags/TypeScript/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">TypeScript</span>
             </a>
-            
-            
             
             
         </div>
@@ -947,8 +931,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 8000;
-        var uvcountOffset = 2000;
+        var pvcountOffset = 800;
+        var uvcountOffset = 200;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
@@ -986,7 +970,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2019, 05, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t1 = Date.UTC(2017, 05, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -1034,7 +1018,7 @@ $(function () {
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -1042,7 +1026,7 @@ $(function () {
     }
 
     gtag('js', new Date());
-    gtag('config', '');
+    gtag('config', '1');
 </script>
 
 

@@ -103,13 +103,6 @@
         </a>
     </li>
     
-    <li class="hide-on-med-and-down">
-        <a href="/contact" class="waves-effect waves-light">
-            
-            <span>留言板</span>
-        </a>
-    </li>
-    
     <li>
         <a href="#searchModal" class="modal-trigger waves-effect waves-light">
             <i id="searchIcon" class="fa fa-search" title="搜索"></i>
@@ -186,15 +179,6 @@
                 <i class="fa fa-fw fa-link"></i>
                 
                 友情链接
-            </a>
-        </li>
-        
-        <li>
-            <a href="/contact" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                留言板
             </a>
         </li>
         
@@ -468,24 +452,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>// Type definitions for [<del>THE LIBRARY NAME</del>] [<del>OPTIONAL VERSION NUMBER</del>]<br>// Project: [<del>THE PROJECT NAME</del>]<br>// Definitions by: [<del>YOUR NAME</del>] &lt;[<del>A URL FOR YOU</del>]&gt;</p>
-<p>/<em>~ This is the module template file for class modules.
- </em>~ You should rename it to index.d.ts and place it in a folder with the same name as the module.<br> <em>~ For example, if you were writing a file for “super-greeter”, this
- </em>~ file should be ‘super-greeter/index.d.ts’<br> */</p>
-<p>/<em>~ Note that ES6 modules cannot directly export class objects.
- </em>~ This file should be imported using the CommonJS-style:<br> <em>~   import x = require(‘someLibrary’);
- </em>~<br> <em>~ Refer to the documentation to understand common
- </em>~ workarounds for this limitation of ES6 modules.<br> */</p>
-<p>/<em>~ If this module is a UMD module that exposes a global variable ‘myClassLib’ when
- </em>~ loaded outside a module loader environment, declare that global here.<br> <em>~ Otherwise, delete this declaration.
- </em>/<br>export as namespace myClassLib;</p>
-<p>/<em>~ This declaration specifies that the class constructor function
- </em>~ is the exported object from the file<br> */<br>export = MyClass;</p>
-<p>/<em>~ Write your module’s methods and properties in this class </em>/<br>declare class MyClass {<br>    constructor(someParam?: string);</p>
+<p>/*~ This is the module template file for class modules.<br> *~ You should rename it to index.d.ts and place it in a folder with the same name as the module.<br> *~ For example, if you were writing a file for “super-greeter”, this<br> *~ file should be ‘super-greeter/index.d.ts’<br> */</p>
+<p>/*~ Note that ES6 modules cannot directly export class objects.<br> *~ This file should be imported using the CommonJS-style:<br> *~   import x = require(‘someLibrary’);<br> *~<br> *~ Refer to the documentation to understand common<br> *~ workarounds for this limitation of ES6 modules.<br> */</p>
+<p>/*~ If this module is a UMD module that exposes a global variable ‘myClassLib’ when<br> *~ loaded outside a module loader environment, declare that global here.<br> *~ Otherwise, delete this declaration.<br> */<br>export as namespace myClassLib;</p>
+<p>/*~ This declaration specifies that the class constructor function<br> *~ is the exported object from the file<br> */<br>export = MyClass;</p>
+<p>/*~ Write your module’s methods and properties in this class */<br>declare class MyClass {<br>    constructor(someParam?: string);</p>
 <pre><code>someProperty: string[];
 
 myMethod(opts: MyClass.MyClassMethodOptions): number;</code></pre><p>}</p>
-<p>/<em>~ If you want to expose types from your module as well, you can
- </em>~ place them in this block.<br> */<br>declare namespace MyClass {<br>    export interface MyClassMethodOptions {<br>        width?: number;<br>        height?: number;<br>    }<br>}</p>
+<p>/*~ If you want to expose types from your module as well, you can<br> *~ place them in this block.<br> */<br>declare namespace MyClass {<br>    export interface MyClassMethodOptions {<br>        width?: number;<br>        height?: number;<br>    }<br>}</p>
 
             </div>
             <hr />
@@ -970,8 +945,8 @@ myMethod(opts: MyClass.MyClassMethodOptions): number;</code></pre><p>}</p>
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 8000;
-        var uvcountOffset = 2000;
+        var pvcountOffset = 800;
+        var uvcountOffset = 200;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
@@ -1009,7 +984,7 @@ myMethod(opts: MyClass.MyClassMethodOptions): number;</code></pre><p>}</p>
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2019, 05, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t1 = Date.UTC(2017, 05, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -1057,7 +1032,7 @@ $(function () {
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -1065,7 +1040,7 @@ $(function () {
     }
 
     gtag('js', new Date());
-    gtag('config', '');
+    gtag('config', '1');
 </script>
 
 
