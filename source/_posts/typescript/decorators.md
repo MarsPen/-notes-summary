@@ -1,6 +1,6 @@
 ---
 title: 装饰器
-date: 2017-01-23 12:32:09
+date: 2019-07-18 18:20:27
 top: false
 cover: false
 password:
@@ -76,7 +76,7 @@ class People{
 
 ### 多个装饰器应用
 
-当在一个类上由多个装饰器调用的时候，类似于<a href="https://github.com/MarsPen/-notes-summary/blob/master/javascript/functionalCombination.md">函数组合</a>
+当在一个类上由多个装饰器调用的时候，类似于<a href="functionalCombination.md">函数组合</a>
 
 定义多个装饰器
 

@@ -1,6 +1,6 @@
 ---
 title: 函数式编程-Point Free
-date: 2019-5-14 12:32:09
+date: 2019-7-25 12:32:09
 top: false
 cover: false
 password:
@@ -12,8 +12,10 @@ tags:
 categories:
 - 函数式编程
 ---
+### 概念
 
-Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript 中的函数定义：
+Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript 中的函数定义
+
 ```
 // 表达式
 function foo (/* parameters are declared here*/) {}
@@ -26,7 +28,8 @@ const foo = function (/* parameters are declared here */) {}
 
 如何在不引用所需参数的情况下在 JavaScript 中定义函数？我们不能使用 functionkeyword，也不能使用箭头函数（=>），因为它们需要声明形参（这将引用它的参数）。所以我们需要做的是调用一个返回函数的函数<br/>
 
-看一个简单的例子：<br/>
+### demo1
+
 
 ```
 // 非 Point-free. 因为函数引用了参数name
@@ -41,10 +44,11 @@ var hello = str => `hello ${str}`;
 var greet = compose(hello, toUpperCase);
 greet('renbo');
 ```
+### demo2
 
-在看一个例子：<br/>
 这个例子来自于<a href="https://fr.umio.us/favoring-curry/">Favoring Curry</a><br/>
 假设我们从服务器获取这样的数据：
+
 ```
 var data = {
   result: "SUCCESS",
@@ -71,6 +75,9 @@ var data = {
 };
 ```
 
+
+### getIncompleteTaskSummaries 函数
+
 我们需要一个名为 getIncompleteTaskSummaries 的函数，接收一个 username 作为参数，从服务器获取数据之后筛选出这个用户未完成的任务的 ids、priorities、titles、和 dueDate 数据，并且按照日期升序排序。<br/>
 
 以 Scott 为例，最终筛选出的数据为<br/>
@@ -82,7 +89,7 @@ var data = {
         dueDate: "2013-11-29", priority: "high"}
 ]
 ```
-1. 下面得代码我们应该很熟悉<br/>
+
 ```
 var getIncompleteTaskSummaries = function(membername) {
      return fetchData()
@@ -124,7 +131,8 @@ var getIncompleteTaskSummaries = function(membername) {
 getIncompleteTaskSummaries('Scott')
 ```
 
-2. 使用 Point-free 模式<br/>
+### Point-free 模式<br/>
+
 ```
 // 拆分基础函数
 curry 为封装的通用 curry 韩式
@@ -172,7 +180,9 @@ var getIncompleteTaskSummaries = function(membername) {
 getIncompleteTaskSummaries('Scott')
 ```
 
-3. 如果直接使用 ramda.js，你可以省去编写基本函数<br/>
+### 利用 ramda.js 实现 getIncompleteTaskSummarie
+
+如果直接使用 ramda.js，你可以省去编写基本函数<br/>
 ```
 var getIncompleteTaskSummaries = function(membername) {
     return fetchData()
@@ -186,7 +196,10 @@ var getIncompleteTaskSummaries = function(membername) {
 getIncompleteTaskSummaries('Scott')
 ```
 
-4. 利用 compose，也可以这样写,但是 compose 是从右到左依次执行的
+### 利用 compose 实现 getIncompleteTaskSummaries
+
+可以从左到右
+
 ```
 var getIncompleteTaskSummaries = function(membername) {
     return fetchData()
@@ -202,7 +215,10 @@ var getIncompleteTaskSummaries = function(membername) {
 getIncompleteTaskSummaries('Scott')
 ```
 
-5. 我们也可以利用 ramda.js 提供的 R.pipe 函数，可以从左到右
+### 利用 ramda.js 提供的 R.pipe 函数
+
+可以从左到右
+
 ```
 var getIncompleteTaskSummaries = function(membername) {
     return fetchData()

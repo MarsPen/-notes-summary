@@ -1,6 +1,6 @@
 ---
 title: Linux vim使用
-date: 2017-01-23 12:32:09
+date: 2018-7-28 17:30:45
 top: false
 cover: false
 password:
@@ -13,9 +13,12 @@ categories:
 - Linux
 ---
 
-1.vim三种模式：命令模式、插入模式、编辑模式。使用ESC或i或：来切换模式。<br/>
+### vim三种模式
+命令模式、插入模式、编辑模式。使用ESC或i或：来切换模式
 
-2.命令模式下
+
+### 基本命令
+
 ```
 :q  退出
 

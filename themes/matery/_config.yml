@@ -169,21 +169,36 @@ profile:
 myProjects:
   enable: false
   data:
-    hexo-matery-modified:
-      icon: fa-meetup
-      iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
-      url: https://github.com/godweiyang/hexo-matery-modified
-      desc: 我的个性化配置过的博客源码，即下即用。
-    ConParser:
-        icon: fa-database
-        iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
-        url: https://github.com/godweiyang/ConParser
-        desc: 基于dynet的成分句法分析模型整合。
-    ECNU-BeamerTemplate:
+    白日梦旅行APP:
         icon: fa-file-text-o
         iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
-        url: https://github.com/godweiyang/ECNU_BeamerTemplate
-        desc: 基于Latex Beamer的华东师范大学PPT模板。
+        url: http://a.app.qq.com/o/simple.jsp?pkgname=com.daydream.journey
+        desc: 基于vue + WebViewJavascriptBridge。
+    白日梦旅行小程序:
+      icon: fa-meetup
+      iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
+      desc: 基于taro的小程序。
+    白日梦官网:
+        icon: fa-database
+        iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
+        url: https://www.mydaydream.com
+        desc: 基于vue + vux + ivew + webpack。
+    白日梦后台管理系统:
+        icon: fa-file-text-o
+        iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
+        url: https://console.mydaydream.com
+        desc: 基于vue + vux + ivew + webpack。
+    璧合DSP后台管理系统:
+        icon: fa-file-text-o
+        iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
+        url: http://dsp.behe.com/login
+        desc: 基于express + node + redis + ejs + echarts + jquery
+    璧合招财宝APP:
+        icon: fa-file-text-o
+        iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
+        desc: 基于express + node + redis + ejs + echarts + jquery(已下架)
+    
+
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
@@ -207,11 +222,17 @@ mySkills:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
       percent: 90%
     React:
-      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
+      background: 'linear-gradient(to right, #FFEB3B 0%, #3FF176 100%)'
       percent: 85%
+    Express:
+      background: 'linear-gradient(to right, #FF0B36 0%, #FAF176 100%)'
+      percent: 75%
+    Koa:
+      background: 'linear-gradient(to right, #9900FF 0%, #CBF1C2 100%)'
+      percent: 75%
     TypeSceipt:
-      background: 'linear-gradient(to right, #4EEB3B 0%, #FFF176 100%)'
-      percent: 85%
+      background: 'linear-gradient(to right, #FFEB3B 0%, #FF6566 100%)'
+      percent: 65%
     PHP:
       background: 'linear-gradient(to right, #1FEB3B 0%, #FFF176 100%)'
       percent: 50%
@@ -223,8 +244,8 @@ myGallery:
   enable: true
   data:
     - /medias/featureimages/32.jpg
-    - /medias/featureimages/34.jpg
     - /medias/featureimages/35.jpg
+    - /medias/featureimages/34.jpg
 
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面中是否显示'文章日历'控件
@@ -234,12 +255,12 @@ postCalendar: true
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
   enable: true
-  owner: renbo
-  repo: marspen.github.io
+  owner: MarsPen
+  repo: marspen.github.io/-notes-summary/
   oauth:
-    clientId: f4ed0b6940188e62a449
-    clientSecret: b6af683cf2760586c043d59635b7ed82b180e2ff
-  admin: renbo
+    clientId: 73145a6c107f6b031c40
+    clientSecret: 5d60a2c5035a3ce0495cb04c2c82989d30f35070
+  admin: MarsPen
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
@@ -396,5 +417,5 @@ featureImages:
   # noreprint（不允许转载 not allowed to reprint）
   # pay（付费转载 pay for reprinting）
 reprint:
-  enable: true # whether enable reprint section 是否启用“转载规则限定模块”
+  enable: false # whether enable reprint section 是否启用“转载规则限定模块”
   default: cc_by

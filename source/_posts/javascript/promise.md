@@ -1,6 +1,6 @@
 ---
 title: 实现 promise
-date: 2019-6-14 12:32:09
+date: 2019-6-11 12:32:09
 top: false
 cover: false
 password:
@@ -26,9 +26,10 @@ categories:
 7. Promise 如果不设置回调函数内部会抛异常
 
 
-### 模拟实现第一步 <br/>
+### 定义构造函数 
  
-构造函数 Promise 必须接受函数作为参数 <br/>
+构造函数 Promise 必须接受函数作为参数
+
 1. 定义构造函数
 2. 判断一个参数是否为函数
 
@@ -51,18 +52,11 @@ function Promise(fn) {
 }
 ```
 
-### 模拟实现第二步 <br/>
+### 定义 resolve 
 
 在内部定义 resolve 方法作为参数传到 fn 中，fn 调用成功后会调用 resolve 方法，之后在执行 then 中注册的回调函数
 
 ```
-/**
- * 封装判断参数是够是函数
- */
-function isFunction(fn) {
-  return 
-}
-
 /**
  * 定义构造函数
  * @param {*} fn 
@@ -114,7 +108,7 @@ success
 
 上面的例子我们已经简单的实现了 promise 的基础回调，接下来我们完成链式语法调用以及then队列管理
 
-### 模拟实现第三步<br/>
+### 链式语法及队列管理
 
 ```
 function Promise (fn) {
@@ -149,7 +143,7 @@ function Promise (fn) {
 ```
 
 
-### 模拟实现第四步 <br/>
+###  加入状态并串行Promise
 
 Promise 对象有三种状态 <br/>
 1. pending(进行中) 立即执行
@@ -212,7 +206,7 @@ function Promise (fn) {
 }
 ```
 
-### 模拟实现第五步（错误处理reject） <br/>
+### 错误处理reject
 
 在异步操作中，操作可能失败，执行失败的回调函数，上面已经说到从 pending 变为 rejected 过程是失败的过程可以执行回调函数 reject()
 
@@ -329,9 +323,10 @@ function Promise(fn) {
 }
 ```
 
-### 模拟实现第六步 <br/>
+### 实现Promise.all
 
 实现Promise.all函数
+
 ```
 /**
  * Promise.all
@@ -368,7 +363,7 @@ function gen(length, resolve) {
 ```
 
 
-### 模拟实现第七步 <br/>
+### 实现Promise.race
 
 实现Promise.race函数
 
@@ -395,7 +390,7 @@ Promise.race = function(promiseArr) {
 
 ```
 
-### 模拟实现第八步 <br/>
+### 实现 catch <br/>
 
 
 实现 catch 

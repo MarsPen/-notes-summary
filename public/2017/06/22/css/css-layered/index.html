@@ -12,8 +12,10 @@ OOSS
 定义：面向对象css
 设计原则：表现与结构分离，容器与内容分离
 用途：创建可复用的CSS模块以提高性能
-提高团队开发效率，减少耦合SMACSS
-定义：可扩">
+提高团队开发效率，减少耦合
+
+SMACSS
+定义：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -450,14 +452,14 @@ OOSS
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    702
+                    774
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
                 
@@ -478,10 +480,15 @@ OOSS
 <li>定义：面向对象css</li>
 <li>设计原则：表现与结构分离，容器与内容分离</li>
 <li>用途：创建可复用的CSS模块以提高性能</li>
-<li>提高团队开发效率，减少耦合<h3 id="SMACSS"><a href="#SMACSS" class="headerlink" title="SMACSS"></a>SMACSS</h3></li>
-<li>定义：可扩展的模块化架构的CSS</li>
-<li>设计原则： 使用一套五个层次来划分CSS</li>
-<li>用途：创建更结构化的模块以提高性能，增加效率<pre><code>Base - 设定HTML elements 的默认值
+<li>提高团队开发效率，减少耦合</li>
+</ol>
+<h3 id="SMACSS"><a href="#SMACSS" class="headerlink" title="SMACSS"></a>SMACSS</h3><ol>
+<li><p>定义：可扩展的模块化架构的CSS</p>
+</li>
+<li><p>设计原则： 使用一套五个层次来划分CSS</p>
+</li>
+<li><p>用途：创建更结构化的模块以提高性能，增加效率</p>
+<pre><code>Base - 设定HTML elements 的默认值
 Layout -Page structure 整个网站的「大架构」的外观   
 Module - Re-usable code bloks 不同页面公共模块 
 State - Active/Inactive etc 定义元素不同的状态 
@@ -489,50 +496,47 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </
 .header-top {}
 .header-top__title {}
 .header-top__title--ico {}
-</code></pre></li>
+
+&lt;div class=&quot;header&quot;&gt;
+ &lt;div class=&quot;header-top&quot;&gt;
+   &lt;div class=&quot;header-top__title&quot;&gt;
+     &lt;div class=&quot;header-top__title--ico&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre></li>
 </ol>
-<div class="header">
-  <div class="header-top">
-    <div class="header-top__title">
-      <div class="header-top__title--ico"></div>
-    </div>
-  </div>
-</div>
-```
-### BEM
-1. 定义：block：块，Element：元素，Modifier：修饰符 
-2. 设计原则：通过给每个元素添加它的父级block模块作为前缀
-3. 用途：有助于消除页面和body类对嵌套或者附加样式依赖
-```
-.product-details {}
+<h3 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h3><ol>
+<li><p>定义：block：块，Element：元素，Modifier：修饰符 </p>
+</li>
+<li><p>设计原则：通过给每个元素添加它的父级block模块作为前缀</p>
+</li>
+<li><p>用途：有助于消除页面和body类对嵌套或者附加样式依赖</p>
+<pre><code>.product-details {}
 .product-details__header {}
 .product-details__header--ico {}
 
-<div class="product-details">
-  <div class="product-details__header">
-    <div class="product-details__header--ico"><div> 
-  </div>
-</div>
-```
-### SUIT
-1. 定义：SUIT起源于BEM，对组件名使用驼峰式和连字号把组件从他们的修饰和子孙后代中区分出来
-2. 用途：通过抽离组件级别的的样式表，消除潜在的混乱连字符号连接元素名来使得选择器的可读性更强。
-3. 代码示例同BEM 只不过是抽离的组件
-
-<h3 id="ACSS"><a href="#ACSS" class="headerlink" title="ACSS"></a>ACSS</h3><ol>
-<li>定义： 考虑如何设计一个系统的接口。原子(Atoms)是创建一个区块的最基本的特质，比如说表单按钮。分子(Molecules)是很多个原子(Atoms)的组合，比如说一个表单中包括了一个标签，输入框和按钮。生物(Organisms)是众多分子(Molecules)的组合物，比如一个网站的顶部区域，它包括了网站的标题、导航等。而模板(Templates)又是众多生物(Organisms)的结合体。比如一个网站页面的布局。而最后的页面就是特殊的模板。<br><img src="https://github.com/MarsPen/-notes-summary/blob/master/images/Acss.jpg" alt="ACSS" title="ACSS"></li>
+&lt;div class=&quot;product-details&quot;&gt;
+ &lt;div class=&quot;product-details__header&quot;&gt;
+   &lt;div class=&quot;product-details__header--ico&quot;&gt;&lt;div&gt; 
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre></li>
 </ol>
-<h3 id="ITCSS"><a href="#ITCSS" class="headerlink" title="ITCSS"></a>ITCSS</h3><ol>
-<li>定义：创造了一系列的层次来管理依赖关系和促进可扩展性。基础的层次包括通用和广泛的选择器。顶部的层次包含了局部模块具体化的选择器。<pre><code>.Settings — 全局可用配置，设置开关。$color-ui: #BADA55; $spacing-unit:10px
+<h3 id="SUIT"><a href="#SUIT" class="headerlink" title="SUIT"></a>SUIT</h3><ol>
+<li>定义：SUIT起源于BEM，对组件名使用驼峰式和连字号把组件从他们的修饰和子孙后代中区分出来</li>
+<li>用途：通过抽离组件级别的的样式表，消除潜在的混乱连字符号连接元素名来使得选择器的可读性更强。</li>
+<li>代码示例同BEM 只不过是抽离的组件</li>
+</ol>
+<h3 id="ACSS"><a href="#ACSS" class="headerlink" title="ACSS"></a>ACSS</h3><p>定义： 考虑如何设计一个系统的接口。原子(Atoms)是创建一个区块的最基本的特质，比如说表单按钮。分子(Molecules)是很多个原子(Atoms)的组合，比如说一个表单中包括了一个标签，输入框和按钮。生物(Organisms)是众多分子(Molecules)的组合物，比如一个网站的顶部区域，它包括了网站的标题、导航等。而模板(Templates)又是众多生物(Organisms)的结合体。比如一个网站页面的布局。而最后的页面就是特殊的模板。</p>
+<p><img src="/images/Acss.jpg" alt></p>
+<h3 id="ITCSS"><a href="#ITCSS" class="headerlink" title="ITCSS"></a>ITCSS</h3><p>定义：创造了一系列的层次来管理依赖关系和促进可扩展性。基础的层次包括通用和广泛的选择器。顶部的层次包含了局部模块具体化的选择器。</p>
+<pre><code>.Settings — 全局可用配置，设置开关。$color-ui: #BADA55; $spacing-unit:10px
 .Tools —通用工具函数。@mixin font-color() {font-color: $color-ui;}
 .Generic — 通用基础样式。Normalize, resets, box-sizing: border-box;
 .Base — 未归类的HTML元素。ul {list-style: square outside;}
 .Objects —设计部分开始使用专用类。.ui-list__item {padding: $spacing-unit;}
 .Components — 设计符合你们的组件。products-list {@include font-brand();border-top: 1px solid $color-ui;}
 .Trumps —重写，只影响一块的DOM。(通常带上我们的!important)
-</code></pre></li>
-</ol>
-<pre><code></code></pre></div></div>
+</code></pre>
             </div>
             <hr />
 
@@ -674,45 +678,6 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </
 
             
 
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《css分层理论》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/06/22/css/css-layered/" property="cc:attributionName"
-               rel="cc:attributionURL">
-                任博
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
 
         </div>
     </div>
@@ -728,15 +693,14 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'f4ed0b6940188e62a449',
-        clientSecret: 'b6af683cf2760586c043d59635b7ed82b180e2ff',
-        repo: 'marspen.github.io',
-        owner: 'renbo',
-        admin: "renbo",
+        clientID: '73145a6c107f6b031c40',
+        clientSecret: '5d60a2c5035a3ce0495cb04c2c82989d30f35070',
+        repo: 'marspen.github.io/-notes-summary/',
+        owner: 'MarsPen',
+        admin: "MarsPen",
         id: '2017/06/22/css/css-layered/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
     gitalk.render('gitalk-container');
 </script>
     
@@ -1004,7 +968,7 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -1075,8 +1039,8 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

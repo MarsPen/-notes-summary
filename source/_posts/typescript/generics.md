@@ -1,6 +1,6 @@
 ---
 title: 泛型
-date: 2017-01-23 12:32:09
+date: 2019-05-22 18:20:27
 top: false
 cover: false
 password:

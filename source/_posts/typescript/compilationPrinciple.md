@@ -1,6 +1,6 @@
 ---
 title: TypeScript编译原理
-date: 2017-01-23 12:32:09
+date:  2019-08-05 18:20:27
 top: false
 cover: false
 password:
@@ -18,7 +18,7 @@ TypeScript 编译器源文件位于 <a href="https://github.com/Microsoft/TypeSc
 
 主要的应用文件
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/TypeScript 编译原理.png" />
+<image src="/images/TypeScript 编译原理.png" />
 
 
 ### 编译器的大概工作流

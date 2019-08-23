@@ -728,45 +728,6 @@ xhr.withCredentials = true;</code></pre></li>
 
             
 
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《HTML 系列总结》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/05/10/html/html/" property="cc:attributionName"
-               rel="cc:attributionURL">
-                任博
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
 
         </div>
     </div>
@@ -782,15 +743,14 @@ xhr.withCredentials = true;</code></pre></li>
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'f4ed0b6940188e62a449',
-        clientSecret: 'b6af683cf2760586c043d59635b7ed82b180e2ff',
-        repo: 'marspen.github.io',
-        owner: 'renbo',
-        admin: "renbo",
+        clientID: '73145a6c107f6b031c40',
+        clientSecret: '5d60a2c5035a3ce0495cb04c2c82989d30f35070',
+        repo: 'marspen.github.io/-notes-summary/',
+        owner: 'MarsPen',
+        admin: "MarsPen",
         id: '2017/05/10/html/html/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
     gitalk.render('gitalk-container');
 </script>
     
@@ -861,19 +821,23 @@ xhr.withCredentials = true;</code></pre></li>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/javascript/api/">
+                <a href="/2017/01/23/php/base/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="操作数组API方法">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="语法、变量、数据类型">
                         
-                        <span class="card-title">操作数组API方法</span>
+                        <span class="card-title">语法、变量、数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍Array对象中的作用，属性、常规方法等
+                            基础语法
+PHP 脚本以 &lt;?php 开始，以 ?&gt; 结束
+PHP 文件的默认文件扩展名是 “.php”
+PHP 文件通常包含 HTML 标签和一些 PHP 脚本代码
+PHP 中的每个代码行都必须以分号结束，否则输出错误&lt;
                         
                     </div>
                     <div class="publish-info">
@@ -884,8 +848,8 @@ xhr.withCredentials = true;</code></pre></li>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
-                                    JavaScript
+                            <a href="/categories/PHP/" class="post-category" target="_blank">
+                                    PHP
                                 </a>
                             
                             
@@ -895,8 +859,8 @@ xhr.withCredentials = true;</code></pre></li>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/PHP/" target="_blank">
+                        <span class="chip bg-color">PHP</span>
                     </a>
                     
                 </div>
@@ -1058,7 +1022,7 @@ xhr.withCredentials = true;</code></pre></li>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -1129,8 +1093,8 @@ xhr.withCredentials = true;</code></pre></li>
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

@@ -690,45 +690,6 @@ parameter 参数</code></pre><p><strong>局部和全局作用域 local global</s
 
             
 
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《语法、变量、数据类型》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/01/23/php/base/" property="cc:attributionName"
-               rel="cc:attributionURL">
-                任博
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
 
         </div>
     </div>
@@ -744,15 +705,14 @@ parameter 参数</code></pre><p><strong>局部和全局作用域 local global</s
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'f4ed0b6940188e62a449',
-        clientSecret: 'b6af683cf2760586c043d59635b7ed82b180e2ff',
-        repo: 'marspen.github.io',
-        owner: 'renbo',
-        admin: "renbo",
+        clientID: '73145a6c107f6b031c40',
+        clientSecret: '5d60a2c5035a3ce0495cb04c2c82989d30f35070',
+        repo: 'marspen.github.io/-notes-summary/',
+        owner: 'MarsPen',
+        admin: "MarsPen",
         id: '2017/01/23/php/base/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
     gitalk.render('gitalk-container');
 </script>
     
@@ -774,33 +734,31 @@ parameter 参数</code></pre><p><strong>局部和全局作用域 local global</s
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/01/23/node/url/">
+                <a href="/2017/05/10/html/html/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="url">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="HTML 系列总结">
                         
-                        <span class="card-title">url</span>
+                        <span class="card-title">HTML 系列总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            url模块提供用于URL解析和解析的实用程序
-const url = require(&#39;url&#39;);获取并设置URL的片段部分url.hash
-const myURL = new URL(&#39;https://examp
+                            包含 html 的基本概念，标准模式和混杂模式，html语义化，同源策略，跨域等基础知识。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-05-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Node/" class="post-category" target="_blank">
-                                    Node
+                            <a href="/categories/HTML/" class="post-category" target="_blank">
+                                    HTML
                                 </a>
                             
                             
@@ -810,8 +768,8 @@ const myURL = new URL(&#39;https://examp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Node/" target="_blank">
-                        <span class="chip bg-color">Node</span>
+                    <a href="/tags/HTML/" target="_blank">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>
@@ -1028,7 +986,7 @@ for ($i =
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -1099,8 +1057,8 @@ for ($i =
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

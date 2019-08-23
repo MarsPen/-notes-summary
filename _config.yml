@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.studyfe.cn/
+url: https://blog.studyfe.cn/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -138,6 +138,6 @@ live2d:
 
 baidu_url_submit:
   count: 100
-  host: http://blog.studyfe.cn/
+  host: https://blog.studyfe.cn/
   token: 
   path: baidu_urls.txt

@@ -1,6 +1,6 @@
 ---
 title: bind 函数的实现
-date: 2018-10-23 12:32:09
+date: 2019-4-21 12:32:09
 top: false
 cover: false
 password:
@@ -18,7 +18,7 @@ bind 方法其实和 call apply 功能上差不多，只不过 bind() 方法会�
 
 ### 作为绑定函数使用
 
-例子一 <br/>
+demo1
 
 ```
 this.value = 20;
@@ -42,7 +42,7 @@ let boundGetValue = valFun.bind(obj);
 boundGetValue(); // 29
 ```
 
-例子二 <br/>
+demo2
 
 ```
 /**
@@ -99,10 +99,10 @@ obj.getValue()() // 29
 
 ### 作为偏函数使用
 
-使一个函数拥有预设的初始参数，这就是偏函数。比如函数A已经拥有参数或者变量，此时我们通过调用函数A，产生函数B，我们就说B为偏函数<br/>
-在这里我们不展开说明偏函数，柯里化一些函数式编程的概念，在 **JS 高级系列** 函数式编程中会有详细介绍<br/>
+使一个函数拥有预设的初始参数，这就是偏函数。比如函数A已经拥有参数或者变量，此时我们通过调用函数A，产生函数B，我们就说B为偏函数
 
-例子<br/>
+在这里我们不展开说明偏函数，柯里化一些函数式编程的概念，在 **JS 高级系列** 函数式编程中会有详细介绍
+
 
 ```
 /**
@@ -145,10 +145,11 @@ console.log(func()); // 1
 
 ### 模拟第一步
 
-通过上面的应用我们实现 bind 有几个条件<br/>
-1、bind 会返回一个新的函数<br/>
-2、可以传递任意参数<br/>
-3、绑定 bind 的函数可以有返回值<br/>
+通过上面的应用我们实现 bind 有几个条件
+
+- bind 会返回一个新的函数
+- 可以传递任意参数
+- 绑定 bind 的函数可以有返回值
 
 ```
 Function.prototype.newBind = function (context) {
@@ -170,8 +171,8 @@ Function.prototype.newBind = function (context) {
 
 通过第一步其实我们已经模拟了 bind 的大部分功能，但是在 JS 中也可以把函数当成构造函数来用 可以使用 new 关键字， 这个时候 bind 绑定的函数的 this 就会失效，因为在构造函数中 this 永远指向的是它的实例，关于 new 会在下篇文章中作出解释<br/>
 
-1、通过修改返回的函数的原型，来改变 this 指向问题<br/>
-2、调用 bind 一定是函数，否则提示错误<br/>
+- 通过修改返回的函数的原型，来改变 this 指向问题
+- 调用 bind 一定是函数，否则提示错误
 
 ```
 Function.prototype.newBind  = function (context) {

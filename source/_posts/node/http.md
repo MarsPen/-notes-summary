@@ -1,6 +1,6 @@
 ---
 title:  tcp udp http
-date: 2017-01-23 12:32:09
+date: 2019-03-23 22:33:25
 top: false
 cover: false
 password:
@@ -15,10 +15,10 @@ categories:
 
 ### 构建TCP服务<br/>
  tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br/>
- <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/tcp.png' width="300px"></image><br/>
+ <image src=/images/tcp.png' width="300px"></image><br/>
 
  tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br/>
- <image src='https://github.com/MarsPen/-notes-summary/blob/master/images/ack.png' width="300px"></image><br/>
+ <image src=/images/ack.png' width="300px"></image><br/>
 
   第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认<br/>
   第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态<br/>
@@ -26,7 +26,7 @@ categories:
 
   当然tcp也会有四次挥手，在这里就不具体说明了<br/>
 
-**创建TCP服务端**<br/>
+### 创建TCP服务端<br/>
 1、创建TCP服务端接受网络请求<br/>
 1.1服务器事件<br/>
 
@@ -85,7 +85,7 @@ client.on('end', function () {
 ### 构建UDP服务<br/>
 UDP用户数据包协议，和TCP一样属于网络传输层<br/>
 
-**创建UDP服务端**<br/>
+### 创建UDP服务端<br/>
 ```
 var dgram = require('dgram');
 // 创建server对象
@@ -104,7 +104,7 @@ server.on('listening', function () {
 server.bind(41234);
 
 ```
-**创建UDP客户端**<br/>
+### 创建UDP客户端<br/>
 ```
 var dgram = require('dgram');
 
@@ -119,7 +119,7 @@ client.send(message, 0, message.length, 41234, 'localhost', function (err, bytes
 
 HTTP是超文本传输协议，是构建在TCP之上的，属于应用层协议，在HTTP的两端是服务端和浏览器也就是B/S模式<br/>
 
-**HTTP报文**<br/>
+### HTTP报文<br/>
 我们可以在命令行利用curl -v http://localhost:8080/ 来模拟请求，产生如下报文信息<br/>
 
 第一部分其实就是标准的TCP3次握手过程<br/>
@@ -161,13 +161,13 @@ hello
 
 通过上面的信息中我们可以看出虽然是基于 TCP，但是本身确实基于请求响应式的，一问一答模式并不是会话模式。<br/>
 
-**HTTP模块**<br/>
+### HTTP模块<br/>
 
 node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br/>
-<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/request.png' width="400px"></image><br/>
+<image src=/images/request.png' width="400px"></image><br/>
 
 http模块将所有读写抽象为ServerRequest和ServerResponse对象<br/>
-<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/http.png' width="400px"></image><br/>
+<image src=/images/http.png' width="400px"></image><br/>
 ```
 function (req, res) {
   res.writeHead(200, {'Content-Type' : 'text/plain'});
@@ -175,12 +175,12 @@ function (req, res) {
 }
 ```
 
-**HTTP代理**<br/>
+### HTTP代理<br/>
 
 http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br/>
 http 模块包含一个默认的客户端代理对象http.globalAgent<br/>
 通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br/>
-<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/http代理.png' width="400px"></image><br/>
+<image src=/images/http代理.png' width="400px"></image><br/>
 ```
 // 可以通过http.Agent修改连接数量，但连接数量过大会影响服务器性能
 var agent = new http.Agent({
@@ -198,10 +198,10 @@ var option = {
 ### 构建 WebSocket 服务<br/>
 Websocket 协议解决了服务器与客户端全双工通信的问题,也就是客户端和服务端之间的长连接<br/>
 
-**WebSocket协议解析**<br/>
+### WebSocket协议解析<br/>
 
 WebSocket协议主要分为两个部分第一部分 http **握手**连接，第二部分协议升级为 WebSocket 进行**数据传输**<br/>
-<image src='https://github.com/MarsPen/-notes-summary/blob/master/images/websocket.png' width="400px"></image><br/>
+<image src=/images/websocket.png' width="400px"></image><br/>
 
 
 

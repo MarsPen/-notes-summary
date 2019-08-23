@@ -1,6 +1,6 @@
 ---
 title:  module 模块机制
-date: 2017-01-23 12:32:09
+date: 2019-04-05 19:16:12
 top: false
 cover: false
 password:
@@ -16,13 +16,13 @@ categories:
 模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。前端模块化组件化也是在这几年逐渐的流行，在 web2.0 发展过程如下<br/>
 
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module.png" width="300"></image><br/>
+<image src="/master/images/module.png" width="300"></image><br/>
 
 ### CommonJS 规范<br/>
 
 CommonJS（<a href="http://www.commonjs.org">http://www.commonjs.org</a>）规范的出现解决了JavaScript 没有模块系统，标准库等等问题，而 Node.js 自身实现了 require 作为其引入模块的方法，同时 NPM 也基于 CommonJS 定义的包规范，实现了依赖管理和模块自动安装等功能。下图展现Node与浏览器以及W3C组织、CommonJS组织、ECMAScript之间的关系<br/>
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/commonjs.png" width="550"></image><br/>
+<image src="/master/images/commonjs.png" width="550"></image><br/>
 
 ### CommonJS 模块
 1、模块引用 require 关键字 <br/>
@@ -117,7 +117,7 @@ function Module(id, parent) {
 1、C/C++内建模块属于最底层的模块，它属于核心模块，主要提供API给JavaScript核心模块和第三方JavaScript文件模块调用。<br/>
 2、JavaScript核心模块主要扮演的职责有两类：一类是作为C/C++内建模块的封装层和桥接层，供文件模块调用；一类是纯粹的功能模块，它不需要跟底层打交道，但是又十分重要<br/>
 
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-p.png" width="350"></image><br/>
+<image src="/master/images/module-p.png" width="350"></image><br/>
 
 
 **核心模块调用流程**<br/>
@@ -189,7 +189,7 @@ function Module(id, parent) {
 
 3、核心模块的引入流程<br/>
 如 os 原生模块的引入流程<br/>
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/module-os.png" width="350"></image><br/>
+<image src="/master/images/module-os.png" width="350"></image><br/>
 
 通过以上我们大致了解了 Node 中模块的编译、加载、引入流程。当然还有核心模块的编写，在这里就不过多的阐述了。更多请参考朴灵老师编著的《深入浅出 node》，相信会有更多的收获。<br/>
 

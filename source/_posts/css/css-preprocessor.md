@@ -17,78 +17,93 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
 
 ### 基本语法
 
-- Less 的基本语法跟原生的css的风格几乎差不多
-- Sass、Stylus 利用缩进、空格和换行来减少需要输入的字符
-- Sass
-  ```
-  .header
-    background-color:red
-  ```
-- Less & SCSS
-  ```
-  .header {
-    background-color:red;
-  }
-  ```
-- Stylus
-  ```
-  .header
-    background-color:red
-  ```
+1. Less 的基本语法跟原生的css的风格几乎差不多
+2. Sass、Stylus 利用缩进、空格和换行来减少需要输入的字符
+
+Sass
+
+```
+.header
+  background-color:red
+```
+
+Less & SCSS
+
+```
+.header {
+  background-color:red;
+}
+```
+
+Stylus
+
+```
+.header
+  background-color:red
+```
 
 ### 嵌套语法
 
-- 嵌套语法都是一致的,区别是 Sass 和 Stylus 可以不用书写大括号
-- less
-  ```
-  .header {
-    &.title {
-      color: red;
-    }
+嵌套语法都是一致的,区别是 Sass 和 Stylus 可以不用书写大括号
+
+less
+
+```
+.header {
+  &.title {
+    color: red;
   }
-  ```
+}
+```
 
 ### 变量
 
-- 为 CSS 增加了一种有效的复用方式，减少CSS书写重复
-- Sass
-  ```
-  $bg: #ccc;
+为 CSS 增加了一种有效的复用方式，减少CSS书写重复
 
-  .header 
-    background-color:$bg;
-  ```
-- Less
-  ```
-  @bg: #ccc;
+Sass
 
-  header {
-    background-color: @bg;
-  }
-  ```
-- Stylus
-  ```
-  bg = #ccc
+```
+$bg: #ccc;
 
-  header
-    background-color: bg
-  ```
+.header 
+  background-color:$bg;
+```
+
+Less
+```
+@bg: #ccc;
+
+header {
+  background-color: @bg;
+}
+```
+
+Stylus
+
+```
+bg = #ccc
+
+header
+  background-color: bg
+```
 
 ### @import
 
-- Sass 只能使用 url() 表达式引入时进行变量插值
+Sass 只能使用 url() 表达式引入时进行变量插值
   ```
   $public: public;
 
   @import url(styles.#{$public}.css);
   ```
-- Less可以在字符串中进行插值：
+
+Less可以在字符串中进行插值：
   ```
   @public: public;
 
   @import "styles.@{public}.css";
   ```
-- Stylus 可以利用其字符串拼接的功能实现
+
+Stylus 可以利用其字符串拼接的功能实现
   ```
   public = "public"
 
@@ -98,8 +113,9 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
 
 ### 混入(Mixins)
 
-- 作用: 样式层面的抽象
-- Sass
+作用: 样式层面的抽象
+
+Sass
   ```
   @mixin product-public-text {
     font: {
@@ -115,7 +131,7 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
   }
   ```
 
-- Less
+Less
   ```
   .product-public-font-weight {
     font-weight: 600;
@@ -134,7 +150,7 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
 
 ### 继承
 
-- Sass
+Sass
   ```
   .header {
     background-color: red;
@@ -144,7 +160,7 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
   }
   ```
 
-- less
+less
   ```
   .header {
     background-color: red;
@@ -154,7 +170,7 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
   }
   ```
 
-- Stylus,Scss
+Stylus,Scss
   ```
   .header
     background-color: red;
@@ -164,9 +180,11 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
   ```
 
 ### 高级用法（函数）
+
 三种预处理器都自带了诸如色彩处理（darken等）、类型判断（if each for while 等）、数值计算等内置函数
 
 ### 三种预处理器手册
-- Sass：http://sass.bootcss.com/
-- Less： https://less.bootcss.com/
-- stylus：https://stylus.bootcss.com/
+
+1. Sass：http://sass.bootcss.com/
+2. Less： https://less.bootcss.com/
+3. stylus：https://stylus.bootcss.com/

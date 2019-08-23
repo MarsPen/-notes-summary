@@ -518,7 +518,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,1,1,2,0,0,0,0,0,6,5,0,0],
+                data: [1,0,0,0,0,0,3,6,11,7,3,8,5],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -560,7 +560,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"CSS","value":5},{"name":"JavaScript","value":12},{"name":"HTML","value":1},{"name":"函数式编程","value":5},{"name":"Linux","value":10},{"name":"Node","value":10},{"name":"PHP","value":3},{"name":"TypeScript","value":16}],
+                data: [{"name":"CSS","value":5},{"name":"HTML","value":1},{"name":"JavaScript","value":12},{"name":"函数式编程","value":5},{"name":"Linux","value":10},{"name":"Node","value":10},{"name":"PHP","value":3},{"name":"TypeScript","value":16}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -696,7 +696,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 85%">
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #3FF176 100%); width: 85%">
                     <span>React</span>
                 </div>
                 <div class="skill-bar-percent">85%</div>
@@ -707,10 +707,32 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #4EEB3B 0%, #FFF176 100%); width: 85%">
+                     style="background: linear-gradient(to right, #FF0B36 0%, #FAF176 100%); width: 75%">
+                    <span>Express</span>
+                </div>
+                <div class="skill-bar-percent">75%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #9900FF 0%, #CBF1C2 100%); width: 75%">
+                    <span>Koa</span>
+                </div>
+                <div class="skill-bar-percent">75%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #FF6566 100%); width: 65%">
                     <span>TypeSceipt</span>
                 </div>
-                <div class="skill-bar-percent">85%</div>
+                <div class="skill-bar-percent">65%</div>
             </div>
         </div>
         
@@ -786,14 +808,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         </div>
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/34.jpg">
-                <img src="/medias/featureimages/34.jpg" class="responsive-img">
+            <div class="img-item" data-src="/medias/featureimages/35.jpg">
+                <img src="/medias/featureimages/35.jpg" class="responsive-img">
             </div>
         </div>
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
-            <div class="img-item" data-src="/medias/featureimages/35.jpg">
-                <img src="/medias/featureimages/35.jpg" class="responsive-img">
+            <div class="img-item" data-src="/medias/featureimages/34.jpg">
+                <img src="/medias/featureimages/34.jpg" class="responsive-img">
             </div>
         </div>
         
@@ -854,7 +876,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -925,8 +947,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

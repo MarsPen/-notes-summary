@@ -1,6 +1,6 @@
 ---
 title: 函数式编程-函数组合
-date: 2019-5-14 12:32:09
+date: 2019-7-22 12:32:09
 top: false
 cover: false
 password:
@@ -13,10 +13,12 @@ categories:
 - 函数式编程
 ---
 
-
+### 概念
 函数组合是将两个或多个函数组合以产生新函数的过程。将功能组合在一起就像将一系列管道拼凑在一起，以便我们的数据流过<br/>
 
 简而言之，函数` f`和` g`的组合可以定义为`f（g（x））`，它从内到外 - 从右到左进行求值<br/>
+
+### demo toSlug
 
 举例子，想象一个场景，想要将用户的全名转换为URL slugs，以便为每个用户提供个人资料页面。为此，需要完成一系列步骤：
 1. 将名称拆分为空格中的数组
@@ -34,6 +36,8 @@ const toSlug = input => encodeURIComponent(
 );
 
 ```
+
+### 组合功能
 
 不错......但如果我告诉你它可能更具可读性呢？想象一下，这些操作中的每一个都具有相应的可组合功能。可以写成<br/>
 ```
@@ -53,6 +57,7 @@ console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 
 ```
 
+### 简单的偏应用函数
 
 这看起来比我们的第一次尝试更难阅读，但先放在这，我们继续以可组合形式的常用实用程序，如`split（）`，`join（）`和`map（）`。来实现<br/>
 ```
@@ -89,6 +94,7 @@ const toSlug = input => encodeURIComponent(
 console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 ```
 
+### compose（）
 我们可以使用一个自动组合这些函数的函数来展平嵌套，这意味着它将从一个函数获取输出并自动将其到下一个函数的输入，直到它输出最终值<br/>
 想象一下我们实现函数 `reduce（）` 的功能，但为了匹配上面的compose行为，我们需要它从右到左，而不是从左到右<br/>
 
@@ -114,6 +120,7 @@ const toSlug = compose(
 console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 ```
 
+### pipe（）
 
 还有另一种通常称为“pipe（）”的形式。 Lodash称之为`flow（）`<br/>
 
@@ -145,6 +152,8 @@ console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 ```
 
 在命令式编程中，当您对某个变量执行转换时，您将在转换的每个步骤中找到对该变量的引用。上面的`pipe（）`实现是以无点的方式编写的，这意味着它根本不识别它运行的参数。<br/>
+
+### trace
 
 我经常在单元测试和Redux状态之类的东西中使用管道来消除对中间变量的需要，这些中间变量只存在于一个操作和下一个操作之间的瞬态值。<br/>
 

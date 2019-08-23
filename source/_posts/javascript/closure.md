@@ -1,6 +1,6 @@
 ---
 title: 闭包
-date: 2018-11-23 12:32:09
+date: 2019-2-25 12:32:09
 top: false
 cover: false
 password:
@@ -15,8 +15,7 @@ categories:
 
 说起闭包那么首先先来了解一下js执行环境（execution context）、作用域以及作用域链（scope chain）
 
-
-## 上下文执行环境
+### 上下文执行环境
  执行环境定义了变量或者函数有权访问的其他数据，决定了各自的行为
 
 ### 组成部分
@@ -38,25 +37,18 @@ categories:
 5. 当所有的代码执行完后, 栈中只剩下window
 
 ```
-  /*
-  *demo1:  先执行变量提升, 再执行函数提升
-  */
-  
+  // demo1:  先执行变量提升, 再执行函数提升
   function a() {}
   var a
   console.log(typeof a) // 'function'
 
-  /*
-  *demo2:
-  */
+  //demo2:
   if (!(b in window)) {
     var b = 1
   }
   console.log(b) // undefined
 
-  /*
-  *demo3:
-  */
+  // demo3:
   console.log(a);    // f a() {console.log(10)}
   console.log(a());    //  undefined
   var a = 1;
@@ -67,9 +59,7 @@ categories:
   a = 3;
   console.log(a());  //a is not a function;
 
-  /*
-  *demo4:
-  */
+  // demo4:
   function fun(){ var a=b=3;}
   console.log(b)//B是全局变量 var a是局部变量  b=3;a=undefine
 ```
@@ -99,21 +89,21 @@ function show (fn) {
   fn();
 }
 show(fn) // 10;
-  ```
-## 闭包
+```
 
-### 概念： 
+### 闭包概念 
 
 能够访问其他函数内变量的函数，是一个比较特殊的作用域函数
-### 作用
 
-1. 匿名自执行函数,减少内存消耗
+### 闭包作用
+
+匿名自执行函数,减少内存消耗
 
 ```
 (function ($) {})(jQuery);
 ```
 
-2. 缓存计算结果
+缓存计算结果
 
 ```
   var fun1 = function(){
@@ -128,7 +118,8 @@ show(fn) // 10;
   b(); // 3           
 ```
 
-3. 封装,管理私有方法和变量，避免全局变量冲突污染
+封装,管理私有方法和变量，避免全局变量冲突污染
+
 ```
   var person = function(){    
     var name = "renbo";       
@@ -142,9 +133,9 @@ show(fn) // 10;
     }    
   }() 
 ```
-4. 实现类和继承等等
+实现类和继承等等
 
-### 缺点：
+### 闭包缺点
 
 1. 由于变量对象一直在内存中引用不被释放，导致内存过高。
 2. 由于多个函数共享一个父级，当父级有变量更改时，所有子函数受影响

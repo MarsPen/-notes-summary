@@ -2,483 +2,483 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/07/01/css/css-preprocessor/</loc>
+    <loc>https://blog.studyfe.cn/2019/07/18/typescript/decorators/</loc>
     
-    <lastmod>2019-08-22T17:27:48.312Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/06/22/css/css-layered/</loc>
-    
-    <lastmod>2019-08-22T17:27:15.328Z</lastmod>
+    <lastmod>2019-08-23T09:27:36.022Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/06/20/css/css-animation/</loc>
+    <loc>https://blog.studyfe.cn/2019/08/15/typescript/module.d.ts/</loc>
     
-    <lastmod>2019-08-22T17:26:53.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/06/15/css/base-layout/</loc>
-    
-    <lastmod>2019-08-22T17:26:16.859Z</lastmod>
+    <lastmod>2019-08-23T09:25:26.920Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/06/11/css/base-concepts/</loc>
+    <loc>https://blog.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</loc>
     
-    <lastmod>2019-08-22T17:25:36.258Z</lastmod>
+    <lastmod>2019-08-23T09:25:21.582Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/05/10/html/html/</loc>
+    <loc>https://blog.studyfe.cn/2019/08/15/typescript/global.d.ts/</loc>
+    
+    <lastmod>2019-08-23T09:25:15.497Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/05/18/typescript/interfaces/</loc>
+    
+    <lastmod>2019-08-23T09:25:14.691Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</loc>
+    
+    <lastmod>2019-08-23T09:25:13.763Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/08/05/typescript/compilationprinciple/</loc>
+    
+    <lastmod>2019-08-23T09:24:43.231Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/07/15/typescript/tsconfig/</loc>
+    
+    <lastmod>2019-08-23T09:24:21.619Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/07/02/typescript/mixinx/</loc>
+    
+    <lastmod>2019-08-23T09:23:55.557Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/06/20/typescript/declarefile/</loc>
+    
+    <lastmod>2019-08-23T09:23:39.533Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/06/15/typescript/module/</loc>
+    
+    <lastmod>2019-08-23T09:23:16.980Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/05/22/typescript/generics/</loc>
+    
+    <lastmod>2019-08-23T09:22:49.842Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/05/17/typescript/class/</loc>
+    
+    <lastmod>2019-08-23T09:22:23.102Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/05/16/typescript/function/</loc>
+    
+    <lastmod>2019-08-23T09:22:08.416Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/05/15/typescript/envconfig/</loc>
+    
+    <lastmod>2019-08-23T09:21:14.191Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/05/23/typescript/basedatatype/</loc>
+    
+    <lastmod>2019-08-23T09:20:52.039Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/08/node/crypto/</loc>
+    
+    <lastmod>2019-08-23T09:12:42.028Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/10/node/event/</loc>
+    
+    <lastmod>2019-08-23T09:12:32.005Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/03/23/node/http/</loc>
+    
+    <lastmod>2019-08-23T09:12:08.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/05/node/module/</loc>
+    
+    <lastmod>2019-08-23T09:11:56.492Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/12/node/process/</loc>
+    
+    <lastmod>2019-08-23T09:11:36.967Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/14/node/error/</loc>
+    
+    <lastmod>2019-08-23T09:11:14.141Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/04/node/querystring/</loc>
+    
+    <lastmod>2019-08-23T09:09:13.252Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/02/node/path/</loc>
+    
+    <lastmod>2019-08-23T09:08:48.202Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/01/node/fs/</loc>
+    
+    <lastmod>2019-08-23T09:08:33.287Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/03/28/node/url/</loc>
+    
+    <lastmod>2019-08-23T09:03:01.683Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/08/10/linux/git/</loc>
+    
+    <lastmod>2019-08-23T08:58:30.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/28/linux/vim/</loc>
+    
+    <lastmod>2019-08-23T08:53:46.943Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/25/linux/fileauth/</loc>
+    
+    <lastmod>2019-08-23T08:52:34.092Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/22/linux/user/</loc>
+    
+    <lastmod>2019-08-23T08:50:23.739Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/16/linux/shutdown/</loc>
+    
+    <lastmod>2019-08-23T08:47:26.196Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/15/linux/backup/</loc>
+    
+    <lastmod>2019-08-23T08:46:18.010Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/12/linux/package/</loc>
+    
+    <lastmod>2019-08-23T08:44:43.345Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/10/linux/compression/</loc>
+    
+    <lastmod>2019-08-23T08:42:01.817Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/06/23/linux/instructions/</loc>
+    
+    <lastmod>2019-08-23T08:39:19.202Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2018/07/02/linux/system/</loc>
+    
+    <lastmod>2019-08-23T08:38:41.088Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/07/22/javascript/functionalcombination/</loc>
+    
+    <lastmod>2019-08-23T08:23:32.906Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/07/15/javascript/functionalpurity/</loc>
+    
+    <lastmod>2019-08-23T08:22:37.103Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/07/25/javascript/functionalpoint/</loc>
+    
+    <lastmod>2019-08-23T08:21:40.151Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/06/11/javascript/promise/</loc>
+    
+    <lastmod>2019-08-23T08:13:34.397Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/05/15/javascript/debounce/</loc>
+    
+    <lastmod>2019-08-23T08:07:28.048Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/27/javascript/new/</loc>
+    
+    <lastmod>2019-08-23T08:02:50.542Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/21/javascript/bind/</loc>
+    
+    <lastmod>2019-08-23T07:59:26.638Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/03/20/javascript/api/</loc>
+    
+    <lastmod>2019-08-23T07:55:49.770Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/03/15/javascript/inheritance/</loc>
+    
+    <lastmod>2019-08-23T07:54:19.395Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/03/10/javascript/prototype/</loc>
+    
+    <lastmod>2019-08-23T07:48:21.711Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/03/05/javascript/this/</loc>
+    
+    <lastmod>2019-08-23T07:38:34.498Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/02/25/javascript/closure/</loc>
+    
+    <lastmod>2019-08-23T07:33:48.659Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/02/20/javascript/voao/</loc>
+    
+    <lastmod>2019-08-23T07:26:22.212Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/02/12/javascript/type/</loc>
+    
+    <lastmod>2019-08-23T07:19:38.900Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/07/17/javascript/functioncurrying/</loc>
+    
+    <lastmod>2019-08-23T06:59:03.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/07/12/javascript/functionalbase/</loc>
+    
+    <lastmod>2019-08-23T06:58:09.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2019/04/22/javascript/call/</loc>
+    
+    <lastmod>2019-08-23T06:57:00.489Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2017/07/01/css/css-preprocessor/</loc>
+    
+    <lastmod>2019-08-23T06:15:13.646Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2017/06/22/css/css-layered/</loc>
+    
+    <lastmod>2019-08-23T06:10:16.652Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2017/06/20/css/css-animation/</loc>
+    
+    <lastmod>2019-08-23T06:06:39.209Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2017/06/15/css/base-layout/</loc>
+    
+    <lastmod>2019-08-23T06:02:17.171Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2017/06/11/css/base-concepts/</loc>
+    
+    <lastmod>2019-08-23T05:59:16.939Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.studyfe.cn/2017/05/10/html/html/</loc>
     
     <lastmod>2019-08-22T17:24:38.674Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/friends/index.html</loc>
+    <loc>https://blog.studyfe.cn/friends/index.html</loc>
     
     <lastmod>2019-08-22T15:56:41.542Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/about/index.html</loc>
+    <loc>https://blog.studyfe.cn/about/index.html</loc>
     
     <lastmod>2019-08-22T15:34:24.407Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/tsconfig/</loc>
-    
-    <lastmod>2019-08-22T14:57:01.824Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/module/</loc>
-    
-    <lastmod>2019-08-22T14:56:53.160Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/mixinx/</loc>
-    
-    <lastmod>2019-08-22T14:56:42.383Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/interfaces/</loc>
-    
-    <lastmod>2019-08-22T14:56:37.217Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/generics/</loc>
-    
-    <lastmod>2019-08-22T14:56:24.343Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/function/</loc>
-    
-    <lastmod>2019-08-22T14:56:18.402Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/envconfig/</loc>
-    
-    <lastmod>2019-08-22T14:56:12.320Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/decorators/</loc>
-    
-    <lastmod>2019-08-22T14:56:05.943Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/declarefile/</loc>
-    
-    <lastmod>2019-08-22T14:55:57.649Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/compilationprinciple/</loc>
-    
-    <lastmod>2019-08-22T14:55:49.369Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/class/</loc>
-    
-    <lastmod>2019-08-22T14:55:42.170Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/basedatatype/</loc>
-    
-    <lastmod>2019-08-22T14:55:35.225Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/php/oop/</loc>
+    <loc>https://blog.studyfe.cn/2017/01/23/php/oop/</loc>
     
     <lastmod>2019-08-22T14:55:24.401Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/php/method/</loc>
+    <loc>https://blog.studyfe.cn/2017/01/23/php/method/</loc>
     
     <lastmod>2019-08-22T14:55:16.074Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/php/base/</loc>
+    <loc>https://blog.studyfe.cn/2017/01/23/php/base/</loc>
     
     <lastmod>2019-08-22T14:55:10.485Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/url/</loc>
-    
-    <lastmod>2019-08-22T14:55:03.841Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/querystring/</loc>
-    
-    <lastmod>2019-08-22T14:54:57.562Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/process/</loc>
-    
-    <lastmod>2019-08-22T14:54:52.516Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/path/</loc>
-    
-    <lastmod>2019-08-22T14:54:45.242Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/module/</loc>
-    
-    <lastmod>2019-08-22T14:54:39.765Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/http/</loc>
-    
-    <lastmod>2019-08-22T14:54:33.311Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/fs/</loc>
-    
-    <lastmod>2019-08-22T14:54:24.276Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/event/</loc>
-    
-    <lastmod>2019-08-22T14:54:18.348Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/error/</loc>
-    
-    <lastmod>2019-08-22T14:54:10.725Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/node/crypto/</loc>
-    
-    <lastmod>2019-08-22T14:54:05.404Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/user/</loc>
-    
-    <lastmod>2019-08-22T14:53:54.550Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/system/</loc>
-    
-    <lastmod>2019-08-22T14:53:44.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/shutdown/</loc>
-    
-    <lastmod>2019-08-22T14:53:37.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/package/</loc>
-    
-    <lastmod>2019-08-22T14:53:31.797Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/instructions/</loc>
-    
-    <lastmod>2019-08-22T14:53:25.749Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/fileauth/</loc>
-    
-    <lastmod>2019-08-22T14:53:16.651Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/compression/</loc>
-    
-    <lastmod>2019-08-22T14:53:07.839Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/06/14/javascript/this/</loc>
-    
-    <lastmod>2019-08-22T14:52:50.438Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/06/14/javascript/prototype/</loc>
-    
-    <lastmod>2019-08-22T14:52:44.309Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/06/14/javascript/promise/</loc>
-    
-    <lastmod>2019-08-22T14:52:37.845Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2018/06/14/javascript/new/</loc>
-    
-    <lastmod>2019-08-22T14:52:27.238Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/05/14/javascript/inheritance/</loc>
-    
-    <lastmod>2019-08-22T14:52:20.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/05/14/javascript/functioncurrying/</loc>
-    
-    <lastmod>2019-08-22T14:52:09.551Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/05/14/javascript/functionalpurity/</loc>
-    
-    <lastmod>2019-08-22T14:52:03.026Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/05/14/javascript/functionalpoint/</loc>
-    
-    <lastmod>2019-08-22T14:51:57.334Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/05/14/javascript/functionalcombination/</loc>
-    
-    <lastmod>2019-08-22T14:51:45.334Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/global.d.ts/</loc>
-    
-    <lastmod>2019-08-22T14:06:37.016Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/module-class.d.ts/</loc>
-    
-    <lastmod>2019-08-22T14:06:10.059Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/module.d.ts/</loc>
-    
-    <lastmod>2019-08-22T14:05:52.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/typescript/module-function.d.ts/</loc>
-    
-    <lastmod>2019-08-22T14:05:33.815Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/vim/</loc>
-    
-    <lastmod>2019-08-22T13:50:37.908Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/git/</loc>
-    
-    <lastmod>2019-08-22T13:48:07.480Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/linux/backup/</loc>
-    
-    <lastmod>2019-08-22T13:46:35.025Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/06/14/javascript/voao/</loc>
-    
-    <lastmod>2019-08-22T13:30:21.176Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/06/14/javascript/type/</loc>
-    
-    <lastmod>2019-08-22T13:29:45.634Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2019/05/13/javascript/functionalbase/</loc>
-    
-    <lastmod>2019-08-22T13:22:56.563Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2018/09/12/javascript/debounce/</loc>
-    
-    <lastmod>2019-08-22T13:18:48.300Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2018/11/23/javascript/closure/</loc>
-    
-    <lastmod>2019-08-22T13:15:16.519Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2018/11/23/javascript/call/</loc>
-    
-    <lastmod>2019-08-22T12:59:59.963Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2018/10/23/javascript/bind/</loc>
-    
-    <lastmod>2019-08-22T12:59:33.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/2017/01/23/javascript/api/</loc>
-    
-    <lastmod>2019-08-22T12:55:02.781Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.studyfe.cn/contact/index.html</loc>
+    <loc>https://blog.studyfe.cn/contact/index.html</loc>
     
     <lastmod>2019-08-22T10:19:25.527Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/tags/index.html</loc>
+    <loc>https://blog.studyfe.cn/tags/index.html</loc>
     
     <lastmod>2019-08-22T03:58:45.013Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/categories/index.html</loc>
+    <loc>https://blog.studyfe.cn/categories/index.html</loc>
     
     <lastmod>2019-08-22T03:58:45.012Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/archives/index.html</loc>
+    <loc>https://blog.studyfe.cn/archives/index.html</loc>
     
     <lastmod>2019-08-22T03:58:45.011Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.studyfe.cn/404.html</loc>
+    <loc>https://blog.studyfe.cn/404.html</loc>
     
     <lastmod>2019-08-22T03:58:45.006Z</lastmod>
     

@@ -1,6 +1,6 @@
 ---
 title: process进程 
-date: 2017-01-23 12:32:09
+date: 2019-04-12 20:35:12
 top: false
 cover: false
 password:
@@ -23,7 +23,7 @@ process 对象是一个全局变量，它提供有关当前 Node.js 进程的信
 
 主从模式主要用于在分布式架构中并行处理业务的模式，具备良好的可伸缩性和稳定性，主进程（master）负责和管理工作进程（worker），工作进程（worker）负责具体的业务逻辑<br/>
 
-<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/master-worker.png"><br/>
+<img src="/images/master-worker.png"><br/>
 
 ```
 /**
@@ -78,7 +78,7 @@ for (let i = 0; i < cpus.length; i++) {
 
 IPC原理创建实现示意图<br/>
 
-<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/ipc.png"><br/>
+<img src="/images/ipc.png"><br/>
 
 
 IPC通道创建、连接<br/>
@@ -89,7 +89,7 @@ IPC通道创建、连接<br/>
 4、建立连接后就可以在内核中完成双向通信，不经过网络层<br/>
 5、在 Node 中，IPC 被抽象成为 Stream 对象，调用 send（）发送数据，通过 message 事件接收数据<br/>
 
-<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/ipc-create.png"><br/>
+<img src="/images/ipc-create.png"><br/>
 
 ```
 /**
@@ -132,11 +132,11 @@ process.send({foo: 'bar'});
 
 主进程将请求发送给工作进程<br/>
 
-<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/process-send.png"><br/>
+<img src="/images/process-send.png"><br/>
 
 主进程发送完句柄并关闭监听<br/>
 
-<img src="https://github.com/MarsPen/-notes-summary/blob/master/images/process-on.png"><br/>
+<img src="/images/process-on.png"><br/>
 
 ```
 /**

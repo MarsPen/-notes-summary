@@ -1,6 +1,6 @@
 ---
-title: Linux关机重启操作
-date: 2017-01-23 12:32:09
+title: 关机重启操作
+date: 2018-7-16 18:02:45
 top: false
 cover: false
 password:
@@ -14,7 +14,8 @@ categories:
 ---
 
 
-**shutdown**
+### shutdown
+
 ```
 shutdown -r  关机重启
 shutdown -h  关机不重启
@@ -22,9 +23,11 @@ shutdown now  立刻关机
 
 ```
 
-**halt 关机**
+### halt
+关机
 
-**reboot重启**
+### reboot
+重启
 
 
 

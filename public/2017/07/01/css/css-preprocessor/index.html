@@ -11,7 +11,8 @@
 基本语法
 Less 的基本语法跟原生的css的风格几乎差不多
 Sass、Stylus 利用缩进、空格和换行来减少需要输入的字符
-Sass">
+
+Sas">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -448,7 +449,7 @@ Sass">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    418
+                    416
                 </div>
                 
 
@@ -472,118 +473,95 @@ Sass">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现代码的分层、复用和依赖管理，提高开发效率</p>
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ol>
 <li>Less 的基本语法跟原生的css的风格几乎差不多</li>
 <li>Sass、Stylus 利用缩进、空格和换行来减少需要输入的字符</li>
-<li>Sass<pre><code>.header
-  background-color:red</code></pre></li>
-<li>Less &amp; SCSS<pre><code>.header {
+</ol>
+<p>Sass</p>
+<pre><code>.header
+  background-color:red</code></pre><p>Less &amp; SCSS</p>
+<pre><code>.header {
   background-color:red;
-}</code></pre></li>
-<li>Stylus<pre><code>.header
-  background-color:red</code></pre></li>
-</ul>
-<h3 id="嵌套语法"><a href="#嵌套语法" class="headerlink" title="嵌套语法"></a>嵌套语法</h3><ul>
-<li>嵌套语法都是一致的,区别是 Sass 和 Stylus 可以不用书写大括号</li>
-<li>less<pre><code>.header {
+}</code></pre><p>Stylus</p>
+<pre><code>.header
+  background-color:red</code></pre><h3 id="嵌套语法"><a href="#嵌套语法" class="headerlink" title="嵌套语法"></a>嵌套语法</h3><p>嵌套语法都是一致的,区别是 Sass 和 Stylus 可以不用书写大括号</p>
+<p>less</p>
+<pre><code>.header {
   &amp;.title {
     color: red;
   }
-}</code></pre></li>
-</ul>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>为 CSS 增加了一种有效的复用方式，减少CSS书写重复</p>
-</li>
-<li><p>Sass</p>
+}</code></pre><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>为 CSS 增加了一种有效的复用方式，减少CSS书写重复</p>
+<p>Sass</p>
 <pre><code>$bg: #ccc;
 
 .header 
-  background-color:$bg;</code></pre></li>
-<li><p>Less</p>
+  background-color:$bg;</code></pre><p>Less</p>
 <pre><code>@bg: #ccc;
 
 header {
   background-color: @bg;
-}</code></pre></li>
-<li><p>Stylus</p>
+}</code></pre><p>Stylus</p>
 <pre><code>bg = #ccc
 
 header
-  background-color: bg</code></pre></li>
-</ul>
-<h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3><ul>
-<li><p>Sass 只能使用 url() 表达式引入时进行变量插值</p>
-<pre><code>$public: public;
+  background-color: bg</code></pre><h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3><p>Sass 只能使用 url() 表达式引入时进行变量插值</p>
+<pre><code>  $public: public;
 
-@import url(styles.#{$public}.css);</code></pre></li>
-<li><p>Less可以在字符串中进行插值：</p>
-<pre><code>@public: public;
+  @import url(styles.#{$public}.css);</code></pre><p>Less可以在字符串中进行插值：</p>
+<pre><code>  @public: public;
 
-@import &quot;styles.@{public}.css&quot;;</code></pre></li>
-<li><p>Stylus 可以利用其字符串拼接的功能实现</p>
-<pre><code>public = &quot;public&quot;
+  @import &quot;styles.@{public}.css&quot;;</code></pre><p>Stylus 可以利用其字符串拼接的功能实现</p>
+<pre><code>  public = &quot;public&quot;
 
-@import &quot;styles.&quot; + public + &quot;.css&quot;</code></pre></li>
-</ul>
-<h3 id="混入-Mixins"><a href="#混入-Mixins" class="headerlink" title="混入(Mixins)"></a>混入(Mixins)</h3><ul>
-<li><p>作用: 样式层面的抽象</p>
-</li>
-<li><p>Sass</p>
-<pre><code>@mixin product-public-text {
-  font: {
-    size: 20px;
-    weight: 600;
-    family: PingFangSC;
+  @import &quot;styles.&quot; + public + &quot;.css&quot;</code></pre><h3 id="混入-Mixins"><a href="#混入-Mixins" class="headerlink" title="混入(Mixins)"></a>混入(Mixins)</h3><p>作用: 样式层面的抽象</p>
+<p>Sass</p>
+<pre><code>  @mixin product-public-text {
+    font: {
+      size: 20px;
+      weight: 600;
+      family: PingFangSC;
+    }
+    color: rgba(72,72,72,1);
   }
-  color: rgba(72,72,72,1);
-}
-.product-header-title {
-  @include product-public-text;
-  padding: 10px;
-}</code></pre></li>
-<li><p>Less</p>
-<pre><code>.product-public-font-weight {
-  font-weight: 600;
-}
+  .product-header-title {
+    @include product-public-text;
+    padding: 10px;
+  }</code></pre><p>Less</p>
+<pre><code>  .product-public-font-weight {
+    font-weight: 600;
+  }
 
-.product-public-font(@color: red) {
-  font-size: 20px;
-  color: @color;
-}
+  .product-public-font(@color: red) {
+    font-size: 20px;
+    color: @color;
+  }
 
-.product-header-title{
-  .product-public-font-weight;
-  .product-public-font(red);
-}</code></pre></li>
-</ul>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
-<li><p>Sass</p>
-<pre><code>.header {
-  background-color: red;
-}
-.main.active {
-  @extend .header;
-}</code></pre></li>
-<li><p>less</p>
-<pre><code>.header {
-  background-color: red;
-}
-.main {
-  &amp;:extend(.header);
-}</code></pre></li>
-<li><p>Stylus,Scss</p>
-<pre><code>.header
-  background-color: red;
+  .product-header-title{
+    .product-public-font-weight;
+    .product-public-font(red);
+  }</code></pre><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>Sass</p>
+<pre><code>  .header {
+    background-color: red;
+  }
+  .main.active {
+    @extend .header;
+  }</code></pre><p>less</p>
+<pre><code>  .header {
+    background-color: red;
+  }
+  .main {
+    &amp;:extend(.header);
+  }</code></pre><p>Stylus,Scss</p>
+<pre><code>  .header
+    background-color: red;
 
-.main
-  @extend .header</code></pre></li>
-</ul>
-<h3 id="高级用法（函数）"><a href="#高级用法（函数）" class="headerlink" title="高级用法（函数）"></a>高级用法（函数）</h3><p>三种预处理器都自带了诸如色彩处理（darken等）、类型判断（if each for while 等）、数值计算等内置函数</p>
-<h3 id="三种预处理器手册"><a href="#三种预处理器手册" class="headerlink" title="三种预处理器手册"></a>三种预处理器手册</h3><ul>
+  .main
+    @extend .header</code></pre><h3 id="高级用法（函数）"><a href="#高级用法（函数）" class="headerlink" title="高级用法（函数）"></a>高级用法（函数）</h3><p>三种预处理器都自带了诸如色彩处理（darken等）、类型判断（if each for while 等）、数值计算等内置函数</p>
+<h3 id="三种预处理器手册"><a href="#三种预处理器手册" class="headerlink" title="三种预处理器手册"></a>三种预处理器手册</h3><ol>
 <li>Sass：<a href="http://sass.bootcss.com/" target="_blank" rel="noopener">http://sass.bootcss.com/</a></li>
 <li>Less： <a href="https://less.bootcss.com/" target="_blank" rel="noopener">https://less.bootcss.com/</a></li>
 <li>stylus：<a href="https://stylus.bootcss.com/" target="_blank" rel="noopener">https://stylus.bootcss.com/</a></li>
-</ul>
+</ol>
 
             </div>
             <hr />
@@ -726,45 +704,6 @@ header
 
             
 
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《CSS预处理器》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/07/01/css/css-preprocessor/" property="cc:attributionName"
-               rel="cc:attributionURL">
-                任博
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
 
         </div>
     </div>
@@ -780,15 +719,14 @@ header
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'f4ed0b6940188e62a449',
-        clientSecret: 'b6af683cf2760586c043d59635b7ed82b180e2ff',
-        repo: 'marspen.github.io',
-        owner: 'renbo',
-        admin: "renbo",
+        clientID: '73145a6c107f6b031c40',
+        clientSecret: '5d60a2c5035a3ce0495cb04c2c82989d30f35070',
+        repo: 'marspen.github.io/-notes-summary/',
+        owner: 'MarsPen',
+        admin: "MarsPen",
         id: '2017/07/01/css/css-preprocessor/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
     gitalk.render('gitalk-container');
 </script>
     
@@ -810,37 +748,35 @@ header
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/06/14/javascript/new/">
+                <a href="/2018/06/23/linux/instructions/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="实现 new 运算符">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="常用指令">
                         
-                        <span class="card-title">实现 new 运算符</span>
+                        <span class="card-title">常用指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            实现 new 运算符也算是 JS 中经典的面试题了。在实际应用中其实 new 运算符的应用场景是定义对象类型的实例 如下
-例子
-/**
- * 定义构造函数
- * @param {*} name 
- * @param {*} age 
- */
+                            ls显示文件或目录
+ls -F  //显示文件或目录
+ls -l  //列出文件详细信息l(list)
+ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)mkdir创建目录
+mkdir dir  //创建一个dir的目录
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-06-14
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-06-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
-                                    JavaScript
+                            <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
                                 </a>
                             
                             
@@ -850,8 +786,8 @@ header
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1062,7 +998,7 @@ header
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -1133,8 +1069,8 @@ header
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

@@ -5,9 +5,9 @@
   <subtitle>不念过往 不惧未来</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.studyfe.cn/"/>
-  <updated>2019-08-22T14:52:37.845Z</updated>
-  <id>http://blog.studyfe.cn/</id>
+  <link href="https://blog.studyfe.cn/"/>
+  <updated>2019-08-23T09:25:15.497Z</updated>
+  <id>https://blog.studyfe.cn/</id>
   
   <author>
     <name>任博</name>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>实现 promise</title>
-    <link href="http://blog.studyfe.cn/2019/06/14/javascript/promise/"/>
-    <id>http://blog.studyfe.cn/2019/06/14/javascript/promise/</id>
-    <published>2019-06-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:52:37.845Z</updated>
+    <title>global.d.ts</title>
+    <link href="https://blog.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
+    <id>https://blog.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-23T09:25:15.497Z</updated>
     
     <summary type="html">
     
@@ -29,25 +29,27 @@
       
         
         
-          &lt;p&gt;本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 &lt;a href=&quot;http://es6.ruanyifeng.com/#docs/promise&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ES6
+          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions by:
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>this</title>
-    <link href="http://blog.studyfe.cn/2019/06/14/javascript/this/"/>
-    <id>http://blog.studyfe.cn/2019/06/14/javascript/this/</id>
-    <published>2019-06-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:52:50.438Z</updated>
+    <title>class.d.ts</title>
+    <link href="https://blog.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://blog.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-23T09:25:13.763Z</updated>
     
     <summary type="html">
     
@@ -55,25 +57,25 @@
       
         
         
-          &lt;h2 id=&quot;this&quot;&gt;&lt;a href=&quot;#this&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>原型及原型链</title>
-    <link href="http://blog.studyfe.cn/2019/06/14/javascript/prototype/"/>
-    <id>http://blog.studyfe.cn/2019/06/14/javascript/prototype/</id>
-    <published>2019-06-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:52:44.309Z</updated>
+    <title>function.d.ts</title>
+    <link href="https://blog.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
+    <id>https://blog.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-23T09:25:21.582Z</updated>
     
     <summary type="html">
     
@@ -81,27 +83,25 @@
       
         
         
-          &lt;h2 id=&quot;原型及原型链&quot;&gt;&lt;a href=&quot;#原型及原型链&quot; class=&quot;headerlink&quot; title=&quot;原型及原型链&quot;&gt;&lt;/a&gt;原型及原型链&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;普通对象和函数对象&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>数据类型</title>
-    <link href="http://blog.studyfe.cn/2019/06/14/javascript/type/"/>
-    <id>http://blog.studyfe.cn/2019/06/14/javascript/type/</id>
-    <published>2019-06-14T04:32:09.000Z</published>
-    <updated>2019-08-22T13:29:45.634Z</updated>
+    <title>module.d.ts</title>
+    <link href="https://blog.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
+    <id>https://blog.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-23T09:25:26.920Z</updated>
     
     <summary type="html">
     
@@ -109,25 +109,27 @@
       
         
         
-          &lt;h2 id=&quot;基本数据类型与引用数据类型&quot;&gt;&lt;a href=&quot;#基本数据类型与引用数据类型&quot; class=&quot;headerlink&quot;
+          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions by:
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>Vo Ao</title>
-    <link href="http://blog.studyfe.cn/2019/06/14/javascript/voao/"/>
-    <id>http://blog.studyfe.cn/2019/06/14/javascript/voao/</id>
-    <published>2019-06-14T04:32:09.000Z</published>
-    <updated>2019-08-22T13:30:21.176Z</updated>
+    <title>TypeScript编译原理</title>
+    <link href="https://blog.studyfe.cn/2019/08/05/typescript/compilationprinciple/"/>
+    <id>https://blog.studyfe.cn/2019/08/05/typescript/compilationprinciple/</id>
+    <published>2019-08-05T10:20:27.000Z</published>
+    <updated>2019-08-23T09:24:43.231Z</updated>
     
     <summary type="html">
     
@@ -135,25 +137,104 @@
       
         
         
-          &lt;h2 id=&quot;变量提升与函数提升&quot;&gt;&lt;a href=&quot;#变量提升与函数提升&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;TypeScript 编译器源文件位于 &lt;a href=&quot;https://github.com/Microsoft/TypeScript/tree/master/src/compiler&quot; target=&quot;_blank&quot;
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-Point Free</title>
+    <link href="https://blog.studyfe.cn/2019/07/25/javascript/functionalpoint/"/>
+    <id>https://blog.studyfe.cn/2019/07/25/javascript/functionalpoint/</id>
+    <published>2019-07-25T04:32:09.000Z</published>
+    <updated>2019-08-23T08:21:40.151Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-函数组合</title>
+    <link href="https://blog.studyfe.cn/2019/07/22/javascript/functionalcombination/"/>
+    <id>https://blog.studyfe.cn/2019/07/22/javascript/functionalcombination/</id>
+    <published>2019-07-22T04:32:09.000Z</published>
+    <updated>2019-08-23T08:23:32.906Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>装饰器</title>
+    <link href="https://blog.studyfe.cn/2019/07/18/typescript/decorators/"/>
+    <id>https://blog.studyfe.cn/2019/07/18/typescript/decorators/</id>
+    <published>2019-07-18T10:20:27.000Z</published>
+    <updated>2019-08-23T09:27:36.022Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;装饰器是一种为类声明和成员添加注释和元编程语法的方法，用于在编译时对类、类的方法、类的属性、类的方法的参数进行处理，通俗的讲就是在原有代码外层包装了一层处理逻辑，这样就可以在不改变原方法、函数等逻辑功能的基础上增加额外的处理行为&lt;/p&gt;
+&lt;h3 id=&quot;使用装饰器&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
     <title>偏应用函数、函数的柯里化</title>
-    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functioncurrying/"/>
-    <id>http://blog.studyfe.cn/2019/05/14/javascript/functioncurrying/</id>
-    <published>2019-05-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:52:09.551Z</updated>
+    <link href="https://blog.studyfe.cn/2019/07/17/javascript/functioncurrying/"/>
+    <id>https://blog.studyfe.cn/2019/07/17/javascript/functioncurrying/</id>
+    <published>2019-07-17T04:32:09.000Z</published>
+    <updated>2019-08-23T06:59:03.653Z</updated>
     
     <summary type="html">
     
@@ -167,19 +248,19 @@
     
     </summary>
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>函数式编程-Point Free</title>
-    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functionalpoint/"/>
-    <id>http://blog.studyfe.cn/2019/05/14/javascript/functionalpoint/</id>
-    <published>2019-05-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:51:57.334Z</updated>
+    <title>tsconfig.json</title>
+    <link href="https://blog.studyfe.cn/2019/07/15/typescript/tsconfig/"/>
+    <id>https://blog.studyfe.cn/2019/07/15/typescript/tsconfig/</id>
+    <published>2019-07-15T10:20:27.000Z</published>
+    <updated>2019-08-23T09:24:21.619Z</updated>
     
     <summary type="html">
     
@@ -187,80 +268,27 @@
       
         
         
-          &lt;p&gt;Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript 中的函数定义：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// 表达式
-function foo (/* parameters are
+          &lt;p&gt;## &lt;/p&gt;
+&lt;p&gt;如果一个目录下存在一个tsconfig.json文件，它会把一个文件夹转换为项目，也意味着这个目录是TypeScript项目的根目录&lt;/p&gt;
+&lt;h3 id=&quot;使用tsconfig-json&quot;&gt;&lt;a href=&quot;#使用tsconfig-json&quot;
         
       
     
     </summary>
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-函数组合</title>
-    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functionalcombination/"/>
-    <id>http://blog.studyfe.cn/2019/05/14/javascript/functionalcombination/</id>
-    <published>2019-05-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:51:45.334Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;函数组合是将两个或多个函数组合以产生新函数的过程。将功能组合在一起就像将一系列管道拼凑在一起，以便我们的数据流过&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;简而言之，函数&lt;code&gt;f&lt;/code&gt;和&lt;code&gt;g&lt;/code&gt;的组合可以定义为&lt;code&gt;f（g（x））&lt;/code&gt;，它从内到
-        
-      
-    
-    </summary>
-    
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面向对象之继承</title>
-    <link href="http://blog.studyfe.cn/2019/05/14/javascript/inheritance/"/>
-    <id>http://blog.studyfe.cn/2019/05/14/javascript/inheritance/</id>
-    <published>2019-05-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:52:20.047Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;原型链虽然很强大，也可以用它来实现继承，但是总会有这样那样的问题。其中最主要的问题是原型链的引用问题。下面借鉴JS高程中的几种方式来学习JS继承,JS继承也是面向对象（oo）编程，但不使用类或者接口，而是使用创建对象的形式。虽然在ES6中实现了Class但其实只是语法糖，原
-        
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
     <title>函数式编程-纯函数</title>
-    <link href="http://blog.studyfe.cn/2019/05/14/javascript/functionalpurity/"/>
-    <id>http://blog.studyfe.cn/2019/05/14/javascript/functionalpurity/</id>
-    <published>2019-05-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:52:03.026Z</updated>
+    <link href="https://blog.studyfe.cn/2019/07/15/javascript/functionalpurity/"/>
+    <id>https://blog.studyfe.cn/2019/07/15/javascript/functionalpurity/</id>
+    <published>2019-07-15T04:32:09.000Z</published>
+    <updated>2019-08-23T08:22:37.103Z</updated>
     
     <summary type="html">
     
@@ -268,29 +296,25 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;说纯函数概念之前我们再来复习一下什么是函数&lt;br&gt;&lt;br&gt;函数是一个方法，有一些输入，称为变量，并产生一些输出称为返回值&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;函数可以用于以下目的&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;映射：根据给定的输入生成一些输出，函数将输入值映射到输出值上&lt;/li&gt;
-&lt;li&gt;过
+          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>函数式编程-基本理论</title>
-    <link href="http://blog.studyfe.cn/2019/05/13/javascript/functionalbase/"/>
-    <id>http://blog.studyfe.cn/2019/05/13/javascript/functionalbase/</id>
-    <published>2019-05-13T04:32:09.000Z</published>
-    <updated>2019-08-22T13:22:56.563Z</updated>
+    <link href="https://blog.studyfe.cn/2019/07/12/javascript/functionalbase/"/>
+    <id>https://blog.studyfe.cn/2019/07/12/javascript/functionalbase/</id>
+    <published>2019-07-12T04:32:09.000Z</published>
+    <updated>2019-08-23T06:58:09.903Z</updated>
     
     <summary type="html">
     
@@ -304,19 +328,19 @@ function foo (/* parameters are
     
     </summary>
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="函数式编程" scheme="http://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="函数式编程" scheme="https://blog.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>call 和 apply</title>
-    <link href="http://blog.studyfe.cn/2018/11/23/javascript/call/"/>
-    <id>http://blog.studyfe.cn/2018/11/23/javascript/call/</id>
-    <published>2018-11-23T04:32:09.000Z</published>
-    <updated>2019-08-22T12:59:59.963Z</updated>
+    <title>Mixinx</title>
+    <link href="https://blog.studyfe.cn/2019/07/02/typescript/mixinx/"/>
+    <id>https://blog.studyfe.cn/2019/07/02/typescript/mixinx/</id>
+    <published>2019-07-02T10:20:27.000Z</published>
+    <updated>2019-08-23T09:23:55.557Z</updated>
     
     <summary type="html">
     
@@ -324,26 +348,26 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;谈起 call 和 apply 这两个 Function.prototype 上的方法可能很熟悉了，它在继承，改变this指针上有很多的应用场景。接下来我们简单的来重新回忆一下 call 和 apply 这两个函数的功能 &lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&quot;例子一&quot;&gt;&lt;a
+          &lt;p&gt; 一般情况下，我们已经习惯了用面向对象的继承方式，比如在 JS ES5中用 prototype， 在 ES6 和 TS 中 用extends,然而用 mixinx 也是一种通过可重用组件创建类的方式，来进行混用，混合多个类的方法到一个类上&lt;/p&gt;
+&lt;h3
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>闭包</title>
-    <link href="http://blog.studyfe.cn/2018/11/23/javascript/closure/"/>
-    <id>http://blog.studyfe.cn/2018/11/23/javascript/closure/</id>
-    <published>2018-11-23T04:32:09.000Z</published>
-    <updated>2019-08-22T13:15:16.519Z</updated>
+    <title>声明文件</title>
+    <link href="https://blog.studyfe.cn/2019/06/20/typescript/declarefile/"/>
+    <id>https://blog.studyfe.cn/2019/06/20/typescript/declarefile/</id>
+    <published>2019-06-20T10:20:27.000Z</published>
+    <updated>2019-08-23T09:23:39.533Z</updated>
     
     <summary type="html">
     
@@ -351,26 +375,25 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;说起闭包那么首先先来了解一下js执行环境（execution context）、作用域以及作用域链（scope chain）&lt;/p&gt;
-&lt;h2 id=&quot;上下文执行环境&quot;&gt;&lt;a href=&quot;#上下文执行环境&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;声明文件&quot;&gt;&lt;a href=&quot;#声明文件&quot; class=&quot;headerlink&quot; title=&quot;声明文件&quot;&gt;&lt;/a&gt;声明文件&lt;/h2&gt;&lt;h3 id=&quot;识别库的类型&quot;&gt;&lt;a href=&quot;#识别库的类型&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>bind 函数的实现</title>
-    <link href="http://blog.studyfe.cn/2018/10/23/javascript/bind/"/>
-    <id>http://blog.studyfe.cn/2018/10/23/javascript/bind/</id>
-    <published>2018-10-23T04:32:09.000Z</published>
-    <updated>2019-08-22T12:59:33.820Z</updated>
+    <title>模块与命名空间</title>
+    <link href="https://blog.studyfe.cn/2019/06/15/typescript/module/"/>
+    <id>https://blog.studyfe.cn/2019/06/15/typescript/module/</id>
+    <published>2019-06-15T10:20:27.000Z</published>
+    <updated>2019-08-23T09:23:16.980Z</updated>
     
     <summary type="html">
     
@@ -378,26 +401,26 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;bind 方法其实和 call apply 功能上差不多，只不过 bind() 方法会绑定一个新的函数，通过这个新的函数我们可以当作构造函数、偏函数等等去使用&lt;/p&gt;
-&lt;h3 id=&quot;作为绑定函数使用&quot;&gt;&lt;a href=&quot;#作为绑定函数使用&quot;
+          &lt;p&gt;在 JS 中 有 module 模块机制，和 TS 类似，在 TS 中内部模块命名空间为关键字namespaces。外部模块现在只是modules&lt;/p&gt;
+&lt;h3 id=&quot;使用命名空间&quot;&gt;&lt;a href=&quot;#使用命名空间&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>函数节流与抖动</title>
-    <link href="http://blog.studyfe.cn/2018/09/12/javascript/debounce/"/>
-    <id>http://blog.studyfe.cn/2018/09/12/javascript/debounce/</id>
-    <published>2018-09-12T04:32:09.000Z</published>
-    <updated>2019-08-22T13:18:48.300Z</updated>
+    <title>实现 promise</title>
+    <link href="https://blog.studyfe.cn/2019/06/11/javascript/promise/"/>
+    <id>https://blog.studyfe.cn/2019/06/11/javascript/promise/</id>
+    <published>2019-06-11T04:32:09.000Z</published>
+    <updated>2019-08-23T08:13:34.397Z</updated>
     
     <summary type="html">
     
@@ -405,27 +428,25 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;说起函数的节流与抖动这个老生长谈的话题，我们就需要了解一下关于浏览器的知识&lt;/p&gt;
-&lt;p&gt;浏览器有各种进程，来保证浏览器正常的、流畅的呈现在用户的眼前。例如渲染进程（也就是浏览器的内核）是非常重要的一个进程，其中包含了很多的线程&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;GUI渲染线程
+          &lt;p&gt;本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 &lt;a href=&quot;http://es6.ruanyifeng.com/#docs/promise&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ES6
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.studyfe.cn/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.studyfe.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
-    <title>实现 new 运算符</title>
-    <link href="http://blog.studyfe.cn/2018/06/14/javascript/new/"/>
-    <id>http://blog.studyfe.cn/2018/06/14/javascript/new/</id>
-    <published>2018-06-14T04:32:09.000Z</published>
-    <updated>2019-08-22T14:52:27.238Z</updated>
+    <title>基本数据类型</title>
+    <link href="https://blog.studyfe.cn/2019/05/23/typescript/basedatatype/"/>
+    <id>https://blog.studyfe.cn/2019/05/23/typescript/basedatatype/</id>
+    <published>2019-05-23T14:28:09.000Z</published>
+    <updated>2019-08-23T09:20:52.039Z</updated>
     
     <summary type="html">
     
@@ -433,29 +454,26 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;实现 new 运算符也算是 JS 中经典的面试题了。在实际应用中其实 new 运算符的应用场景是定义对象类型的实例 如下&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;例子&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/**
- * 定义构造函数
- * @param {*}
+          &lt;p&gt;每种语言都会有属于自己的数据类型，ts的基本数据类型基本上是继承了js，但也在基础之上增加了几个不一样的类型&lt;/p&gt;
+&lt;h3 id=&quot;布尔型-true／false&quot;&gt;&lt;a href=&quot;#布尔型-true／false&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/categories/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="JavaScript" scheme="http://blog.studyfe.cn/tags/JavaScript/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>CSS预处理器</title>
-    <link href="http://blog.studyfe.cn/2017/07/01/css/css-preprocessor/"/>
-    <id>http://blog.studyfe.cn/2017/07/01/css/css-preprocessor/</id>
-    <published>2017-07-01T14:25:01.000Z</published>
-    <updated>2019-08-22T17:27:48.312Z</updated>
+    <title>泛型</title>
+    <link href="https://blog.studyfe.cn/2019/05/22/typescript/generics/"/>
+    <id>https://blog.studyfe.cn/2019/05/22/typescript/generics/</id>
+    <published>2019-05-22T10:20:27.000Z</published>
+    <updated>2019-08-23T09:22:49.842Z</updated>
     
     <summary type="html">
     
@@ -463,26 +481,26 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现代码的分层、复用和依赖管理，提高开发效率&lt;/p&gt;
-&lt;h3 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;泛型（Generics）就是不提前指定接口、变量、函数等的类型，在使用的时候再指定类型&lt;/p&gt;
+&lt;h3 id=&quot;定义泛型&quot;&gt;&lt;a href=&quot;#定义泛型&quot; class=&quot;headerlink&quot; title=&quot;定义泛型 &quot;&gt;&lt;/a&gt;定义泛型
         
       
     
     </summary>
     
-      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>css分层理论</title>
-    <link href="http://blog.studyfe.cn/2017/06/22/css/css-layered/"/>
-    <id>http://blog.studyfe.cn/2017/06/22/css/css-layered/</id>
-    <published>2017-06-22T10:02:25.000Z</published>
-    <updated>2019-08-22T17:27:15.328Z</updated>
+    <title>接口</title>
+    <link href="https://blog.studyfe.cn/2019/05/18/typescript/interfaces/"/>
+    <id>https://blog.studyfe.cn/2019/05/18/typescript/interfaces/</id>
+    <published>2019-05-18T10:20:27.000Z</published>
+    <updated>2019-08-23T09:25:14.691Z</updated>
     
     <summary type="html">
     
@@ -490,26 +508,27 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;css分层理论和命令规则将有助于它的可扩展性，性能的提高和代码的组织管理。&lt;/p&gt;
-&lt;h3 id=&quot;OOSS&quot;&gt;&lt;a href=&quot;#OOSS&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;##&lt;/p&gt;
+&lt;p&gt;在面向对象语言中接口 (Interfaces) 是对类的行为的抽象，在TypeScript中也常用于定义结构子类型，方便进行类型检查&lt;/p&gt;
+&lt;h3 id=&quot;定义一个简单的接口&quot;&gt;&lt;a href=&quot;#定义一个简单的接口&quot;
         
       
     
     </summary>
     
-      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title>CSS 动画</title>
-    <link href="http://blog.studyfe.cn/2017/06/20/css/css-animation/"/>
-    <id>http://blog.studyfe.cn/2017/06/20/css/css-animation/</id>
-    <published>2017-06-20T13:06:05.000Z</published>
-    <updated>2019-08-22T17:26:53.813Z</updated>
+    <title>类</title>
+    <link href="https://blog.studyfe.cn/2019/05/17/typescript/class/"/>
+    <id>https://blog.studyfe.cn/2019/05/17/typescript/class/</id>
+    <published>2019-05-17T10:20:27.000Z</published>
+    <updated>2019-08-23T09:22:23.102Z</updated>
     
     <summary type="html">
     
@@ -517,43 +536,16 @@ function foo (/* parameters are
       
         
         
-          &lt;p&gt;API的简介及简单动画的实现&lt;/p&gt;
-&lt;h3 id=&quot;一-3D转换（transform）&quot;&gt;&lt;a href=&quot;#一-3D转换（transform）&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;TS基础系列之-类&quot;&gt;&lt;a href=&quot;#TS基础系列之-类&quot; class=&quot;headerlink&quot; title=&quot;TS基础系列之-类&quot;&gt;&lt;/a&gt;TS基础系列之-类&lt;/h2&gt;&lt;p&gt;在JavaScript 通过构造函数和原型链来实现类和继承。而在 ES6
         
       
     
     </summary>
     
-      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/categories/TypeScript/"/>
     
     
-      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS 基本布局</title>
-    <link href="http://blog.studyfe.cn/2017/06/15/css/base-layout/"/>
-    <id>http://blog.studyfe.cn/2017/06/15/css/base-layout/</id>
-    <published>2017-06-15T12:02:06.000Z</published>
-    <updated>2019-08-22T17:26:16.859Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-自适应两栏布局&quot;&gt;&lt;a href=&quot;#1-自适应两栏布局&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://blog.studyfe.cn/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="http://blog.studyfe.cn/tags/CSS/"/>
+      <category term="TypeScript" scheme="https://blog.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   

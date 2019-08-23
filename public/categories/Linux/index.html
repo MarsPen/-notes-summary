@@ -325,20 +325,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/categories/JavaScript/" title="JavaScript: 12">
+                <a href="/categories/HTML/" title="HTML: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">JavaScript
-                        <span class="tag-length">12</span>
+                            style="background-color: #F5EEF8;">HTML
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/HTML/" title="HTML: 1">
+                <a href="/categories/JavaScript/" title="JavaScript: 12">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">HTML
-                        <span class="tag-length">1</span>
+                            style="background-color: #D5F5E3;">JavaScript
+                        <span class="tag-length">12</span>
                     </span>
                 </a>
                 
@@ -400,7 +400,54 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2017/01/23/linux/vim/">
+                    <a href="/2018/08/10/linux/git/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="在mac中配置多个github账号ssh密钥">
+                            
+                            <span class="card-title">在mac中配置多个github账号ssh密钥</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                概述很多时候我们本地生成的只有一个自己的ssh，但是多个ssh配置的场景也是蛮多的，所以想要commit，push等操作需要配置私钥ssh或者http，才能连接远程git仓库
+步骤我们假设原来在~/.ssh目录下已经生成了一对密钥,此密钥文
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Linux/" target="_blank">
+                            <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/07/28/linux/vim/">
                         <div class="card-image tag-image">
                             
                             
@@ -412,9 +459,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.vim三种模式：命令模式、插入模式、编辑模式。使用ESC或i或：来切换模式。
-2.命令模式下
-:q  退出
+                                vim三种模式命令模式、插入模式、编辑模式。使用ESC或i或：来切换模式
+基本命令:q  退出
 
 :q! 强制退出
 
@@ -424,12 +470,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 :set nonumber  隐藏行号
 
-/h
+/host  在文档
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-28
                             </span>
                             <span class="publish-author">
                                 
@@ -458,30 +504,78 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2017/01/23/linux/user/">
+                    <a href="/2018/07/25/linux/fileauth/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Linux用户及用户组管理">
+                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="文件权限">
                             
-                            <span class="card-title">Linux用户及用户组管理</span>
+                            <span class="card-title">文件权限</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                查看存储用户账号
-cat /etc/passwd
+                                三种基本权限R  读  数值表示为4
+W  写  数值表示为2
+X  可执行  数值表示为11.执行ls -al命令行会出现
+drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-su
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Linux/" target="_blank">
+                            <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/07/22/linux/user/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="用户及用户组管理">
+                            
+                            <span class="card-title">用户及用户组管理</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                查看存储用户账号cat /etc/passwd
 
 输出的结构
-用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell查看存储组账号
-cat /etc/group  查看存储用户账号的密码
-cat /etc/shadow  
+用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell查看存储组账号cat /etc/group  查看存储用户账号的密码cat /etc/shadow   
+
+
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-22
                             </span>
                             <span class="publish-author">
                                 
@@ -510,82 +604,29 @@ cat /etc/shadow
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2017/01/23/linux/system/">
+                    <a href="/2018/07/16/linux/shutdown/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="系统管理指令">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="关机重启操作">
                             
-                            <span class="card-title">系统管理指令</span>
+                            <span class="card-title">关机重启操作</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                stat  显示指定文件的详细信息
-who   显示在线登陆用户
-whoami 显示当前操作用户 
-hostname  显示主机名 
-uname  显示系统信息
-top  动态显示当前耗费资源最多进程信息
-ps  查看进程状态 ps -au
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/" target="_blank">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2017/01/23/linux/shutdown/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux关机重启操作">
-                            
-                            <span class="card-title">Linux关机重启操作</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                shutdown
-shutdown -r  关机重启
+                                shutdownshutdown -r  关机重启
 shutdown -h  关机不重启
 shutdown now  立刻关机
-halt 关机
+halt关机
 reboot重启
 
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-16
                             </span>
                             <span class="publish-author">
                                 
@@ -614,7 +655,57 @@ reboot重启
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2017/01/23/linux/package/">
+                    <a href="/2018/07/15/linux/backup/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Linux备份操作">
+                            
+                            <span class="card-title">Linux备份操作</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                tartar -cvf log.tar log2012.log    仅打包，不压缩！ 
+
+tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
+
+tar -jcvf log.tar.bz2 l
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Linux/" target="_blank">
+                            <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/07/12/linux/package/">
                         <div class="card-image tag-image">
                             
                             
@@ -626,17 +717,17 @@ reboot重启
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                dpkg (Debian Package)管理工具，软件包名以.deb后缀
+                                dpkg(Debian Package)管理工具，软件包名以.deb后缀
 sudo dpkg -i package.deb 安装/更新 deb 包 
 
 sudo dpkg -r package 删除 deb 包 
 
-sudo dpkg -
+sudo dpkg -l
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-12
                             </span>
                             <span class="publish-author">
                                 
@@ -665,7 +756,111 @@ sudo dpkg -
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2017/01/23/linux/instructions/">
+                    <a href="/2018/07/10/linux/compression/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Linux打包压缩相关指令">
+                            
+                            <span class="card-title">Linux打包压缩相关指令</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                bzip2(选项)(参数)命令用于创建和管理（包括解压缩）
+  -c或——stdout：将压缩与解压缩的结果送到标准输出；
+  -d或——decompress：执行解压缩；
+  -f或-force：bzip2在压缩或解压缩时，若输出文件与现
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Linux/" target="_blank">
+                            <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/07/02/linux/system/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="系统管理指令">
+                            
+                            <span class="card-title">系统管理指令</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                stat显示指定文件的详细信息
+who显示在线登陆用户
+whoami显示当前操作用户
+hostname显示主机名
+uname显示系统信息
+top动态显示当前耗费资源最多进程信息
+ps查看进程状态 
+ps -aux
+
+-A ：所有的进程均显示
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Linux/" target="_blank">
+                            <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/06/23/linux/instructions/">
                         <div class="card-image tag-image">
                             
                             
@@ -686,205 +881,7 @@ mkdir dir  //创建一个dir的目录
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/" target="_blank">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2017/01/23/linux/git/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="在mac中配置多个github账号ssh密钥">
-                            
-                            <span class="card-title">在mac中配置多个github账号ssh密钥</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                概述很多时候我们本地生成的只有一个自己的ssh，但是多个ssh配置的场景也是蛮多的，所以想要commit，push等操作需要配置私钥ssh或者http，才能连接远程git仓库
-步骤
-我们假设原来在~/.ssh目录下已经生成了一对密钥,此密钥
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/" target="_blank">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2017/01/23/linux/fileauth/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Linux文件权限管理">
-                            
-                            <span class="card-title">Linux文件权限管理</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                三种基本权限
-R  读  数值表示为4
-W  写  数值表示为2
-X  可执行  数值表示为11.执行ls -al命令行会出现
-drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-s
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/" target="_blank">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2017/01/23/linux/backup/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Linux备份操作">
-                            
-                            <span class="card-title">Linux备份操作</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                tar
-tar -cvf log.tar log2012.log    仅打包，不压缩！ 
-
-tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
-
-tar -jcvf log.tar.bz2 
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/" target="_blank">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2017/01/23/linux/compression/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Linux打包压缩相关指令">
-                            
-                            <span class="card-title">Linux打包压缩相关指令</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                bzip2(选项)(参数)命令用于创建和管理（包括解压缩）
-  -c或——stdout：将压缩与解压缩的结果送到标准输出；
-  -d或——decompress：执行解压缩；
-  -f或-force：bzip2在压缩或解压缩时，若输出文件与现
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-01-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-06-23
                             </span>
                             <span class="publish-author">
                                 
@@ -930,7 +927,7 @@ tar -jcvf log.tar.bz2
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -1001,8 +998,8 @@ tar -jcvf log.tar.bz2
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

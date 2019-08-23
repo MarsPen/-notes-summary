@@ -1,6 +1,6 @@
 ---
 title: Linux软件包管理
-date: 2017-01-23 12:32:09
+date: 2018-7-12 22:28:12
 top: false
 cover: false
 password:
@@ -14,7 +14,10 @@ categories:
 ---
 
 
-**dpkg (Debian Package)管理工具，软件包名以.deb后缀**
+### dpkg 
+
+(Debian Package)管理工具，软件包名以.deb后缀
+
 ```
 sudo dpkg -i package.deb 安装/更新 deb 包 
 
@@ -25,7 +28,10 @@ sudo dpkg -l 获取所有已经安装的 deb 包
 sudo dpkg -s package 获得已经安装的包的信息
 ```
 
-**APT（Advanced Packaging Tool）**
+### APT
+
+（Advanced Packaging Tool）
+
 ```
 sudo apt-get install package 安装package包
 
@@ -37,7 +43,8 @@ sudo apt-get update 更新package包
 ```    
 
  
-**YUM 软件包升级器**
+### YUM 软件包升级器
+
 ```
 yum install package 下载并安装rpm包 
 
@@ -57,7 +64,8 @@ yum clean all 删除所有缓存的包和头文件
 ```
 
  
-**RPM包**
+### RPM包
+
 ```
 rpm -ivh package.rpm 安装rpm包 
 rpm -ivh --nodeeps package.rpm 安装rpm包而忽略依赖关系警告 
@@ -67,12 +75,18 @@ rpm -e package.rpm 删除rpm包
 rpm -qa 显示系统中所有已经安装的rpm包 
 ```
 
-**注意**
+### 注意
 
-rpm文件是Redhat支持的软件包格式，而.deb是Debian上支持软件包的扩展名.<br/>
-由于ubuntu是对Debian的扩展，在ubuntu下不能直接使.rpm文件的，需要将.rmp转换成.deb。<br/>
-解决方法<br/>
-1.安装alien，执行`sudo apt-get install alien`<br/>
+rpm文件是Redhat支持的软件包格式，而.deb是Debian上支持软件包的扩展名
+
+由于ubuntu是对Debian的扩展，在ubuntu下不能直接使.rpm文件的，需要将.rmp转换成.deb
+
+解决方法
+
+1.安装alien，执行`sudo apt-get install alien`
+
 2.使用alien，执行`sudo alien abc.rpm`
+
 3.执行完成后，目录下会生成一个abc.deb文件
+
 4.安装并使用dpkg

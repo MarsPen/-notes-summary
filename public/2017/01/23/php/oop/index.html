@@ -1001,45 +1001,6 @@ public __unset ( string $name ) : void // 当销毁一个私有成员属性的�
 
             
 
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《PHP 面向对象》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/01/23/php/oop/" property="cc:attributionName"
-               rel="cc:attributionURL">
-                任博
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
 
         </div>
     </div>
@@ -1055,15 +1016,14 @@ public __unset ( string $name ) : void // 当销毁一个私有成员属性的�
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'f4ed0b6940188e62a449',
-        clientSecret: 'b6af683cf2760586c043d59635b7ed82b180e2ff',
-        repo: 'marspen.github.io',
-        owner: 'renbo',
-        admin: "renbo",
+        clientID: '73145a6c107f6b031c40',
+        clientSecret: '5d60a2c5035a3ce0495cb04c2c82989d30f35070',
+        repo: 'marspen.github.io/-notes-summary/',
+        owner: 'MarsPen',
+        admin: "MarsPen",
         id: '2017/01/23/php/oop/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
     gitalk.render('gitalk-container');
 </script>
     
@@ -1137,27 +1097,23 @@ for ($i =
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2017/01/23/typescript/compilationprinciple/">
+                <a href="/2017/01/23/php/oop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="TypeScript编译原理">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="PHP 面向对象">
                         
-                        <span class="card-title">TypeScript编译原理</span>
+                        <span class="card-title">PHP 面向对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            TypeScript 编译器源文件位于 src/compiler  目录下
-主要的应用文件
-
-
-
-编译器的大概工作流SourceCode（源码） ~~ 扫描器 ~~&gt; Token 流Token 流 ~~ 解析器 ~~&gt; AST（
+                            面向对象基础概念Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数
+对象的主要三个特性对象的行为：可以对 对象施加那些操作，开灯，关灯就
                         
                     </div>
                     <div class="publish-info">
@@ -1168,19 +1124,20 @@ for ($i =
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
+                            <a href="/categories/PHP/" class="post-category" target="_blank">
+                                    PHP
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TypeScript/" target="_blank">
-                        <span class="chip bg-color">TypeScript</span>
+                    <a href="/tags/PHP/" target="_blank">
+                        <span class="chip bg-color">PHP</span>
                     </a>
                     
                 </div>
@@ -1342,7 +1299,7 @@ for ($i =
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -1413,8 +1370,8 @@ for ($i =
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

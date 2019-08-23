@@ -1,6 +1,6 @@
 ---
 title: 基础之概述和环境配置
-date: 2017-01-23 12:32:09
+date: 2019-05-15 18:20:27
 top: false
 cover: false
 password:
@@ -30,7 +30,7 @@ categories:
   - 语言层 - 它包括语法，关键字和类型注释
   - 编译器层 - TypeScript编译器（TSC）将使用TypeScript编写的指令转换为其等效的JavaScript
   - 语言服务层 - “语言服务”在核心编译管道周围公开了一个额外的层，它是类似编辑器的应用程序。ts编译核心(core.ts,program.ts,scanner.ts,parser.ts,checker,emitter.ts)<br/>
-<image src="https://github.com/MarsPen/-notes-summary/blob/master/images/ts-lang.png" width="350"></image>
+<image src="images/ts-lang.png" width="350"></image>
 
 ### TypeScript 环境配置（本文不讨论 windows 安装过程和 mac 类似）
  - 下载并安装 node <a href="https://nodejs.org/en/">相关 node 官网</a>
@@ -40,9 +40,6 @@ categories:
  - 执行 `tsc filename.ts` 编译过后默认会在当前目录产生js文件,在页面中引入js文件即可
  - 后续在tsconfig.json 中讨论配置监听属性
 
-
-## 下一篇文章
-<a href='https://github.com/MarsPen/-notes-summary/blob/master/typescript/baseDataType.md'>基本数据类型</a>
 
 
 

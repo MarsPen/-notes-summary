@@ -8,10 +8,10 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="API的简介及简单动画的实现
-一.3D转换（transform）
+3D转换（transform）
 定义向元素应用 2D 或 3D 转换，可以对元素进行移动、缩放、转动、拉长或拉伸
-
-translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动transfo">
+translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动
+transform">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -448,7 +448,7 @@ translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    628
+                    624
                 </div>
                 
 
@@ -472,29 +472,28 @@ translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>API的简介及简单动画的实现</p>
-<h3 id="一-3D转换（transform）"><a href="#一-3D转换（transform）" class="headerlink" title="一.3D转换（transform）"></a>一.3D转换（transform）</h3><ol>
+<h3 id="3D转换（transform）"><a href="#3D转换（transform）" class="headerlink" title="3D转换（transform）"></a>3D转换（transform）</h3><ol>
 <li><p>定义向元素应用 2D 或 3D 转换，可以对元素进行移动、缩放、转动、拉长或拉伸</p>
-<ul>
-<li>translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动<pre><code>transform: translate(100px,200px);</code></pre></li>
-<li>rotate（旋转） 给定度数顺时针旋转的元素。负值则为逆时针旋转<pre><code>transform: rotate(60deg);</code></pre></li>
-<li>scale (缩放) 对元素减小或者放大，取决于宽度（X轴）和高度（Y轴）的参数<pre><code>transform: scale(2,2);</code></pre></li>
-<li>skew (倾斜) 根据X轴和Y轴位置给定的角度参数，进行倾斜，负数则为反方向倾斜<pre><code>transform: skew(40deg,50deg);</code></pre></li>
-</ul>
-</li>
+<p>translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动</p>
+<pre><code>transform: translate(100px,200px);</code></pre><p>rotate（旋转） 给定度数顺时针旋转的元素。负值则为逆时针旋转</p>
+<pre><code>transform: rotate(60deg);</code></pre><p>scale (缩放) 对元素减小或者放大，取决于宽度（X轴）和高度（Y轴）的参数</p>
+<pre><code>transform: scale(2,2);</code></pre><p>skew (倾斜) 根据X轴和Y轴位置给定的角度参数，进行倾斜，负数则为反方向倾斜</p>
+<pre><code>transform: skew(40deg,50deg);</code></pre></li>
 <li><p>transform-origin：允许改变被转换元素的位置</p>
-<pre><code>   transform-origin: x-axis y-axis z-axis;</code></pre></li>
+<pre><code>transform-origin: x-axis y-axis z-axis;</code></pre></li>
 <li><p>transform-style：规定被嵌套元素如何在 3D 空间中显示</p>
-<pre><code>   // preserve-3d所有子元素在3D空间中呈现
-   // flat所有子元素在2D平面呈现
-   transform-style: flat|preserve-3d;</code></pre></li>
+<pre><code>// preserve-3d所有子元素在3D空间中呈现
+// flat所有子元素在2D平面呈现
+transform-style: flat|preserve-3d;</code></pre></li>
 <li><p>perspective:设置元素距离视图的距离，以像素计，与 perspective-origin 属性一同使用，能够改变 3D 元素的底部位置</p>
-<pre><code>   perspective: number|none;</code></pre></li>
+<pre><code>perspective: number|none;</code></pre></li>
 <li><p>backface-visibility:定义当元素不面向屏幕时是否可见，在旋转元素不希望看到其背面时，该属性很有用</p>
-<pre><code>   backface-visibility: visible|hidden;</code></pre></li>
+<pre><code>backface-visibility: visible|hidden;</code></pre></li>
 </ol>
-<h3 id="二-CSS3过渡（transition）"><a href="#二-CSS3过渡（transition）" class="headerlink" title="二.CSS3过渡（transition）"></a>二.CSS3过渡（transition）</h3><ol>
-<li><p>某种效果可以从一种样式转变到另一种样式的效果</p>
-<pre><code>transition: property duration timing-function delay;</code></pre><pre><code>transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);</code></pre><h3 id="三-CSS3-动画（animation及-keyframes）"><a href="#三-CSS3-动画（animation及-keyframes）" class="headerlink" title="三.CSS3 动画（animation及@keyframes）"></a>三.CSS3 动画（animation及@keyframes）</h3></li>
+<h3 id="CSS3过渡（transition）"><a href="#CSS3过渡（transition）" class="headerlink" title="CSS3过渡（transition）"></a>CSS3过渡（transition）</h3><ol>
+<li>某种效果可以从一种样式转变到另一种样式的效果<pre><code>transition: property duration timing-function delay;</code></pre><pre><code>transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);</code></pre></li>
+</ol>
+<h3 id="CSS3-动画（animation及-keyframes）"><a href="#CSS3-动画（animation及-keyframes）" class="headerlink" title="CSS3 动画（animation及@keyframes）"></a>CSS3 动画（animation及@keyframes）</h3><ol>
 <li><p>使元素从一种样式逐渐变化为另一种样式的效果</p>
 <ul>
 <li><p>animation</p>
@@ -522,7 +521,7 @@ animation-play-state(动画是否正在运行或暂停):paused|running;</code></
 </ul>
 </li>
 </ol>
-<h3 id="四-css动画库以及动画工具"><a href="#四-css动画库以及动画工具" class="headerlink" title="四.css动画库以及动画工具"></a>四.css动画库以及动画工具</h3><ul>
+<h3 id="css动画库以及动画工具"><a href="#css动画库以及动画工具" class="headerlink" title="css动画库以及动画工具"></a>css动画库以及动画工具</h3><ul>
 <li>matrix3d(<a href="http://ds-overdesign.com/transform/matrix3d.html" target="_blank" rel="noopener">http://ds-overdesign.com/transform/matrix3d.html</a>)</li>
 <li>matrix(<a href="http://meyerweb.com/eric/tools/matrix" target="_blank" rel="noopener">http://meyerweb.com/eric/tools/matrix</a>)</li>
 <li>tools(<a href="http://www.f2e.name/case/css3/tools.html" target="_blank" rel="noopener">http://www.f2e.name/case/css3/tools.html</a>)</li>
@@ -669,45 +668,6 @@ animation-play-state(动画是否正在运行或暂停):paused|running;</code></
 
             
 
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《CSS 动画》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/06/20/css/css-animation/" property="cc:attributionName"
-               rel="cc:attributionURL">
-                任博
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
 
         </div>
     </div>
@@ -723,15 +683,14 @@ animation-play-state(动画是否正在运行或暂停):paused|running;</code></
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'f4ed0b6940188e62a449',
-        clientSecret: 'b6af683cf2760586c043d59635b7ed82b180e2ff',
-        repo: 'marspen.github.io',
-        owner: 'renbo',
-        admin: "renbo",
+        clientID: '73145a6c107f6b031c40',
+        clientSecret: '5d60a2c5035a3ce0495cb04c2c82989d30f35070',
+        repo: 'marspen.github.io/-notes-summary/',
+        owner: 'MarsPen',
+        admin: "MarsPen",
         id: '2017/06/20/css/css-animation/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
     gitalk.render('gitalk-container');
 </script>
     
@@ -999,7 +958,7 @@ animation-play-state(动画是否正在运行或暂停):paused|running;</code></
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">54.1k</span>
+            <span class="white-color">54.2k</span>
             
 
             <br>
@@ -1070,8 +1029,8 @@ animation-play-state(动画是否正在运行或暂停):paused|running;</code></
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 8000;
+        var uvcountOffset = 2000;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
