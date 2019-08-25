@@ -1,0 +1,23 @@
+[
+	{
+		"name": "画",
+		"artist": "赵雷",
+		"url": "/medias/music/hua.mp3",
+		"cover": "/medias/music/avatars/zhaolei.jpg"
+	},{
+		"name": "多想在平庸的生活拥抱你",
+		"artist": "隔壁老樊",
+		"url": "/medias/music/yongbaoni.mp3",
+		"cover": "/medias/music/avatars/laofan.jpg"
+	},{
+		"name": "往后余生",
+		"artist": "马良",
+		"url": "/medias/music/wanghouyusheng.mp3",
+		"cover": "/medias/music/avatars/maliang.jpg"
+	},{
+		"name": "理想三寻",
+		"artist": "陈鸿宇",
+		"url": "/medias/music/lixiangsanxun.mp3",
+		"cover": "/medias/music/avatars/chenhouyu.jpg"
+	}
+]
