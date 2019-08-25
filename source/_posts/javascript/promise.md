@@ -1,8 +1,8 @@
 ---
 title: 实现 promise
 date: 2019-6-11 12:32:09
-top: false
-cover: false
+top: true
+cover: true
 password:
 toc: true
 mathjax: false
