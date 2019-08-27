@@ -1,18 +1,18 @@
-# -notes-summary
+> -notes-summary
 日常知识梳理、总结、写博客的地方。欢迎 star 共同进步😊😊😊
-# 访问地址
+> 访问地址
 https://blog.studyfe.cn/
-# 目录
+> 目录
 
-## HTML
+> HTML
 <a href="https://blog.studyfe.cn/2017/05/10/html/html/">HTML 系列总结</a>
-## CSS
+> CSS
 <a href="https://blog.studyfe.cn/2017/06/11/css/base-concepts/">CSS 基础知识概念</a><br/>
 <a href="https://blog.studyfe.cn/2017/06/15/css/base-layout/">CSS 基本布局</a><br/>
 <a href="https://blog.studyfe.cn/2017/06/20/css/css-animation/">CSS 动画</a><br/>
 <a href="https://blog.studyfe.cn/2017/06/22/css/css-layered/">css分层理论</a><br/>
 <a href="https://blog.studyfe.cn/2017/07/01/css/css-preprocessor/">CSS预处理器</a><br/>
-## JavaScript
+> JavaScript
 <a href="https://blog.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a><br/>
 <a href="https://blog.studyfe.cn/2019/02/20/javascript/voao/">执行环境</a><br/>
 <a href="https://blog.studyfe.cn/2019/02/25/javascript/closure/">闭包</a><br/>
@@ -26,7 +26,7 @@ https://blog.studyfe.cn/
 <a href="https://blog.studyfe.cn/2019/04/27/javascript/new/">new 运算符的实现</a><br/>
 <a href="https://blog.studyfe.cn/2019/06/11/javascript/promise/">promise的实现</a><br/>
 <a href="https://blog.studyfe.cn/2019/05/15/javascript/debounce/">函数节流与抖动</a><br/>
-## 函数式编程
+> 函数式编程
 <a href="https://blog.studyfe.cn/2019/07/12/javascript/functionalbase/">基本概念</a><br/>
 <a href="https://blog.studyfe.cn/2019/07/15/javascript/functionalpurity/">纯函数</a><br/>
 <a href="https://blog.studyfe.cn/2019/07/17/javascript/functioncurrying/">偏应用函数、函数的柯里化</a><br/>
@@ -34,7 +34,7 @@ https://blog.studyfe.cn/
 <a href="https://blog.studyfe.cn/2019/07/25/javascript/functionalpoint/">Point Free</a><br/>
 未完待续...
 
-## TypeScript
+> TypeScript
 <a href="https://blog.studyfe.cn/2019/05/15/typescript/envconfig/">基础之概述和环境配置</a><br/>
 <a href="https://blog.studyfe.cn/2019/05/23/typescript/basedatatype/">基本数据类型</a><br/>
 <a href="https://blog.studyfe.cn/2019/05/16/typescript/function/">函数</a><br/>
@@ -48,7 +48,7 @@ https://blog.studyfe.cn/
 <a href="https://blog.studyfe.cn/2019/07/18/typescript/decorators/">装饰器</a><br/>
 <a href="https://blog.studyfe.cn/2019/08/05/typescript/compilationprinciple/">TypeScript编译原理</a><br/>
 
-## Node
+> Node
 <a href="https://blog.studyfe.cn/2019/03/23/node/http/">tcp udp http</a><br/>
 <a href="https://blog.studyfe.cn/2019/03/28/node/url/">url</a><br/>
 <a href="https://blog.studyfe.cn/2019/04/01/node/fs/">fs 文件操作</a><br/>
@@ -61,12 +61,12 @@ https://blog.studyfe.cn/
 <a href="https://blog.studyfe.cn/2019/04/14/node/error/">Error 异常模块</a><br/>
 未完待续...
 
-## PHP
+> PHP
 <a href="https://blog.studyfe.cn/2017/01/23/php/base/">语法、变量、数据类型</a><br/>
 <a href="https://blog.studyfe.cn/2017/01/23/php/method/">PHP 常用方法</a><br/>
 <a href="https://blog.studyfe.cn/2017/01/23/php/oop/">PHP 面向对象</a><br/>
 
-## Liunx
+> Liunx
 <a href="https://blog.studyfe.cn/2018/06/23/linux/instructions/">常用指令</a><br/>
 <a href="https://blog.studyfe.cn/2018/07/02/linux/system/">系统管理指令</a><br/>
 <a href="https://blog.studyfe.cn/2018/07/10/linux/compression/">Linux打包压缩相关指令</a><br/>
@@ -77,39 +77,39 @@ https://blog.studyfe.cn/
 <a href="https://blog.studyfe.cn/2018/08/10/linux/git/">在mac中配置多个github账号ssh密钥</a><br/>
 未完待续...
 
-## vue 
+> vue 
 包含vue、vuex、vueRouter 源码分析等</br>
 正在整理...
 
-## React
+> React
 包含React的scheduler调度算法流程、Redux源码分析、mobox、路由机制等</br>
 未完待续...
 
-## Dom-diff
+> Dom-diff
 Dom-diff 原理，对比vue和react 的虚拟dom</br>
 未完待续...
 
-## webpack
+> webpack
 包含常用配置项目、优化、原理分析等</br>
 未完待续...
 
-## 前端性能优化
+> 前端性能优化
 包含常用分析工具、性能指标、前端加载优化手段、服务端请求优化手段等</br>
 未完待续...
 
-## 前端常用算法
+> 前端常用算法
 包含二叉树、查找、排序、链表、回文、可能性问题、算数、二进制、DFS、DP、BFS等</br>
 未完待续...
 
-## 前端常用面试题目汇总
+> 前端常用面试题目汇总
 包含前端高频出现的面试题汇总</br>
 未完待续...
 
-## 自动化部署
+> 自动化部署
 包含jenkins安装、配置、自动化测试、监控日志系统等</br>
 未完待续...
 
-## 项目总结
+> 项目总结
 包含在开发项目中遇到的问题难点、解决办法汇总</br>
 未完待续...
 
