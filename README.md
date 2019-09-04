@@ -1,4 +1,4 @@
-# -notes-summary
+### -notes-summary
 日常知识梳理、总结、写博客的地方。欢迎 star 共同进步😊😊😊
 # 访问地址
 https:/www.studyfe.cn/
@@ -77,39 +77,39 @@ https:/www.studyfe.cn/
 <a href="https://www.study.cn/2018/08/10/linux/git/">在mac中配置多个github账号ssh密钥</a><br/>
 未完待续...
 
-## vue 
+### vue 
 包含vue、vuex、vueRouter 源码分析等</br>
 正在整理...
 
-## React
+### React
 包含React的scheduler调度算法流程、Redux源码分析、mobox、路由机制等</br>
 未完待续...
 
-## Dom-diff
+### Dom-diff
 Dom-diff 原理，对比vue和react 的虚拟dom</br>
 未完待续...
 
-## webpack
+### webpack
 包含常用配置项目、优化、原理分析等</br>
 未完待续...
 
-## 前端性能优化
+### 前端性能优化
 包含常用分析工具、性能指标、前端加载优化手段、服务端请求优化手段等</br>
 未完待续...
 
-## 前端常用算法
+### 前端常用算法
 包含二叉树、查找、排序、链表、回文、可能性问题、算数、二进制、DFS、DP、BFS等</br>
 未完待续...
 
-## 前端常用面试题目汇总
+### 前端常用面试题目汇总
 包含前端高频出现的面试题汇总</br>
 未完待续...
 
-## 自动化部署
+### 自动化部署
 包含jenkins安装、配置、自动化测试、监控日志系统等</br>
 未完待续...
 
-## 项目总结
+### 项目总结
 包含在开发项目中遇到的问题难点、解决办法汇总</br>
 未完待续...
 
