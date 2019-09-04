@@ -79,10 +79,12 @@ https://www.studyfe.cn
 <a href="https://www.study.cn/2018/08/10/linux/git/">在mac中配置多个github账号ssh密钥</a><br/>
 未完待续...
 
-## vue 
-包含vue、vuex、vueRouter 源码分析等</br>
-正在整理...
-
+## vue
+<a href="https://studyfe.cn/2019/08/27/vue/vueprinciple/">Vue 原理解析之主线流程</a><br/>
+<a href="">Vue 原理解析之响应式（正在整理）</a><br/>
+<a href="">Vue 原理解析之组件（未完成）</a><br/>
+<a href="">Vue 原理解析之vue-router（未完成）</a><br/>
+<a href="">Vue 原理解析之vue-vuex（未完成）</a><br/>
 ## React
 包含React的scheduler调度算法流程、Redux源码分析、mobox、路由机制等</br>
 未完待续...
