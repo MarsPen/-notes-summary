@@ -1,80 +1,80 @@
 # -notes-summary
 日常知识梳理、总结、写博客的地方。欢迎 star 共同进步😊😊😊
 # 访问地址
-https://blog.studyfe.cn/
+https:/www.studyfe.cn/
 # 目录
 
 ## HTML
-<a href="https://blog.studyfe.cn/2017/05/10/html/html/">HTML 系列总结</a>
+<a href="https:/www.studyfe.cn/2017/05/10/html/html/">HTML 系列总结</a>
 ## CSS
-<a href="https://blog.studyfe.cn/2017/06/11/css/base-concepts/">CSS 基础知识概念</a><br/>
-<a href="https://blog.studyfe.cn/2017/06/15/css/base-layout/">CSS 基本布局</a><br/>
-<a href="https://blog.studyfe.cn/2017/06/20/css/css-animation/">CSS 动画</a><br/>
-<a href="https://blog.studyfe.cn/2017/06/22/css/css-layered/">css分层理论</a><br/>
-<a href="https://blog.studyfe.cn/2017/07/01/css/css-preprocessor/">CSS预处理器</a><br/>
+<a href="https:/www.studyfe.cn/2017/06/11/css/base-concepts/">CSS 基础知识概念</a><br/>
+<a href="https:/www.studyfe.cn/2017/06/15/css/base-layout/">CSS 基本布局</a><br/>
+<a href="https:/www.studyfe.cn/2017/06/20/css/css-animation/">CSS 动画</a><br/>
+<a href="https:/www.studyfe.cn/2017/06/22/css/css-layered/">css分层理论</a><br/>
+<a href="https:/www.studyfe.cn/2017/07/01/css/css-preprocessor/">CSS预处理器</a><br/>
 ## JavaScript
-<a href="https://blog.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a><br/>
-<a href="https://blog.studyfe.cn/2019/02/20/javascript/voao/">执行环境</a><br/>
-<a href="https://blog.studyfe.cn/2019/02/25/javascript/closure/">闭包</a><br/>
-<a href="https://blog.studyfe.cn/2019/03/05/javascript/this/">this</a><br/>
-<a href="https://blog.studyfe.cn/2019/03/10/javascript/prototype/">原型-原型链</a><br/>
-<a href="https://blog.studyfe.cn/2019/03/15/javascript/inheritance/">面向对象之继承</a><br/>
-<a href="https://blog.studyfe.cn/2019/03/20/javascript/api/">操作数组API方法总结</a><br/>
-<a href="https://blog.studyfe.cn/2019/08/26/javascript/generator-async/">Generator 与 Async</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/21/javascript/bind/">bind 函数的实现</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/22/javascript/call/">call 和 apply 函数的实现</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/27/javascript/new/">new 运算符的实现</a><br/>
-<a href="https://blog.studyfe.cn/2019/06/11/javascript/promise/">promise的实现</a><br/>
-<a href="https://blog.studyfe.cn/2019/05/15/javascript/debounce/">函数节流与抖动</a><br/>
+<a href="https:/www.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a><br/>
+<a href="https:/www.studyfe.cn/2019/02/20/javascript/voao/">执行环境</a><br/>
+<a href="https:/www.studyfe.cn/2019/02/25/javascript/closure/">闭包</a><br/>
+<a href="https:/www.studyfe.cn/2019/03/05/javascript/this/">this</a><br/>
+<a href="https:/www.studyfe.cn/2019/03/10/javascript/prototype/">原型-原型链</a><br/>
+<a href="https:/www.studyfe.cn/2019/03/15/javascript/inheritance/">面向对象之继承</a><br/>
+<a href="https:/www.studyfe.cn/2019/03/20/javascript/api/">操作数组API方法总结</a><br/>
+<a href="https:/www.studyfe.cn/2019/08/26/javascript/generator-async/">Generator 与 Async</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/21/javascript/bind/">bind 函数的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/22/javascript/call/">call 和 apply 函数的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/27/javascript/new/">new 运算符的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/06/11/javascript/promise/">promise的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/05/15/javascript/debounce/">函数节流与抖动</a><br/>
 ## 函数式编程
-<a href="https://blog.studyfe.cn/2019/07/12/javascript/functionalbase/">基本概念</a><br/>
-<a href="https://blog.studyfe.cn/2019/07/15/javascript/functionalpurity/">纯函数</a><br/>
-<a href="https://blog.studyfe.cn/2019/07/17/javascript/functioncurrying/">偏应用函数、函数的柯里化</a><br/>
-<a href="https://blog.studyfe.cn/2019/07/22/javascript/functionalcombination/">函数组合</a><br/>
-<a href="https://blog.studyfe.cn/2019/07/25/javascript/functionalpoint/">Point Free</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/12/javascript/functionalbase/">基本概念</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/15/javascript/functionalpurity/">纯函数</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/17/javascript/functioncurrying/">偏应用函数、函数的柯里化</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/22/javascript/functionalcombination/">函数组合</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/25/javascript/functionalpoint/">Point Free</a><br/>
 未完待续...
 
 ## TypeScript
-<a href="https://blog.studyfe.cn/2019/05/15/typescript/envconfig/">基础之概述和环境配置</a><br/>
-<a href="https://blog.studyfe.cn/2019/05/23/typescript/basedatatype/">基本数据类型</a><br/>
-<a href="https://blog.studyfe.cn/2019/05/16/typescript/function/">函数</a><br/>
-<a href="https://blog.studyfe.cn/2019/05/17/typescript/class/">类</a><br/>
-<a href="https://blog.studyfe.cn/2019/05/18/typescript/interfaces/">接口</a><br/>
-<a href="https://blog.studyfe.cn/2019/05/22/typescript/generics/">泛型</a><br/>
-<a href="https://blog.studyfe.cn/2019/06/15/typescript/module/">模块与命名空间</a><br/>
-<a href="https://blog.studyfe.cn/2019/06/20/typescript/declarefile/">声明文件</a><br/>
-<a href="https://blog.studyfe.cn/2019/07/02/typescript/mixinx/">Mixinx</a><br/>
-<a href="https://blog.studyfe.cn/2019/07/15/typescript/tsconfig/">tsconfig.json</a><br/>
-<a href="https://blog.studyfe.cn/2019/07/18/typescript/decorators/">装饰器</a><br/>
-<a href="https://blog.studyfe.cn/2019/08/05/typescript/compilationprinciple/">TypeScript编译原理</a><br/>
+<a href="https:/www.studyfe.cn/2019/05/15/typescript/envconfig/">基础之概述和环境配置</a><br/>
+<a href="https:/www.studyfe.cn/2019/05/23/typescript/basedatatype/">基本数据类型</a><br/>
+<a href="https:/www.studyfe.cn/2019/05/16/typescript/function/">函数</a><br/>
+<a href="https:/www.studyfe.cn/2019/05/17/typescript/class/">类</a><br/>
+<a href="https:/www.studyfe.cn/2019/05/18/typescript/interfaces/">接口</a><br/>
+<a href="https:/www.studyfe.cn/2019/05/22/typescript/generics/">泛型</a><br/>
+<a href="https:/www.studyfe.cn/2019/06/15/typescript/module/">模块与命名空间</a><br/>
+<a href="https:/www.studyfe.cn/2019/06/20/typescript/declarefile/">声明文件</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/02/typescript/mixinx/">Mixinx</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/15/typescript/tsconfig/">tsconfig.json</a><br/>
+<a href="https:/www.studyfe.cn/2019/07/18/typescript/decorators/">装饰器</a><br/>
+<a href="https:/www.studyfe.cn/2019/08/05/typescript/compilationprinciple/">TypeScript编译原理</a><br/>
 
 ## Node
-<a href="https://blog.studyfe.cn/2019/03/23/node/http/">tcp udp http</a><br/>
-<a href="https://blog.studyfe.cn/2019/03/28/node/url/">url</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/01/node/fs/">fs 文件操作</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/02/node/path/">path 路径操作</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/04/node/querystring/">querystring 路径操作</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/05/node/module/">module 模块机制</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/08/node/crypto/">crypto 加密模块</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/10/node/event/">event 事件驱动模型</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/12/node/process/">process进程</a><br/>
-<a href="https://blog.studyfe.cn/2019/04/14/node/error/">Error 异常模块</a><br/>
+<a href="https:/www.studyfe.cn/2019/03/23/node/http/">tcp udp http</a><br/>
+<a href="https:/www.studyfe.cn/2019/03/28/node/url/">url</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/01/node/fs/">fs 文件操作</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/02/node/path/">path 路径操作</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/04/node/querystring/">querystring 路径操作</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/05/node/module/">module 模块机制</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/08/node/crypto/">crypto 加密模块</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/10/node/event/">event 事件驱动模型</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/12/node/process/">process进程</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/14/node/error/">Error 异常模块</a><br/>
 未完待续...
 
 ## PHP
-<a href="https://blog.studyfe.cn/2017/01/23/php/base/">语法、变量、数据类型</a><br/>
-<a href="https://blog.studyfe.cn/2017/01/23/php/method/">PHP 常用方法</a><br/>
-<a href="https://blog.studyfe.cn/2017/01/23/php/oop/">PHP 面向对象</a><br/>
+<a href="https://www.study.cn/2017/01/23/php/base/">语法、变量、数据类型</a><br/>
+<a href="https://www.study.cn/2017/01/23/php/method/">PHP 常用方法</a><br/>
+<a href="https://www.study.cn/2017/01/23/php/oop/">PHP 面向对象</a><br/>
 
 ## Liunx
-<a href="https://blog.studyfe.cn/2018/06/23/linux/instructions/">常用指令</a><br/>
-<a href="https://blog.studyfe.cn/2018/07/02/linux/system/">系统管理指令</a><br/>
-<a href="https://blog.studyfe.cn/2018/07/10/linux/compression/">Linux打包压缩相关指令</a><br/>
-<a href="https://blog.studyfe.cn/2018/07/12/linux/package/">Linux软件包管理</a><br/>
-<a href="https://blog.studyfe.cn/2018/07/16/linux/shutdown/">关机重启操作</a><br/>
-<a href="https://blog.studyfe.cn/2018/07/25/linux/fileauth/">文件权限</a><br/>
-<a href="https://blog.studyfe.cn/2018/07/28/linux/vim/">vim使用</a><br/>
-<a href="https://blog.studyfe.cn/2018/08/10/linux/git/">在mac中配置多个github账号ssh密钥</a><br/>
+<a href="https://www.study.cn/2018/06/23/linux/instructions/">常用指令</a><br/>
+<a href="https://www.study.cn/2018/07/02/linux/system/">系统管理指令</a><br/>
+<a href="https://www.study.cn/2018/07/10/linux/compression/">Linux打包压缩相关指令</a><br/>
+<a href="https://www.study.cn/2018/07/12/linux/package/">Linux软件包管理</a><br/>
+<a href="https://www.study.cn/2018/07/16/linux/shutdown/">关机重启操作</a><br/>
+<a href="https://www.study.cn/2018/07/25/linux/fileauth/">文件权限</a><br/>
+<a href="https://www.study.cn/2018/07/28/linux/vim/">vim使用</a><br/>
+<a href="https://www.study.cn/2018/08/10/linux/git/">在mac中配置多个github账号ssh密钥</a><br/>
 未完待续...
 
 ## vue 

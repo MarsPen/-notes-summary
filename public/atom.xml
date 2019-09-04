@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  
+  <subtitle>知识改变命运</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.studyfe.cn/"/>
+  <updated>2019-09-04T10:23:14.250Z</updated>
+  <id>https://www.studyfe.cn/</id>
+  
+  <author>
+    <name>任博</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 原理解析一</title>
+    <link href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/"/>
+    <id>https://www.studyfe.cn/2019/08/27/vue/vueprinciple/</id>
+    <published>2019-08-27T15:12:09.000Z</published>
+    <updated>2019-09-04T10:23:14.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div align=&quot;middle&quot;&gt;
+  &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Generator 与 Async</title>
+    <link href="https://www.studyfe.cn/2019/08/26/javascript/generator-async/"/>
+    <id>https://www.studyfe.cn/2019/08/26/javascript/generator-async/</id>
+    <published>2019-08-26T08:22:09.000Z</published>
+    <updated>2019-08-26T16:46:27.865Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;在前端中异步编程一直是前端开发的一个痛点，因为 JavaScript 语法的灵活性和特殊性导致前端开发的困难（因为 JavaScript
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://www.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>global.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions by:
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>class.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>module.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions by:
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>function.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TypeScript编译原理</title>
+    <link href="https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/"/>
+    <id>https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/</id>
+    <published>2019-08-05T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;TypeScript 编译器源文件位于 &lt;a href=&quot;https://github.com/Microsoft/TypeScript/tree/master/src/compiler&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-Point Free</title>
+    <link href="https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/"/>
+    <id>https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/</id>
+    <published>2019-07-25T04:32:09.000Z</published>
+    <updated>2019-08-26T16:46:27.868Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-函数组合</title>
+    <link href="https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/"/>
+    <id>https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/</id>
+    <published>2019-07-22T04:32:09.000Z</published>
+    <updated>2019-08-26T16:46:27.867Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>装饰器</title>
+    <link href="https://www.studyfe.cn/2019/07/18/typescript/decorators/"/>
+    <id>https://www.studyfe.cn/2019/07/18/typescript/decorators/</id>
+    <published>2019-07-18T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;装饰器是一种为类声明和成员添加注释和元编程语法的方法，用于在编译时对类、类的方法、类的属性、类的方法的参数进行处理，通俗的讲就是在原有代码外层包装了一层处理逻辑，这样就可以在不改变原方法、函数等逻辑功能的基础上增加额外的处理行为&lt;/p&gt;
+&lt;h3 id=&quot;使用装饰器&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>偏应用函数、函数的柯里化</title>
+    <link href="https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/"/>
+    <id>https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/</id>
+    <published>2019-07-17T04:32:09.000Z</published>
+    <updated>2019-08-26T16:46:27.867Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;偏应用函数简称偏函数，在模拟 bind 的时候已经说明其概念和作为主要 bind
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tsconfig.json</title>
+    <link href="https://www.studyfe.cn/2019/07/15/typescript/tsconfig/"/>
+    <id>https://www.studyfe.cn/2019/07/15/typescript/tsconfig/</id>
+    <published>2019-07-15T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;## &lt;/p&gt;
+&lt;p&gt;如果一个目录下存在一个tsconfig.json文件，它会把一个文件夹转换为项目，也意味着这个目录是TypeScript项目的根目录&lt;/p&gt;
+&lt;h3 id=&quot;使用tsconfig-json&quot;&gt;&lt;a href=&quot;#使用tsconfig-json&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-纯函数</title>
+    <link href="https://www.studyfe.cn/2019/07/15/javascript/functionalpurity/"/>
+    <id>https://www.studyfe.cn/2019/07/15/javascript/functionalpurity/</id>
+    <published>2019-07-15T04:32:09.000Z</published>
+    <updated>2019-08-26T16:46:27.868Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程-基本理论</title>
+    <link href="https://www.studyfe.cn/2019/07/12/javascript/functionalbase/"/>
+    <id>https://www.studyfe.cn/2019/07/12/javascript/functionalbase/</id>
+    <published>2019-07-12T04:32:09.000Z</published>
+    <updated>2019-08-26T16:46:27.867Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;什么是函数式编程&quot;&gt;&lt;a href=&quot;#什么是函数式编程&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mixinx</title>
+    <link href="https://www.studyfe.cn/2019/07/02/typescript/mixinx/"/>
+    <id>https://www.studyfe.cn/2019/07/02/typescript/mixinx/</id>
+    <published>2019-07-02T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt; 一般情况下，我们已经习惯了用面向对象的继承方式，比如在 JS ES5中用 prototype， 在 ES6 和 TS 中 用extends,然而用 mixinx 也是一种通过可重用组件创建类的方式，来进行混用，混合多个类的方法到一个类上&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>声明文件</title>
+    <link href="https://www.studyfe.cn/2019/06/20/typescript/declarefile/"/>
+    <id>https://www.studyfe.cn/2019/06/20/typescript/declarefile/</id>
+    <published>2019-06-20T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;声明文件&quot;&gt;&lt;a href=&quot;#声明文件&quot; class=&quot;headerlink&quot; title=&quot;声明文件&quot;&gt;&lt;/a&gt;声明文件&lt;/h2&gt;&lt;h3 id=&quot;识别库的类型&quot;&gt;&lt;a href=&quot;#识别库的类型&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>模块与命名空间</title>
+    <link href="https://www.studyfe.cn/2019/06/15/typescript/module/"/>
+    <id>https://www.studyfe.cn/2019/06/15/typescript/module/</id>
+    <published>2019-06-15T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在 JS 中 有 module 模块机制，和 TS 类似，在 TS 中内部模块命名空间为关键字namespaces。外部模块现在只是modules&lt;/p&gt;
+&lt;h3 id=&quot;使用命名空间&quot;&gt;&lt;a href=&quot;#使用命名空间&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实现 promise</title>
+    <link href="https://www.studyfe.cn/2019/06/11/javascript/promise/"/>
+    <id>https://www.studyfe.cn/2019/06/11/javascript/promise/</id>
+    <published>2019-06-11T04:32:09.000Z</published>
+    <updated>2019-08-26T16:46:27.869Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 &lt;a href=&quot;http://es6.ruanyifeng.com/#docs/promise&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ES6
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://www.studyfe.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://www.studyfe.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基本数据类型</title>
+    <link href="https://www.studyfe.cn/2019/05/23/typescript/basedatatype/"/>
+    <id>https://www.studyfe.cn/2019/05/23/typescript/basedatatype/</id>
+    <published>2019-05-23T14:28:09.000Z</published>
+    <updated>2019-08-26T16:46:27.876Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;每种语言都会有属于自己的数据类型，ts的基本数据类型基本上是继承了js，但也在基础之上增加了几个不一样的类型&lt;/p&gt;
+&lt;h3 id=&quot;布尔型-true／false&quot;&gt;&lt;a href=&quot;#布尔型-true／false&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>泛型</title>
+    <link href="https://www.studyfe.cn/2019/05/22/typescript/generics/"/>
+    <id>https://www.studyfe.cn/2019/05/22/typescript/generics/</id>
+    <published>2019-05-22T10:20:27.000Z</published>
+    <updated>2019-08-26T16:46:27.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;泛型（Generics）就是不提前指定接口、变量、函数等的类型，在使用的时候再指定类型&lt;/p&gt;
+&lt;h3 id=&quot;定义泛型&quot;&gt;&lt;a href=&quot;#定义泛型&quot; class=&quot;headerlink&quot; title=&quot;定义泛型 &quot;&gt;&lt;/a&gt;定义泛型
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+</feed>
