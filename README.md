@@ -80,7 +80,7 @@ https://www.studyfe.cn
 未完待续...
 
 ## vue
-<a href="https://studyfe.cn/2019/08/27/vue/vueprinciple/">Vue 原理解析之主线流程</a><br/>
+<a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">Vue 原理解析之主线流程</a><br/>
 <a href="">Vue 原理解析之响应式（正在整理）</a><br/>
 <a href="">Vue 原理解析之组件（未完成）</a><br/>
 <a href="">Vue 原理解析之vue-router（未完成）</a><br/>
