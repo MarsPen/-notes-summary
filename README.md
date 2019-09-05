@@ -78,8 +78,11 @@ https:/www.studyfe.cn/
 未完待续...
 
 ### vue 
-包含vue、vuex、vueRouter 源码分析等</br>
-正在整理...
+<a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue 原理之主线流程</a><br/>
+<a href="javascript:void(0)">vue 原理之响应式（正在整理）</a><br/>
+<a href="javascript:void(0)">vue 原理之组件（未完成）</a><br/>
+<a href="javascript:void(0)">vue 原理之 vue-router（未完成）</a><br/>
+<a href="javascript:void(0)">vue 原理之 vue-vuex（未完成）</a><br/>
 
 ### React
 包含React的scheduler调度算法流程、Redux源码分析、mobox、路由机制等</br>
