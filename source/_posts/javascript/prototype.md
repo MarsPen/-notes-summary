@@ -15,7 +15,7 @@ categories:
 
 ### 普通对象和函数对象
 
-```
+```js
   // 普通对象
   var obj1 = {}; 
   var obj2 = new Object();
@@ -56,7 +56,7 @@ categories:
 
 当然这几种模式在这里暂时不展开说明，后续继承的时候在分别用讨论，我们这里简单的回忆一下用构造函数创建对象
 
-```
+```js
   function Person(name, age) {
     this.name = name;
     this.age = age;
@@ -86,21 +86,21 @@ categories:
 
 此时我们来确定两个实例对象返回的原型指针是否一样(**Object.getPrototypeOf 此方法可以获取对象的原型**)
 
-```
+```js
 Object.getPrototypeOf(person1) === Person.prototype (true)
 Object.getPrototypeOf(person1) === Person.prototype (true)
 ```
 
 通过如上输出结果得知他们内部都有一个指向Person.prototype的指针也就是
 
-```
+```js
 person1.__proto__ === Person.prototype
 person2.__proto__ === Person.prototype
 ```
 
 经过上面解释这么多我们得出的结果就是如下 
 
-```
+```js
 person1.__proto__ === Person.prototype
 Person.prototype.constructor == Person
 ```
@@ -113,7 +113,7 @@ Person.prototype.constructor == Person
 - Object 实际是function Object跟function Function 类似
 - Object.prototype是Object构造函数的属性。它也是原型链的终结
 
-```
+```js
 function Object (name,age) {
   this.name = name;
   this.age = age;
@@ -147,7 +147,7 @@ object.sayName()
 
 **Function创建的函数一般在全局作用域中被创建，但并不会像其他函数一样产生闭包，所以只能自己内部和全局的变量**
        
-```
+```js
 function Function (name,age){
   this.name  = name
   this.age = age

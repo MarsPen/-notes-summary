@@ -17,7 +17,7 @@ categories:
 
 函数柯里化主要是通过偏应用函数的实现，把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数<br/>
 
-```
+```js
 // 柯里化之前
 function add (a, b) {
   return a + b;
@@ -47,7 +47,7 @@ const result = add(2)(3); // => 5
 
 ### 如何柯里化
 
-```
+```js
 // 普通
 const sayName = name => age => `my name is ${name}, Im years old ${age}` ;
 let name = sayName('zhangsan');
@@ -69,7 +69,7 @@ console.log(info(27, 175));
 3. 动态创建函数
 
 延迟计算<br/>
-```
+```js
 
 // 普通实现
 var sum = function(args){
@@ -115,7 +115,7 @@ sum() // 15
 
 DOM操作中的事件绑定(动态创建函数)<br/>
 当在多次调用同一个函数，并且传递的参数绝大多数是相同的。
-``` 
+``` js
 // 普通版本
 var addEvent = function(el, type, fn, capture) {
     if (window.addEventListener) {

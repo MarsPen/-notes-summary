@@ -25,7 +25,7 @@ categories:
 
 纯函数都是关于映射的所以对于相同的输入，永远会得到相同的输出，而且没有任何可观察的副作用，也不依赖外部环境的状态。
 
-```
+```js
 // 纯函数
 const double = x => x * 2;
 console.log（double（5））
@@ -50,7 +50,7 @@ Math.random()
 
 ### 函数式编程-幂等性
 执行多次所产生的影响均与一次执行的影响相同，也就是说执行一次和执行多次对系统内部的状态影响是一样的 <br/>
-```
+```js
 class Person {
   constructor () {
     this.name = name;

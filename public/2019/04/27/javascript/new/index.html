@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="实现 new 运算符, 前端 typescript php js node html html5 css linux vue react">
+    <meta name="keywords" content="new 运算符, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="实现 new 运算符也算是 JS 中经典的面试题了。在实际应用中其实 new 运算符的应用场景是定义对象类型的实例
@@ -21,7 +21,7 @@ f">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>实现 new 运算符 | </title>
+    <title>new 运算符 | </title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -279,13 +279,13 @@ f">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        实现 new 运算符
+                        new 运算符
                     </div>
                 </div>
             </div>
@@ -434,7 +434,7 @@ f">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    424
+                    412
                 </div>
                 
 
@@ -458,71 +458,73 @@ f">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>实现 new 运算符也算是 JS 中经典的面试题了。在实际应用中其实 new 运算符的应用场景是定义对象类型的实例</p>
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><pre><code>/**
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * 定义构造函数
  * @param {*} name 
  * @param {*} age 
- */
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-}
+ */</span>
+<span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-Person.prototype.sayName = function () {
-  console.log(`my name is ${this.name}, I&#39;m ${this.age} years old`);
-}
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>sayName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, I'm </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-Person.prototype.study = function () {
-  console.log(`my name is ${this.name}, I&#39;m learning to swim`);
-}
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>study <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, I'm learning to swim`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let person = new Person(&#39;renbo&#39;, 28);
-console.log(person.name)
-console.log(person.sayName())
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'renbo'</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 
-// 调用内置函数
-let array = new Array();
-let obj = new Object();
-</code></pre><h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3><p>用构造函数实际上会经历以下4个步骤（实现思路）</p>
+<span class="token comment" spellcheck="true">// 调用内置函数</span>
+<span class="token keyword">let</span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h3><p>用构造函数实际上会经历以下4个步骤（实现思路）</p>
 <ul>
 <li>创建一个新对象</li>
 <li>将构造函数的作用域赋给新对象（因此this就指向了这个对象）</li>
 <li>执行构造函数中的代码（为这个新对象添加属性）</li>
 <li>返回新对象</li>
 </ul>
-<pre><code>function newFun (constructor) {
-  var o = {};
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> newFun <span class="token punctuation">(</span>constructor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-  // 将 o 的原型指向构造函数，这样 o 就可以访问到构造函数原型中的属性
-  o.__proto__ = constructor.prototype;
+  <span class="token comment" spellcheck="true">// 将 o 的原型指向构造函数，这样 o 就可以访问到构造函数原型中的属性</span>
+  o<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> constructor<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
 
-  // 改变构造函数 this 的指向到新建的对象，这样 o 就可以访问到构造函数中的属性
-  var ret = constructor.apply(o, Array.prototype.slice.call(arguments, 1));
+  <span class="token comment" spellcheck="true">// 改变构造函数 this 的指向到新建的对象，这样 o 就可以访问到构造函数中的属性</span>
+  <span class="token keyword">var</span> ret <span class="token operator">=</span> constructor<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  // 需要判断返回的值是否是对象，如果不是对象返回正常数据类型
-  return typeof ret === &#39;object&#39; ? ret : o;
-}
+  <span class="token comment" spellcheck="true">// 需要判断返回的值是否是对象，如果不是对象返回正常数据类型</span>
+  <span class="token keyword">return</span> <span class="token keyword">typeof</span> ret <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">?</span> ret <span class="token punctuation">:</span> o<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 
-// 再次使用上面的例子
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-}
+<span class="token comment" spellcheck="true">// 再次使用上面的例子</span>
+<span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-Person.prototype.sayName = function () {
-  return `my name is ${this.name}, I&#39;m ${this.age} years old`;
-}
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>sayName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, I'm </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-Person.prototype.study = function () {
-  return `my name is ${this.name}, I&#39;m learning to swim`;
-}
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>study <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, I'm learning to swim`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let person =  newFun(Person, &#39;renbo&#39;, 28);
-console.log(person.name); // renbo
-console.log(person.sayName()); // my name is renbo, I&#39;m 28 years old
-console.log(person.study()); // my name is renbo, I&#39;m learning to swim</code></pre>
+<span class="token keyword">let</span> person <span class="token operator">=</span>  <span class="token function">newFun</span><span class="token punctuation">(</span>Person<span class="token punctuation">,</span> <span class="token string">'renbo'</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// renbo</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// my name is renbo, I'm 28 years old</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">study</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// my name is renbo, I'm learning to swim</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -687,26 +689,29 @@ console.log(person.study()); // my name is renbo, I&#39;m learning to swim</code
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/05/15/javascript/debounce/">
+                <a href="/2019/05/11/javascript/json/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="函数节流与抖动">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="json 对象">
                         
-                        <span class="card-title">函数节流与抖动</span>
+                        <span class="card-title">json 对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            浏览器内核说起函数的节流与抖动这个老生长谈的话题，我们就需要了解一下关于浏览器的知识
-浏览器有各种进程，来保证浏览器正常的、流畅的呈现在用户的眼前。例如渲染进程（也就是浏览器的内核）是非常重要的一个进程，其中包含了很多的线程
-GUI渲染线程
+                            JSON.stringify
+将值转换为相应的JSON格式
+布尔值、数字、字符串在序列化过程中会自动转换成对应的原始值 (字符串需要单独处理)
+NaN和Infinity格式的数值及null都会被当做null
+不可枚举的属性会被忽略
+unde
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-15
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-11
                         </span>
                         <span class="publish-author">
                             
@@ -936,7 +941,7 @@ GUI渲染线程
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

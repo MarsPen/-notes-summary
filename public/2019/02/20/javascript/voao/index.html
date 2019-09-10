@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Vo Ao, 前端 typescript php js node html html5 css linux vue react">
+    <meta name="keywords" content="vo 和 ao, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="变量提升执行步骤js代码虽然是逐行向下执行的，但执行的时候分为两个步骤**
@@ -22,7 +22,7 @@ this和argument">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Vo Ao | </title>
+    <title>vo 和 ao | </title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -280,13 +280,13 @@ this和argument">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Vo Ao
+                        vo 和 ao
                     </div>
                 </div>
             </div>
@@ -472,7 +472,7 @@ this和argument">
 </ul>
 <h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>函数的声明比变量的声明的优先级要高</p>
 <h3 id="es6中let关键字及块及作用域"><a href="#es6中let关键字及块及作用域" class="headerlink" title="es6中let关键字及块及作用域"></a>es6中let关键字及块及作用域</h3><p>  demo1</p>
-<pre><code> ```
+<pre><code> ```js
  a = &#39;renbo&#39;;
  var a;
  console.log( a ); // renbo
@@ -482,7 +482,7 @@ this和argument">
  a = &#39;renbo&#39;;
  console.log(a); 
  ```</code></pre><p>  demo2</p>
-<pre><code>  ```
+<pre><code>  ```js
   function demo() {
     a = &#39;renbo&#39;;
     console.log(a);
@@ -502,22 +502,24 @@ this和argument">
     console.log(a);
   }
   demo(); // renbo undefined zhangsan
-  ``` </code></pre><h2 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h2><pre><code>   // 两种函数的书写方式
-   var fn = function fn(){} //函数表达式
-   function fn(){} //函数声明方式 </code></pre><p>   只有声明方式的函数才会有函数提升</p>
-<pre><code>    test();
-    function test(){
-      console.log( a );
-      var a = &#39;renbo&#39;;
-    }
+  ``` </code></pre><h2 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h2><pre class="line-numbers language-js"><code class="language-js">   <span class="token comment" spellcheck="true">// 两种函数的书写方式</span>
+   <span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">//函数表达式</span>
+   <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">//函数声明方式 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>   只有声明方式的函数才会有函数提升</p>
+<pre class="line-numbers language-js"><code class="language-js">    <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> a <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'renbo'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    // 编译后
-    function test () {
-      var a; // 在函数作用域内，被提升最前面
-      console.log(a); // undefined
-      a = renbo; 
-    }
-    test();</code></pre>
+    <span class="token comment" spellcheck="true">// 编译后</span>
+    <span class="token keyword">function</span> test <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 在函数作用域内，被提升最前面</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span>
+      a <span class="token operator">=</span> renbo<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+    <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -749,8 +751,8 @@ this和argument">
                             基本数据类型概念  基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里
 种类  Undefined、Null、Boolean、String、Number、Symbol（es6）
   基本数据类型的值是不可变的
-```
-var 
+```js
+va
                         
                     </div>
                     <div class="publish-info">
@@ -935,7 +937,7 @@ var
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

@@ -17,7 +17,7 @@ categories:
 
 ### 原型链继承
 
-```
+```js
 function Parent () {
   this.name = 'zhansan';
 }
@@ -44,7 +44,7 @@ child.sayName() // zhangsan
 
 在子类构造函数内部调用超类型构造函数
 
-```
+```js
 function Parent () {
   this.name = ['zhangsan', 'lisi'];
 }
@@ -68,7 +68,7 @@ child1.name() //  ['zhangsan', 'lisi']
 
 ### 组合继承（伪经典继承）
 
-```
+```js
 function Parent (name) {
   this.name = name;
   this.colors = ['red', 'blue', 'green'];
@@ -107,7 +107,7 @@ console.log(child1.colors); // ["red", "blue", "green"]
 
 ### 原型式继承（道格拉斯）
 
-```
+```js
 function createObj(o) {
   function F(){}
   F.prototype = o;
@@ -134,7 +134,7 @@ console.log(person2.hobbies); // ["swimming", "reading", "running"]
 
 ### 寄生式继承（道格拉斯升级版）
 
-```
+```js
 function createObj (o) {
   var clone = Object.create(o);
   clone.sayName = function () {
@@ -148,7 +148,7 @@ function createObj (o) {
 
 ### 寄生组合式继承
 
-```
+```js
 function inheritPrototype(Child, Parent){
   var prototype = Object.create(superType.prototype);
   prototype.constructor = Child;
@@ -176,7 +176,7 @@ Child.prototype.sayAge = function(){
 
 ### ES6继承
 
-```
+```js
 //class 相当于es5中构造函数
 //class中定义方法时，前后不能加function，全部定义在class的protopyte属性中
 //class中定义的所有方法是不可枚举的
@@ -211,7 +211,7 @@ child.eat();
 
 - 在语法糖下代码量明显减少，和ES6区别ES5继承首先是在子类中创建自己的this指向，最后将方法添加到this中
 
-```
+```js
 Child.prototype=new Parent() || Parent.apply(this) || Parent.call(this)
 ```
 

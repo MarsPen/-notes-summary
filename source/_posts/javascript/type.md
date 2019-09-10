@@ -23,7 +23,7 @@ categories:
 
   基本数据类型的值是不可变的
 
-    ```
+    ```js
     var str = "renbo";
     str.toUpperCase(); // RENBO
     console.log(str); // renbo
@@ -31,7 +31,7 @@ categories:
 
   按值进行比较
 
-    ```
+    ```js
     var a = 1;
     var b = true;
     console.log(a == b); // true
@@ -45,7 +45,7 @@ categories:
 
   栈内存中保存了变量的标识符和变量的值
 
-    ```
+    ```js
     var a,b;
     a = 1;
     b = a;
@@ -67,7 +67,7 @@ categories:
 
   引用类型的值式可变化的
 
-    ```
+    ```js
     var obj = {name:'renbo'};
     obj.name = 'zhangsan';
     obj.age = 28;
@@ -79,7 +79,7 @@ categories:
 
   按引用地址比较
 
-    ```
+    ```js
     var obj = {};
     var obj1 = {};
     console.log(obj == obj1); // false
@@ -89,7 +89,7 @@ categories:
 
   堆内存中保存了对象的内容
 
-  ```
+  ```js
   var a = {name: 'renbo'};
   var b = a;
   a.name = 'zhangsan';
@@ -113,7 +113,7 @@ categories:
   
   经常检查变量是不是基本数据类型
 
-    ```
+    ```js
     var a;
 
     a = "hello";
@@ -149,7 +149,7 @@ categories:
   
   经常用来判断引用类型的变量具体是某种类型
 
-    ```
+    ```js
     var a;
     a = function(){}
     a instanceof Function; // true

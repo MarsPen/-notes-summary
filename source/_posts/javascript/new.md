@@ -1,5 +1,5 @@
 ---
-title: 实现 new 运算符
+title: new 运算符
 date: 2019-4-27 12:32:09
 top: false
 cover: false
@@ -17,7 +17,7 @@ categories:
 
 ### demo
 
-```
+```js
 /**
  * 定义构造函数
  * @param {*} name 
@@ -57,7 +57,7 @@ let obj = new Object();
 - 执行构造函数中的代码（为这个新对象添加属性）
 - 返回新对象
 
-```
+```js
 function newFun (constructor) {
   var o = {};
 

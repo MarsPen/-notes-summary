@@ -36,7 +36,7 @@ categories:
 4. 在当前函数执行完后,将栈顶的对象pop
 5. 当所有的代码执行完后, 栈中只剩下window
 
-```
+```js
   // demo1:  先执行变量提升, 再执行函数提升
   function a() {}
   var a
@@ -79,7 +79,7 @@ categories:
 - 从内到外多个作用域形成的链
 - 包含父级(**[[scope]]**)变量对象与作用域链和自身的变量对象(**如果是函数则为活动对象AO**)
 
-```
+```js
 var x = 10;
 function fn () {
   console.log(x);
@@ -99,13 +99,13 @@ show(fn) // 10;
 
 匿名自执行函数,减少内存消耗
 
-```
+```js
 (function ($) {})(jQuery);
 ```
 
 缓存计算结果
 
-```
+```js
   var fun1 = function(){
     var a=1;
     return function fun2(){
@@ -120,7 +120,7 @@ show(fn) // 10;
 
 封装,管理私有方法和变量，避免全局变量冲突污染
 
-```
+```js
   var person = function(){    
     var name = "renbo";       
     return {    

@@ -431,14 +431,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    984
+                    971
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
                 
@@ -456,21 +456,22 @@
             <div id="articleContent">
                 <p>偏应用函数简称偏函数，在模拟 bind 的时候已经说明其概念和作为主要 bind 的实现<br></p>
 <p>函数柯里化主要是通过偏应用函数的实现，把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数<br></p>
-<pre><code>// 柯里化之前
-function add (a, b) {
-  return a + b;
-}
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 柯里化之前</span>
+<span class="token keyword">function</span> add <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 柯里化之后
-function add (a) {
-  return function (b) {
-    return a+b
-  }
-}
+<span class="token comment" spellcheck="true">// 柯里化之后</span>
+<span class="token keyword">function</span> add <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a<span class="token operator">+</span>b
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// 等同于
-const add = a =&gt; b =&gt; a + b;
-const result = add(2)(3); // =&gt; 5</code></pre><ol>
+<span class="token comment" spellcheck="true">// 等同于</span>
+<span class="token keyword">const</span> add <span class="token operator">=</span> a <span class="token operator">=</span><span class="token operator">></span> b <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// => 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
 <li>首先函数接受 a 参数 然后返回一个新的匿名函数体确定了新的词法作用域,在该词法作用域中也拥有 a 参数</li>
 <li>该匿名函数调用传入参数 3 返回 a+b 的和</li>
 <li>通过上面程序了解到柯里化函数的特点是总是返回一个一元的函数：一个带有一个参数的新函数，不同的是普通函数可以根据需要一次获取尽可能多的参数</li>
@@ -479,99 +480,102 @@ const result = add(2)(3); // =&gt; 5</code></pre><ol>
 <li>柯里化在函数组合的上下文中起到关键的作用,能够让你重新组合你的应用，将复杂的功能拆分成一个个简单的部分，这样容易更改，理解</li>
 <li>柯里化也是一种函数预加载的方法，通过传递较少的参数得到一个在相同词法作用域当中缓存了这些参数的新函数，其实这也是一种对参数的缓存</li>
 </ol>
-<h3 id="如何柯里化"><a href="#如何柯里化" class="headerlink" title="如何柯里化"></a>如何柯里化</h3><pre><code>// 普通
-const sayName = name =&gt; age =&gt; `my name is ${name}, Im years old ${age}` ;
-let name = sayName(&#39;zhangsan&#39;);
-let age = name(27);
+<h3 id="如何柯里化"><a href="#如何柯里化" class="headerlink" title="如何柯里化"></a>如何柯里化</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 普通</span>
+<span class="token keyword">const</span> sayName <span class="token operator">=</span> name <span class="token operator">=</span><span class="token operator">></span> age <span class="token operator">=</span><span class="token operator">></span> <span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, Im years old </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span> <span class="token punctuation">;</span>
+<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token function">sayName</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token number">27</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 利用bind
+<span class="token comment" spellcheck="true">// 利用bind</span>
 
-function person (name, age, height) {
-  console.log(`my name is ${name}, I,m years old ${age}, my height is ${height} meters`)
-}
-let info = person.bind(null, &#39;zhangsan&#39;);
-console.log(info(27, 175));</code></pre><h3 id="柯里化函数的应用场景"><a href="#柯里化函数的应用场景" class="headerlink" title="柯里化函数的应用场景"></a>柯里化函数的应用场景</h3><ol>
+<span class="token keyword">function</span> person <span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, I,m years old </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, my height is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>height<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> meters`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> info <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'zhangsan'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token number">27</span><span class="token punctuation">,</span> <span class="token number">175</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="柯里化函数的应用场景"><a href="#柯里化函数的应用场景" class="headerlink" title="柯里化函数的应用场景"></a>柯里化函数的应用场景</h3><ol>
 <li>延迟计算</li>
 <li>参数复用</li>
 <li>动态创建函数</li>
 </ol>
 <p>延迟计算<br></p>
-<pre><code>
-// 普通实现
-var sum = function(args){
-  return args.reduce(function(a,b){
-      return a+b
-  });
-};
-var result = sum([1,2,3,4,5]); // 15
+<pre class="line-numbers language-js"><code class="language-js">
+<span class="token comment" spellcheck="true">// 普通实现</span>
+<span class="token keyword">var</span> sum <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a<span class="token operator">+</span>b
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 15</span>
 
-// 柯里化实现
-function add() {
-  var _args = [].slice.call(arguments);
-  var adder = function () {
+<span class="token comment" spellcheck="true">// 柯里化实现</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> _args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> adder <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-      // 利用闭包特性保存_args的值
-      var _adder = function() {
-          [].push.apply(_args, [].slice.call(arguments));
-          return _adder;
-      };
+      <span class="token comment" spellcheck="true">// 利用闭包特性保存_args的值</span>
+      <span class="token keyword">var</span> _adder <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>push<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>_args<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> _adder<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-      // 利用隐式转换的特性，计算最终的值返回
-      _adder.toString = function () {
-          return _args.reduce(function (a, b) {
-              return a + b;
-          });
-      }
+      <span class="token comment" spellcheck="true">// 利用隐式转换的特性，计算最终的值返回</span>
+      _adder<span class="token punctuation">.</span>toString <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> _args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
 
-      return _adder;
-  }
-  return adder.apply(null, [].slice.call(arguments));
-}
+      <span class="token keyword">return</span> _adder<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> adder<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-var sum = add();
-sum(1,2,3)(4);
-sum(5);
-sum() // 15
+<span class="token keyword">var</span> sum <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 15</span>
 
 优点：调用灵活，参数定义随意
 
 充分利用了柯里化提延迟执行的特点
-延迟执行 – 返回新函数可以进行任意调用</code></pre><p>DOM操作中的事件绑定(动态创建函数)<br><br>当在多次调用同一个函数，并且传递的参数绝大多数是相同的。</p>
-<pre><code>// 普通版本
-var addEvent = function(el, type, fn, capture) {
-    if (window.addEventListener) {
-      el.addEventListener(type, function(e) {
-        fn.call(el, e);
-      }, capture);
-    } else if (window.attachEvent) {
-      el.attachEvent(&quot;on&quot; + type, function(e) {
-        fn.call(el, e);
-      });
-    } 
- };
+延迟执行 – 返回新函数可以进行任意调用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>DOM操作中的事件绑定(动态创建函数)<br><br>当在多次调用同一个函数，并且传递的参数绝大多数是相同的。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 普通版本</span>
+<span class="token keyword">var</span> addEvent <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> type<span class="token punctuation">,</span> fn<span class="token punctuation">,</span> capture<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>addEventListener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        fn<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> capture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>attachEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      el<span class="token punctuation">.</span><span class="token function">attachEvent</span><span class="token punctuation">(</span><span class="token string">"on"</span> <span class="token operator">+</span> type<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        fn<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
- // 柯里化版本
- var addEvent = (function(){
-    if (window.addEventListener) {
-      return function(el, type, fn, capture) {
-        el.addEventListener(type, function(e) {
-          fn.call(el, e);
-        }, (capture));
-      };
-    } else if (window.attachEvent) {
-      return function(el, type, fn, capture) {
-        el.attachEvent(&quot;on&quot; + type, function(e) {
-            fn.call(el, e);
-        });
-      };
-    }
-})();
+ <span class="token comment" spellcheck="true">// 柯里化版本</span>
+ <span class="token keyword">var</span> addEvent <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>addEventListener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> type<span class="token punctuation">,</span> fn<span class="token punctuation">,</span> capture<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          fn<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>capture<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>attachEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> type<span class="token punctuation">,</span> fn<span class="token punctuation">,</span> capture<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        el<span class="token punctuation">.</span><span class="token function">attachEvent</span><span class="token punctuation">(</span><span class="token string">"on"</span> <span class="token operator">+</span> type<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            fn<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-优点：不用每次调用进行 if () {}else {} 判断兼容性问题
+优点：不用每次调用进行 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 判断兼容性问题
 
 充分利用了柯里化提前返回和延迟执行的特点
 提前返回 – 使用函数立即调用进行了一次兼容判断（部分求值），返回兼容的事件绑定方法
-延迟执行 – 返回新函数，在新函数调用兼容的事件方法。等待addEvent新函数调用，延迟执行</code></pre><p>当然应用场景还有很多，比如我们经常提到的防抖和节流问题，充分的利用了函数式编程的延迟执行特性，将多个间隔接近的函数执行合并成一次函数执行来提高性能问题。<br><br>关于事件节流和防抖动将会在后续的专题中单独指出<br></p>
+延迟执行 – 返回新函数，在新函数调用兼容的事件方法。等待addEvent新函数调用，延迟执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然应用场景还有很多，比如我们经常提到的防抖和节流问题，充分的利用了函数式编程的延迟执行特性，将多个间隔接近的函数执行合并成一次函数执行来提高性能问题。<br><br>关于事件节流和防抖动将会在后续的专题中单独指出<br></p>
 
             </div>
             <hr />
@@ -986,7 +990,7 @@ var addEvent = function(el, type, fn, capture) {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

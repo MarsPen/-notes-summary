@@ -496,17 +496,18 @@ JS引擎线程(JS内核，负责处理JavaScript脚本程序)
 生成节点对象阶段是根据每个令牌转换定义其属性和规则的对象（节点对象）
 
 最后阶段 DOM 树构建完成，整个对象集合就像是一棵树形结构（对象模型）</code></pre><p>下面通过代码和图片来解释上面的步骤</p>
-<pre><code>&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
-    &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;title&gt;&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p&gt;Hello &lt;span&gt;web performance&lt;/span&gt; students!&lt;/p&gt;
-    &lt;div&gt;&lt;img src=&quot;&quot;&gt;&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre><img src="/images/dom-render.jpg">
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width,initial-scale<span class="token punctuation">=</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Hello <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>web performance<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> students!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/images/dom-render.jpg">
 
 <h3 id="CSS-解析过程"><a href="#CSS-解析过程" class="headerlink" title="CSS 解析过程"></a>CSS 解析过程</h3><p>浏览器获得 CSS 文件的数据后 CSS 解析器根据具体的样式将渲染 CSSDOM 树</p>
 <img src="/images/css-dom-render.jpg">
@@ -526,190 +527,196 @@ JS引擎线程(JS内核，负责处理JavaScript脚本程序)
 <p>根据上面说了这么多，我们来进入文章的主题<strong>防抖和节流</strong>当我们窗口发生改变，浏览器的滚动条执行scroll，输入框校验，搜索请求接口等这些都会使页面频繁重新渲染，加重浏览器的负担，这是我们通过<strong>防抖和节流</strong>的方式减少触发频率，这样就会大大的提高用户体验</p>
 <h3 id="debounce（防抖）"><a href="#debounce（防抖）" class="headerlink" title="debounce（防抖）"></a>debounce（防抖）</h3><p>动作发生一定时间后触发事件，在这段时间内，如果该动作又发生，则重新等待一定时间再触发事件。</p>
 <p>html </p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-  &lt;title&gt;防抖&lt;/title&gt;
-  &lt;style&gt;
-    #container{
-      width: 100%; 
-      height: 500px; 
-      background: #000; 
-      font-size: 50px;
-      color: #fff;
-      line-height: 500px; 
-      text-align: center; 
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div id=&quot;content&quot;&gt;&lt;div&gt;
-  &lt;script src=&quot;debounce.js&quot;&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var count = 1;
-    var container = document.getElementById(&#39;container&#39;);
-    function getContent(e) {
-      container.innerHTML = count++;
-    };
-    // container.onmousemove = getContent
-    container.onmousemove = debounce(getContent, 500, true);
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><p>debounce.js </p>
-<pre><code>@underscore.js
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>防抖<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token selector"><span class="token id">#container</span></span><span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span> 
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span> 
+      <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#000</span><span class="token punctuation">;</span> 
+      <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#fff</span><span class="token punctuation">;</span>
+      <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span> 
+      <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>debounce.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">getContent</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      container<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// container.onmousemove = getContent</span>
+    container<span class="token punctuation">.</span>onmousemove <span class="token operator">=</span> <span class="token function">debounce</span><span class="token punctuation">(</span>getContent<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>debounce.js </p>
+<pre class="line-numbers language-js"><code class="language-js">@underscore<span class="token punctuation">.</span>js
 
-var debounce = /** @class */ (function () {
+<span class="token keyword">var</span> debounce <span class="token operator">=</span> <span class="token comment" spellcheck="true">/** @class */</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  /**
+  <span class="token comment" spellcheck="true">/**
    * @desc 函数防抖
    * @param {*} func 回调函数
    * @param {*} wait 延迟执行毫秒数
    * @param {*} immediate  true 表立即执行，false 表非立即执行
-   */
-  function debounce(func, wait, immediate) {
+   */</span>
+  <span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span>func<span class="token punctuation">,</span> wait<span class="token punctuation">,</span> immediate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    // 创建一个标记用来存放定时器的返回值
-    var timeout,result;
+    <span class="token comment" spellcheck="true">// 创建一个标记用来存放定时器的返回值</span>
+    <span class="token keyword">var</span> timeout<span class="token punctuation">,</span>result<span class="token punctuation">;</span>
 
-    return function () {
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-      // 指定this 作用域
-      var context = this;
-      // event 对象
-      var args = arguments;
+      <span class="token comment" spellcheck="true">// 指定this 作用域</span>
+      <span class="token keyword">var</span> context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// event 对象</span>
+      <span class="token keyword">var</span> args <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
 
-      // 再次执行事件的时候，清除上一个定时器
-      if (timeout) clearTimeout(timeout);
+      <span class="token comment" spellcheck="true">// 再次执行事件的时候，清除上一个定时器</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>timeout<span class="token punctuation">)</span> <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      if (immediate) {
-        // 如果已经执行过，将不再执行
-        var callNow = !timeout;
-        timeout = setTimeout(function(){
-          timeout = null;
-        }, wait)
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>immediate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 如果已经执行过，将不再执行</span>
+        <span class="token keyword">var</span> callNow <span class="token operator">=</span> <span class="token operator">!</span>timeout<span class="token punctuation">;</span>
+        timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          timeout <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
 
-        if (callNow) result = func.apply(context, args)
-      }
-      else {
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>callNow<span class="token punctuation">)</span> result <span class="token operator">=</span> func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">else</span> <span class="token punctuation">{</span>
 
-        timeout = setTimeout(function(){
-          func.apply(context, args)
-        }, wait);
-      }
-      // func 这个函数，可能有返回值
-      return result;
-    }
-  }
+        timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">// func 这个函数，可能有返回值</span>
+      <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
 
-  return debounce;
+  <span class="token keyword">return</span> debounce<span class="token punctuation">;</span>
 
-}())
-</code></pre><h3 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h3><p>动作执行一段时间后触发事件，在这段时间内，如果动作又发生，则无视该动作，直到事件执行完后，才能重新执行</p>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h3><p>动作执行一段时间后触发事件，在这段时间内，如果动作又发生，则无视该动作，直到事件执行完后，才能重新执行</p>
 <p>关于节流的实现，有两种主流的实现方式，一种是使用时间戳，一种是设置定时器</p>
 <p>使用时间戳</p>
 <p>当触发事件的时候，取出当前的时间戳，之后减去之前的时间戳(最一开始值设为 0 )，如果大于设置的时间周期，执行函数并更新当前时间戳，反之就不执行。</p>
-<pre><code>var throttle = /** @class */ (function () {
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> throttle <span class="token operator">=</span> <span class="token comment" spellcheck="true">/** @class */</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  function throttle(func, wait) {
-    var args;
-    var previous = 0;
+  <span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span>func<span class="token punctuation">,</span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> args<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> previous <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    return function() {
-      var now = +new Date();
-      args = arguments;
-      if (now - previous &gt; wait) {
-        func.apply(this, args);
-        previous = now;
-      }
-    }
-  }
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> now <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      args <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> previous <span class="token operator">></span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        previous <span class="token operator">=</span> now<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
 
-  return throttle
-}())</code></pre><p>使用定时器</p>
+  <span class="token keyword">return</span> throttle
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用定时器</p>
 <p>事件触发的时候，设置一个定时器，如果定时器存在，就不执行，等定时器到指定的时间，清空定时器，执行事件</p>
-<pre><code>function throttle(func, wait) {
-  var timeout;
-  var previous = 0;
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span>func<span class="token punctuation">,</span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> timeout<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> previous <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-  return function() {
-    context = this;
-    args = arguments;
-    if (!timeout) {
-      timeout = setTimeout(function(){
-        timeout = null;
-        func.apply(context, args)
-      }, wait)
-    }
-  }
-}</code></pre><p>对比两种实现方式</p>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    args <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        timeout <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对比两种实现方式</p>
 <ul>
 <li>第一种会立刻执行，第二种会在设定的时间后第一次执行</li>
 <li>第一种停止触发后不会再执行，第二种停止触发后依然会再执行一次</li>
 </ul>
 <p>现在我们要结合上面两种方式实现一个开始触发立刻执行，停止触发的时候还能再执行一次</p>
-<pre><code>@underscore.js
+<pre class="line-numbers language-js"><code class="language-js">@underscore<span class="token punctuation">.</span>js
 
-var throttle = /** @class */ (function () {
+<span class="token keyword">var</span> throttle <span class="token operator">=</span> <span class="token comment" spellcheck="true">/** @class */</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  /**
+  <span class="token comment" spellcheck="true">/**
    * throttle 节流
    * @param {*} func  回调函数
    * @param {*} wait  执行时间间隔
    * @param {*} options  如果想忽略开始函数的的调用，传入{leading: false}
    *                     如果想忽略结尾函数的调用，传入{trailing: false}
    *                     两者不能共存，否则函数不能执行
-   */
-  function throttle(func, wait, options) {
+   */</span>
+  <span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span>func<span class="token punctuation">,</span> wait<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    var timeout, context, args;
-    var previous = 0;
-    if (!options) options = {};
+    <span class="token keyword">var</span> timeout<span class="token punctuation">,</span> context<span class="token punctuation">,</span> args<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> previous <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>options<span class="token punctuation">)</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-    var later = function() {
-      // 如果设置了 leading，就将 previous 设为 0
-      previous = options.leading === false ? 0 : new Date().getTime();
-      // 置空一是为了防止内存泄漏，二是为了下面的定时器判断
-      timeout = null;
-      func.apply(context, args);
-      if (!timeout) context = args = null;
-    };
+    <span class="token keyword">var</span> later <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 如果设置了 leading，就将 previous 设为 0</span>
+      previous <span class="token operator">=</span> options<span class="token punctuation">.</span>leading <span class="token operator">===</span> <span class="token boolean">false</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// 置空一是为了防止内存泄漏，二是为了下面的定时器判断</span>
+      timeout <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+      func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span> context <span class="token operator">=</span> args <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-    var throttled = function() {
-      var now = new Date().getTime();
+    <span class="token keyword">var</span> throttled <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      if (!previous &amp;&amp; options.leading === false) previous = now;
-      // 计算剩余时间
-      var remaining = wait - (now - previous);
-      context = this;
-      args = arguments;
-      if (remaining &lt;= 0 || remaining &gt; wait) {
-        // 如果存在定时器就清理掉否则会调用二次回调
-        if (timeout) {
-          clearTimeout(timeout);
-          timeout = null;
-        }
-        previous = now;
-        func.apply(context, args);
-        if (!timeout) context = args = null;
-      } else if (!timeout &amp;&amp; options.trailing !== false) {
-        // 判断是否设置了定时器和 trailing，没有就开启一个定时器
-        timeout = setTimeout(later, remaining);
-      }
-    };
-    return throttled;
-}
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>previous <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>leading <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span> previous <span class="token operator">=</span> now<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// 计算剩余时间</span>
+      <span class="token keyword">var</span> remaining <span class="token operator">=</span> wait <span class="token operator">-</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> previous<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      args <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>remaining <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token operator">||</span> remaining <span class="token operator">></span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 如果存在定时器就清理掉否则会调用二次回调</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          timeout <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        previous <span class="token operator">=</span> now<span class="token punctuation">;</span>
+        func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span> context <span class="token operator">=</span> args <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>trailing <span class="token operator">!==</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 判断是否设置了定时器和 trailing，没有就开启一个定时器</span>
+        timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>later<span class="token punctuation">,</span> remaining<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> throttled<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-  return throttle
-}())</code></pre><p>调用例子</p>
-<pre><code>ontainer.onmousemove = throttle(getContent, 1000);
-container.onmousemove = throttle(getContent, 1000, {
-  leading: false
-});
-container.onmousemove = throttle(getContent, 1000, {
-  trailing: false
-});</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>上面的就是函数的节流与抖动的全部，我们在面试和工作中会经常的遇到。这也是性能优化的一种方案。当然还有很多版本比如多 promise 版本的就不再这里叙述了，有兴趣的可以找找技术论坛</p>
+  <span class="token keyword">return</span> throttle
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>调用例子</p>
+<pre class="line-numbers language-js"><code class="language-js">ontainer<span class="token punctuation">.</span>onmousemove <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span>getContent<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+container<span class="token punctuation">.</span>onmousemove <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span>getContent<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  leading<span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+container<span class="token punctuation">.</span>onmousemove <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span>getContent<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  trailing<span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>上面的就是函数的节流与抖动的全部，我们在面试和工作中会经常的遇到。这也是性能优化的一种方案。当然还有很多版本比如多 promise 版本的就不再这里叙述了，有兴趣的可以找找技术论坛</p>
 
             </div>
             <hr />
@@ -925,30 +932,29 @@ TypeScript的
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/27/javascript/new/">
+                <a href="/2019/05/11/javascript/json/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="实现 new 运算符">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="json 对象">
                         
-                        <span class="card-title">实现 new 运算符</span>
+                        <span class="card-title">json 对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            实现 new 运算符也算是 JS 中经典的面试题了。在实际应用中其实 new 运算符的应用场景是定义对象类型的实例
-demo/**
- * 定义构造函数
- * @param {*} name 
- * @param {*} age 
- */
-f
+                            JSON.stringify
+将值转换为相应的JSON格式
+布尔值、数字、字符串在序列化过程中会自动转换成对应的原始值 (字符串需要单独处理)
+NaN和Infinity格式的数值及null都会被当做null
+不可枚举的属性会被忽略
+unde
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-11
                             </span>
                         <span class="publish-author">
                             
@@ -1128,7 +1134,7 @@ f
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

@@ -17,7 +17,7 @@ categories:
 
 ### 例子一
 
-```
+```js
 let obj = {
   value : 20
 }
@@ -32,7 +32,7 @@ fun.call(obj) //20
 
 ### 例子二
 
-```
+```js
 document.getElementById( 'element' ).onclick = function(){
   let func = function(){ 
       console.log ( this ); // 指向element元素
@@ -44,7 +44,7 @@ document.getElementById( 'element' ).onclick = function(){
 
 ### 例子三
 
-```
+```js
 function FunA (val) {
   this.value = val;
 }
@@ -70,7 +70,7 @@ console.log(funb.getValue()) //20
 3、删除对象的函数<br/>
 
 接下来我们改造一下例子一的函数<br/>
-```
+```js
 let obj = {
   value: 20,
   fun: function () {
@@ -85,7 +85,7 @@ console.log(obj) // {value: 20}
 ```
 
 接下来简单的把上面的函数封装一下<br/>
-```
+```js
 Function.prototype.newCall = function (context) {
   context.fn = this;
   context.fn();
@@ -112,7 +112,7 @@ fun.newCall(obj) // 20
 3、删除对象的函数<br/>
 4、取出不定长的参数放到执行的函数里面<br/>
 
-```
+```js
 Function.prototype.newCall = function (context, ...args) {
 
   // 如果传入参数 this 为 null，则默认为当前宿主环境
@@ -150,7 +150,7 @@ bar.newCall(obj, 'renbo', 27);
 通过以上 call 的实现我们对apply的实现应该说也清楚了， 上述说过call 和 apply 的区别就在与参数上面，通过ES6实现的方法实际上 call, apply 一样<br/>
 
 ### 模拟实现 apply
-```
+```js
 Function.prototype.newApply = function (context, args) {
   // 如果传入参数 this 为 null，则默认为当前宿主环境
   let ec = typeof window === 'object' ? window : global;

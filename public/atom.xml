@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title></title>
   
-  <subtitle>知识改变命运</subtitle>
+  <subtitle>经得起沧桑才能驾驭嚣张</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-09-04T10:23:14.250Z</updated>
+  <updated>2019-09-10T07:52:26.584Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>vue 原理解析一</title>
+    <title>vue 原理解析之响应式</title>
+    <link href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/"/>
+    <id>https://www.studyfe.cn/2019/09/05/vue/vueobserve/</id>
+    <published>2019-09-05T08:45:09.000Z</published>
+    <updated>2019-09-10T07:52:26.584Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;响应式对象&quot;&gt;&lt;a href=&quot;#响应式对象&quot; class=&quot;headerlink&quot; title=&quot;响应式对象&quot;&gt;&lt;/a&gt;响应式对象&lt;/h2&gt;&lt;p&gt;提到 vue 的双向数据绑定原理，我们都知道是利用了
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 原理解析之主线流程</title>
     <link href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/"/>
     <id>https://www.studyfe.cn/2019/08/27/vue/vueprinciple/</id>
     <published>2019-08-27T15:12:09.000Z</published>
-    <updated>2019-09-04T10:23:14.250Z</updated>
+    <updated>2019-09-05T08:44:25.390Z</updated>
     
     <summary type="html">
     
@@ -44,11 +70,11 @@
   </entry>
   
   <entry>
-    <title>Generator 与 Async</title>
+    <title>generator 与 async</title>
     <link href="https://www.studyfe.cn/2019/08/26/javascript/generator-async/"/>
     <id>https://www.studyfe.cn/2019/08/26/javascript/generator-async/</id>
     <published>2019-08-26T08:22:09.000Z</published>
-    <updated>2019-08-26T16:46:27.865Z</updated>
+    <updated>2019-09-09T06:39:32.487Z</updated>
     
     <summary type="html">
     
@@ -74,61 +100,7 @@
     <link href="https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.878Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by:
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>class.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.878Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>module.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.879Z</updated>
+    <updated>2019-09-05T03:41:37.959Z</updated>
     
     <summary type="html">
     
@@ -156,7 +128,7 @@
     <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.879Z</updated>
+    <updated>2019-09-05T03:41:37.959Z</updated>
     
     <summary type="html">
     
@@ -178,11 +150,65 @@
   </entry>
   
   <entry>
+    <title>class.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>module.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions by:
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>TypeScript编译原理</title>
     <link href="https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/"/>
     <id>https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/</id>
     <published>2019-08-05T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.877Z</updated>
+    <updated>2019-09-05T03:41:37.958Z</updated>
     
     <summary type="html">
     
@@ -208,7 +234,7 @@
     <link href="https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/"/>
     <id>https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/</id>
     <published>2019-07-25T04:32:09.000Z</published>
-    <updated>2019-08-26T16:46:27.868Z</updated>
+    <updated>2019-09-08T07:52:11.450Z</updated>
     
     <summary type="html">
     
@@ -234,7 +260,7 @@
     <link href="https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/"/>
     <id>https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/</id>
     <published>2019-07-22T04:32:09.000Z</published>
-    <updated>2019-08-26T16:46:27.867Z</updated>
+    <updated>2019-09-08T07:51:44.666Z</updated>
     
     <summary type="html">
     
@@ -260,7 +286,7 @@
     <link href="https://www.studyfe.cn/2019/07/18/typescript/decorators/"/>
     <id>https://www.studyfe.cn/2019/07/18/typescript/decorators/</id>
     <published>2019-07-18T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.877Z</updated>
+    <updated>2019-09-05T03:41:37.958Z</updated>
     
     <summary type="html">
     
@@ -287,7 +313,7 @@
     <link href="https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/"/>
     <id>https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/</id>
     <published>2019-07-17T04:32:09.000Z</published>
-    <updated>2019-08-26T16:46:27.867Z</updated>
+    <updated>2019-09-08T07:52:39.977Z</updated>
     
     <summary type="html">
     
@@ -295,7 +321,9 @@
       
         
         
-          &lt;p&gt;偏应用函数简称偏函数，在模拟 bind 的时候已经说明其概念和作为主要 bind
+          &lt;p&gt;偏应用函数简称偏函数，在模拟 bind 的时候已经说明其概念和作为主要 bind 的实现&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;函数柯里化主要是通过偏应用函数的实现，把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数&lt;br&gt;&lt;/p&gt;
+&lt;pre
         
       
     
@@ -313,7 +341,7 @@
     <link href="https://www.studyfe.cn/2019/07/15/typescript/tsconfig/"/>
     <id>https://www.studyfe.cn/2019/07/15/typescript/tsconfig/</id>
     <published>2019-07-15T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.879Z</updated>
+    <updated>2019-09-05T03:41:37.960Z</updated>
     
     <summary type="html">
     
@@ -341,7 +369,7 @@
     <link href="https://www.studyfe.cn/2019/07/15/javascript/functionalpurity/"/>
     <id>https://www.studyfe.cn/2019/07/15/javascript/functionalpurity/</id>
     <published>2019-07-15T04:32:09.000Z</published>
-    <updated>2019-08-26T16:46:27.868Z</updated>
+    <updated>2019-09-08T07:52:19.705Z</updated>
     
     <summary type="html">
     
@@ -367,7 +395,7 @@
     <link href="https://www.studyfe.cn/2019/07/12/javascript/functionalbase/"/>
     <id>https://www.studyfe.cn/2019/07/12/javascript/functionalbase/</id>
     <published>2019-07-12T04:32:09.000Z</published>
-    <updated>2019-08-26T16:46:27.867Z</updated>
+    <updated>2019-09-08T07:51:03.182Z</updated>
     
     <summary type="html">
     
@@ -393,7 +421,7 @@
     <link href="https://www.studyfe.cn/2019/07/02/typescript/mixinx/"/>
     <id>https://www.studyfe.cn/2019/07/02/typescript/mixinx/</id>
     <published>2019-07-02T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.878Z</updated>
+    <updated>2019-09-05T03:41:37.959Z</updated>
     
     <summary type="html">
     
@@ -420,7 +448,7 @@
     <link href="https://www.studyfe.cn/2019/06/20/typescript/declarefile/"/>
     <id>https://www.studyfe.cn/2019/06/20/typescript/declarefile/</id>
     <published>2019-06-20T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.877Z</updated>
+    <updated>2019-09-05T03:41:37.958Z</updated>
     
     <summary type="html">
     
@@ -446,7 +474,7 @@
     <link href="https://www.studyfe.cn/2019/06/15/typescript/module/"/>
     <id>https://www.studyfe.cn/2019/06/15/typescript/module/</id>
     <published>2019-06-15T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.879Z</updated>
+    <updated>2019-09-05T03:41:37.960Z</updated>
     
     <summary type="html">
     
@@ -469,11 +497,11 @@
   </entry>
   
   <entry>
-    <title>实现 promise</title>
+    <title>promise</title>
     <link href="https://www.studyfe.cn/2019/06/11/javascript/promise/"/>
     <id>https://www.studyfe.cn/2019/06/11/javascript/promise/</id>
     <published>2019-06-11T04:32:09.000Z</published>
-    <updated>2019-08-26T16:46:27.869Z</updated>
+    <updated>2019-09-09T06:37:51.226Z</updated>
     
     <summary type="html">
     
@@ -499,7 +527,7 @@
     <link href="https://www.studyfe.cn/2019/05/23/typescript/basedatatype/"/>
     <id>https://www.studyfe.cn/2019/05/23/typescript/basedatatype/</id>
     <published>2019-05-23T14:28:09.000Z</published>
-    <updated>2019-08-26T16:46:27.876Z</updated>
+    <updated>2019-09-05T03:41:37.957Z</updated>
     
     <summary type="html">
     
@@ -509,33 +537,6 @@
         
           &lt;p&gt;每种语言都会有属于自己的数据类型，ts的基本数据类型基本上是继承了js，但也在基础之上增加了几个不一样的类型&lt;/p&gt;
 &lt;h3 id=&quot;布尔型-true／false&quot;&gt;&lt;a href=&quot;#布尔型-true／false&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>泛型</title>
-    <link href="https://www.studyfe.cn/2019/05/22/typescript/generics/"/>
-    <id>https://www.studyfe.cn/2019/05/22/typescript/generics/</id>
-    <published>2019-05-22T10:20:27.000Z</published>
-    <updated>2019-08-26T16:46:27.878Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;泛型（Generics）就是不提前指定接口、变量、函数等的类型，在使用的时候再指定类型&lt;/p&gt;
-&lt;h3 id=&quot;定义泛型&quot;&gt;&lt;a href=&quot;#定义泛型&quot; class=&quot;headerlink&quot; title=&quot;定义泛型 &quot;&gt;&lt;/a&gt;定义泛型
         
       
     

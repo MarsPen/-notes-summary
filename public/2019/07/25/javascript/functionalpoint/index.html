@@ -430,14 +430,14 @@ function foo (/* parameters are decla">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    875
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
                 
@@ -454,165 +454,174 @@ function foo (/* parameters are decla">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript 中的函数定义</p>
-<pre><code>// 表达式
-function foo (/* parameters are declared here*/) {}
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 表达式</span>
+<span class="token keyword">function</span> foo <span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* parameters are declared here*/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-// 声明式
-const foo = (/* parameters are declared here */) =&gt; // ...
-const foo = function (/* parameters are declared here */) {}</code></pre><p>如何在不引用所需参数的情况下在 JavaScript 中定义函数？我们不能使用 functionkeyword，也不能使用箭头函数（=&gt;），因为它们需要声明形参（这将引用它的参数）。所以我们需要做的是调用一个返回函数的函数<br></p>
-<h3 id="demo1"><a href="#demo1" class="headerlink" title="demo1"></a>demo1</h3><pre><code>// 非 Point-free. 因为函数引用了参数name
-var greet = function(name) {
-  return (&#39;hello &#39; + name).toUpperCase();
-}
+<span class="token comment" spellcheck="true">// 声明式</span>
+<span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* parameters are declared here */</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* parameters are declared here */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如何在不引用所需参数的情况下在 JavaScript 中定义函数？我们不能使用 functionkeyword，也不能使用箭头函数（=&gt;），因为它们需要声明形参（这将引用它的参数）。所以我们需要做的是调用一个返回函数的函数<br></p>
+<h3 id="demo1"><a href="#demo1" class="headerlink" title="demo1"></a>demo1</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 非 Point-free. 因为函数引用了参数name</span>
+<span class="token keyword">var</span> greet <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token string">'hello '</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// Point-free 先定义基本的函数，不用关心中间变量str是什么，抽象基本结构
-var toUpperCase = str =&gt; str.toUpperCase();
-var hello = str =&gt; `hello ${str}`; 
+<span class="token comment" spellcheck="true">// Point-free 先定义基本的函数，不用关心中间变量str是什么，抽象基本结构</span>
+<span class="token keyword">var</span> toUpperCase <span class="token operator">=</span> str <span class="token operator">=</span><span class="token operator">></span> str<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> hello <span class="token operator">=</span> str <span class="token operator">=</span><span class="token operator">></span> <span class="token template-string"><span class="token string">`hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>str<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span> 
 
-var greet = compose(hello, toUpperCase);
-greet(&#39;renbo&#39;);</code></pre><h3 id="demo2"><a href="#demo2" class="headerlink" title="demo2"></a>demo2</h3><p>这个例子来自于<a href="https://fr.umio.us/favoring-curry/" target="_blank" rel="noopener">Favoring Curry</a><br><br>假设我们从服务器获取这样的数据：</p>
-<pre><code>var data = {
-  result: &quot;SUCCESS&quot;,
-  tasks: [
-    {id: 104, complete: false,            priority: &quot;high&quot;,
-              dueDate: &quot;2013-11-29&quot;,      username: &quot;Scott&quot;,
-              title: &quot;Do something&quot;,      created: &quot;9/22/2013&quot;},
-    {id: 105, complete: false,            priority: &quot;medium&quot;,
-              dueDate: &quot;2013-11-22&quot;,      username: &quot;Lena&quot;,
-              title: &quot;Do something else&quot;, created: &quot;9/22/2013&quot;},
-    {id: 107, complete: true,             priority: &quot;high&quot;,
-              dueDate: &quot;2013-11-22&quot;,      username: &quot;Mike&quot;,
-              title: &quot;Fix the foo&quot;,       created: &quot;9/22/2013&quot;},
-    {id: 108, complete: false,            priority: &quot;low&quot;,
-              dueDate: &quot;2013-11-15&quot;,      username: &quot;Punam&quot;,
-              title: &quot;Adjust the bar&quot;,    created: &quot;9/25/2013&quot;},
-    {id: 110, complete: false,            priority: &quot;medium&quot;,
-              dueDate: &quot;2013-11-15&quot;,      username: &quot;Scott&quot;,
-              title: &quot;Rename everything&quot;, created: &quot;10/2/2013&quot;},
-    {id: 112, complete: true,             priority: &quot;high&quot;,
-              dueDate: &quot;2013-11-27&quot;,      username: &quot;Lena&quot;,
-              title: &quot;Alter all quuxes&quot;,  created: &quot;10/5/2013&quot;}
-  ]
-};</code></pre><h3 id="getIncompleteTaskSummaries-函数"><a href="#getIncompleteTaskSummaries-函数" class="headerlink" title="getIncompleteTaskSummaries 函数"></a>getIncompleteTaskSummaries 函数</h3><p>我们需要一个名为 getIncompleteTaskSummaries 的函数，接收一个 username 作为参数，从服务器获取数据之后筛选出这个用户未完成的任务的 ids、priorities、titles、和 dueDate 数据，并且按照日期升序排序。<br></p>
+<span class="token keyword">var</span> greet <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span>hello<span class="token punctuation">,</span> toUpperCase<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">greet</span><span class="token punctuation">(</span><span class="token string">'renbo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="demo2"><a href="#demo2" class="headerlink" title="demo2"></a>demo2</h3><p>这个例子来自于<a href="https://fr.umio.us/favoring-curry/" target="_blank" rel="noopener">Favoring Curry</a><br><br>假设我们从服务器获取这样的数据：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+  result<span class="token punctuation">:</span> <span class="token string">"SUCCESS"</span><span class="token punctuation">,</span>
+  tasks<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">104</span><span class="token punctuation">,</span> complete<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>            priority<span class="token punctuation">:</span> <span class="token string">"high"</span><span class="token punctuation">,</span>
+              dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-29"</span><span class="token punctuation">,</span>      username<span class="token punctuation">:</span> <span class="token string">"Scott"</span><span class="token punctuation">,</span>
+              title<span class="token punctuation">:</span> <span class="token string">"Do something"</span><span class="token punctuation">,</span>      created<span class="token punctuation">:</span> <span class="token string">"9/22/2013"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">105</span><span class="token punctuation">,</span> complete<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>            priority<span class="token punctuation">:</span> <span class="token string">"medium"</span><span class="token punctuation">,</span>
+              dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-22"</span><span class="token punctuation">,</span>      username<span class="token punctuation">:</span> <span class="token string">"Lena"</span><span class="token punctuation">,</span>
+              title<span class="token punctuation">:</span> <span class="token string">"Do something else"</span><span class="token punctuation">,</span> created<span class="token punctuation">:</span> <span class="token string">"9/22/2013"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">107</span><span class="token punctuation">,</span> complete<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>             priority<span class="token punctuation">:</span> <span class="token string">"high"</span><span class="token punctuation">,</span>
+              dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-22"</span><span class="token punctuation">,</span>      username<span class="token punctuation">:</span> <span class="token string">"Mike"</span><span class="token punctuation">,</span>
+              title<span class="token punctuation">:</span> <span class="token string">"Fix the foo"</span><span class="token punctuation">,</span>       created<span class="token punctuation">:</span> <span class="token string">"9/22/2013"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">108</span><span class="token punctuation">,</span> complete<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>            priority<span class="token punctuation">:</span> <span class="token string">"low"</span><span class="token punctuation">,</span>
+              dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-15"</span><span class="token punctuation">,</span>      username<span class="token punctuation">:</span> <span class="token string">"Punam"</span><span class="token punctuation">,</span>
+              title<span class="token punctuation">:</span> <span class="token string">"Adjust the bar"</span><span class="token punctuation">,</span>    created<span class="token punctuation">:</span> <span class="token string">"9/25/2013"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">110</span><span class="token punctuation">,</span> complete<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>            priority<span class="token punctuation">:</span> <span class="token string">"medium"</span><span class="token punctuation">,</span>
+              dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-15"</span><span class="token punctuation">,</span>      username<span class="token punctuation">:</span> <span class="token string">"Scott"</span><span class="token punctuation">,</span>
+              title<span class="token punctuation">:</span> <span class="token string">"Rename everything"</span><span class="token punctuation">,</span> created<span class="token punctuation">:</span> <span class="token string">"10/2/2013"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">112</span><span class="token punctuation">,</span> complete<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>             priority<span class="token punctuation">:</span> <span class="token string">"high"</span><span class="token punctuation">,</span>
+              dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-27"</span><span class="token punctuation">,</span>      username<span class="token punctuation">:</span> <span class="token string">"Lena"</span><span class="token punctuation">,</span>
+              title<span class="token punctuation">:</span> <span class="token string">"Alter all quuxes"</span><span class="token punctuation">,</span>  created<span class="token punctuation">:</span> <span class="token string">"10/5/2013"</span><span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="getIncompleteTaskSummaries-函数"><a href="#getIncompleteTaskSummaries-函数" class="headerlink" title="getIncompleteTaskSummaries 函数"></a>getIncompleteTaskSummaries 函数</h3><p>我们需要一个名为 getIncompleteTaskSummaries 的函数，接收一个 username 作为参数，从服务器获取数据之后筛选出这个用户未完成的任务的 ids、priorities、titles、和 dueDate 数据，并且按照日期升序排序。<br></p>
 <p>以 Scott 为例，最终筛选出的数据为<br></p>
-<pre><code>[
-    {id: 110, title: &quot;Rename everything&quot;, 
-        dueDate: &quot;2013-11-15&quot;, priority: &quot;medium&quot;},
-    {id: 104, title: &quot;Do something&quot;, 
-        dueDate: &quot;2013-11-29&quot;, priority: &quot;high&quot;}
-]</code></pre><pre><code>var getIncompleteTaskSummaries = function(membername) {
-     return fetchData()
-         .then(function(data) {
-             return data.tasks;
-         })
-         .then(function(tasks) {
-             return tasks.filter(function(task) {
-                 return task.username == membername
-             })
-         })
-         .then(function(tasks) {
-             return tasks.filter(function(task) {
-                 return !task.complete
-             })
-         })
-         .then(function(tasks) {
-             return tasks.map(function(task) {
-                 return {
-                     id: task.id,
-                     dueDate: task.dueDate,
-                     title: task.title,
-                     priority: task.priority
-                 }
-             })
-         })
-         .then(function(tasks) {
-             return tasks.sort(function(first, second) {
-                 var a = first.dueDate,
-                     b = second.dueDate;
-                 return a &lt; b ? -1 : a &gt; b ? 1 : 0;
-             });
-         })
-         .then(function(task) {
-             console.log(task)
-         })
-};
+<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">110</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token string">"Rename everything"</span><span class="token punctuation">,</span> 
+        dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-15"</span><span class="token punctuation">,</span> priority<span class="token punctuation">:</span> <span class="token string">"medium"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">104</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token string">"Do something"</span><span class="token punctuation">,</span> 
+        dueDate<span class="token punctuation">:</span> <span class="token string">"2013-11-29"</span><span class="token punctuation">,</span> priority<span class="token punctuation">:</span> <span class="token string">"high"</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> getIncompleteTaskSummaries <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>membername<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">return</span> data<span class="token punctuation">.</span>tasks<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>tasks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">return</span> tasks<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 <span class="token keyword">return</span> task<span class="token punctuation">.</span>username <span class="token operator">==</span> membername
+             <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>tasks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">return</span> tasks<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 <span class="token keyword">return</span> <span class="token operator">!</span>task<span class="token punctuation">.</span>complete
+             <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>tasks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">return</span> tasks<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                     id<span class="token punctuation">:</span> task<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+                     dueDate<span class="token punctuation">:</span> task<span class="token punctuation">.</span>dueDate<span class="token punctuation">,</span>
+                     title<span class="token punctuation">:</span> task<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+                     priority<span class="token punctuation">:</span> task<span class="token punctuation">.</span>priority
+                 <span class="token punctuation">}</span>
+             <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>tasks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">return</span> tasks<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 <span class="token keyword">var</span> a <span class="token operator">=</span> first<span class="token punctuation">.</span>dueDate<span class="token punctuation">,</span>
+                     b <span class="token operator">=</span> second<span class="token punctuation">.</span>dueDate<span class="token punctuation">;</span>
+                 <span class="token keyword">return</span> a <span class="token operator">&lt;</span> b <span class="token operator">?</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">:</span> a <span class="token operator">></span> b <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+             <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-getIncompleteTaskSummaries(&#39;Scott&#39;)</code></pre><h3 id="Point-free-模式"><a href="#Point-free-模式" class="headerlink" title="Point-free 模式"></a>Point-free 模式<br></h3><pre><code>// 拆分基础函数
+<span class="token function">getIncompleteTaskSummaries</span><span class="token punctuation">(</span><span class="token string">'Scott'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Point-free-模式"><a href="#Point-free-模式" class="headerlink" title="Point-free 模式"></a>Point-free 模式<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 拆分基础函数</span>
 curry 为封装的通用 curry 韩式
-var prop = curry(function(name, obj) {
-    return obj[name];
-});
+<span class="token keyword">var</span> prop <span class="token operator">=</span> <span class="token function">curry</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-var propEq = curry(function(name, val, obj) {
-    return obj[name] === val;
-});
+<span class="token keyword">var</span> propEq <span class="token operator">=</span> <span class="token function">curry</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> val<span class="token punctuation">,</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">===</span> val<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-var filter = curry(function(fn, arr) {
-    return arr.filter(fn)
-});
+<span class="token keyword">var</span> filter <span class="token operator">=</span> <span class="token function">curry</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-var map = curry(function(fn, arr) {
-    return arr.map(fn)
-});
+<span class="token keyword">var</span> map <span class="token operator">=</span> <span class="token function">curry</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-var pick = curry(function(args, obj){
-    var result = {};
-    for (var i = 0; i &lt; args.length; i++) {
-        result[args[i]] = obj[args[i]]
-    }
-    return result;
-});
+<span class="token keyword">var</span> pick <span class="token operator">=</span> <span class="token function">curry</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>args<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> args<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">[</span>args<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> obj<span class="token punctuation">[</span>args<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-var sortBy = curry(function(fn, arr) {
-    return arr.sort(function(a, b){
-        var a = fn(a),
-            b = fn(b);
-        return a &lt; b ? -1 : a &gt; b ? 1 : 0;
-    })
-});
-// 拼装
-var getIncompleteTaskSummaries = function(membername) {
-    return fetchData()
-        .then(prop(&#39;tasks&#39;))
-        .then(filter(propEq(&#39;username&#39;, membername)))
-        .then(filter(propEq(&#39;complete&#39;, false)))
-        .then(map(pick([&#39;id&#39;, &#39;dueDate&#39;, &#39;title&#39;, &#39;priority&#39;])))
-        .then(sortBy(prop(&#39;dueDate&#39;)))
-};
+<span class="token keyword">var</span> sortBy <span class="token operator">=</span> <span class="token function">curry</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            b <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> a <span class="token operator">&lt;</span> b <span class="token operator">?</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">:</span> a <span class="token operator">></span> b <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 拼装</span>
+<span class="token keyword">var</span> getIncompleteTaskSummaries <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>membername<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'tasks'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> membername<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token function">pick</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'dueDate'</span><span class="token punctuation">,</span> <span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'priority'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">sortBy</span><span class="token punctuation">(</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'dueDate'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-getIncompleteTaskSummaries(&#39;Scott&#39;)</code></pre><h3 id="利用-ramda-js-实现-getIncompleteTaskSummarie"><a href="#利用-ramda-js-实现-getIncompleteTaskSummarie" class="headerlink" title="利用 ramda.js 实现 getIncompleteTaskSummarie"></a>利用 ramda.js 实现 getIncompleteTaskSummarie</h3><p>如果直接使用 ramda.js，你可以省去编写基本函数<br></p>
-<pre><code>var getIncompleteTaskSummaries = function(membername) {
-    return fetchData()
-        .then(R.prop(&#39;tasks&#39;))
-        .then(R.filter(R.propEq(&#39;username&#39;, membername)))
-        .then(R.filter(R.propEq(&#39;complete&#39;, false)))
-        .then(R.map(R.pick([&#39;id&#39;, &#39;dueDate&#39;, &#39;title&#39;, &#39;priority&#39;])))
-        .then(R.sortBy(R.prop(&#39;dueDate&#39;)))
-};
+<span class="token function">getIncompleteTaskSummaries</span><span class="token punctuation">(</span><span class="token string">'Scott'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="利用-ramda-js-实现-getIncompleteTaskSummarie"><a href="#利用-ramda-js-实现-getIncompleteTaskSummarie" class="headerlink" title="利用 ramda.js 实现 getIncompleteTaskSummarie"></a>利用 ramda.js 实现 getIncompleteTaskSummarie</h3><p>如果直接使用 ramda.js，你可以省去编写基本函数<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> getIncompleteTaskSummaries <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>membername<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'tasks'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> membername<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">pick</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'dueDate'</span><span class="token punctuation">,</span> <span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'priority'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">sortBy</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'dueDate'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-getIncompleteTaskSummaries(&#39;Scott&#39;)</code></pre><h3 id="利用-compose-实现-getIncompleteTaskSummaries"><a href="#利用-compose-实现-getIncompleteTaskSummaries" class="headerlink" title="利用 compose 实现 getIncompleteTaskSummaries"></a>利用 compose 实现 getIncompleteTaskSummaries</h3><p>可以从左到右</p>
-<pre><code>var getIncompleteTaskSummaries = function(membername) {
-    return fetchData()
-        .then(R.compose(
-            R.sortBy(R.prop(&#39;dueDate&#39;)),
-            R.map(R.pick([&#39;id&#39;, &#39;dueDate&#39;, &#39;title&#39;, &#39;priority&#39;])),
-            R.filter(R.propEq(&#39;complete&#39;, false)),
-            R.filter(R.propEq(&#39;username&#39;, membername)),
-            R.prop(&#39;tasks&#39;)
-        ))
-};
+<span class="token function">getIncompleteTaskSummaries</span><span class="token punctuation">(</span><span class="token string">'Scott'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="利用-compose-实现-getIncompleteTaskSummaries"><a href="#利用-compose-实现-getIncompleteTaskSummaries" class="headerlink" title="利用 compose 实现 getIncompleteTaskSummaries"></a>利用 compose 实现 getIncompleteTaskSummaries</h3><p>可以从左到右</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> getIncompleteTaskSummaries <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>membername<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">compose</span><span class="token punctuation">(</span>
+            R<span class="token punctuation">.</span><span class="token function">sortBy</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'dueDate'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            R<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">pick</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'dueDate'</span><span class="token punctuation">,</span> <span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'priority'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            R<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            R<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> membername<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            R<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'tasks'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-getIncompleteTaskSummaries(&#39;Scott&#39;)</code></pre><h3 id="利用-ramda-js-提供的-R-pipe-函数"><a href="#利用-ramda-js-提供的-R-pipe-函数" class="headerlink" title="利用 ramda.js 提供的 R.pipe 函数"></a>利用 ramda.js 提供的 R.pipe 函数</h3><p>可以从左到右</p>
-<pre><code>var getIncompleteTaskSummaries = function(membername) {
-    return fetchData()
-      .then(R.pipe(
-          R.prop(&#39;tasks&#39;),
-          R.filter(R.propEq(&#39;username&#39;, membername)),
-          R.filter(R.propEq(&#39;complete&#39;, false)),
-          R.map(R.pick([&#39;id&#39;, &#39;dueDate&#39;, &#39;title&#39;, &#39;priority&#39;]),
-          R.sortBy(R.prop(&#39;dueDate&#39;))
-      ))
-};</code></pre>
+<span class="token function">getIncompleteTaskSummaries</span><span class="token punctuation">(</span><span class="token string">'Scott'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="利用-ramda-js-提供的-R-pipe-函数"><a href="#利用-ramda-js-提供的-R-pipe-函数" class="headerlink" title="利用 ramda.js 提供的 R.pipe 函数"></a>利用 ramda.js 提供的 R.pipe 函数</h3><p>可以从左到右</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> getIncompleteTaskSummaries <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>membername<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+          R<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'tasks'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          R<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> membername<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          R<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          R<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">pick</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'dueDate'</span><span class="token punctuation">,</span> <span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'priority'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          R<span class="token punctuation">.</span><span class="token function">sortBy</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'dueDate'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1030,7 +1039,7 @@ demo toSlug举例子，想象一
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

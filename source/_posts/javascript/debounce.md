@@ -83,7 +83,7 @@ HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
 
 下面通过代码和图片来解释上面的步骤
 
-```
+```html
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -141,7 +141,7 @@ HTML 解析器构建 DOM 树，实际上是经过下面几个步骤
 
 html 
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,7 +178,7 @@ html
 
 debounce.js 
 
-```
+```js
 @underscore.js
 
 var debounce = /** @class */ (function () {
@@ -241,7 +241,7 @@ var debounce = /** @class */ (function () {
 
 当触发事件的时候，取出当前的时间戳，之后减去之前的时间戳(最一开始值设为 0 )，如果大于设置的时间周期，执行函数并更新当前时间戳，反之就不执行。
 
-```
+```js
 var throttle = /** @class */ (function () {
   
   function throttle(func, wait) {
@@ -266,7 +266,7 @@ var throttle = /** @class */ (function () {
 
 事件触发的时候，设置一个定时器，如果定时器存在，就不执行，等定时器到指定的时间，清空定时器，执行事件
 
-```
+```js
 function throttle(func, wait) {
   var timeout;
   var previous = 0;
@@ -291,7 +291,7 @@ function throttle(func, wait) {
 
 现在我们要结合上面两种方式实现一个开始触发立刻执行，停止触发的时候还能再执行一次
 
-```
+```js
 @underscore.js
 
 var throttle = /** @class */ (function () {
@@ -349,7 +349,7 @@ var throttle = /** @class */ (function () {
 ```
 
 调用例子
-```
+```js
 ontainer.onmousemove = throttle(getContent, 1000);
 container.onmousemove = throttle(getContent, 1000, {
   leading: false

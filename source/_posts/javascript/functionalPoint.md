@@ -16,7 +16,7 @@ categories:
 
 Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript 中的函数定义
 
-```
+```js
 // 表达式
 function foo (/* parameters are declared here*/) {}
 
@@ -31,7 +31,7 @@ const foo = function (/* parameters are declared here */) {}
 ### demo1
 
 
-```
+```js
 // 非 Point-free. 因为函数引用了参数name
 var greet = function(name) {
   return ('hello ' + name).toUpperCase();
@@ -49,7 +49,7 @@ greet('renbo');
 这个例子来自于<a href="https://fr.umio.us/favoring-curry/">Favoring Curry</a><br/>
 假设我们从服务器获取这样的数据：
 
-```
+```js
 var data = {
   result: "SUCCESS",
   tasks: [
@@ -81,7 +81,7 @@ var data = {
 我们需要一个名为 getIncompleteTaskSummaries 的函数，接收一个 username 作为参数，从服务器获取数据之后筛选出这个用户未完成的任务的 ids、priorities、titles、和 dueDate 数据，并且按照日期升序排序。<br/>
 
 以 Scott 为例，最终筛选出的数据为<br/>
-```
+```js
 [
     {id: 110, title: "Rename everything", 
         dueDate: "2013-11-15", priority: "medium"},
@@ -90,7 +90,7 @@ var data = {
 ]
 ```
 
-```
+```js
 var getIncompleteTaskSummaries = function(membername) {
      return fetchData()
          .then(function(data) {
@@ -133,7 +133,7 @@ getIncompleteTaskSummaries('Scott')
 
 ### Point-free 模式<br/>
 
-```
+```js
 // 拆分基础函数
 curry 为封装的通用 curry 韩式
 var prop = curry(function(name, obj) {
@@ -183,7 +183,7 @@ getIncompleteTaskSummaries('Scott')
 ### 利用 ramda.js 实现 getIncompleteTaskSummarie
 
 如果直接使用 ramda.js，你可以省去编写基本函数<br/>
-```
+```js
 var getIncompleteTaskSummaries = function(membername) {
     return fetchData()
         .then(R.prop('tasks'))
@@ -200,7 +200,7 @@ getIncompleteTaskSummaries('Scott')
 
 可以从左到右
 
-```
+```js
 var getIncompleteTaskSummaries = function(membername) {
     return fetchData()
         .then(R.compose(
@@ -219,7 +219,7 @@ getIncompleteTaskSummaries('Scott')
 
 可以从左到右
 
-```
+```js
 var getIncompleteTaskSummaries = function(membername) {
     return fetchData()
       .then(R.pipe(

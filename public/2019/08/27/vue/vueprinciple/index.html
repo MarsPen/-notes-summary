@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="vue 原理解析一, 前端 typescript php js node html html5 css linux vue react">
+    <meta name="keywords" content="vue 原理解析之主线流程, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="
@@ -13,7 +13,7 @@
 
 
 
-源码架构vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助我们在工作中很好的应用和解决问题。当然我们并不可能把源码很细致的分析个遍，那样没什么意义。随着版本不">
+源码架构vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助我们在工作中很好的应用和解决问题。当然我们并不可能把源码很细致的分析个遍，那样没什么意义。附上 gi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>vue 原理解析一 | </title>
+    <title>vue 原理解析之主线流程 | </title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -279,13 +279,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        vue 原理解析一
+                        vue 原理解析之主线流程
                     </div>
                 </div>
             </div>
@@ -463,7 +463,7 @@
 </div>
 
 
-<h2 id="源码架构"><a href="#源码架构" class="headerlink" title="源码架构"></a>源码架构</h2><p>vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助我们在工作中很好的应用和解决问题。当然我们并不可能把源码很细致的分析个遍，那样没什么意义。随着版本不断的更新会根据版本分析每个版本的核心原理。<br>附上 git 仓库<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">vue源码</a>地址。</p>
+<h2 id="源码架构"><a href="#源码架构" class="headerlink" title="源码架构"></a>源码架构</h2><p>vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助我们在工作中很好的应用和解决问题。当然我们并不可能把源码很细致的分析个遍，那样没什么意义。<br>附上 git 仓库<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">vue源码</a>地址。</p>
 <p>我们看一下 vue 源码的核心目录方便大家去对应查找</p>
 <pre class="line-numbers language-md"><code class="language-md">src
 ├── compiler/        # 模版编译目录 
@@ -596,7 +596,7 @@
   // ...
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>那么在打包的过程中进行了路径别名设置，通过别名设置能够简化代码使之更清晰整洁。</p>
+<p>那么在打包的过程中进行了路径别名设置，通过别名设置能代码能够更清晰整洁。</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
 
 <span class="token keyword">const</span> resolve <span class="token operator">=</span> p <span class="token operator">=</span><span class="token operator">></span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../'</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span>
@@ -789,7 +789,7 @@ core/index
   <span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">// ...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>通过上面代码的注释，了解到 Vue 初始化主要就干了几件事情，合并配置操作，初始化生命周期，初始化事件监听，初始化render，初始化 data、props、computed、watcher 等，在最后调用vm.$mount 方法挂载 vm ，把模版渲染成DOM。当然这里面还有很多细节需要知道例如上面初始化合并配置，生命周期初始化等，会在后面清楚的梳理 vue 整理流程之后，进入细节</p>
+<p>通过上面代码的注释了解到 Vue 初始化主要就干了几件事情，合并配置操作，初始化生命周期，初始化事件监听，初始化render，初始化 data、props、computed、watcher 等，在最后调用vm.$mount 方法挂载 vm ，把模版渲染成DOM。当然这里面还有很多细节需要知道例如上面初始化合并配置，生命周期初始化等，会在后面清楚的梳理 vue 整理流程之后，进入细节</p>
 <h2 id="vm-mount"><a href="#vm-mount" class="headerlink" title="vm.$mount"></a>vm.$mount</h2><p>通过 $mount 实例方法去挂载 vm ，但 $mount 方法是由于多平台编译处理不太一样，所以在多个文件中定义。我们进入 <code>src/platform</code> 这个目录可以观察到有 web 和 weex 目录，我们直接抛掉 weex，只分析 web 目录，在 vue 官网教程中介绍了vue的完整版<code>web/entry-runtime-with-compiler.js</code>和runtime版本<code>web/runtime/index.js</code></p>
 <p>完整版</p>
 <ul>
@@ -868,7 +868,7 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
 <p>上面代码逻辑很清晰，将执行以下过程</p>
 <ul>
 <li>首先在原型上定义了 $mount 这个方法</li>
-<li>对传入的 el 做限制不能将节点挂载在 body 和 html 这种根节点上</li>
+<li>对传入的 el 做限制不能将节点挂载在 body 和 html 这种跟节点上</li>
 <li>如果没有定义 render 方法，则会把 el 或者 template 字符串转换成 render 方法</li>
 <li>模版或字符串转换 render 方法（调用 compileToFunctions 进行编译转换）</li>
 </ul>
@@ -943,7 +943,7 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
 </ul>
 <p>Watcher 在它的回调函数中会调用 updateComponent 方法，在此方法中调用 vm._render 方法生成虚拟 Node节点，最后调用 vm._update 更新 DOM</p>
 <p>Watcher 初始化的时候会执行回调函数，当 vm 实例中的监测的数据发生变化的时候也会执行回调函数，这就是我们说的观察者进行依赖收集的过程,当然这也是 vue 核心原理的一部分。new Watcher到底做了什么我们在后面的单独整理，先以主线程为主</p>
-<h2 id="vm-render"><a href="#vm-render" class="headerlink" title="vm._render"></a>vm._render</h2><p>上文中提到 Watcher 在它的回调函数中会调用 updateComponent 方法，在此方法中调用 vm._render 方法生成虚拟 Node节点，最后调用 vm._update 更新 DOM，那么就出现私有方法 vm._render 和 vm._update 两个最核心的方法。</p>
+<h2 id="vm-render"><a href="#vm-render" class="headerlink" title="vm._render"></a>vm._render</h2><p>上文中提到 Watcher 在它的回调函数中会调用 updateComponent 方法，在此方法中调用 vm._render 方法生成虚拟 Node节点，最后调用 vm._update 更新 DOM，那么就出现 私有方法 vm._render 和 vm._update 两个最核心的方法。</p>
 <p>_render 定义在 <code>src/core/instance/render.js</code> 中</p>
 <pre class="line-numbers language-js"><code class="language-js">
   <span class="token comment" spellcheck="true">// ...</span>
@@ -1007,7 +1007,7 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
     vnode<span class="token punctuation">.</span>parent <span class="token operator">=</span> _parentVnode
     <span class="token keyword">return</span> vnode
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上面这段代码最关键的地方就是调用 render 方法 <code>render.call(vm._renderProxy, vm.$createElement)</code>，在上面说过在 mounted 方法中会把 template 和 string 经过 compileToFunctions 编译最后形成 render 方法进行渲染，但这是用字符串模版的形式，如果用字符串模板的代替方案 render 方法呢</p>
+<p>上面这段代码最关键的地方就是调用 render 方法 <code>render.call(vm._renderProxy, vm.$createElement)</code>，在上面说过在 mounted 方法中会把 template 和 string 经过 compileToFunctions 编译最后形成 render方法进行渲染，但是这是用字符串模版的形式，如果用字符串模板的代替方案 render 方法呢</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   render<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>createElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token keyword">return</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -1191,7 +1191,7 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
 Vue<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__patch__ <span class="token operator">=</span> inBrowser <span class="token operator">?</span> patch <span class="token punctuation">:</span> noop
 
 <span class="token comment" spellcheck="true">// ...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>通过引用我们到 <code>src/platforms/web/runtime/patch.js</code> 目录下调用了 createPatchFunction 方法的返回值</p>
+<p>通过引用我们到 <code>src/platforms/web/runtime/patch.js</code> 目录看到调用了 createPatchFunction 方法的返回值</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> patch<span class="token punctuation">:</span> Function <span class="token operator">=</span> <span class="token function">createPatchFunction</span><span class="token punctuation">(</span><span class="token punctuation">{</span> nodeOps<span class="token punctuation">,</span> modules <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="createPatchFunction"><a href="#createPatchFunction" class="headerlink" title="createPatchFunction "></a>createPatchFunction <hr></h3><p>在通过查找文件 <code>src/core/vdom/patch.js</code> 中定义的 createPatchFunction 方法</p>
 <pre class="line-numbers language-js"><code class="language-js">
@@ -1315,7 +1315,7 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
 <ul>
 <li>createElm 以当前旧节点为参考节点，创建新的节点，执行相关的 insert 钩子函数，并插入到 DOM 中，</li>
 <li>sameVnode 通过对比 key 是否相同、tag、注释、data是否存在等判断2个节点，是否是同一个节点</li>
-<li>patchVnode vdom 核心更新 node</li>
+<li>patchVnode vdom 核心更新 node </li>
 </ul>
 <p>patchVode 中的几个核心方法 addVnodes、 removeVnodes，updateChildren，具体是怎么增加、删除，更新 vnode 和 dom 节点的，dom-diff 比较复杂，我们会在分析响应式原理的时候具体查看细节</p>
 <h3 id="主流程总结"><a href="#主流程总结" class="headerlink" title="主流程总结"></a>主流程总结<hr></h3><p>下面我们通过一张图来总结 vue 主线流程</p>
@@ -1483,36 +1483,30 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/27/vue/vueprinciple/">
+                <a href="/2019/09/05/vue/vueobserve/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="vue 原理解析一">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue 原理解析之响应式">
                         
-                        <span class="card-title">vue 原理解析一</span>
+                        <span class="card-title">vue 原理解析之响应式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-  
-  
-
-
-
-源码架构vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助我们在工作中很好的应用和解决问题。当然我们并不可能把源码很细致的分析个遍，那样没什么意义。随着版本不
+                            响应式对象提到 vue 的双向数据绑定原理，我们都知道是利用了 Object.defineProperty 给数据添加 getter 和 setter，来进行依赖收集和数据派发更新，首先我们再来熟悉一下这个方法
+Object.defineP
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1525,7 +1519,6 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1548,9 +1541,9 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Generator 与 Async">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="generator 与 async">
                         
-                        <span class="card-title">Generator 与 Async</span>
+                        <span class="card-title">generator 与 async</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1742,7 +1735,7 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

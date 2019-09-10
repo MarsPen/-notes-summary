@@ -433,7 +433,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.5k
                 </div>
                 
 
@@ -456,27 +456,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="普通对象和函数对象"><a href="#普通对象和函数对象" class="headerlink" title="普通对象和函数对象"></a>普通对象和函数对象</h3><pre><code>  // 普通对象
-  var obj1 = {}; 
-  var obj2 = new Object();
-  var obj3 = new person();
-  // 函数对象
-  function person(){}; 
-  var person1 = function(){};
-  var person2 = new Function(&#39;aaa&#39;,&#39;console.warn(aaaa)&#39;);
+                <h3 id="普通对象和函数对象"><a href="#普通对象和函数对象" class="headerlink" title="普通对象和函数对象"></a>普通对象和函数对象</h3><pre class="line-numbers language-js"><code class="language-js">  <span class="token comment" spellcheck="true">// 普通对象</span>
+  <span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+  <span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> obj3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 函数对象</span>
+  <span class="token keyword">function</span> <span class="token function">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
+  <span class="token keyword">var</span> person1 <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> person2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'aaa'</span><span class="token punctuation">,</span><span class="token string">'console.warn(aaaa)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console.log(typeof Object); //function 
-  console.log(typeof Function); //function 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> Object<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//function </span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> Function<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//function </span>
 
-  console.log(typeof person); //function 
-  console.log(typeof person1); //function 
-  console.log(typeof person2); //function  
-  console.log(person instanceof Function) // true 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> person<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//function </span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> person1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//function </span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> person2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//function  </span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person <span class="token keyword">instanceof</span> <span class="token class-name">Function</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true </span>
 
-  console.log(typeof obj1); //object 
-  console.log(typeof obj2); //object 
-  console.log(typeof obj3); //object
-  console.log(obj3 instanceof Object)  // true</code></pre><p>通过以上实例我们知道 new Function 构建的都是函数对象(关于普通函数与new Function的区别请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" rel="noopener">mozilla开发者</a>), 其余都是普通对象,关于Object与Function的区别会在这章节最后总结</p>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> obj1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//object </span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> obj2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//object </span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> obj3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//object</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj3 <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过以上实例我们知道 new Function 构建的都是函数对象(关于普通函数与new Function的区别请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" rel="noopener">mozilla开发者</a>), 其余都是普通对象,关于Object与Function的区别会在这章节最后总结</p>
 <h3 id="通过构造函数模式创建对象"><a href="#通过构造函数模式创建对象" class="headerlink" title="通过构造函数模式创建对象"></a>通过构造函数模式创建对象</h3><p>在js高程中我们知道创建对象有很多种模式如下</p>
 <ul>
 <li>工厂模式</li>
@@ -488,15 +489,16 @@
 <li>稳妥构造函数模式</li>
 </ul>
 <p>当然这几种模式在这里暂时不展开说明，后续继承的时候在分别用讨论，我们这里简单的回忆一下用构造函数创建对象</p>
-<pre><code>  function Person(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-  Person.prototype.sayName = function () {
-    console.log(this.name)
-  }
-  var person1 = new Person(&#39;zhansan&#39;, 29);
-  var person2 = new Person(&#39;lisi&#39;, 29);</code></pre><h3 id="proto-prototype-constructor"><a href="#proto-prototype-constructor" class="headerlink" title="proto,prototype,constructor"></a><strong>proto</strong>,prototype,constructor</h3><ul>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>sayName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> person1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'zhansan'</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> person2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'lisi'</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="proto-prototype-constructor"><a href="#proto-prototype-constructor" class="headerlink" title="proto,prototype,constructor"></a><strong>proto</strong>,prototype,constructor</h3><ul>
 <li><code>__proto__</code>:在JavaScript权威指南中指出每个js对象一定对应一个原型对象，并从原型对象继承属性和方法。</li>
 <li><code>prototype</code>: 当创建函数对象时，js会自动为这个函数添加prototype属性（<strong>这里明确一下只有函数对象才会有此属性</strong>）</li>
 <li>每个原型都有一个 constructor 属性指向关联的构造函数。</li>
@@ -507,27 +509,31 @@
 <p><image src="/images/Person.png"></image></p>
 <p>这里我们注意虽然person1和person2这两个个实例都不包含属性和方法，但是我们可以通过查找对象属性来实现调用person1.sayName()</p>
 <p>此时我们来确定两个实例对象返回的原型指针是否一样(<strong>Object.getPrototypeOf 此方法可以获取对象的原型</strong>)</p>
-<pre><code>Object.getPrototypeOf(person1) === Person.prototype (true)
-Object.getPrototypeOf(person1) === Person.prototype (true)</code></pre><p>通过如上输出结果得知他们内部都有一个指向Person.prototype的指针也就是</p>
-<pre><code>person1.__proto__ === Person.prototype
-person2.__proto__ === Person.prototype</code></pre><p>经过上面解释这么多我们得出的结果就是如下 </p>
-<pre><code>person1.__proto__ === Person.prototype
-Person.prototype.constructor == Person</code></pre><h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><ul>
+<pre class="line-numbers language-js"><code class="language-js">Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>person1<span class="token punctuation">)</span> <span class="token operator">===</span> Person<span class="token punctuation">.</span>prototype <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>person1<span class="token punctuation">)</span> <span class="token operator">===</span> Person<span class="token punctuation">.</span>prototype <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>通过如上输出结果得知他们内部都有一个指向Person.prototype的指针也就是</p>
+<pre class="line-numbers language-js"><code class="language-js">person1<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Person<span class="token punctuation">.</span>prototype
+person2<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Person<span class="token punctuation">.</span>prototype<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>经过上面解释这么多我们得出的结果就是如下 </p>
+<pre class="line-numbers language-js"><code class="language-js">person1<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Person<span class="token punctuation">.</span>prototype
+Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">==</span> Person<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><ul>
 <li>js几乎所有对象都是Object; 典型对象继承属性（包括方法）</li>
 <li>所有引用类型的原型链上必然存在Object的原型</li>
 <li>new Object 出来的实例是普通对象我们前面说过只有函数对象才有prototype</li>
 <li>Object 实际是function Object跟function Function 类似</li>
 <li>Object.prototype是Object构造函数的属性。它也是原型链的终结</li>
 </ul>
-<pre><code>function Object (name,age) {
-  this.name = name;
-  this.age = age;
-}
-Object.prototype.sayName = function () {
-  console.log(this.name)
-}
-object = new Object(&#39;zhangsan&#39;,20)
-object.sayName()</code></pre><p>我们通样以图例的形式来说明Object的<strong>proto</strong>,prototype,constructor</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> Object <span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>sayName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+object <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>
+object<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们通样以图例的形式来说明Object的<strong>proto</strong>,prototype,constructor</p>
 <p><image src="/images/Object.png"></image></p>
 <p>通过以上图例我们得出结论<code>Object.prototype.__proto__ === null</code></p>
 <p>这里面扩展一下null和undefined区别</p>
@@ -544,16 +550,17 @@ object.sayName()</code></pre><p>我们通样以图例的形式来说明Object的
 <li><code>Object.__proto__</code> 指针指向<code>Function.prototype</code></li>
 </ul>
 <p><strong>Function创建的函数一般在全局作用域中被创建，但并不会像其他函数一样产生闭包，所以只能自己内部和全局的变量</strong></p>
-<pre><code>function Function (name,age){
-  this.name  = name
-  this.age = age
-}
-Function.prototype.sayName = function () {
-  console.log(this.name)
-}
-f = new Function(&#39;zhangsan&#39;, 20)
-f.sayName ()
-</code></pre><p>我们同样以图例的形式来说明Function的<strong>proto</strong>,prototype,constructor</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> Function <span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name  <span class="token operator">=</span> name
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>sayName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>sayName <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们同样以图例的形式来说明Function的<strong>proto</strong>,prototype,constructor</p>
 <p><image src="/images/Function.png"></image></p>
 <p>通过以上图例我们得出结论<code>Object.prototype === Function.prototype.__proto__</code></p>
 <h3 id="将Function，Object，Person链接起来"><a href="#将Function，Object，Person链接起来" class="headerlink" title="将Function，Object，Person链接起来"></a>将Function，Object，Person链接起来</h3><p>此时我们同样通过图例的形式将上面整合起来。来看看整个链路是什么样子</p>
@@ -988,7 +995,7 @@ console.lo
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

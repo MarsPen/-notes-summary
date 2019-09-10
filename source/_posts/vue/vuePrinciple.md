@@ -1064,47 +1064,8 @@ patchVode 中的几个核心方法 addVnodes、 removeVnodes，updateChildren，
 
 上面的图中能够直观的看到 vue 主干的执行流程，但是缺少核心部分，也就是 vue 的响应式原理，下篇文章我们也是通过文件的执行过程来分析 vue 响应式原理的实现
 
-## 响应式原理
-
-一提到 vue 的双向数据绑定原理，我们都知道是利用了 `Object.defineProperty` 给数据添加 getter 和 setter，来进行依赖收集和数据派发更新，首先我们再来熟悉一下这个方法
-
-### Object.defineProperty <hr>
-
-MDN 中写到 `Object.defineProperty()` 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象
-
-```
-function Person () {}
-
-Object.defineProperty(Person.prototype, 'sayHello', {
-  enumerable: true,
-  configurable: true,
-  get: function () {
-    return `my name is ${this.name}`
-  },
-  set:function (value) {
-    this.name = value
-  }
-})
-let p = new Person()
-p.name = 'renbo'
-console.log(p.sayHello) // my name is name
-```
-
-set 提供 setter 方法，当我们对 p.name 做修改的时候会触发 setter 方法， 我们访问 sayHello 的时候会触发 getter 方法，取到对应的值，那么一旦对象拥有了 getter 和 setter，是不是就把这个对象变为自动存取的响应对象呢。
-
-### initState
 
 
-
-
-
-
-
-
-
- 
-
-## 组件化
 
 
 

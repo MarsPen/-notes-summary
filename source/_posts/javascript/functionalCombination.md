@@ -26,7 +26,7 @@ categories:
 3. 加入破折号
 4. 编码URI组件
 
-```
+```js
 // toslug.js hosted with ❤ by GitHub
 
 const toSlug = input => encodeURIComponent(
@@ -40,7 +40,7 @@ const toSlug = input => encodeURIComponent(
 ### 组合功能
 
 不错......但如果我告诉你它可能更具可读性呢？想象一下，这些操作中的每一个都具有相应的可组合功能。可以写成<br/>
-```
+```js
 // nesting-composition.js hosted with ❤ by GitHub
 
 const toSlug = input => encodeURIComponent(
@@ -60,7 +60,7 @@ console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 ### 简单的偏应用函数
 
 这看起来比我们的第一次尝试更难阅读，但先放在这，我们继续以可组合形式的常用实用程序，如`split（）`，`join（）`和`map（）`。来实现<br/>
-```
+```js
 // composables.js hosted with ❤ by GitHub
 
 const curry = fn => (...args) => fn.bind(null, ...args);
@@ -78,7 +78,7 @@ const split = curry((splitOn, str) => str.split(splitOn));
 
 
 回到我们的`toSlug（）`实现
-```
+```js
 // nesting-composition.js hosted with ❤ by GitHub
 
 const toSlug = input => encodeURIComponent(
@@ -98,7 +98,7 @@ console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 我们可以使用一个自动组合这些函数的函数来展平嵌套，这意味着它将从一个函数获取输出并自动将其到下一个函数的输入，直到它输出最终值<br/>
 想象一下我们实现函数 `reduce（）` 的功能，但为了匹配上面的compose行为，我们需要它从右到左，而不是从左到右<br/>
 
-```
+```js
 // compose.js hosted with ❤ by GitHub
 
 const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
@@ -108,7 +108,7 @@ const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);const compos
 
 使用compose，我们可以在没有嵌套的情况下重写 toSlug 的组合<br/>
 
-```
+```js
 // using-compose.js hosted with ❤ by GitHub
 const toSlug = compose(
   encodeURIComponent,
@@ -124,7 +124,7 @@ console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 
 还有另一种通常称为“pipe（）”的形式。 Lodash称之为`flow（）`<br/>
 
-```
+```js
 // pipe.js hosted with ❤ by GitHub
 
 const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
@@ -138,7 +138,7 @@ const result = newFunc('Time'); // emit!
 ```
 
 我们看看用`pipe（）`实现的`toSlug（）`函数<br/>
-```
+```js
 // using-pipe.js hosted with ❤ by GitHub
 
 const toSlug = pipe(
@@ -157,7 +157,7 @@ console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
 
 我经常在单元测试和Redux状态之类的东西中使用管道来消除对中间变量的需要，这些中间变量只存在于一个操作和下一个操作之间的瞬态值。<br/>
 
-```
+```js
 // using-trace.js hosted with ❤ by GitHub
 
 const trace = curry((label, x) => {
@@ -182,7 +182,7 @@ console.log(toSlug('JS Cheerleader'));
 
 
 `trace（）`只是更通用的`tap（）`的一种特殊形式，它允许你为流经管道的每个值执行一些操作<br/>
-```
+```js
 // tap.js hosted with ❤ by GitHub
 
 const tap = curry((fn, x) => {
@@ -193,7 +193,7 @@ const tap = curry((fn, x) => {
 
 现在可以看到`trace（）`是一个特殊的`tap（）`
 
-```
+```js
 const trace = label => {
   return tap(x => console.log(`== ${ label }:  ${ x }`));
 };

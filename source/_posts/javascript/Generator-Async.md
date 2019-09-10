@@ -1,5 +1,5 @@
 ---
-title: Generator 与 Async
+title: generator 与 async
 date: 2019-8-26 16:22:09
 top: false
 cover: false
@@ -27,7 +27,7 @@ categories:
 
 回调函数
 
-```
+```js
 function Fun(name, callback) {
   console.log(name)
   callback && callback()
@@ -44,7 +44,7 @@ fun('renbo',function () {})
 
 Promise
 
-```
+```js
 var readFile = require('fs-readfile-promise');
 readFile(fileA)
 .then(function (data) {
@@ -75,7 +75,7 @@ ES6 提供的一种异步编程解决方案，执行 Generator 函数会返回�
 - value属性表示当前的内部状态的值，是yield表达式后面那个表达式的值
 - done属性是一个布尔值，表示是否遍历结束
 
-```
+```js
 function* funGenerator() {
   yield 'hello';
   yield 'my name is renbo';
@@ -94,7 +94,7 @@ fun.next()  // { value: undefined, done: true }
 
 回调
 
-```
+```js
 step1(function (value1) {
   step2(value1, function(value2) {
     step3(value2, function(value3) {
@@ -109,7 +109,7 @@ step1(function (value1) {
 
 promise
 
-```
+```js
 Promise.resolve(step1)
   .then(step2)
   .then(step3)
@@ -124,7 +124,7 @@ Promise.resolve(step1)
 
 Generator
 
-```
+```js
 function* longRunningTask(value1) {
   try {
     var value2 = yield step1(value1);
@@ -143,7 +143,7 @@ function* longRunningTask(value1) {
 
 Generator + Promise
 
-```
+```js
 var fetch = require('node-fetch');
 
 function* gen(){
@@ -168,7 +168,7 @@ result.value.then(function(data){
 
 ###  多个异步任务
 
-```
+```js
 var fetch = require('node-fetch');
 
 function* gen() {
@@ -183,7 +183,7 @@ function* gen() {
 
 获得执行结果
 
-```
+```js
 var g = gen();
 var result1 = g.next();
 
@@ -210,7 +210,7 @@ result1.value.then(function(data){
 
 利用递归封装上述执行结果
 
-```
+```js
 function run(gen) {
   var g = gen();
 
@@ -237,7 +237,7 @@ run(gen);
 
 由于 fetch 方法返回 promise 有 json 方法，所以上述例子成立，如果 yield 直接结合 promise 函数那么就会变成启动器函数。由于 Generator 不能像普通函数一样自动执行和自己暂缓执行的特性，所以增加自执行启动函数，这也是 co 模块的初衷（）
 
-```
+```js
 var fetch = require('node-fetch');
 
 function* gen() {
@@ -276,7 +276,7 @@ run(gen);
 
 回调函数
 
-```
+```js
 function fetchData(url) {
     return function(cb){
         setTimeout(function(){
@@ -288,7 +288,7 @@ function fetchData(url) {
 
 Generator函数
 
-```
+```js
 function* gen() {
     var r1 = yield fetchData('https://api.github.com/users/github');
     var r2 = yield fetchData('https://api.github.com/users/github/followers');
@@ -299,7 +299,7 @@ function* gen() {
 
 获得结果
 
-```
+```js
 var g = gen();
 
 var r1 = g.next();
@@ -314,7 +314,7 @@ r1.value(function(data) {
 
 通过上面的示例代码我们观察到回调函数依然解决不了多个 yield 时代码会循环嵌套。还的借助递归
 
-```
+```js
 function run(gen) {
     var g = gen();
 
@@ -341,7 +341,7 @@ run(gen);
 
 上面两种方法写了一个 run 的启动器函数，那么我们将两种封装在一起，返回了一个 Promise，获得 Generator 函数的返回值，并且捕获错误
 
-```
+``` js
 function run(gen) {
 
     return new Promise(function(resolve, reject) {
@@ -412,7 +412,7 @@ co 是大神 TJ Holowaychuk 于 2013 年 6 月发布的一个小模块，用于 
 
 yield 后是一个 Promise
 
-```
+```js
 var fetch = require('node-fetch');
 var co = require('co');
 
@@ -432,7 +432,7 @@ co(gen);
 
 yield 后是一个回调函数
 
-```
+```js
 
 var co = require('co');
 
@@ -461,7 +461,7 @@ co(gen);
 
 当使用 Generator 函数的时候
 
-```
+```js
 var fetch = require('node-fetch');
 var co = require('co');
 
@@ -476,7 +476,7 @@ co(gen);
 
 当使用 async 时候
 
-```
+```js
 var fetch = require('node-fetch');
 
 var fetchData = async function () {
@@ -490,7 +490,7 @@ fetchData();
 
 通过上面观察到代码基本一样，所以 async 的原理就是将 Generator 函数和自动执行器，包装在一个函数里面
 
-```
+```js
 async function fn(args) {
   // ...
 }
@@ -507,7 +507,7 @@ function fn(args) {
 async 函数返回一个 Promise 对象所以也可以理解为 async 函数是基于 Promise 和 Generator 的一层封装
 随意处理初步流程 async 会比使用 Promise 更优雅
 
-```
+```js
 function fetch() {
   return (
     fetchData().then(() => {
@@ -522,7 +522,7 @@ async function fetch() {
 };
 ```
 
-```
+```js
 function fetch() {
   return fetchData().then(data => {
     if (data.moreData) {
@@ -546,7 +546,7 @@ async function fetch() {
 }
 ```
 
-```
+```js
 function fetch() {
   return (
     fetchData()
@@ -574,7 +574,7 @@ async function fetch() {
 await由于返回 promise 对象，所以结果可能是rejected，所以最好把await命令放在try...catch代码块中
 但是如果想捕获 JSON.parse 中的错误那么就需要再添加一层 try...catch
 
-```
+```js
 async function fetch() {
   try {
     const data = JSON.parse(await fetchData())
@@ -586,7 +586,7 @@ async function fetch() {
 
 原本没有依赖关系的两个函数，却只能等待 getList 返回才能执行 getAnotherList，导致请求时间多了一倍
 
-```
+```js
 (async () => {
   const getList = await getList();
   const getAnotherList = await getAnotherList();
@@ -594,7 +594,7 @@ async function fetch() {
 ```
 
 将上面的函数改为如下函数可以解决上述问题
-```
+```js
 (async () => {
   const listPromise = getList();
   const anotherListPromise = getAnotherList();
@@ -605,7 +605,7 @@ async function fetch() {
 
 也可以使用 Promse.all
 
-```
+```js
 (async () => {
   Promise.all([getList(), getAnotherList()]).then(...);
 })();
@@ -614,7 +614,7 @@ async function fetch() {
 并发执行 async 函数
 
 
-```
+```js
 async function handleList() {
   const listPromise = await getList();
   // ...

@@ -14,18 +14,20 @@ https:/www.studyfe.cn/
 <a href="https:/www.studyfe.cn/2017/07/01/css/css-preprocessor/">CSS预处理器</a><br/>
 ## JavaScript
 <a href="https:/www.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a><br/>
-<a href="https:/www.studyfe.cn/2019/02/20/javascript/voao/">执行环境</a><br/>
+<a href="https:/www.studyfe.cn/2019/02/20/javascript/voao/">vo 和 ao</a><br/>
 <a href="https:/www.studyfe.cn/2019/02/25/javascript/closure/">闭包</a><br/>
 <a href="https:/www.studyfe.cn/2019/03/05/javascript/this/">this</a><br/>
 <a href="https:/www.studyfe.cn/2019/03/10/javascript/prototype/">原型-原型链</a><br/>
 <a href="https:/www.studyfe.cn/2019/03/15/javascript/inheritance/">面向对象之继承</a><br/>
 <a href="https:/www.studyfe.cn/2019/03/20/javascript/api/">操作数组API方法总结</a><br/>
-<a href="https:/www.studyfe.cn/2019/08/26/javascript/generator-async/">Generator 与 Async</a><br/>
-<a href="https:/www.studyfe.cn/2019/04/21/javascript/bind/">bind 函数的实现</a><br/>
-<a href="https:/www.studyfe.cn/2019/04/22/javascript/call/">call 和 apply 函数的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/27/javascript/json/">JSON.stringify 和 JSON.parse 的实现</a><br/>
 <a href="https:/www.studyfe.cn/2019/04/27/javascript/new/">new 运算符的实现</a><br/>
-<a href="https:/www.studyfe.cn/2019/06/11/javascript/promise/">promise的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/22/javascript/call/">call 和 apply 函数的实现</a><br/>
 <a href="https:/www.studyfe.cn/2019/05/15/javascript/debounce/">函数节流与抖动</a><br/>
+<a href="https:/www.studyfe.cn/2019/04/21/javascript/bind/">bind 函数的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/06/11/javascript/promise/">promise 的实现</a><br/>
+<a href="https:/www.studyfe.cn/2019/08/26/javascript/generator-async/">generator 与 async</a><br/>
+
 ## 函数式编程
 <a href="https:/www.studyfe.cn/2019/07/12/javascript/functionalbase/">基本概念</a><br/>
 <a href="https:/www.studyfe.cn/2019/07/15/javascript/functionalpurity/">纯函数</a><br/>
@@ -79,8 +81,10 @@ https:/www.studyfe.cn/
 
 ### vue 
 <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue 原理之主线流程</a><br/>
-<a href="javascript:void(0)">vue 原理之响应式（正在整理）</a><br/>
-<a href="javascript:void(0)">vue 原理之组件（未完成）</a><br/>
+<a href="javascript:void(0)">vue 原理之响应式</a><br/>
+<a href="javascript:void(0)">vue 原理之组件更新（正在整理）</a><br/>
+<a href="javascript:void(0)">vue 原理之编译（parse、optimize、codegen）（未完成）</a><br/>
+<a href="javascript:void(0)">vue 原理之组件化（未完成）</a><br/>
 <a href="javascript:void(0)">vue 原理之 vue-router（未完成）</a><br/>
 <a href="javascript:void(0)">vue 原理之 vue-vuex（未完成）</a><br/>
 

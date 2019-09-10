@@ -33,7 +33,7 @@ Array 对象用于在单个的变量中存储多个值
 
 该方法用于连接或者合并数组，并且不会改变原数组，返回一个新数组的副本
 
-```
+```js
 var arrObj = [1,2,3,4];
 var arrObj1 = [5,6,7,8];
 arrObj.concat(arrObj1); //[1,2,3,4,5,6,7,8]
@@ -43,7 +43,7 @@ arrObj.concat(arrObj1); //[1,2,3,4,5,6,7,8]
 
 该方法用于把数组中的所有元素用指定的分隔符分割，返回一个字符串
 
-```
+```js
 newArray.join() //"1,2,3,4,5,6,7,8"
 ```
 
@@ -60,7 +60,7 @@ console.log(arrObj); //[1,2,3]
 
 该方法可向数组的末尾添加一个或多个元素，并返回新的长度
 
-```
+```js
 arrObj.push(4);
 console.log(arrObj); //[1,2,3,4]
 ```
@@ -78,7 +78,7 @@ console.log(arrObj) //[2,3,4]
 
 该方法可向数组的开头添加一个或多个元素，并返回新的长度
 
-``` 
+```js
 arrObj.unshift(1);
 console.log(arrObj); //[1,2,3,4]
 ```
@@ -87,7 +87,7 @@ console.log(arrObj); //[1,2,3,4]
 
 该方法可从已有的数组中返回选定的元素,形成一个新的数组
 
-```
+```js
 arrObj.slice(1,2); //[2]
 console.log(arrObj) //[1,2,3,4]
 ```
@@ -96,7 +96,7 @@ console.log(arrObj) //[1,2,3,4]
 
 该法向数组中添加/删除元素，然后返回被删除的元素。该方法会改变原数组
 
-```
+```js
 arrObj.splice(1,2,5); //[2,3]
 console.log(arrObj); //[1,5,4]
 ```
@@ -105,7 +105,7 @@ console.log(arrObj); //[1,5,4]
 
 该方法用于颠倒数组中元素的顺序，并且改变原来的数组，而不会创建新的数组
 
-```
+```js
 arrObj.reverse(); //[4,5,1]
 ```
 
@@ -115,7 +115,7 @@ arrObj.reverse(); //[4,5,1]
 
 注意：该方法是按照字符编码顺序进行排序，如果想要实现业务逻辑排序需要自定义比较函数
 
-```
+```js
 var arrObjSort = [1,5,4,2,3];
 var arrObjSort1 = [1,2,10,3,20,4,30,50,5];
 arrObjSort.sort(); //[1,2,3,4,5]
@@ -124,7 +124,7 @@ arrObjSort1.sort(); //[1, 10, 2, 20, 3, 30, 4, 5, 50]
 
 自定义排序
 
-```
+```js
 function __sortNumber(a,b){
    return a-b;
 }
@@ -135,7 +135,7 @@ arrObjSort1.sort(__sortNumber); //[1, 2, 3, 4, 5, 10, 20, 30, 50]
 
 该方法可把数组转换为字符串，并返回结果，与不带参数的join相同
 
-```
+```js
 arrObjSort1.toString(); //"1,2,3,4,5,10,20,30,50"
 ```
 
@@ -147,7 +147,7 @@ toLocaleString-该方法可数组转换为本地字符串。和toString基本相
 
 如果是为了返回时间类型的数据,推荐使用LocaleString().若是在后台处理字符串,请务必使用toString()<br/>
 
-```
+```js
 var date = new Date();
 var myArr = [date,'go home'];
 myArr.toLocaleString(); //"2017/11/7 下午4:35:43,go home"
@@ -158,7 +158,7 @@ myArr.toString(); //"Tue Nov 07 2017 16:36:25 GMT+0800 (CST),go home"
 
 该方法可确定某个元素在数组实例中第一次出现的索引位置。如果没找到返回-1,可用索引值进行逻辑判断
 
-```
+```js
 var arr = [1,2,3,4,5];
 arr.indexOf(2);  //1
 arr.indexOf(2,1); //1
@@ -169,7 +169,7 @@ arr.indexOf(6);  //-1
 
 查找元素出现的位置索引<br/>
 
-```
+```js
 var indices = [];
 var arr = [1,2,3,2,5,2,7];
 var index = arr.indexOf(2);
@@ -182,7 +182,7 @@ console.log(indices)
 
 判断一个元素是否在数组里，不在则向数组中添加元素<br/>
 
-```
+```js
 var arr = [1,2,3,4,5,6,7];
 function __upDataCollection(arrCollection,indicesEle){
   var matchIndex =  arrCollection.indexOf(indicesEle);
@@ -202,7 +202,7 @@ __upDataCollection(arr,2); //'元素中存在相同的值'
 
 `forEach()` 为每个数组元素执行callback函数；不像`map()` 或者`reduce()` ，它总是返回 `undefined`值，也没有办法终止或跳出正在运行循环的`forEach`。如果常规的遍历想要检测条件返回bool , 并且可以终止循环，可使用`Array.some,Ayyay.every`.或者es6新方法`Array.find()`等等
 
-```
+```js
 var arrayObj = [1,2,3,,5];
 arrayObj.forEach(function(element, index, array){
    console.log("value[" + index + "] = " + element) 
@@ -218,7 +218,7 @@ arrayObj.forEach(function(element, index, array){
 
 该方法会给原数组中的每个元素都按顺序调用一次 callback 函数。callback 每次执行后的返回值（包括 undefined）组合起来形成一个新数组，并且不修改调用它的原数组本身（当然可以在 callback 执行时改变原数组）
 
-```
+```js
 //常用的有些业务场景需要重新重组数组对象
 var arrayObj = [
     {name: 'zhangsan', age: 20}, 
@@ -238,7 +238,7 @@ console.log(newArrayObj);
 
 该方法创建一个新数组,通过次函数方法会返回相应的过滤后的数据,并且不会改变原数组
 
-```
+```js
 var arrayObj = [3,1,3,2,4,5,6];
 var newArrayObj = arrayObj.filter(function(value,index,array){
    return value > 3
@@ -262,7 +262,7 @@ console.log(newArrayObj);//[4, 5, 6]
 
 如果没有提供初始值，则将使用数组中的第一个元素。 在没有初始值的空数组上调用 reduce 将报错。<br/>
 
-```
+```js
 var totalValue = [0, 1, 2, 3].reduce(function(sum, value) {
   return sum + value;
 }, 0); 
@@ -280,7 +280,7 @@ var flattened = [[0, 1], [2, 3], [4, 5]].reduce(
 
 该方法用于检测数组中的某些元素是否通过callback函数实现的方法。返回bool值
 
-```
+```js
 var arrayObj = [1,2,3,4,5,6];
 var flag = arrayObj.some(function(element,index,array){
   return element > 2;
@@ -292,7 +292,7 @@ console.log(flag);//true
 
 该方法用于检测数组中的所有元素是否通过callback函数实现的方法。返回bool值
 
-```
+```js
 var arrayObj = [1,2,3,4,5,6];
 var flag = arrayObj.some(function(element,index,array){
   return element > 2;
@@ -305,13 +305,13 @@ console.log(flag);//false
 该运算符将一个数组转为用逗号分隔的参数序列
 
 扩展运算符即可以复制，合并数组，操作分割字符串与结构赋值结合还可以当函数的形参<br/>
-```
+```js
 console.log(...[1,2,3,4,5]);//1 2 3 4 5
 ```
 
 合并数组：<br/>
 
-```
+```js
 let arrayObj = [1,2,3,4,5,6];
 let arrayObj1 = [7,8,9];
 let newArray = [...arrayObj,...arrayObj1];
@@ -319,21 +319,21 @@ console.log(newArray) //[1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 复制数组：<br/>
-```
+```js
 let arrayObj = [1,2,3,4,5];
 let arrayObjNew = [...arrayObj];
 console.log(arrayObjNew) //[1,2,3,4,5];
 ```
 
 与结构赋值结合：<br/>
-```
+```js
 const [variable, ...array] = [1, 2, 3, 4, 5];
 console.log(variable); //1
 console.log(array); //[2,3,4,5]
 ```
 
 函数形参：
-```
+```js
 //例子1:
 let _arrayObj = [1];
 let _arrayObj1 = [1,2,3,4,5];
@@ -350,7 +350,7 @@ __add(..._arrayObj1); //15
 ```
 
 求出数组最大元素：<br/>
-```
+```js
 let arrayObj = [2,3,4,5,3,2,8];
 Math.max(...arrayObj) //8
 ```
@@ -359,7 +359,7 @@ Math.max(...arrayObj) //8
 
 该法从一个类似数组或可迭代对象中创建一个新的数组实例，相当于相当于[].slice.call()
 
-```
+```js
 //例子1:
 let arrayItems = {
     '0': 'zhangsan',
@@ -382,7 +382,7 @@ pElementArr.forEach((p)=> {
 });
 ```
 将字符串分割字后变为数组<br/>
-```
+```js
 Array.from('foo');//['f','o','o']
 ```
 
@@ -393,7 +393,7 @@ Array.from('foo');//['f','o','o']
 
 Array.of() 和 Array 构造函数之间的区别在于处理整数参数：Array.of(7) 创建一个具有单个元素 7 的数组，而 Array(7) 创建一个包含 7 个 undefined 元素的数组。<br/>
 
-```
+```js
 Array.of(7);       // [7] 
 Array.of(1, 2, 3); // [1, 2, 3]
 
@@ -413,7 +413,7 @@ arr.copyWithin(target, start)<br/>
 arr.copyWithin(target, start, end)<br/>
 
 arr.copyWithin(目标索引, [源开始索引], [结束源索引])<br/>
-```
+```js
 [1, 2, 3, 4, 5].copyWithin(-2);
 // [1, 2, 3, 1, 2]
 
@@ -437,7 +437,7 @@ arr.copyWithin(目标索引, [源开始索引], [结束源索引])<br/>
 如果你需要找到一个元素的位置或者一个元素是否存在于数组中，使用`Array.prototype.indexOf()` 或 `Array.prototype.includes()`。
 
 如果你需要找到元素的索引，而不是其值`Array.prototype.findIndex() `;
-```
+```js
 let arrayObj = [2,4,5,60,39];
 let backValue = arrayObj.find((element)=>{return element > 20});
 console.log(backValue); //60
@@ -452,7 +452,7 @@ console.log(backValue); //60
 arr.fill(value) <br/>
 arr.fill(value, start) <br/>
 arr.fill(value, start, end)<br/>
-```
+```js
 [1, 2, 3].fill(4)            // [4, 4, 4]
 [1, 2, 3].fill(4, 1)         // [1, 4, 4]
 [1, 2, 3].fill(4, 1, 2)      // [1, 4, 3]
@@ -467,7 +467,7 @@ Array(3).fill(4);            // [4, 4, 4]
 
 该方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对
 
-```
+```js
 var arr = ["a", "b", "c"];
 var iterator = arr.entries();
 // undefined
@@ -490,7 +490,7 @@ console.log(iterator.next().value);
 语法：<br/>
 arr.includes(searchElement)<br/>
 arr.includes(searchElement, fromIndex)<br/>
-```
+```js
 [1, 2, 3].includes(2);     // true
 [1, 2, 3].includes(4);     // false
 [1, 2, 3].includes(3, 3);  // false

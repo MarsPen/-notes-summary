@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="bind 函数的实现, 前端 typescript php js node html html5 css linux vue react">
+    <meta name="keywords" content="bind 函数, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="bind 方法其实和 call apply 功能上差不多，只不过 bind() 方法会绑定一个新的函数，通过这个新的函数我们可以当作构造函数、偏函数等等去使用
@@ -19,7 +19,7 @@ let obj ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>bind 函数的实现 | </title>
+    <title>bind 函数 | </title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -277,13 +277,13 @@ let obj ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        bind 函数的实现
+                        bind 函数
                     </div>
                 </div>
             </div>
@@ -432,7 +432,7 @@ let obj ">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    958
+                    955
                 </div>
                 
 
@@ -457,163 +457,168 @@ let obj ">
             <div id="articleContent">
                 <p>bind 方法其实和 call apply 功能上差不多，只不过 bind() 方法会绑定一个新的函数，通过这个新的函数我们可以当作构造函数、偏函数等等去使用</p>
 <h3 id="作为绑定函数使用"><a href="#作为绑定函数使用" class="headerlink" title="作为绑定函数使用"></a>作为绑定函数使用</h3><p>demo1</p>
-<pre><code>this.value = 20;
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
 
-let obj = {
-  value: 29,
-  getValue:function () {
-    return this.value;
-  }
-}
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">29</span><span class="token punctuation">,</span>
+  getValue<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// 直接调用 this 指向 obj
-obj.getValue()  // 29
+<span class="token comment" spellcheck="true">// 直接调用 this 指向 obj</span>
+obj<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 29</span>
 
-// obj.getValue 是一个函数体，在全局作用域中调用，所以 this 指向 window
-let valFun = obj.getValue;
-valFun(); // 20
+<span class="token comment" spellcheck="true">// obj.getValue 是一个函数体，在全局作用域中调用，所以 this 指向 window</span>
+<span class="token keyword">let</span> valFun <span class="token operator">=</span> obj<span class="token punctuation">.</span>getValue<span class="token punctuation">;</span>
+<span class="token function">valFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 20</span>
 
-// 使用 bind 将当前的 this 指针指向 obj 对象上
-let boundGetValue = valFun.bind(obj);
-boundGetValue(); // 29</code></pre><p>demo2</p>
-<pre><code>/**
+<span class="token comment" spellcheck="true">// 使用 bind 将当前的 this 指针指向 obj 对象上</span>
+<span class="token keyword">let</span> boundGetValue <span class="token operator">=</span> valFun<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">boundGetValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 29</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>demo2</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * obj.getValue() 返回的是一个匿名函数
  * obj.getValue()() 立即执行函数
  * 匿名函数上下文执行环境具有全局性，所以 this 通常指向 window
- */
-this.value = 20;
+ */</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
 
-let obj = {
-  value: 29,
-  getValue:function () {
-    return function () {
-      return this.value
-    }.bind(this);
-  }
-}
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">29</span><span class="token punctuation">,</span>
+  getValue<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-obj.getValue()() // 20
-
-
-
-// 利用bind我们可以使匿名函数的 this 指针指向当前对象（当然还有很多方法比如在匿名函数内增加变量 _this = this）
-this.value = 20;
-
-let obj = {
-  value: 29,
-  getValue:function () {
-    return function () {
-      return this.value
-    }.bind(this);
-  }
-}
-
-obj.getValue()() // 29
+obj<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 20</span>
 
 
-// 当然要是改变上述 this 指针不只用 bind 可以如下方法(还有很多方法 比如 apply call)
-this.value = 20;
 
-let obj = {
-  value: 29,
-  getValue:function () {
-    let _this = this;
-    return function () {
-      return _this.value
-    }
-  }
-}
+<span class="token comment" spellcheck="true">// 利用bind我们可以使匿名函数的 this 指针指向当前对象（当然还有很多方法比如在匿名函数内增加变量 _this = this）</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
 
-obj.getValue()() // 29
-</code></pre><h3 id="作为偏函数使用"><a href="#作为偏函数使用" class="headerlink" title="作为偏函数使用"></a>作为偏函数使用</h3><p>使一个函数拥有预设的初始参数，这就是偏函数。比如函数A已经拥有参数或者变量，此时我们通过调用函数A，产生函数B，我们就说B为偏函数</p>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">29</span><span class="token punctuation">,</span>
+  getValue<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+obj<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 29</span>
+
+
+<span class="token comment" spellcheck="true">// 当然要是改变上述 this 指针不只用 bind 可以如下方法(还有很多方法 比如 apply call)</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">29</span><span class="token punctuation">,</span>
+  getValue<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> _this <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> _this<span class="token punctuation">.</span>value
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+obj<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 29</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="作为偏函数使用"><a href="#作为偏函数使用" class="headerlink" title="作为偏函数使用"></a>作为偏函数使用</h3><p>使一个函数拥有预设的初始参数，这就是偏函数。比如函数A已经拥有参数或者变量，此时我们通过调用函数A，产生函数B，我们就说B为偏函数</p>
 <p>在这里我们不展开说明偏函数，柯里化一些函数式编程的概念，在 <strong>JS 高级系列</strong> 函数式编程中会有详细介绍</p>
-<pre><code>/**
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * 插入到目标函数的参数列表的开始位置
  * 传递给绑定函数的参数会跟在它们后面
- */
-function list() {
-  return Array.prototype.slice.call(arguments);
-}
+ */</span>
+<span class="token keyword">function</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 偏函数
-let listArr = list.bind(null, 28);
+<span class="token comment" spellcheck="true">// 偏函数</span>
+<span class="token keyword">let</span> listArr <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console.log(listArr()); // [28]
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">listArr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [28]</span>
 
-console.log(listArr(1, 2, 3)); // [28, 1, 2, 3]
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">listArr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [28, 1, 2, 3]</span>
 
 
-/**
+<span class="token comment" spellcheck="true">/**
  * 多次 bind 无效 只能执行一次
  * bind 内部 使用call apply 实现
- */
+ */</span>
 
-function bar () {
-  console.log(this.value);
-}
+<span class="token keyword">function</span> bar <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let foo = {
-  value: 1
-}
+<span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
 
-let foo1 = {
-  value: 2
-}
+<span class="token keyword">let</span> foo1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
 
-let func = bar.bind(foo).bind(foo1);
-console.log(func()); // 1
-</code></pre><h3 id="模拟第一步"><a href="#模拟第一步" class="headerlink" title="模拟第一步"></a>模拟第一步</h3><p>通过上面的应用我们实现 bind 有几个条件</p>
+<span class="token keyword">let</span> func <span class="token operator">=</span> bar<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>foo1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="模拟第一步"><a href="#模拟第一步" class="headerlink" title="模拟第一步"></a>模拟第一步</h3><p>通过上面的应用我们实现 bind 有几个条件</p>
 <ul>
 <li>bind 会返回一个新的函数</li>
 <li>可以传递任意参数</li>
 <li>绑定 bind 的函数可以有返回值</li>
 </ul>
-<pre><code>Function.prototype.newBind = function (context) {
-  var _this = this;
-  // 获取 bind 的参数，如上面偏函数的例子
-  var _args = Array.prototype.slice.call(arguments, 1);
-  // 返回新函数
-  return function () {
-    // bind 返回函数传入的参数
-    var _bindArgs = Array.prototype.slice.call(arguments);
-    // 合并参数返回
-    return self.apply(context, _args.concat(_bindArgs));
-  }
-}
-</code></pre><h3 id="模拟第二步"><a href="#模拟第二步" class="headerlink" title="模拟第二步"></a>模拟第二步</h3><p>通过第一步其实我们已经模拟了 bind 的大部分功能，但是在 JS 中也可以把函数当成构造函数来用 可以使用 new 关键字， 这个时候 bind 绑定的函数的 this 就会失效，因为在构造函数中 this 永远指向的是它的实例，关于 new 会在下篇文章中作出解释<br></p>
+<pre class="line-numbers language-js"><code class="language-js">Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>newBind <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> _this <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 获取 bind 的参数，如上面偏函数的例子</span>
+  <span class="token keyword">var</span> _args <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 返回新函数</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// bind 返回函数传入的参数</span>
+    <span class="token keyword">var</span> _bindArgs <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 合并参数返回</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> _args<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>_bindArgs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="模拟第二步"><a href="#模拟第二步" class="headerlink" title="模拟第二步"></a>模拟第二步</h3><p>通过第一步其实我们已经模拟了 bind 的大部分功能，但是在 JS 中也可以把函数当成构造函数来用 可以使用 new 关键字， 这个时候 bind 绑定的函数的 this 就会失效，因为在构造函数中 this 永远指向的是它的实例，关于 new 会在下篇文章中作出解释<br></p>
 <ul>
 <li>通过修改返回的函数的原型，来改变 this 指向问题</li>
 <li>调用 bind 一定是函数，否则提示错误</li>
 </ul>
-<pre><code>Function.prototype.newBind  = function (context) {
+<pre class="line-numbers language-js"><code class="language-js">Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>newBind  <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  // 提示错误信息
-  if (typeof this != &#39;function&#39;) {
-    throw new TypeError(&#39;Function.prototype.bind - what is trying to be bound is not callable&#39;);
-  }
+  <span class="token comment" spellcheck="true">// 提示错误信息</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">this</span> <span class="token operator">!=</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'Function.prototype.bind - what is trying to be bound is not callable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  var _this = this;
+  <span class="token keyword">var</span> _this <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
 
-  // 获取参数
-  var _args = Array.prototype.slice.call(arguments, 1);
+  <span class="token comment" spellcheck="true">// 获取参数</span>
+  <span class="token keyword">var</span> _args <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  // 利用空函数来防止修改绑定函数的原型，关于 prototype 请查看 prototype 章节
-  var _fNOP = function () {};
+  <span class="token comment" spellcheck="true">// 利用空函数来防止修改绑定函数的原型，关于 prototype 请查看 prototype 章节</span>
+  <span class="token keyword">var</span> _fNOP <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-  // bind 返回的新函数
-  var _fBound = function () {
-    var _bindArgs = Array.prototype.slice.call(arguments);
-    // 如果返回的 _fBound 被当做 new 的构造函数调用
-    return _this.apply(this instanceof _fBound ? this : context, args.concat(_bindArgs));
-  }
+  <span class="token comment" spellcheck="true">// bind 返回的新函数</span>
+  <span class="token keyword">var</span> _fBound <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> _bindArgs <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 如果返回的 _fBound 被当做 new 的构造函数调用</span>
+    <span class="token keyword">return</span> _this<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token keyword">instanceof</span> <span class="token class-name">_fBound</span> <span class="token operator">?</span> <span class="token keyword">this</span> <span class="token punctuation">:</span> context<span class="token punctuation">,</span> args<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>_bindArgs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  // 让 _fBound 构造的实例继承绑定函数原型中的值，否则会修改绑定函数的原型的值
-  _fNOP.prototype = this.prototype;
-  _fBound.prototype = new _fNOP();
+  <span class="token comment" spellcheck="true">// 让 _fBound 构造的实例继承绑定函数原型中的值，否则会修改绑定函数的原型的值</span>
+  _fNOP<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+  _fBound<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">_fNOP</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  return _fBound;
-}
-</code></pre>
+  <span class="token keyword">return</span> _fBound<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1027,7 +1032,7 @@ console.log(func()); // 1
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

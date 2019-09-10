@@ -1,5 +1,5 @@
 ---
-title: 实现 promise
+title: promise
 date: 2019-6-11 12:32:09
 top: true
 cover: true
@@ -33,7 +33,7 @@ categories:
 1. 定义构造函数
 2. 判断一个参数是否为函数
 
-```
+```js
 /**
  * 封装判断参数是够是函数
  */
@@ -56,7 +56,7 @@ function Promise(fn) {
 
 在内部定义 resolve 方法作为参数传到 fn 中，fn 调用成功后会调用 resolve 方法，之后在执行 then 中注册的回调函数
 
-```
+```js
 /**
  * 定义构造函数
  * @param {*} fn 
@@ -85,7 +85,7 @@ function Promise(fn) {
 
 调用例子
 
-```
+```js
 function request () {
   return new Promise(function(resolve){
     if (true) {
@@ -110,7 +110,7 @@ success
 
 ### 链式语法及队列管理
 
-```
+```js
 function Promise (fn) {
   
   var _isFunction = Object.prototype.toString.call(fn) === '[object Function]';
@@ -154,7 +154,7 @@ Promise 对象有三种状态 <br/>
 
 我们加入上面的状态并串行Promise
 
-```
+```js
 function Promise (fn) {
   
   function _isFunction (func) {
@@ -210,7 +210,7 @@ function Promise (fn) {
 
 在异步操作中，操作可能失败，执行失败的回调函数，上面已经说到从 pending 变为 rejected 过程是失败的过程可以执行回调函数 reject()
 
-```
+```js
 function Promise(fn) {
 
   /**
@@ -327,7 +327,7 @@ function Promise(fn) {
 
 实现Promise.all函数
 
-```
+```js
 /**
  * Promise.all
  * 接收一个元素为 Promise 对象的数组作为参数
@@ -367,7 +367,7 @@ function gen(length, resolve) {
 
 实现Promise.race函数
 
-```
+```js
 /**
  * Promise.race
  * 接收一个元素为 Promise 对象的数组作为参数
@@ -394,7 +394,7 @@ Promise.race = function(promiseArr) {
 
 
 实现 catch 
-```
+```js
 /**
  * 链式写法中可以捕获前面then中发送的异常
  */
@@ -415,7 +415,7 @@ function Promise () {
 经过上面的几个步骤我们基本实现了 promise 的几个重要特性，下面我们将代码整理一下
 
 
-```
+```js
 /*
  * @Description: promise 
  * @Author: renbo

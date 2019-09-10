@@ -433,7 +433,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    507
+                    505
                 </div>
                 
 
@@ -465,34 +465,36 @@
 <li>I/O：与系统其他部分通信的功能。如存储系统日志，网络等</li>
 </ol>
 <p>纯函数都是关于映射的所以对于相同的输入，永远会得到相同的输出，而且没有任何可观察的副作用，也不依赖外部环境的状态。</p>
-<pre><code>// 纯函数
-const double = x =&gt; x * 2;
-console.log（double（5））
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 纯函数</span>
+<span class="token keyword">const</span> double <span class="token operator">=</span> x <span class="token operator">=</span><span class="token operator">></span> x <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span>log（double（<span class="token number">5</span>））
 
-// 不纯
-let val = 2;
-const double = x =&gt; x * val;
-console.log（double（5））
+<span class="token comment" spellcheck="true">// 不纯</span>
+<span class="token keyword">let</span> val <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> double <span class="token operator">=</span> x <span class="token operator">=</span><span class="token operator">></span> x <span class="token operator">*</span> val<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span>log（double（<span class="token number">5</span>））
 
-// 不纯
-Math.random()
-Math.random()</code></pre><h3 id="函数式编程-纯函数"><a href="#函数式编程-纯函数" class="headerlink" title="函数式编程-纯函数"></a>函数式编程-纯函数</h3><p>纯函数的优点<br></p>
+<span class="token comment" spellcheck="true">// 不纯</span>
+Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="函数式编程-纯函数"><a href="#函数式编程-纯函数" class="headerlink" title="函数式编程-纯函数"></a>函数式编程-纯函数</h3><p>纯函数的优点<br></p>
 <ol>
 <li>独立于外部状态，所以不会受外部全局环境的影响而产生的错误或者副作用</li>
 <li>由于其独立，所以易于重构和重组和重用，使程序更加灵活</li>
 </ol>
 <h3 id="函数式编程-幂等性"><a href="#函数式编程-幂等性" class="headerlink" title="函数式编程-幂等性"></a>函数式编程-幂等性</h3><p>执行多次所产生的影响均与一次执行的影响相同，也就是说执行一次和执行多次对系统内部的状态影响是一样的 <br></p>
-<pre><code>class Person {
-  constructor () {
-    this.name = name;
-  },
-  sayName () {
-    console.log(my name is + this.name);
-  } 
-}
-var person = new Person(zhangsan)
-person.sayName();
-person.sayName();</code></pre><h3 id="纯函数和幂等性的区别"><a href="#纯函数和幂等性的区别" class="headerlink" title="纯函数和幂等性的区别"></a>纯函数和幂等性的区别</h3><ol>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  constructor <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  sayName <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>my name is <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>zhangsan<span class="token punctuation">)</span>
+person<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+person<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="纯函数和幂等性的区别"><a href="#纯函数和幂等性的区别" class="headerlink" title="纯函数和幂等性的区别"></a>纯函数和幂等性的区别</h3><ol>
 <li>法调用多次对内部的状态影响是一样的，则这么方法就具有幂等性，在函数式编程中，纯函数也具有幂等性，但具有幂等性的函数却不一定是纯函数。</li>
 <li>纯函数主要强调相同的输入，多次调用，输出也相同且无副作用，而幂等主要强调多次调用，对内部的状态的影响是一样的，调用返回值可能不同。</li>
 </ol>
@@ -911,7 +913,7 @@ var result = subtract(multipl
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

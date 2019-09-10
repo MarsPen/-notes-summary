@@ -432,7 +432,7 @@ console.lo">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    328
+                    330
                 </div>
                 
 
@@ -457,49 +457,53 @@ console.lo">
             <div id="articleContent">
                 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>js的关键字，在执行上下文环境时被绑定</p>
 <h3 id="绑定规则"><a href="#绑定规则" class="headerlink" title="绑定规则"></a>绑定规则</h3><p>默认绑定、隐式绑定、apply,call、new绑定。优先级从低到高</p>
-<h3 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h3><pre><code>console.log(this); //window
-function fun() {
-console.log(this.a) // 非严格模式下1 ，严格模式下undefined
-}
-var a = 1;
-fun(); </code></pre><h3 id="隐式调用"><a href="#隐式调用" class="headerlink" title="隐式调用"></a>隐式调用</h3><p>作为对象方法调用，this 指代上下文对象</p>
-<pre><code>function fun() { 
-  console.log( this.a );
-}
-var a = 1;
-var obj = { 
-  a: 2,
-  fun: fun 
-};
-obj.fun(); // 2
-var c = obj.fun;
-console.log(c()); // 1</code></pre><h3 id="apply-call"><a href="#apply-call" class="headerlink" title="apply,call"></a>apply,call</h3><p>改变对象的prototype关联对象来改变this,对于null，undefined绑定会失效</p>
-<pre><code>function fun() { 
-  console.log( this.a );
-}
-var a = 1;
-var obj1 = { 
-  a: 2,
-};
-var obj2 = { 
-  a: 3,
-};
-fun.call( obj1 ); // 2
-fun.call( obj2 ); // 3
-fun.call( null ); // 1
-fun.call( undefined ); // 1</code></pre><h3 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h3><p>this 指代new 出的对象<br>使用new来调用函数，会自动执行如下操作：</p>
+<h3 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h3><pre class="line-numbers language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//window</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 非严格模式下1 ，严格模式下undefined</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="隐式调用"><a href="#隐式调用" class="headerlink" title="隐式调用"></a>隐式调用</h3><p>作为对象方法调用，this 指代上下文对象</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  fun<span class="token punctuation">:</span> fun 
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> obj<span class="token punctuation">.</span>fun<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="apply-call"><a href="#apply-call" class="headerlink" title="apply,call"></a>apply,call</h3><p>改变对象的prototype关联对象来改变this,对于null，undefined绑定会失效</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  a<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> obj1 <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
+fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> obj2 <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3</span>
+fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> <span class="token keyword">null</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
+fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> undefined <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h3><p>this 指代new 出的对象<br>使用new来调用函数，会自动执行如下操作：</p>
 <ul>
 <li>创建一个全新的对象。</li>
 <li>这个新对象会被执行[[原型]]连接。</li>
 <li>这个新对象会绑定到函数调用的this。</li>
-<li>如果函数没有返回其他对象,那么new表达式中的函数调用会自动返回这个新对象。<pre><code>function fun(a) { 
-  this.a = a;
-}
-var a = 1;
-var obj = new fun(3);
-console.log(obj.a); // 3
-var obj1 = new fun(4);
-console.log(obj1.a); // 4</code></pre></li>
+<li>如果函数没有返回其他对象,那么new表达式中的函数调用会自动返回这个新对象。<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fun</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fun</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <h3 id="es6中箭头函数this指向"><a href="#es6中箭头函数this指向" class="headerlink" title="es6中箭头函数this指向"></a>es6中箭头函数this指向</h3><p>  取决于外层（函数或全局）作用域。</p>
 
@@ -921,7 +925,7 @@ console.log(obj1.a); // 4</code></pre></li>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

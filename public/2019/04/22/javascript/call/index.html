@@ -429,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    720
+                    711
                 </div>
                 
 
@@ -453,127 +453,134 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>谈起 call 和 apply 这两个 Function.prototype 上的方法可能很熟悉了，它在继承，改变this指针上有很多的应用场景。接下来我们简单的来重新回忆一下 call 和 apply 这两个函数的功能 <br></p>
-<h3 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h3><pre><code>let obj = {
-  value : 20
-}
+<h3 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value <span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span>
 
-function fun () {
-  console.log(this.value)
-}
+<span class="token keyword">function</span> fun <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-fun.call(obj) //20
-</code></pre><h3 id="例子二"><a href="#例子二" class="headerlink" title="例子二"></a>例子二</h3><pre><code>document.getElementById( &#39;element&#39; ).onclick = function(){
-  let func = function(){ 
-      console.log ( this ); // 指向element元素
-  } 
-  func.call(this);
-}; </code></pre><h3 id="例子三"><a href="#例子三" class="headerlink" title="例子三"></a>例子三</h3><pre><code>function FunA (val) {
-  this.value = val;
-}
+fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//20</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="例子二"><a href="#例子二" class="headerlink" title="例子二"></a>例子二</h3><pre class="line-numbers language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span> <span class="token string">'element'</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>onclick <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> func <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+      console<span class="token punctuation">.</span>log <span class="token punctuation">(</span> <span class="token keyword">this</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 指向element元素</span>
+  <span class="token punctuation">}</span> 
+  func<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="例子三"><a href="#例子三" class="headerlink" title="例子三"></a>例子三</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> FunA <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> val<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-function FunB () {
-  FunA.apply(this, arguments);
-}
+<span class="token keyword">function</span> FunB <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  FunA<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-FunB.prototype.getValue = function () {
-  return this.value
-}
+FunB<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getValue <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value
+<span class="token punctuation">}</span>
 
-let funb = new FunB(20);
-console.log(funb.getValue()) //20</code></pre><p>经过上面的例子我们可以直观的知道call apply 的作用大部分都是用作改变this的指针。那么接下来我们来模拟 call apply 实现简单的一下这两个函数<br></p>
+<span class="token keyword">let</span> funb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FunB</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>funb<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>经过上面的例子我们可以直观的知道call apply 的作用大部分都是用作改变this的指针。那么接下来我们来模拟 call apply 实现简单的一下这两个函数<br></p>
 <h3 id="模拟实现第一步"><a href="#模拟实现第一步" class="headerlink" title="模拟实现第一步"></a>模拟实现第一步</h3><p>实现思路<br><br>1、将函数设为对象的属性用来改变 this 指向<br><br>2、调用对应函数<br><br>3、删除对象的函数<br></p>
 <p>接下来我们改造一下例子一的函数<br></p>
-<pre><code>let obj = {
-  value: 20,
-  fun: function () {
-    this.value
-  }
-}
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  fun<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>value
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-obj.fun() // 20
-delete obj.fun
+obj<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 20</span>
+<span class="token keyword">delete</span> obj<span class="token punctuation">.</span>fun
 
-console.log(obj) // {value: 20}</code></pre><p>接下来简单的把上面的函数封装一下<br></p>
-<pre><code>Function.prototype.newCall = function (context) {
-  context.fn = this;
-  context.fn();
-  delete context.fn;
-}
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// {value: 20}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来简单的把上面的函数封装一下<br></p>
+<pre class="line-numbers language-js"><code class="language-js">Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>newCall <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  context<span class="token punctuation">.</span>fn <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  context<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">delete</span> context<span class="token punctuation">.</span>fn<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 通过例子一测试
-let obj = {
-  value : 20
-}
+<span class="token comment" spellcheck="true">// 通过例子一测试</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value <span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span>
 
-function fun () {
-  console.log(this.value)
-}
+<span class="token keyword">function</span> fun <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-fun.newCall(obj) // 20</code></pre><h3 id="模拟实现第二步"><a href="#模拟实现第二步" class="headerlink" title="模拟实现第二步"></a>模拟实现第二步</h3><p>第一步的我们只实现了基础。没有考虑参数的情况。call，apply 的基本区别就是在参数上 call 参数数量不确定，apply 只接受两个参数。接下来我们继续优化上面的例子</p>
+fun<span class="token punctuation">.</span><span class="token function">newCall</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="模拟实现第二步"><a href="#模拟实现第二步" class="headerlink" title="模拟实现第二步"></a>模拟实现第二步</h3><p>第一步的我们只实现了基础。没有考虑参数的情况。call，apply 的基本区别就是在参数上 call 参数数量不确定，apply 只接受两个参数。接下来我们继续优化上面的例子</p>
 <p>1、将函数设为对象的属性用来改变 this 指向<br><br>2、调用对应函数<br><br>3、删除对象的函数<br><br>4、取出不定长的参数放到执行的函数里面<br></p>
-<pre><code>Function.prototype.newCall = function (context, ...args) {
+<pre class="line-numbers language-js"><code class="language-js">Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>newCall <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  // 如果传入参数 this 为 null，则默认为当前宿主环境
-  let ec = typeof window === &#39;object&#39; ? window : global;
+  <span class="token comment" spellcheck="true">// 如果传入参数 this 为 null，则默认为当前宿主环境</span>
+  <span class="token keyword">let</span> ec <span class="token operator">=</span> <span class="token keyword">typeof</span> window <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">?</span> window <span class="token punctuation">:</span> global<span class="token punctuation">;</span>
 
-  // 防止方法冲突覆盖
-  let fn = Symbol();
-  context = context || ec;
+  <span class="token comment" spellcheck="true">// 防止方法冲突覆盖</span>
+  <span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  context <span class="token operator">=</span> context <span class="token operator">||</span> ec<span class="token punctuation">;</span>
 
-  // 改变 this
-  context[fn] = this;
+  <span class="token comment" spellcheck="true">// 改变 this</span>
+  context<span class="token punctuation">[</span>fn<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
 
-  // 将参数放入函数内
-  let result = context[fn](...args);
+  <span class="token comment" spellcheck="true">// 将参数放入函数内</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> context<span class="token punctuation">[</span>fn<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  // 删除对象中的函数
-  delete context[fn];
+  <span class="token comment" spellcheck="true">// 删除对象中的函数</span>
+  <span class="token keyword">delete</span> context<span class="token punctuation">[</span>fn<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-  return result;
-}
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 测试一下
-let obj = {
-  value: 1
-};
-function bar(name, age) {
-  console.log(name);
-  console.log(age);
-  console.log(this.value);
-}
+<span class="token comment" spellcheck="true">// 测试一下</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-bar.newCall(obj, &#39;renbo&#39;, 27); </code></pre><p>通过以上 call 的实现我们对apply的实现应该说也清楚了， 上述说过call 和 apply 的区别就在与参数上面，通过ES6实现的方法实际上 call, apply 一样<br></p>
-<h3 id="模拟实现-apply"><a href="#模拟实现-apply" class="headerlink" title="模拟实现 apply"></a>模拟实现 apply</h3><pre><code>Function.prototype.newApply = function (context, args) {
-  // 如果传入参数 this 为 null，则默认为当前宿主环境
-  let ec = typeof window === &#39;object&#39; ? window : global;
+bar<span class="token punctuation">.</span><span class="token function">newCall</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'renbo'</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过以上 call 的实现我们对apply的实现应该说也清楚了， 上述说过call 和 apply 的区别就在与参数上面，通过ES6实现的方法实际上 call, apply 一样<br></p>
+<h3 id="模拟实现-apply"><a href="#模拟实现-apply" class="headerlink" title="模拟实现 apply"></a>模拟实现 apply</h3><pre class="line-numbers language-js"><code class="language-js">Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>newApply <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 如果传入参数 this 为 null，则默认为当前宿主环境</span>
+  <span class="token keyword">let</span> ec <span class="token operator">=</span> <span class="token keyword">typeof</span> window <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">?</span> window <span class="token punctuation">:</span> global<span class="token punctuation">;</span>
 
-  // 防止方法冲突覆盖
-  let fn = Symbol();
-  context = context || ec;
+  <span class="token comment" spellcheck="true">// 防止方法冲突覆盖</span>
+  <span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  context <span class="token operator">=</span> context <span class="token operator">||</span> ec<span class="token punctuation">;</span>
 
-  // 改变 this
-  context[fn] = this;
+  <span class="token comment" spellcheck="true">// 改变 this</span>
+  context<span class="token punctuation">[</span>fn<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
 
-  // 将参数放入函数内
-  let result = context[fn](...args);
+  <span class="token comment" spellcheck="true">// 将参数放入函数内</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> context<span class="token punctuation">[</span>fn<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  // 删除对象中的函数
-  delete context[fn];
+  <span class="token comment" spellcheck="true">// 删除对象中的函数</span>
+  <span class="token keyword">delete</span> context<span class="token punctuation">[</span>fn<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-  return result;
-}
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 测试一下
-let obj = {
-  value: 1
-};
-function bar(name, age) {
-  console.log(name);
-  console.log(age);
-  console.log(this.value);
-}
+<span class="token comment" spellcheck="true">// 测试一下</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-bar.newApply(obj, [&#39;renbo&#39;, 27]); </code></pre>
+bar<span class="token punctuation">.</span><span class="token function">newApply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'renbo'</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -742,9 +749,9 @@ bar.newApply(obj, [&#39;renbo&#39;, 27]); </code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="实现 new 运算符">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="new 运算符">
                         
-                        <span class="card-title">实现 new 运算符</span>
+                        <span class="card-title">new 运算符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -797,9 +804,9 @@ f
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="bind 函数的实现">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="bind 函数">
                         
-                        <span class="card-title">bind 函数的实现</span>
+                        <span class="card-title">bind 函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -994,7 +1001,7 @@ let obj
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">62.4k</span>
+            <span class="white-color">66.7k</span>
             
 
             <br>

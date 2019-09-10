@@ -1,5 +1,5 @@
 ---
-title: Vo Ao
+title: vo 和 ao
 date: 2019-2-20 12:32:09
 top: false
 cover: false
@@ -36,7 +36,7 @@ js代码虽然是逐行向下执行的，但执行的时候分为两个步骤**
 
   demo1
 
-     ```
+     ```js
      a = 'renbo';
      var a;
      console.log( a ); // renbo
@@ -48,7 +48,7 @@ js代码虽然是逐行向下执行的，但执行的时候分为两个步骤**
      ```
   demo2
 
-      ```
+      ```js
       function demo() {
         a = 'renbo';
         console.log(a);
@@ -71,7 +71,7 @@ js代码虽然是逐行向下执行的，但执行的时候分为两个步骤**
       ``` 
  ## 函数提升
   
-   ```
+   ```js
    // 两种函数的书写方式
    var fn = function fn(){} //函数表达式
    function fn(){} //函数声明方式 
@@ -79,7 +79,7 @@ js代码虽然是逐行向下执行的，但执行的时候分为两个步骤**
 
    只有声明方式的函数才会有函数提升
    
-   ```
+   ```js
     test();
     function test(){
       console.log( a );

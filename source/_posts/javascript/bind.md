@@ -1,5 +1,5 @@
 ---
-title: bind 函数的实现
+title: bind 函数
 date: 2019-4-21 12:32:09
 top: false
 cover: false
@@ -20,7 +20,7 @@ bind 方法其实和 call apply 功能上差不多，只不过 bind() 方法会�
 
 demo1
 
-```
+```js
 this.value = 20;
 
 let obj = {
@@ -44,7 +44,7 @@ boundGetValue(); // 29
 
 demo2
 
-```
+```js
 /**
  * obj.getValue() 返回的是一个匿名函数
  * obj.getValue()() 立即执行函数
@@ -104,7 +104,7 @@ obj.getValue()() // 29
 在这里我们不展开说明偏函数，柯里化一些函数式编程的概念，在 **JS 高级系列** 函数式编程中会有详细介绍
 
 
-```
+```js
 /**
  * 插入到目标函数的参数列表的开始位置
  * 传递给绑定函数的参数会跟在它们后面
@@ -151,7 +151,7 @@ console.log(func()); // 1
 - 可以传递任意参数
 - 绑定 bind 的函数可以有返回值
 
-```
+```js
 Function.prototype.newBind = function (context) {
   var _this = this;
   // 获取 bind 的参数，如上面偏函数的例子
@@ -174,7 +174,7 @@ Function.prototype.newBind = function (context) {
 - 通过修改返回的函数的原型，来改变 this 指向问题
 - 调用 bind 一定是函数，否则提示错误
 
-```
+```js
 Function.prototype.newBind  = function (context) {
 
   // 提示错误信息
