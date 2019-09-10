@@ -81,7 +81,7 @@ https://www.studyfe.cn/
 
 ### vue 
 <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue 原理之主线流程</a><br/>
-<a href="javascript:void(0)">vue 原理之响应式</a><br/>
+<a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue 原理之响应式</a><br/>
 <a href="javascript:void(0)">vue 原理之组件更新（正在整理）</a><br/>
 <a href="javascript:void(0)">vue 原理之编译（parse、optimize、codegen）（未完成）</a><br/>
 <a href="javascript:void(0)">vue 原理之组件化（未完成）</a><br/>
