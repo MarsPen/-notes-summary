@@ -76,7 +76,7 @@ set 提供 setter 方法，当我们对 p.name 做修改的时候会触发 sette
 
 ### initState <hr>
 
-在 vue _init 阶段我们还执行了 initState(vm) 方法，我们上篇文章写到这个方法主要是对 props、methods、data、computed 和 wathcer 等属性做了初始化操作,在 `src/core/instance/state.js 中定义 
+在 vue _init 阶段我们还执行了 initState(vm) 方法，我们上篇文章写到这个方法主要是对 props、methods、data、computed 和 wathcer 等属性做了初始化操作,在 `src/core/instance/state.js 中定义`
 
 ```js
 export function initState (vm: Component) {
@@ -254,7 +254,7 @@ vm._data.xxx -> vm.xxx
 
 ### observe<hr>
 
-上面在 initData中调用了 observe 函数，进入文件 src/core/observer/index.js 中
+上面在 initData中调用了 observe 函数，进入文件 `src/core/observer/index.js` 中
 
 ```js
 **
@@ -434,7 +434,7 @@ defineReactive 函数
 
 ## 依赖收集
 
-通过响应式对象我们知道在 defineReactive 函数内的 Object.defineProperty 定义的 get 内部实例了
+通过响应式对象我们知道在 defineReactive 函数内的 Object.defineProperty 定义的 get 内部实例了 Dep
 
 ### dep<hr>
 

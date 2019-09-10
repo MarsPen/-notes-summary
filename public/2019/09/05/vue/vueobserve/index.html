@@ -497,7 +497,7 @@ input<span class="token punctuation">.</span><span class="token function">addEve
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>set 提供 setter 方法，当我们对 p.name 做修改的时候会触发 setter 方法， 我们访问 sayHello 的时候会触发 getter 方法，取到对应的值，那么一旦对象拥有了 getter 和 setter，就把这个对象变为自动存取的响应对象</p>
-<h3 id="initState"><a href="#initState" class="headerlink" title="initState "></a>initState <hr></h3><p>在 vue _init 阶段我们还执行了 initState(vm) 方法，我们上篇文章写到这个方法主要是对 props、methods、data、computed 和 wathcer 等属性做了初始化操作,在 `src/core/instance/state.js 中定义 </p>
+<h3 id="initState"><a href="#initState" class="headerlink" title="initState "></a>initState <hr></h3><p>在 vue _init 阶段我们还执行了 initState(vm) 方法，我们上篇文章写到这个方法主要是对 props、methods、data、computed 和 wathcer 等属性做了初始化操作,在 <code>src/core/instance/state.js 中定义</code></p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">function</span> initState <span class="token punctuation">(</span>vm<span class="token punctuation">:</span> Component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   vm<span class="token punctuation">.</span>_watchers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
   <span class="token keyword">const</span> opts <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options
@@ -640,7 +640,7 @@ methods<span class="token punctuation">:</span> <span class="token punctuation">
 <p>通过 Object.defineProperty 把 target[sourceKey][key] 的读写变成了对 target[key] 的读写，所以对于 props 和 data 而言就是</p>
 <pre class="line-numbers language-js"><code class="language-js">vm<span class="token punctuation">.</span>_props<span class="token punctuation">.</span>xxx <span class="token operator">-</span><span class="token operator">></span> vm<span class="token punctuation">.</span>xxx
 vm<span class="token punctuation">.</span>_data<span class="token punctuation">.</span>xxx <span class="token operator">-</span><span class="token operator">></span> vm<span class="token punctuation">.</span>xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="observe"><a href="#observe" class="headerlink" title="observe"></a>observe<hr></h3><p>上面在 initData中调用了 observe 函数，进入文件 src/core/observer/index.js 中</p>
+<h3 id="observe"><a href="#observe" class="headerlink" title="observe"></a>observe<hr></h3><p>上面在 initData中调用了 observe 函数，进入文件 <code>src/core/observer/index.js</code> 中</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token operator">**</span>
  <span class="token operator">*</span> Attempt to create an observer instance <span class="token keyword">for</span> a value<span class="token punctuation">,</span>
  <span class="token operator">*</span> returns the <span class="token keyword">new</span> <span class="token class-name">observer</span> <span class="token keyword">if</span> successfully observed<span class="token punctuation">,</span>
@@ -799,7 +799,7 @@ vm<span class="token punctuation">.</span>_data<span class="token punctuation">.
 <img src="/images/vue-observer.png">
 
 <p>通过上面的逻辑和总结发现响应式对象的核心其实就是利用 Object.defineProperty 给数据添加了 getter 和 setter，来进行依赖收集<code>dep.depend()</code> 和派发更新 <code>dep.notify()</code></p>
-<h2 id="依赖收集"><a href="#依赖收集" class="headerlink" title="依赖收集"></a>依赖收集</h2><p>通过响应式对象我们知道在 defineReactive 函数内的 Object.defineProperty 定义的 get 内部实例了</p>
+<h2 id="依赖收集"><a href="#依赖收集" class="headerlink" title="依赖收集"></a>依赖收集</h2><p>通过响应式对象我们知道在 defineReactive 函数内的 Object.defineProperty 定义的 get 内部实例了 Dep</p>
 <h3 id="dep"><a href="#dep" class="headerlink" title="dep"></a>dep<hr></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> dep <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dep</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 dep<span class="token punctuation">.</span><span class="token function">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>前文说过 Dep 是整个 getter 依赖收集的核心，打开文件在 <code>src/core/observer/dep.js</code></p>
