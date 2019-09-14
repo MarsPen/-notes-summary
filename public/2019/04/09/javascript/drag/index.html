@@ -4,11 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="装饰器, 前端 typescript php js node html html5 css linux vue react">
+    <meta name="keywords" content="原生拖拽, 前端 typescript php js node html html5 css linux vue react">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
-    <meta name="description" content="装饰器是一种为类声明和成员添加注释和元编程语法的方法，用于在编译时对类、类的方法、类的属性、类的方法的参数进行处理，通俗的讲就是在原有代码外层包装了一层处理逻辑，这样就可以在不改变原方法、函数等逻辑功能的基础上增加额外的处理行为
-使用装饰器">
+    <meta name="description" content="在实际开发中我们经常会遇到关于元素拖拽的场景，那么在我们今天实现一个简单的拖拽元素功能
+css   * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .demo-box {
+      po">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>装饰器 | </title>
+    <title>原生拖拽 | </title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -274,13 +280,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        装饰器
+                        原生拖拽
                     </div>
                 </div>
             </div>
@@ -391,8 +397,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/TypeScript/" target="_blank">
-                            <span class="chip bg-color">TypeScript</span>
+                        <a href="/tags/JavaScript/" target="_blank">
+                            <span class="chip bg-color">JavaScript</span>
                         </a>
                         
                     </div>
@@ -403,8 +409,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                            TypeScript
+                        <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                            JavaScript
                         </a>
                         
                     </div>
@@ -415,7 +421,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-18
+                    2019-04-09
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -429,14 +435,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    381
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    1 分
                 </div>
                 
                 
@@ -452,218 +458,94 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>装饰器是一种为类声明和成员添加注释和元编程语法的方法，用于在编译时对类、类的方法、类的属性、类的方法的参数进行处理，通俗的讲就是在原有代码外层包装了一层处理逻辑，这样就可以在不改变原方法、函数等逻辑功能的基础上增加额外的处理行为</p>
-<h3 id="使用装饰器"><a href="#使用装饰器" class="headerlink" title="使用装饰器"></a><strong>使用装饰器</strong></h3><p>要启用装饰器功能需要开始experimentalDecorators选项，两种方式</p>
-<p>命令行</p>
-<pre><code>tsc --target ES5 --experimentalDecorators</code></pre><p>tsconfig.json配置</p>
-<pre><code>{
-    &quot;compilerOptions&quot;: {
-        &quot;target&quot;: &quot;ES5&quot;,
-        &quot;experimentalDecorators&quot;: true
-    }
-}</code></pre><h3 id="装饰器的简单应用"><a href="#装饰器的简单应用" class="headerlink" title="装饰器的简单应用"></a><strong>装饰器的简单应用</strong></h3><p>定义一个装饰器</p>
-<pre><code>function people (target) {
-  console.log(target)
-}
-</code></pre><p>在类中使用装饰器（@Decorator的语法是通过 @ 符号后边跟一个装饰器函数的引用）</p>
-<pre><code>@people
-class People {
-  constructor(){}
-} </code></pre><h3 id="装饰器工厂"><a href="#装饰器工厂" class="headerlink" title="装饰器工厂"></a>装饰器工厂</h3><p>解决在类中调用装饰器传参数的场景</p>
-<pre><code>// 装饰器工厂
-function people(name : string) {   
-  // 装饰器
-  return function(target){       
-    console.log(target);
-  }
-}
+                <p>在实际开发中我们经常会遇到关于元素拖拽的场景，那么在我们今天实现一个简单的拖拽元素功能</p>
+<h3 id="css"><a href="#css" class="headerlink" title="css "></a>css <hr></h3><pre class="line-numbers language-css"><code class="language-css">  <span class="token selector">* </span><span class="token punctuation">{</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-// 调用装饰器工厂
-@people(&#39;zhangsan&#39;)
-class People{
-  constructor(){}
-} </code></pre><h3 id="多个装饰器应用"><a href="#多个装饰器应用" class="headerlink" title="多个装饰器应用"></a>多个装饰器应用</h3><p>当在一个类上由多个装饰器调用的时候，类似于<a href="functionalCombination.md">函数组合</a></p>
-<p>定义多个装饰器</p>
-<pre><code>function decorator1() {
-  console.log(&quot;decorator1(): start&quot;);
-  return function (target) {
-    console.log(&quot;decorator1(): end&quot;);
-  }
-}
+    <span class="token selector"><span class="token class">.demo-box</span> </span><span class="token punctuation">{</span>
+      <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#ccc</span><span class="token punctuation">;</span>
+      <span class="token property">border</span><span class="token punctuation">:</span> solid <span class="token number">1</span>px <span class="token hexcode">#ccc</span><span class="token punctuation">;</span>
+      <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">5</span>px<span class="token punctuation">;</span>
+      <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+      <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="html"><a href="#html" class="headerlink" title="html"></a>html<hr></h3><pre class="line-numbers language-html"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>demo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>demo-box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>按住左键拖动<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="js"><a href="#js" class="headerlink" title="js "></a>js <hr></h3><pre class="line-numbers language-js"><code class="language-js">  window<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//用于确定是否是拖拽的对象</span>
+    <span class="token keyword">var</span> drag<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//鼠标位于目标元素上的时候距离目标元素的位置</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//取得元素</span>
+    <span class="token keyword">var</span> ele <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     *鼠标按事件
+     *@param  evt 事件形参
+     */</span>
+    ele<span class="token punctuation">.</span>onmousedown <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>evt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">//取得事件对象</span>
+      _event <span class="token operator">=</span> evt <span class="token operator">||</span> window<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//设置drag元素,计算当前位置</span>
+      _target <span class="token operator">=</span> _event<span class="token punctuation">.</span>target <span class="token operator">||</span> _event<span class="token punctuation">.</span>srcElement<span class="token punctuation">;</span>
+      x <span class="token operator">=</span> _event<span class="token punctuation">.</span>clientX <span class="token operator">-</span> _target<span class="token punctuation">.</span>offsetLeft<span class="token punctuation">;</span>
+      y <span class="token operator">=</span> _event<span class="token punctuation">.</span>clientY <span class="token operator">-</span> _target<span class="token punctuation">.</span>offsetTop<span class="token punctuation">;</span>
+      drag <span class="token operator">=</span> _target<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/**
+     *鼠标移动事件
+     * @param evt 事件形参
+     */</span>
+    document<span class="token punctuation">.</span>onmousemove <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>evt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">//确定鼠标是在目标元素上按下去后才开始移动</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>drag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        _event <span class="token operator">=</span> evt <span class="token operator">||</span> window<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//设置边界全局变量</span>
+        <span class="token keyword">var</span> _left <span class="token operator">=</span> _event<span class="token punctuation">.</span>clientX <span class="token operator">-</span> x<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> _top <span class="token operator">=</span> _event<span class="token punctuation">.</span>clientY <span class="token operator">-</span> y<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> _windowInnerWidth <span class="token operator">=</span> window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> _windowInnerHeight <span class="token operator">=</span> window<span class="token punctuation">.</span>innerHeight
+        <span class="token keyword">var</span> _dragOffWidth <span class="token operator">=</span> drag<span class="token punctuation">.</span>offsetWidth
+        <span class="token keyword">var</span> _dragOffHeight <span class="token operator">=</span> drag<span class="token punctuation">.</span>offsetHeight
+        <span class="token keyword">var</span> _windowWidth <span class="token operator">=</span> _windowInnerWidth <span class="token operator">-</span> _dragOffWidth
+        <span class="token keyword">var</span> _windowHeight <span class="token operator">=</span> _windowInnerHeight <span class="token operator">-</span> _dragOffHeight
 
-function decorator2() {
-    console.log(&quot;decorator2(): start&quot;);
-    return function (target) {
-      console.log(&quot;decorator2(): end&quot;);
-    }
-}</code></pre><p>调用装饰器</p>
-<pre><code>class C {
-  @decorator1()
-  @decorator2()
-  method() {}
-}</code></pre><p>输出结果为(可以看作组合函数调用 decorator1(decorator2()))</p>
-<pre><code>decorator1(): start
-decorator2(): start
-decorator2(): end
-decorator1(): end</code></pre><h3 id="类装饰器（Class）"><a href="#类装饰器（Class）" class="headerlink" title="类装饰器（Class）"></a>类装饰器（Class）</h3><ul>
-<li>类装饰器应用于类的构造函数，用于观察，修改或替换类定义 </li>
-<li>类会在class定义前调用，如果函数有返回值，它将使用提供的构造函数替换之前的构造函数</li>
-<li>函数接收一个参数 <code>constructor</code> 之前的构造函数</li>
-<li>如果返回新的构造函数，则必须维护原始原型</li>
-</ul>
-<p>我们定义一个类，继承原有的类并对这个类增加一些属性</p>
-<pre><code>// 定义类装饰器
-function personName&lt;T extends {new(...args:any[]):{}}&gt;(constructor:T){
-  return class extends constructor {
-    name = &quot;zhangsan&quot;;
-  }
-}
+        <span class="token comment" spellcheck="true">//控制拖拽物体的范围只能在浏览器视窗内，不允许出现滚动条  </span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>_left <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          _left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>_left <span class="token operator">></span> _windowWidth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          _left <span class="token operator">=</span> _windowWidth<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>_top <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          _top <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>_top <span class="token operator">></span> _windowHeight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          _top <span class="token operator">=</span> _windowHeight<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//设置样式</span>
+        drag<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cursor <span class="token operator">=</span> <span class="token string">'move'</span><span class="token punctuation">;</span>
+        drag<span class="token punctuation">.</span>style<span class="token punctuation">.</span>border <span class="token operator">=</span> <span class="token string">'dashed 1px red'</span><span class="token punctuation">;</span>
+        drag<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> _left <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+        drag<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> _top <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-// 使用类装饰器
-@personName
-class Person {
- public name: string;
-  constructor (name: string) {
-    this.name = name
-    console.log(`Hi, my name is ${this.name}`) // Hi, my name is wangwu
-  }
-}
+    <span class="token comment" spellcheck="true">/** 
+     * 松开鼠标事件
+     * @param evt 事件形参 
+     */</span>
+    document<span class="token punctuation">.</span>onmouseup <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>evt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>drag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//卸载样式</span>
+        drag<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cursor <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+        drag<span class="token punctuation">.</span>style<span class="token punctuation">.</span>border <span class="token operator">=</span> <span class="token string">'dashed 1px #ccc'</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      drag <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-console.log(new Person(&#39;wangwu&#39;)) // class_1 {name: &quot;zhangsan&quot;,__proto__:Person}</code></pre><h3 id="方法装饰器"><a href="#方法装饰器" class="headerlink" title="方法装饰器"></a>方法装饰器</h3><p>方法，属性，get、set访问器，都可以认为是类成员。所以被分为了Method Decorator、Accessor Decorator和Property Decorator 这三个参数 </p>
-<p>方法装饰只是一个方法声明之前声明，方法装饰器不能用于声明文件，重载或任何其他环境上下文（例如declare类中）</p>
-<p>方法装饰器的表达式将在运行时作为函数调用，具有以下三个参数：</p>
-<ul>
-<li>如果装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型</li>
-<li>装饰器挂载的成员名称</li>
-<li>方法成员的属性描述对象（Object.getOwnPropertyDescriptor 的返回值）</li>
-</ul>
-<p>所谓的访问器也就是有 get set 前缀的函数，方法是控制属性的赋值及取值，访问器装饰器和方法装饰器一样因为和下面要说到的属性装饰器一样都是类的成员具有三个参数</p>
-<p>Method Decorator、Accessor Decorator和Property Decorator<br>使用方法装饰器</p>
-<pre><code>class Greeter {
-  greeting: string;
-  constructor(message: string) {
-    this.greeting = message;
-  }
-
-  @enumerable(false)
-  greet() {
-    return &quot;Hello, &quot; + this.greeting;
-  }
-}</code></pre><pre><code>function enumerable(value: boolean) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor{
-    descriptor.enumerable = value;
-  };
-}</code></pre><p>明确一下静态成员与实例成员在返回值上的区别</p>
-<pre><code>class Func {
-
-  // 静态成员
-  static method1 () {}
-  static method2 = () =&gt; {}
-
-  // 实例成员
-  method3 () {}
-  method4 = () =&gt; {}
-}
-</code></pre><p>静态成员 method1 和 method2 都是定义在 Func 构造函数上，method3 和 method4 区别在于 method3 定义在原型链之上 method4 只有在 Func 类实例化对象之后才有，转化ES5代码之后的样子</p>
-<pre><code>var Func = /** @class */ (function () {
-    function Func() {
-      this.method4 = function () { };
-    }
-    // 静态成员
-    Func.method1 = function () { };
-    // 实例成员
-    Func.prototype.method3 = function () { };
-    Func.method2 = function () { };
-    return Func;
-}());</code></pre><p>通过函数可以证明上述论点装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型 而且 method4 在实例化之前是一个不存在的属性所以没有 descriptor，就是为什么TS在针对Property Decorator不传递第三个参数的原因</p>
-<h3 id="访问器装饰器（get-set）"><a href="#访问器装饰器（get-set）" class="headerlink" title="访问器装饰器（get set）"></a>访问器装饰器（get set）</h3><p>访问器装饰器就是有get、set前缀的函数，用于控制属性的赋值及取值操作。上面说到和方法装饰器一样有三个参数</p>
-<p>定义装饰器三个参数</p>
-<pre><code>function configurable(value: boolean) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-    descriptor.configurable = value;
-  };
-}
-</code></pre><p>定义带有get，set的类</p>
-<pre><code>class Point {
-  private _x: number;
-  private _y: number;
-  constructor(x: number, y: number) {
-      this._x = x;
-      this._y = y;
-  }
-
-  @configurable(false)
-  get x() { return this._x; }
-
-  @configurable(false)
-  get y() { return this._y; }
-}</code></pre><h3 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h3><p>属性装饰器由于没有返回 descriptor 所以只有两个参数，没有方法成员的属性描述对象，如果想要修改某一个静态属性，可以通过 Object.getOwnPropertyDescriptor 获取 descriptor</p>
-<p><em>注意在TypeScript中如何初始化属性修饰符，因此不提供属性描述符作为属性修饰符的参数。这是因为当定义原型的成员时，当前没有机制来描述实例属性，也无法观察或修改属性的初始化器。返回值也被忽略。因此，属性装饰器只能用于观察已为类声明特定名称的属性。</em></p>
-<p>定义类</p>
-<pre><code>class Point {
-  @configurable
-  static x = 1;
-}</code></pre><p>定义属性装饰器获取类属性上的值进行更改</p>
-<pre><code>function configurable(target,x) {
-  let descriptor = Object.getOwnPropertyDescriptor(target, x)
-  Object.defineProperty(target, x, {
-    ...descriptor,
-    value: 2
-  })
-}
-console.log(Point.x) // 2 </code></pre><p>也可以使用 reflect-metadata 这个库它主要用来在声明的时候添加和读取元数据<br>使用的时候需要安装</p>
-<pre><code>npm i reflect-metadata --save</code></pre><p>之后在tsconfig.json 中配置emitDecoratorMetadata选项</p>
-<pre><code>{
-  &quot;compilerOptions&quot;: {
-    &quot;target&quot;: &quot;ES5&quot;,
-    &quot;experimentalDecorators&quot;: true,
-    &quot;emitDecoratorMetadata&quot;: true
-  }
-}</code></pre><p>定义类</p>
-<pre><code>class Greeter {
-    @format(&quot;Hello, %s&quot;)
-    greeting: string;
-
-    constructor(message: string) {
-        this.greeting = message;
-    }
-    greet() {
-        let formatString = getFormat(this, &quot;greeting&quot;);
-        return formatString.replace(&quot;%s&quot;, this.greeting);
-    }
-}</code></pre><p>// 利用 reflect-metadata 定义装饰器</p>
-<p>Reflect.metadata 当作 Decorator 使用，当修饰类时，在类上添加元数据，当修饰类属性时，在类原型的属性上添加元数据</p>
-<p>Reflect.getMetadata 能获取属性</p>
-<pre><code>import &quot;reflect-metadata&quot;;
-
-const formatMetadataKey = Symbol(&quot;format&quot;);
-function format(formatString: string) {
-  return Reflect.metadata(formatMetadataKey, formatString);
-}
-
-function getFormat(target: any, propertyKey: string) {
-  return Reflect.getMetadata(formatMetadataKey, target, propertyKey);
-}</code></pre><h3 id="参数装饰器"><a href="#参数装饰器" class="headerlink" title="参数装饰器"></a>参数装饰器</h3><p>参数装饰器和属性装饰器一样都是在函数运行时调用的，它接收3个参数</p>
-<ul>
-<li>如果装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型</li>
-<li>参数所处的函数名称</li>
-<li>参数在函数中形参中的位置</li>
-</ul>
-<pre><code>const obj = []
-
-function require (value : string) {
-  return function (target : any , propertyKey : string ,parameterIndex : number) {
-    obj[parameterIndex] = value
-  }
-}
-
-class Hello{
-  method(@require(&#39;lisi&#39;) name : string){
-    console.log(name)
-  }
-}
-
-console.log(obj) // [&#39;lisi&#39;]</code></pre>
             </div>
             <hr />
 
@@ -828,33 +710,33 @@ console.log(obj) // [&#39;lisi&#39;]</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/07/22/javascript/functionalcombination/">
+                <a href="/2019/04/10/node/event/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="函数式编程-函数组合">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="event 事件驱动模型">
                         
-                        <span class="card-title">函数式编程-函数组合</span>
+                        <span class="card-title">event 事件驱动模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概念函数组合是将两个或多个函数组合以产生新函数的过程。将功能组合在一起就像将一系列管道拼凑在一起，以便我们的数据流过
-简而言之，函数f和g的组合可以定义为f（g（x）），它从内到外 - 从右到左进行求值
-demo toSlug举例子，想象一
+                            说起node的事件驱动模型首先我们来搞清楚几个概念CPU，线程、进程、调度、事件驱动
+CPU
+1、CPU 是中央处理器，是计算机的核心2、CPU 通过和寄存器，高速缓存，以及内存交互来执行程序3、32位 CPU 最多寻址4g内存，而64位 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/函数式编程/" class="post-category" target="_blank">
-                                    函数式编程
+                            <a href="/categories/Node/" class="post-category" target="_blank">
+                                    Node
                                 </a>
                             
                             
@@ -864,8 +746,8 @@ demo toSlug举例子，想象一
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/函数式编程/" target="_blank">
-                        <span class="chip bg-color">函数式编程</span>
+                    <a href="/tags/Node/" target="_blank">
+                        <span class="chip bg-color">Node</span>
                     </a>
                     
                 </div>
@@ -879,34 +761,32 @@ demo toSlug举例子，想象一
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/17/javascript/functioncurrying/">
+                <a href="/2019/04/08/node/crypto/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="偏应用函数、函数的柯里化">
+                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="crypto 加密模块">
                         
-                        <span class="card-title">偏应用函数、函数的柯里化</span>
+                        <span class="card-title">crypto 加密模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            偏应用函数简称偏函数，在模拟 bind 的时候已经说明其概念和作为主要 bind 的实现
-函数柯里化主要是通过偏应用函数的实现，把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数
-// 柯里化之前
-
+                            crypto 模块也是核心模块之一，提供了加密功能，包括对 OpenSSL 的哈希、HMAC、加密、解密、签名、以及验证功能的一整套封装。上文中提到过核心 C/C++ 模块运行速度比其他模块要快。
+MD5和SHA1MD5是一种常用的哈希算法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/函数式编程/" class="post-category" target="_blank">
-                                    函数式编程
+                            <a href="/categories/Node/" class="post-category" target="_blank">
+                                    Node
                                 </a>
                             
                             
@@ -916,8 +796,8 @@ demo toSlug举例子，想象一
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/函数式编程/" target="_blank">
-                        <span class="chip bg-color">函数式编程</span>
+                    <a href="/tags/Node/" target="_blank">
+                        <span class="chip bg-color">Node</span>
                     </a>
                     
                 </div>

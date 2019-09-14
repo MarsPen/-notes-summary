@@ -1,7 +1,7 @@
 ---
 title: vue 原理解析之主线流程
 date: 2019-08-27 23:12:09
-top: false
+top: true
 cover: false
 password:
 toc: true

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title></title>
   
-  <subtitle>经得起沧桑才能驾驭嚣张</subtitle>
+  <subtitle>满招损 谦受益</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
@@ -47,7 +47,7 @@
     <link href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/"/>
     <id>https://www.studyfe.cn/2019/08/27/vue/vueprinciple/</id>
     <published>2019-08-27T15:12:09.000Z</published>
-    <updated>2019-09-05T08:44:25.390Z</updated>
+    <updated>2019-09-10T09:42:18.047Z</updated>
     
     <summary type="html">
     
@@ -150,32 +150,6 @@
   </entry>
   
   <entry>
-    <title>function.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>module.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
@@ -191,6 +165,32 @@
           &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by:
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>function.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
