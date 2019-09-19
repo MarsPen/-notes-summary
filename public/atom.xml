@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-09-19T06:45:00.363Z</updated>
+  <updated>2019-09-19T12:39:44.440Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 原理之编译</title>
+    <link href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/"/>
+    <id>https://www.studyfe.cn/2019/09/19/vue/vuecompile/</id>
+    <published>2019-09-19T07:02:12.000Z</published>
+    <updated>2019-09-19T12:39:44.440Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;编译入口&quot;&gt;&lt;a href=&quot;#编译入口&quot; class=&quot;headerlink&quot; title=&quot;编译入口&quot;&gt;&lt;/a&gt;编译入口&lt;/h2&gt;&lt;p&gt;还记得我们在第一篇文章介绍整理的执行过程的时候通过，在 $mount 这个函数内调用 compileToFunctions
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>vue 原理之组件更新</title>
@@ -176,6 +202,32 @@
   </entry>
   
   <entry>
+    <title>function.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>module.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
@@ -191,32 +243,6 @@
           &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by:
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>function.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
@@ -519,32 +545,6 @@
     
     
       <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>promise</title>
-    <link href="https://www.studyfe.cn/2019/06/11/javascript/promise/"/>
-    <id>https://www.studyfe.cn/2019/06/11/javascript/promise/</id>
-    <published>2019-06-11T04:32:09.000Z</published>
-    <updated>2019-09-09T06:37:51.226Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 &lt;a href=&quot;http://es6.ruanyifeng.com/#docs/promise&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ES6
-        
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://www.studyfe.cn/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="https://www.studyfe.cn/tags/JavaScript/"/>
     
   </entry>
   

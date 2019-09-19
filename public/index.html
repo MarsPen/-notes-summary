@@ -421,31 +421,6 @@ GUI渲染线程
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/featureimages/27.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">promise</div>
-                    <div class="description center-align">
-                    
-                        本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 ES6 Promise教程
-实现 Promise 首先要知道它的执行特点
-
-Promise 是一个构造函数，接受函数作为参数(resol
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/06/11/javascript/promise/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
             style="background-image: url('/medias/featureimages/23.jpg');">
         <div class="container">
             <div class="row">
@@ -463,6 +438,31 @@ unde
                     </div>
                     <div class="cover-btns">
                         <a href="/2019/05/11/javascript/json/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/27.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">promise</div>
+                    <div class="description center-align">
+                    
+                        本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 ES6 Promise教程
+实现 Promise 首先要知道它的执行特点
+
+Promise 是一个构造函数，接受函数作为参数(resol
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2019/06/11/javascript/promise/" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon fa fa-eye fa-fw"></i>阅读更多
                         </a>
                     </div>
@@ -672,6 +672,55 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/19/vue/vuecompile/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="vue 原理之编译">
+                            
+                            <span class="card-title">vue 原理之编译</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            编译入口还记得我们在第一篇文章介绍整理的执行过程的时候通过，在 $mount 这个函数内调用 compileToFunctions 吗？下面我们再来看看这个方法
+// ...
+  const { render, staticRenderFn
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/vue/" class="post-category" target="_blank">
+                                    vue
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/vue/" target="_blank">
+                            <span class="chip bg-color">vue</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -968,22 +1017,20 @@ Object.defineP
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/08/15/typescript/module.d.ts/" target="_blank">
+                    <a href="/2019/08/15/typescript/module-function.d.ts/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="module.d.ts">
+                            <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="function.d.ts">
                             
-                            <span class="card-title">module.d.ts</span>
+                            <span class="card-title">function.d.ts</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            // Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions
+                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
                             
                         </div>
                         <div class="publish-info">
@@ -1017,20 +1064,22 @@ Object.defineP
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/08/15/typescript/module-function.d.ts/" target="_blank">
+                    <a href="/2019/08/15/typescript/module.d.ts/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="function.d.ts">
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="module.d.ts">
                             
-                            <span class="card-title">function.d.ts</span>
+                            <span class="card-title">module.d.ts</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
+                            // Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions
                             
                         </div>
                         <div class="publish-info">
@@ -1212,54 +1261,6 @@ demo toSlug举例子，想象一
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/07/18/typescript/decorators/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="装饰器">
-                            
-                            <span class="card-title">装饰器</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            装饰器是一种为类声明和成员添加注释和元编程语法的方法，用于在编译时对类、类的方法、类的属性、类的方法的参数进行处理，通俗的讲就是在原有代码外层包装了一层处理逻辑，这样就可以在不改变原方法、函数等逻辑功能的基础上增加额外的处理行为
-使用装饰器
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/TypeScript/" target="_blank">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1304,7 +1305,7 @@ demo toSlug举例子，想象一
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">70.6k</span>
+            <span class="white-color">73.6k</span>
             
 
             <br>
