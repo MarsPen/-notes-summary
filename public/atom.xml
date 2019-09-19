@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-09-10T08:06:43.348Z</updated>
+  <updated>2019-09-19T06:45:00.363Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 原理之组件更新</title>
+    <link href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/"/>
+    <id>https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/</id>
+    <published>2019-09-18T02:50:28.000Z</published>
+    <updated>2019-09-19T06:45:00.363Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上一篇文章我们对响应式原理进行了梳理，知道了当数据发生变化会触发 watcher 的回调，进行组件更新，那么接下来我们看看更新的操作是怎么进行了。&lt;code&gt;src/core/instance/lifecycle.js&lt;/code&gt; 中
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>vue 原理解析之响应式</title>
@@ -519,33 +545,6 @@
     
     
       <category term="JavaScript" scheme="https://www.studyfe.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基本数据类型</title>
-    <link href="https://www.studyfe.cn/2019/05/23/typescript/basedatatype/"/>
-    <id>https://www.studyfe.cn/2019/05/23/typescript/basedatatype/</id>
-    <published>2019-05-23T14:28:09.000Z</published>
-    <updated>2019-09-05T03:41:37.957Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;每种语言都会有属于自己的数据类型，ts的基本数据类型基本上是继承了js，但也在基础之上增加了几个不一样的类型&lt;/p&gt;
-&lt;h3 id=&quot;布尔型-true／false&quot;&gt;&lt;a href=&quot;#布尔型-true／false&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
