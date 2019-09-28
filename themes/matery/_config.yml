@@ -336,7 +336,7 @@ libs:
     materialize: https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css
     aos: https://cdn.bootcss.com/aos/2.2.0/aos.css
     animate: https://cdn.bootcss.com/animate.css/3.5.1/animate.min.css
-    lightgallery: https://cdn.bootcss.com/lightgallery/1.6.11/css/lg-fb-comment-box.css
+    lightgallery: /libs/lightGallery/css/lightgallery.min.css
     aplayer: https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css
     dplayer: https://cdn.bootcss.com/dplayer/1.25.0/DPlayer.min.css
     gitalk: https://cdn.bootcss.com/gitalk/1.5.0/gitalk.css
@@ -348,7 +348,7 @@ libs:
     masonry: https://cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js
     aos: https://cdn.bootcss.com/aos/2.0.2/aos.js
     scrollProgress: https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js
-    lightgallery: https://cdn.bootcss.com/lightgallery/1.6.11/js/lightgallery.min.js
+    lightgallery: /libs/lightGallery/js/lightgallery-all.min.js
     clicklove: /libs/others/clicklove.js
     busuanzi: /libs/others/busuanzi.pure.mini.js
     aplayer: https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-09-19T12:39:44.440Z</updated>
+  <updated>2019-09-28T08:46:42.043Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 原理之keep-alive</title>
+    <link href="https://www.studyfe.cn/2019/09/22/vue/vuekeepalive/"/>
+    <id>https://www.studyfe.cn/2019/09/22/vue/vuekeepalive/</id>
+    <published>2019-09-22T12:55:12.000Z</published>
+    <updated>2019-09-28T08:46:42.043Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在我们的平时开发工作中，有很多组件没有必要多次初始化，通过缓存组件的状态减少性能上的开销。而 vue 的组件缓存优化则使用内置组件 &lt;keep-alive&gt;&lt;/keep-alive&gt;&lt;/p&gt;
+&lt;h3 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 原理之生命周期</title>
+    <link href="https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/"/>
+    <id>https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/</id>
+    <published>2019-09-21T05:50:28.000Z</published>
+    <updated>2019-09-22T06:36:49.898Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;每一个 vue 的实例在创建的时候都经过一系列的初始化操作，在每一个阶段都会有相对应的生命周期钩子函数，来在特定的场景实现一些功能&lt;/p&gt;
+&lt;h3 id=&quot;生命周期方法&quot;&gt;&lt;a href=&quot;#生命周期方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 原理之组件化</title>
+    <link href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/"/>
+    <id>https://www.studyfe.cn/2019/09/21/vue/vuecomponents/</id>
+    <published>2019-09-21T02:50:28.000Z</published>
+    <updated>2019-09-28T08:50:13.021Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/&quot;&gt;生命周期&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>vue 原理之编译</title>
@@ -56,6 +140,89 @@
         
         
           &lt;p&gt;上一篇文章我们对响应式原理进行了梳理，知道了当数据发生变化会触发 watcher 的回调，进行组件更新，那么接下来我们看看更新的操作是怎么进行了。&lt;code&gt;src/core/instance/lifecycle.js&lt;/code&gt; 中
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 原理之 v-model</title>
+    <link href="https://www.studyfe.cn/2019/09/12/vue/vuevmodel/"/>
+    <id>https://www.studyfe.cn/2019/09/12/vue/vuevmodel/</id>
+    <published>2019-09-12T12:20:12.000Z</published>
+    <updated>2019-09-22T10:51:06.876Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在日常开发中我们使用 v-model 来实现数据的双向绑定，那么接下来我们通过一张流程图来大概的看看它实现的流程。具体源码解析请参考&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 原理之异步组件</title>
+    <link href="https://www.studyfe.cn/2019/09/10/vue/vueasync-component/"/>
+    <id>https://www.studyfe.cn/2019/09/10/vue/vueasync-component/</id>
+    <published>2019-09-10T10:06:25.000Z</published>
+    <updated>2019-09-22T09:15:23.124Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在我们平时的开发工作中，为了减少首屏代码体积，往往会把一些非首屏的组件设计成异步组件，按需加载。Vue 也原生支持了异步组件的能力，有三种实现方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;普通的异步组件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 原理之组件注册</title>
+    <link href="https://www.studyfe.cn/2019/09/08/vue/vuecomponentregister/"/>
+    <id>https://www.studyfe.cn/2019/09/08/vue/vuecomponentregister/</id>
+    <published>2019-09-08T04:08:25.000Z</published>
+    <updated>2019-09-22T08:29:53.948Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在日常开发中我们经常会用到许多自定义的组件，除了内置组件自定义组件用的时候必须注册，否则会提示如下信息&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-md&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;&#39;Unknown custom
         
       
     
@@ -385,166 +552,6 @@
     
     
       <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tsconfig.json</title>
-    <link href="https://www.studyfe.cn/2019/07/15/typescript/tsconfig/"/>
-    <id>https://www.studyfe.cn/2019/07/15/typescript/tsconfig/</id>
-    <published>2019-07-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.960Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;## &lt;/p&gt;
-&lt;p&gt;如果一个目录下存在一个tsconfig.json文件，它会把一个文件夹转换为项目，也意味着这个目录是TypeScript项目的根目录&lt;/p&gt;
-&lt;h3 id=&quot;使用tsconfig-json&quot;&gt;&lt;a href=&quot;#使用tsconfig-json&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-纯函数</title>
-    <link href="https://www.studyfe.cn/2019/07/15/javascript/functionalpurity/"/>
-    <id>https://www.studyfe.cn/2019/07/15/javascript/functionalpurity/</id>
-    <published>2019-07-15T04:32:09.000Z</published>
-    <updated>2019-09-08T07:52:19.705Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-基本理论</title>
-    <link href="https://www.studyfe.cn/2019/07/12/javascript/functionalbase/"/>
-    <id>https://www.studyfe.cn/2019/07/12/javascript/functionalbase/</id>
-    <published>2019-07-12T04:32:09.000Z</published>
-    <updated>2019-09-08T07:51:03.182Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;什么是函数式编程&quot;&gt;&lt;a href=&quot;#什么是函数式编程&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mixinx</title>
-    <link href="https://www.studyfe.cn/2019/07/02/typescript/mixinx/"/>
-    <id>https://www.studyfe.cn/2019/07/02/typescript/mixinx/</id>
-    <published>2019-07-02T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt; 一般情况下，我们已经习惯了用面向对象的继承方式，比如在 JS ES5中用 prototype， 在 ES6 和 TS 中 用extends,然而用 mixinx 也是一种通过可重用组件创建类的方式，来进行混用，混合多个类的方法到一个类上&lt;/p&gt;
-&lt;h3
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>声明文件</title>
-    <link href="https://www.studyfe.cn/2019/06/20/typescript/declarefile/"/>
-    <id>https://www.studyfe.cn/2019/06/20/typescript/declarefile/</id>
-    <published>2019-06-20T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.958Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;声明文件&quot;&gt;&lt;a href=&quot;#声明文件&quot; class=&quot;headerlink&quot; title=&quot;声明文件&quot;&gt;&lt;/a&gt;声明文件&lt;/h2&gt;&lt;h3 id=&quot;识别库的类型&quot;&gt;&lt;a href=&quot;#识别库的类型&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模块与命名空间</title>
-    <link href="https://www.studyfe.cn/2019/06/15/typescript/module/"/>
-    <id>https://www.studyfe.cn/2019/06/15/typescript/module/</id>
-    <published>2019-06-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.960Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在 JS 中 有 module 模块机制，和 TS 类似，在 TS 中内部模块命名空间为关键字namespaces。外部模块现在只是modules&lt;/p&gt;
-&lt;h3 id=&quot;使用命名空间&quot;&gt;&lt;a href=&quot;#使用命名空间&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
