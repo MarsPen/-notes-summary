@@ -24,5 +24,5 @@ categories:
 
 > <a href="https://www.studyfe.cn/2019/09/22/vue/vuekeepalive/">keep-alive</a>
 
-> <a href="">computed 和 watch</a>
+> <a href="https://www.studyfe.cn/2019/09/07/vue/vuecomputedwatcher/">computed 和 watch</a>
 

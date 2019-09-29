@@ -748,25 +748,26 @@ Vue.component('async-example', funct
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/05/vue/vueobserve/">
+                <a href="/2019/09/07/vue/vuecomputedwatcher/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue 原理解析之响应式">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="computed 和 watcher">
                         
-                        <span class="card-title">vue 原理解析之响应式</span>
+                        <span class="card-title">computed 和 watcher</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            响应式对象提到 vue 的双向数据绑定原理，我们都知道是利用了 Object.defineProperty 给数据添加 getter 和 setter，来进行依赖收集和数据派发更新，首先我们再来熟悉一下这个方法
-Object.defineP
+                            vue 的 computed 和 watch 是我们在开发中经常用的方法，从而实现数据的响应与监听，下面我们从使用和源码来分析一下这两个属性的实现原理是什么。
+computed 和 watch 使用
+computed 计算属性，根据依赖的数
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-07
                             </span>
                         <span class="publish-author">
                             
@@ -853,7 +854,7 @@ Object.defineP
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">79.6k</span>
+            <span class="white-color">81.9k</span>
             
 
             <br>

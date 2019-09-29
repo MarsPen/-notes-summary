@@ -75,7 +75,7 @@
     <link href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/"/>
     <id>https://www.studyfe.cn/2019/09/21/vue/vuecomponents/</id>
     <published>2019-09-21T02:50:28.000Z</published>
-    <updated>2019-09-28T08:50:13.021Z</updated>
+    <updated>2019-09-29T04:06:29.855Z</updated>
     
     <summary type="html">
     
@@ -236,6 +236,33 @@
   </entry>
   
   <entry>
+    <title>computed 和 watcher</title>
+    <link href="https://www.studyfe.cn/2019/09/07/vue/vuecomputedwatcher/"/>
+    <id>https://www.studyfe.cn/2019/09/07/vue/vuecomputedwatcher/</id>
+    <published>2019-09-07T14:25:12.000Z</published>
+    <updated>2019-09-29T04:05:34.477Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;vue 的 computed 和 watch 是我们在开发中经常用的方法，从而实现数据的响应与监听，下面我们从使用和源码来分析一下这两个属性的实现原理是什么。&lt;/p&gt;
+&lt;h3 id=&quot;computed-和-watch-使用&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue 原理解析之响应式</title>
     <link href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/"/>
     <id>https://www.studyfe.cn/2019/09/05/vue/vueobserve/</id>
@@ -343,6 +370,34 @@
   </entry>
   
   <entry>
+    <title>module.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions by:
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>class.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
@@ -382,34 +437,6 @@
         
         
           &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>module.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by:
         
       
     
@@ -524,34 +551,6 @@
     
     
       <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>偏应用函数、函数的柯里化</title>
-    <link href="https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/"/>
-    <id>https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/</id>
-    <published>2019-07-17T04:32:09.000Z</published>
-    <updated>2019-09-08T07:52:39.977Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;偏应用函数简称偏函数，在模拟 bind 的时候已经说明其概念和作为主要 bind 的实现&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;函数柯里化主要是通过偏应用函数的实现，把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数&lt;br&gt;&lt;/p&gt;
-&lt;pre
-        
-      
-    
-    </summary>
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
