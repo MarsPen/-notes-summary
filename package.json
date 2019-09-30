@@ -5,6 +5,9 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "scripts": {
+    "build": "parcel ./public/index.html --no-autoinstall"
+  },
   "dependencies": {
     "eslint": "^6.0.1",
     "hexo": "^3.9.0",
@@ -26,5 +29,8 @@
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
     "hexo-wordcount": "^6.0.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
   }
 }

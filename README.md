@@ -86,8 +86,8 @@ https://www.studyfe.cn/
 <a href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/">vue 原理之组件更新</a><br/>
 <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue 原理之编译（parse、optimize、codegen)</a><br/>
 <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue 原理之组件化</a><br/>
-<a href="javascript:void(0)">vue 原理之 vue-router (正在整理）</a><br/>
-<a href="javascript:void(0)">vue 原理之 vue-vuex（未完成）</a><br/>
+<a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue 原理之 vue-router</a><br/>
+<a href="javascript:void(0)">vue 原理之 vue-vuex (正在整理）</a><br/>
 
 ### React
 包含React的scheduler调度算法流程、Redux源码分析、mobox、路由机制等</br>
