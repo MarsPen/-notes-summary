@@ -96,8 +96,8 @@ https://www.studyfe.cn/
 <a href="javascript:void(0);">React 原理之 Fiber 调度过程（未完成）</a><br/>
 <a href="javascript:void(0);">React 原理之 Fiber 更新过程（未完成）</a><br/>
 <a href="javascript:void(0);">React 原理之 React Hooks（未完成）</a><br/>
-<a href="javascript:void(0);">React-Redux 原理（未完成）</a><br/>
-<a href="javascript:void(0);">React 之 Mobx 的应用</a><br/>
+<a href="javascript:void(0);">Redux 原理（未完成）</a><br/>
+<a href="javascript:void(0);">Mobx 的应用 （未完成）</a><br/>
 
 ### webpack
 包含常用配置项目、优化、原理分析等</br>
