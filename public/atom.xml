@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-09-28T08:46:42.043Z</updated>
+  <updated>2019-10-08T07:27:41.664Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 原理之 JSX 转换</title>
+    <link href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/"/>
+    <id>https://www.studyfe.cn/2019/10/01/react/library-react-jsx/</id>
+    <published>2019-10-01T10:06:25.000Z</published>
+    <updated>2019-10-08T07:27:41.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JXS-转换&quot;&gt;&lt;a href=&quot;#JXS-转换&quot; class=&quot;headerlink&quot; title=&quot;JXS 转换&quot;&gt;&lt;/a&gt;JXS 转换&lt;/h2&gt;&lt;p&gt;在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react
+        
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://www.studyfe.cn/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://www.studyfe.cn/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>vue 原理之keep-alive</title>
@@ -396,6 +422,32 @@
   </entry>
   
   <entry>
+    <title>function.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>module.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
@@ -411,32 +463,6 @@
           &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by:
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>function.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
@@ -524,33 +550,6 @@
     
     
       <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>装饰器</title>
-    <link href="https://www.studyfe.cn/2019/07/18/typescript/decorators/"/>
-    <id>https://www.studyfe.cn/2019/07/18/typescript/decorators/</id>
-    <published>2019-07-18T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.958Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;装饰器是一种为类声明和成员添加注释和元编程语法的方法，用于在编译时对类、类的方法、类的属性、类的方法的参数进行处理，通俗的讲就是在原有代码外层包装了一层处理逻辑，这样就可以在不改变原方法、函数等逻辑功能的基础上增加额外的处理行为&lt;/p&gt;
-&lt;h3 id=&quot;使用装饰器&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
     
   </entry>
   
