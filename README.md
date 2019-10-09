@@ -91,8 +91,8 @@ https://www.studyfe.cn/
 
 ### React
 <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">React 原理之 JSX 转换</a><br/>
-<a href="javascript:void(0);">React 原理之生命周期（正在整理）</a><br/>
-<a href="javascript:void(0);">React 原理之 FiberRoot 构建过程（未完成）</a><br/>
+<a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">React 生命周期使用</a><br/>
+<a href="javascript:void(0);">React 原理之 FiberRoot 构建过程 （正在整理）</a><br/>
 <a href="javascript:void(0);">React 原理之 Fiber 调度过程（未完成）</a><br/>
 <a href="javascript:void(0);">React 原理之 Fiber 更新过程（未完成）</a><br/>
 <a href="javascript:void(0);">React 原理之 React Hooks（未完成）</a><br/>

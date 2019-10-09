@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/</loc>
+    
+    <lastmod>2019-10-09T10:03:14.407Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/</loc>
+    
+    <lastmod>2019-10-08T07:36:21.434Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.studyfe.cn/2019/10/01/react/library-react-jsx/</loc>
     
     <lastmod>2019-10-08T07:27:41.664Z</lastmod>
@@ -68,13 +82,6 @@
     <loc>https://www.studyfe.cn/2019/09/08/vue/vuecomponentregister/</loc>
     
     <lastmod>2019-09-22T08:29:53.948Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/</loc>
-    
-    <lastmod>2019-09-22T06:36:49.898Z</lastmod>
     
   </url>
   
@@ -247,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/archives/index.html</loc>
+    <loc>https://www.studyfe.cn/friends/index.html</loc>
     
     <lastmod>2019-09-05T03:41:37.961Z</lastmod>
     
@@ -261,21 +268,21 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/friends/index.html</loc>
+    <loc>https://www.studyfe.cn/archives/index.html</loc>
     
     <lastmod>2019-09-05T03:41:37.961Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/07/15/typescript/tsconfig/</loc>
+    <loc>https://www.studyfe.cn/2019/06/15/typescript/module/</loc>
     
     <lastmod>2019-09-05T03:41:37.960Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/06/15/typescript/module/</loc>
+    <loc>https://www.studyfe.cn/2019/07/15/typescript/tsconfig/</loc>
     
     <lastmod>2019-09-05T03:41:37.960Z</lastmod>
     
@@ -289,7 +296,14 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/07/02/typescript/mixinx/</loc>
+    <loc>https://www.studyfe.cn/2019/05/22/typescript/generics/</loc>
+    
+    <lastmod>2019-09-05T03:41:37.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</loc>
     
     <lastmod>2019-09-05T03:41:37.959Z</lastmod>
     
@@ -303,14 +317,7 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/05/22/typescript/generics/</loc>
-    
-    <lastmod>2019-09-05T03:41:37.959Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</loc>
+    <loc>https://www.studyfe.cn/2019/07/02/typescript/mixinx/</loc>
     
     <lastmod>2019-09-05T03:41:37.959Z</lastmod>
     
@@ -345,7 +352,7 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/06/20/typescript/declarefile/</loc>
+    <loc>https://www.studyfe.cn/2019/05/17/typescript/class/</loc>
     
     <lastmod>2019-09-05T03:41:37.958Z</lastmod>
     
@@ -359,7 +366,7 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/05/17/typescript/class/</loc>
+    <loc>https://www.studyfe.cn/2019/06/20/typescript/declarefile/</loc>
     
     <lastmod>2019-09-05T03:41:37.958Z</lastmod>
     
@@ -380,6 +387,13 @@
   </url>
   
   <url>
+    <loc>https://www.studyfe.cn/2019/04/04/node/querystring/</loc>
+    
+    <lastmod>2019-09-05T03:41:37.957Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.studyfe.cn/2019/03/28/node/url/</loc>
     
     <lastmod>2019-09-05T03:41:37.957Z</lastmod>
@@ -394,7 +408,7 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/04/04/node/querystring/</loc>
+    <loc>https://www.studyfe.cn/2017/01/23/php/method/</loc>
     
     <lastmod>2019-09-05T03:41:37.957Z</lastmod>
     
@@ -402,13 +416,6 @@
   
   <url>
     <loc>https://www.studyfe.cn/2017/01/23/php/oop/</loc>
-    
-    <lastmod>2019-09-05T03:41:37.957Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.studyfe.cn/2017/01/23/php/method/</loc>
     
     <lastmod>2019-09-05T03:41:37.957Z</lastmod>
     
@@ -464,13 +471,6 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2018/07/28/linux/vim/</loc>
-    
-    <lastmod>2019-09-05T03:41:37.955Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.studyfe.cn/2018/07/22/linux/user/</loc>
     
     <lastmod>2019-09-05T03:41:37.955Z</lastmod>
@@ -479,6 +479,13 @@
   
   <url>
     <loc>https://www.studyfe.cn/2019/04/14/node/error/</loc>
+    
+    <lastmod>2019-09-05T03:41:37.955Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.studyfe.cn/2018/07/28/linux/vim/</loc>
     
     <lastmod>2019-09-05T03:41:37.955Z</lastmod>
     

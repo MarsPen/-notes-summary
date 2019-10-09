@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-08T07:27:41.664Z</updated>
+  <updated>2019-10-09T10:03:14.407Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 之生命周期使用</title>
+    <link href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/"/>
+    <id>https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/</id>
+    <published>2019-10-02T05:20:25.000Z</published>
+    <updated>2019-10-09T10:03:14.407Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;和 Vue 一样 React 也会有对应的生命周期钩子函数，在相对应的钩子函数内，分别在不同时机处理相对应的逻辑，贴一张来至官网&lt;a href=&quot;http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://www.studyfe.cn/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://www.studyfe.cn/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>React 原理之 JSX 转换</title>
@@ -74,7 +100,7 @@
     <link href="https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/"/>
     <id>https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/</id>
     <published>2019-09-21T05:50:28.000Z</published>
-    <updated>2019-09-22T06:36:49.898Z</updated>
+    <updated>2019-10-08T07:36:21.434Z</updated>
     
     <summary type="html">
     
@@ -515,32 +541,6 @@
         
         
           &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript
-        
-      
-    
-    </summary>
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-函数组合</title>
-    <link href="https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/"/>
-    <id>https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/</id>
-    <published>2019-07-22T04:32:09.000Z</published>
-    <updated>2019-09-08T07:51:44.666Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
         
       
     
