@@ -302,13 +302,6 @@
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
-    <div id="prev-cover" class="left waves-effect carousel-control">
-        <i class="icon fa fa-angle-left"></i>
-    </div>
-    <div id="next-cover" class="right waves-effect carousel-control">
-        <i class="icon fa fa-angle-right"></i>
-    </div>
-    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container">
@@ -391,86 +384,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         </div>
     </div>
 
-    
-    
-
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/featureimages/13.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">函数节流与抖动</div>
-                    <div class="description center-align">
-                    
-                        浏览器内核说起函数的节流与抖动这个老生长谈的话题，我们就需要了解一下关于浏览器的知识
-浏览器有各种进程，来保证浏览器正常的、流畅的呈现在用户的眼前。例如渲染进程（也就是浏览器的内核）是非常重要的一个进程，其中包含了很多的线程
-GUI渲染线程
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/05/15/javascript/debounce/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/featureimages/23.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">json 对象</div>
-                    <div class="description center-align">
-                    
-                        JSON.stringify
-将值转换为相应的JSON格式
-布尔值、数字、字符串在序列化过程中会自动转换成对应的原始值 (字符串需要单独处理)
-NaN和Infinity格式的数值及null都会被当做null
-不可枚举的属性会被忽略
-unde
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/05/11/javascript/json/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/featureimages/27.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">promise</div>
-                    <div class="description center-align">
-                    
-                        本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 ES6 Promise教程
-实现 Promise 首先要知道它的执行特点
-
-Promise 是一个构造函数，接受函数作为参数(resol
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/06/11/javascript/promise/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     
 </div>
 
@@ -586,20 +499,24 @@ $(function () {
 
     
     
-    <div class="col s12" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/25.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
-                    <a href="/categories/JavaScript/" class="category" target="_blank">JavaScript</a>
+                    <a href="/categories/react/" class="category" target="_blank">react</a>
                     
                 </div>
-                <a href="/2019/05/15/javascript/debounce/" target="_blank">
-                    <h3 class="post-title">函数节流与抖动</h3>
+                <a href="/2019/10/01/react/library-react-jsx/" target="_blank">
+                    <h3 class="post-title">React 原理之 JSX 转换</h3>
                 </a>
-                <p class="post-description">浏览器内核说起函数的节流与抖动这个老生长谈的话题，我们就需要了解一下关于浏览器的知识
-浏览器有各种进程，来保证浏览器正常的、流畅的呈现在用户的眼前。例如渲染进程（也就是浏</p>
-                <a href="/2019/05/15/javascript/debounce/" target="_blank"
+                <p class="post-description">
+                    
+                        JXS 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
+babel 转
+                    
+                </p>
+                <a href="/2019/10/01/react/library-react-jsx/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
@@ -608,29 +525,7 @@ $(function () {
     </div>
     
     
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/27.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/JavaScript/" class="category" target="_blank">JavaScript</a>
-                    
-                </div>
-                <a href="/2019/06/11/javascript/promise/" target="_blank">
-                    <h3 class="post-title">promise</h3>
-                </a>
-                <p class="post-description">本篇文章主要是实现 Promise 的原理, 具体 API 用法不在本文中做介绍。可以查看阮一峰老师的 ES6 Promise教程
-实现 P</p>
-                <a href="/2019/06/11/javascript/promise/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
+    <div class="col s12 m6" >
         <div class="post-card" style="background-image: url('/medias/featureimages/4.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -642,14 +537,18 @@ $(function () {
                     <h3 class="post-title">vue 原理解析之主线流程</h3>
                 </a>
                 <p class="post-description">
+                    
+                        
   
   
 
 
 
-源码架构vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助</p>
+源码架构vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助
+                    
+                </p>
                 <a href="/2019/08/27/vue/vueprinciple/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>

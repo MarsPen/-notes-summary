@@ -1,8 +1,8 @@
 ---
 title: promise
 date: 2019-6-11 12:32:09
-top: true
-cover: true
+top: false
+cover: false
 password:
 toc: true
 mathjax: false

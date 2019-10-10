@@ -1,8 +1,8 @@
 ---
 title: 函数节流与抖动
 date: 2019-5-15 12:32:09
-top: true
-cover: true
+top: false
+cover: false
 password:
 toc: true
 mathjax: false

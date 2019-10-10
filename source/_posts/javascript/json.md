@@ -2,7 +2,7 @@
 title: json 对象
 date: 2019-5-11 18:32:09
 top: false
-cover: true
+cover: false
 password:
 toc: true
 mathjax: false
