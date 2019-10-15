@@ -4,10 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta name="keywords" content="function.d.ts, 前端 typescript php js node html html5 css linux vue react">
+  <meta name="keywords" content="理解内存与指针, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="// Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO">
+  <meta name="description" content="理解内存与指针内存与内存地址什么是内存
+内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。
+内存也被称为 内储存器 和 主存储器，其作用是用于暂时存放CP">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>function.d.ts | </title>
+  <title>理解内存与指针 | </title>
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        function.d.ts
+                        理解内存与指针
                     </div>
                 </div>
             </div>
@@ -379,24 +381,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/TypeScript/" target="_blank">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                            TypeScript
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -404,13 +393,13 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-15
+                    2019-10-15
                 </div>
 
                 <div class="post-author info-break-policy">
                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
                     
-                    任博
+                    前端小然子
                     
                 </div>
 
@@ -418,14 +407,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
                 
@@ -441,20 +430,80 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>// Type definitions for [<del>THE LIBRARY NAME</del>] [<del>OPTIONAL VERSION NUMBER</del>]<br>// Project: [<del>THE PROJECT NAME</del>]<br>// Definitions by: [<del>YOUR NAME</del>] &lt;[<del>A URL FOR YOU</del>]&gt;</p>
-<p>/*~ This is the module template file for function modules.<br> *~ You should rename it to index.d.ts and place it in a folder with the same name as the module.<br> *~ For example, if you were writing a file for “super-greeter”, this<br> *~ file should be ‘super-greeter/index.d.ts’<br> */</p>
-<p>/*~ Note that ES6 modules cannot directly export callable functions.<br> *~ This file should be imported using the CommonJS-style:<br> *~   import x = require(‘someLibrary’);<br> *~<br> *~ Refer to the documentation to understand common<br> *~ workarounds for this limitation of ES6 modules.<br> */</p>
-<p>/*~ If this module is a UMD module that exposes a global variable ‘myFuncLib’ when<br> *~ loaded outside a module loader environment, declare that global here.<br> *~ Otherwise, delete this declaration.<br> */<br>export as namespace myFuncLib;</p>
-<p>/*~ This declaration specifies that the function<br> *~ is the exported object from the file<br> */<br>export = MyFunction;</p>
-<p>/*~ This example shows how to have multiple overloads for your function */<br>declare function MyFunction(name: string): MyFunction.NamedReturnType;<br>declare function MyFunction(length: number): MyFunction.LengthReturnType;</p>
-<p>/*~ If you want to expose types from your module as well, you can<br> *~ place them in this block. Often you will want to describe the<br> *~ shape of the return type of the function; that type should<br> *~ be declared in here, as this example shows.<br> */<br>declare namespace MyFunction {<br>    export interface LengthReturnType {<br>        width: number;<br>        height: number;<br>    }<br>    export interface NamedReturnType {<br>        firstName: string;<br>        lastName: string;<br>    }</p>
-<pre><code>/*~ If the module also has properties, declare them here. For example,
- *~ this declaration says that this code is legal:
- *~   import f = require(&#39;myFuncLibrary&#39;);
- *~   console.log(f.defaultName);
- */
-export const defaultName: string;
-export let defaultLength: number;</code></pre><p>}</p>
+                <h1 id="理解内存与指针"><a href="#理解内存与指针" class="headerlink" title="理解内存与指针"></a>理解内存与指针</h1><h2 id="内存与内存地址"><a href="#内存与内存地址" class="headerlink" title="内存与内存地址"></a>内存与内存地址</h2><h3 id="什么是内存"><a href="#什么是内存" class="headerlink" title="什么是内存"></a>什么是内存</h3><hr>
+<p>内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。</p>
+<p>内存也被称为 内储存器 和 主存储器，其作用是用于暂时存放CPU中的运算数据，以及和硬盘等外部存储器交换的数据。下面是CPU的组成和工作原理：</p>
+<img src="/images/cpu.png">
+
+<p>在计算机的组成结构中，有一个很重要的部分是储存器。</p>
+<p>存储器是用来存储程序和数据的部件，对于计算机来说，有了存储器，才有记忆功能，才能保证正常工作。存储器的种类很多，按其用途可分为主存储器和辅助存储器，主存储器又称内存储器（简称内存）。</p>
+<p>内存就是暂时存储程序以及数据的地方，相对于外存（硬盘是外存的一种）而言，我们在电脑上输入文字、字符的时候，它就会被存入内存中，只有当你选择保存文件的时候，内存中的数据才会被存入硬盘。</p>
+<p>内存是CPU能够直接寻址的存储空间，特点是存取速率特别快，临时存放数据，不能永久保存数据。</p>
+<p>外存是计算机的存储器的一种，主要用来存放暂时不用的程序和数据。特定是容量大、价格低，但是存取速度慢。外存和内存之间尝尝频繁的交换信息。</p>
+<h3 id="什么是内存地址"><a href="#什么是内存地址" class="headerlink" title="什么是内存地址"></a>什么是内存地址</h3><hr>
+<p>内存地址是用于软硬件等不同层级中的数据概念，用来访问内存中的数据。</p>
+<p>可以通过WiKi或者百度百科进行更加深入的了解。</p>
+<h2 id="指针、地址与引用"><a href="#指针、地址与引用" class="headerlink" title="指针、地址与引用"></a>指针、地址与引用</h2><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><hr>
+<p>引用是一个变量的别名，为什么引入别名？是因为我们想定义一个变量，由这个变量来共享另一个变量的内存空间，所以使用别名是一个很好的选择。</p>
+<p>变量是什么？ 是一个内存空间的名字，如果我们给这个内存空间再另外起一个名字，就是能共享这个内存了，引用（别名）由此而来。</p>
+<p>比如：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> obj<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这里我们就可以说变量obj1是变量obj的一个引用；（因为在javascript中，object类型的赋值，是引用地址赋值）</p>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><hr>
+<p>指针，指向另一个内存空间的变量，我们可以用个它来索引另一个内存空间中的内容，而指针本身有自己的内存空间。</p>
+<p>如下图所示：<br><img src="/images/pointer.png"></p>
+<h3 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h3><hr>
+<p>引用是一个变量的别名，本身不单独分配自己的内存空间，而指针有自己的内存空间。</p>
+<p>引用在开始的时候就绑定到了一个内存空间(开始必须赋初值), 所以它只能是这个内存空间的名字, 而不能改成其他的, 当然, 我们可以改变这个内存空间的值。</p>
+<p>eg:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// {a: 1, b: 3 }</span>
+
+obj1<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// {a: 4, b: 3 }</span>
+
+obj1 <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span><span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// { a:1, c:2 };</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// {a: 4, b: 3 }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这段代码的过程如下：<br><img src="/images/pointer-yinyong.png"></p>
+<h2 id="指向变量的指针"><a href="#指向变量的指针" class="headerlink" title="指向变量的指针"></a>指向变量的指针</h2><h2 id="指向指针的指针"><a href="#指向指针的指针" class="headerlink" title="指向指针的指针"></a>指向指针的指针</h2><h2 id="指向函数的指针"><a href="#指向函数的指针" class="headerlink" title="指向函数的指针"></a>指向函数的指针</h2><h2 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h2><table>
+<thead>
+<tr>
+<th>内存</th>
+<th>描述</th>
+<th>特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>栈区</td>
+<td>是一个确定的常数(1~2M) 不同平台会有不同大小，超出会提示stackoverflow</td>
+<td>自动分配 ， 自动释放</td>
+</tr>
+<tr>
+<td>堆区</td>
+<td>用于动态内存分配</td>
+<td>手动分配和释放 ， 可占用80%内存</td>
+</tr>
+<tr>
+<td>全局区或静态区</td>
+<td>在程序中明确被初始化的全局变量、静态变量（包括全局静态变量和局部静态变量）和常量数据（如字符串常量）</td>
+<td>只初始化一次</td>
+</tr>
+<tr>
+<td>程序代码区</td>
+<td>代码区指令根据程序设计流程依次执行，对于顺序指令，则只会执行一次（每个进程），如果反复，则需要使用跳转指令，如果进行递归，则需要借助栈来实现。</td>
+<td>代码区的指令中包括操作码和要操作的对象（或对象地址引用）</td>
+</tr>
+</tbody></table>
+<h2 id="多级指针"><a href="#多级指针" class="headerlink" title="多级指针"></a>多级指针</h2><h3 id="一级指针"><a href="#一级指针" class="headerlink" title="一级指针"></a>一级指针</h3><hr>
+<h3 id="二级指针"><a href="#二级指针" class="headerlink" title="二级指针"></a>二级指针</h3><hr>
+<h3 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h3><p>感谢大家阅读我的文章，如果对我感兴趣可以关注我的博客。<br>[前端小然子的博客](<a href="https://xiaoranzife.com" target="_blank" rel="noopener">https://xiaoranzife.com</a> 前端小然子)</p>
 
             </div>
             <hr />
@@ -616,49 +665,38 @@ export let defaultLength: number;</code></pre><p>}</p>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/08/15/typescript/module-class.d.ts/">
+                <a href="/2019/10/15/arithmetic/pointer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="class.d.ts">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="理解内存与指针">
                         
-                        <span class="card-title">class.d.ts</span>
+                        <span class="card-title">理解内存与指针</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
+                            理解内存与指针内存与内存地址什么是内存
+内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。
+内存也被称为 内储存器 和 主存储器，其作用是用于暂时存放CP
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-15
+                            </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                            
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TypeScript/" target="_blank">
-                        <span class="chip bg-color">TypeScript</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -669,49 +707,32 @@ export let defaultLength: number;</code></pre><p>}</p>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/05/typescript/compilationprinciple/">
+                <a href="/2019/10/15/arithmetic/twosum/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="TypeScript编译原理">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">TypeScript编译原理</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            TypeScript 编译器源文件位于 src/compiler  目录下
-主要的应用文件
-
-
-
-编译器的大概工作流SourceCode（源码） ~~ 扫描器 ~~&gt; Token 流Token 流 ~~ 解析器 ~~&gt; AST（
+                            给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+示例：
+给定 nums = [2,
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-15
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TypeScript/" target="_blank">
-                        <span class="chip bg-color">TypeScript</span>
-                    </a>
-                    
                 </div>
                 
             </div>

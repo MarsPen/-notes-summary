@@ -4,10 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta name="keywords" content="function.d.ts, 前端 typescript php js node html html5 css linux vue react">
+  <meta name="keywords" content="前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="// Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO">
+  <meta name="description" content="给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+示例：
+给定 nums = [2,">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>function.d.ts | </title>
+  <title></title>
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +266,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        function.d.ts
+                        
                     </div>
                 </div>
             </div>
@@ -379,24 +382,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/TypeScript/" target="_blank">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                            TypeScript
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -404,7 +394,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-15
+                    2019-10-15
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -418,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    121
                 </div>
                 
 
@@ -441,20 +431,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>// Type definitions for [<del>THE LIBRARY NAME</del>] [<del>OPTIONAL VERSION NUMBER</del>]<br>// Project: [<del>THE PROJECT NAME</del>]<br>// Definitions by: [<del>YOUR NAME</del>] &lt;[<del>A URL FOR YOU</del>]&gt;</p>
-<p>/*~ This is the module template file for function modules.<br> *~ You should rename it to index.d.ts and place it in a folder with the same name as the module.<br> *~ For example, if you were writing a file for “super-greeter”, this<br> *~ file should be ‘super-greeter/index.d.ts’<br> */</p>
-<p>/*~ Note that ES6 modules cannot directly export callable functions.<br> *~ This file should be imported using the CommonJS-style:<br> *~   import x = require(‘someLibrary’);<br> *~<br> *~ Refer to the documentation to understand common<br> *~ workarounds for this limitation of ES6 modules.<br> */</p>
-<p>/*~ If this module is a UMD module that exposes a global variable ‘myFuncLib’ when<br> *~ loaded outside a module loader environment, declare that global here.<br> *~ Otherwise, delete this declaration.<br> */<br>export as namespace myFuncLib;</p>
-<p>/*~ This declaration specifies that the function<br> *~ is the exported object from the file<br> */<br>export = MyFunction;</p>
-<p>/*~ This example shows how to have multiple overloads for your function */<br>declare function MyFunction(name: string): MyFunction.NamedReturnType;<br>declare function MyFunction(length: number): MyFunction.LengthReturnType;</p>
-<p>/*~ If you want to expose types from your module as well, you can<br> *~ place them in this block. Often you will want to describe the<br> *~ shape of the return type of the function; that type should<br> *~ be declared in here, as this example shows.<br> */<br>declare namespace MyFunction {<br>    export interface LengthReturnType {<br>        width: number;<br>        height: number;<br>    }<br>    export interface NamedReturnType {<br>        firstName: string;<br>        lastName: string;<br>    }</p>
-<pre><code>/*~ If the module also has properties, declare them here. For example,
- *~ this declaration says that this code is legal:
- *~   import f = require(&#39;myFuncLibrary&#39;);
- *~   console.log(f.defaultName);
- */
-export const defaultName: string;
-export let defaultLength: number;</code></pre><p>}</p>
+                <p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p>示例：</p>
+<pre><code>给定 nums = [2, 7, 11, 15], target = 9
+
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]</code></pre><pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token comment" spellcheck="true">/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */</span>
+<span class="token keyword">var</span> twoSum <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -620,44 +613,31 @@ export let defaultLength: number;</code></pre><p>}</p>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/15/typescript/module-class.d.ts/">
+                <a href="/2019/10/15/arithmetic/pointer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="class.d.ts">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="理解内存与指针">
                         
-                        <span class="card-title">class.d.ts</span>
+                        <span class="card-title">理解内存与指针</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
+                            理解内存与指针内存与内存地址什么是内存
+内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。
+内存也被称为 内储存器 和 主存储器，其作用是用于暂时存放CP
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-15
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-15
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TypeScript/" target="_blank">
-                        <span class="chip bg-color">TypeScript</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -669,49 +649,40 @@ export let defaultLength: number;</code></pre><p>}</p>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/05/typescript/compilationprinciple/">
+                <a href="/2019/10/15/arithmetic/readme/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="TypeScript编译原理">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">TypeScript编译原理</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            TypeScript 编译器源文件位于 src/compiler  目录下
-主要的应用文件
+                            算法目录算法知识梳理、总结的地方。欢迎 star 共同进步😊😊😊
+算法基础理论
+指针
+
+算法
+两数之和
+
+贡献该目录内容除MarsPen外由以下成员贡献：
+
+xiaoranzife
 
 
-
-编译器的大概工作流SourceCode（源码） ~~ 扫描器 ~~&gt; Token 流Token 流 ~~ 解析器 ~~&gt; AST（
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-15
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TypeScript/" target="_blank">
-                        <span class="chip bg-color">TypeScript</span>
-                    </a>
-                    
                 </div>
                 
             </div>
