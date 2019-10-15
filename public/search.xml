@@ -4,11 +4,37 @@
   
     
     <entry>
+      <title>理解内存与指针</title>
+      <link href="/2019/10/15/arithmetic/pointer/"/>
+      <url>/2019/10/15/arithmetic/pointer/</url>
+      
+        <content type="html"><![CDATA[<h1 id="理解内存与指针"><a href="#理解内存与指针" class="headerlink" title="理解内存与指针"></a>理解内存与指针</h1><h2 id="内存与内存地址"><a href="#内存与内存地址" class="headerlink" title="内存与内存地址"></a>内存与内存地址</h2><h3 id="什么是内存"><a href="#什么是内存" class="headerlink" title="什么是内存"></a>什么是内存</h3><hr><p>内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。</p><p>内存也被称为 内储存器 和 主存储器，其作用是用于暂时存放CPU中的运算数据，以及和硬盘等外部存储器交换的数据。下面是CPU的组成和工作原理：</p><img src="/images/cpu.png"><p>在计算机的组成结构中，有一个很重要的部分是储存器。</p><p>存储器是用来存储程序和数据的部件，对于计算机来说，有了存储器，才有记忆功能，才能保证正常工作。存储器的种类很多，按其用途可分为主存储器和辅助存储器，主存储器又称内存储器（简称内存）。</p><p>内存就是暂时存储程序以及数据的地方，相对于外存（硬盘是外存的一种）而言，我们在电脑上输入文字、字符的时候，它就会被存入内存中，只有当你选择保存文件的时候，内存中的数据才会被存入硬盘。</p><p>内存是CPU能够直接寻址的存储空间，特点是存取速率特别快，临时存放数据，不能永久保存数据。</p><p>外存是计算机的存储器的一种，主要用来存放暂时不用的程序和数据。特定是容量大、价格低，但是存取速度慢。外存和内存之间尝尝频繁的交换信息。</p><h3 id="什么是内存地址"><a href="#什么是内存地址" class="headerlink" title="什么是内存地址"></a>什么是内存地址</h3><hr><p>内存地址是用于软硬件等不同层级中的数据概念，用来访问内存中的数据。</p><p>可以通过WiKi或者百度百科进行更加深入的了解。</p><h2 id="指针、地址与引用"><a href="#指针、地址与引用" class="headerlink" title="指针、地址与引用"></a>指针、地址与引用</h2><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><hr><p>引用是一个变量的别名，为什么引入别名？是因为我们想定义一个变量，由这个变量来共享另一个变量的内存空间，所以使用别名是一个很好的选择。</p><p>变量是什么？ 是一个内存空间的名字，如果我们给这个内存空间再另外起一个名字，就是能共享这个内存了，引用（别名）由此而来。</p><p>比如：</p><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">var</span> obj1 <span class="token operator">=</span> obj<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>这里我们就可以说变量obj1是变量obj的一个引用；（因为在javascript中，object类型的赋值，是引用地址赋值）</p><h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><hr><p>指针，指向另一个内存空间的变量，我们可以用个它来索引另一个内存空间中的内容，而指针本身有自己的内存空间。</p><p>如下图所示：<br><img src="/images/pointer.png"></p><h3 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h3><hr><p>引用是一个变量的别名，本身不单独分配自己的内存空间，而指针有自己的内存空间。</p><p>引用在开始的时候就绑定到了一个内存空间(开始必须赋初值), 所以它只能是这个内存空间的名字, 而不能改成其他的, 当然, 我们可以改变这个内存空间的值。</p><p>eg:</p><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">var</span> obj1 <span class="token operator">=</span> obj<span class="token punctuation">;</span>obj<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// {a: 1, b: 3 }</span>obj1<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// {a: 4, b: 3 }</span>obj1 <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span><span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// { a:1, c:2 };</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// {a: 4, b: 3 }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这段代码的过程如下：<br><img src="/images/pointer-yinyong.png"></p><h2 id="指向变量的指针"><a href="#指向变量的指针" class="headerlink" title="指向变量的指针"></a>指向变量的指针</h2><h2 id="指向指针的指针"><a href="#指向指针的指针" class="headerlink" title="指向指针的指针"></a>指向指针的指针</h2><h2 id="指向函数的指针"><a href="#指向函数的指针" class="headerlink" title="指向函数的指针"></a>指向函数的指针</h2><h2 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h2><table><thead><tr><th>内存</th><th>描述</th><th>特性</th></tr></thead><tbody><tr><td>栈区</td><td>是一个确定的常数(1~2M) 不同平台会有不同大小，超出会提示stackoverflow</td><td>自动分配 ， 自动释放</td></tr><tr><td>堆区</td><td>用于动态内存分配</td><td>手动分配和释放 ， 可占用80%内存</td></tr><tr><td>全局区或静态区</td><td>在程序中明确被初始化的全局变量、静态变量（包括全局静态变量和局部静态变量）和常量数据（如字符串常量）</td><td>只初始化一次</td></tr><tr><td>程序代码区</td><td>代码区指令根据程序设计流程依次执行，对于顺序指令，则只会执行一次（每个进程），如果反复，则需要使用跳转指令，如果进行递归，则需要借助栈来实现。</td><td>代码区的指令中包括操作码和要操作的对象（或对象地址引用）</td></tr></tbody></table><h2 id="多级指针"><a href="#多级指针" class="headerlink" title="多级指针"></a>多级指针</h2><h3 id="一级指针"><a href="#一级指针" class="headerlink" title="一级指针"></a>一级指针</h3><hr><h3 id="二级指针"><a href="#二级指针" class="headerlink" title="二级指针"></a>二级指针</h3><hr><h3 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h3><p>感谢大家阅读我的文章，如果对我感兴趣可以关注我的博客。<br>[前端小然子的博客](<a href="https://xiaoranzife.com" target="_blank" rel="noopener">https://xiaoranzife.com</a> 前端小然子)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/10/15/arithmetic/twosum/"/>
+      <url>/2019/10/15/arithmetic/twosum/</url>
+      
+        <content type="html"><![CDATA[<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p><p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p><p>示例：</p><pre><code>给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]</code></pre><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/** * @param {number[]} nums * @param {number} target * @return {number[]} */</span><span class="token keyword">var</span> twoSum <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2019/10/15/arithmetic/readme/"/>
       <url>/2019/10/15/arithmetic/readme/</url>
       
-        <content type="html"><![CDATA[<h1 id="算法目录"><a href="#算法目录" class="headerlink" title="算法目录"></a>算法目录</h1><p>算法知识梳理、总结的地方。欢迎 star 共同进步😊😊😊</p><h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><p>该目录内容除<a href="https://github.com/MarsPen" title="任博" target="_blank" rel="noopener">MarsPen</a>外由以下成员贡献：</p><ul><li><a href="https://github.com/FontEndArt" title="前端小然子" target="_blank" rel="noopener">xiaoranzife</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="算法目录"><a href="#算法目录" class="headerlink" title="算法目录"></a>算法目录</h1><p>算法知识梳理、总结的地方。欢迎 star 共同进步😊😊😊</p><h2 id="算法基础理论"><a href="#算法基础理论" class="headerlink" title="算法基础理论"></a>算法基础理论</h2><ul><li><a href="./poninter.md" title="pointer">指针</a></li></ul><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul><li><a href="./TwoSum.md" title="两数之和">两数之和</a></li></ul><h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><p>该目录内容除<a href="https://github.com/MarsPen" title="任博" target="_blank" rel="noopener">MarsPen</a>外由以下成员贡献：</p><ul><li><a href="https://github.com/FontEndArt" title="前端小然子" target="_blank" rel="noopener">xiaoranzife</a></li></ul>]]></content>
       
       
       
@@ -367,56 +393,6 @@
     
     
     <entry>
-      <title>class.d.ts</title>
-      <link href="/2019/08/15/typescript/module-class.d.ts/"/>
-      <url>/2019/08/15/typescript/module-class.d.ts/</url>
-      
-        <content type="html"><![CDATA[<p>// Type definitions for [<del>THE LIBRARY NAME</del>] [<del>OPTIONAL VERSION NUMBER</del>]<br>// Project: [<del>THE PROJECT NAME</del>]<br>// Definitions by: [<del>YOUR NAME</del>] &lt;[<del>A URL FOR YOU</del>]&gt;</p><p>/*~ This is the module template file for class modules.<br> *~ You should rename it to index.d.ts and place it in a folder with the same name as the module.<br> *~ For example, if you were writing a file for “super-greeter”, this<br> *~ file should be ‘super-greeter/index.d.ts’<br> */</p><p>/*~ Note that ES6 modules cannot directly export class objects.<br> *~ This file should be imported using the CommonJS-style:<br> *~   import x = require(‘someLibrary’);<br> *~<br> *~ Refer to the documentation to understand common<br> *~ workarounds for this limitation of ES6 modules.<br> */</p><p>/*~ If this module is a UMD module that exposes a global variable ‘myClassLib’ when<br> *~ loaded outside a module loader environment, declare that global here.<br> *~ Otherwise, delete this declaration.<br> */<br>export as namespace myClassLib;</p><p>/*~ This declaration specifies that the class constructor function<br> *~ is the exported object from the file<br> */<br>export = MyClass;</p><p>/*~ Write your module’s methods and properties in this class */<br>declare class MyClass {<br>    constructor(someParam?: string);</p><pre><code>someProperty: string[];myMethod(opts: MyClass.MyClassMethodOptions): number;</code></pre><p>}</p><p>/*~ If you want to expose types from your module as well, you can<br> *~ place them in this block.<br> */<br>declare namespace MyClass {<br>    export interface MyClassMethodOptions {<br>        width?: number;<br>        height?: number;<br>    }<br>}</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> TypeScript </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> TypeScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>global.d.ts</title>
-      <link href="/2019/08/15/typescript/global.d.ts/"/>
-      <url>/2019/08/15/typescript/global.d.ts/</url>
-      
-        <content type="html"><![CDATA[<pre><code>// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]// Project: [~THE PROJECT NAME~]// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]&gt;/*~ If this library is callable (e.g. can be invoked as myLib(3)), *~ include those call signatures here. *~ Otherwise, delete this section. */declare function myLib(a: string): string;declare function myLib(a: number): number;/*~ If you want the name of this library to be a valid type name, *~ you can do so here. *~ *~ For example, this allows us to write &#39;var x: myLib&#39;; *~ Be sure this actually makes sense! If it doesn&#39;t, just *~ delete this declaration and add types inside the namespace below. */interface myLib {    name: string;    length: number;    extras?: string[];}/*~ If your library has properties exposed on a global variable, *~ place them here. *~ You should also place types (interfaces and type alias) here. */declare namespace myLib {    //~ We can write &#39;myLib.timeout = 50;&#39;    let timeout: number;    //~ We can access &#39;myLib.version&#39;, but not change it    const version: string;    //~ There&#39;s some class we can create via &#39;let c = new myLib.Cat(42)&#39;    //~ Or reference e.g. &#39;function f(c: myLib.Cat) { ... }    class Cat {        constructor(n: number);        //~ We can read &#39;c.age&#39; from a &#39;Cat&#39; instance        readonly age: number;        //~ We can invoke &#39;c.purr()&#39; from a &#39;Cat&#39; instance        purr(): void;    }    //~ We can declare a variable as    //~   &#39;var s: myLib.CatSettings = { weight: 5, name: &quot;Maru&quot; };&#39;    interface CatSettings {        weight: number;        name: string;        tailLength?: number;    }    //~ We can write &#39;const v: myLib.VetID = 42;&#39;    //~  or &#39;const v: myLib.VetID = &quot;bob&quot;;&#39;    type VetID = string | number;    //~ We can invoke &#39;myLib.checkCat(c)&#39; or &#39;myLib.checkCat(c, v);&#39;    function checkCat(c: Cat, s?: VetID);}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> TypeScript </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> TypeScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>function.d.ts</title>
       <link href="/2019/08/15/typescript/module-function.d.ts/"/>
       <url>/2019/08/15/typescript/module-function.d.ts/</url>
@@ -447,6 +423,56 @@
       <url>/2019/08/15/typescript/module.d.ts/</url>
       
         <content type="html"><![CDATA[<pre><code>// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]// Project: [~THE PROJECT NAME~]// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]&gt;/*~ This is the module template file. You should rename it to index.d.ts *~ and place it in a folder with the same name as the module. *~ For example, if you were writing a file for &quot;super-greeter&quot;, this *~ file should be &#39;super-greeter/index.d.ts&#39; *//*~ If this module is a UMD module that exposes a global variable &#39;myLib&#39; when *~ loaded outside a module loader environment, declare that global here. *~ Otherwise, delete this declaration. */export as namespace myLib;/*~ If this module has methods, declare them as functions like so. */export function myMethod(a: string): string;export function myOtherMethod(a: number): number;/*~ You can declare types that are available via importing the module */export interface someType {    name: string;    length: number;    extras?: string[];}/*~ You can declare properties of the module using const, let, or var */export const myField: number;/*~ If there are types, properties, or methods inside dotted names *~ of the module, declare them inside a &#39;namespace&#39;. */export namespace subProp {    /*~ For example, given this definition, someone could write:     *~   import { subProp } from &#39;yourModule&#39;;     *~   subProp.foo();     *~ or     *~   import * as yourMod from &#39;yourModule&#39;;     *~   yourMod.subProp.foo();     */    export function foo(): void;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> TypeScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TypeScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>class.d.ts</title>
+      <link href="/2019/08/15/typescript/module-class.d.ts/"/>
+      <url>/2019/08/15/typescript/module-class.d.ts/</url>
+      
+        <content type="html"><![CDATA[<p>// Type definitions for [<del>THE LIBRARY NAME</del>] [<del>OPTIONAL VERSION NUMBER</del>]<br>// Project: [<del>THE PROJECT NAME</del>]<br>// Definitions by: [<del>YOUR NAME</del>] &lt;[<del>A URL FOR YOU</del>]&gt;</p><p>/*~ This is the module template file for class modules.<br> *~ You should rename it to index.d.ts and place it in a folder with the same name as the module.<br> *~ For example, if you were writing a file for “super-greeter”, this<br> *~ file should be ‘super-greeter/index.d.ts’<br> */</p><p>/*~ Note that ES6 modules cannot directly export class objects.<br> *~ This file should be imported using the CommonJS-style:<br> *~   import x = require(‘someLibrary’);<br> *~<br> *~ Refer to the documentation to understand common<br> *~ workarounds for this limitation of ES6 modules.<br> */</p><p>/*~ If this module is a UMD module that exposes a global variable ‘myClassLib’ when<br> *~ loaded outside a module loader environment, declare that global here.<br> *~ Otherwise, delete this declaration.<br> */<br>export as namespace myClassLib;</p><p>/*~ This declaration specifies that the class constructor function<br> *~ is the exported object from the file<br> */<br>export = MyClass;</p><p>/*~ Write your module’s methods and properties in this class */<br>declare class MyClass {<br>    constructor(someParam?: string);</p><pre><code>someProperty: string[];myMethod(opts: MyClass.MyClassMethodOptions): number;</code></pre><p>}</p><p>/*~ If you want to expose types from your module as well, you can<br> *~ place them in this block.<br> */<br>declare namespace MyClass {<br>    export interface MyClassMethodOptions {<br>        width?: number;<br>        height?: number;<br>    }<br>}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> TypeScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TypeScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>global.d.ts</title>
+      <link href="/2019/08/15/typescript/global.d.ts/"/>
+      <url>/2019/08/15/typescript/global.d.ts/</url>
+      
+        <content type="html"><![CDATA[<pre><code>// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]// Project: [~THE PROJECT NAME~]// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]&gt;/*~ If this library is callable (e.g. can be invoked as myLib(3)), *~ include those call signatures here. *~ Otherwise, delete this section. */declare function myLib(a: string): string;declare function myLib(a: number): number;/*~ If you want the name of this library to be a valid type name, *~ you can do so here. *~ *~ For example, this allows us to write &#39;var x: myLib&#39;; *~ Be sure this actually makes sense! If it doesn&#39;t, just *~ delete this declaration and add types inside the namespace below. */interface myLib {    name: string;    length: number;    extras?: string[];}/*~ If your library has properties exposed on a global variable, *~ place them here. *~ You should also place types (interfaces and type alias) here. */declare namespace myLib {    //~ We can write &#39;myLib.timeout = 50;&#39;    let timeout: number;    //~ We can access &#39;myLib.version&#39;, but not change it    const version: string;    //~ There&#39;s some class we can create via &#39;let c = new myLib.Cat(42)&#39;    //~ Or reference e.g. &#39;function f(c: myLib.Cat) { ... }    class Cat {        constructor(n: number);        //~ We can read &#39;c.age&#39; from a &#39;Cat&#39; instance        readonly age: number;        //~ We can invoke &#39;c.purr()&#39; from a &#39;Cat&#39; instance        purr(): void;    }    //~ We can declare a variable as    //~   &#39;var s: myLib.CatSettings = { weight: 5, name: &quot;Maru&quot; };&#39;    interface CatSettings {        weight: number;        name: string;        tailLength?: number;    }    //~ We can write &#39;const v: myLib.VetID = 42;&#39;    //~  or &#39;const v: myLib.VetID = &quot;bob&quot;;&#39;    type VetID = string | number;    //~ We can invoke &#39;myLib.checkCat(c)&#39; or &#39;myLib.checkCat(c, v);&#39;    function checkCat(c: Cat, s?: VetID);}</code></pre>]]></content>
       
       
       <categories>
@@ -1942,6 +1968,31 @@
     
     
     <entry>
+      <title>语法、变量、数据类型</title>
+      <link href="/2017/01/23/php/base/"/>
+      <url>/2017/01/23/php/base/</url>
+      
+        <content type="html"><![CDATA[<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ol><li>PHP 脚本以 <code>&lt;?php 开始，以 ?&gt; 结束</code><br></li><li>PHP 文件的默认文件扩展名是 “.php”<br></li><li>PHP 文件通常包含 HTML 标签和一些 PHP 脚本代码<br></li><li>PHP 中的每个代码行都必须以分号结束，否则输出错误<br><pre><code>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;body&gt; </code></pre></li></ol><?php   echo "Hello World!"; ?><p> </p> ```<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>PHP 变量规则：</strong><br></p><ol><li>变量以 $ 符号开始，后面跟着变量的名称,$a<br></li><li>变量名必须以字母或者下划线字符开始<br></li><li>变量名只能包含字母数字字符以及下划线（A-z、0-9 和 _ ）<br></li><li>变量名不能包含空格<br></li><li>变量名是区分大小写的（$y 和 $Y 是两个不同的变量）<br></li><li>由于PHP是弱类型语言所以变量不必声明类型和JS类似 <br></li></ol><p><strong>PHP 变量作用域</strong><br></p><p><strong>四种不同的变量作用域</strong><br></p><pre><code>local 局部global 全局static 局部-静态变量parameter 参数</code></pre><p><strong>局部和全局作用域 local global</strong><br></p><pre><code>&lt;?php   $age = 20; //全局作用域  $name = &#39;zhangsan&#39;;  function people () {    $isJob  = &#39;yes&#39;; //局部变量    global $name;   //访问全局作用域    var_dump($name);  // zhangsan   }  people()?&gt;</code></pre><p>解析：<br></p><ol><li>$age 是在函数外部定义的变量，拥有全局作用域，但是这里和 JS 的区别是 $age 在people函数中是不可访问的<br></li><li>$isJob 是在函数内部声明的变量所以是局部变量，只能在函数内部访问<br></li><li>$name global 是在函数内部<strong>调用</strong>函数外部定义的全局变量,正常情况在函数内部访问函数外部的变量则为NULL<br></li></ol><p><strong>Static 作用域</strong><br></p><pre><code>&lt;?php  function test() {    static $a = 0;    // static $a = 1 + 2; // 解析错误 参照解析2    echo $a;    $a++;  }  test (); //0  test (); //1  test (); //2?&gt;</code></pre><p>解析：<br></p><ol><li>静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用<br></li><li>不能对静态变量用表达式的结果赋值，否则会导致解析错误<br></li><li>static全局变量只初使化一次，下一次依据上一次结果值，上例子中调用三次执行的结果是累加的。<br></li><li>在内存的静态存储区中（静态存储区在整个程序运行期间都存在，其他局部变量存储在栈中。<br></li></ol><p><strong>parameter 参数作用域</strong><br></p><pre><code>  function test($a) {    echo $a;  }  test (1); //1</code></pre><p><strong>小结</strong></p><ol><li>定义在函数外部的就是全局变量，它的作用域从定义处一直到文件结尾。</li><li>函数内定义的变量就是局部变量，它的作用域为函数定义范围内。</li><li>函数内访问全局变量需要 global 关键字,如果不使用，则会覆盖全局变量</li></ol><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><strong>php数据类型</strong></p><p>String（字符串）, Integer（整型）, Float（浮点型）, Boolean（布尔型）, Array（数组）, Object（对象）, NULL（空值）。<br></p><p>这里由于和 JS 类似所以不多做解释<br></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PHP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PHP 面向对象</title>
       <link href="/2017/01/23/php/oop/"/>
       <url>/2017/01/23/php/oop/</url>
@@ -1972,31 +2023,6 @@
       <url>/2017/01/23/php/method/</url>
       
         <content type="html"><![CDATA[<p>此篇文章JS数组方法总结一样纯属是为了熟悉API，不得不承认PHP大法好比JS的原生方法多的很。这里只列出个人认为比较常用的。<br></p><p><strong>数组内置函数</strong><br></p><ol><li><p>for、foreach循环输出数组元素<br></p><pre><code>&lt;?php // for循环for ($i = 0; $i &lt;= 100; $i++) { echo &quot;$i &lt;br/&gt;&quot;;} // foreach 只适用于数组$name = array(&#39;zhangsan&#39;, &#39;lisi&#39;, &#39;wangwu&#39;);  // 创建数组foreach ($name as $value) { echo &quot;$value &lt;br/&gt;&quot;;}?&gt;</code></pre></li><li><p>count() 获取数组元素的个数 <br></p><pre><code>&lt;?php$nameLength = array(&#39;zhangsan&#39;, &#39;lisi&#39;, &#39;wangwu&#39;);echo count($nameLength); // 3?&gt;</code></pre></li><li><p>输出数组当前的元素的值，如果当前元素为空或者无值则返回FALSE <br></p><pre><code>&lt;?php$name = array(&#39;zhangsan&#39;, &#39;lisi&#39;, &#39;wangwu&#39;);echo current($name); // 返回第一个元素zhangsan echo end($name); // 返回最后一个元素wangwuecho next($name); // 返回指定元素的下一个元素echo prev($name); // 返回指定元素的上一个元素echo reset($name); // 把内部指针移动到数组的首个元素zhangsan</code></pre></li></ol><p>?&gt;</p><pre><code>4. 对当前数组进行排序&lt;br/&gt;</code></pre><p>  $numbers = array(1, 2, 3, 3, 4, 5, 6, 2);</p><p>  // 返回bool<br>  sort($numbers);  //对数组进行升序成功则为true 失败则为false<br>  rsort($numbers); //对数组进行降序成功则为true 失败则为false<br>  array_reverse($array, $preserve); //对原数组按反序排序，返回排序后的数组(2, 6, 5, 4, 3, 3, 2, 1)</p><pre><code>5. 合并数组&lt;br/&gt;</code></pre><p>$arr = array(1, 2, 3, 3, 4, 5, 6, 2);<br>$arr1 = array(10, 20, 30);</p><p>array_merge($arr, $arr1 );</p><pre><code>6. 压栈，出栈&lt;br/&gt;</code></pre><p>$name = ‘wang’;<br>$name1  = array(‘zhang’, ‘li’);</p><p>array_push($name1, $name); // 3 返回新数组的长度</p><p>array_pop($name1); //li 返回被pop的值。栈为空，返回null</p><p>array_shift($name1); //删除第一个元素并返回；</p><p>array_unshift(array，val1，val2,…); //将参数按照顺序加入队列中</p><pre><code>7. 统计数组中值为出现的次数&lt;br/&gt;</code></pre><p>$val = array(1, 2, 3, 3, 4, 3, 3, 1, 1);<br>print_r(array_count_values($val));</p><pre><code>8. 过滤数组的元素&lt;br/&gt;</code></pre><p>function func ($var) {<br>  return($var &amp; 1);<br>}</p><p>$val = array(‘a’, ‘b’, 2, 3, 4);<br>print_r(array_filter($val, ‘func’)); // 3</p><pre><code>9. 检查索引是否在数组中&lt;br/&gt;</code></pre><p>$people = array(‘name’=&gt;’renbo’, ‘age’=&gt;’28’);</p><p>if (array_key_exists(‘name’, $people)) {<br>  echo ‘name存在’;<br>}</p><pre><code>10. 检查数组中是否存在指定的值&lt;br/&gt;</code></pre><p>$val = array(‘zhangsan’, ‘lisi’, ‘wangwu’);<br>if (in_array(‘zhangsan’, $val)) {<br>  echo ‘存在’;<br>}</p><pre><code>11. 返回当前元素的Key&lt;br/&gt;</code></pre><p>$people = array(‘name’=&gt;’renbo’, ‘age’=&gt;’28’);<br>key($people); //name</p><pre><code>12. 返回当前元素所有的key&lt;br/&gt;</code></pre><p>$people = array(‘name’=&gt;’renbo’,’age’=&gt;’28’);<br>print_r(array_keys($people)); // name age</p><pre><code>**时间内置函数**&lt;br/&gt;</code></pre><p>date(format[,timestamp])</p><p>mktime(hour,minute,second,month,day,year) //省略的参数将以本地日期和时间代替</p><p>getdate([timestamp]) </p><pre><code>**URL处理内置函数**&lt;br/&gt;</code></pre><p>urlencode(str) 返回值字符串中所有的非字母和数字字符变成一个百分号(%) 和一个两位的十六进制数，空格被转换成+,-、_和.不做任何转换</p><p>urldecode(str) </p><pre><code>其实还有好多比如字符串的内置函数、文件操作的内置函数、数据库连接的内置函数等等。其实PHP方法还是比JS多用到的时候查看API即可...&lt;br/&gt;</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> PHP </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> PHP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>语法、变量、数据类型</title>
-      <link href="/2017/01/23/php/base/"/>
-      <url>/2017/01/23/php/base/</url>
-      
-        <content type="html"><![CDATA[<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ol><li>PHP 脚本以 <code>&lt;?php 开始，以 ?&gt; 结束</code><br></li><li>PHP 文件的默认文件扩展名是 “.php”<br></li><li>PHP 文件通常包含 HTML 标签和一些 PHP 脚本代码<br></li><li>PHP 中的每个代码行都必须以分号结束，否则输出错误<br><pre><code>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;body&gt; </code></pre></li></ol><?php   echo "Hello World!"; ?><p> </p> ```<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>PHP 变量规则：</strong><br></p><ol><li>变量以 $ 符号开始，后面跟着变量的名称,$a<br></li><li>变量名必须以字母或者下划线字符开始<br></li><li>变量名只能包含字母数字字符以及下划线（A-z、0-9 和 _ ）<br></li><li>变量名不能包含空格<br></li><li>变量名是区分大小写的（$y 和 $Y 是两个不同的变量）<br></li><li>由于PHP是弱类型语言所以变量不必声明类型和JS类似 <br></li></ol><p><strong>PHP 变量作用域</strong><br></p><p><strong>四种不同的变量作用域</strong><br></p><pre><code>local 局部global 全局static 局部-静态变量parameter 参数</code></pre><p><strong>局部和全局作用域 local global</strong><br></p><pre><code>&lt;?php   $age = 20; //全局作用域  $name = &#39;zhangsan&#39;;  function people () {    $isJob  = &#39;yes&#39;; //局部变量    global $name;   //访问全局作用域    var_dump($name);  // zhangsan   }  people()?&gt;</code></pre><p>解析：<br></p><ol><li>$age 是在函数外部定义的变量，拥有全局作用域，但是这里和 JS 的区别是 $age 在people函数中是不可访问的<br></li><li>$isJob 是在函数内部声明的变量所以是局部变量，只能在函数内部访问<br></li><li>$name global 是在函数内部<strong>调用</strong>函数外部定义的全局变量,正常情况在函数内部访问函数外部的变量则为NULL<br></li></ol><p><strong>Static 作用域</strong><br></p><pre><code>&lt;?php  function test() {    static $a = 0;    // static $a = 1 + 2; // 解析错误 参照解析2    echo $a;    $a++;  }  test (); //0  test (); //1  test (); //2?&gt;</code></pre><p>解析：<br></p><ol><li>静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用<br></li><li>不能对静态变量用表达式的结果赋值，否则会导致解析错误<br></li><li>static全局变量只初使化一次，下一次依据上一次结果值，上例子中调用三次执行的结果是累加的。<br></li><li>在内存的静态存储区中（静态存储区在整个程序运行期间都存在，其他局部变量存储在栈中。<br></li></ol><p><strong>parameter 参数作用域</strong><br></p><pre><code>  function test($a) {    echo $a;  }  test (1); //1</code></pre><p><strong>小结</strong></p><ol><li>定义在函数外部的就是全局变量，它的作用域从定义处一直到文件结尾。</li><li>函数内定义的变量就是局部变量，它的作用域为函数定义范围内。</li><li>函数内访问全局变量需要 global 关键字,如果不使用，则会覆盖全局变量</li></ol><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><strong>php数据类型</strong></p><p>String（字符串）, Integer（整型）, Float（浮点型）, Boolean（布尔型）, Array（数组）, Object（对象）, NULL（空值）。<br></p><p>这里由于和 JS 类似所以不多做解释<br></p>]]></content>
       
       
       <categories>
