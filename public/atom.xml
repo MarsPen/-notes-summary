@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-09T10:03:14.407Z</updated>
+  <updated>2019-10-15T02:18:20.199Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://www.studyfe.cn/2019/10/15/arithmetic/readme/"/>
+    <id>https://www.studyfe.cn/2019/10/15/arithmetic/readme/</id>
+    <published>2019-10-15T02:13:16.470Z</published>
+    <updated>2019-10-15T02:18:20.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;算法目录&quot;&gt;&lt;a href=&quot;#算法目录&quot; class=&quot;headerlink&quot; title=&quot;算法目录&quot;&gt;&lt;/a&gt;算法目录&lt;/h1&gt;&lt;p&gt;算法知识梳理、总结的地方。欢迎 star 共同进步😊😊😊&lt;/p&gt;
+&lt;h2 id=&quot;贡献&quot;&gt;&lt;a href=&quot;#贡献&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>React 之生命周期使用</title>
     <link href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/"/>
     <id>https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/</id>
     <published>2019-10-02T05:20:25.000Z</published>
-    <updated>2019-10-09T10:03:14.407Z</updated>
+    <updated>2019-10-15T01:29:42.477Z</updated>
     
     <summary type="html">
     
@@ -47,7 +70,7 @@
     <link href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/"/>
     <id>https://www.studyfe.cn/2019/10/01/react/library-react-jsx/</id>
     <published>2019-10-01T10:06:25.000Z</published>
-    <updated>2019-10-10T10:22:21.836Z</updated>
+    <updated>2019-10-15T01:29:42.477Z</updated>
     
     <summary type="html">
     
@@ -73,7 +96,7 @@
     <link href="https://www.studyfe.cn/2019/09/22/vue/vuekeepalive/"/>
     <id>https://www.studyfe.cn/2019/09/22/vue/vuekeepalive/</id>
     <published>2019-09-22T12:55:12.000Z</published>
-    <updated>2019-09-28T08:46:42.043Z</updated>
+    <updated>2019-10-15T01:29:42.486Z</updated>
     
     <summary type="html">
     
@@ -100,7 +123,7 @@
     <link href="https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/"/>
     <id>https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/</id>
     <published>2019-09-21T05:50:28.000Z</published>
-    <updated>2019-10-08T07:36:21.434Z</updated>
+    <updated>2019-10-15T01:29:42.486Z</updated>
     
     <summary type="html">
     
@@ -127,7 +150,7 @@
     <link href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/"/>
     <id>https://www.studyfe.cn/2019/09/21/vue/vuecomponents/</id>
     <published>2019-09-21T02:50:28.000Z</published>
-    <updated>2019-09-29T04:06:29.855Z</updated>
+    <updated>2019-10-15T01:29:42.485Z</updated>
     
     <summary type="html">
     
@@ -157,7 +180,7 @@
     <link href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/"/>
     <id>https://www.studyfe.cn/2019/09/19/vue/vuecompile/</id>
     <published>2019-09-19T07:02:12.000Z</published>
-    <updated>2019-09-19T12:39:44.440Z</updated>
+    <updated>2019-10-15T01:29:42.485Z</updated>
     
     <summary type="html">
     
@@ -183,7 +206,7 @@
     <link href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/"/>
     <id>https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/</id>
     <published>2019-09-18T02:50:28.000Z</published>
-    <updated>2019-09-19T06:45:00.363Z</updated>
+    <updated>2019-10-15T01:29:42.484Z</updated>
     
     <summary type="html">
     
@@ -209,7 +232,7 @@
     <link href="https://www.studyfe.cn/2019/09/12/vue/vuevmodel/"/>
     <id>https://www.studyfe.cn/2019/09/12/vue/vuevmodel/</id>
     <published>2019-09-12T12:20:12.000Z</published>
-    <updated>2019-09-22T10:51:06.876Z</updated>
+    <updated>2019-10-15T01:29:42.488Z</updated>
     
     <summary type="html">
     
@@ -235,7 +258,7 @@
     <link href="https://www.studyfe.cn/2019/09/10/vue/vueasync-component/"/>
     <id>https://www.studyfe.cn/2019/09/10/vue/vueasync-component/</id>
     <published>2019-09-10T10:06:25.000Z</published>
-    <updated>2019-09-22T09:15:23.124Z</updated>
+    <updated>2019-10-15T01:29:42.484Z</updated>
     
     <summary type="html">
     
@@ -265,7 +288,7 @@
     <link href="https://www.studyfe.cn/2019/09/08/vue/vuecomponentregister/"/>
     <id>https://www.studyfe.cn/2019/09/08/vue/vuecomponentregister/</id>
     <published>2019-09-08T04:08:25.000Z</published>
-    <updated>2019-09-22T08:29:53.948Z</updated>
+    <updated>2019-10-15T01:29:42.485Z</updated>
     
     <summary type="html">
     
@@ -292,7 +315,7 @@
     <link href="https://www.studyfe.cn/2019/09/07/vue/vuecomputedwatcher/"/>
     <id>https://www.studyfe.cn/2019/09/07/vue/vuecomputedwatcher/</id>
     <published>2019-09-07T14:25:12.000Z</published>
-    <updated>2019-09-29T04:05:34.477Z</updated>
+    <updated>2019-10-15T01:29:42.486Z</updated>
     
     <summary type="html">
     
@@ -319,7 +342,7 @@
     <link href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/"/>
     <id>https://www.studyfe.cn/2019/09/05/vue/vueobserve/</id>
     <published>2019-09-05T08:45:09.000Z</published>
-    <updated>2019-09-10T08:06:43.348Z</updated>
+    <updated>2019-10-15T01:29:42.487Z</updated>
     
     <summary type="html">
     
@@ -345,7 +368,7 @@
     <link href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/"/>
     <id>https://www.studyfe.cn/2019/08/27/vue/vueprinciple/</id>
     <published>2019-08-27T15:12:09.000Z</published>
-    <updated>2019-09-10T09:42:18.047Z</updated>
+    <updated>2019-10-15T01:29:42.487Z</updated>
     
     <summary type="html">
     
@@ -372,7 +395,7 @@
     <link href="https://www.studyfe.cn/2019/08/26/javascript/generator-async/"/>
     <id>https://www.studyfe.cn/2019/08/26/javascript/generator-async/</id>
     <published>2019-08-26T08:22:09.000Z</published>
-    <updated>2019-09-09T06:39:32.487Z</updated>
+    <updated>2019-10-15T01:29:42.461Z</updated>
     
     <summary type="html">
     
@@ -394,11 +417,37 @@
   </entry>
   
   <entry>
+    <title>class.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-10-15T01:29:42.481Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>global.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
+    <updated>2019-10-15T01:29:42.480Z</updated>
     
     <summary type="html">
     
@@ -422,37 +471,11 @@
   </entry>
   
   <entry>
-    <title>class.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>function.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
+    <updated>2019-10-15T01:29:42.482Z</updated>
     
     <summary type="html">
     
@@ -478,7 +501,7 @@
     <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
+    <updated>2019-10-15T01:29:42.482Z</updated>
     
     <summary type="html">
     
@@ -506,7 +529,7 @@
     <link href="https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/"/>
     <id>https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/</id>
     <published>2019-08-05T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.958Z</updated>
+    <updated>2019-10-15T01:29:42.478Z</updated>
     
     <summary type="html">
     
@@ -524,32 +547,6 @@
     
     
       <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-Point Free</title>
-    <link href="https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/"/>
-    <id>https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/</id>
-    <published>2019-07-25T04:32:09.000Z</published>
-    <updated>2019-09-08T07:52:11.450Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript
-        
-      
-    
-    </summary>
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
