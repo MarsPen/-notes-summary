@@ -60,6 +60,7 @@ author: 前端小然子
 
 ![数据结构分类](https://github.com/MarsPen/-notes-summary/blob/xiaoranzife/source/images/arithmetic_structure_sort.png?raw=true)
 
+![数据结构与算法体系图](https://github.com/MarsPen/-notes-summary/blob/xiaoranzife/source/images/arithmetic_structure_system.png)
 
 ## 封装与数据结构的原则
 
