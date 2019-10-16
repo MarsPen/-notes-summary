@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-16T02:20:09.686Z</updated>
+  <updated>2019-10-16T02:28:11.530Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.studyfe.cn/2019/10/15/arithmetic/pointer/"/>
     <id>https://www.studyfe.cn/2019/10/15/arithmetic/pointer/</id>
     <published>2019-10-15T03:15:26.025Z</published>
-    <updated>2019-10-16T02:20:09.686Z</updated>
+    <updated>2019-10-16T02:28:11.530Z</updated>
     
     <summary type="html">
     
@@ -461,11 +461,11 @@
   </entry>
   
   <entry>
-    <title>function.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
+    <title>class.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-10-15T01:29:42.482Z</updated>
+    <updated>2019-10-15T01:29:42.481Z</updated>
     
     <summary type="html">
     
@@ -515,11 +515,11 @@
   </entry>
   
   <entry>
-    <title>class.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
+    <title>function.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-10-15T01:29:42.481Z</updated>
+    <updated>2019-10-15T01:29:42.482Z</updated>
     
     <summary type="html">
     
