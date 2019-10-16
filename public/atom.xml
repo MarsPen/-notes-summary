@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-16T06:56:45.084Z</updated>
+  <updated>2019-10-16T06:59:15.754Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.studyfe.cn/2019/10/16/arithmetic/data-structure/"/>
     <id>https://www.studyfe.cn/2019/10/16/arithmetic/data-structure/</id>
     <published>2019-10-16T03:12:48.040Z</published>
-    <updated>2019-10-16T06:56:45.084Z</updated>
+    <updated>2019-10-16T06:59:15.754Z</updated>
     
     <summary type="html">
     
@@ -511,11 +511,11 @@
   </entry>
   
   <entry>
-    <title>global.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
+    <title>class.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
     <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-10-15T01:29:42.480Z</updated>
+    <updated>2019-10-15T01:29:42.481Z</updated>
     
     <summary type="html">
     
@@ -523,9 +523,7 @@
       
         
         
-          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by:
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
