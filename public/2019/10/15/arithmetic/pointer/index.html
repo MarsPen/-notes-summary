@@ -407,14 +407,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
                 
@@ -433,7 +433,8 @@
                 <h1 id="理解内存与指针"><a href="#理解内存与指针" class="headerlink" title="理解内存与指针"></a>理解内存与指针</h1><h2 id="内存与内存地址"><a href="#内存与内存地址" class="headerlink" title="内存与内存地址"></a>内存与内存地址</h2><h3 id="什么是内存"><a href="#什么是内存" class="headerlink" title="什么是内存"></a>什么是内存</h3><hr>
 <p>内存是计算机中重要的部件之一，它是与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。</p>
 <p>内存也被称为 内储存器 和 主存储器，其作用是用于暂时存放CPU中的运算数据，以及和硬盘等外部存储器交换的数据。下面是CPU的组成和工作原理：</p>
-<img src="/images/cpu.png">
+<p><img src="https://github.com/MarsPen/-notes-summary/blob/xiaoranzife/source/images/cpu.png?raw=true" alt="图一"></p>
+<!-- <img src="/images/cpu.png"> -->
 
 <p>在计算机的组成结构中，有一个很重要的部分是储存器。</p>
 <p>存储器是用来存储程序和数据的部件，对于计算机来说，有了存储器，才有记忆功能，才能保证正常工作。存储器的种类很多，按其用途可分为主存储器和辅助存储器，主存储器又称内存储器（简称内存）。</p>
@@ -452,7 +453,8 @@
 <p>这里我们就可以说变量obj1是变量obj的一个引用；（因为在javascript中，object类型的赋值，是引用地址赋值）</p>
 <h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><hr>
 <p>指针，指向另一个内存空间的变量，我们可以用个它来索引另一个内存空间中的内容，而指针本身有自己的内存空间。</p>
-<p>如下图所示：<br><img src="/images/pointer.png"></p>
+<p>如下图所示：</p>
+<p><img src="https://github.com/MarsPen/-notes-summary/blob/xiaoranzife/source/images/pointer.png?raw=true" alt="图二"></p>
 <h3 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h3><hr>
 <p>引用是一个变量的别名，本身不单独分配自己的内存空间，而指针有自己的内存空间。</p>
 <p>引用在开始的时候就绑定到了一个内存空间(开始必须赋初值), 所以它只能是这个内存空间的名字, 而不能改成其他的, 当然, 我们可以改变这个内存空间的值。</p>
@@ -471,8 +473,82 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment" spellcheck="true">// { a:1, c:2 };</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// {a: 4, b: 3 }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这段代码的过程如下：<br><img src="/images/pointer-yinyong.png"></p>
-<h2 id="指向变量的指针"><a href="#指向变量的指针" class="headerlink" title="指向变量的指针"></a>指向变量的指针</h2><h2 id="指向指针的指针"><a href="#指向指针的指针" class="headerlink" title="指向指针的指针"></a>指向指针的指针</h2><h2 id="指向函数的指针"><a href="#指向函数的指针" class="headerlink" title="指向函数的指针"></a>指向函数的指针</h2><h2 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h2><table>
+<p>这段代码的过程如下：</p>
+<p><img src="https://github.com/MarsPen/-notes-summary/blob/xiaoranzife/source/images/pointer-yinyong.png?raw=true" alt="图三"></p>
+<h2 id="指向变量的指针"><a href="#指向变量的指针" class="headerlink" title="指向变量的指针"></a>指向变量的指针</h2><p>一个变量的地址指出了变量的存储单元在内存中的具体位置，能对变量进行存取操作。那这个变量就是指向变量的指针。</p>
+<p>可以参考上面的 <strong><em>“图二”</em></strong> 可以很好的理解指向变量的指针。</p>
+<h2 id="指向指针的指针"><a href="#指向指针的指针" class="headerlink" title="指向指针的指针"></a>指向指针的指针</h2><p>如果一个指针变量存放的又是另一个指针变量的地址，则称这个变量为指向指针的指针变量或指向指针的指针。</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token comment" spellcheck="true">// 入口主函数</span>
+<span class="token keyword">void</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 这里&amp;a就是变量a的内存地址</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 这里是打印输出变量a的值</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="指向函数的指针"><a href="#指向函数的指针" class="headerlink" title="指向函数的指针"></a>指向函数的指针</h2><p>指向函数的指针变量被称为函数指针。本身是指针变量，只不过该指针变量指向函数。</p>
+<p>有了函数指针之后，就可以用该指针变量来调用函数。</p>
+<p>函数指针有两个用途：</p>
+<ul>
+<li><p>调用函数</p>
+</li>
+<li><p>做函数的参数</p>
+</li>
+</ul>
+<pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token comment" spellcheck="true">// 调用函数</span>
+<span class="token keyword">function</span> max <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x <span class="token operator">></span> y <span class="token operator">?</span> x <span class="token punctuation">:</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">max</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment" spellcheck="true">// 做函数的参数</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">78</span><span class="token punctuation">,</span><span class="token number">96</span><span class="token punctuation">,</span><span class="token number">54</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span>total<span class="token punctuation">,</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> total <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上例子中 <strong>max</strong> 和 <strong>sum</strong> 都是指向函数的指针变量。</p>
+<h2 id="多级指针"><a href="#多级指针" class="headerlink" title="多级指针"></a>多级指针</h2><p>多级指针，是指 “指向地址的指针”;</p>
+<h3 id="一级指针"><a href="#一级指针" class="headerlink" title="一级指针"></a>一级指针</h3><hr>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token comment" spellcheck="true">// 入口主函数</span>
+<span class="token keyword">void</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 这里&amp;a就是变量a的内存地址</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>p1 <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 这里是打印输出变量a的值</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这里的 *p1 就是一级指针</p>
+<p>这里同样参考 <strong><em>“图二”</em></strong> 来理解</p>
+<p>指针变量p可以通过 *p1 来获取到变量i的值，也可以进行修改操作，总之 *p1 可以操作变量i的内存空间，所以 * 是一个操作内存空间的一个符号。</p>
+<p>*p也就被称为一级指针。</p>
+<h3 id="二级指针"><a href="#二级指针" class="headerlink" title="二级指针"></a>二级指针</h3><hr>
+<p>同上面讲的一级指针原理一致。</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token comment" spellcheck="true">// 入口主函数</span>
+<span class="token keyword">void</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 这里&amp;a就是变量a的内存地址</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>p1 <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span><span class="token operator">*</span>p2 <span class="token operator">=</span> <span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>**p2 即为二级指针。</p>
+<hr>
+<p>其余多级指针依旧同理：</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token operator">&amp;</span>p2<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>p4 <span class="token operator">=</span> <span class="token operator">&amp;</span>p3<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h2><table>
 <thead>
 <tr>
 <th>内存</th>
@@ -501,8 +577,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <td>代码区的指令中包括操作码和要操作的对象（或对象地址引用）</td>
 </tr>
 </tbody></table>
-<h2 id="多级指针"><a href="#多级指针" class="headerlink" title="多级指针"></a>多级指针</h2><h3 id="一级指针"><a href="#一级指针" class="headerlink" title="一级指针"></a>一级指针</h3><hr>
-<h3 id="二级指针"><a href="#二级指针" class="headerlink" title="二级指针"></a>二级指针</h3><hr>
+<hr>
+<p>理解指针的操作，更加有助于我们更快的理解数据结构和算法。</p>
 <h3 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h3><p>感谢大家阅读我的文章，如果对我感兴趣可以关注我的博客。<br>[前端小然子的博客](<a href="https://xiaoranzife.com" target="_blank" rel="noopener">https://xiaoranzife.com</a> 前端小然子)</p>
 
             </div>
@@ -892,7 +968,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">97.8k</span>
+            <span class="white-color">98.5k</span>
             
 
             <br>
