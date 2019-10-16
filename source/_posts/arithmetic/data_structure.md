@@ -31,7 +31,7 @@ author: 前端小然子
 - 程序员的内功心法之一
 - 有效管理数据对象
 - 解决处理性能问题
-- 面试加分项
+- 面试加分项（现在一些简单的数据结构和算法已经是必备项了）
 
 
 ## 基本数据结构及衍生结构
@@ -47,8 +47,18 @@ author: 前端小然子
 
 它们之间的关系就像下图一样：
 
-![算法的几个基本概念](/images/arithmetic-concept.png)
+![算法的几个基本概念](https://github.com/MarsPen/-notes-summary/blob/xiaoranzife/source/images/arithmetic-concept.png?raw=true)
 
+### 浅析数据结构
+---
+
+数据元素相互之间的关系称为结构。数据结构是与算法紧密结合的。
+
+- 逻辑结构：反映数据元素之间的逻辑关系。
+- 存储结构：数据结构在计算机中的表示。
+- 算法：对数据的操作
+
+![数据结构分类](https://github.com/MarsPen/-notes-summary/blob/xiaoranzife/source/images/arithmetic_structure_sort.png?raw=true)
 
 
 ## 封装与数据结构的原则
