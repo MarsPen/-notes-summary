@@ -502,7 +502,7 @@ $(function () {
                 </a>
                 <p class="post-description">
                     
-                        JXS 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
+                        JSX 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
 babel 转
                     
                 </p>
@@ -561,6 +561,54 @@ babel 转
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/10/04/react/library-react-fiber01/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="React 原理之 FiberRoot 构建过程">
+                            
+                            <span class="card-title">React 原理之 FiberRoot 构建过程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            fiber 是当前整个 react 核心部分，其中包含了大量的计算机知识。如果阅读 react 的源码能让人感觉到无力。
+每次版本更新，核心部分的函数总是要动那么一动。从 15, 到 16 到 16.8、16.9 到现在的 16.10，包括
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/react/" class="post-category" target="_blank">
+                                    react
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/react/" target="_blank">
+                            <span class="chip bg-color">react</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -625,7 +673,7 @@ babel 转
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            JXS 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
+                            JSX 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
 babel 转换在进行转换编译之前，我们先来配置环境。这样方便我们查看转换后的代码。当然我们也使用 babel 去
                             
                         </div>
@@ -1117,54 +1165,6 @@ computed 计算属性，根据依赖的数
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/05/vue/vueobserve/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue 原理解析之响应式">
-                            
-                            <span class="card-title">vue 原理解析之响应式</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            响应式对象提到 vue 的双向数据绑定原理，我们都知道是利用了 Object.defineProperty 给数据添加 getter 和 setter，来进行依赖收集和数据派发更新，首先我们再来熟悉一下这个方法
-Object.defineP
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vue/" target="_blank">
-                            <span class="chip bg-color">vue</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1209,7 +1209,7 @@ Object.defineP
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">96.5k</span>
+            <span class="white-color">101.5k</span>
             
 
             <br>
@@ -1357,7 +1357,9 @@ Object.defineP
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
+  setTimeout(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+  },5000)
 });
 </script>
 <!-- 回到顶部按钮 -->

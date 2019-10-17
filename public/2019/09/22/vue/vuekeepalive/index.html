@@ -926,7 +926,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JXS 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
+                            JSX 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
 babel 转换在进行转换编译之前，我们先来配置环境。这样方便我们查看转换后的代码。当然我们也使用 babel 去
                         
                     </div>
@@ -1165,7 +1165,7 @@ beforeMount（
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">96.5k</span>
+            <span class="white-color">101.5k</span>
             
 
             <br>
@@ -1313,7 +1313,9 @@ beforeMount（
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
+  setTimeout(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+  },5000)
 });
 </script>
 <!-- 回到顶部按钮 -->

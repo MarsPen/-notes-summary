@@ -1023,31 +1023,30 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/02/react/library-react-lifecycle/">
+                <a href="/2019/10/04/react/library-react-fiber01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="React 之生命周期使用">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="React 原理之 FiberRoot 构建过程">
                         
-                        <span class="card-title">React 之生命周期使用</span>
+                        <span class="card-title">React 原理之 FiberRoot 构建过程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            和 Vue 一样 React 也会有对应的生命周期钩子函数，在相对应的钩子函数内，分别在不同时机处理相对应的逻辑，贴一张来至官网生命周期图，通过周期图让我们看看 react 的生命周期具体的含义。
-在 react 中，我们可以将生命周期分为
+                            fiber 是当前整个 react 核心部分，其中包含了大量的计算机知识。如果阅读 react 的源码能让人感觉到无力。
+每次版本更新，核心部分的函数总是要动那么一动。从 15, 到 16 到 16.8、16.9 到现在的 16.10，包括
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1060,7 +1059,6 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1091,7 +1089,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JXS 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
+                            JSX 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
 babel 转换在进行转换编译之前，我们先来配置环境。这样方便我们查看转换后的代码。当然我们也使用 babel 去
                         
                     </div>
@@ -1277,7 +1275,7 @@ babel 转换在进行转换编译之前，我们先来配置环境。这样方�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">96.5k</span>
+            <span class="white-color">101.5k</span>
             
 
             <br>
@@ -1425,7 +1423,9 @@ babel 转换在进行转换编译之前，我们先来配置环境。这样方�
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
+  setTimeout(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+  },5000)
 });
 </script>
 <!-- 回到顶部按钮 -->

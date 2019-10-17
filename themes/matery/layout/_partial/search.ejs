@@ -13,6 +13,8 @@
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
+  setTimeout(function () {
     searchFunc("<%= config.root %>" + "search.xml", 'searchInput', 'searchResult');
+  },5000)
 });
 </script>

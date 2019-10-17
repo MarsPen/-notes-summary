@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-09T10:03:14.407Z</updated>
+  <updated>2019-10-17T09:54:57.771Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 原理之 FiberRoot 构建过程</title>
+    <link href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/"/>
+    <id>https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/</id>
+    <published>2019-10-04T05:20:25.000Z</published>
+    <updated>2019-10-17T09:54:57.771Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;fiber 是当前整个 react 核心部分，其中包含了大量的计算机知识。如果阅读 react 的源码能让人感觉到无力。&lt;/p&gt;
+&lt;p&gt;每次版本更新，核心部分的函数总是要动那么一动。从 15, 到 16 到 16.8、16.9 到现在的 16.10，包括现在已经改版的
+        
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://www.studyfe.cn/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://www.studyfe.cn/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>React 之生命周期使用</title>
@@ -47,7 +74,7 @@
     <link href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/"/>
     <id>https://www.studyfe.cn/2019/10/01/react/library-react-jsx/</id>
     <published>2019-10-01T10:06:25.000Z</published>
-    <updated>2019-10-10T10:22:21.836Z</updated>
+    <updated>2019-10-14T10:16:33.708Z</updated>
     
     <summary type="html">
     
@@ -55,7 +82,7 @@
       
         
         
-          &lt;h2 id=&quot;JXS-转换&quot;&gt;&lt;a href=&quot;#JXS-转换&quot; class=&quot;headerlink&quot; title=&quot;JXS 转换&quot;&gt;&lt;/a&gt;JXS 转换&lt;/h2&gt;&lt;p&gt;在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react
+          &lt;h2 id=&quot;JSX-转换&quot;&gt;&lt;a href=&quot;#JSX-转换&quot; class=&quot;headerlink&quot; title=&quot;JSX 转换&quot;&gt;&lt;/a&gt;JSX 转换&lt;/h2&gt;&lt;p&gt;在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react
         
       
     
@@ -394,6 +421,32 @@
   </entry>
   
   <entry>
+    <title>class.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>global.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
@@ -409,32 +462,6 @@
           &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by:
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>class.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
@@ -524,32 +551,6 @@
     
     
       <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-Point Free</title>
-    <link href="https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/"/>
-    <id>https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/</id>
-    <published>2019-07-25T04:32:09.000Z</published>
-    <updated>2019-09-08T07:52:11.450Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;Point-free 是一种编程风格，其中函数定义不引用函数的参数。不用关心将要操作的数据是什样的。我们来看看 JavaScript
-        
-      
-    
-    </summary>
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/categories/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="函数式编程" scheme="https://www.studyfe.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   

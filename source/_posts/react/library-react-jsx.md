@@ -13,7 +13,7 @@ categories:
 - react
 ---
 
-## JXS 转换
+## JSX 转换
 
 在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
 
