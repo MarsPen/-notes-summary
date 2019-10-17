@@ -19,6 +19,12 @@ fiber 是当前整个 react 核心部分，其中包含了大量的计算机知�
 
 我们言归正传，这一章到后面的几篇文章都是对 fiber 的学习和理解包括构建、调度、更新等。如有错误欢迎在 git 博客项目下提交 issue。
 
+## 什么是 fiber<hr>
+
+Fiber 的中文解释是纤程，是线程的颗粒化的一个概念。也就是说一个线程可以包含多个 Fiber。可以使同步计算变得被拆解、异步化，使浏览器主线程得以调控。
+
+通过把更新过程碎片化，当执行完一段更新的时候，把控制权交还给 React 负责任务协调的模块，通过调度系统的任务的优先级去执行更新操作。
+
 
 ## 创建 FiberRoot<hr>
 
@@ -562,7 +568,7 @@ export function updateContainer(
   //  busyMinDurationMs?: number,
   // };
   const suspenseConfig = requestCurrentSuspenseConfig();
-  // 通过 expirationTime 对节点计算超时时间
+  // 通过 expirationTime 对节点计算过期时间
   // 如果在同一个事件中安排了两个更新，应该将它们的开始时间视为同时发生的
   // 即使在第一次和第二次调用之间实际的时钟时间已经提前
   // 过期时间决定更新的批处理方式，在同一事件中发生的具有相同优先级的所有更新都能接收到相同的过期时间
@@ -587,7 +593,7 @@ export function updateContainer(
 
 ### computeExpirationForFiber <hr>
 
-> computeExpirationForFiber 计算节点超时时间
+> computeExpirationForFiber 计算节点过期时间
 
 ```js
 export function computeExpirationForFiber(
@@ -682,7 +688,7 @@ export function computeExpirationForFiber(
     }
   }
 
-  // 如果正在渲染一个树，不要在已经渲染的超时时间上更新操作。
+  // 如果正在渲染一个树，不要在已经渲染的过期时间上更新操作。
   // 如果在不同的 root 节点上更新移动到单独的批处理中
   if (workInProgressRoot !== null && expirationTime === renderExpirationTime) {
     expirationTime -= 1;
@@ -693,7 +699,7 @@ export function computeExpirationForFiber(
 
 ```
 
-从上到代码的注释就能看到 computeExpirationForFiber 主要是根据不同的任务优先级去进行调度执行计算超时时间 expirationTime，那么在不同的任务优先级下面具体是怎么计算的呢
+从上到代码的注释就能看到 computeExpirationForFiber 主要是根据不同的任务优先级去进行调度执行计算过期时间 expirationTime，那么在不同的任务优先级下面具体是怎么计算的呢
 
 主要有下面四种
 
@@ -755,13 +761,13 @@ computeAsyncExpiration 的 expirationTime 为
 ```js
 1073741821-ceiling(1073741821-currentTime + 500, 25)
 1073741821-((((1073741821 - currentTime + 500) / 25) | 0) + 1) * 25
-我们取最后四位来看一下规律并且把 currentTime 变为 1000
+我们取最后四位来看一下规律并且把 currentTime 变为从 996-1047 的数字
 1821-((((1821 - 996 + 500) / 25) | 0) + 1) * 25  //1821-1350
 1821-((((1821 - 1021+ 500) / 25) | 0) + 1) * 25  //1821-1325
 1821-((((1821 - 1022+ 500) / 25) | 0) + 1) * 25  //1821-1300
 1821-((((1821 - 1047+ 500) / 25) | 0) + 1) * 25  //1821-1275
 ```
-**可以得出，异步更新的过期时间间隔是25ms**
+**可以得出，在跨度 996-1021 数字之内执行得出相同的结果，所以异步更新的过期时间间隔是25ms**
 
 同理 computeInteractiveExpiration 的 expirationTime 为
 
@@ -959,31 +965,27 @@ export const scheduleWork = scheduleUpdateOnFiber;
 
 ## 总结<hr>
 
-### 什么是 fiber<hr>
+通过上面代码我们总结以下几个知识点
 
-Fiber 的中文解释是纤程，是线程的颗粒化的一个概念。也就是说一个线程可以包含多个 Fiber。可以使同步计算变得被拆解、异步化，使浏览器主线程得以调控。
-通过把更新过程碎片化，当执行完一段更新的时候，把控制权交还给 React 负责任务协调的模块，通过调度系统的任务的优先级去执行更新操作。
-
-### fiber 的实现原理<hr>
+> fiber 的实现原理
 
 通过上面代码我们知道（虽然调度过程还没有分析），fiber 实际上是将需要执行的操作放在 updateQueue 队列中，而不是 Javascript 的栈。通过调度逻辑优先级控制在内存中保留栈帧，从而控制整个渲染。
 
-### fiber 的作用<hr>
+> fiber 的作用
 
 - 每一个 ReactElement 对应一个Fiber对象
 - 记录每个节点的状态，例如 props 和 state 等
 - 会串联整个应用形成树结构
 
-
-###  fiber-tree<hr>
+> fiber-tree
 
 <img src="/images/library-react-fiber-tree.png">
 
 上面的图就是整个 fiber-tree 的数据结构图，是通过递归 diff的过程，拆分成一系列小任务，通过调度算法，形成的结构。
 
-### 其他 <hr>
+> 其他
 
-由于篇幅过长所以调度流程只分析的大概，但是从上面的源码中我们知道一下几个知识点
+由于篇幅过长所以调度流程只分析的大概，但是从上面的源码中我们知道以下几个知识点
 
 - hydrate 的作用
 - 在初次渲染时是不会进行批量更新的，因为要加速渲染过程

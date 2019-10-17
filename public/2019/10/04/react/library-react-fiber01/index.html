@@ -445,6 +445,8 @@
                 <p>fiber 是当前整个 react 核心部分，其中包含了大量的计算机知识。如果阅读 react 的源码能让人感觉到无力。</p>
 <p>每次版本更新，核心部分的函数总是要动那么一动。从 15, 到 16 到 16.8、16.9 到现在的 16.10，包括现在已经改版的 vue3.0 着实让人难受。但是学习的步伐还是不能停下。react 系列文章主要是依赖 16.9 的源码进行分析。</p>
 <p>我们言归正传，这一章到后面的几篇文章都是对 fiber 的学习和理解包括构建、调度、更新等。如有错误欢迎在 git 博客项目下提交 issue。</p>
+<h2 id="什么是-fiber"><a href="#什么是-fiber" class="headerlink" title="什么是 fiber"></a>什么是 fiber<hr></h2><p>Fiber 的中文解释是纤程，是线程的颗粒化的一个概念。也就是说一个线程可以包含多个 Fiber。可以使同步计算变得被拆解、异步化，使浏览器主线程得以调控。</p>
+<p>通过把更新过程碎片化，当执行完一段更新的时候，把控制权交还给 React 负责任务协调的模块，通过调度系统的任务的优先级去执行更新操作。</p>
 <h2 id="创建-FiberRoot"><a href="#创建-FiberRoot" class="headerlink" title="创建 FiberRoot"></a>创建 FiberRoot<hr></h2><p>下面我们就 FiberRoot 的创建来开始我们的这篇文章，我们在 <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">jsx</a> 转换的时候介绍过 jsx 主要是在编译的时候通过 React.createElement 这个函数进行转换的，那么转换后的代码会在 ReactDOM.render 中进行执行，首先我们看一下 ReactDOM.render 的执行函数，定义在文件 <code>packages/react-dom/src/client/ReactDOM.js</code> 中</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> ReactDOM<span class="token punctuation">:</span> Object <span class="token operator">=</span> <span class="token punctuation">{</span>
  <span class="token comment" spellcheck="true">// ...</span>
@@ -913,7 +915,7 @@ executionContext <span class="token operator">=</span> executionContext <span cl
   <span class="token comment" spellcheck="true">//  busyMinDurationMs?: number,</span>
   <span class="token comment" spellcheck="true">// };</span>
   <span class="token keyword">const</span> suspenseConfig <span class="token operator">=</span> <span class="token function">requestCurrentSuspenseConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// 通过 expirationTime 对节点计算超时时间</span>
+  <span class="token comment" spellcheck="true">// 通过 expirationTime 对节点计算过期时间</span>
   <span class="token comment" spellcheck="true">// 如果在同一个事件中安排了两个更新，应该将它们的开始时间视为同时发生的</span>
   <span class="token comment" spellcheck="true">// 即使在第一次和第二次调用之间实际的时钟时间已经提前</span>
   <span class="token comment" spellcheck="true">// 过期时间决定更新的批处理方式，在同一事件中发生的具有相同优先级的所有更新都能接收到相同的过期时间</span>
@@ -934,7 +936,7 @@ executionContext <span class="token operator">=</span> executionContext <span cl
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面的逻辑最主要的的两个方法 computeExpirationForFiber 和 updateContainerAtExpirationTime</p>
 <h3 id="computeExpirationForFiber"><a href="#computeExpirationForFiber" class="headerlink" title="computeExpirationForFiber "></a>computeExpirationForFiber <hr></h3><blockquote>
-<p>computeExpirationForFiber 计算节点超时时间</p>
+<p>computeExpirationForFiber 计算节点过期时间</p>
 </blockquote>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">computeExpirationForFiber</span><span class="token punctuation">(</span>
   currentTime<span class="token punctuation">:</span> ExpirationTime<span class="token punctuation">,</span>
@@ -1028,7 +1030,7 @@ executionContext <span class="token operator">=</span> executionContext <span cl
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 
-  <span class="token comment" spellcheck="true">// 如果正在渲染一个树，不要在已经渲染的超时时间上更新操作。</span>
+  <span class="token comment" spellcheck="true">// 如果正在渲染一个树，不要在已经渲染的过期时间上更新操作。</span>
   <span class="token comment" spellcheck="true">// 如果在不同的 root 节点上更新移动到单独的批处理中</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>workInProgressRoot <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> expirationTime <span class="token operator">===</span> renderExpirationTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     expirationTime <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
@@ -1037,7 +1039,7 @@ executionContext <span class="token operator">=</span> executionContext <span cl
   <span class="token keyword">return</span> expirationTime<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>从上到代码的注释就能看到 computeExpirationForFiber 主要是根据不同的任务优先级去进行调度执行计算超时时间 expirationTime，那么在不同的任务优先级下面具体是怎么计算的呢</p>
+<p>从上到代码的注释就能看到 computeExpirationForFiber 主要是根据不同的任务优先级去进行调度执行计算过期时间 expirationTime，那么在不同的任务优先级下面具体是怎么计算的呢</p>
 <p>主要有下面四种</p>
 <ul>
 <li>computeSuspenseExpiration 暂停任务的计算</li>
@@ -1089,12 +1091,12 @@ executionContext <span class="token operator">=</span> executionContext <span cl
 <p>computeAsyncExpiration 的 expirationTime 为</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token number">1073741821</span><span class="token operator">-</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token number">1073741821</span><span class="token operator">-</span>currentTime <span class="token operator">+</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span>
 <span class="token number">1073741821</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1073741821</span> <span class="token operator">-</span> currentTime <span class="token operator">+</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">25</span>
-我们取最后四位来看一下规律并且把 currentTime 变为 <span class="token number">1000</span>
+我们取最后四位来看一下规律并且把 currentTime 变为从 <span class="token number">996</span><span class="token operator">-</span><span class="token number">1047</span> 的数字
 <span class="token number">1821</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1821</span> <span class="token operator">-</span> <span class="token number">996</span> <span class="token operator">+</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">25</span>  <span class="token comment" spellcheck="true">//1821-1350</span>
 <span class="token number">1821</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1821</span> <span class="token operator">-</span> <span class="token number">1021</span><span class="token operator">+</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">25</span>  <span class="token comment" spellcheck="true">//1821-1325</span>
 <span class="token number">1821</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1821</span> <span class="token operator">-</span> <span class="token number">1022</span><span class="token operator">+</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">25</span>  <span class="token comment" spellcheck="true">//1821-1300</span>
 <span class="token number">1821</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1821</span> <span class="token operator">-</span> <span class="token number">1047</span><span class="token operator">+</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">25</span>  <span class="token comment" spellcheck="true">//1821-1275</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>可以得出，异步更新的过期时间间隔是25ms</strong></p>
+<p><strong>可以得出，在跨度 996-1021 数字之内执行得出相同的结果，所以异步更新的过期时间间隔是25ms</strong></p>
 <p>同理 computeInteractiveExpiration 的 expirationTime 为</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token number">1073741821</span><span class="token operator">-</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token number">1073741821</span><span class="token operator">-</span>currentTime<span class="token operator">+</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>可以得出，交互更新的过期时间间隔是10ms</strong></p>
@@ -1264,17 +1266,29 @@ executionContext <span class="token operator">=</span> executionContext <span cl
 <span class="token punctuation">}</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> scheduleWork <span class="token operator">=</span> scheduleUpdateOnFiber<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过上面的代码分析我们了解到了整个 fiber 的创建过程以及提到了一点点的调度，关于怎么执行调度机制会在下一篇文章中进行分析。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结<hr></h2><h3 id="什么是-fiber"><a href="#什么是-fiber" class="headerlink" title="什么是 fiber"></a>什么是 fiber<hr></h3><p>Fiber 的中文解释是纤程，是线程的颗粒化的一个概念。也就是说一个线程可以包含多个 Fiber。可以使同步计算变得被拆解、异步化，使浏览器主线程得以调控。<br>通过把更新过程碎片化，当执行完一段更新的时候，把控制权交还给 React 负责任务协调的模块，通过调度系统的任务的优先级去执行更新操作。</p>
-<h3 id="fiber-的实现原理"><a href="#fiber-的实现原理" class="headerlink" title="fiber 的实现原理"></a>fiber 的实现原理<hr></h3><p>通过上面代码我们知道（虽然调度过程还没有分析），fiber 实际上是将需要执行的操作放在 updateQueue 队列中，而不是 Javascript 的栈。通过调度逻辑优先级控制在内存中保留栈帧，从而控制整个渲染。</p>
-<h3 id="fiber-的作用"><a href="#fiber-的作用" class="headerlink" title="fiber 的作用"></a>fiber 的作用<hr></h3><ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结<hr></h2><p>通过上面代码我们总结以下几个知识点</p>
+<blockquote>
+<p>fiber 的实现原理</p>
+</blockquote>
+<p>通过上面代码我们知道（虽然调度过程还没有分析），fiber 实际上是将需要执行的操作放在 updateQueue 队列中，而不是 Javascript 的栈。通过调度逻辑优先级控制在内存中保留栈帧，从而控制整个渲染。</p>
+<blockquote>
+<p>fiber 的作用</p>
+</blockquote>
+<ul>
 <li>每一个 ReactElement 对应一个Fiber对象</li>
 <li>记录每个节点的状态，例如 props 和 state 等</li>
 <li>会串联整个应用形成树结构</li>
 </ul>
-<h3 id="fiber-tree"><a href="#fiber-tree" class="headerlink" title="fiber-tree"></a>fiber-tree<hr></h3><img src="/images/library-react-fiber-tree.png">
+<blockquote>
+<p>fiber-tree</p>
+</blockquote>
+<img src="/images/library-react-fiber-tree.png">
 
 <p>上面的图就是整个 fiber-tree 的数据结构图，是通过递归 diff的过程，拆分成一系列小任务，通过调度算法，形成的结构。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他 "></a>其他 <hr></h3><p>由于篇幅过长所以调度流程只分析的大概，但是从上面的源码中我们知道一下几个知识点</p>
+<blockquote>
+<p>其他</p>
+</blockquote>
+<p>由于篇幅过长所以调度流程只分析的大概，但是从上面的源码中我们知道以下几个知识点</p>
 <ul>
 <li>hydrate 的作用</li>
 <li>在初次渲染时是不会进行批量更新的，因为要加速渲染过程</li>
@@ -1700,7 +1714,7 @@ executionContext <span class="token operator">=</span> executionContext <span cl
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">101.5k</span>
+            <span class="white-color">101.6k</span>
             
 
             <br>

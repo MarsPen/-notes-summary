@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-17T09:54:57.771Z</updated>
+  <updated>2019-10-17T10:25:07.123Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/"/>
     <id>https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/</id>
     <published>2019-10-04T05:20:25.000Z</published>
-    <updated>2019-10-17T09:54:57.771Z</updated>
+    <updated>2019-10-17T10:25:07.123Z</updated>
     
     <summary type="html">
     
@@ -421,32 +421,6 @@
   </entry>
   
   <entry>
-    <title>class.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>global.d.ts</title>
     <link href="https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/"/>
     <id>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</id>
@@ -462,6 +436,32 @@
           &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by:
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>class.d.ts</title>
+    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
+    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
+    <published>2019-08-15T10:20:27.000Z</published>
+    <updated>2019-09-05T03:41:37.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
