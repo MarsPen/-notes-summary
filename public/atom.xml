@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-17T10:25:07.123Z</updated>
+  <updated>2019-10-31T15:56:25.632Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 原理之 FiberRoot 调度过程</title>
+    <link href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/"/>
+    <id>https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/</id>
+    <published>2019-10-06T11:20:25.000Z</published>
+    <updated>2019-10-31T15:56:25.632Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上篇文章我们对 fiber 的创建做了大概的了解，并且还引入了 scheduleWork 函数。scheduleWork 函数实际执行了如下几个重要的函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;checkForNestedUpdates 判断是否有无限循环的
+        
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://www.studyfe.cn/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://www.studyfe.cn/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>React 原理之 FiberRoot 构建过程</title>
@@ -516,32 +544,6 @@
           &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by:
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TypeScript编译原理</title>
-    <link href="https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/"/>
-    <id>https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/</id>
-    <published>2019-08-05T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.958Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;TypeScript 编译器源文件位于 &lt;a href=&quot;https://github.com/Microsoft/TypeScript/tree/master/src/compiler&quot; target=&quot;_blank&quot;
         
       
     

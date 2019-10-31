@@ -1460,31 +1460,32 @@ executionContext <span class="token operator">=</span> executionContext <span cl
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/04/react/library-react-fiber01/">
+                <a href="/2019/10/06/react/library-react-fiber02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="React 原理之 FiberRoot 构建过程">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="React 原理之 FiberRoot 调度过程">
                         
-                        <span class="card-title">React 原理之 FiberRoot 构建过程</span>
+                        <span class="card-title">React 原理之 FiberRoot 调度过程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            fiber 是当前整个 react 核心部分，其中包含了大量的计算机知识。如果阅读 react 的源码能让人感觉到无力。
-每次版本更新，核心部分的函数总是要动那么一动。从 15, 到 16 到 16.8、16.9 到现在的 16.10，包括
+                            上篇文章我们对 fiber 的创建做了大概的了解，并且还引入了 scheduleWork 函数。scheduleWork 函数实际执行了如下几个重要的函数
+
+checkForNestedUpdates 判断是否有无限循环的 update
+m
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1497,7 +1498,6 @@ executionContext <span class="token operator">=</span> executionContext <span cl
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1714,7 +1714,7 @@ executionContext <span class="token operator">=</span> executionContext <span cl
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">101.6k</span>
+            <span class="white-color">105.7k</span>
             
 
             <br>

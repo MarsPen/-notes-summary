@@ -93,11 +93,9 @@ https://www.studyfe.cn/
 <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">React 原理之 JSX 转换</a><br/>
 <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">React 生命周期使用</a><br/>
 <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">React 原理之 FiberRoot 构建过程</a><br/>
-<a href="javascript:void(0);">React 原理之 Fiber 调度过程（正在整理）</a><br/>
-<a href="javascript:void(0);">React 原理之 Fiber 更新过程（未完成）</a><br/>
+<a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">React 原理之 Fiber 调度过程</a><br/>
+<a href="javascript:void(0);">React 原理之 setState 和 batchedUpdates 批处理（正在整理）</a><br/>
 <a href="javascript:void(0);">React 原理之 React Hooks（未完成）</a><br/>
-<a href="javascript:void(0);">Redux 原理（未完成）</a><br/>
-<a href="javascript:void(0);">Mobx 的应用 （未完成）</a><br/>
 
 ### webpack
 包含常用配置项目、优化、原理分析等</br>
