@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-10-31T15:56:25.632Z</updated>
+  <updated>2019-11-05T14:29:54.683Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 原理之 setState 执行机制</title>
+    <link href="https://www.studyfe.cn/2019/10/09/react/library-react-state/"/>
+    <id>https://www.studyfe.cn/2019/10/09/react/library-react-state/</id>
+    <published>2019-10-09T13:10:35.000Z</published>
+    <updated>2019-11-05T14:29:54.683Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;提到 react 的 setState 大家应该都很熟悉，那么下面我们以实际开发中遇到的几个问题，来引入 setState 的机制&lt;/p&gt;
+&lt;h2 id=&quot;问题集合&quot;&gt;&lt;a href=&quot;#问题集合&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://www.studyfe.cn/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://www.studyfe.cn/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>React 原理之 FiberRoot 调度过程</title>
@@ -516,34 +543,6 @@
         
         
           &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>module.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by:
         
       
     
