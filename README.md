@@ -3,17 +3,15 @@
 https://www.studyfe.cn/
 <hr>
 
-**| HTML** <br>
-<a href="https://www.studyfe.cn/2017/05/10/html/html/">HTML 系列总结</a><br/>
-<hr>
+**| HTML** 
+- <a href="https://www.studyfe.cn/2017/05/10/html/html/">HTML 系列总结</a>
 
-**| CSS**<br>
-<a href="https://www.studyfe.cn/2017/06/11/css/base-concepts/">CSS 基础知识概念</a><br/>
-<a href="https://www.studyfe.cn/2017/06/15/css/base-layout/">CSS 基本布局</a><br/>
-<a href="https://www.studyfe.cn/2017/06/20/css/css-animation/">CSS 动画</a><br/>
-<a href="https://www.studyfe.cn/2017/06/22/css/css-layered/">css分层理论</a><br/>
-<a href="https://www.studyfe.cn/2017/07/01/css/css-preprocessor/">CSS预处理器</a><br/>
-<hr>
+**| CSS**
+- <a href="https://www.studyfe.cn/2017/06/11/css/base-concepts/">CSS 基础知识概念</a>
+- <a href="https://www.studyfe.cn/2017/06/15/css/base-layout/">CSS 基本布局</a>
+- <a href="https://www.studyfe.cn/2017/06/20/css/css-animation/">CSS 动画</a>
+- <a href="https://www.studyfe.cn/2017/06/22/css/css-layered/">css分层理论</a>
+- <a href="https://www.studyfe.cn/2017/07/01/css/css-preprocessor/">CSS预处理器</a>
 
 **| JavaScript**<br>
 <a href="https://www.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a><br/>
