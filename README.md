@@ -87,18 +87,18 @@ https://www.studyfe.cn/
 - <a href="https://www.study.cn/2018/08/10/linux/git/">在 mac 中配置多个 github 账号 ssh 密钥</a>
 
 **| 前端框架**
-- <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue 原理之主线流程</a>
-- <a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue 原理之响应式</a>
-- <a href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/">vue 原理之组件更新</a>
-- <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue 原理之编译（parse、optimize、codegen)</a>
-- <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue 原理之组件化</a>
-- <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue 原理之 vue-router</a>
-- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue 原理之 vue-vuex</a>
-- <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react 原理之 jsx 转换</a>
-- <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react 生命周期使用</a>
-- <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react 原理之 fiberRoot 构建过程</a>
-- <a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">react 原理之 riber 调度过程</a>
-- <a href="javascript:void(0);">react 原理之 setState 和 batchedUpdates 批处理（正在整理）</a>
+- <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue2.0 原理之主线流程</a>
+- <a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue2.0 原理之响应式</a>
+- <a href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/">vue2.0 原理之组件更新</a>
+- <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue2.0 原理之编译（parse、optimize、codegen)</a>
+- <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue2.0 原理之组件化</a>
+- <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2.0 原理之 vue-router</a>
+- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2.0 原理之 vue-vuex</a>
+- <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react16.9 原理之 jsx 转换</a>
+- <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">16.9react 生命周期使用</a>
+- <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react16.9 原理之 fiberRoot 构建过程</a>
+- <a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">react16.9 原理之 riber 调度过程</a>
+- <a href="javascript:void(0);">react16.9 原理之 setState 和 batchedUpdates 批处理（正在整理）</a>
 - <a href="javascript:void(0);">react 原理之 react hooks（未完成）</a>
 
 **| 打包工具** <br>
