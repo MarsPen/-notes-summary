@@ -93,7 +93,7 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue 原理之编译（parse、optimize、codegen)</a>
 - <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue 原理之组件化</a>
 - <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue 原理之 vue-router</a>
-- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">Vue 原理之 vue-vuex</a>
+- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue 原理之 vue-vuex</a>
 - <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react 原理之 jsx 转换</a>
 - <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react 生命周期使用</a>
 - <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react 原理之 fiberRoot 构建过程</a>
@@ -109,15 +109,12 @@ https://www.studyfe.cn/
 - 包含常用分析工具、性能指标、前端加载优化手段、服务端请求优化手段等。未完待续...
 
 
-
 **| 前端常用算法**<br>
 - 包含二叉树、查找、排序、链表、回文、可能性问题、算数、二进制、DFS、DP、BFS 等。未完待续...
 
 
-
 **| 前端常用面试题目汇总**
 - 包含前端高频出现的面试题汇总。未完待续...
-
 
 
 **| 自动化部署**
