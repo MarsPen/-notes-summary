@@ -93,7 +93,7 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2.0 原理之 vue-router</a>
 - <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2.0 原理之 vue-vuex</a>
 - <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react16.9 原理之 jsx 转换</a>
-- <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">16.9react 生命周期使用</a>
+- <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react16.9 生命周期使用</a>
 - <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react16.9 原理之 fiberRoot 构建过程</a>
 - <a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">react16.9 原理之 riber 调度过程</a>
 - <a href="javascript:void(0);">react16.9 原理之 setState 和 batchedUpdates 批处理（正在整理）</a>
