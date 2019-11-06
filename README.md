@@ -20,7 +20,7 @@ https://www.studyfe.cn/
 **| JavaScript**<br>
 
 - <a href="https://www.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a>
-- <a href="https://www.studyfe.cn/2019/02/20/javascript/voao/">vo 和 ao</a>
+- <a href="https://www.studyfe.cn/2019/02/20/javascript/voao/">变量提升</a>
 - <a href="https://www.studyfe.cn/2019/02/25/javascript/closure/">闭包</a>
 - <a href="https://www.studyfe.cn/2019/03/05/javascript/this/">this</a>
 - <a href="https://www.studyfe.cn/2019/03/10/javascript/prototype/">原型-原型链</a>
