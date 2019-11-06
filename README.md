@@ -42,7 +42,6 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/">偏应用函数、函数的柯里化</a>
 - <a href="https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/">函数组合</a>
 - <a href="https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/">Point Free</a>
-  未完待续...
 
 **| TypeScript**
 
@@ -70,15 +69,14 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/04/08/node/crypto/">crypto 加密模块</a>
 - <a href="https://www.studyfe.cn/2019/04/10/node/event/">event 事件驱动模型</a>
 - <a href="https://www.studyfe.cn/2019/04/12/node/process/">process 进程</a>
-- <a href="https://www.studyfe.cn/2019/04/14/node/error/">Error 异常模块</a>
-  未完待续...
+- <a href="https://www.studyfe.cn/2019/04/14/node/error/">error 异常模块</a>
 
-**| PHP**<br>
+**| PHP**
 - <a href="https://www.study.cn/2017/01/23/php/base/">语法、变量、数据类型</a>
 - <a href="https://www.study.cn/2017/01/23/php/method/">常用方法</a>
 - <a href="https://www.study.cn/2017/01/23/php/oop/">面向对象</a>
 
-**| Liunx**<br>
+**| Liunx**
 - <a href="https://www.study.cn/2018/06/23/linux/instructions/">常用指令</a>
 - <a href="https://www.study.cn/2018/07/02/linux/system/">系统管理指令</a>
 - <a href="https://www.study.cn/2018/07/10/linux/compression/">打包压缩相关指令</a>
@@ -87,7 +85,6 @@ https://www.studyfe.cn/
 - <a href="https://www.study.cn/2018/07/25/linux/fileauth/">文件权限</a>
 - <a href="https://www.study.cn/2018/07/28/linux/vim/">vim 使用</a>
 - <a href="https://www.study.cn/2018/08/10/linux/git/">在 mac 中配置多个 github 账号 ssh 密钥</a>
-未完待续...
 
 **| 前端框架**
 - <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue 原理之主线流程</a>
@@ -105,28 +102,28 @@ https://www.studyfe.cn/
 - <a href="javascript:void(0);">react 原理之 react hooks（未完成）</a>
 
 **| 打包工具** <br>
-包含常用配置项目、优化、原理分析等
-未完待续...
+- 包含常用配置项目、优化、原理分析等。未完待续...
+
 
 **| 前端性能优化**<br>
-包含常用分析工具、性能指标、前端加载优化手段、服务端请求优化手段等
-未完待续...
+- 包含常用分析工具、性能指标、前端加载优化手段、服务端请求优化手段等。未完待续...
+
 
 
 **| 前端常用算法**<br>
-包含二叉树、查找、排序、链表、回文、可能性问题、算数、二进制、DFS、DP、BFS 等
-未完待续...
+- 包含二叉树、查找、排序、链表、回文、可能性问题、算数、二进制、DFS、DP、BFS 等。未完待续...
+
 
 
 **| 前端常用面试题目汇总**
-包含前端高频出现的面试题汇总
-未完待续...
+- 包含前端高频出现的面试题汇总。未完待续...
+
 
 
 **| 自动化部署**
-包含 jenkins 安装、配置、自动化测试、监控日志系统等
-未完待续...
+- 包含 jenkins 安装、配置、自动化测试、监控日志系统等。未完待续...
+
 
 **| 项目总结**
-包含在开发项目中遇到的问题难点、解决办法汇总
-未完待续...
+- 包含在开发项目中遇到的问题难点、解决办法汇总。未完待续...
+
