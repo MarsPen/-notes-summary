@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-11-05T14:29:54.683Z</updated>
+  <updated>2019-11-14T08:46:04.631Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 原理之 hook</title>
+    <link href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/"/>
+    <id>https://www.studyfe.cn/2019/11/09/react/library-react-hook/</id>
+    <published>2019-11-09T11:12:35.000Z</published>
+    <updated>2019-11-14T08:46:04.631Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;什么是-hook&quot;&gt;&lt;a href=&quot;#什么是-hook&quot; class=&quot;headerlink&quot; title=&quot;什么是 hook&quot;&gt;&lt;/a&gt;什么是 hook&lt;hr&gt;&lt;/h3&gt;&lt;p&gt;hook 意为钩子，当代码执行特定的时期时会自动调用 hook
+        
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://www.studyfe.cn/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://www.studyfe.cn/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>React 原理之 setState 执行机制</title>
@@ -491,32 +517,6 @@
           &lt;pre&gt;&lt;code&gt;// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
 // Project: [~THE PROJECT NAME~]
 // Definitions by:
-        
-      
-    
-    </summary>
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/categories/TypeScript/"/>
-    
-    
-      <category term="TypeScript" scheme="https://www.studyfe.cn/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>class.d.ts</title>
-    <link href="https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/"/>
-    <id>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</id>
-    <published>2019-08-15T10:20:27.000Z</published>
-    <updated>2019-09-05T03:41:37.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;// Type definitions for [&lt;del&gt;THE LIBRARY NAME&lt;/del&gt;] [&lt;del&gt;OPTIONAL VERSION NUMBER&lt;/del&gt;]&lt;br&gt;// Project: [&lt;del&gt;THE PROJECT
         
       
     
