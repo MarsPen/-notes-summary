@@ -17,9 +17,9 @@ https://www.studyfe.cn/2019/09/05/vue/vueobserve/
 https://www.studyfe.cn/2019/08/27/vue/vueprinciple/
 https://www.studyfe.cn/2019/08/26/javascript/generator-async/
 https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/
-https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/
 https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/
 https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/
+https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/
 https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/
 https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/
 https://www.studyfe.cn/2019/07/22/javascript/functionalcombination/
@@ -59,7 +59,7 @@ https://www.studyfe.cn/2019/03/15/javascript/inheritance/
 https://www.studyfe.cn/2019/03/10/javascript/prototype/
 https://www.studyfe.cn/2019/03/05/javascript/this/
 https://www.studyfe.cn/2019/02/25/javascript/closure/
-https://www.studyfe.cn/2019/02/20/javascript/voao/
+https://www.studyfe.cn/2019/02/20/javascript/variableascension/
 https://www.studyfe.cn/2019/02/12/javascript/type/
 https://www.studyfe.cn/2018/09/10/vue/vuex/
 https://www.studyfe.cn/2018/08/10/linux/git/

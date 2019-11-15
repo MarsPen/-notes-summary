@@ -7,11 +7,10 @@
   <meta name="keywords" content="数据类型, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="基本数据类型概念  基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里
+  <meta name="description" content="基本数据类型概念   基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里
 种类  Undefined、Null、Boolean、String、Number、Symbol（es6）
   基本数据类型的值是不可变的
-```js
-va">
+  var s">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -422,7 +421,7 @@ va">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    544
+                    510
                 </div>
                 
 
@@ -445,51 +444,46 @@ va">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>  基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里</p>
-<h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><p>  Undefined、Null、Boolean、String、Number、Symbol（es6）</p>
+                <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念 "></a>概念 <hr></h3><p>  基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里</p>
+<h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类<hr></h3><p>  Undefined、Null、Boolean、String、Number、Symbol（es6）</p>
 <p>  基本数据类型的值是不可变的</p>
-<pre><code>```js
-var str = &quot;renbo&quot;;
-str.toUpperCase(); // RENBO
-console.log(str); // renbo
-```</code></pre><p>  按值进行比较</p>
-<pre><code>```js
-var a = 1;
-var b = true;
-console.log(a == b); // true
-console.log(a === b); // false
-```</code></pre><p>  虽然数据类型不相同（true为bool,1为Number)但在比较之前js自动进行了数据类型的隐式转换</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"renbo"</span><span class="token punctuation">;</span>
+  str<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// RENBO</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// renbo</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>  按值进行比较</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">===</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>  虽然数据类型不相同（true为bool,1为Number)但在比较之前js自动进行了数据类型的隐式转换</p>
 <p>  == 是进行值比较所以为true</p>
 <p>  === 不仅比较值还要比较数据类型所以为false</p>
 <p>  栈内存中保存了变量的标识符和变量的值</p>
-<pre><code>```js
-var a,b;
-a = 1;
-b = a;
-console.log(a); // 1
-console.log(b); // 1
-a = 2;
-console.log(a); // 2
-console.log(b); // 1
-```
-&lt;image src=&#39;/images/javascript-stack.png&#39;&gt;&lt;/image&gt;</code></pre><h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>  引用类型的值是保存在堆内存（Heap）中的对象（Object）</p>
-<h3 id="种类-1"><a href="#种类-1" class="headerlink" title="种类"></a>种类</h3><p>  统称为Object，细分有：Object，Array，Function，Data，RegExp等</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+  a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
+  a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>  <image src="/images/javascript-stack.png"></image></p>
+<h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念 "></a>概念 <hr></h3><p>  引用类型的值是保存在堆内存（Heap）中的对象（Object）</p>
+<h3 id="种类-1"><a href="#种类-1" class="headerlink" title="种类"></a>种类<hr></h3><p>  统称为Object，细分有：Object，Array，Function，Data，RegExp等</p>
 <p>  引用类型的值式可变化的</p>
-<pre><code>```js
-var obj = {name:&#39;renbo&#39;};
-obj.name = &#39;zhangsan&#39;;
-obj.age = 28;
-obj.say = function () {
-  return &#39;My name is&#39; + this.name + &#39;I‘m&#39; + this.age+ &#39;years old&#39;;
-}
-obj.say(); //My name is zhangsan I‘m 28 years old
-```</code></pre><p>  按引用地址比较</p>
-<pre><code>```js
-var obj = {};
-var obj1 = {};
-console.log(obj == obj1); // false
-console.log(obj === obj1) // false
-```</code></pre><p>  栈内存中保存了变量标识符和指向堆内存中该对象的指针</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token string">'renbo'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'zhangsan'</span><span class="token punctuation">;</span>
+  obj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">28</span><span class="token punctuation">;</span>
+  obj<span class="token punctuation">.</span>say <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'My name is'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">'I‘m'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">+</span> <span class="token string">'years old'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  obj<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//My name is zhangsan I‘m 28 years old</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>  按引用地址比较</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj <span class="token operator">==</span> obj1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj <span class="token operator">===</span> obj1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>  栈内存中保存了变量标识符和指向堆内存中该对象的指针</p>
 <p>  堆内存中保存了对象的内容</p>
 <pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'renbo'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
@@ -505,54 +499,52 @@ console.log(obj === obj1) // false
     name<span class="token punctuation">:</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span>
     age<span class="token punctuation">:</span><span class="token number">28</span>
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>  <image src="/images/javascript-stack1.png"></image></p>
-<h2 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h2><h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><p>  经常检查变量是不是基本数据类型</p>
-<pre><code>```js
-var a;
+<p><image src="/images/javascript-stack1.png"></image></p>
+<h2 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h2><h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof<hr></h3><p>  经常检查变量是不是基本数据类型</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> a<span class="token punctuation">;</span>
 
-a = &quot;hello&quot;;
-typeof a; // string
+  a <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span>
 
-a = true;
-typeof a; // boolean
+  a <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// boolean</span>
 
-a = 1;
-typeof a; // number 
+  a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number </span>
 
-a = null;
-typeof a; // object
+  a <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object</span>
 
-typeof a; // undefined
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span>
 
-a = Symbol();
-typeof a; // symbol
+  a <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// symbol</span>
 
-a = function(){}
-typeof a; // function
+  a <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// function</span>
 
-a = [];
-typeof a; // object
+  a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object</span>
 
-a = {};
-typeof a; // object
+  a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object</span>
 
-a = /renbo/g;
-typeof a; // object   
-```</code></pre><h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>  经常用来判断引用类型的变量具体是某种类型</p>
-<pre><code>```js
-var a;
-a = function(){}
-a instanceof Function; // true
+  a <span class="token operator">=</span> <span class="token regex">/renbo/g</span><span class="token punctuation">;</span>
+  <span class="token keyword">typeof</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object   </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof<hr></h3><p>  经常用来判断引用类型的变量具体是某种类型</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> a<span class="token punctuation">;</span>
+  a <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+  a <span class="token keyword">instanceof</span> <span class="token class-name">Function</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 
-a = [];
-a instanceof Array; // true
+  a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  a <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 
-a = {};
-a instanceof Object; // true
+  a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  a <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 
-a = /renbo/g;
-a instanceof RegExp ; // true    
-```</code></pre>
+  a <span class="token operator">=</span> <span class="token regex">/renbo/g</span><span class="token punctuation">;</span>
+  a <span class="token keyword">instanceof</span> <span class="token class-name">RegExp</span> <span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true    </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -717,13 +709,13 @@ a instanceof RegExp ; // true
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/02/20/javascript/voao/">
+                <a href="/2019/02/20/javascript/variableascension/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="vo 和 ao">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="变量提升">
                         
-                        <span class="card-title">vo 和 ao</span>
+                        <span class="card-title">变量提升</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -971,7 +963,7 @@ this和argument
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">109.2k</span>
+            <span class="white-color">109.8k</span>
             
 
             <br>

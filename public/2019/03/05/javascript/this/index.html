@@ -7,11 +7,8 @@
   <meta name="keywords" content="this, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="概念js的关键字，在执行上下文环境时被绑定
-绑定规则默认绑定、隐式绑定、apply,call、new绑定。优先级从低到高
-默认绑定console.log(this); //window
-function fun() {
-console.lo">
+  <meta name="description" content="概念当一个函数被创建的时候，会创建一个活动对象（执行上下文EC），这里面包含了函数的调用栈，函数的调用方式、传入的参数等信息，this就是执行上下文的一个属性，会在函数执行过程中用到
+绑定规则默认绑定、隐式绑定、apply,call、new">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -422,14 +419,14 @@ console.lo">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    330
+                    554
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -445,15 +442,15 @@ console.lo">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>js的关键字，在执行上下文环境时被绑定</p>
-<h3 id="绑定规则"><a href="#绑定规则" class="headerlink" title="绑定规则"></a>绑定规则</h3><p>默认绑定、隐式绑定、apply,call、new绑定。优先级从低到高</p>
-<h3 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h3><pre class="line-numbers language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//window</span>
+                <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念<hr></h3><p>当一个函数被创建的时候，会创建一个活动对象（执行上下文EC），这里面包含了函数的调用栈，函数的调用方式、传入的参数等信息，this就是执行上下文的一个属性，会在函数执行过程中用到</p>
+<h3 id="绑定规则"><a href="#绑定规则" class="headerlink" title="绑定规则"></a>绑定规则<hr></h3><p>默认绑定、隐式绑定、apply,call、new绑定。优先级从低到高</p>
+<h3 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定<hr></h3><pre class="line-numbers language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//window</span>
 <span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 非严格模式下1 ，严格模式下undefined</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="隐式调用"><a href="#隐式调用" class="headerlink" title="隐式调用"></a>隐式调用</h3><p>作为对象方法调用，this 指代上下文对象</p>
+<h3 id="隐式调用"><a href="#隐式调用" class="headerlink" title="隐式调用"></a>隐式调用<hr></h3><p>作为对象方法调用，this 指代上下文对象</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -465,7 +462,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 obj<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
 <span class="token keyword">var</span> c <span class="token operator">=</span> obj<span class="token punctuation">.</span>fun<span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="apply-call"><a href="#apply-call" class="headerlink" title="apply,call"></a>apply,call</h3><p>改变对象的prototype关联对象来改变this,对于null，undefined绑定会失效</p>
+<h3 id="apply-call"><a href="#apply-call" class="headerlink" title="apply,call"></a>apply,call<hr></h3><p>改变对象的prototype关联对象来改变this,对于null，undefined绑定会失效</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -480,7 +477,7 @@ fun<span class="token punctuation">.</span><span class="token function">call</sp
 fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> obj2 <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3</span>
 fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> <span class="token keyword">null</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
 fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> undefined <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h3><p>this 指代new 出的对象<br>使用new来调用函数，会自动执行如下操作：</p>
+<h3 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用<hr></h3><p>this 指代new 出的对象<br>使用new来调用函数，会自动执行如下操作：</p>
 <ul>
 <li>创建一个全新的对象。</li>
 <li>这个新对象会被执行[[原型]]连接。</li>
@@ -495,7 +492,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<h3 id="es6中箭头函数this指向"><a href="#es6中箭头函数this指向" class="headerlink" title="es6中箭头函数this指向"></a>es6中箭头函数this指向</h3><p>  取决于外层（函数或全局）作用域。</p>
+<h3 id="es6中箭头函数this指向"><a href="#es6中箭头函数this指向" class="headerlink" title="es6中箭头函数this指向"></a>es6中箭头函数this指向<hr></h3><p>  取决于外层（函数或全局）作用域。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>  this判断机制</p>
+<ul>
+<li>函数是否在 new 中调用，如果是那么this 绑定的是新创建的对象</li>
+<li>函数是否通过apply、call（显示绑定）、硬绑定调用，如果是,this指向的是指定的对象</li>
+<li>函数否是在某个上下文中调用（隐式绑定），如果是this绑定的就是那个上下文对象</li>
+<li>如果都不是 this 使用默认绑定规则是当前的全局对象，严格模式则是 undefined</li>
+<li>如果 apply、call、bind 等传入的是 null,或者 undefined 则使用默认绑定</li>
+<li>如果是 es6 那么 this 是根据外层作用域来决定的</li>
+</ul>
 
             </div>
             <hr />
@@ -727,10 +733,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说起闭包那么首先先来了解一下js执行环境（execution context）、作用域以及作用域链（scope chain）
-上下文执行环境 执行环境定义了变量或者函数有权访问的其他数据，决定了各自的行为
-组成部分
-变量对象（varible
+                            说到闭包我们先来了解一下 JS 的作用域
+什么是作用域作用域是根据名称查找变量的一套规则，负责收集并维护数据的声明和标识，通过一系列的声明和标识能够组成访问查询
+分类
+全局作用域
+局部作用域
+块级作用域
+
+那么作用域到底在哪里呢？我们先来了
                         
                     </div>
                     <div class="publish-info">
@@ -915,7 +925,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">109.2k</span>
+            <span class="white-color">109.8k</span>
             
 
             <br>
