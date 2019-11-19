@@ -100,7 +100,9 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/">react 原理之 react hooks</a>
 
 **| 打包工具** 
-- 包含常用配置项目、优化、原理分析等。未完待续...
+- <a href="">打包工具对比及 webpack 使用总结（正在整理）</a>
+- <a href="javascript:void(0)">手写模块解析器之 webpack</a>
+- <a href="javascript:void(0)">整体流程分析之 webpack </a>
 
 
 **| 前端性能优化**
