@@ -465,6 +465,6 @@ react 事件系统中和通过生命周期阶段调用的 setState 在推入队�
 ### 推荐阅读
 
  <a href="https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973">为什么会批量执行</a>
- <a href="https://github.com/facebook/react/issues/9439">
+ <a href="https://github.com/facebook/react/issues/9439">某些情况下 setState 的工作方式</a>
  <a href="https://github.com/facebook/react/issues/11527#issuecomment-360199710">为什么不直接更新 this.state</a>
 

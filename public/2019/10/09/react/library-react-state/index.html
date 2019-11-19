@@ -822,7 +822,7 @@ Component<span class="token punctuation">.</span>prototype<span class="token pun
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>react 事件系统中和通过生命周期阶段调用的 setState 在推入队列前面的阶段实际上都可以属于同步阶段，但在执行批处理到渲染阶段都会触发批处理由于自定义的一套事件系统所以都是异步。</p>
 <p>使用原生事件监听和 settimeout 这种当时不会触发此事件系统 ，也不会触发批处理，所以可以更新 this.setState 所以是同步的。</p>
-<h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><p> <a href="https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973" target="_blank" rel="noopener">为什么会批量执行</a><br> <a href="https://github.com/facebook/react/issues/9439" target="_blank" rel="noopener"><br> <a href="https://github.com/facebook/react/issues/11527#issuecomment-360199710" target="_blank" rel="noopener">为什么不直接更新 this.state</a></a></p>
+<h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><p> <a href="https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973" target="_blank" rel="noopener">为什么会批量执行</a><br> <a href="https://github.com/facebook/react/issues/9439" target="_blank" rel="noopener">某些情况下 setState 的工作方式</a><br> <a href="https://github.com/facebook/react/issues/11527#issuecomment-360199710" target="_blank" rel="noopener">为什么不直接更新 this.state</a></p>
 
             </div>
             <hr />
@@ -1238,7 +1238,7 @@ m
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">111.8k</span>
+            <span class="white-color">111.9k</span>
             
 
             <br>
