@@ -150,7 +150,7 @@ function createObj (o) {
 
 ```js
 function inheritPrototype(Child, Parent){
-  var prototype = Object.create(superType.prototype);
+  var prototype = Object.create(Parent.prototype);
   prototype.constructor = Child;
   Child.prototype = prototype;
 }

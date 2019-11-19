@@ -18,7 +18,7 @@ https://www.studyfe.cn/
 **| JavaScript**<br>
 
 - <a href="https://www.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a>
-- <a href="https://www.studyfe.cn/2019/02/20/javascript/variableAscension/">变量提升</a>
+- <a href="https://www.studyfe.cn/2019/02/20/javascript/variableascension/">变量提升</a>
 - <a href="https://www.studyfe.cn/2019/02/25/javascript/closure/">执行上下文</a>
 - <a href="https://www.studyfe.cn/2019/03/05/javascript/this/">this</a>
 - <a href="https://www.studyfe.cn/2019/03/10/javascript/prototype/">原型-原型链</a>
@@ -96,7 +96,7 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react16.9 生命周期使用</a>
 - <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react16.9 原理之 fiberRoot 构建过程</a>
 - <a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">react16.9 原理之 riber 调度过程</a>
-- <a href="javascript:void(0);">react16.9 原理之 setState 和 batchedUpdates 批处理（正在整理）</a>
+- <a href="https://www.studyfe.cn/2019/10/09/react/library-react-state/">react16.9 原理之 setState</a>
 - <a href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/">react 原理之 react hooks</a>
 
 **| 打包工具** 

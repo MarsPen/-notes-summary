@@ -47,7 +47,7 @@
     <link href="https://www.studyfe.cn/2019/10/09/react/library-react-state/"/>
     <id>https://www.studyfe.cn/2019/10/09/react/library-react-state/</id>
     <published>2019-10-09T13:10:35.000Z</published>
-    <updated>2019-11-05T14:29:54.683Z</updated>
+    <updated>2019-11-19T09:42:02.847Z</updated>
     
     <summary type="html">
     
@@ -56,7 +56,7 @@
         
         
           &lt;p&gt;提到 react 的 setState 大家应该都很熟悉，那么下面我们以实际开发中遇到的几个问题，来引入 setState 的机制&lt;/p&gt;
-&lt;h2 id=&quot;问题集合&quot;&gt;&lt;a href=&quot;#问题集合&quot; class=&quot;headerlink&quot;
+&lt;h3 id=&quot;问题集合&quot;&gt;&lt;a href=&quot;#问题集合&quot; class=&quot;headerlink&quot;
         
       
     
