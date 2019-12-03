@@ -1,2 +1,5 @@
 .vscode/
+.cache/
+dev-run.sh
+pro-run.sh
 node_modules
