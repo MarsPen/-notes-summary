@@ -294,7 +294,7 @@ console.log(flag);//true
 
 ```js
 var arrayObj = [1,2,3,4,5,6];
-var flag = arrayObj.some(function(element,index,array){
+var flag = arrayObj.every(function(element,index,array){
   return element > 2;
 });
 console.log(flag);//false

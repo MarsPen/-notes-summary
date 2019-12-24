@@ -418,14 +418,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
                 
@@ -454,7 +454,8 @@
 <li>进行开发热更新、区分环境自动发布等</li>
 </ul>
 <p>上面说了这么多实际上就是工程化、自动化的思想。将手动的流程用工具自动的解决一系列复杂的操作，解放生产力。</p>
-<h2 id="构建工具对比"><a href="#构建工具对比" class="headerlink" title="构建工具对比"></a>构建工具对比</h2><h3 id="npm"><a href="#npm" class="headerlink" title="npm "></a>npm <hr></h3><blockquote>
+<h2 id="构建工具对比"><a href="#构建工具对比" class="headerlink" title="构建工具对比"></a>构建工具对比</h2><p>通过对比能够更好的了解当前构建工具的应用场景和优缺点，下面我们来看看</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm "></a>npm <hr></h3><blockquote>
 <p><a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html" target="_blank" rel="noopener">npm scripts 使用指南</a></p>
 </blockquote>
 <p>Npm Scripts（NPM脚本）是一个任务执行者。NPM 是安装 Node 时附带的一个包管理器，Npm Script 则是 NPM 内置的一个功能，允许在 package.json 文件里面使用 scripts 字段定义任务：</p>
@@ -490,9 +491,9 @@
 <span class="token keyword">var</span> sass <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"gulp-sass"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> concat <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"gulp-concat"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">...</span><span class="token punctuation">.</span>
-<span class="token comment" spellcheck="true">// 便宜SCSS任务</span>
+<span class="token comment" spellcheck="true">// SCSS任务</span>
 gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'scss'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 读取文件，通过管道喂给插件</span>
+    <span class="token comment" spellcheck="true">// 读取文件，通过管道执行插件</span>
     gulp<span class="token punctuation">.</span><span class="token function">src</span><span class="token punctuation">(</span><span class="token string">'./scss/*.scss'</span><span class="token punctuation">)</span>
         <span class="token comment" spellcheck="true">// SCSS 插件将 scss 文件编译成 css</span>
         <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">sass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -551,7 +552,7 @@ fis<span class="token punctuation">.</span><span class="token function">match</s
 fis<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">'*.png'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
     optimizer<span class="token punctuation">:</span> fis<span class="token punctuation">.</span><span class="token function">plugin</span><span class="token punctuation">(</span><span class="token string">'png-compressor'</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>优点：集成了各种Web老发所需的构建功能，配置简单，开箱即用<br>缺点：目前官方已经不再更新和维护，不支持最新版本的 Node</p>
+<p>优点：集成了各种Web所需的构建功能，配置简单，开箱即用<br>缺点：目前官方已经不再更新和维护，不支持最新版本的 Node</p>
 <blockquote>
 <p><a href="https://webpack.js.org/" target="_blank" rel="noopener"> webpack 官网 </a></p>
 </blockquote>
@@ -576,13 +577,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <h3 id="rollup"><a href="#rollup" class="headerlink" title="rollup "></a>rollup <hr></h3><blockquote>
 <p><a href="https://www.rollupjs.com/" target="_blank" rel="noopener"> rollup 官网 </a></p>
 </blockquote>
-<p>Rollup 是一个和 Webpack 很类似但专注于 ES6 的模块打包工具。它的亮点在于，针对 ES6 源码进行 Tree Shaking, 以去除那些已经被定义但没被使用的代码并进行 Scope Hoisting，以减少输出文件的大小和提升运行性能。然而 Rollup 的这些亮点随后就被 Webpack 模仿和实现了。由于 Rollup 的使用方法和 Webpakc 差不多，所以这里就不详细介绍如何使用 Rollup 了，而是详细说明他们的差别：</p>
+<p>Rollup 是一个和 webpack 很类似但专注于 ES6 的模块打包工具。它的亮点在于，针对 ES6 源码进行 Tree Shaking, 以去除那些已经被定义但没被使用的代码并进行 Scope Hoisting，以减少输出文件的大小和提升运行性能。然而 Rollup 的这些亮点随后就被 webpack 模仿和实现了。由于 Rollup 的使用方法和 webpack 差不多，所以这里就不详细介绍如何使用 Rollup 了，而是详细说明他们的差别：</p>
 <ul>
-<li>Rollup 是在 Webpack 流行后出现的替代品；</li>
-<li>Rollup 生态链不完善，体验还不如 Webpack；</li>
-<li>Rollup 的功能不如 Webpack 完善，但其配置和使用更简单；</li>
-<li>Rollup 不支持 Code Spliting， 但好处是在打包出来的代码中没有 Webpack 那段模块的加载、执行和缓存的代码。</li>
-<li>Rollup 在用于打包 JavaScript 库时比 Webpack 更有优势，因为其打包出来的代码更小、更快。但他的功能不够完善，在很多场景下都找不到现成的解决方案</li>
+<li>Rollup 是在 webpack 流行后出现的替代品；</li>
+<li>Rollup 生态链不完善，体验还不如 webpack；</li>
+<li>Rollup 的功能不如 webpack 完善，但其配置和使用更简单；</li>
+<li>Rollup 不支持 Code Spliting， 但好处是在打包出来的代码中没有 webpack 那段模块的加载、执行和缓存的代码。</li>
+<li>Rollup 在用于打包 JavaScript 库时比 webpack 更有优势，因为其打包出来的代码更小、更快。但他的功能不够完善，在很多场景下都找不到现成的解决方案</li>
 </ul>
 <h3 id="parcel"><a href="#parcel" class="headerlink" title="parcel"></a>parcel<hr></h3><blockquote>
 <p> <a href="https://parceljs.org/" target="_blank" rel="noopener"> parcel 官网 </a></p>
@@ -604,7 +605,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li>不灵活的配置： 零配置的Parcel关闭了很多配置项，在一些需要的配置的场景下无法改变</li>
 <li>场景受限制：只能用来构建能用来构建用于运行在浏览器中的网页</li>
 </ul>
-<p>通过上面的对比我们看到每种构建工具实际上都有应用的场景。每种工具也是时代应运产生的。那么在这几年流行的模块化、组件化也出现了很多组件库，CMD 规范的 seaJs、AMD 规范的 requireJs 等（<a href="https://juejin.im/post/5aaa37c8f265da23945f365c" target="_blank" rel="noopener">区别</a>），这写规范无外乎都是解决开发中实际的问题。那么我们为什么会去选择 webpack呢。</p>
+<p>通过上面的对比我们看到每种构建工具实际上都有应用的场景。每种工具也是时代应运产生的。那么在这几年流行的模块化、组件化也出现了很多组件库，CMD 规范的 seaJs、AMD 规范的 requireJs 等（<a href="https://juejin.im/post/5aaa37c8f265da23945f365c" target="_blank" rel="noopener">区别</a>），这写规范无外乎都是解决开发中实际的问题。那么我们为什么会去选择 webpack 呢。</p>
 <ul>
 <li>当前前端技术都会采用的新思想（模块化+新语言+新框架）去开发</li>
 <li>webpack 在4.0以后可以几乎零配置</li>
@@ -645,8 +646,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
    <span class="token comment" spellcheck="true">// ...</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程 "></a>运行流程 <hr></h3><p>Webpack 就像一条生产线，要经过一系列处理流程后才能将源文件转换成输出结果。 这条生产线上的每个处理流程的职责都是单一的，多个流程之间有存在依赖关系，只有完成当前处理后才能交给下一个流程去处理。 插件就像是一个插入到生产线中的一个功能，在特定的时机对生产线上的资源做处理。</p>
-<p>Webpack 通过 Tapable 来组织这条复杂的生产线。 Webpack 在运行过程中会广播事件，插件只需要监听它所关心的事件，就能加入到这条生产线中，去改变生产线的运作。 Webpack 的事件流机制保证了插件的有序性，使得整个系统扩展性很好。  –吴浩麟《深入浅出webpack》</p>
+<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程 "></a>运行流程 <hr></h3><p>webpack 就像一条生产线，要经过一系列处理流程后才能将源文件转换成输出结果。 这条生产线上的每个处理流程的职责都是单一的，多个流程之间有存在依赖关系，只有完成当前处理后才能交给下一个流程去处理。 插件就像是一个插入到生产线中的一个功能，在特定的时机对生产线上的资源做处理。</p>
+<p>webpack 通过 Tapable 来组织这条复杂的生产线。 webpack 在运行过程中会广播事件，插件只需要监听它所关心的事件，就能加入到这条生产线中，去改变生产线的运作。 webpack 的事件流机制保证了插件的有序性，使得整个系统扩展性很好。  –吴浩麟《深入浅出webpack》</p>
 <p>上面这段话把 webapck 做的事情解释的很清楚，实际上就是在构建的时候通过一系列的事件处理和回调来处理不同的功能。那么这种事件流是通过 Tapable 来管理的，关于 <a href="https://github.com/Pein892/learn-webpack-tapable" target="_blank" rel="noopener">Tapable</a>请移步大佬的源码分析。</p>
 <p>但是在 webpack4 中重写了事件流机制 <a href="https://webpack.js.org/api/compiler-hooks/" target="_blank" rel="noopener"> webpack Hook</a>，由于源码的复杂性。在后面会通过思维导图的方式整理方便记忆。那么在<a href="https://github.com/webpack/changelog-v5/blob/master/README.md" target="_blank" rel="noopener">webpack5</a> 中其实也增加了一些功能。在这里就不展开讨论了。</p>
 <p>下面我们通过流程图来对 webpack 的执行流程作出分析</p>
@@ -657,14 +658,14 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li>依次进入每个入口文件使用配置好的loader 对文件内容进行解析编译，生成<a hre="https://juejin.im/post/5bff941e5188254e3b31b424">AST（静态语法树）</a></li>
 <li>最后输出代码 chunk、打包好的文件等</li>
 </ul>
-<p>上面的过程只是粗略的介绍了执行流程，那么接下来还是通过一张图来看一下webpack 内部到底是如何工作的</p>
+<p>上面的过程只是粗略的介绍了执行流程，那么接下来还是通过一张图来看一下 webpack 内部到底是如何工作的</p>
 <p><img src="/images/webpack-render.jpg"></p>
-<p>通过上面的图已经很清楚的看到在webpack 的每个阶段要做的事情熟悉整个流程有助于帮助我们理解日常的开发。下面我们就日常开发列出一些常用 loader 和 plugin</p>
+<p>通过上面的图已经很清楚的看到在 webpack 的每个阶段要做的事情熟悉整个流程有助于帮助我们理解日常的开发。下面我们就日常开发列出一些常用 loader 和 plugin</p>
 <h2 id="webpack-常用插件"><a href="#webpack-常用插件" class="headerlink" title="webpack 常用插件"></a>webpack 常用插件</h2><p>我们通过配置的伪代码来介绍我们常用的功能几插件</p>
 <h3 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode<hr></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> webpackConfig  <span class="token operator">=</span> <span class="token punctuation">{</span>
   mode<span class="token punctuation">:</span> _mode <span class="token operator">==</span> <span class="token string">"test"</span> <span class="token operator">?</span> <span class="token string">"development"</span> <span class="token punctuation">:</span> <span class="token string">'production'</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>通过 mode 可以控制我们是开发还是线上环境通过控制环境来区分执行的文件如果 production 除了我们配置的以外webpack 会默认开启以下插件</p>
+<p>通过 mode 可以控制我们是开发还是线上环境通过控制环境来区分执行的文件如果 production 除了我们配置的以外 webpack 会默认开启以下插件</p>
 <ul>
 <li>FlagDependencyUsagePlugin（编译时标记依赖）</li>
 <li>FlagIncludedChunksPlugin（标记chunks,防止chunks多次加载）</li>
@@ -748,12 +749,12 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token comment" spellcheck="true">//分析当前包的大小</span>
     <span class="token keyword">new</span> <span class="token class-name">BundleAnalyzerPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token comment" spellcheck="true">// 创建html入口文件</span>
-    <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token keyword">new</span> <span class="token class-name">HtmlwebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
       filename<span class="token punctuation">:</span> <span class="token string">"index.html"</span><span class="token punctuation">,</span>
       template<span class="token punctuation">:</span> <span class="token string">"./src/index-dev.html"</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token comment" spellcheck="true">// Webpack构建错误和警告通知</span>
-    <span class="token keyword">new</span> <span class="token class-name">WebpackBuildNotifierPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// webpack构建错误和警告通知</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpackBuildNotifierPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
       title<span class="token punctuation">:</span> <span class="token string">"前端项目"</span><span class="token punctuation">,</span>
       logo<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"./favicon.png"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
       suppressSuccess<span class="token punctuation">:</span> <span class="token boolean">true</span>
@@ -832,7 +833,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上就是在 webpack 开发中常用的配置，更多配置及优化请参考官网。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://github.com/gwuhaolin/dive-into-webpack/" target="_blank" rel="noopener">深入浅出Webpack</a></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://github.com/gwuhaolin/dive-into-webpack/" target="_blank" rel="noopener">深入浅出 webpack </a></p>
 
             </div>
             <hr />
@@ -994,48 +995,47 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/20/webpack/library-webpack01/">
+                <a href="/2019/11/25/datastructure/library-array/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="webpack 使用总结">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="数组、栈、队列">
                         
-                        <span class="card-title">webpack 使用总结</span>
+                        <span class="card-title">数组、栈、队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍在前端的历史车轮中出现过很多优秀的构建工具，例如 npm script、grunt、gulp、fis3、webpack、rollup, parcel 等等。也正是因为前端技术发展之快，才出现各种可以提高开发效率的工具，来提高生产力，减小
+                            数组数组是最简单的内存数据结构了，在前端也有数组类型下面我们看看关于数组的知识
+什么是数组数组是存储一系列同一种类型的值（js 中可以是不同类型的值）。定义的时候为其分配存储单元，此存储单元在内存中是一块连续的区域，在使用前要先申请占用的内
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/webpack/" class="post-category" target="_blank">
-                                    webpack
+                            <a href="/categories/数据结构与算法/" class="post-category" target="_blank">
+                                    数据结构与算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/" target="_blank">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/数据结构与算法/" target="_blank">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
@@ -1247,7 +1247,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">115.8k</span>
+            <span class="white-color">121.2k</span>
             
 
             <br>

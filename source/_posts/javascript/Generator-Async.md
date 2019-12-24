@@ -455,7 +455,7 @@ co(gen);
 ```
 
 
-### async 有点
+### async 优点
 
  async 函数，使得异步操作变得更加方便,它也是 Generator 函数的语法糖。
 

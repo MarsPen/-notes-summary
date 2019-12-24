@@ -30,7 +30,7 @@ categories:
   - 语言层 - 它包括语法，关键字和类型注释
   - 编译器层 - TypeScript编译器（TSC）将使用TypeScript编写的指令转换为其等效的JavaScript
   - 语言服务层 - “语言服务”在核心编译管道周围公开了一个额外的层，它是类似编辑器的应用程序。ts编译核心(core.ts,program.ts,scanner.ts,parser.ts,checker,emitter.ts)<br/>
-<image src="images/ts-lang.png" width="350"></image>
+<image src="/images/ts-lang.png" width="350"></image>
 
 ### TypeScript 环境配置（本文不讨论 windows 安装过程和 mac 类似）
  - 下载并安装 node <a href="https://nodejs.org/en/">相关 node 官网</a>

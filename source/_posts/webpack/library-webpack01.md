@@ -31,7 +31,7 @@ categories:
 
 ## 构建工具对比
 
-
+通过对比能够更好的了解当前构建工具的应用场景和优缺点，下面我们来看看
 
 ### npm <hr>
 
@@ -83,9 +83,9 @@ var jshint = require("gulp-jshint");
 var sass = require("gulp-sass");
 var concat = require("gulp-concat");
 ....
-// 便宜SCSS任务
+// SCSS任务
 gulp.task('scss', function() {
-    // 读取文件，通过管道喂给插件
+    // 读取文件，通过管道执行插件
     gulp.src('./scss/*.scss')
         // SCSS 插件将 scss 文件编译成 css
         .pipe(sass())
@@ -153,7 +153,7 @@ fis.match('*.png', {
 });
 ```
 
-优点：集成了各种Web老发所需的构建功能，配置简单，开箱即用
+优点：集成了各种Web所需的构建功能，配置简单，开箱即用
 缺点：目前官方已经不再更新和维护，不支持最新版本的 Node
 
 > <a href="https://webpack.js.org/"> webpack 官网 </a>
@@ -186,13 +186,13 @@ module.exports = {
 
 > <a href="https://www.rollupjs.com/"> rollup 官网 </a>
 
-Rollup 是一个和 Webpack 很类似但专注于 ES6 的模块打包工具。它的亮点在于，针对 ES6 源码进行 Tree Shaking, 以去除那些已经被定义但没被使用的代码并进行 Scope Hoisting，以减少输出文件的大小和提升运行性能。然而 Rollup 的这些亮点随后就被 Webpack 模仿和实现了。由于 Rollup 的使用方法和 Webpakc 差不多，所以这里就不详细介绍如何使用 Rollup 了，而是详细说明他们的差别：
+Rollup 是一个和 webpack 很类似但专注于 ES6 的模块打包工具。它的亮点在于，针对 ES6 源码进行 Tree Shaking, 以去除那些已经被定义但没被使用的代码并进行 Scope Hoisting，以减少输出文件的大小和提升运行性能。然而 Rollup 的这些亮点随后就被 webpack 模仿和实现了。由于 Rollup 的使用方法和 webpack 差不多，所以这里就不详细介绍如何使用 Rollup 了，而是详细说明他们的差别：
 
-- Rollup 是在 Webpack 流行后出现的替代品；
-- Rollup 生态链不完善，体验还不如 Webpack；
-- Rollup 的功能不如 Webpack 完善，但其配置和使用更简单；
-- Rollup 不支持 Code Spliting， 但好处是在打包出来的代码中没有 Webpack 那段模块的加载、执行和缓存的代码。
-- Rollup 在用于打包 JavaScript 库时比 Webpack 更有优势，因为其打包出来的代码更小、更快。但他的功能不够完善，在很多场景下都找不到现成的解决方案
+- Rollup 是在 webpack 流行后出现的替代品；
+- Rollup 生态链不完善，体验还不如 webpack；
+- Rollup 的功能不如 webpack 完善，但其配置和使用更简单；
+- Rollup 不支持 Code Spliting， 但好处是在打包出来的代码中没有 webpack 那段模块的加载、执行和缓存的代码。
+- Rollup 在用于打包 JavaScript 库时比 webpack 更有优势，因为其打包出来的代码更小、更快。但他的功能不够完善，在很多场景下都找不到现成的解决方案
 
 ### parcel<hr>
 
@@ -217,7 +217,7 @@ Parcel 适用于经验不同的开发者。它利用多核处理提供了极快�
 - 场景受限制：只能用来构建能用来构建用于运行在浏览器中的网页
 
 
-通过上面的对比我们看到每种构建工具实际上都有应用的场景。每种工具也是时代应运产生的。那么在这几年流行的模块化、组件化也出现了很多组件库，CMD 规范的 seaJs、AMD 规范的 requireJs 等（<a href="https://juejin.im/post/5aaa37c8f265da23945f365c">区别</a>），这写规范无外乎都是解决开发中实际的问题。那么我们为什么会去选择 webpack呢。
+通过上面的对比我们看到每种构建工具实际上都有应用的场景。每种工具也是时代应运产生的。那么在这几年流行的模块化、组件化也出现了很多组件库，CMD 规范的 seaJs、AMD 规范的 requireJs 等（<a href="https://juejin.im/post/5aaa37c8f265da23945f365c">区别</a>），这写规范无外乎都是解决开发中实际的问题。那么我们为什么会去选择 webpack 呢。
 
 - 当前前端技术都会采用的新思想（模块化+新语言+新框架）去开发
 - webpack 在4.0以后可以几乎零配置
@@ -268,9 +268,9 @@ const webpackConfig = {
 
 ### 运行流程 <hr>
 
-Webpack 就像一条生产线，要经过一系列处理流程后才能将源文件转换成输出结果。 这条生产线上的每个处理流程的职责都是单一的，多个流程之间有存在依赖关系，只有完成当前处理后才能交给下一个流程去处理。 插件就像是一个插入到生产线中的一个功能，在特定的时机对生产线上的资源做处理。
+webpack 就像一条生产线，要经过一系列处理流程后才能将源文件转换成输出结果。 这条生产线上的每个处理流程的职责都是单一的，多个流程之间有存在依赖关系，只有完成当前处理后才能交给下一个流程去处理。 插件就像是一个插入到生产线中的一个功能，在特定的时机对生产线上的资源做处理。
 
-Webpack 通过 Tapable 来组织这条复杂的生产线。 Webpack 在运行过程中会广播事件，插件只需要监听它所关心的事件，就能加入到这条生产线中，去改变生产线的运作。 Webpack 的事件流机制保证了插件的有序性，使得整个系统扩展性很好。  --吴浩麟《深入浅出webpack》
+webpack 通过 Tapable 来组织这条复杂的生产线。 webpack 在运行过程中会广播事件，插件只需要监听它所关心的事件，就能加入到这条生产线中，去改变生产线的运作。 webpack 的事件流机制保证了插件的有序性，使得整个系统扩展性很好。  --吴浩麟《深入浅出webpack》
 
 上面这段话把 webapck 做的事情解释的很清楚，实际上就是在构建的时候通过一系列的事件处理和回调来处理不同的功能。那么这种事件流是通过 Tapable 来管理的，关于 <a href="https://github.com/Pein892/learn-webpack-tapable">Tapable</a>请移步大佬的源码分析。
 
@@ -288,11 +288,11 @@ Webpack 通过 Tapable 来组织这条复杂的生产线。 Webpack 在运行过
 - 最后输出代码 chunk、打包好的文件等
 
 
-上面的过程只是粗略的介绍了执行流程，那么接下来还是通过一张图来看一下webpack 内部到底是如何工作的
+上面的过程只是粗略的介绍了执行流程，那么接下来还是通过一张图来看一下 webpack 内部到底是如何工作的
 
 <img src="/images/webpack-render.jpg"></img>
 
-通过上面的图已经很清楚的看到在webpack 的每个阶段要做的事情熟悉整个流程有助于帮助我们理解日常的开发。下面我们就日常开发列出一些常用 loader 和 plugin
+通过上面的图已经很清楚的看到在 webpack 的每个阶段要做的事情熟悉整个流程有助于帮助我们理解日常的开发。下面我们就日常开发列出一些常用 loader 和 plugin
 
 ## webpack 常用插件
 
@@ -306,7 +306,7 @@ const webpackConfig  = {
 }
 ```
 
-通过 mode 可以控制我们是开发还是线上环境通过控制环境来区分执行的文件如果 production 除了我们配置的以外webpack 会默认开启以下插件
+通过 mode 可以控制我们是开发还是线上环境通过控制环境来区分执行的文件如果 production 除了我们配置的以外 webpack 会默认开启以下插件
 
 - FlagDependencyUsagePlugin（编译时标记依赖）
 - FlagIncludedChunksPlugin（标记chunks,防止chunks多次加载）
@@ -418,12 +418,12 @@ const webpackConfig  = {
     //分析当前包的大小
     new BundleAnalyzerPlugin(),
     // 创建html入口文件
-    new HtmlWebpackPlugin({
+    new HtmlwebpackPlugin({
       filename: "index.html",
       template: "./src/index-dev.html"
     }),
-    // Webpack构建错误和警告通知
-    new WebpackBuildNotifierPlugin({
+    // webpack构建错误和警告通知
+    new webpackBuildNotifierPlugin({
       title: "前端项目",
       logo: resolve("./favicon.png"),
       suppressSuccess: true
@@ -526,4 +526,4 @@ const webpackConfig = {
 以上就是在 webpack 开发中常用的配置，更多配置及优化请参考官网。
 
 ## 参考文章
-<a href="https://github.com/gwuhaolin/dive-into-webpack/">深入浅出Webpack</a>
+<a href="https://github.com/gwuhaolin/dive-into-webpack/">深入浅出 webpack </a>
