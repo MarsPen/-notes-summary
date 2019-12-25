@@ -70,19 +70,19 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/04/14/node/error/">error 异常模块</a>
 
 **| PHP**
-- <a href="https://www.study.cn/2017/01/23/php/base/">语法、变量、数据类型</a>
-- <a href="https://www.study.cn/2017/01/23/php/method/">常用方法</a>
-- <a href="https://www.study.cn/2017/01/23/php/oop/">面向对象</a>
+- <a href="https://www.studyfe.cn/2017/01/23/php/base/">语法、变量、数据类型</a>
+- <a href="https://www.studyfe.cn/2017/01/23/php/method/">常用方法</a>
+- <a href="https://www.studyfe.cn/2017/01/23/php/oop/">面向对象</a>
 
 **| Liunx**
-- <a href="https://www.study.cn/2018/06/23/linux/instructions/">常用指令</a>
-- <a href="https://www.study.cn/2018/07/02/linux/system/">系统管理指令</a>
-- <a href="https://www.study.cn/2018/07/10/linux/compression/">打包压缩相关指令</a>
-- <a href="https://www.study.cn/2018/07/12/linux/package/">软件包管理</a>
-- <a href="https://www.study.cn/2018/07/16/linux/shutdown/">关机重启操作</a>
-- <a href="https://www.study.cn/2018/07/25/linux/fileauth/">文件权限</a>
-- <a href="https://www.study.cn/2018/07/28/linux/vim/">vim 使用</a>
-- <a href="https://www.study.cn/2018/08/10/linux/git/">在 mac 中配置多个 github 账号 ssh 密钥</a>
+- <a href="https://www.studyfe.cn/2018/06/23/linux/instructions/">常用指令</a>
+- <a href="https://www.studyfe.cn/2018/07/02/linux/system/">系统管理指令</a>
+- <a href="https://www.studyfe.cn/2018/07/10/linux/compression/">打包压缩相关指令</a>
+- <a href="https://www.studyfe.cn/2018/07/12/linux/package/">软件包管理</a>
+- <a href="https://www.studyfe.cn/2018/07/16/linux/shutdown/">关机重启操作</a>
+- <a href="https://www.studyfe.cn/2018/07/25/linux/fileauth/">文件权限</a>
+- <a href="https://www.studyfe.cn/2018/07/28/linux/vim/">vim 使用</a>
+- <a href="https://www.studyfe.cn/2018/08/10/linux/git/">在 mac 中配置多个 github 账号 ssh 密钥</a>
 
 **| 前端框架**
 - <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue2.0 原理之主线流程</a>

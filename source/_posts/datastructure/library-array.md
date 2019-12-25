@@ -35,7 +35,7 @@ arr[1] // 2
 
 在 javascript 中对数组的操作其实也很容易，因为操作数组的 api 太多，所以我们通过添加、删除、合并、迭代、搜索、排序这几个方面来了解数组的常规操作。当然这里不会将所有的 api 都用到。更多 api 介绍请移步 <a href="https://www.studyfe.cn/2019/03/20/javascript/api/">操作数组的 API 方法</a>
 
-**数组的添加**
+> 数组的添加
 
 在 javaScript 中，数组是一个可以修改的对象，如果向末尾添加元素，只要把值赋给数组最后一个空位上的元素即可。它就会动态增长这点和 java 有一定的区别。在 java 中要添加元素就必须创建一个全新的数组。因为在数组定义的时候要定义其长度，为其分配内存空间。如果类似 javaScript 那么在 java 中可以用集合 ArrayList。 
 
@@ -82,7 +82,7 @@ console.log(arr); // [0, 1, 2, 3, 4, 5]
 
 现在数组中输出的数字是 0-5 并且数组的长度从 5 变为 6，那么接下来看看数组的删除
 
-**数组的删除**
+> 数组的删除
 
 还是跟上面的操作一样，这回我们还是用循环删除数组中第一个元素，当然也可以用api shift 来删除
 
@@ -114,7 +114,7 @@ console.log(arr) // [0,1,5]
 console.log(newArr) //[2,3,4]
 ```
 
-**数组的合并**
+> 数组的合并
 
 数组的合并在实际开发的应用中经常会用到，将多个数组进行迭代，把每个元素加入定义好的数组中。在 JavaScript 中提供了 concat 的方法来实现合并
 
@@ -141,23 +141,94 @@ for (var j = 0; j < arr.length; j++) {
 }
 console.log(arr3) // [-3, -2, -1, 0, 1, 2, 3]
 ```
-**数组的迭代**
-在 javaScript 中内置了很多数组迭代的方法，every、some、forEach、map、filter、reduce，下面就简单的说明这几个 api
+> 数组的迭代
+
+在 javaScript 中内置了很多数组迭代的方法，every、some、forEach、map、filter、reduce 具体的 api 使用请参考 <a href="https://www.studyfe.cn/2019/03/20/javascript/api/">操作数组的 API 方法</a>原生方法实现请参考<a href="https://juejin.im/post/5c0b7f03e51d452eec725729">map 和 filter 的实现</a>也可以参考<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">mdn 的 Polyfill</a>
+
+> 数组的搜索
+
+数组的搜索方法请参考 <a href="https://www.studyfe.cn/2019/03/20/javascript/api/#toc-heading-15">indexOf</a>
+
+> 数组的排序
+
+在 Javascript 中对数组的排序提供了 sort api ，下面我们来看看 sort
+
+sort 是按照字符编码顺序进行排序，如果想要实现业务逻辑排序需要自定义比较函数
+
+**数字升序排序**
 
 ```js
-// every 检测数组中的所有元素是否通过callback函数实现的方法。返回bool值
-var arrayObj = [1,2,3,4,5,6,7,8]; 
-var flag = arrayObj.every(function(element,index,array){ 
-  return (element % 2 == 0); 
-}); 
-console.log(flag); //false
+var arr = [15,18,10,9,8,11,6,7];
+let newArr = arr.sort(function (a,b){
+  return a - b;
+})
 
-// some 检测数组中的某些元素是否通过callback函数实现的方法。返回bool值
+console.log(newArr); // [6, 7, 8, 9, 10, 11, 15, 18]
 ```
 
-**数组的搜索**
+**字符串进行排序**
 
-**数组的排序**
+```js
+var names = ['Ana','ana','john','John'];
+var newNames = names.sort(); 
+console.log(newNames) // ["Ana", "John", "ana", "john"]
+```
+上面这样可定是不对的因为 Javascript 做字符串比较的时候是根据ASCII值来比较的 A,j,a,j对应的值为65，75，97，106。所以需要我们要自定义函数
+
+```js
+var names = ['Ana','ana','john','John'];
+var newNames = names.sort(function (a, b) {
+  return a-b;
+})
+console.log(newNames) // ['Ana','ana','john','John']
+```
+
+**数组对象排序**
+
+下面按照年龄排序，实际项目中有可能会用 id 进行排序
+
+```js
+var friends = [
+  {name: 'zhangsan', age:30},
+  {name: 'lisi', age:28},
+  {name: 'wangwu', age: 29}
+]
+var newFriends = friends.sort(function (a, b) {
+  return a.age - b.age;
+})
+console.log(newFriends)
+
+```
+
+### 小结<hr>
+
+数组是最常用的数据结构，我们在上面举例说明了什么是数组、数组的创建、以及一些操作数组的常用API。虽然过于简单，但有助于我们在后续编写自己的算法时能够更好的深入和理解。当然有很多优秀的库供我们使用例如 <a href="https://www.lodashjs.com/">Lodash</a>。
+
+以下内容未完待续......
+
+## 栈
+数组是最常用的数据结构，可以在数组的任意位置上进行删除和添加元素，然而我们需要在添加和删除时有更多控制的数据结构，其中一个就是栈。
+### 什么是栈<hr>
+### 栈的创建<hr>
+### 使用栈<hr>
+### 小结<hr>
+
+## 队列
+ 上一小结说我们需要在添加和删除时有更多控制的数组结构，除了栈另一个就是队列
+### 什么是队列<hr>
+### 队列的创建<hr>
+### 队列的使用<hr>
+### 优先队列<hr>
+### 循环队列<hr>
+### 小结<hr>
+
+
+
+
+
+
+
+
 
 
 
