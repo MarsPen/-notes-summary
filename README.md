@@ -92,12 +92,23 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue2.0 原理之组件化</a>
 - <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2.0 原理之 vue-router</a>
 - <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2.0 原理之 vue-vuex</a>
+
 - <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react16.9 原理之 jsx 转换</a>
 - <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react16.9 生命周期使用</a>
 - <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react16.9 原理之 fiberRoot 构建过程</a>
 - <a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">react16.9 原理之 riber 调度过程</a>
 - <a href="https://www.studyfe.cn/2019/10/09/react/library-react-state/">react16.9 原理之 setState</a>
 - <a href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/">react 原理之 react hooks</a>
+
+- <a href="">微信小程序之双线程模型</a>
+- <a href="">微信小程序之调试技巧</a>
+- <a href="">微信小程序之架构分析</a>
+- <a href="">微信小程序之编译原理</a>
+- <a href="">微信小程序之通讯原理</a>
+- <a href="">微信小程序之启动流程</a>
+
+
+- <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">flutter 之 dart 基础语法</a>
 - <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">flutter 之 dart 基础语法</a>
 
 **| 打包工具** 
