@@ -8,9 +8,9 @@
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
   <meta name="description" content="基本数据类型概念   基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里
-种类  Undefined、Null、Boolean、String、Number、Symbol（es6）
+种类   Undefined、Null、Boolean、String、Number、Symbol（es6）
   基本数据类型的值是不可变的
-  var s">
+  var ">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -421,14 +421,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    510
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
                 
@@ -445,7 +445,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念 "></a>概念 <hr></h3><p>  基本数据类型是按值进行进行访问，变量是放在栈（stack）内存里</p>
-<h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类<hr></h3><p>  Undefined、Null、Boolean、String、Number、Symbol（es6）</p>
+<h3 id="种类"><a href="#种类" class="headerlink" title="种类 "></a>种类 <hr></h3><p>  Undefined、Null、Boolean、String、Number、Symbol（es6）</p>
 <p>  基本数据类型的值是不可变的</p>
 <pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"renbo"</span><span class="token punctuation">;</span>
   str<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// RENBO</span>
@@ -544,6 +544,190 @@
 
   a <span class="token operator">=</span> <span class="token regex">/renbo/g</span><span class="token punctuation">;</span>
   a <span class="token keyword">instanceof</span> <span class="token class-name">RegExp</span> <span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true    </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>  上面所有 typeOf 返回值为 “object” 的对象都包含一个内部属性[[Class]], 这个属性一般通过 Object.prototype.toString.call(…) 来查看，例如</p>
+<pre class="line-numbers language-js"><code class="language-js">  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'1,2,3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Array]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span><span class="token string">'mm'</span><span class="token punctuation">,</span>age<span class="token punctuation">:</span><span class="token number">24</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Object]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Function]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token regex">/regex/i</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object RegExp]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Date]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object String]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// [object Number] </span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Boolean]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Null]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>undefined<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Undefined]</span>
+  Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [object Symbol]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从上面的例子中得出：</p>
+<ul>
+<li>对象的内部[[Class]]属性和创建该对象的内建原生构造相对应</li>
+<li>基本类型值由于没有length、toString()这样的方法需要封装对象才能访问，这时候引擎为基本类型包装一个封装对象俗称<code>装箱</code></li>
+</ul>
+<p><em>装箱：是指将基本数据类型转换为对应的引用类型的操作。装箱分为隐式装箱和显示装箱</em></p>
+<p>所以当我们写如下代码时, TMM 被包装成 <code>String(&#39;TMM&#39;)</code>。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'TMM'</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//tmm</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>引擎为什么要这么做呢？</p>
+<ul>
+<li>开发使用更方便</li>
+<li>使用基本数据类型操作内存更方便</li>
+</ul>
+<p>再来看下面的例子</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 'abc'</span>
+b<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 42</span>
+c<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面例子是将封装对象转换为基本数据类型这种俗称拆箱，通常通过引用类型的 <code>valueOf()</code> 和 <code>toString()</code> 方法来实现</p>
+<p><strong>强制类型转换</strong></p>
+<ul>
+<li>类型转换发生在静态类型语言的变异阶段</li>
+<li>强制类型转换发生在动态类型语言的运行时(runtime)</li>
+<li>强制类型转换分为隐式转换和显示转换</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">42</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token string">""</span> <span class="token comment" spellcheck="true">// 隐式强制类型转换</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 显示强制类型转换</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>在介绍显示和隐式强制类型转换之前，我们先来了解一下 ToString、ToNumber、ToBoolean、ToPrimitive 的转换规则</p>
+<blockquote>
+<p><strong>ToString</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument Type</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Undefined</td>
+<td>Return “undefined”.</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>Return “null”.</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>If argument is true, return “true”.<br>If argument is false, return “false”</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>Return ! Number::toString(argument)</td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td>Throw a TypeError exception</td>
+</tr>
+<tr>
+<td>BigInt</td>
+<td>Return ! BigInt::toString(argument).</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>Apply the following steps: <br> 1.Let primValue be ? ToPrimitive(argument, hint String). <br>2.Return ? ToString(primValue).</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>ToNumber</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument Type</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Undefined</td>
+<td>Return NaN.</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>Return +0.</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>If argument is true, return 1. If argument is false, return +0</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>Return argument (no conversion).</td>
+</tr>
+<tr>
+<td>String</td>
+<td>See grammar and conversion algorithm below.</td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td>Throw a TypeError exception.</td>
+</tr>
+<tr>
+<td>BigInt</td>
+<td>Throw a TypeError exception.</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>Apply the following steps: <br> 1.Let primValue be ? ToPrimitive(argument, hint Number). <br>2.Return ? ToNumber(primValue).</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>ToBoolean</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument Type</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Undefined</td>
+<td>Return false.</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>Return false.</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>Return argument.</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>If argument is +0, -0, or NaN, return false; otherwise return true.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>If argument is the empty String (its length is zero), return false; otherwise return true.</td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td>Return true.</td>
+</tr>
+<tr>
+<td>BigInt</td>
+<td>If argument is 0n, return false; otherwise return true.</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>Return true</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-js"><code class="language-js">
+
+
+ <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">2</span>
+
+  Number<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>valueOf <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> i<span class="token operator">++</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Number</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token operator">==</span><span class="token number">2</span> <span class="token operator">&amp;&amp;</span> a<span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'真棒~~~'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -979,7 +1163,7 @@ this和argument
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">121.7k</span>
+                <span class="white-color">122.4k</span>
                
             
              

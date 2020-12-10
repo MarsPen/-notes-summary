@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.studyfe.cn/2019/02/12/javascript/type/</loc>
+    <lastmod>2020-12-01</lastmod>
+  </url>  <url>
     <loc>https://www.studyfe.cn/2019/11/25/datastructure/library-array/</loc>
     <lastmod>2019-12-25</lastmod>
   </url>  <url>
@@ -33,9 +36,6 @@
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/03/05/javascript/this/</loc>
     <lastmod>2019-11-15</lastmod>
-  </url>  <url>
-    <loc>https://www.studyfe.cn/2019/02/12/javascript/type/</loc>
-    <lastmod>2019-11-14</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/11/09/react/library-react-hook/</loc>
     <lastmod>2019-11-14</lastmod>
@@ -142,10 +142,10 @@
     <loc>https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2019/05/18/typescript/interfaces/</loc>
+    <loc>https://www.studyfe.cn/2019/07/02/typescript/mixinx/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2019/07/02/typescript/mixinx/</loc>
+    <loc>https://www.studyfe.cn/2019/05/18/typescript/interfaces/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</loc>
@@ -157,10 +157,10 @@
     <loc>https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2019/05/17/typescript/class/</loc>
+    <loc>https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/</loc>
+    <loc>https://www.studyfe.cn/2019/05/17/typescript/class/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/06/20/typescript/declarefile/</loc>
@@ -190,31 +190,31 @@
     <loc>https://www.studyfe.cn/2019/05/23/typescript/basedatatype/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2019/03/23/node/http/</loc>
-    <lastmod>2019-09-05</lastmod>
-  </url>  <url>
     <loc>https://www.studyfe.cn/2019/04/01/node/fs/</loc>
-    <lastmod>2019-09-05</lastmod>
-  </url>  <url>
-    <loc>https://www.studyfe.cn/2019/04/02/node/path/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/04/05/node/module/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
+    <loc>https://www.studyfe.cn/2019/03/23/node/http/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>https://www.studyfe.cn/2019/04/02/node/path/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
     <loc>https://www.studyfe.cn/2019/04/12/node/process/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2018/07/22/linux/user/</loc>
+    <loc>https://www.studyfe.cn/2018/07/02/linux/system/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2018/07/28/linux/vim/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2019/04/08/node/crypto/</loc>
+    <loc>https://www.studyfe.cn/2018/07/22/linux/user/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2018/07/02/linux/system/</loc>
+    <loc>https://www.studyfe.cn/2019/04/08/node/crypto/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/04/14/node/error/</loc>
@@ -253,10 +253,10 @@
     <loc>https://www.studyfe.cn/2017/05/10/html/html/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2017/06/20/css/css-animation/</loc>
+    <loc>https://www.studyfe.cn/2017/06/11/css/base-concepts/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
-    <loc>https://www.studyfe.cn/2017/06/11/css/base-concepts/</loc>
+    <loc>https://www.studyfe.cn/2017/06/20/css/css-animation/</loc>
     <lastmod>2019-09-05</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2017/06/15/css/base-layout/</loc>
