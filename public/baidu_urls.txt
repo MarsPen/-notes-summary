@@ -20,8 +20,8 @@ https://www.studyfe.cn/2019/09/05/vue/vueobserve/
 https://www.studyfe.cn/2019/08/27/vue/vueprinciple/
 https://www.studyfe.cn/2019/08/26/javascript/generator-async/
 https://www.studyfe.cn/2019/08/15/typescript/global.d.ts/
-https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/
 https://www.studyfe.cn/2019/08/15/typescript/module-function.d.ts/
+https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/
 https://www.studyfe.cn/2019/08/15/typescript/module.d.ts/
 https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/
 https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/
