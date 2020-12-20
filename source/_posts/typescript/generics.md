@@ -17,7 +17,7 @@ categories:
 
 ### 定义泛型 <br/>
 
-```
+```ts
 // 定义类型
 function identity(arg: number): number {
   return arg;
@@ -30,7 +30,7 @@ function identity(arg: any): any {
 
 如果所有的接口、变量、函数等都用 any 类型，那么写 TS 和写 JS 一样将失去意义，因为你可能像 JS 一样造成许多未知的错误，那么解决这样的问题我们使用一种特殊的变量T，来表示返回的内容。
 
-```
+```ts
 function identity<T>(arg: T): T {
   return arg;
 }
@@ -46,7 +46,7 @@ let output = identity<string>("myString");
 
 在函数内部使用泛型变量的时候，因为不知道它是哪种类型，所以不能随意的操作它的属性或方法
 
-```
+```ts
 function loggingIdentity<T>(arg: T): T {
   console.log(arg.length);  // Error: T doesn't have .length
   return arg;
@@ -55,7 +55,7 @@ function loggingIdentity<T>(arg: T): T {
 由于上面的泛型 T 中不一定包含属性.length, 所以会抛出异常。
 
 这时我们可以创建一个具有单个.length属性的接口，然后我们将使用此接口和extends关键字来表示我们的约束：
-```
+```ts
 interface Lengthwise {
     length: number;
 }
@@ -68,7 +68,7 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 ```
 
 上面的例子如果在调用的时候传入的参数不符合定义的约束，那么就会抛出异常
-```
+```ts
 interface Lengthwise {
     length: number;
 }
@@ -84,7 +84,7 @@ loggingIdentity(5)
 ```
 
 相反如果定义了正确的类型
-```
+```ts
 interface Lengthwise {
     length: number;
 }
@@ -100,7 +100,7 @@ loggingIdentity({length: 5, value: 1}) // 5
 
 ### 泛型接口<br/>
 
-```
+```ts
 // 定义泛型结构
 interface CreatePeopleFunc {
   <T>(name: string, age: T): Array<T>;
@@ -126,7 +126,7 @@ createPeople('zhangsan', 28)
 
 泛型类具有与通用接口类似的形状。泛型类<>在类名称后面的尖括号（）中有一个泛型类型参数列表
 
-```
+```ts
 class GenericNumber<T> {
     zeroValue: T;
     add: (x: T, y: T) => T;

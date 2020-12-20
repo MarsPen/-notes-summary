@@ -449,23 +449,34 @@ transform">
 <h3 id="3D转换（transform）"><a href="#3D转换（transform）" class="headerlink" title="3D转换（transform）"></a>3D转换（transform）</h3><ol>
 <li><p>定义向元素应用 2D 或 3D 转换，可以对元素进行移动、缩放、转动、拉长或拉伸</p>
 <p>translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动</p>
-<pre><code>transform: translate(100px,200px);</code></pre><p>rotate（旋转） 给定度数顺时针旋转的元素。负值则为逆时针旋转</p>
-<pre><code>transform: rotate(60deg);</code></pre><p>scale (缩放) 对元素减小或者放大，取决于宽度（X轴）和高度（Y轴）的参数</p>
-<pre><code>transform: scale(2,2);</code></pre><p>skew (倾斜) 根据X轴和Y轴位置给定的角度参数，进行倾斜，负数则为反方向倾斜</p>
-<pre><code>transform: skew(40deg,50deg);</code></pre></li>
+<pre class="line-numbers language-js"><code class="language-js">transform<span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>100px<span class="token punctuation">,</span>200px<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>rotate（旋转） 给定度数顺时针旋转的元素。负值则为逆时针旋转</p>
+<pre class="line-numbers language-js"><code class="language-js">transform<span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>scale (缩放) 对元素减小或者放大，取决于宽度（X轴）和高度（Y轴）的参数</p>
+<pre class="line-numbers language-js"><code class="language-js">transform<span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>skew (倾斜) 根据X轴和Y轴位置给定的角度参数，进行倾斜，负数则为反方向倾斜</p>
+<pre class="line-numbers language-js"><code class="language-js">transform<span class="token punctuation">:</span> <span class="token function">skew</span><span class="token punctuation">(</span>40deg<span class="token punctuation">,</span>50deg<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>transform-origin：允许改变被转换元素的位置</p>
-<pre><code>transform-origin: x-axis y-axis z-axis;</code></pre></li>
+<pre class="line-numbers language-js"><code class="language-js">transform<span class="token operator">-</span>origin<span class="token punctuation">:</span> x<span class="token operator">-</span>axis y<span class="token operator">-</span>axis z<span class="token operator">-</span>axis<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>transform-style：规定被嵌套元素如何在 3D 空间中显示</p>
-<pre><code>// preserve-3d所有子元素在3D空间中呈现
-// flat所有子元素在2D平面呈现
-transform-style: flat|preserve-3d;</code></pre></li>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// preserve-3d所有子元素在3D空间中呈现</span>
+<span class="token comment" spellcheck="true">// flat所有子元素在2D平面呈现</span>
+transform<span class="token operator">-</span>style<span class="token punctuation">:</span> flat<span class="token operator">|</span>preserve<span class="token operator">-</span>3d<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>perspective:设置元素距离视图的距离，以像素计，与 perspective-origin 属性一同使用，能够改变 3D 元素的底部位置</p>
-<pre><code>perspective: number|none;</code></pre></li>
+<pre class="line-numbers language-js"><code class="language-js">perspective<span class="token punctuation">:</span> number<span class="token operator">|</span>none<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>backface-visibility:定义当元素不面向屏幕时是否可见，在旋转元素不希望看到其背面时，该属性很有用</p>
-<pre><code>backface-visibility: visible|hidden;</code></pre></li>
+<pre class="line-numbers language-js"><code class="language-js">backface<span class="token operator">-</span>visibility<span class="token punctuation">:</span> visible<span class="token operator">|</span>hidden<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="CSS3过渡（transition）"><a href="#CSS3过渡（transition）" class="headerlink" title="CSS3过渡（transition）"></a>CSS3过渡（transition）</h3><ol>
-<li>某种效果可以从一种样式转变到另一种样式的效果<pre><code>transition: property duration timing-function delay;</code></pre><pre><code>transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);</code></pre></li>
+<li><p>某种效果可以从一种样式转变到另一种样式的效果</p>
+<pre class="line-numbers language-js"><code class="language-js">transition<span class="token punctuation">:</span> property duration timing<span class="token operator">-</span><span class="token keyword">function</span> delay<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js">transition<span class="token operator">-</span>timing<span class="token operator">-</span><span class="token keyword">function</span><span class="token punctuation">:</span> linear<span class="token operator">|</span>ease<span class="token operator">|</span>ease<span class="token operator">-</span><span class="token keyword">in</span><span class="token operator">|</span>ease<span class="token operator">-</span>out<span class="token operator">|</span>ease<span class="token operator">-</span><span class="token keyword">in</span><span class="token operator">-</span>out<span class="token operator">|</span>cubic<span class="token operator">-</span><span class="token function">bezier</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>n<span class="token punctuation">,</span>n<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="CSS3-动画（animation及-keyframes）"><a href="#CSS3-动画（animation及-keyframes）" class="headerlink" title="CSS3 动画（animation及@keyframes）"></a>CSS3 动画（animation及@keyframes）</h3><ol>
 <li><p>使元素从一种样式逐渐变化为另一种样式的效果</p>
@@ -475,23 +486,24 @@ transform-style: flat|preserve-3d;</code></pre></li>
 <li><p>@keyframes</p>
 </li>
 <li><p>语法规则及拆解</p>
-<pre><code>animation: animation-name animation-duration animation-timing-function animation-fill-mode animation-delay animation-iteration-count    animation-direction animation-play-state;
+<pre class="line-numbers language-js"><code class="language-js">animation<span class="token punctuation">:</span> animation<span class="token operator">-</span>name animation<span class="token operator">-</span>duration animation<span class="token operator">-</span>timing<span class="token operator">-</span><span class="token keyword">function</span> animation<span class="token operator">-</span>fill<span class="token operator">-</span>mode animation<span class="token operator">-</span>delay animation<span class="token operator">-</span>iteration<span class="token operator">-</span>count    animation<span class="token operator">-</span>direction animation<span class="token operator">-</span>play<span class="token operator">-</span>state<span class="token punctuation">;</span>
 
-animation-name(keyframe名字): keyframename|none;
+animation<span class="token operator">-</span><span class="token function">name</span><span class="token punctuation">(</span>keyframe名字<span class="token punctuation">)</span><span class="token punctuation">:</span> keyframename<span class="token operator">|</span>none<span class="token punctuation">;</span>
 
-animation-duration(动画完成一个周期需要多少秒或毫秒):animation-duration: time | 0;
+animation<span class="token operator">-</span><span class="token function">duration</span><span class="token punctuation">(</span>动画完成一个周期需要多少秒或毫秒<span class="token punctuation">)</span><span class="token punctuation">:</span>animation<span class="token operator">-</span>duration<span class="token punctuation">:</span> time <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-animation-timing-function(动画的速度曲线,使用的数学函数，称为三次贝塞尔曲线，速度曲线): linear    | ease    | ease-in | ease-out    | ease-in-out     | cubic-bezier(n,n,n,n);
+animation<span class="token operator">-</span>timing<span class="token operator">-</span><span class="token keyword">function</span><span class="token punctuation">(</span>动画的速度曲线<span class="token punctuation">,</span>使用的数学函数，称为三次贝塞尔曲线，速度曲线<span class="token punctuation">)</span><span class="token punctuation">:</span> linear    <span class="token operator">|</span> ease    <span class="token operator">|</span> ease<span class="token operator">-</span><span class="token keyword">in</span> <span class="token operator">|</span> ease<span class="token operator">-</span>out    <span class="token operator">|</span> ease<span class="token operator">-</span><span class="token keyword">in</span><span class="token operator">-</span>out     <span class="token operator">|</span> cubic<span class="token operator">-</span><span class="token function">bezier</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>n<span class="token punctuation">,</span>n<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-animation-fill-mode(当动画完成时或又一个延迟未开始播放时的样式): none|forwards|backwards|both|initial|inherit;
+animation<span class="token operator">-</span>fill<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>当动画完成时或又一个延迟未开始播放时的样式<span class="token punctuation">)</span><span class="token punctuation">:</span> none<span class="token operator">|</span>forwards<span class="token operator">|</span>backwards<span class="token operator">|</span>both<span class="token operator">|</span>initial<span class="token operator">|</span>inherit<span class="token punctuation">;</span>
 
-animation-delay(动画什么时候开始): time;
+animation<span class="token operator">-</span><span class="token function">delay</span><span class="token punctuation">(</span>动画什么时候开始<span class="token punctuation">)</span><span class="token punctuation">:</span> time<span class="token punctuation">;</span>
 
-animation-iteration-count(动画被播放的次数):n |infinite
+animation<span class="token operator">-</span>iteration<span class="token operator">-</span><span class="token function">count</span><span class="token punctuation">(</span>动画被播放的次数<span class="token punctuation">)</span><span class="token punctuation">:</span>n <span class="token operator">|</span>infinite
 
-animation-direction(是否循环交替反向播放动画): normal|reverse|alternate|alternate-reverse|initial|inherit;
+animation<span class="token operator">-</span><span class="token function">direction</span><span class="token punctuation">(</span>是否循环交替反向播放动画<span class="token punctuation">)</span><span class="token punctuation">:</span> normal<span class="token operator">|</span>reverse<span class="token operator">|</span>alternate<span class="token operator">|</span>alternate<span class="token operator">-</span>reverse<span class="token operator">|</span>initial<span class="token operator">|</span>inherit<span class="token punctuation">;</span>
 
-animation-play-state(动画是否正在运行或暂停):paused|running;</code></pre></li>
+animation<span class="token operator">-</span>play<span class="token operator">-</span><span class="token function">state</span><span class="token punctuation">(</span>动画是否正在运行或暂停<span class="token punctuation">)</span><span class="token punctuation">:</span>paused<span class="token operator">|</span>running<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 </li>
 </ol>
@@ -927,7 +939,7 @@ animation-play-state(动画是否正在运行或暂停):paused|running;</code></
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

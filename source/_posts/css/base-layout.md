@@ -16,7 +16,7 @@ categories:
 ### 自适应两栏布局
 
 利用BFC实现自适应两栏布局
-```
+```css
 /****css****/
 .aside{
   float: left;
@@ -49,7 +49,7 @@ categories:
   - 双飞翼布局，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。
 4. 圣杯布局代码
 
-```
+```css
 /****css****/
 .main{
   width: 100%;
@@ -88,7 +88,7 @@ categories:
 
 5. 双飞翼布局代码
 
-```
+```css
 /****css****/
 .main,.left,.right{
   float: left;
@@ -138,7 +138,7 @@ categories:
 
 5. 三栏布局示例 
 
-```
+```css
 /****css****/
 .container{
   display: flex;
@@ -170,7 +170,7 @@ categories:
 
 1. position:absolute绝对定位使元素脱离文档流，因此不占据当前层级的空间
 2. 三栏布局代码示例
-```
+```css
 /****css****/
 .container{
   position: relative;

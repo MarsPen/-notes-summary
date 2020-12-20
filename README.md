@@ -85,6 +85,8 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2018/08/10/linux/git/">在 mac 中配置多个 github 账号 ssh 密钥</a>
 
 **| 前端框架**
+
+> Vue
 - <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue2.0 原理之主线流程</a>
 - <a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue2.0 原理之响应式</a>
 - <a href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/">vue2.0 原理之组件更新</a>
@@ -93,6 +95,7 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2.0 原理之 vue-router</a>
 - <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2.0 原理之 vue-vuex</a>
 
+> React
 - <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react16.9 原理之 jsx 转换</a>
 - <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react16.9 生命周期使用</a>
 - <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react16.9 原理之 fiberRoot 构建过程</a>
@@ -100,14 +103,12 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/10/09/react/library-react-state/">react16.9 原理之 setState</a>
 - <a href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/">react 原理之 react hooks</a>
 
-- <a href="">微信小程序之双线程模型</a>
-- <a href="">微信小程序之调试技巧</a>
-- <a href="">微信小程序之架构分析</a>
-- <a href="">微信小程序之编译原理</a>
-- <a href="">微信小程序之通讯原理</a>
-- <a href="">微信小程序之启动流程</a>
+> 微信小程序
+- <a href="https://www.studyfe.cn/2020/12/12/mini/principle01/">微信小程序架构原理</a>
+- <a href="https://www.studyfe.cn/2020/12/12/mini/principle02/">微信小程序之启动流程</a>
+- <a href="https://www.studyfe.cn/2020/12/12/mini/principle03/">小程序之框架对比</a>
 
-
+> Flutter
 - <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">flutter 之 dart 基础语法</a>
 - <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">flutter 之 dart 基础语法</a>
 
@@ -115,7 +116,6 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/11/20/webpack/library-webpack01/">打包工具对比及 webpack 使用总结</a>
 - <a href="javascript:void(0)">手写模块解析器之 webpack(正在整理)</a>
 - <a href="javascript:void(0)">整体流程分析之 webpack </a>
-
 
 **| 前端常用数据结构及算法**
 - <a href="javascript:void(0)">数组、栈、队列</a>
@@ -127,7 +127,6 @@ https://www.studyfe.cn/
 
 **| 前端性能优化**
 - 包含常用分析工具、性能指标、前端加载优化手段、服务端请求优化手段等。未完待续...
-
 
 **| 前端常用面试题目汇总**
 - 包含前端高频出现的面试题汇总。未完待续...

@@ -428,7 +428,7 @@ let ">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
                 
@@ -445,74 +445,84 @@ let ">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>每种语言都会有属于自己的数据类型，ts的基本数据类型基本上是继承了js，但也在基础之上增加了几个不一样的类型</p>
-<h3 id="布尔型-true／false"><a href="#布尔型-true／false" class="headerlink" title="布尔型 true／false "></a>布尔型 true／false <br></h3><pre><code>//在js中声明boolean型的方法和ts中的不同之处
-let flag = true;
-let flag: boolean = true;</code></pre><h3 id="float-数值型（在js和ts中数字型都是float）"><a href="#float-数值型（在js和ts中数字型都是float）" class="headerlink" title="float,数值型（在js和ts中数字型都是float）"></a>float,数值型（在js和ts中数字型都是float）<br></h3><pre><code>//在js中声明number型的方法和ts中的不同之处
-let age = 26;
-let age: number = 26;</code></pre><h3 id="字符型-String"><a href="#字符型-String" class="headerlink" title="字符型 String "></a>字符型 String <br></h3><pre><code>//在js中声明number型的方法和ts中的不同之处
-let name = &#39;boren&#39;;
-let name: string = &#39;boren&#39;;</code></pre><h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组 Array "></a>数组 Array <br></h3><pre><code>//在js中声明数组的方法和ts中的不同之处
-//1.js中声明数组的两种方式
-let city = [];
-let city = new Array();
-//2.ts中声明数组的两种方式
-let city: string[] = [];
-let city:Array&lt;string&gt; = []
-//在ts中声明数组必须提前指定其数据类型，如果其数组中的元素其数据类型不相同，声明的方式会在后面介绍</code></pre><h3 id="元组-Tuple"><a href="#元组-Tuple" class="headerlink" title="元组 Tuple "></a>元组 Tuple <br></h3><pre><code>//可以定义数组中元素不相同的数据类型
-let people = [&#39;boren&#39;,26];//js
-let people:[string,number];
-people = [&#39;boren&#39;,26];//ts</code></pre><h3 id="枚举-Enum"><a href="#枚举-Enum" class="headerlink" title="枚举 Enum "></a>枚举 Enum <br></h3><pre><code>//js中没有此方法，都是以object或者json的形式去实现枚举的特性如：
-let school = {
+<h3 id="布尔型-true／false"><a href="#布尔型-true／false" class="headerlink" title="布尔型 true／false "></a>布尔型 true／false <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//在js中声明boolean型的方法和ts中的不同之处</span>
+<span class="token keyword">let</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> flag<span class="token punctuation">:</span> boolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="float-数值型（在js和ts中数字型都是float）"><a href="#float-数值型（在js和ts中数字型都是float）" class="headerlink" title="float,数值型（在js和ts中数字型都是float）"></a>float,数值型（在js和ts中数字型都是float）<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//在js中声明number型的方法和ts中的不同之处</span>
+<span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> age<span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="字符型-String"><a href="#字符型-String" class="headerlink" title="字符型 String "></a>字符型 String <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//在js中声明number型的方法和ts中的不同之处</span>
+<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">'boren'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> name<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string">'boren'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组 Array "></a>数组 Array <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//在js中声明数组的方法和ts中的不同之处</span>
+<span class="token comment" spellcheck="true">//1.js中声明数组的两种方式</span>
+<span class="token keyword">let</span> city <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> city <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//2.ts中声明数组的两种方式</span>
+<span class="token keyword">let</span> city<span class="token punctuation">:</span> string<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> city<span class="token punctuation">:</span>Array<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">//在ts中声明数组必须提前指定其数据类型，如果其数组中的元素其数据类型不相同，声明的方式会在后面介绍</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="元组-Tuple"><a href="#元组-Tuple" class="headerlink" title="元组 Tuple "></a>元组 Tuple <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//可以定义数组中元素不相同的数据类型</span>
+<span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'boren'</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//js</span>
+<span class="token keyword">let</span> people<span class="token punctuation">:</span><span class="token punctuation">[</span>string<span class="token punctuation">,</span>number<span class="token punctuation">]</span><span class="token punctuation">;</span>
+people <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'boren'</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//ts</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="枚举-Enum"><a href="#枚举-Enum" class="headerlink" title="枚举 Enum "></a>枚举 Enum <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//js中没有此方法，都是以object或者json的形式去实现枚举的特性如：</span>
+<span class="token keyword">let</span> school <span class="token operator">=</span> <span class="token punctuation">{</span>
 
-     teacherOne : &#39;Mars&#39;,
-     teacherTwo:&#39;yupeng&#39;,
-     teacherThree:&#39;luxuesong&#39;
+     teacherOne <span class="token punctuation">:</span> <span class="token string">'Mars'</span><span class="token punctuation">,</span>
+     teacherTwo<span class="token punctuation">:</span><span class="token string">'yupeng'</span><span class="token punctuation">,</span>
+     teacherThree<span class="token punctuation">:</span><span class="token string">'luxuesong'</span>
 
-} 
-console.log(school.teacherOne)//Mars
+<span class="token punctuation">}</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>school<span class="token punctuation">.</span>teacherOne<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//Mars</span>
 
-在ECMA2015，简称es5中Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象
-Object.getOwnPropertyDescriptor（school,‘teacherOne’）
+<span class="token comment" spellcheck="true">//在ECMA2015，简称es5中Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象</span>
+Object<span class="token punctuation">.</span>getOwnPropertyDescriptor（school<span class="token punctuation">,</span>‘teacherOne’）
 
-// {
-// value: Mars,
-// writable: true,
-// enumerable: true,
-// configurable: true
-// }
+<span class="token comment" spellcheck="true">// {</span>
+<span class="token comment" spellcheck="true">// value: Mars,</span>
+<span class="token comment" spellcheck="true">// writable: true,</span>
+<span class="token comment" spellcheck="true">// enumerable: true,</span>
+<span class="token comment" spellcheck="true">// configurable: true</span>
+<span class="token comment" spellcheck="true">// }</span>
 
-其中这么方法打印出来的对象中key enumerable属性，为可枚举性，在js es5中有三个操作会忽略枚举为 false，for...in、 Object...keys()、 JSON.stringify()；在es6中新增一个方法Object.assign()会忽略enumerable为false的属性，只拷贝对象自身的可枚举的属性。关于更多js中对枚举属性的支持，在这里就不一一介绍，例如toString()和length等等其枚举属性为false
-//ts中枚举类型的用法
-enum classMember = {chenchao,rongbin,chenhua,liurui,luxuesong};
-let teacher:classMember = classMember.luxuesong
+<span class="token comment" spellcheck="true">//其中这么方法打印出来的对象中key enumerable属性，为可枚举性，在js es5中有三个操作会忽略枚举为 false，for...in、 Object...keys()、 JSON.stringify()；在es6中新增一个方法Object.assign()会忽略enumerable为false的属性，只拷贝对象自身的可枚举的属性。关于更多js中对枚举属性的支持，在这里就不一一介绍，例如toString()和length等等其枚举属性为false</span>
+<span class="token comment" spellcheck="true">//ts中枚举类型的用法</span>
+<span class="token keyword">enum</span> classMember <span class="token operator">=</span> <span class="token punctuation">{</span>chenchao<span class="token punctuation">,</span>rongbin<span class="token punctuation">,</span>chenhua<span class="token punctuation">,</span>liurui<span class="token punctuation">,</span>luxuesong<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> teacher<span class="token punctuation">:</span>classMember <span class="token operator">=</span> classMember<span class="token punctuation">.</span>luxuesong
 
-我们也可以给枚举中的成员进行编号等等，以便于更方便的去找到相应的对象元素</code></pre><h3 id="通用数据类型-Any"><a href="#通用数据类型-Any" class="headerlink" title="通用数据类型 Any"></a>通用数据类型 Any<br></h3><pre><code>这种数据类型个人认为是万能的，它可以在你不知道这个变量为什么数据类型的情况下，并且项目比较急的时候标注为Any，它可以通过编译时的类型检查，有人会说那我所有的类型都写Any，如果你非要这么干，也无妨，那就失去了ts这么语言本身的意义所在，可以用这种方法去解决一个上述声明数组类型时很麻烦的问题
-let lists: any[] = [&#39;boren&#39;,26,&#39;body&#39;]; 
+<span class="token comment" spellcheck="true">//我们也可以给枚举中的成员进行编号等等，以便于更方便的去找到相应的对象元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="通用数据类型-Any"><a href="#通用数据类型-Any" class="headerlink" title="通用数据类型 Any"></a>通用数据类型 Any<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//这种数据类型个人认为是万能的，它可以在你不知道这个变量为什么数据类型的情况下，并且项目比较急的时候标注为Any，它可以通过编译时的类型检查，有人会说那我所有的类型都写Any，如果你非要这么干，也无妨，那就失去了ts这么语言本身的意义所在，可以用这种方法去解决一个上述声明数组类型时很麻烦的问题</span>
+<span class="token keyword">let</span> lists<span class="token punctuation">:</span> any<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'boren'</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token string">'body'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
 
-let age: any = 26;
-let name: any = &#39;boren&#39;;</code></pre><h3 id="空值Void"><a href="#空值Void" class="headerlink" title="空值Void "></a>空值Void <br></h3><pre><code>在js中我们其实对void不是那么的陌生，它被认为是一个操作符，这个操作符可以计算表达式但不会返回任何值，在js中常常出现的位置就是在a标签的链接中，我们不想让页面刷新，更不想链接到某些位置只是简简单单的a标签，有时候会调用一个简单的函数，仅此而已，那么我们就会
-&lt;a href=&quot;javascript:void(0)&quot; onclick=&quot;people()&quot;&gt;点我&lt;/a&gt;
+<span class="token keyword">let</span> age<span class="token punctuation">:</span> any <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> name<span class="token punctuation">:</span> any <span class="token operator">=</span> <span class="token string">'boren'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="空值Void"><a href="#空值Void" class="headerlink" title="空值Void "></a>空值Void <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//在js中我们其实对void不是那么的陌生，它被认为是一个操作符，这个操作符可以计算表达式但不会返回任何值，在js中常常出现的位置就是在a标签的链接中，我们不想让页面刷新，更不想链接到某些位置只是简简单单的a标签，有时候会调用一个简单的函数，仅此而已，那么我们就会</span>
+<span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"javascript:void(0)"</span> onclick<span class="token operator">=</span><span class="token string">"people()"</span><span class="token operator">></span>点我<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
 
-//在ts中，void类型像是与any类型相反，它表示没有任何类型。
-function student(): void{
-   console.log(&#39;my name is renbo&#39;)
-}
+<span class="token comment" spellcheck="true">//在ts中，void类型像是与any类型相反，它表示没有任何类型。</span>
+<span class="token keyword">function</span> <span class="token function">student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'my name is renbo'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-在上述函数中没有返回任何值，所以类型为void，其实void的变量没什么用处和null,undefined一样职能作为数据的类型的判断。</code></pre><h3 id="永不存在值的类型Never"><a href="#永不存在值的类型Never" class="headerlink" title="永不存在值的类型Never"></a>永不存在值的类型Never<br></h3><pre><code>官网解释
-never is the return type for a function expression or an 
-arrow function expression that always throws an exception or one that 
-never returns;
-Variables also acquire the type never when narrowed by any type guards that can never be true. 
-never类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型； 变量也可能是never类型，当它们被永不为真的类型保护所约束时。
-个人觉得没什么太大用这里就不做深究。</code></pre><h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言 "></a>类型断言 <br></h3><pre><code>在ts中类型断言这种方式还是比较有用处的，其相当于js中的类型转换。但是只在编译的时候起作用。并不会改变其数据的本身结构。
-let city: any = &quot;beijing&quot;;
+<span class="token comment" spellcheck="true">//在上述函数中没有返回任何值，所以类型为void，其实void的变量没什么用处和null,undefined一样职能作为数据的类型的判断。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="永不存在值的类型Never"><a href="#永不存在值的类型Never" class="headerlink" title="永不存在值的类型Never"></a>永不存在值的类型Never<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//官网解释</span>
+never is the <span class="token keyword">return</span> type <span class="token keyword">for</span> a <span class="token keyword">function</span> expression or an 
+arrow <span class="token keyword">function</span> expression that always throws an exception or one that 
+never returns<span class="token punctuation">;</span>
+Variables also acquire the type never when narrowed by any type guards that can never be <span class="token boolean">true</span><span class="token punctuation">.</span> 
+<span class="token comment" spellcheck="true">//never类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型； 变量也可能是never类型，当它们被永不为真的类型保护所约束时。</span>
+<span class="token comment" spellcheck="true">//个人觉得没什么太大用这里就不做深究。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言 "></a>类型断言 <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//在ts中类型断言这种方式还是比较有用处的，其相当于js中的类型转换。但是只在编译的时候起作用。并不会改变其数据的本身结构。</span>
+<span class="token keyword">let</span> city<span class="token punctuation">:</span> any <span class="token operator">=</span> <span class="token string">"beijing"</span><span class="token punctuation">;</span>
 
-let strLength: number = (city as string).length;
+<span class="token keyword">let</span> strLength<span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>city <span class="token keyword">as</span> string<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
 
-另外一种写法：
-let city: any = &quot;beijing&quot;;
+<span class="token comment" spellcheck="true">//另外一种写法：</span>
+<span class="token keyword">let</span> city<span class="token punctuation">:</span> any <span class="token operator">=</span> <span class="token string">"beijing"</span><span class="token punctuation">;</span>
 
-let strLength: number = (&lt;string&gt;city).length;</code></pre><hr>
+<span class="token keyword">let</span> strLength<span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>string<span class="token operator">></span>city<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 总结：通过以上的介绍相信大家对ts的数据类型已经有了大概的了解，其实相对于js,ts的数据类型并没有做什么变更，只是在声明其数据类型的时候必须明确的指定其相应的数据类型，否则代码编译会报错。虽然 ts的文件是xxx.ts 但由于编译过后和js 没有什么大的不同点，能够很好的运行在浏览器端，其中class、public等等函数及模块编译过后的js能后让你更深入的了解js
 
 
@@ -955,7 +965,7 @@ function identity(arg: number): number {
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

@@ -20,12 +20,12 @@ categories:
 要启用装饰器功能需要开始experimentalDecorators选项，两种方式
 
 命令行
-```
+```ts
 tsc --target ES5 --experimentalDecorators
 ```
 
 tsconfig.json配置
-```
+```ts
 {
     "compilerOptions": {
         "target": "ES5",
@@ -38,7 +38,7 @@ tsconfig.json配置
 
 定义一个装饰器
 
-```
+```ts
 function people (target) {
   console.log(target)
 }
@@ -47,7 +47,7 @@ function people (target) {
 
 在类中使用装饰器（@Decorator的语法是通过 @ 符号后边跟一个装饰器函数的引用）
 
-```
+```ts
 @people
 class People {
   constructor(){}
@@ -58,7 +58,7 @@ class People {
 
 解决在类中调用装饰器传参数的场景
 
-```
+```ts
 // 装饰器工厂
 function people(name : string) {   
   // 装饰器
@@ -80,7 +80,7 @@ class People{
 
 定义多个装饰器
 
-```
+```ts
 function decorator1() {
   console.log("decorator1(): start");
   return function (target) {
@@ -97,7 +97,7 @@ function decorator2() {
 ```
 
 调用装饰器
-```
+```ts
 class C {
   @decorator1()
   @decorator2()
@@ -107,7 +107,7 @@ class C {
 
 输出结果为(可以看作组合函数调用 decorator1(decorator2()))
 
-```
+```ts
 decorator1(): start
 decorator2(): start
 decorator2(): end
@@ -123,7 +123,7 @@ decorator1(): end
 
 我们定义一个类，继承原有的类并对这个类增加一些属性
 
-```
+```ts
 // 定义类装饰器
 function personName<T extends {new(...args:any[]):{}}>(constructor:T){
   return class extends constructor {
@@ -164,7 +164,7 @@ console.log(new Person('wangwu')) // class_1 {name: "zhangsan",__proto__:Person
 Method Decorator、Accessor Decorator和Property Decorator
 使用方法装饰器
 
-```
+```ts
 class Greeter {
   greeting: string;
   constructor(message: string) {
@@ -177,7 +177,7 @@ class Greeter {
   }
 }
 ```
-```
+```ts
 function enumerable(value: boolean) {
   return function (target: any, propertyKey: string, descriptor: PropertyDescriptor{
     descriptor.enumerable = value;
@@ -187,7 +187,7 @@ function enumerable(value: boolean) {
 
 明确一下静态成员与实例成员在返回值上的区别
 
-```
+```ts
 class Func {
 
   // 静态成员
@@ -203,7 +203,7 @@ class Func {
 
 静态成员 method1 和 method2 都是定义在 Func 构造函数上，method3 和 method4 区别在于 method3 定义在原型链之上 method4 只有在 Func 类实例化对象之后才有，转化ES5代码之后的样子
 
-```
+```ts
 var Func = /** @class */ (function () {
     function Func() {
       this.method4 = function () { };
@@ -224,7 +224,7 @@ var Func = /** @class */ (function () {
 
 定义装饰器三个参数
 
-```
+```ts
 function configurable(value: boolean) {
   return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     descriptor.configurable = value;
@@ -235,7 +235,7 @@ function configurable(value: boolean) {
 
 定义带有get，set的类
 
-```
+```ts
 class Point {
   private _x: number;
   private _y: number;
@@ -260,7 +260,7 @@ class Point {
 *注意在TypeScript中如何初始化属性修饰符，因此不提供属性描述符作为属性修饰符的参数。这是因为当定义原型的成员时，当前没有机制来描述实例属性，也无法观察或修改属性的初始化器。返回值也被忽略。因此，属性装饰器只能用于观察已为类声明特定名称的属性。*
 
 定义类
-```
+```ts
 class Point {
   @configurable
   static x = 1;
@@ -268,7 +268,7 @@ class Point {
 ```
 
 定义属性装饰器获取类属性上的值进行更改
-```
+```ts
 function configurable(target,x) {
   let descriptor = Object.getOwnPropertyDescriptor(target, x)
   Object.defineProperty(target, x, {
@@ -282,12 +282,12 @@ console.log(Point.x) // 2
 也可以使用 reflect-metadata 这个库它主要用来在声明的时候添加和读取元数据
 使用的时候需要安装
 
-```
+```js
 npm i reflect-metadata --save
 ```
 之后在tsconfig.json 中配置emitDecoratorMetadata选项
 
-```
+```ts
 {
   "compilerOptions": {
     "target": "ES5",
@@ -299,7 +299,7 @@ npm i reflect-metadata --save
 
 
 定义类
-```
+```ts
 class Greeter {
     @format("Hello, %s")
     greeting: string;
@@ -321,7 +321,7 @@ Reflect.metadata 当作 Decorator 使用，当修饰类时，在类上添加元�
 
 Reflect.getMetadata 能获取属性
 
-```
+```ts
 import "reflect-metadata";
 
 const formatMetadataKey = Symbol("format");
@@ -343,7 +343,7 @@ function getFormat(target: any, propertyKey: string) {
 - 参数在函数中形参中的位置
 
 
-```
+```ts
 const obj = []
 
 function require (value : string) {

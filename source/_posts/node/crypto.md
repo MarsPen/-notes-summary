@@ -18,7 +18,7 @@ crypto 模块也是核心模块之一，提供了加密功能，包括对 OpenSS
 **MD5和SHA1**<br/>
 MD5是一种常用的哈希算法，用于给任意数据一个“签名”。这个签名通常用一个十六进制的字符串表示：<br/>
 
-```
+```js
 // 引入加密模块
 const crypto = require('crypto');
 
@@ -29,10 +29,10 @@ const hash = crypto.createHash('md5');
 hash.update('Hello, nodejs!');
 
 // encoding 值可以是 'hex', 'latin1' 或者 'base64'. 
-  如果encoding 是字符串会被直接返回，其它情况会返回一个 a Buffer.
+ // 如果encoding 是字符串会被直接返回，其它情况会返回一个 a Buffer.
 console.log(hash.digest('hex'));
 
-Hash 对象在 hash.digest() 方法调用之后不能再次被使用。多次的调用会引发错误并抛出
+//Hash 对象在 hash.digest() 方法调用之后不能再次被使用。多次的调用会引发错误并抛出
 
 ```
 
@@ -59,7 +59,7 @@ console.log(hmac.digest('hex'));
 **AES**<br/>
 AES是一种常用的对称加密算法，加解密都用同一个密钥。crypto模块提供了AES支持，但是需要自己封装好函数，便于使用：<br/>
 
-```
+```js
 // 引入加密模块
 const crypto = require('crypto');
 // 加密函数
@@ -97,7 +97,7 @@ Decrypted text: Hello, this is a secret message!
 
 DH算法是一种密钥交换协议，它可以让双方在不泄漏密钥的情况下协商出一个密钥来。DH算法基于离散对数数学原理<br/>
 
-```
+```js
 // 引入加密模块
 const crypto = require('crypto');
 
@@ -129,23 +129,23 @@ let b_secret = crypto_b.computeSecret(crypto_a_keys);
 RSA算法是一种非对称加密算法，即由一个私钥和一个公钥构成的密钥对，通过私钥加密，公钥解密，或者通过公钥加密，私钥解密。其中，公钥可以公开，私钥必须保密<br/>
 
 1、生成一个RSA密钥对：<br/>
-```
+```js
 openssl genrsa -aes256 -out rsa-key.pem 2048
 ```
 2、通过上面的rsa-key.pem加密文件，导出原始的私钥<br/>
-```
+```js
 openssl rsa -in rsa-key.pem -outform PEM -out rsa-prv.pem
 ```
 3、命令导出原始的公钥<br/>
-```
+```js
 openssl rsa -in rsa-key.pem -outform PEM -pubout -out rsa-pub.pem
-这样，我们就准备好了原始私钥文件rsa-prv.pem和原始公钥文件rsa-pub.pem，编码格式均为PEM
+//这样，我们就准备好了原始私钥文件rsa-prv.pem和原始公钥文件rsa-pub.pem，编码格式均为PEM
 ```
 
 
 使用crypto模块提供的方法，即可实现非对称加解密<br/>
 
-```
+```js
 const fs = require('fs');
 const crypto = require('crypto');
 
@@ -168,9 +168,9 @@ let dec_by_pub = crypto.publicDecrypt(pubKey, enc_by_prv);
 console.log('decrypted by public key: ' + dec_by_pub.toString('utf8'));
 
 
-执行后，可以得到解密后的消息，与原始消息相同。
+//执行后，可以得到解密后的消息，与原始消息相同。
 
-接下来我们使用公钥加密，私钥解密：
+//接下来我们使用公钥加密，私钥解密：
 
 // 使用公钥加密:
 let enc_by_pub = crypto.publicEncrypt(pubKey, Buffer.from(message, 'utf8'));
@@ -179,7 +179,7 @@ console.log('encrypted by public key: ' + enc_by_pub.toString('hex'));
 // 使用私钥解密:
 let dec_by_prv = crypto.privateDecrypt(prvKey, enc_by_pub);
 console.log('decrypted by private key: ' + dec_by_prv.toString('utf8'));
-执行得到的解密后的消息仍与原始消息相同。
+//执行得到的解密后的消息仍与原始消息相同。
 
 ```
 

@@ -419,7 +419,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
@@ -458,81 +458,87 @@
 </ul>
 <h3 id="ES6中类的用法"><a href="#ES6中类的用法" class="headerlink" title="ES6中类的用法 "></a>ES6中类的用法 <br><hr></h3><ol>
 <li><p><strong>定义属性和方法</strong></p>
-<pre><code> // 定义类
- class Parent{
-   // 定义构造函数
-   constructor(name=&#39;wang&#39;,age=&#39;27&#39;){
-     // 定义属性
-     this.name = name;
-     this.age = age;
-   }
-   // 定义方法
-   eat(){
-     console.log(`${this.name} ${this.age} eat food`)
-   }
- }
-</code></pre></li>
+<pre class="line-numbers language-ts"><code class="language-ts"> <span class="token comment" spellcheck="true">// 定义类</span>
+ <span class="token keyword">class</span> <span class="token class-name">Parent</span><span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// 定义构造函数</span>
+   <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'wang'</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token string">'27'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">// 定义属性</span>
+     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+     <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token comment" spellcheck="true">// 定义方法</span>
+   <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> eat food`</span></span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p><strong>利用关键字extends 和 super 继承</strong></p>
-<pre><code> class Child extends Parent{ 
-     constructor(name = &#39;ren&#39;,age = &#39;27&#39;){ 
-       //继承父类属性
-       super(name, age); 
-     } 
-       eat(){ 
-       //继承父类方法
-         super.eat() 
-       } 
-   } 
-   let child =new Child(&#39;xiaoxiami&#39;); 
-   child.eat();</code></pre></li>
+<pre class="line-numbers language-ts"><code class="language-ts"> <span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token keyword">extends</span> <span class="token class-name">Parent</span><span class="token punctuation">{</span> 
+     <span class="token keyword">constructor</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'ren'</span><span class="token punctuation">,</span>age <span class="token operator">=</span> <span class="token string">'27'</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+       <span class="token comment" spellcheck="true">//继承父类属性</span>
+       <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+       <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+       <span class="token comment" spellcheck="true">//继承父类方法</span>
+         <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+       <span class="token punctuation">}</span> 
+   <span class="token punctuation">}</span> 
+   <span class="token keyword">let</span> child <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token string">'xiaoxiami'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+   child<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p><strong>存储器getter,setter改变属性和读取</strong></p>
-<pre><code> class People{
-   // 定义构造函数
-   constructor(name){
-     // 定义属性
-     this.name = name;
-   }
-   get name () {
-     return &#39;renbo&#39;;
-   }
-   set name (value) {
-     console.log(&#39;setter: &#39; + value);
-   }
-   // 定义方法
-   eat(){
-     console.log(`${this.name}  eat food`)
-   }
- }
- let people = new People(&#39;lisi&#39;); // setter: lisi
- people.name = &#39;zhangsan&#39;; // setter: zhangsan
- console.log(people.name); // renbo</code></pre></li>
+<pre class="line-numbers language-ts"><code class="language-ts"> <span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// 定义构造函数</span>
+   <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">// 定义属性</span>
+     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">get</span> name <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token string">'renbo'</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">set</span> name <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setter: '</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token comment" spellcheck="true">// 定义方法</span>
+   <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  eat food`</span></span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token string">'lisi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// setter: lisi</span>
+ people<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'zhangsan'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// setter: zhangsan</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>people<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// renbo</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p><strong>静态方法使用static修饰符（由于分配在静态内存空间中，所以不需要实例化，只需要吊影即可）</strong></p>
-<pre><code> class People{
-   // 定义静态方法
-   static eat(name){
-     console.log(`${name} eat food`)
-   }
- }
- console.log(People.eat(&#39;renbo&#39;)) // renbo eat food</code></pre></li>
+<pre class="line-numbers language-ts"><code class="language-ts"> <span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// 定义静态方法</span>
+   <span class="token keyword">static</span> <span class="token function">eat</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> eat food`</span></span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>People<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token string">'renbo'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// renbo eat food</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="ES7中类的用法"><a href="#ES7中类的用法" class="headerlink" title="ES7中类的用法 "></a>ES7中类的用法 <br><hr></h3><ol>
 <li><p><strong>定义属性可以直接在类中定义</strong></p>
-<pre><code> class People{
-   name = &#39;zhangsan&#39;
-   constructor () {
-     // 
-   }
- }
- let people = new People();
- console.log(npeople.name) // zhangsan</code></pre></li>
+<pre class="line-numbers language-ts"><code class="language-ts"> <span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
+   name <span class="token operator">=</span> <span class="token string">'zhangsan'</span>
+   <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">// </span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>npeople<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// zhangsan</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p><strong>定义静态属性</strong></p>
-<pre><code>class People{
-static  name = &#39;zhangsan&#39;
- constructor () {
-   // 
- }
-}
-console.log(People.name) // zhangsan</code></pre></li>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
+<span class="token keyword">static</span>  name <span class="token operator">=</span> <span class="token string">'zhangsan'</span>
+ <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// </span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>People<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// zhangsan</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="TypeScript-中类的用法"><a href="#TypeScript-中类的用法" class="headerlink" title="TypeScript 中类的用法 "></a>TypeScript 中类的用法 <br><hr></h3><ol>
 <li><strong>说起 ts 中的类不得不说访问修饰符 public private protected</strong></li>
@@ -543,67 +549,71 @@ console.log(People.name) // zhangsan</code></pre></li>
 <li>protected 说明属性或方法是受保护的，和 private 类似，但是 protected 也可以在子类中访问</li>
 </ul>
 <p><strong>public 修饰符</strong></p>
-<pre><code>class People {
-  public name;
-  public constructor(name) {
-    this.name = name;
-  }
-}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-let people = new People(&#39;renbo&#39;);
-console.log(people.name); // renbo</code></pre><p><strong>private 修饰符</strong></p>
-<pre><code>class People {
-  private  name;
-  public constructor(name) {
-    this.name = name;
-  }
-}
+<span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token string">'renbo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>people<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// renbo</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>private 修饰符</strong></p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span>  name<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-let people = new People(&#39;renbo&#39;);
-console.log(people.name); // Property &#39;name&#39; is private and only accessible within class &#39;People&#39;.
+<span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token string">'renbo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>people<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Property 'name' is private and only accessible within class 'People'.</span>
 
-// 在子类中也不允许访问，只是私有
-class People {
-  private  name: string;
-  public constructor(name: string) {
-    this.name = name;
-  }
-}
+<span class="token comment" spellcheck="true">// 在子类中也不允许访问，只是私有</span>
+<span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span>  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class SmilePeople extends People {
+<span class="token keyword">class</span> <span class="token class-name">SmilePeople</span> <span class="token keyword">extends</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
 
-  public constructor (name:string) {
-    super(name)
-    console.log(this.name); // Property &#39;name&#39; is private and only accessible within class &#39;People&#39;.
-  }
-}</code></pre><p><strong>protected 修饰符</strong></p>
-<pre><code>class People {
-  protected  name;
-  public constructor(name) {
-    this.name = name;
-  }
-}
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Property 'name' is private and only accessible within class 'People'.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>protected 修饰符</strong></p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">protected</span>  name<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-let people = new People(&#39;renbo&#39;);
-console.log(people.name); // Property &#39;name&#39; is protected and only accessible within class &#39;People&#39; and its subclasses.ts</code></pre><p><strong>protected 修饰符(子类访问)</strong></p>
-<pre><code>class People {
-  protected  name: string;
-  public constructor(name: string) {
-    this.name = name;
-  }
-}
+<span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token string">'renbo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>people<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Property 'name' is protected and only accessible within class 'People' and its subclasses.ts</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>protected 修饰符(子类访问)</strong></p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">protected</span>  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class SmilePeople extends People {
+<span class="token keyword">class</span> <span class="token class-name">SmilePeople</span> <span class="token keyword">extends</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
 
-  public constructor (name:string) {
-    super(name)
-    console.log(this.name)
-  }
-}
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-let people  = new People (&#39;zhangsna&#39;)
-let smilePeople = new SmilePeople(&#39;wangwu&#39;); // wangwu
-</code></pre><ol start="2">
+<span class="token keyword">let</span> people  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span> <span class="token punctuation">(</span><span class="token string">'zhangsna'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> smilePeople <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SmilePeople</span><span class="token punctuation">(</span><span class="token string">'wangwu'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// wangwu</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
 <li><strong>抽象类（ abstract 用于定义抽象类以及抽象类中的抽象方法）</strong></li>
 </ol>
 <ul>
@@ -612,37 +622,38 @@ let smilePeople = new SmilePeople(&#39;wangwu&#39;); // wangwu
 <li>抽象类无法直接实例化</li>
 <li>与接口不同，抽象类可以包含其成员的实现细节</li>
 </ul>
-<pre><code>// 上述1，2
-abstract class People {
-  public name:string;
-  public constructor (name:string) {
-    this.name = name;
-  }
-  public abstract eat():string
-}
-// 派生类
-class SmilePeople extends People {
-  static food: string = &#39;apple&#39;
-  // eat 方法必须在子类中实现
-  public eat ():string {
-    return `my name is ${this.name} I,m eating ${SmilePeople.food}`
-  }
-}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 上述1，2</span>
+abstract <span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> name<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> abstract <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">string</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 派生类</span>
+<span class="token keyword">class</span> <span class="token class-name">SmilePeople</span> <span class="token keyword">extends</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> food<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">=</span> <span class="token string">'apple'</span>
+  <span class="token comment" spellcheck="true">// eat 方法必须在子类中实现</span>
+  <span class="token keyword">public</span> eat <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> I,m eating </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>SmilePeople<span class="token punctuation">.</span>food<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-let smilePeople = new SmilePeople(&#39;zhangsan&#39;);
-smilePeople.eat()
+<span class="token keyword">let</span> smilePeople <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SmilePeople</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+smilePeople<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-// 无法直接实例化
-abstract class People {
-  public name:string;
-  public constructor (name:string) {
-    this.name = name;
-  }
-  public abstract eat ():void
-}
+<span class="token comment" spellcheck="true">// 无法直接实例化</span>
+abstract <span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> name<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">constructor</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> abstract eat <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">void</span>
+<span class="token punctuation">}</span>
 
-let people = new People(&#39;zhangsan&#39;) // Cannot create an instance of an abstract class.
-</code></pre>
+<span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Cannot create an instance of an abstract class.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -877,8 +888,9 @@ let people = new People(&#39;zhangsan&#39;) // Cannot create an instance of an a
 function people () {}
 
 // 匿名函数
-const people = function () {}函数的参数类型和返回值类型 
-只要
+const people = function () {}
+函数的参数类型和返回值类型 
+只
                         
                     </div>
                     <div class="publish-info">
@@ -1079,7 +1091,7 @@ const people = function () {}函数的参数类型和返回值类型
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

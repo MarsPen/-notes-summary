@@ -1,0 +1,1224 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="微信小程序架构原理, 前端 typescript php js node html html5 css linux vue react">
+  <meta name="baidu-site-verification" content>
+  <meta name="google-site-verification" content>
+  <meta name="description" content="前言​小程序的主要开发语言是 JavaScript ，虽然有与网页开发有相似性但是还有一定的区别
+
+​网页开发渲染线程和脚本线程是互斥的，也是为什么长时间的脚本运行可能会导致页面失去响应
+小程序中，逻辑层和渲染层是分开的，双线程同时运行。渲">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>微信小程序架构原理 | </title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+  <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/matery.css">
+  <link rel="stylesheet" type="text/css" href="/css/my.css">
+  <style type="text/css">
+    
+  </style>
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span"></span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name"></div>
+        <div class="logo-desc">
+            
+            前端工程师
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/marspen" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/marspen" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        微信小程序架构原理
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/小程序/" target="_blank">
+                            <span class="chip bg-color">小程序</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/小程序/" class="post-category" target="_blank">
+                            小程序
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-12
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    任博
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言<hr></h3><p>​小程序的主要开发语言是 JavaScript ，虽然有与网页开发有相似性但是还有一定的区别</p>
+<ul>
+<li>​网页开发渲染线程和脚本线程是互斥的，也是为什么长时间的脚本运行可能会导致页面失去响应</li>
+<li>小程序中，逻辑层和渲染层是分开的，双线程同时运行。渲染层的界面使用 WebView 进行渲染；逻辑层采用 JSCore 运行 JavaScript 代码</li>
+<li>网页开发面对的主要是浏览器及移动端浏览器 WebView</li>
+<li>小程序开发面对的是两大操作系统 iOS 和 Android 的 微信客户端，所以开发时候需要注意的是微信客户端的版本号和小程序API 支持的基础库版本号</li>
+</ul>
+<p>渲染非原生组件以及脚本执行环境的区别如下</p>
+<table>
+<thead>
+<tr>
+<th>运行环境</th>
+<th>逻辑层</th>
+<th>渲染层</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Android</td>
+<td>V8</td>
+<td>Chromium定制内核</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td>JSCore</td>
+<td>WKWebView</td>
+</tr>
+<tr>
+<td>小程序开发者工具</td>
+<td>NWJS</td>
+<td>Chrome WebView</td>
+</tr>
+</tbody></table>
+<h3 id="小程序宿主环境"><a href="#小程序宿主环境" class="headerlink" title="小程序宿主环境"></a>小程序宿主环境<hr></h3><p>在前言中提到小程序的宿主环境为微信客户端，所以借助宿主环境提供的能力，可以完成许多普通网页无法完成的功能</p>
+<h3 id="渲染层和逻辑层"><a href="#渲染层和逻辑层" class="headerlink" title="渲染层和逻辑层"></a>渲染层和逻辑层<hr></h3><p>首先，我们来简单了解下小程序的运行环境。小程序的运行环境分成渲染层和逻辑层，其中 WXML 模板和 WXSS 样式工作在渲染层，JS 脚本工作在逻辑层。</p>
+<p>小程序的渲染层和逻辑层分别由2个线程管理：渲染层的界面使用了 WebView 进行渲染；逻辑层采用 JsCore 线程运行 JS 脚本。一个小程序存在多个界面，所以渲染层存在多个 WebView 线程，这两个线程的通信会经由微信客户端做中转，逻辑层发送网络请求也经由 Native 转发，小程序的通信模型下图所示。</p>
+<img src="/images/mini01.png">
+
+<h3 id="视图和逻辑通信"><a href="#视图和逻辑通信" class="headerlink" title="视图和逻辑通信"></a>视图和逻辑通信</h3><p>多 WebView 模式下，每一个 WebView 都有一个独立的 JSContext，那视图和逻辑是如何进行通讯？如下图双线程生命周期所示。</p>
+<img src="/images/mini02.png">
+
+<p>相对于浏览器双线程模型</p>
+<ul>
+<li>更加安全，因为微信小程序阻止开发者使用一些浏览器提供的一些功能，如操作DOM、动态执行脚本等</li>
+<li>不用等待浏览器主线程去下载并解析 html，遇到 JS 脚本还会阻塞，影响视图渲染，造成白屏</li>
+<li>缺点是双线程如果频繁的通信，操作 setDate 更新视图，对性能消耗特别严重，例如拖拽、滚动等</li>
+</ul>
+<h3 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构<hr></h3><p>当我们对 View 层进行事件操作后，会通过 WeixinJSBridge 将数据传递到 Native 系统层。Native 系统层决定是否要用 native 处理，然后丢给逻辑层进行用户的逻辑代码处理。逻辑层处理后将数据通过 WeixinJSBridge 返给 View 层。View 渲染更新视图，如下图所示。<br><img src="/images/mini03.jpg"></p>
+<h3 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理<hr></h3><p>微信开者工具模拟器运行的代码是经过本地预处理、本地编译，才能看见的页面。而微信客户端运行的代码是额外经过服务器编译的。只有经过编译才能识别并运行小程序的代码。我们先来看一下小程序文件的基本结构</p>
+<ul>
+<li><code>.wxml</code> 页面结构</li>
+<li><code>.wxss</code> 页面样式</li>
+<li><code>.js</code>  页面逻辑</li>
+<li><code>.json</code> 页面相关配置按照【约定优于配置】的原则</li>
+</ul>
+<p>接下来我们打开小程序开发者工具，点击左上角微信开发者工具 &gt;&gt; 调试 &gt;&gt; 调试微信开发者工具，看到如下界面（官网组件demo）<br><img src="/images/mini04.jpg"><br>可以看到渲染层和逻辑层是两个 webview，第一个对应的 webview 是渲染层，每个页面都有一个webview，而逻辑层的 appservice 是只有一个。</p>
+<p>然后我们接着往下看 webview 中到底是什么？打开 webview 发现 iframe 标签是空的，但我们想要查看怎么办，打开调试面板（console）下面输入</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 第一步先找到所有的webview</span>
+document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'webview'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 第二步找到第一个渲染层页面用开发工具命令打开</span>
+document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'webview'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">showDevTools</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个时候我们会看到如下窗口，这个页面就是我们渲染层的页面结构了。<br><img src="/images/mini05.jpg"></p>
+<p>既然能看到每一个渲染层，肯定也能看到逻辑层代码，在开发者工具控制台中输入 <code>document</code>，出现如下页面<br><img src="/images/mini06.jpg"></p>
+<p>接下来我们看一下微信小程序使用的基础库文件。在开发者工具控制台中输入 <code>openVendor()</code> 就会打开本地小程序的 <code>WeappVendor</code> 目录，有几个重要的文件</p>
+<ul>
+<li><code>wcc</code> 编译器负责将 <code>wxml</code> 编译成 <code>js</code> 文件</li>
+<li><code>wcsc</code> 编译器负责将 <code>wxss</code> 文件编译成 <code>js</code> 文件</li>
+<li><code>xxx.wxvpkg</code> 是不同版本的小程序基础库，主要包含小程序基础库 <code>WAService</code> 和 <code>WAWebview</code>，这块后续分析。</li>
+</ul>
+<p><strong>wcc的作用</strong></p>
+<p>1、新建一个名为 <code>compiler.js</code> 的文件，并写入以下代码</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> miniprogramCompiler <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"miniprogram-compiler"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> JsCompiler <span class="token operator">=</span> miniprogramCompiler<span class="token punctuation">.</span><span class="token function">wxmlToJs</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> cssCompiler <span class="token operator">=</span> miniprogramCompiler<span class="token punctuation">.</span><span class="token function">wxssToJs</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"wxml.js"</span><span class="token punctuation">,</span> JsCompiler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"wxcss.js"</span><span class="token punctuation">,</span> cssCompiler<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2、执行 <code>npm install miniprogram-compiler</code><br>3、执行 <code>node compiler.js</code>,会在同目录生成 <a href> wxml</a> 和 <a href>wxcss</a> 两个 JS 文件<br>4、新建 index.wxml 并写入如下代码</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"box"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>text <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"box-text"</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> text <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>5、新建 index.html 引入文件 wxml.js，如下代码</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"./wxml.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token function">$gwx</span><span class="token punctuation">(</span><span class="token string">"index.wxml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> virtualTree <span class="token operator">=</span> <span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      text<span class="token punctuation">:</span> <span class="token string">'data数据'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>virtualTree<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>用浏览器打开 index.html 控制台会输出类似 Virtual DOM 的对象</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token string">"tag"</span><span class="token punctuation">:</span><span class="token string">"wx-page"</span><span class="token punctuation">,</span>
+  <span class="token string">"children"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">"tag"</span><span class="token punctuation">:</span><span class="token string">"wx-view"</span><span class="token punctuation">,</span>
+    <span class="token string">"attr"</span><span class="token punctuation">:</span><span class="token punctuation">{</span> <span class="token string">"class"</span><span class="token punctuation">:</span><span class="token string">"box"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"children"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token string">"tag"</span><span class="token punctuation">:</span><span class="token string">"wx-text"</span><span class="token punctuation">,</span>
+        <span class="token string">"attr"</span><span class="token punctuation">:</span><span class="token punctuation">{</span> <span class="token string">"class"</span><span class="token punctuation">:</span><span class="token string">"box-text"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">"children"</span><span class="token punctuation">:</span><span class="token punctuation">[</span> <span class="token string">"data数据"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"raw"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">"generics"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"raw"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"generics"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>wcc的作用就是：</p>
+<ul>
+<li>执行 wcc 编译 wxml 生成相关页面注册代码，并记录标签的属性及其值（生成 JS 文件）</li>
+<li>这个文件主体是一个 $gwx() 函数，接收两个参数 <code>path</code> （页面 wxml 路径）和 <code>global</code>（顶层对象)</li>
+</ul>
+<p><strong>wcsc的作用</strong></p>
+<ul>
+<li>wcsc 编译 wxss 得到一个 js 文件</li>
+<li>添加尺寸单位rpx转换，可根据屏幕宽度自适应</li>
+<li>提供 setCssToHead 方法将转换后的 css 内容添加到 header</li>
+</ul>
+<p><strong>xxx.wxvpkg</strong></p>
+<p>上面提到过开发者工具中输入<code>openVendor</code> 之后会看到很多 <code>.wxvpkg</code> 文件，这是小程序的基础库，主要有两部分组成 <code>WAService</code> 和 <code>WAWebview</code></p>
+<ul>
+<li>WAWebview：小程序视图层基础库，提供视图层基础能力</li>
+<li>WAService：小程序逻辑层基础库，提供逻辑层基础能力</li>
+</ul>
+<p>微信小程序基础库版本是不断更新的，当前我本地的最高版本为 2.14.1.wxvpkg ，我们可以利用<a href="https://github.com/thedreamwork/unwxapkg" target="_blank" rel="noopener">unwxapkg</a> 解压 2.14.1.wxvpkg。解压后的目录为 </p>
+<pre class="line-numbers language-js"><code class="language-js">├── WAAutoService<span class="token punctuation">.</span>js
+├── WAAutoWebview<span class="token punctuation">.</span>js
+├── WAGame<span class="token punctuation">.</span>js
+├── WAGameSubContext<span class="token punctuation">.</span>js
+├── WAGameVConsole<span class="token punctuation">.</span>html
+├── WAGfxEmsc<span class="token punctuation">.</span>js
+├── WAGfxEmsc<span class="token punctuation">.</span>wasm
+├── WAPageFrame<span class="token punctuation">.</span>html
+├── WAPerf<span class="token punctuation">.</span>js
+├── WARemoteDebug<span class="token punctuation">.</span>js
+├── WAService<span class="token punctuation">.</span>js
+├── WAServiceMainContext<span class="token punctuation">.</span>js
+├── WASourceMap<span class="token punctuation">.</span>js
+├── WASubContext<span class="token punctuation">.</span>js
+├── WAVConsole<span class="token punctuation">.</span>js
+├── WAVersion<span class="token punctuation">.</span>json
+├── WAWKWorker<span class="token punctuation">.</span>html
+├── WAWebview<span class="token punctuation">.</span>js
+├── WAWidget<span class="token punctuation">.</span>js
+└── WAWorker<span class="token punctuation">.</span>js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其他文件先忽略，我们先看一下 webview 引用的两个基础文件源码概览<br><a href="WAWebview.js">WAWebview</a> 和 <a href="WAService.js">WAService</a></p>
+<p>其中，WAWebview 最主要的几个部分：</p>
+<ul>
+<li><code>Foundation</code>：基础模块(发布订阅、通信桥梁 ready 事件)</li>
+<li><code>WeixinJSBridge</code>：消息通信模块（js 和 native 通讯） Webview 和 Service都有相同的一套</li>
+<li><code>exparser</code>：组件系统模块，实现了一套自定义的组件模型，比如实现了 wx-view</li>
+<li><code>__virtualDOM__</code>：虚拟 Dom 模块</li>
+<li><code>__webViewSDK__</code>：WebView SDK 模块</li>
+<li><code>Reporter</code>：日志上报模块(异常和性能统计数据)</li>
+</ul>
+<p>其中，WAService 最主要的几个部分：</p>
+<ul>
+<li><code>Foundation</code>：基础模块</li>
+<li><code>WeixinJSBridge</code>：消息通信模块(js 和 native 通讯) Webview 和 Service都有相同的一套</li>
+<li><code>WeixinNativeBuffer</code>：原生缓冲区</li>
+<li><code>WeixinWorker</code>：Worker 线程</li>
+<li><code>JSContext</code>：JS Engine Context</li>
+<li><code>Protect</code>：JS 保护的对象</li>
+<li><code>__subContextEngine__</code>：提供 App、Page、Component、Behavior、getApp、getCurrentPages 等方法</li>
+</ul>
+<p><strong>Foundation 模块</strong><br>基础模块提供环境变量 env、发布订阅 EventEmitter、配置/基础库/通信桥 Ready 事件。<br><img src="/images/mini07.jpg"></p>
+<p><strong>Exparser 模块</strong><br>微信小程序的组件组织框架，内置在小程序基础库中，为小程序的各种组件提供基础的支持。小程序内的所有组件，包括内置组件和自定义组件，都由 Exparser 组织管理。Exparser 的组件模型与 WebComponents 标准中的 ShadowDOM 高度相似。Exparser 会维护整个页面的节点树相关信息，包括节点的属性、事件绑定等，相当于一个简化版的 Shadow DOM 实现。<br><img src="/images/mini08.jpg"></p>
+<p><strong>Virtual DOM 模块</strong><br>生成 <code>wx-element</code> 对象，和 <a href="https://github.com/Matt-Esch/virtual-dom" target="_blank" rel="noopener">virtual-dom</a> 类似<br><img src="/images/mini09.jpg"></p>
+<p><strong>WeixinJSBridge 模块</strong><br>提供了视图层 JS 与 Native、视图层与逻辑层之间消息通信的机制，如下图几个方法:<br><img src="/images/mini10.jpg"></p>
+<p><strong>首次渲染流程</strong><br>通过上面这些主体结构和函数，对小程序应该有大致的了解，那么我们把上面串起来看一下首次渲染的流程</p>
+<ul>
+<li>打开微信开发者工具</li>
+<li>点击左上角调试微信开发者工具</li>
+<li>调试面板输入 <code>document.getElementsByTagName(&#39;webview&#39;)[0].showDevTools(true)</code></li>
+</ul>
+<img src="/images/mini11.jpg">
+
+<p>上图中最后标注的代码</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> decodeName <span class="token operator">=</span> <span class="token function">decodeURI</span><span class="token punctuation">(</span><span class="token string">"./pages/index/index.wxml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> generateFunc <span class="token operator">=</span> <span class="token function">$gwx</span><span class="token punctuation">(</span>decodeName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>generateFunc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> CE <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> __global <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>CustomEvent <span class="token operator">||</span> __global<span class="token punctuation">.</span>CustomEvent<span class="token punctuation">)</span> <span class="token punctuation">:</span> window<span class="token punctuation">.</span>CustomEvent<span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">CE</span><span class="token punctuation">(</span><span class="token string">"generateFuncReady"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        detail<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            generateFunc<span class="token punctuation">:</span> generateFunc
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> __global<span class="token punctuation">.</span>timing<span class="token punctuation">.</span><span class="token function">addPoint</span><span class="token punctuation">(</span><span class="token string">'PAGEFRAME_GENERATE_FUNC_READY'</span><span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> decodeName <span class="token operator">+</span> <span class="token string">" not found"</span>console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>decodeName <span class="token operator">+</span> <span class="token string">" not found"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>所以初次渲染流程如下</p>
+<ul>
+<li><p>利用 $gwx 创建类似虚拟 DOM 的节点树</p>
+</li>
+<li><p>创建自定义事件 window.CustomEvent（CE）</p>
+</li>
+<li><p>分发自定义事件 document.dispatchEvent</p>
+</li>
+<li><p>在 WAWebview 监听这个事件，然后通过 WeixinJSBridge 通知 JS 逻辑层视图已经准备好</p>
+<pre class="line-numbers language-js"><code class="language-js">c <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token operator">!</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">var</span> e <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
+          <span class="token function">r</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            WeixinJSBridge<span class="token punctuation">.</span>publish<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>WeixinJSBridge<span class="token punctuation">,</span> <span class="token function">o</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token string">"GenerateFuncReady"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"generateFuncReady"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>最后 JS 逻辑层将数据给 Webview 视图层，进行首次渲染</p>
+</li>
+</ul>
+<img src="/images/mini12.jpeg">
+
+<h3 id="通信原理"><a href="#通信原理" class="headerlink" title="通信原理"></a>通信原理<hr></h3><p>小程序逻辑层和渲染层的通信会由 Native （微信客户端）做中转，逻辑层发送网络请求也经由 Native 转发。</p>
+<p><strong>视图层组件:</strong><br>内置组件中有部分组件（map、video等）是利用到客户端原生提供的能力，那是怎么通信的呢？iOS 是利用了 WKWebView 的提供 messageHandlers 特性，而在安卓则是往 WebView 的 window 对象注入一个原生方法，最终会封装成 WeiXinJSBridge 这样一个兼容层，主要提供了调用（invoke）和监听（on）这两种方法。</p>
+<p><strong>逻辑层接口:</strong><br>iOS 平台往 JavaScripCore 框架注入一个全局的原生方法，而安卓方面则是跟渲染层一致。</p>
+<p>不论视图层（部分组件）还是逻辑层，开发者都是间接地调用客户端原生底层的能力。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结<hr></h3><p>这篇文章主要是理解小程序 wcc 和 wcsc 编译的文件，以及整个小程序架构的的意义。由于逻辑层源码微信官方加密看到只能靠打印和猜测每个模块大致的作用。</p>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">客官能否赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/12/20/mini/principle02/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="微信小程序之启动流程">
+                        
+                        <span class="card-title">微信小程序之启动流程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            待更新
+
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/小程序/" class="post-category" target="_blank">
+                                    小程序
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/小程序/" target="_blank">
+                        <span class="chip bg-color">小程序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/15/flutter/library-flutter-dart/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="flutter 之 dart 基础语法">
+                        
+                        <span class="card-title">flutter 之 dart 基础语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            dart 作为 flutter 选用的基础语言，具有一定的优势。下面我们来简单的了解一下这门语言。
+什么是 dart dart 是由 Google 主导开发的一种编程语言，于 2011 年 10 月公开。也是一种面向对象语言，但是它采用基于
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Flutter/" class="post-category" target="_blank">
+                                    Flutter
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: <br />'
+            + '作者: 任博<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-22 11:58:45
+ * @LastEditTime: 2020-02-28 12:47:27
+ * @LastEditors: Please set LastEditors
+ -->
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2018-2019 studyfe.cn 版权所有 <a href="http://www.beian.miit.gov.cn/">京ICP备18061270号</a>
+            
+            <br>
+
+            
+            
+              <br>
+              
+              <span id="busuanzi_container_site_pv" style='display:none'>
+                  <i class="fa fa-heart-o"></i>
+                  本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+              </span>
+              
+              
+              <span id="busuanzi_container_site_uv" style='display:none'>
+                  人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+              </span>
+              
+              
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">133.8k</span>
+               
+            
+             
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MarsPen" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:15210713603@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/ren-bo-Lonely-City/activities" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+  <a href="https://juejin.im/user/5b6406966fb9a04fd73a67c8" class="tooltipped" target="_blank" data-tooltip="访问我的掘金" data-position="top" data-delay="50">
+      <i class="fa fa-inverse">掘</i>
+  </a>
+
+
+
+
+    <a href="https://user.qzone.qq.com/1605275889" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f60d415b3aae195d5c5d31c2126fc6e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 800;
+        var uvcountOffset = 200;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+  setTimeout(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+  },5000)
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

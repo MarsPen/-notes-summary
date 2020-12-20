@@ -422,7 +422,7 @@ PHP 中的每个代码行都必须以分号结束，否则输出错误&amp;lt;">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    707
+                    725
                 </div>
                 
 
@@ -476,52 +476,67 @@ PHP 中的每个代码行都必须以分号结束，否则输出错误&amp;lt;">
 global 全局
 static 局部-静态变量
 parameter 参数</code></pre><p><strong>局部和全局作用域 local global</strong><br></p>
-<pre><code>&lt;?php 
-  $age = 20; //全局作用域
-  $name = &#39;zhangsan&#39;;
-  function people () {
-    $isJob  = &#39;yes&#39;; //局部变量
-    global $name;   //访问全局作用域
-    var_dump($name);  // zhangsan 
-  }
-  people()
-?&gt;</code></pre><p>解析：<br></p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span> 
+  <span class="token variable">$age</span> <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//全局作用域</span>
+  <span class="token variable">$name</span> <span class="token operator">=</span> <span class="token string">'zhangsan'</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">people</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$isJob</span>  <span class="token operator">=</span> <span class="token string">'yes'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//局部变量</span>
+    <span class="token keyword">global</span> <span class="token variable">$name</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//访问全局作用域</span>
+    <span class="token function">var_dump</span><span class="token punctuation">(</span><span class="token variable">$name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// zhangsan </span>
+  <span class="token punctuation">}</span>
+  <span class="token function">people</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token delimiter">?></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解析：<br></p>
 <ol>
 <li>$age 是在函数外部定义的变量，拥有全局作用域，但是这里和 JS 的区别是 $age 在people函数中是不可访问的<br></li>
 <li>$isJob 是在函数内部声明的变量所以是局部变量，只能在函数内部访问<br></li>
 <li>$name global 是在函数内部<strong>调用</strong>函数外部定义的全局变量,正常情况在函数内部访问函数外部的变量则为NULL<br></li>
 </ol>
 <p><strong>Static 作用域</strong><br></p>
-<pre><code>&lt;?php
-  function test() {
-    static $a = 0;
-    // static $a = 1 + 2; // 解析错误 参照解析2
-    echo $a;
-    $a++;
-  }
-  test (); //0
-  test (); //1
-  test (); //2
-?&gt;</code></pre><p>解析：<br></p>
-<ol>
-<li>静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用<br></li>
-<li>不能对静态变量用表达式的结果赋值，否则会导致解析错误<br></li>
-<li>static全局变量只初使化一次，下一次依据上一次结果值，上例子中调用三次执行的结果是累加的。<br></li>
-<li>在内存的静态存储区中（静态存储区在整个程序运行期间都存在，其他局部变量存储在栈中。<br></li>
-</ol>
-<p><strong>parameter 参数作用域</strong><br></p>
-<pre><code>  function test($a) {
-    echo $a;
-  }
-  test (1); //1</code></pre><p><strong>小结</strong></p>
-<ol>
-<li>定义在函数外部的就是全局变量，它的作用域从定义处一直到文件结尾。</li>
-<li>函数内定义的变量就是局部变量，它的作用域为函数定义范围内。</li>
-<li>函数内访问全局变量需要 global 关键字,如果不使用，则会覆盖全局变量</li>
-</ol>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><strong>php数据类型</strong></p>
-<p>String（字符串）, Integer（整型）, Float（浮点型）, Boolean（布尔型）, Array（数组）, Object（对象）, NULL（空值）。<br></p>
-<p>这里由于和 JS 类似所以不多做解释<br></p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+  <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token variable">$a</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// static $a = 1 + 2; // 解析错误 参照解析2</span>
+    <span class="token keyword">echo</span> <span class="token variable">$a</span><span class="token punctuation">;</span>
+    <span class="token variable">$a</span><span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//0</span>
+  <span class="token function">test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//1</span>
+  <span class="token function">test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//2</span>
+<span class="token delimiter">?></span>
+```
+解析：<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+<span class="token number">1</span><span class="token punctuation">.</span> 静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+<span class="token number">2</span><span class="token punctuation">.</span> 不能对静态变量用表达式的结果赋值，否则会导致解析错误<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+<span class="token number">3</span><span class="token punctuation">.</span> <span class="token keyword">static</span>全局变量只初使化一次，下一次依据上一次结果值，上例子中调用三次执行的结果是累加的。<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+<span class="token number">4</span><span class="token punctuation">.</span> 在内存的静态存储区中（静态存储区在整个程序运行期间都存在，其他局部变量存储在栈中。<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+
+
+<span class="token operator">*</span><span class="token operator">*</span>parameter 参数作用域<span class="token operator">*</span><span class="token operator">*</span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+
+````php
+  <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token variable">$a</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">test</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//1</span>
+```
+
+<span class="token operator">*</span><span class="token operator">*</span>小结<span class="token operator">*</span><span class="token operator">*</span>
+
+<span class="token number">1</span><span class="token punctuation">.</span> 定义在函数外部的就是全局变量，它的作用域从定义处一直到文件结尾。
+<span class="token number">2</span><span class="token punctuation">.</span> 函数内定义的变量就是局部变量，它的作用域为函数定义范围内。
+<span class="token number">3</span><span class="token punctuation">.</span> 函数内访问全局变量需要 <span class="token keyword">global</span> 关键字<span class="token punctuation">,</span>如果不使用，则会覆盖全局变量
+
+
+<span class="token shell-comment comment">## 数据类型</span>
+
+<span class="token operator">*</span><span class="token operator">*</span>php数据类型<span class="token operator">*</span><span class="token operator">*</span>
+
+String（字符串）<span class="token punctuation">,</span> Integer（整型）<span class="token punctuation">,</span> Float（浮点型）<span class="token punctuation">,</span> Boolean（布尔型）<span class="token punctuation">,</span> <span class="token keyword">Array</span>（数组）<span class="token punctuation">,</span> Object（对象）<span class="token punctuation">,</span> <span class="token keyword">NULL</span>（空值）。<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+
+这里由于和 <span class="token constant">JS</span> 类似所以不多做解释<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -955,7 +970,7 @@ for ($i =
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

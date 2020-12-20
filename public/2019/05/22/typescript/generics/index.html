@@ -423,7 +423,7 @@ function identity(arg: number): number {
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    606
+                    587
                 </div>
                 
 
@@ -447,80 +447,88 @@ function identity(arg: number): number {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>泛型（Generics）就是不提前指定接口、变量、函数等的类型，在使用的时候再指定类型</p>
-<h3 id="定义泛型"><a href="#定义泛型" class="headerlink" title="定义泛型 "></a>定义泛型 <br></h3><pre><code>// 定义类型
-function identity(arg: number): number {
-  return arg;
-}
-// 定义 any 类型
-function identity(arg: any): any {
-  return arg;
-}</code></pre><p>如果所有的接口、变量、函数等都用 any 类型，那么写 TS 和写 JS 一样将失去意义，因为你可能像 JS 一样造成许多未知的错误，那么解决这样的问题我们使用一种特殊的变量T，来表示返回的内容。</p>
-<pre><code>function identity&lt;T&gt;(arg: T): T {
-  return arg;
-}</code></pre><h3 id="调用泛型"><a href="#调用泛型" class="headerlink" title="调用泛型"></a>调用泛型<br></h3><pre><code>let output = identity&lt;string&gt;(&quot;myString&quot;);</code></pre><h3 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束<br></h3><p>在函数内部使用泛型变量的时候，因为不知道它是哪种类型，所以不能随意的操作它的属性或方法</p>
-<pre><code>function loggingIdentity&lt;T&gt;(arg: T): T {
-  console.log(arg.length);  // Error: T doesn&#39;t have .length
-  return arg;
-}</code></pre><p>由于上面的泛型 T 中不一定包含属性.length, 所以会抛出异常。</p>
+<h3 id="定义泛型"><a href="#定义泛型" class="headerlink" title="定义泛型 "></a>定义泛型 <br></h3><pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 定义类型</span>
+<span class="token keyword">function</span> <span class="token function">identity</span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 定义 any 类型</span>
+<span class="token keyword">function</span> <span class="token function">identity</span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果所有的接口、变量、函数等都用 any 类型，那么写 TS 和写 JS 一样将失去意义，因为你可能像 JS 一样造成许多未知的错误，那么解决这样的问题我们使用一种特殊的变量T，来表示返回的内容。</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">function</span> identity<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="调用泛型"><a href="#调用泛型" class="headerlink" title="调用泛型"></a>调用泛型<br></h3><pre><code>let output = identity&lt;string&gt;(&quot;myString&quot;);</code></pre><h3 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束<br></h3><p>在函数内部使用泛型变量的时候，因为不知道它是哪种类型，所以不能随意的操作它的属性或方法</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">function</span> loggingIdentity<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// Error: T doesn't have .length</span>
+  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于上面的泛型 T 中不一定包含属性.length, 所以会抛出异常。</p>
 <p>这时我们可以创建一个具有单个.length属性的接口，然后我们将使用此接口和extends关键字来表示我们的约束：</p>
-<pre><code>interface Lengthwise {
-    length: number;
-}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">Lengthwise</span> <span class="token punctuation">{</span>
+    length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
-  console.log(arg.length); 
-  return arg;
-}
-</code></pre><p>上面的例子如果在调用的时候传入的参数不符合定义的约束，那么就会抛出异常</p>
-<pre><code>interface Lengthwise {
-    length: number;
-}
+<span class="token keyword">function</span> loggingIdentity<span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Lengthwise</span><span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的例子如果在调用的时候传入的参数不符合定义的约束，那么就会抛出异常</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">Lengthwise</span> <span class="token punctuation">{</span>
+    length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
-  console.log(arg.length); 
-  return arg;
-}
+<span class="token keyword">function</span> loggingIdentity<span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Lengthwise</span><span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-loggingIdentity(5) 
-// Argument of type &#39;5&#39; is not assignable to parameter of type &#39;Lengthwise&#39;
-</code></pre><p>相反如果定义了正确的类型</p>
-<pre><code>interface Lengthwise {
-    length: number;
-}
+<span class="token function">loggingIdentity</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true">// Argument of type '5' is not assignable to parameter of type 'Lengthwise'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>相反如果定义了正确的类型</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">Lengthwise</span> <span class="token punctuation">{</span>
+    length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
-  console.log(arg.length); 
-  return arg;
-}
+<span class="token keyword">function</span> loggingIdentity<span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Lengthwise</span><span class="token operator">></span><span class="token punctuation">(</span>arg<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-loggingIdentity([1,2]) // 2
-loggingIdentity({length: 5, value: 1}) // 5</code></pre><h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口<br></h3><pre><code>// 定义泛型结构
-interface CreatePeopleFunc {
-  &lt;T&gt;(name: string, age: T): Array&lt;T&gt;;
-}
+<span class="token function">loggingIdentity</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 2</span>
+<span class="token function">loggingIdentity</span><span class="token punctuation">(</span><span class="token punctuation">{</span>length<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口<br></h3><pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 定义泛型结构</span>
+<span class="token keyword">interface</span> <span class="token class-name">CreatePeopleFunc</span> <span class="token punctuation">{</span>
+  <span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 创建泛型
-let createPeople:CreatePeopleFunc;
-createPeople = function&lt;T&gt;(name: string, age: T): Array&lt;T&gt; {
-  let people: T[] = []
-  let temp:any = {
-    name : name,
-    age: age
-  }
-  people.push(temp)
-  return people
-}
-// 调用函数
-createPeople(&#39;zhangsan&#39;, 28)</code></pre><p>上面例子我们定义了一个泛型，创建了函数，在函数内创建数组并添加了一个元素 name, age</p>
+<span class="token comment" spellcheck="true">// 创建泛型</span>
+<span class="token keyword">let</span> createPeople<span class="token punctuation">:</span>CreatePeopleFunc<span class="token punctuation">;</span>
+createPeople <span class="token operator">=</span> <span class="token keyword">function</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> T<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> people<span class="token punctuation">:</span> T<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">let</span> temp<span class="token punctuation">:</span><span class="token keyword">any</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name <span class="token punctuation">:</span> name<span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> age
+  <span class="token punctuation">}</span>
+  people<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> people
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 调用函数</span>
+<span class="token function">createPeople</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面例子我们定义了一个泛型，创建了函数，在函数内创建数组并添加了一个元素 name, age</p>
 <h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类<br></h3><p>泛型类具有与通用接口类似的形状。泛型类&lt;&gt;在类名称后面的尖括号（）中有一个泛型类型参数列表</p>
-<pre><code>class GenericNumber&lt;T&gt; {
-    zeroValue: T;
-    add: (x: T, y: T) =&gt; T;
-}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">GenericNumber</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    zeroValue<span class="token punctuation">:</span> T<span class="token punctuation">;</span>
+    add<span class="token punctuation">:</span> <span class="token punctuation">(</span>x<span class="token punctuation">:</span> T<span class="token punctuation">,</span> y<span class="token punctuation">:</span> T<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> T<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let myGenericNumber = new GenericNumber&lt;number&gt;();
-myGenericNumber.zeroValue = 0;
-myGenericNumber.add = function(x, y) { return x + y; };</code></pre>
+<span class="token keyword">let</span> myGenericNumber <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GenericNumber</span><span class="token operator">&lt;</span><span class="token keyword">number</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myGenericNumber<span class="token punctuation">.</span>zeroValue <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+myGenericNumber<span class="token punctuation">.</span>add <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -954,7 +962,7 @@ let
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

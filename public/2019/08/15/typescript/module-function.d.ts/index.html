@@ -7,7 +7,9 @@
   <meta name="keywords" content="function.d.ts, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="// Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO">
+  <meta name="description" content="// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -418,7 +420,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    276
                 </div>
                 
 
@@ -441,20 +443,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>// Type definitions for [<del>THE LIBRARY NAME</del>] [<del>OPTIONAL VERSION NUMBER</del>]<br>// Project: [<del>THE PROJECT NAME</del>]<br>// Definitions by: [<del>YOUR NAME</del>] &lt;[<del>A URL FOR YOU</del>]&gt;</p>
-<p>/*~ This is the module template file for function modules.<br> *~ You should rename it to index.d.ts and place it in a folder with the same name as the module.<br> *~ For example, if you were writing a file for “super-greeter”, this<br> *~ file should be ‘super-greeter/index.d.ts’<br> */</p>
-<p>/*~ Note that ES6 modules cannot directly export callable functions.<br> *~ This file should be imported using the CommonJS-style:<br> *~   import x = require(‘someLibrary’);<br> *~<br> *~ Refer to the documentation to understand common<br> *~ workarounds for this limitation of ES6 modules.<br> */</p>
-<p>/*~ If this module is a UMD module that exposes a global variable ‘myFuncLib’ when<br> *~ loaded outside a module loader environment, declare that global here.<br> *~ Otherwise, delete this declaration.<br> */<br>export as namespace myFuncLib;</p>
-<p>/*~ This declaration specifies that the function<br> *~ is the exported object from the file<br> */<br>export = MyFunction;</p>
-<p>/*~ This example shows how to have multiple overloads for your function */<br>declare function MyFunction(name: string): MyFunction.NamedReturnType;<br>declare function MyFunction(length: number): MyFunction.LengthReturnType;</p>
-<p>/*~ If you want to expose types from your module as well, you can<br> *~ place them in this block. Often you will want to describe the<br> *~ shape of the return type of the function; that type should<br> *~ be declared in here, as this example shows.<br> */<br>declare namespace MyFunction {<br>    export interface LengthReturnType {<br>        width: number;<br>        height: number;<br>    }<br>    export interface NamedReturnType {<br>        firstName: string;<br>        lastName: string;<br>    }</p>
-<pre><code>/*~ If the module also has properties, declare them here. For example,
- *~ this declaration says that this code is legal:
- *~   import f = require(&#39;myFuncLibrary&#39;);
- *~   console.log(f.defaultName);
- */
-export const defaultName: string;
-export let defaultLength: number;</code></pre><p>}</p>
+                <pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]</span>
+<span class="token comment" spellcheck="true">// Project: [~THE PROJECT NAME~]</span>
+<span class="token comment" spellcheck="true">// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]></span>
+
+<span class="token comment" spellcheck="true">/*~ This is the module template file for function modules.
+ *~ You should rename it to index.d.ts and place it in a folder with the same name as the module.
+ *~ For example, if you were writing a file for "super-greeter", this
+ *~ file should be 'super-greeter/index.d.ts'
+ */</span>
+
+<span class="token comment" spellcheck="true">/*~ Note that ES6 modules cannot directly export callable functions.
+ *~ This file should be imported using the CommonJS-style:
+ *~   import x = require('someLibrary');
+ *~
+ *~ Refer to the documentation to understand common
+ *~ workarounds for this limitation of ES6 modules.
+ */</span>
+
+<span class="token comment" spellcheck="true">/*~ If this module is a UMD module that exposes a global variable 'myFuncLib' when
+ *~ loaded outside a module loader environment, declare that global here.
+ *~ Otherwise, delete this declaration.
+ */</span>
+<span class="token keyword">export</span> as namespace myFuncLib<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*~ This declaration specifies that the function
+ *~ is the exported object from the file
+ */</span>
+<span class="token keyword">export</span> <span class="token operator">=</span> MyFunction<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*~ This example shows how to have multiple overloads for your function */</span>
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">MyFunction</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> MyFunction<span class="token punctuation">.</span>NamedReturnType<span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">MyFunction</span><span class="token punctuation">(</span>length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> MyFunction<span class="token punctuation">.</span>LengthReturnType<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*~ If you want to expose types from your module as well, you can
+ *~ place them in this block. Often you will want to describe the
+ *~ shape of the return type of the function; that type should
+ *~ be declared in here, as this example shows.
+ */</span>
+<span class="token keyword">declare</span> namespace MyFunction <span class="token punctuation">{</span>
+    <span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">LengthReturnType</span> <span class="token punctuation">{</span>
+        width<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+        height<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">NamedReturnType</span> <span class="token punctuation">{</span>
+        firstName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+        lastName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/*~ If the module also has properties, declare them here. For example,
+     *~ this declaration says that this code is legal:
+     *~   import f = require('myFuncLibrary');
+     *~   console.log(f.defaultName);
+     */</span>
+    <span class="token keyword">export</span> <span class="token keyword">const</span> defaultName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> defaultLength<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -671,19 +715,21 @@ export let defaultLength: number;</code></pre><p>}</p>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/15/typescript/module-class.d.ts/">
+                <a href="/2019/08/15/typescript/module.d.ts/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="class.d.ts">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="module.d.ts">
                         
-                        <span class="card-title">class.d.ts</span>
+                        <span class="card-title">module.d.ts</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
+                            // Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions
                         
                     </div>
                     <div class="publish-info">
@@ -884,7 +930,7 @@ export let defaultLength: number;</code></pre><p>}</p>
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

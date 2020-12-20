@@ -22,7 +22,7 @@ categories:
 - 不使用require关键字
 
 **1.单文件命名空间**
-  ```
+  ```ts
   namespace Validation {
     export interface StringValidator {
       isAcceptable(s: string): boolean;
@@ -47,7 +47,7 @@ categories:
 **2.多文件命名空间及引入**
 
 Validation.ts
-```
+```ts
 namespace Validation {
   export interface StringValidator {
     isAcceptable(s: string): boolean;
@@ -56,7 +56,7 @@ namespace Validation {
 ```
 
 LettersOnlyValidator.ts
-```
+```ts
 /// <reference path="Validation.ts" />
 namespace Validation {
     const lettersRegexp = /^[A-Za-z]+$/;
@@ -68,7 +68,7 @@ namespace Validation {
 }
 ```
 ZipCodeValidator.ts
-```
+```ts
 /// <reference path="Validation.ts" />
 namespace Validation {
     const numberRegexp = /^[0-9]+$/;
@@ -80,7 +80,7 @@ namespace Validation {
 }
 ```
 Test.ts
-```
+```ts
 /// <reference path="Validation.ts" />
 /// <reference path="LettersOnlyValidator.ts" />
 /// <reference path="ZipCodeValidator.ts" />
@@ -104,11 +104,11 @@ for (let s of strings) {
 涉及多个文件，我们需要确保加载所有已编译的代码。有两种方法可以做到这一点。
 
 1. **--outFile 编译器将根据文件中存在的引用标记自动排序输出文件**
-  ```
+  ```ts
   tsc --outFile sample.js Test.ts
   ```
 2. **为每一个文件编译一个 JS 文件利用 Script 按照顺序引入**
-  ```
+  ```ts
   <script src="Validation.js" type="text/javascript" />
   <script src="LettersOnlyValidator.js" type="text/javascript" />
   <script src="ZipCodeValidator.js" type="text/javascript" />
@@ -124,14 +124,14 @@ for (let s of strings) {
 **1.使用 export 关键字来导出声明**
 
 单模块导出
-```
+```ts
 export interface StringValidator {
   isAcceptable(s: string): boolean;
 }
 ```
 
 重命名导出
-```
+```ts
 class ZipCodeValidator implements StringValidator {
   isAcceptable(s: string) {
     return s.length === 5 && numberRegexp.test(s);
@@ -141,7 +141,7 @@ export { ZipCodeValidator };
 export { ZipCodeValidator as mainValidator };
 ```
 导出所有模块
-```
+```ts
 export * from "./StringValidator";
 
 export * from "./ZipCodeValidator";
@@ -150,27 +150,27 @@ export * from "./ZipCodeValidator";
 **2.使用 import 关键字来导入声明**
 
 从模块导入单个导出
-```
+```ts
 import { ZipCodeValidator } from "./ZipCodeValidator";
 
 let myValidator = new ZipCodeValidator();
 ```
 
 重命名导入
-```
+```ts
 import { ZipCodeValidator as ZCV } from "./ZipCodeValidator";
 let myValidator = new ZCV();
 ```
 
 将整个模块导入单个变量，并使用它来访问模块导出
-```
+```ts
 import * as validator from "./ZipCodeValidator";
 
 let myValidator = new validator.ZipCodeValidator();
 ```
 
 仅使用这个文件
-```
+```ts
 import "./my-module.js";
 ```
 **3.模块的代码生成**
@@ -178,12 +178,12 @@ import "./my-module.js";
 编译器将为Node.js（CommonJS），require.js（AMD），UMD，SystemJS或ECMAScript 2015本机模块（ES6）模块加载系统生成适当的代码
 
 编译 commonjs 规范
-```
+```ts
 tsc --module commonjs Test.ts
 ```
 
 编译 amd 规范
-```
+```ts
 tsc --module amd Test.ts
 ```
 

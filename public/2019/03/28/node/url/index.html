@@ -8,8 +8,9 @@
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
   <meta name="description" content="url模块提供用于URL解析和解析的实用程序
-const url = require(&amp;#39;url&amp;#39;);获取并设置URL的片段部分url.hash
-const myURL = new URL(&amp;#39;https://examp">
+const url = require(&#39;url&#39;);
+获取并设置URL的片段部分url.hash
+const myURL = new URL(&#39;https://example.org/foo#">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -420,7 +421,7 @@ const myURL = new URL(&amp;#39;https://examp">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    267
+                    255
                 </div>
                 
 
@@ -444,25 +445,33 @@ const myURL = new URL(&amp;#39;https://examp">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>url模块提供用于URL解析和解析的实用程序<br></p>
-<pre><code>const url = require(&#39;url&#39;);</code></pre><p>获取并设置URL的片段部分<strong>url.hash</strong><br></p>
-<pre><code>const myURL = new URL(&#39;https://example.org/foo#bar&#39;);
-console.log(myURL.hash); //#bar
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'url'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>获取并设置URL的片段部分<strong>url.hash</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> myURL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.org/foo#bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>hash<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//#bar</span>
 
-myURL.hash = &#39;baz&#39;;
-console.log(myURL.href); //https://example.org/foo#baz</code></pre><p>获取并设置URL的主机部分<strong>url.host</strong><br></p>
-<pre><code>const myURL = new URL(&#39;https://example.org:81/foo&#39;);
-console.log(myURL.host);  //example.org:81
-console.log(myURL.hostname) //example.org</code></pre><p>获取并设置序列化url<strong>url.href</strong><br></p>
-<pre><code>const myURL = new URL(&#39;https://example.org:81/foo&#39;);
-console.log(myURL.href);  //https://example.org:81/foo</code></pre><p>获取并设置URL的路径部分<strong>url.pathname</strong><br></p>
-<pre><code>const myURL = new URL(&#39;https://example.org:81/foo/abc?name=123&#39;);
-console.log(myURL.pathname);  // /foo/abc</code></pre><p>获取并设置URL的端口部分<strong>url.port  0到65535</strong><br></p>
-<pre><code>const myURL = new URL(&#39;https://example.org:81/foo/abc?name=123&#39;);
-console.log(myURL.port);  // 81</code></pre><p>获取并设置URL的序列化查询部分<strong>url.search</strong><br></p>
-<pre><code>const myURL = new URL(&#39;https://example.org:81/foo/abc?name=123&#39;);
-console.log(myURL.search);  // name=123</code></pre><p>获取URLSearchParams表示URL的查询参数的对象<strong>url.serchParams</strong><br></p>
-<pre><code>const myURL = new URL(&#39;https://example.org:81/foo/abc?name=123&#39;);
-console.log(myURL.searchParams);  // 123</code></pre><p><a href="https://nodejs.org/api/url.html" target="_blank" rel="noopener">更多方法请参考 Node Api </a><br></p>
+myURL<span class="token punctuation">.</span>hash <span class="token operator">=</span> <span class="token string">'baz'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//https://example.org/foo#baz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>获取并设置URL的主机部分<strong>url.host</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> myURL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.org:81/foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>host<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//example.org:81</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>hostname<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//example.org</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>获取并设置序列化url<strong>url.href</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> myURL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.org:81/foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//https://example.org:81/foo</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>获取并设置URL的路径部分<strong>url.pathname</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> myURL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.org:81/foo/abc?name=123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// /foo/abc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>获取并设置URL的端口部分<strong>url.port  0到65535</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> myURL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.org:81/foo/abc?name=123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 81</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>获取并设置URL的序列化查询部分<strong>url.search</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> myURL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.org:81/foo/abc?name=123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>search<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// name=123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>获取URLSearchParams表示URL的查询参数的对象<strong>url.serchParams</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> myURL <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.org:81/foo/abc?name=123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myURL<span class="token punctuation">.</span>searchParams<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><a href="https://nodejs.org/api/url.html" target="_blank" rel="noopener">更多方法请参考 Node Api </a><br></p>
 
             </div>
             <hr />
@@ -690,8 +699,8 @@ fs使用特点1、同步的版本将阻塞整个进程，直到它们完成（�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            构建TCP服务 tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图 &lt;image src=/images/tcp.png’ width=”300px”&gt;
- tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如
+                            构建TCP服务 tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图 &lt;img src=/images/tcp.png’ width=”300px”&gt;
+ tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图
                         
                     </div>
                     <div class="publish-info">
@@ -892,7 +901,7 @@ fs使用特点1、同步的版本将阻塞整个进程，直到它们完成（�
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

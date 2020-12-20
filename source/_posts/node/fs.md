@@ -24,7 +24,7 @@ categories:
 
 1. 异步文件写入<br/>
 
-```
+```js
 // 引入 fs 模块
 const fs = require('fs');
 
@@ -47,7 +47,7 @@ fs.open('file.txt', 'a', (err, fd)=>{
 })
 ```
 2. 同步写入方式<br/>
-```
+```js
 // 引入模块 
 const fs = require('fs');
 
@@ -66,7 +66,7 @@ fs.closeSync(fd);
 
 1. 文件读写操作<br/>
 
-```
+```js
 // 引入模块
 const fs = require('fs');
 
@@ -82,7 +82,7 @@ fs.readFile('source/file.txt','utf8',(err,data)=>{
 
 2. 图片读写操作<br/>
 
-```
+```js
 // 引入模块
 const fs = require('fs');
 
@@ -103,7 +103,7 @@ fs.readFile("source/a.jpg",(err,data) => {
 
 3. 视频读写操作<br/>
 
-```
+```js
 // 引入模块
 let fs= require('fs');
 
@@ -135,7 +135,7 @@ re.pipe(ws);
 ```
 
 4. 使用同步文件流写入操作<br/>
-```
+```js
 // 引入模块
 let fs= require('fs');
 

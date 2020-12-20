@@ -21,7 +21,7 @@ categories:
 - 盒子模型分为w3c标准盒子模型和IE标准盒子模型；当不对Doctype进行定义时，会触发怪异模式。
 - 盒子模型
 
-```
+```css
 /****css****/
 .box{
   width:100px;
@@ -62,7 +62,7 @@ categories:
 
   - 例子说明
   - 根据以上BFC布局规则第3条、第4条来触发main生成BFC，来实现自适应两栏布局
-      ```
+      ```css
       /****css****/
       .main{
         overflow: hidden;
@@ -83,7 +83,7 @@ categories:
       </div>
       ```
   - 根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题
-    ```
+    ```css
       /****css****/
       .parent{
         border: 1px solid red;
@@ -105,7 +105,7 @@ categories:
       </div>
     ```
   - 防止margin重叠,根据生成BFC第4条规则
-    ```
+    ```css
       /****css****/
       .box{
         width: 300px;
@@ -143,7 +143,7 @@ categories:
 
   3. 示例
    - 根据布局规则第4条
-    ```
+    ```css
       /****css****/
       .break{
         border: 1px solid red;
@@ -155,7 +155,7 @@ categories:
     ```
     ![](/images/css-IFC.jpg)
   4. 根据作用第1条,设置span为inline-block,则会在box上产生ifc,在box上设置text-align使span元素水平居中。
-    ```
+    ```css
       /****css****/
       .box{text-align: center;}
       .content{
@@ -169,7 +169,7 @@ categories:
       </div>
     ```
   5. 根据作用第2条，设置盒子2为inline-block，则会在box上产生ifc，设置其vertical-align:middle，盒子1垂直居中。
-    ```
+    ```css
       /****css****/
       .box{
         text-align: center;

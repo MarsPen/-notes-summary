@@ -419,7 +419,7 @@ MD5和SHA1MD5是一种常用的哈希算法">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
@@ -444,21 +444,22 @@ MD5和SHA1MD5是一种常用的哈希算法">
             <div id="articleContent">
                 <p>crypto 模块也是核心模块之一，提供了加密功能，包括对 OpenSSL 的哈希、HMAC、加密、解密、签名、以及验证功能的一整套封装。上文中提到过核心 C/C++ 模块运行速度比其他模块要快。<br></p>
 <p><strong>MD5和SHA1</strong><br><br>MD5是一种常用的哈希算法，用于给任意数据一个“签名”。这个签名通常用一个十六进制的字符串表示：<br></p>
-<pre><code>// 引入加密模块
-const crypto = require(&#39;crypto&#39;);
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入加密模块</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 创建 Hash 实例
-const hash = crypto.createHash(&#39;md5&#39;);
+<span class="token comment" spellcheck="true">// 创建 Hash 实例</span>
+<span class="token keyword">const</span> hash <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 计算后的HMAC摘要 update() 方法默认字符串编码为UTF-8，也可以传入Buffer
-hash.update(&#39;Hello, nodejs!&#39;);
+<span class="token comment" spellcheck="true">// 计算后的HMAC摘要 update() 方法默认字符串编码为UTF-8，也可以传入Buffer</span>
+hash<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">'Hello, nodejs!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// encoding 值可以是 &#39;hex&#39;, &#39;latin1&#39; 或者 &#39;base64&#39;. 
-  如果encoding 是字符串会被直接返回，其它情况会返回一个 a Buffer.
-console.log(hash.digest(&#39;hex&#39;));
+<span class="token comment" spellcheck="true">// encoding 值可以是 'hex', 'latin1' 或者 'base64'. </span>
+ <span class="token comment" spellcheck="true">// 如果encoding 是字符串会被直接返回，其它情况会返回一个 a Buffer.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hash<span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Hash 对象在 hash.digest() 方法调用之后不能再次被使用。多次的调用会引发错误并抛出
-</code></pre><p><strong>Hmac</strong><br><br>Hmac算法也是一种哈希算法，它可以利用MD5或SHA1等哈希算法。不同的是，Hmac还需要一个密钥：<br></p>
+<span class="token comment" spellcheck="true">//Hash 对象在 hash.digest() 方法调用之后不能再次被使用。多次的调用会引发错误并抛出</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Hmac</strong><br><br>Hmac算法也是一种哈希算法，它可以利用MD5或SHA1等哈希算法。不同的是，Hmac还需要一个密钥：<br></p>
 <pre><code>// 引入加密模块
 const crypto = require(&#39;crypto&#39;);
 
@@ -473,100 +474,106 @@ hmac.update(&#39;Hello, nodejs!&#39;);
 console.log(hmac.digest(&#39;hex&#39;));
 
 只要密钥发生了变化，那么同样的输入数据也会得到不同的签名，因此，可以把Hmac理解为用随机数“增强”的哈希算法</code></pre><p><strong>AES</strong><br><br>AES是一种常用的对称加密算法，加解密都用同一个密钥。crypto模块提供了AES支持，但是需要自己封装好函数，便于使用：<br></p>
-<pre><code>// 引入加密模块
-const crypto = require(&#39;crypto&#39;);
-// 加密函数
-function aesEncrypt(data, key) {
-  const cipher = crypto.createCipher(&#39;aes192&#39;, key);
-  let crypted = cipher.update(data, &#39;utf8&#39;, &#39;hex&#39;);
-  crypted += cipher.final(&#39;hex&#39;);
-  return crypted;
-}
-// 解密函数
-function aesDecrypt(encrypted, key) {
-  const decipher = crypto.createDecipher(&#39;aes192&#39;, key);
-  let decrypted = decipher.update(encrypted, &#39;hex&#39;, &#39;utf8&#39;);
-  decrypted += decipher.final(&#39;utf8&#39;);
-  return decrypted;
-}
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入加密模块</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 加密函数</span>
+<span class="token keyword">function</span> <span class="token function">aesEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> cipher <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createCipher</span><span class="token punctuation">(</span><span class="token string">'aes192'</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> crypted <span class="token operator">=</span> cipher<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span> <span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  crypted <span class="token operator">+</span><span class="token operator">=</span> cipher<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> crypted<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 解密函数</span>
+<span class="token keyword">function</span> <span class="token function">aesDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> decipher <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createDecipher</span><span class="token punctuation">(</span><span class="token string">'aes192'</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> decrypted <span class="token operator">=</span> decipher<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token string">'hex'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  decrypted <span class="token operator">+</span><span class="token operator">=</span> decipher<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> decrypted<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let data = &#39;Hello, this is a secret message!&#39;;
-let key = &#39;Password!&#39;;
-let encrypted = aesEncrypt(data, key);
-let decrypted = aesDecrypt(encrypted, key);
+<span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token string">'Hello, this is a secret message!'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> key <span class="token operator">=</span> <span class="token string">'Password!'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> encrypted <span class="token operator">=</span> <span class="token function">aesEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> decrypted <span class="token operator">=</span> <span class="token function">aesDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console.log(&#39;Plain text: &#39; + data);
-console.log(&#39;Encrypted text: &#39; + encrypted);
-console.log(&#39;Decrypted text: &#39; + decrypted);</code></pre><p>运行结果如下：<br></p>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Plain text: '</span> <span class="token operator">+</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Encrypted text: '</span> <span class="token operator">+</span> encrypted<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Decrypted text: '</span> <span class="token operator">+</span> decrypted<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果如下：<br></p>
 <pre><code>Plain text: Hello, this is a secret message!
 Encrypted text: 8a944d97bdabc157a5b7a40cb180e7...
 Decrypted text: Hello, this is a secret message!</code></pre><p><strong>Diffie-Hellman</strong><br></p>
 <p>DH算法是一种密钥交换协议，它可以让双方在不泄漏密钥的情况下协商出一个密钥来。DH算法基于离散对数数学原理<br></p>
-<pre><code>// 引入加密模块
-const crypto = require(&#39;crypto&#39;);
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入加密模块</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 进行加密交换 crypto_a
-let crypto_a = crypto.createDiffieHellman(512);
-let crypto_a_keys = crypto_a.generateKeys();
-
-
-let prime = crypto_a.getPrime();
-let generator = crypto_a.getGenerator();
-
-console.log(&#39;Prime: &#39; + prime.toString(&#39;hex&#39;));
-console.log(&#39;Generator: &#39; + generator.toString(&#39;hex&#39;));
+<span class="token comment" spellcheck="true">// 进行加密交换 crypto_a</span>
+<span class="token keyword">let</span> crypto_a <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createDiffieHellman</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> crypto_a_keys <span class="token operator">=</span> crypto_a<span class="token punctuation">.</span><span class="token function">generateKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-// 进行加密交换 crypto_b
-let crypto_b = crypto.createDiffieHellman(prime, generator);
-let crypto_b_keys = crypto_b.generateKeys();
+<span class="token keyword">let</span> prime <span class="token operator">=</span> crypto_a<span class="token punctuation">.</span><span class="token function">getPrime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> generator <span class="token operator">=</span> crypto_a<span class="token punctuation">.</span><span class="token function">getGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Prime: '</span> <span class="token operator">+</span> prime<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Generator: '</span> <span class="token operator">+</span> generator<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-// 交换生成密钥
-let a_secret = crypto_a.computeSecret(crypto_b_keys);
-let b_secret = crypto_b.computeSecret(crypto_a_keys);
-</code></pre><p><strong>RSA</strong></p>
+<span class="token comment" spellcheck="true">// 进行加密交换 crypto_b</span>
+<span class="token keyword">let</span> crypto_b <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createDiffieHellman</span><span class="token punctuation">(</span>prime<span class="token punctuation">,</span> generator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> crypto_b_keys <span class="token operator">=</span> crypto_b<span class="token punctuation">.</span><span class="token function">generateKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment" spellcheck="true">// 交换生成密钥</span>
+<span class="token keyword">let</span> a_secret <span class="token operator">=</span> crypto_a<span class="token punctuation">.</span><span class="token function">computeSecret</span><span class="token punctuation">(</span>crypto_b_keys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b_secret <span class="token operator">=</span> crypto_b<span class="token punctuation">.</span><span class="token function">computeSecret</span><span class="token punctuation">(</span>crypto_a_keys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>RSA</strong></p>
 <p>RSA算法是一种非对称加密算法，即由一个私钥和一个公钥构成的密钥对，通过私钥加密，公钥解密，或者通过公钥加密，私钥解密。其中，公钥可以公开，私钥必须保密<br></p>
 <p>1、生成一个RSA密钥对：<br></p>
-<pre><code>openssl genrsa -aes256 -out rsa-key.pem 2048</code></pre><p>2、通过上面的rsa-key.pem加密文件，导出原始的私钥<br></p>
-<pre><code>openssl rsa -in rsa-key.pem -outform PEM -out rsa-prv.pem</code></pre><p>3、命令导出原始的公钥<br></p>
-<pre><code>openssl rsa -in rsa-key.pem -outform PEM -pubout -out rsa-pub.pem
-这样，我们就准备好了原始私钥文件rsa-prv.pem和原始公钥文件rsa-pub.pem，编码格式均为PEM</code></pre><p>使用crypto模块提供的方法，即可实现非对称加解密<br></p>
-<pre><code>const fs = require(&#39;fs&#39;);
-const crypto = require(&#39;crypto&#39;);
+<pre class="line-numbers language-js"><code class="language-js">openssl genrsa <span class="token operator">-</span>aes256 <span class="token operator">-</span>out rsa<span class="token operator">-</span>key<span class="token punctuation">.</span>pem <span class="token number">2048</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2、通过上面的rsa-key.pem加密文件，导出原始的私钥<br></p>
+<pre class="line-numbers language-js"><code class="language-js">openssl rsa <span class="token operator">-</span><span class="token keyword">in</span> rsa<span class="token operator">-</span>key<span class="token punctuation">.</span>pem <span class="token operator">-</span>outform PEM <span class="token operator">-</span>out rsa<span class="token operator">-</span>prv<span class="token punctuation">.</span>pem<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3、命令导出原始的公钥<br></p>
+<pre class="line-numbers language-js"><code class="language-js">openssl rsa <span class="token operator">-</span><span class="token keyword">in</span> rsa<span class="token operator">-</span>key<span class="token punctuation">.</span>pem <span class="token operator">-</span>outform PEM <span class="token operator">-</span>pubout <span class="token operator">-</span>out rsa<span class="token operator">-</span>pub<span class="token punctuation">.</span>pem
+<span class="token comment" spellcheck="true">//这样，我们就准备好了原始私钥文件rsa-prv.pem和原始公钥文件rsa-pub.pem，编码格式均为PEM</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用crypto模块提供的方法，即可实现非对称加解密<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 从文件加载key:
-function loadKey(file) {
-  // key实际上就是PEM编码的字符串:
-  return fs.readFileSync(file, &#39;utf8&#39;);
-}
+<span class="token comment" spellcheck="true">// 从文件加载key:</span>
+<span class="token keyword">function</span> <span class="token function">loadKey</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// key实际上就是PEM编码的字符串:</span>
+  <span class="token keyword">return</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>file<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let prvKey = loadKey(&#39;./rsa-prv.pem&#39;);
-let pubKey = loadKey(&#39;./rsa-pub.pem&#39;);
-let message = &#39;Hello, world!&#39;;
+<span class="token keyword">let</span> prvKey <span class="token operator">=</span> <span class="token function">loadKey</span><span class="token punctuation">(</span><span class="token string">'./rsa-prv.pem'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> pubKey <span class="token operator">=</span> <span class="token function">loadKey</span><span class="token punctuation">(</span><span class="token string">'./rsa-pub.pem'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token string">'Hello, world!'</span><span class="token punctuation">;</span>
 
-// 使用私钥加密:
-let enc_by_prv = crypto.privateEncrypt(prvKey, Buffer.from(message, &#39;utf8&#39;));
-console.log(&#39;encrypted by private key: &#39; + enc_by_prv.toString(&#39;hex&#39;));
-
-
-let dec_by_pub = crypto.publicDecrypt(pubKey, enc_by_prv);
-console.log(&#39;decrypted by public key: &#39; + dec_by_pub.toString(&#39;utf8&#39;));
+<span class="token comment" spellcheck="true">// 使用私钥加密:</span>
+<span class="token keyword">let</span> enc_by_prv <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">privateEncrypt</span><span class="token punctuation">(</span>prvKey<span class="token punctuation">,</span> Buffer<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'encrypted by private key: '</span> <span class="token operator">+</span> enc_by_prv<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-执行后，可以得到解密后的消息，与原始消息相同。
+<span class="token keyword">let</span> dec_by_pub <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">publicDecrypt</span><span class="token punctuation">(</span>pubKey<span class="token punctuation">,</span> enc_by_prv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'decrypted by public key: '</span> <span class="token operator">+</span> dec_by_pub<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-接下来我们使用公钥加密，私钥解密：
 
-// 使用公钥加密:
-let enc_by_pub = crypto.publicEncrypt(pubKey, Buffer.from(message, &#39;utf8&#39;));
-console.log(&#39;encrypted by public key: &#39; + enc_by_pub.toString(&#39;hex&#39;));
+<span class="token comment" spellcheck="true">//执行后，可以得到解密后的消息，与原始消息相同。</span>
 
-// 使用私钥解密:
-let dec_by_prv = crypto.privateDecrypt(prvKey, enc_by_pub);
-console.log(&#39;decrypted by private key: &#39; + dec_by_prv.toString(&#39;utf8&#39;));
-执行得到的解密后的消息仍与原始消息相同。
-</code></pre><p><strong>证书</strong><br>crypto模块也可以处理数字证书。数字证书通常用在SSL连接，也就是Web的https连接。一般情况下，https连接只需要处理服务器端的单向认证，如无特殊需求（例如自己作为Root给客户发认证证书），建议用反向代理服务器如Nginx等Web服务器去处理证书。<br></p>
+<span class="token comment" spellcheck="true">//接下来我们使用公钥加密，私钥解密：</span>
+
+<span class="token comment" spellcheck="true">// 使用公钥加密:</span>
+<span class="token keyword">let</span> enc_by_pub <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">publicEncrypt</span><span class="token punctuation">(</span>pubKey<span class="token punctuation">,</span> Buffer<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'encrypted by public key: '</span> <span class="token operator">+</span> enc_by_pub<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 使用私钥解密:</span>
+<span class="token keyword">let</span> dec_by_prv <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">privateDecrypt</span><span class="token punctuation">(</span>prvKey<span class="token punctuation">,</span> enc_by_pub<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'decrypted by private key: '</span> <span class="token operator">+</span> dec_by_prv<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//执行得到的解密后的消息仍与原始消息相同。</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>证书</strong><br>crypto模块也可以处理数字证书。数字证书通常用在SSL连接，也就是Web的https连接。一般情况下，https连接只需要处理服务器端的单向认证，如无特殊需求（例如自己作为Root给客户发认证证书），建议用反向代理服务器如Nginx等Web服务器去处理证书。<br></p>
 <h2 id="更多参考"><a href="#更多参考" class="headerlink" title="更多参考"></a>更多参考<br></h2><p><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501504929883d11d84a1541c6907eefd792c0da51000" target="_blank" rel="noopener">廖雪峰老师的Crypto</a></p>
 <p><a href="http://nodejs.cn/api/crypto.html" target="_blank" rel="noopener">Node Api crypto 加密模块 </a></p>
 
@@ -1005,7 +1012,7 @@ CommonJS 规范CommonJS（http://www.commonjs.org）规范的出
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

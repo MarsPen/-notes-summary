@@ -17,7 +17,7 @@ categories:
 
  ### 应用例子
 
-```
+```ts
 // Disposable Mixin
 class Disposable {
     isDisposed!: boolean;

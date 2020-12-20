@@ -19,20 +19,20 @@ categories:
 ### 步骤
 我们假设原来在~/.ssh目录下已经生成了一对密钥,此密钥文件名字是默认生成
 
-```
+```js
 id_rsa
 id_rsa.pub
 ```
 
 生成第二个ssh key
 
-```
+```js
 ssh-keygen -t rsa -C "yourmail@gmail.com"
 ```
 
 这里面不要一路回车，第一步需要我们手动填写保存文件的名字和路径
 
-```
+```js
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/renbo/.ssh/id_rsa): /Users/renbo/.ssh/id_rsa_github
 <剩下两个直接回车>
@@ -41,7 +41,7 @@ Enter file in which to save the key (/Users/renbo/.ssh/id_rsa): /Users/renbo/.ss
 这里我们用id_rsa_github来区别原有密钥对，避免被覆盖。
 完成之后，我们可以看到~/.ssh目录下多了两个文件，变成：
 
-```
+```js
 id_rsa
 id_ras.pub
 id_rsa_github
@@ -53,13 +53,13 @@ known_hosts
 
 这里如果你用的github官方的bash，用：
 
-```
+```js
 ssh-agent -s
 ```
 
 如果是其他的，比如msysgit，用：
 
-```
+```js
 eval $(ssh-agent -s)
 ```
 
@@ -67,7 +67,7 @@ eval $(ssh-agent -s)
   
 ### 添加私钥
 
-```
+```js
 ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/id_rsa_github
 ```
@@ -76,7 +76,7 @@ ssh-add ~/.ssh/id_rsa_github
 
 打开文件sudo vim config添加一下内容：
 
-```
+```js
 # gitlab
   Host gitlab.com
   HostName gitlab.com
@@ -98,7 +98,7 @@ IdentityFile指定私钥的路径。
 
 说明config权限过大，chmod命令调整：
 
-```
+```js
 chmod 644 ~/.ssh/config
 ```
 
@@ -107,7 +107,7 @@ chmod 644 ~/.ssh/config
 ### 测试
 然后用ssh命令分别测试：
 
-```
+```js
 ssh -T git@github.com
 ```
 
@@ -116,7 +116,7 @@ ssh -T git@github.com
 
   比如测试github：
 
-  ```
+  ```js
   ssh -vT git@github.com
   ```
 
@@ -126,7 +126,7 @@ ssh -T git@github.com
 
   如果之前有设置全局用户名和邮箱的话，需要unset一下
 
-  ```
+  ```js
   git config --global --unset user.name
   git config --global --unset user.email
   ```
@@ -135,7 +135,7 @@ ssh -T git@github.com
 
   比如在公司的repository下
 
-  ```
+  ```js
   git config user.name "yourname" 
   git config user.email "youremail"
   ```

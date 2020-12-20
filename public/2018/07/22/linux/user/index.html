@@ -10,9 +10,9 @@
   <meta name="description" content="查看存储用户账号cat /etc/passwd
 
 输出的结构
-用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell查看存储组账号cat /etc/group  查看存储用户账号的密码cat /etc/shadow   
-
-">
+用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell
+查看存储组账号cat /etc/group  
+查看存储用户账号的密码cat /etc/shadow   ">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -423,7 +423,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    600
+                    605
                 </div>
                 
 
@@ -446,50 +446,65 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="查看存储用户账号"><a href="#查看存储用户账号" class="headerlink" title="查看存储用户账号"></a>查看存储用户账号</h3><pre><code>cat /etc/passwd
+                <h3 id="查看存储用户账号"><a href="#查看存储用户账号" class="headerlink" title="查看存储用户账号"></a>查看存储用户账号</h3><pre class="line-numbers language-js"><code class="language-js">cat <span class="token operator">/</span>etc<span class="token operator">/</span>passwd
 
 输出的结构
-用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell</code></pre><h3 id="查看存储组账号"><a href="#查看存储组账号" class="headerlink" title="查看存储组账号"></a>查看存储组账号</h3><pre><code>cat /etc/group  </code></pre><h3 id="查看存储用户账号的密码"><a href="#查看存储用户账号的密码" class="headerlink" title="查看存储用户账号的密码"></a>查看存储用户账号的密码</h3><pre><code>cat /etc/shadow   
+用户名<span class="token punctuation">:</span>口令<span class="token punctuation">:</span>用户标识号<span class="token punctuation">:</span>组标识号<span class="token punctuation">:</span>注释性描述<span class="token punctuation">:</span>主目录<span class="token punctuation">:</span>登录Shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="查看存储组账号"><a href="#查看存储组账号" class="headerlink" title="查看存储组账号"></a>查看存储组账号</h3><pre class="line-numbers language-js"><code class="language-js">cat <span class="token operator">/</span>etc<span class="token operator">/</span>group  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="查看存储用户账号的密码"><a href="#查看存储用户账号的密码" class="headerlink" title="查看存储用户账号的密码"></a>查看存储用户账号的密码</h3><pre class="line-numbers language-js"><code class="language-js">cat <span class="token operator">/</span>etc<span class="token operator">/</span>shadow   
 
-输出结构
-登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志</code></pre><h3 id="查看存储用户组账号的密码"><a href="#查看存储用户组账号的密码" class="headerlink" title="查看存储用户组账号的密码"></a>查看存储用户组账号的密码</h3><pre><code>cat /etc/gshadow  </code></pre><h3 id="建立用户帐号"><a href="#建立用户帐号" class="headerlink" title="建立用户帐号"></a>建立用户帐号</h3><pre><code>参数
--c comment 指定一段注释性描述。
--d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。
--g 用户组 指定用户所属的用户组。
--G 用户组，用户组 指定用户所属的附加组。
--s Shell文件 指定用户的登录Shell。
--u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。
+<span class="token comment" spellcheck="true">//输出结构</span>
+<span class="token comment" spellcheck="true">//登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="查看存储用户组账号的密码"><a href="#查看存储用户组账号的密码" class="headerlink" title="查看存储用户组账号的密码"></a>查看存储用户组账号的密码</h3><pre class="line-numbers language-js"><code class="language-js">cat <span class="token operator">/</span>etc<span class="token operator">/</span>gshadow  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="建立用户帐号"><a href="#建立用户帐号" class="headerlink" title="建立用户帐号"></a>建立用户帐号</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//参数</span>
+<span class="token operator">-</span>c comment 指定一段注释性描述。
+<span class="token operator">-</span>d 目录 指定用户主目录，如果此目录不存在，则同时使用<span class="token operator">-</span>m选项，可以创建主目录。
+<span class="token operator">-</span>g 用户组 指定用户所属的用户组。
+<span class="token operator">-</span>G 用户组，用户组 指定用户所属的附加组。
+<span class="token operator">-</span>s Shell文件 指定用户的登录Shell。
+<span class="token operator">-</span>u 用户号 指定用户的用户号，如果同时有<span class="token operator">-</span>o选项，则可以重复使用其他用户的标识号。
 
 useradd renbo  添加一般用户
 
-useradd -g root renbo  为添加用户指定用户组
+useradd <span class="token operator">-</span>g root renbo  为添加用户指定用户组
 
-useradd -r renbo  创建系统用户
+useradd <span class="token operator">-</span>r renbo  创建系统用户
 
-useradd -d /home renbo  为新添加的用户指定home目录
+useradd <span class="token operator">-</span>d <span class="token operator">/</span>home renbo  为新添加的用户指定home目录
 
-useradd caojh -u 544  建立用户且制定ID</code></pre><h3 id="删除用户帐号"><a href="#删除用户帐号" class="headerlink" title="删除用户帐号"></a>删除用户帐号</h3><pre><code>userdel  同建立账号用法相同 </code></pre><h3 id="新建组"><a href="#新建组" class="headerlink" title="新建组"></a>新建组</h3><pre><code>groupadd 组名</code></pre><h3 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h3><pre><code>groupdel 组名</code></pre><h3 id="修改账号"><a href="#修改账号" class="headerlink" title="修改账号"></a>修改账号</h3><pre><code>usermod 选项 用户名和useradd用法相同</code></pre><h3 id="指定口令"><a href="#指定口令" class="headerlink" title="指定口令"></a>指定口令</h3><p>用户口令管理给root设置密码(用户账号刚创建时没有口令，但是被系统锁定，无法使用，必须为其指定口令后才可以使用，即使是指定空口令)</p>
-<pre><code>passwd root 
+useradd caojh <span class="token operator">-</span>u <span class="token number">544</span>  建立用户且制定ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="删除用户帐号"><a href="#删除用户帐号" class="headerlink" title="删除用户帐号"></a>删除用户帐号</h3><pre class="line-numbers language-js"><code class="language-js">userdel  同建立账号用法相同 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="新建组"><a href="#新建组" class="headerlink" title="新建组"></a>新建组</h3><pre class="line-numbers language-js"><code class="language-js">groupadd 组名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h3><pre class="line-numbers language-js"><code class="language-js">groupdel 组名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="修改账号"><a href="#修改账号" class="headerlink" title="修改账号"></a>修改账号</h3><pre class="line-numbers language-js"><code class="language-js">usermod 选项 用户名和useradd用法相同<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="指定口令"><a href="#指定口令" class="headerlink" title="指定口令"></a>指定口令</h3><p>用户口令管理给root设置密码(用户账号刚创建时没有口令，但是被系统锁定，无法使用，必须为其指定口令后才可以使用，即使是指定空口令)</p>
+<pre class="line-numbers language-js"><code class="language-js">passwd root 
 
--l 锁定口令，即禁用账号。
--u 口令解锁。
--d 使账号无口令。
--f 强迫用户下次登录时修改口令。</code></pre><h3 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h3><pre><code>su root 
+<span class="token operator">-</span>l 锁定口令，即禁用账号。
+<span class="token operator">-</span>u 口令解锁。
+<span class="token operator">-</span>d 使账号无口令。
+<span class="token operator">-</span>f 强迫用户下次登录时修改口令。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h3><pre class="line-numbers language-js"><code class="language-js">su root 
 
-su - root   切换到root用户改变环境变量
+su <span class="token operator">-</span> root   切换到root用户改变环境变量
 
-su user   切换用户，加载配置文件.bashrc
+su user   切换用户，加载配置文件<span class="token punctuation">.</span>bashrc
 
-su - user 切换用户，加载配置文件/etc/profile ，加载bash_profile</code></pre><h3 id="系统环境变量文件"><a href="#系统环境变量文件" class="headerlink" title="系统环境变量文件"></a>系统环境变量文件</h3><pre><code>cat /etc/profile 查看
+su <span class="token operator">-</span> user 切换用户，加载配置文件<span class="token operator">/</span>etc<span class="token operator">/</span>profile ，加载bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="系统环境变量文件"><a href="#系统环境变量文件" class="headerlink" title="系统环境变量文件"></a>系统环境变量文件</h3><pre class="line-numbers language-js"><code class="language-js">cat <span class="token operator">/</span>etc<span class="token operator">/</span>profile 查看
 
-vim /etc/profile 编辑</code></pre><h3 id="用户环境变量文件"><a href="#用户环境变量文件" class="headerlink" title="用户环境变量文件"></a>用户环境变量文件</h3><pre><code>cat /etc/bash_profile 查看
+vim <span class="token operator">/</span>etc<span class="token operator">/</span>profile 编辑<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="用户环境变量文件"><a href="#用户环境变量文件" class="headerlink" title="用户环境变量文件"></a>用户环境变量文件</h3><pre class="line-numbers language-js"><code class="language-js">cat <span class="token operator">/</span>etc<span class="token operator">/</span>bash_profile 查看
 
-vim /etc/bash_profile 编辑
+vim <span class="token operator">/</span>etc<span class="token operator">/</span>bash_profile 编辑
 
-cat .bashrc</code></pre><h3 id="更改文件的用户及用户组"><a href="#更改文件的用户及用户组" class="headerlink" title="更改文件的用户及用户组"></a>更改文件的用户及用户组</h3><pre><code>sudo chown [-R] owner[:group] {File|Directory}
+cat <span class="token punctuation">.</span>bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="更改文件的用户及用户组"><a href="#更改文件的用户及用户组" class="headerlink" title="更改文件的用户及用户组"></a>更改文件的用户及用户组</h3><pre class="line-numbers language-js"><code class="language-js">sudo chown <span class="token punctuation">[</span><span class="token operator">-</span>R<span class="token punctuation">]</span> owner<span class="token punctuation">[</span><span class="token punctuation">:</span>group<span class="token punctuation">]</span> <span class="token punctuation">{</span>File<span class="token operator">|</span>Directory<span class="token punctuation">}</span>
 
-例如：还以jdk-7u21-linux-i586.tar.gz为例。属于用户hadoop，组hadoop
-</code></pre><h3 id="切换此文件所属的用户及组"><a href="#切换此文件所属的用户及组" class="headerlink" title="切换此文件所属的用户及组"></a>切换此文件所属的用户及组</h3><pre><code>sudo chown root:root jdk-7u21-linux-i586.tar.gz</code></pre>
+例如：还以jdk<span class="token operator">-</span>7u21<span class="token operator">-</span>linux<span class="token operator">-</span>i586<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz为例。属于用户hadoop，组hadoop
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="切换此文件所属的用户及组"><a href="#切换此文件所属的用户及组" class="headerlink" title="切换此文件所属的用户及组"></a>切换此文件所属的用户及组</h3><pre class="line-numbers language-js"><code class="language-js">sudo chown root<span class="token punctuation">:</span>root jdk<span class="token operator">-</span>7u21<span class="token operator">-</span>linux<span class="token operator">-</span>i586<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -668,8 +683,9 @@ cat .bashrc</code></pre><h3 id="更改文件的用户及用户组"><a href="#更
                         
                             三种基本权限R  读  数值表示为4
 W  写  数值表示为2
-X  可执行  数值表示为11.执行ls -al命令行会出现
-drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-su
+X  可执行  数值表示为1
+1.执行ls -al命令行会出现
+drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-s
                         
                     </div>
                     <div class="publish-info">
@@ -721,6 +737,7 @@ drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-su
                             shutdownshutdown -r  关机重启
 shutdown -h  关机不重启
 shutdown now  立刻关机
+
 halt关机
 reboot重启
 
@@ -924,7 +941,7 @@ reboot重启
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

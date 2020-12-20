@@ -35,7 +35,7 @@ categories:
 ### ES6中类的用法 <br/><hr/>
 
 1. **定义属性和方法**
-    ```
+    ```ts
     // 定义类
     class Parent{
       // 定义构造函数
@@ -52,7 +52,7 @@ categories:
 
     ```
 2. **利用关键字extends 和 super 继承**
-    ```
+    ```ts
     class Child extends Parent{ 
         constructor(name = 'ren',age = '27'){ 
           //继承父类属性
@@ -68,7 +68,7 @@ categories:
     ```
 3. **存储器getter,setter改变属性和读取**
 
-    ```
+    ```ts
     class People{
       // 定义构造函数
       constructor(name){
@@ -91,7 +91,7 @@ categories:
     console.log(people.name); // renbo
     ```
 4. **静态方法使用static修饰符（由于分配在静态内存空间中，所以不需要实例化，只需要吊影即可）**
-    ```
+    ```ts
     class People{
       // 定义静态方法
       static eat(name){
@@ -104,7 +104,7 @@ categories:
 ### ES7中类的用法 <br/><hr/>
 
 1. **定义属性可以直接在类中定义**
-  ```
+  ```ts
     class People{
       name = 'zhangsan'
       constructor () {
@@ -116,7 +116,7 @@ categories:
   ```
 
 2. **定义静态属性**
-```
+```ts
   class People{
    static  name = 'zhangsan'
     constructor () {
@@ -136,7 +136,7 @@ categories:
 
 **public 修饰符**
 
-```
+```ts
 class People {
   public name;
   public constructor(name) {
@@ -150,7 +150,7 @@ console.log(people.name); // renbo
 
 **private 修饰符**
 
-```
+```ts
 class People {
   private  name;
   public constructor(name) {
@@ -180,7 +180,7 @@ class SmilePeople extends People {
 
 **protected 修饰符**
 
-```
+```ts
 class People {
   protected  name;
   public constructor(name) {
@@ -194,7 +194,7 @@ console.log(people.name); // Property 'name' is protected and only accessible wi
 
 **protected 修饰符(子类访问)**
 
-```
+```ts
 class People {
   protected  name: string;
   public constructor(name: string) {
@@ -222,7 +222,7 @@ let smilePeople = new SmilePeople('wangwu'); // wangwu
 - 抽象类无法直接实例化
 - 与接口不同，抽象类可以包含其成员的实现细节
 
-``` 
+``` ts
 // 上述1，2
 abstract class People {
   public name:string;

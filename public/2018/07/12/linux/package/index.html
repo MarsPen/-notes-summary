@@ -447,39 +447,43 @@ sudo dpkg -l">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="dpkg"><a href="#dpkg" class="headerlink" title="dpkg"></a>dpkg</h3><p>(Debian Package)管理工具，软件包名以.deb后缀</p>
-<pre><code>sudo dpkg -i package.deb 安装/更新 deb 包 
+<pre class="line-numbers language-js"><code class="language-js">sudo dpkg <span class="token operator">-</span>i <span class="token keyword">package</span><span class="token punctuation">.</span>deb 安装<span class="token operator">/</span>更新 deb 包 
 
-sudo dpkg -r package 删除 deb 包 
+sudo dpkg <span class="token operator">-</span>r <span class="token keyword">package</span> 删除 deb 包 
 
-sudo dpkg -l 获取所有已经安装的 deb 包 
+sudo dpkg <span class="token operator">-</span>l 获取所有已经安装的 deb 包 
 
-sudo dpkg -s package 获得已经安装的包的信息</code></pre><h3 id="APT"><a href="#APT" class="headerlink" title="APT"></a>APT</h3><p>（Advanced Packaging Tool）</p>
-<pre><code>sudo apt-get install package 安装package包
+sudo dpkg <span class="token operator">-</span>s <span class="token keyword">package</span> 获得已经安装的包的信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="APT"><a href="#APT" class="headerlink" title="APT"></a>APT</h3><p>（Advanced Packaging Tool）</p>
+<pre class="line-numbers language-js"><code class="language-js">sudo apt<span class="token operator">-</span><span class="token keyword">get</span> install <span class="token keyword">package</span> 安装<span class="token keyword">package</span>包
 
-sudo apt-get remove package 卸载package包
+sudo apt<span class="token operator">-</span><span class="token keyword">get</span> remove <span class="token keyword">package</span> 卸载<span class="token keyword">package</span>包
 
-sudo apt-get upgrade 更新所有package包  
+sudo apt<span class="token operator">-</span><span class="token keyword">get</span> upgrade 更新所有<span class="token keyword">package</span>包  
 
-sudo apt-get update 更新package包                             </code></pre><h3 id="YUM-软件包升级器"><a href="#YUM-软件包升级器" class="headerlink" title="YUM 软件包升级器"></a>YUM 软件包升级器</h3><pre><code>yum install package 下载并安装rpm包 
+sudo apt<span class="token operator">-</span><span class="token keyword">get</span> update 更新<span class="token keyword">package</span>包                             <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="YUM-软件包升级器"><a href="#YUM-软件包升级器" class="headerlink" title="YUM 软件包升级器"></a>YUM 软件包升级器</h3><pre class="line-numbers language-js"><code class="language-js">yum install <span class="token keyword">package</span> 下载并安装rpm包 
 
-yum update package 更新rpm包 
+yum update <span class="token keyword">package</span> 更新rpm包 
 
-yum remove package 删除rpm包 
+yum remove <span class="token keyword">package</span> 删除rpm包 
 
 yum list 列出当前系统中安装的所有包
 
-yum search package 在rpm仓库中搜寻软件包 
+yum search <span class="token keyword">package</span> 在rpm仓库中搜寻软件包 
 
 yum clean packages 清理rpm缓存删除下载的包 
 
 yum clean headers 删除所有头文件
 
-yum clean all 删除所有缓存的包和头文件 </code></pre><h3 id="RPM包"><a href="#RPM包" class="headerlink" title="RPM包"></a>RPM包</h3><pre><code>rpm -ivh package.rpm 安装rpm包 
-rpm -ivh --nodeeps package.rpm 安装rpm包而忽略依赖关系警告 
-rpm -U package.rpm 更新rpm包但不改变其配置文件 
-rpm -F package.rpm 更新确定已经安装的rpm包 
-rpm -e package.rpm 删除rpm包 
-rpm -qa 显示系统中所有已经安装的rpm包 </code></pre><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>rpm文件是Redhat支持的软件包格式，而.deb是Debian上支持软件包的扩展名</p>
+yum clean all 删除所有缓存的包和头文件 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="RPM包"><a href="#RPM包" class="headerlink" title="RPM包"></a>RPM包</h3><pre class="line-numbers language-js"><code class="language-js">rpm <span class="token operator">-</span>ivh <span class="token keyword">package</span><span class="token punctuation">.</span>rpm 安装rpm包 
+rpm <span class="token operator">-</span>ivh <span class="token operator">--</span>nodeeps <span class="token keyword">package</span><span class="token punctuation">.</span>rpm 安装rpm包而忽略依赖关系警告 
+rpm <span class="token operator">-</span>U <span class="token keyword">package</span><span class="token punctuation">.</span>rpm 更新rpm包但不改变其配置文件 
+rpm <span class="token operator">-</span>F <span class="token keyword">package</span><span class="token punctuation">.</span>rpm 更新确定已经安装的rpm包 
+rpm <span class="token operator">-</span>e <span class="token keyword">package</span><span class="token punctuation">.</span>rpm 删除rpm包 
+rpm <span class="token operator">-</span>qa 显示系统中所有已经安装的rpm包 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>rpm文件是Redhat支持的软件包格式，而.deb是Debian上支持软件包的扩展名</p>
 <p>由于ubuntu是对Debian的扩展，在ubuntu下不能直接使.rpm文件的，需要将.rmp转换成.deb</p>
 <p>解决方法</p>
 <p>1.安装alien，执行<code>sudo apt-get install alien</code></p>
@@ -920,7 +924,7 @@ tar -jcvf log.tar.bz2 l
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

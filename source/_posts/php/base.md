@@ -53,7 +53,7 @@ parameter 参数
 ```
 
 **局部和全局作用域 local global**<br/>
-```
+```php
 <?php 
   $age = 20; //全局作用域
   $name = 'zhangsan';
@@ -72,7 +72,7 @@ parameter 参数
 
 
 **Static 作用域**<br/>
-```
+````php
 <?php
   function test() {
     static $a = 0;
@@ -94,7 +94,7 @@ parameter 参数
 
 **parameter 参数作用域**<br/>
 
-```
+````php
   function test($a) {
     echo $a;
   }

@@ -420,7 +420,7 @@ const querystring =">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    293
+                    255
                 </div>
                 
 
@@ -444,29 +444,33 @@ const querystring =">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>querystring 模块提供用于解析和格式化 URL 查询字符串<br></p>
-<h3 id="解析-URL-字符串-querystring-parse-str-sep-eq-options"><a href="#解析-URL-字符串-querystring-parse-str-sep-eq-options" class="headerlink" title="解析 URL 字符串 querystring.parse(str[, sep[, eq[, options]]]) "></a>解析 URL 字符串 querystring.parse(str[, sep[, eq[, options]]]) <br></h3><pre><code>// 引入模块
-const querystring = require(&#39;querystring&#39;);
+<h3 id="解析-URL-字符串-querystring-parse-str-sep-eq-options"><a href="#解析-URL-字符串-querystring-parse-str-sep-eq-options" class="headerlink" title="解析 URL 字符串 querystring.parse(str[, sep[, eq[, options]]]) "></a>解析 URL 字符串 querystring.parse(str[, sep[, eq[, options]]]) <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入模块</span>
+<span class="token keyword">const</span> querystring <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'querystring'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-querystring.parse(&#39;foo=bar&amp;abc=xyz&amp;abc=123&#39;)
+querystring<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">'foo=bar&amp;abc=xyz&amp;abc=123'</span><span class="token punctuation">)</span>
 
 输出为：
-{
-  foo: &#39;bar&#39;,
-  abc: [&#39;xyz&#39;, &#39;123&#39;]
-}</code></pre><p>默认情况下，将假定查询字符串中的百分比编码字符使用 UTF-8 编码。 如果使用其他字符编码，则需要指定其他 decodeURIComponent 选项：<br></p>
-<pre><code>// 假设 gbkEncodeURIComponent 函数已存在。
+<span class="token punctuation">{</span>
+  foo<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+  abc<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'xyz'</span><span class="token punctuation">,</span> <span class="token string">'123'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>默认情况下，将假定查询字符串中的百分比编码字符使用 UTF-8 编码。 如果使用其他字符编码，则需要指定其他 decodeURIComponent 选项：<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 假设 gbkEncodeURIComponent 函数已存在。</span>
 
-querystring.parse(&#39;w=%D6%D0%CE%C4&amp;foo=bar&#39;, null, null,{ decodeURIComponent: gbkDecodeURIComponent });</code></pre><h3 id="序列化-URL-字符串-querystring-stringify-obj-sep-eq-options"><a href="#序列化-URL-字符串-querystring-stringify-obj-sep-eq-options" class="headerlink" title="序列化 URL 字符串 querystring.stringify(obj[, sep[, eq[, options]]]) "></a>序列化 URL 字符串 querystring.stringify(obj[, sep[, eq[, options]]]) <br></h3><pre><code>// 引入模块
-const querystring = require(&#39;querystring&#39;);
+querystring<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">'w=%D6%D0%CE%C4&amp;foo=bar'</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span><span class="token punctuation">{</span> decodeURIComponent<span class="token punctuation">:</span> gbkDecodeURIComponent <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="序列化-URL-字符串-querystring-stringify-obj-sep-eq-options"><a href="#序列化-URL-字符串-querystring-stringify-obj-sep-eq-options" class="headerlink" title="序列化 URL 字符串 querystring.stringify(obj[, sep[, eq[, options]]]) "></a>序列化 URL 字符串 querystring.stringify(obj[, sep[, eq[, options]]]) <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入模块</span>
+<span class="token keyword">const</span> querystring <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'querystring'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出为 &#39;foo=bar&amp;baz=qux&amp;baz=quux&amp;corge=&#39;
-querystring.stringify({ foo: &#39;bar&#39;, baz: [&#39;qux&#39;, &#39;quux&#39;], corge: &#39;&#39; });
+<span class="token comment" spellcheck="true">// 输出为 'foo=bar&amp;baz=qux&amp;baz=quux&amp;corge='</span>
+querystring<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> foo<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> baz<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'qux'</span><span class="token punctuation">,</span> <span class="token string">'quux'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> corge<span class="token punctuation">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出为 &#39;foo:bar;baz:qux&#39;
-querystring.stringify({ foo: &#39;bar&#39;, baz: &#39;qux&#39; }, &#39;;&#39;, &#39;:&#39;);</code></pre><p>默认情况下，查询字符串中需要百分比编码的字符将编码为 UTF-8。 如果需要其他编码，则需要指定其他 encodeURIComponent 选项：</p>
-<pre><code>// 假设 gbkEncodeURIComponent 函数已存在。
+<span class="token comment" spellcheck="true">// 输出为 'foo:bar;baz:qux'</span>
+querystring<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> foo<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> baz<span class="token punctuation">:</span> <span class="token string">'qux'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">';'</span><span class="token punctuation">,</span> <span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>默认情况下，查询字符串中需要百分比编码的字符将编码为 UTF-8。 如果需要其他编码，则需要指定其他 encodeURIComponent 选项：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 假设 gbkEncodeURIComponent 函数已存在。</span>
 
-querystring.stringify({ w: &#39;中文&#39;, foo: &#39;bar&#39; }, null, null,{ encodeURIComponent: gbkEncodeURIComponent })</code></pre><p><a href="https://nodejs.org/docs/latest-v9.x/api/querystring.html" target="_blank" rel="noopener">其他方法请参考 Node Api </a><br></p>
+querystring<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> w<span class="token punctuation">:</span> <span class="token string">'中文'</span><span class="token punctuation">,</span> foo<span class="token punctuation">:</span> <span class="token string">'bar'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span><span class="token punctuation">{</span> encodeURIComponent<span class="token punctuation">:</span> gbkEncodeURIComponent <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://nodejs.org/docs/latest-v9.x/api/querystring.html" target="_blank" rel="noopener">其他方法请参考 Node Api </a><br></p>
 
             </div>
             <hr />
@@ -897,7 +901,7 @@ path使用特点path 模块的默认操作因 Node.js 应用程序运行所在�
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

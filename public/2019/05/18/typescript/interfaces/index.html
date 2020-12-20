@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    890
+                    843
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
                 
@@ -447,166 +447,177 @@
             <div id="articleContent">
                 <p>##</p>
 <p>在面向对象语言中接口 (Interfaces) 是对类的行为的抽象，在TypeScript中也常用于定义结构子类型，方便进行类型检查</p>
-<h3 id="定义一个简单的接口"><a href="#定义一个简单的接口" class="headerlink" title="定义一个简单的接口"></a>定义一个简单的接口<br></h3><pre><code>interface IPeople {
-  name: string;
-  age: number
-}
+<h3 id="定义一个简单的接口"><a href="#定义一个简单的接口" class="headerlink" title="定义一个简单的接口"></a>定义一个简单的接口<br></h3><pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPeople</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span>
+<span class="token punctuation">}</span>
 
-let zhangsan: IPeople = {
-  name: &#39;zhangsan&#39;,
-  age: 25
-};
-</code></pre><p>上面的例子我定义了一个接口 IPeople，并且定义了一个变量 zhangsan，它的类型是 IPerson，zhangsan的数据结构类型必须与 IPeople 一致否则会报错例如下面</p>
-<pre><code>interface IPeople {
-  name: string;
-  age: number
-}
+<span class="token keyword">let</span> zhangsan<span class="token punctuation">:</span> IPeople <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token number">25</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的例子我定义了一个接口 IPeople，并且定义了一个变量 zhangsan，它的类型是 IPerson，zhangsan的数据结构类型必须与 IPeople 一致否则会报错例如下面</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPeople</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token punctuation">:</span> <span class="token keyword">number</span>
+<span class="token punctuation">}</span>
 
-let zhangsan: IPeople = {
-  name: &#39;zhangsan&#39;,
-};
+<span class="token keyword">let</span> zhangsan<span class="token punctuation">:</span> IPeople <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-Property &#39;age&#39; is missing in type &#39;{ name: string; }&#39; but required in type &#39;IPeople&#39;</code></pre><h3 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性 "></a>可选属性 <br></h3><p>当我们定义接口属性的时候不是必须的那么可选属性就起到了作用</p>
-<pre><code>interface IPeople {
-  name: string;
-  age?: number
-}
+Property <span class="token string">'age'</span> is missing <span class="token keyword">in</span> type <span class="token string">'{ name: string; }'</span> but required <span class="token keyword">in</span> type <span class="token string">'IPeople'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性 "></a>可选属性 <br></h3><p>当我们定义接口属性的时候不是必须的那么可选属性就起到了作用</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPeople</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">number</span>
+<span class="token punctuation">}</span>
 
-let zhangsan: IPeople = {
-  name: &#39;zhangsan&#39;,
-};</code></pre><h3 id="任意属性"><a href="#任意属性" class="headerlink" title="任意属性"></a>任意属性<br></h3><p>当我们需要定义或增加一些未知的属性，那么任意属性就起到了作用</p>
-<pre><code>interface IPeople {
-  name: string;
-  age?: number
-  [propName: string]: any;
-}
+<span class="token keyword">let</span> zhangsan<span class="token punctuation">:</span> IPeople <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="任意属性"><a href="#任意属性" class="headerlink" title="任意属性"></a>任意属性<br></h3><p>当我们需要定义或增加一些未知的属性，那么任意属性就起到了作用</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPeople</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">number</span>
+  <span class="token punctuation">[</span>propName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let zhangsan: IPeople = {
-  name: &#39;zhangsan&#39;,
-  age: 28,
-  gender: &#39;m&#39;
-};</code></pre><p>上述例子中需要注意的是一旦定义了任意属性，那么可选属性和确定属性的类型必须是它的的类型的子集，否则会报错，例如</p>
-<pre><code>interface IPeople {
-  name: string;
-  age?: number
-  [propName: string]: string;
-}
+<span class="token keyword">let</span> zhangsan<span class="token punctuation">:</span> IPeople <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  gender<span class="token punctuation">:</span> <span class="token string">'m'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上述例子中需要注意的是一旦定义了任意属性，那么可选属性和确定属性的类型必须是它的的类型的子集，否则会报错，例如</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPeople</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">number</span>
+  <span class="token punctuation">[</span>propName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let zhangsan: IPeople = {
-  name: &#39;zhangsan&#39;,
-  age: 28,
-  gender: &#39;m&#39;
-};
+<span class="token keyword">let</span> zhangsan<span class="token punctuation">:</span> IPeople <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  gender<span class="token punctuation">:</span> <span class="token string">'m'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-Type &#39;{ name: string; age: number; gender: string; }&#39; is not assignable to type &#39;IPeople&#39;.
-Property &#39;age&#39; is incompatible with index signature.
-Type &#39;number&#39; is not assignable to type &#39;string&#39;.</code></pre><h3 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性<br></h3><p>当我们需要对象中字段只能在创建的时候被赋值，那么只读属性就起到了作用</p>
-<pre><code>interface IPerson {
-  readonly id: number;
-  name: string;
-  age?: number;
-  [propName: string]: any;
-}
+Type <span class="token string">'{ name: string; age: number; gender: string; }'</span> is not assignable to type <span class="token string">'IPeople'</span><span class="token punctuation">.</span>
+Property <span class="token string">'age'</span> is incompatible <span class="token keyword">with</span> index signature<span class="token punctuation">.</span>
+Type <span class="token string">'number'</span> is not assignable to type <span class="token string">'string'</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性<br></h3><p>当我们需要对象中字段只能在创建的时候被赋值，那么只读属性就起到了作用</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPerson</span> <span class="token punctuation">{</span>
+  readonly id<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  <span class="token punctuation">[</span>propName<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let zhangsan: IPerson = {
-  id: 1,
-  name: &#39;zhangsan&#39;,
-  gender: &#39;m&#39;
-};
+<span class="token keyword">let</span> zhangsan<span class="token punctuation">:</span> IPerson <span class="token operator">=</span> <span class="token punctuation">{</span>
+  id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  name<span class="token punctuation">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span>
+  gender<span class="token punctuation">:</span> <span class="token string">'m'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-zhangsan.id = 2;
+zhangsan<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
-Cannot assign to &#39;id&#39; because it is a read-only property.</code></pre><h3 id="可以为接口定义函数类型"><a href="#可以为接口定义函数类型" class="headerlink" title="可以为接口定义函数类型"></a>可以为接口定义函数类型<br></h3><pre><code>interface IPeople {
-  (name: string, age: number): string;
-}
+Cannot assign to <span class="token string">'id'</span> because it is a read<span class="token operator">-</span>only property<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="可以为接口定义函数类型"><a href="#可以为接口定义函数类型" class="headerlink" title="可以为接口定义函数类型"></a>可以为接口定义函数类型<br></h3><pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPeople</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let hello: IPeople;
-hello = function(name: string, age: number): string {
-  return `my name is ${name} I,m years old ${age}`
-}
+<span class="token keyword">let</span> hello<span class="token punctuation">:</span> IPeople<span class="token punctuation">;</span>
+hello <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> I,m years old </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
+<span class="token punctuation">}</span>
 
-hello(&#39;zhangsan&#39;, 28) //my name is zhangsan I,m years old 28</code></pre><p>上面简单的介绍了接口的基本用法，也就是对对象的结构进行性约定，接下来我们来用 Interface 对类的行为进行抽象</p>
+<span class="token function">hello</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//my name is zhangsan I,m years old 28</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面简单的介绍了接口的基本用法，也就是对对象的结构进行性约定，接下来我们来用 Interface 对类的行为进行抽象</p>
 <h3 id="用类实现接口"><a href="#用类实现接口" class="headerlink" title="用类实现接口"></a>用类实现接口<br></h3><p>用类实现接口主要应用的场景就是类与类之间有一些公有的功能及特性，要实现高度抽象这也是面向对象的基本。在 TypeScript 中用关键字 implements 去实现。</p>
-<pre><code>// 定义接口，接口中有一个公共的方法eat
-interface People{
-  eat(food: string)
-}
-// 实现接口的方法
-class Boy implements People {
-  constructor () {}
-  eat (food: string): string {
-   return food 
-  }
-}
-// 实现接口方法
-class Girl implements People {
-  constructor () {}
-  eat (food: string):string {
-    return food
-  }
-}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 定义接口，接口中有一个公共的方法eat</span>
+<span class="token keyword">interface</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
+  <span class="token function">eat</span><span class="token punctuation">(</span>food<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 实现接口的方法</span>
+<span class="token keyword">class</span> <span class="token class-name">Boy</span> <span class="token keyword">implements</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  eat <span class="token punctuation">(</span>food<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> food 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 实现接口方法</span>
+<span class="token keyword">class</span> <span class="token class-name">Girl</span> <span class="token keyword">implements</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  eat <span class="token punctuation">(</span>food<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> food
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-let boy = new Boy()
-console.log(boy.eat(&#39;apple&#39;))
+<span class="token keyword">let</span> boy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>boy<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token string">'apple'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-let girl = new Girl()
-console.log(girl.eat(&#39;banana&#39;))
-</code></pre><p>一个类也可以实现多个接口</p>
-<pre><code>interface Eat{
-  food (food: string)
-}
-interface Drink{
-  drink()
-}
-// 实现接口的方法
-class People implements Eat, Drink {
-  constructor () {}
-  food (food: string): string {
-   return food 
-  }
-  drink ():string {
-    return `小明跑步中吃${this.food(&#39;apple&#39;)}是不健康的`
-  }
-}
+<span class="token keyword">let</span> girl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Girl</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>girl<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token string">'banana'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一个类也可以实现多个接口</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">Eat</span><span class="token punctuation">{</span>
+  food <span class="token punctuation">(</span>food<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Drink</span><span class="token punctuation">{</span>
+  <span class="token function">drink</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 实现接口的方法</span>
+<span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token keyword">implements</span> <span class="token class-name">Eat</span><span class="token punctuation">,</span> Drink <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  food <span class="token punctuation">(</span>food<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> food 
+  <span class="token punctuation">}</span>
+  drink <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`小明跑步中吃</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">food</span><span class="token punctuation">(</span><span class="token string">'apple'</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">是不健康的`</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-let people = new People()
-console.log(people.drink())</code></pre><h3 id="接口的继承"><a href="#接口的继承" class="headerlink" title="接口的继承"></a>接口的继承<br></h3><p>在 JS ECMA6 中类的继承用 extends 关键字， 那么在 TS 中我们依然同样用这个关键字</p>
-<pre><code>interface Eat {
-  eat ()
-}
+<span class="token keyword">let</span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>people<span class="token punctuation">.</span><span class="token function">drink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="接口的继承"><a href="#接口的继承" class="headerlink" title="接口的继承"></a>接口的继承<br></h3><p>在 JS ECMA6 中类的继承用 extends 关键字， 那么在 TS 中我们依然同样用这个关键字</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">Eat</span> <span class="token punctuation">{</span>
+  eat <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-interface People extends Eat {
-  eat()
-  run ()
-}
-</code></pre><h3 id="混合类型"><a href="#混合类型" class="headerlink" title="混合类型"></a>混合类型<br></h3><p>混合类型实际上就是在接口中存在多种规则，利用这种规则去实现自己的属性和方法</p>
-<pre><code>// 定义规则
-interface Counter {
-  (start: number): string;
-  interval: number;
-  reset(): void;
-}
-// 实现规则
-function getCounter(): Counter {
+<span class="token keyword">interface</span> <span class="token class-name">People</span> <span class="token keyword">extends</span> <span class="token class-name">Eat</span> <span class="token punctuation">{</span>
+  <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  run <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="混合类型"><a href="#混合类型" class="headerlink" title="混合类型"></a>混合类型<br></h3><p>混合类型实际上就是在接口中存在多种规则，利用这种规则去实现自己的属性和方法</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 定义规则</span>
+<span class="token keyword">interface</span> <span class="token class-name">Counter</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>start<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  interval<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  <span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 实现规则</span>
+<span class="token keyword">function</span> <span class="token function">getCounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Counter <span class="token punctuation">{</span>
 
-  let counter = &lt;Counter&gt;function (start: number) { 
-    console.log(start)
-  };
+  <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token operator">&lt;</span>Counter<span class="token operator">></span><span class="token keyword">function</span> <span class="token punctuation">(</span>start<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-  counter.interval = 0;
+  counter<span class="token punctuation">.</span>interval <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-  counter.reset = function () {
-    console.log(&#39;reset&#39;)
-  };
+  counter<span class="token punctuation">.</span>reset <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'reset'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-  return counter;
-}
+  <span class="token keyword">return</span> counter<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let counter = getCounter()
-counter(20); // 20
-counter.reset(); // reset 
-counter.interval = 5; // 5
-</code></pre>
+<span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token function">getCounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">counter</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 20</span>
+counter<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// reset </span>
+counter<span class="token punctuation">.</span>interval <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 5</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1039,7 +1050,7 @@ function identity(arg: number): number {
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

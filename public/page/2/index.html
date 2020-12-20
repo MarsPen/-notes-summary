@@ -290,6 +290,366 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2019/10/06/react/library-react-fiber02/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="React 原理之 FiberRoot 调度过程">
+                            
+                            <span class="card-title">React 原理之 FiberRoot 调度过程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            上篇文章我们对 fiber 的创建做了大概的了解，并且还引入了 scheduleWork 函数。scheduleWork 函数实际执行了如下几个重要的函数
+
+checkForNestedUpdates 判断是否有无限循环的 update
+m
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/react/" class="post-category" target="_blank">
+                                    react
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/react/" target="_blank">
+                            <span class="chip bg-color">react</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/10/04/react/library-react-fiber01/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="React 原理之 FiberRoot 构建过程">
+                            
+                            <span class="card-title">React 原理之 FiberRoot 构建过程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            fiber 是当前整个 react 核心部分，其中包含了大量的计算机知识。如果阅读 react 的源码能让人感觉到无力。
+每次版本更新，核心部分的函数总是要动那么一动。从 15, 到 16 到 16.8、16.9 到现在的 16.10，包括
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/react/" class="post-category" target="_blank">
+                                    react
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/react/" target="_blank">
+                            <span class="chip bg-color">react</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/10/02/react/library-react-lifecycle/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="React 之生命周期使用">
+                            
+                            <span class="card-title">React 之生命周期使用</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            和 Vue 一样 React 也会有对应的生命周期钩子函数，在相对应的钩子函数内，分别在不同时机处理相对应的逻辑，贴一张来至官网生命周期图，通过周期图让我们看看 react 的生命周期具体的含义。
+在 react 中，我们可以将生命周期分为
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/react/" class="post-category" target="_blank">
+                                    react
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/react/" target="_blank">
+                            <span class="chip bg-color">react</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/10/01/react/library-react-jsx/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="React 原理之 JSX 转换">
+                            
+                            <span class="card-title">React 原理之 JSX 转换</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            JSX 转换在我们写 react 组件的时候都会去写 jsx，那么 jsx 在 react 内部到底是怎么进行转换编译的呢？
+babel 转换在进行转换编译之前，我们先来配置环境。这样方便我们查看转换后的代码。当然我们也使用 babel 去
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/react/" class="post-category" target="_blank">
+                                    react
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/react/" target="_blank">
+                            <span class="chip bg-color">react</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/22/vue/vuekeepalive/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="vue 原理之keep-alive">
+                            
+                            <span class="card-title">vue 原理之keep-alive</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            在我们的平时开发工作中，有很多组件没有必要多次初始化，通过缓存组件的状态减少性能上的开销。而 vue 的组件缓存优化则使用内置组件 
+基本用法&lt;keep-alive>
+  &lt;component />
+&lt;/keep-aliv
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/vue/" class="post-category" target="_blank">
+                                    vue
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/vue/" target="_blank">
+                            <span class="chip bg-color">vue</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/21/vue/vuelifecycle/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="vue 原理之生命周期">
+                            
+                            <span class="card-title">vue 原理之生命周期</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            每一个 vue 的实例在创建的时候都经过一系列的初始化操作，在每一个阶段都会有相对应的生命周期钩子函数，来在特定的场景实现一些功能
+生命周期方法
+beforeCreate（实例创建前）
+created（实例创建后）
+beforeMount（
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/vue/" class="post-category" target="_blank">
+                                    vue
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/vue/" target="_blank">
+                            <span class="chip bg-color">vue</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/21/vue/vuecomponents/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="vue 原理之组件化">
+                            
+                            <span class="card-title">vue 原理之组件化</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            
+生命周期
+
+
+组件注册
+
+
+异步组件
+
+
+v-model
+
+
+keep-alive
+
+
+computed 和 watch
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/vue/" class="post-category" target="_blank">
+                                    vue
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/vue/" target="_blank">
+                            <span class="chip bg-color">vue</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2019/09/19/vue/vuecompile/" target="_blank">
                         <div class="card-image">
                             
@@ -532,347 +892,6 @@ Vue.component('async-example', funct
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/07/vue/vuecomputedwatcher/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="computed 和 watcher">
-                            
-                            <span class="card-title">computed 和 watcher</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            vue 的 computed 和 watch 是我们在开发中经常用的方法，从而实现数据的响应与监听，下面我们从使用和源码来分析一下这两个属性的实现原理是什么。
-computed 和 watch 使用
-computed 计算属性，根据依赖的数
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vue/" target="_blank">
-                            <span class="chip bg-color">vue</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/05/vue/vueobserve/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue 原理解析之响应式">
-                            
-                            <span class="card-title">vue 原理解析之响应式</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            响应式对象提到 vue 的双向数据绑定原理，我们都知道是利用了 Object.defineProperty 给数据添加 getter 和 setter，来进行依赖收集和数据派发更新，首先我们再来熟悉一下这个方法
-Object.defineP
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vue/" target="_blank">
-                            <span class="chip bg-color">vue</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/08/27/vue/vueprinciple/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="vue 原理解析之主线流程">
-                            
-                            <span class="card-title">vue 原理解析之主线流程</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            
-  
-  
-
-
-
-源码架构vue 一直以简单，快速著称，也自称为渐进式框架今天我们来分析一下vue的源码，这样我们也能了解其中的思想，帮助我们在工作中很好的应用和解决问题。当然我们并不可能把源码很细致的分析个遍，那样没什么意义。附上 gi
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/vue/" class="post-category" target="_blank">
-                                    vue
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/vue/" target="_blank">
-                            <span class="chip bg-color">vue</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/08/26/javascript/generator-async/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="generator 与 async">
-                            
-                            <span class="card-title">generator 与 async</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            概述在前端中异步编程一直是前端开发的一个痛点，因为 JavaScript 语法的灵活性和特殊性导致前端开发的困难（因为 JavaScript 是单线程，如果没有异步的世界可以想象一下，将无法执行卡死操作）
-什么是异步编程所谓”异步”，一个任
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaScript/" class="post-category" target="_blank">
-                                    JavaScript
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaScript/" target="_blank">
-                            <span class="chip bg-color">JavaScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/08/15/typescript/global.d.ts/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="global.d.ts">
-                            
-                            <span class="card-title">global.d.ts</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            // Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/TypeScript/" target="_blank">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/08/15/typescript/module-function.d.ts/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="function.d.ts">
-                            
-                            <span class="card-title">function.d.ts</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/TypeScript/" target="_blank">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/08/15/typescript/module-class.d.ts/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="class.d.ts">
-                            
-                            <span class="card-title">class.d.ts</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/TypeScript/" class="post-category" target="_blank">
-                                    TypeScript
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/TypeScript/" target="_blank">
-                            <span class="chip bg-color">TypeScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -934,7 +953,7 @@ Object.defineP
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

@@ -18,7 +18,7 @@ categories:
 
 (Debian Package)管理工具，软件包名以.deb后缀
 
-```
+```js
 sudo dpkg -i package.deb 安装/更新 deb 包 
 
 sudo dpkg -r package 删除 deb 包 
@@ -32,7 +32,7 @@ sudo dpkg -s package 获得已经安装的包的信息
 
 （Advanced Packaging Tool）
 
-```
+```js
 sudo apt-get install package 安装package包
 
 sudo apt-get remove package 卸载package包
@@ -45,7 +45,7 @@ sudo apt-get update 更新package包
  
 ### YUM 软件包升级器
 
-```
+```js
 yum install package 下载并安装rpm包 
 
 yum update package 更新rpm包 
@@ -66,7 +66,7 @@ yum clean all 删除所有缓存的包和头文件
  
 ### RPM包
 
-```
+```js
 rpm -ivh package.rpm 安装rpm包 
 rpm -ivh --nodeeps package.rpm 安装rpm包而忽略依赖关系警告 
 rpm -U package.rpm 更新rpm包但不改变其配置文件 

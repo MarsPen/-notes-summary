@@ -474,26 +474,27 @@ CPU
 <p><img src="/images/event-loop.png"><br></p>
 <p><strong>事件队列调度（通过回调函数将任务添加事件队列中）</strong><br><br>1、内置的事件和事件监听器（http、server的一些事件）<br><br>2、异步堵塞 I/O 库(db处理、fs处理等)<br><br>3、定时器setTimeout、setInterval<br><br>4、全局对象process的.nextTick()API<br><br>5、自定义的事件和监听器<br></p>
 <p><strong>内置事件(举例)</strong><br></p>
-<pre><code>// 引入 events 模块
-let events = require(&#39;events&#39;);
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 events 模块</span>
+<span class="token keyword">let</span> events <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'events'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 创建事件对象
-let eventEmitter = new events.EventEmitter();
+<span class="token comment" spellcheck="true">// 创建事件对象</span>
+<span class="token keyword">let</span> eventEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">events<span class="token punctuation">.</span>EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 创建事件处理程序
-let connectHandler = function connected() {
-   // 开始触发事件 
-   eventEmitter.emit(&#39;start&#39;);
-}
+<span class="token comment" spellcheck="true">// 创建事件处理程序</span>
+<span class="token keyword">let</span> connectHandler <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">connected</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// 开始触发事件 </span>
+   eventEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'start'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 绑定事件处理程序
-eventEmitter.on(&#39;connection&#39;, connectHandler);
-eventEmitter.on(&#39;start&#39;, function(){});
+<span class="token comment" spellcheck="true">// 绑定事件处理程序</span>
+eventEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">,</span> connectHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+eventEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'start'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 触发事件处理程序
-eventEmitter.emit(&#39;connection&#39;);
+<span class="token comment" spellcheck="true">// 触发事件处理程序</span>
+eventEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console.log(&quot;程序执行完毕。&quot;);</code></pre><p>以上是Node 事件驱动模型的基本概念。在下篇进程文章中会介绍在 Node 中怎样创建多进程架构，也会在<strong>node高级系列-v8与异步I/O</strong>中详细介绍 Node的异步 I/O <br></p>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"程序执行完毕。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上是Node 事件驱动模型的基本概念。在下篇进程文章中会介绍在 Node 中怎样创建多进程架构，也会在<strong>node高级系列-v8与异步I/O</strong>中详细介绍 Node的异步 I/O <br></p>
 <h2 id="更多方法参考"><a href="#更多方法参考" class="headerlink" title="更多方法参考"></a>更多方法参考<br></h2><p><a href="http://nodejs.cn/api/events.html" target="_blank" rel="noopener">Node Api events 事件模块 </a></p>
 
             </div>
@@ -930,7 +931,7 @@ css   * {
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

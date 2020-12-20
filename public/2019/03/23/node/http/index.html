@@ -7,8 +7,8 @@
   <meta name="keywords" content="tcp udp http, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="构建TCP服务 tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图 &amp;lt;image src=/images/tcp.png’ width=”300px”&amp;gt;
- tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如">
+  <meta name="description" content="构建TCP服务 tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图 &amp;lt;img src=/images/tcp.png’ width=”300px”&amp;gt;
+ tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -442,27 +442,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务<br></h3><p> tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br><br> &lt;image src=/images/tcp.png’ width=”300px”&gt;<br></p>
-<p> tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br><br> &lt;image src=/images/ack.png’ width=”300px”&gt;<br></p>
+                <h3 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务<br></h3><p> tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br><br> &lt;img src=/images/tcp.png’ width=”300px”&gt;<br></p>
+<p> tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br><br> &lt;img src=/images/ack.png’ width=”300px”&gt;<br></p>
 <p>  第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认<br><br>  第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态<br><br>  第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手<br></p>
 <p>  当然tcp也会有四次挥手，在这里就不具体说明了<br></p>
 <h3 id="创建TCP服务端"><a href="#创建TCP服务端" class="headerlink" title="创建TCP服务端"></a>创建TCP服务端<br></h3><p>1、创建TCP服务端接受网络请求<br><br>1.1服务器事件<br></p>
-<pre><code>var net = require(&#39;net&#39;);
-var server = net.createServer(function(socket) {
-  // 开始新连接
-  socket.on(&#39;data&#39;, function(data) {
-    socket.write(&#39;hello&#39;);
-  })
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> net <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> server <span class="token operator">=</span> net<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>socket<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 开始新连接</span>
+  socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    socket<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-  // 断开连接
-  socket.on(&#39;end&#39;, function() {
-    console.log(&#39;断开连接&#39;);
-  }) 
-})
+  <span class="token comment" spellcheck="true">// 断开连接</span>
+  socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'断开连接'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-server.listen(8124, function() {
-  console.log(&#39;server start listen port 8124 !&#39;);
-});</code></pre><p>通过上面代码创建为服务器事件，它是一个<strong>EventEmitter</strong>实例，自定义事件有一下几种<br></p>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8124</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server start listen port 8124 !'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过上面代码创建为服务器事件，它是一个<strong>EventEmitter</strong>实例，自定义事件有一下几种<br></p>
 <ul>
 <li>listening 绑定的端口</li>
 <li>connection 连接到服务器时出发此事件</li>
@@ -470,20 +471,21 @@ server.listen(8124, function() {
 <li>error 服务器发生异常时触发<br></li>
 </ul>
 <p>1.2连接事件<br></p>
-<pre><code>var net = require(&#39;net&#39;);
-var client = net.connect({ port: 8124 }, function () {
-  console.log(&#39;client connected !&#39;);
-  client.write(&#39;hello&#39;);
-})
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> net <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> client <span class="token operator">=</span> net<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">{</span> port<span class="token punctuation">:</span> <span class="token number">8124</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'client connected !'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  client<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-client.on(&#39;data&#39;, function (data) {
-  conosle.log(data);
-  client.end();
-})
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  conosle<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  client<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-client.on(&#39;end&#39;, function () {
-  console.log(&#39;此连接结束&#39;);
-})</code></pre><p>通过上面代码创建连接事件，服务器可以同时与多个客户端保持连接，对于每个连接其实都是<strong>Stream</strong>对象，它用于服务器端和客户端之间的通讯，自定义事件如下<br></p>
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'此连接结束'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过上面代码创建连接事件，服务器可以同时与多个客户端保持连接，对于每个连接其实都是<strong>Stream</strong>对象，它用于服务器端和客户端之间的通讯，自定义事件如下<br></p>
 <ul>
 <li>data 当一端调用write()发送数据时，另一端会触发data，事件传递的数据是write()发送的数据</li>
 <li>end 当连接中的任意一端发送<strong>FIN</strong> 数据时，触发此事件</li>
@@ -494,69 +496,77 @@ client.on(&#39;end&#39;, function () {
 </ul>
 <p><strong>node中 TCP默认开启Nagle算法（优化网络数据包）此算法由于要求缓冲数据达到一定数量或一定时间后才发送，所以可能会造成延迟发送</strong></p>
 <h3 id="构建UDP服务"><a href="#构建UDP服务" class="headerlink" title="构建UDP服务"></a>构建UDP服务<br></h3><p>UDP用户数据包协议，和TCP一样属于网络传输层<br></p>
-<h3 id="创建UDP服务端"><a href="#创建UDP服务端" class="headerlink" title="创建UDP服务端"></a>创建UDP服务端<br></h3><pre><code>var dgram = require(&#39;dgram&#39;);
-// 创建server对象
-var server  = dgram.createSocket(&#39;udp4&#39;);
-// 接到消息时，触发该事件，携带的数据为消息buffer和远程地址信息对象
-server.on(&#39;message&#39; function (msg, rinfo) {
-  console.log(msg)
-  console.log(rinfo)
-});
-// 绑定端口之后启动监听时间
-server.on(&#39;listening&#39;, function () {
-  var address = server.address();
-  console.log(address);
-});
-// 绑定端口
-server.bind(41234);
-</code></pre><h3 id="创建UDP客户端"><a href="#创建UDP客户端" class="headerlink" title="创建UDP客户端"></a>创建UDP客户端<br></h3><pre><code>var dgram = require(&#39;dgram&#39;);
+<h3 id="创建UDP服务端"><a href="#创建UDP服务端" class="headerlink" title="创建UDP服务端"></a>创建UDP服务端<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> dgram <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dgram'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 创建server对象</span>
+<span class="token keyword">var</span> server  <span class="token operator">=</span> dgram<span class="token punctuation">.</span><span class="token function">createSocket</span><span class="token punctuation">(</span><span class="token string">'udp4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 接到消息时，触发该事件，携带的数据为消息buffer和远程地址信息对象</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>msg<span class="token punctuation">,</span> rinfo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rinfo<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 绑定端口之后启动监听时间</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'listening'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> address <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">address</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 绑定端口</span>
+server<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token number">41234</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建UDP客户端"><a href="#创建UDP客户端" class="headerlink" title="创建UDP客户端"></a>创建UDP客户端<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> dgram <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dgram'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-var message = new Buffer(&#39;hello&#39;);
-var client = dgram.createSocket(&#39;udp4&#39;);
-client.send(message, 0, message.length, 41234, &#39;localhost&#39;, function (err, bytes) {
-  client.close();
-})</code></pre><h3 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务<br></h3><p>HTTP是超文本传输协议，是构建在TCP之上的，属于应用层协议，在HTTP的两端是服务端和浏览器也就是B/S模式<br></p>
+<span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> client <span class="token operator">=</span> dgram<span class="token punctuation">.</span><span class="token function">createSocket</span><span class="token punctuation">(</span><span class="token string">'udp4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> message<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">41234</span><span class="token punctuation">,</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> bytes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  client<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务<br></h3><p>HTTP是超文本传输协议，是构建在TCP之上的，属于应用层协议，在HTTP的两端是服务端和浏览器也就是B/S模式<br></p>
 <h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文<br></h3><p>我们可以在命令行利用curl -v <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> 来模拟请求，产生如下报文信息<br></p>
 <p>第一部分其实就是标准的TCP3次握手过程<br></p>
-<pre><code>* About to connect() to localhost (127.0.0.1) port 8080 (#0)
-*   Trying 127.0.0.1...
-* TCP_NODELAY set
-* Connected to localhost (127.0.0.1) port 8080 (#0)</code></pre><p>第二部分在握手完成之后，客户端向服务端发送的请求报文<br></p>
-<pre><code>&gt; GET / HTTP/1.1
-&gt; Host: 127.0.0.1:8080
-&gt; User-Agent: curl/7.54.0
-&gt; Accept: */*
-&gt;</code></pre><p>第三部分是服务端处理结束后，向客户端发送的响应内容包括响应头和响应体<br></p>
-<pre><code>&lt; HTTP/1.1 200 OK
-&lt; X-Powered-By: Express
-&lt; Accept-Ranges: bytes
-&lt; Content-Type: text/html; charset=UTF-8
-&lt; Content-Length: 820
-&lt; ETag: W/&quot;334-dKswJvgc24O5QPXd939SLJD+BhM&quot;
-&lt; Date: Thu, 11 Apr 2019 10:33:03 GMT
-&lt; Connection: keep-alive
-&lt;
-hello</code></pre><p>第四部分是结束此会话<br></p>
-<pre><code>* Connection #0 to host 127.0.0.1 left intact
-* Closing connection #0</code></pre><p>通过上面的信息中我们可以看出虽然是基于 TCP，但是本身确实基于请求响应式的，一问一答模式并不是会话模式。<br></p>
-<h3 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块<br></h3><p>node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br><br>&lt;image src=/images/request.png’ width=”400px”&gt;<br></p>
-<p>http模块将所有读写抽象为ServerRequest和ServerResponse对象<br><br>&lt;image src=/images/http.png’ width=”400px”&gt;<br></p>
-<pre><code>function (req, res) {
-  res.writeHead(200, {&#39;Content-Type&#39; : &#39;text/plain&#39;});
-  res.end(&#39;Hello Word&#39;);
-}</code></pre><h3 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理<br></h3><p>http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br><br>http 模块包含一个默认的客户端代理对象http.globalAgent<br><br>通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br><br>&lt;image src=/images/http代理.png’ width=”400px”&gt;<br></p>
-<pre><code>// 可以通过http.Agent修改连接数量，但连接数量过大会影响服务器性能
-var agent = new http.Agent({
-  maxSockets: 10
-})
-var option = {
-  hostname: &#39;127.0.0.1&#39;,
-  port: 1334,
-  path: &#39;/&#39;,
-  method: &#39;GET&#39;,
-  agent: agent
-}</code></pre><h3 id="构建-WebSocket-服务"><a href="#构建-WebSocket-服务" class="headerlink" title="构建 WebSocket 服务"></a>构建 WebSocket 服务<br></h3><p>Websocket 协议解决了服务器与客户端全双工通信的问题,也就是客户端和服务端之间的长连接<br></p>
-<h3 id="WebSocket协议解析"><a href="#WebSocket协议解析" class="headerlink" title="WebSocket协议解析"></a>WebSocket协议解析<br></h3><p>WebSocket协议主要分为两个部分第一部分 http <strong>握手</strong>连接，第二部分协议升级为 WebSocket 进行<strong>数据传输</strong><br><br>&lt;image src=/images/websocket.png’ width=”400px”&gt;<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">*</span> About to <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> to localhost <span class="token punctuation">(</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">)</span> port <span class="token number">8080</span> <span class="token punctuation">(</span>#<span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token operator">*</span>   Trying <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">...</span>
+<span class="token operator">*</span> TCP_NODELAY <span class="token keyword">set</span>
+<span class="token operator">*</span> Connected to localhost <span class="token punctuation">(</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">)</span> port <span class="token number">8080</span> <span class="token punctuation">(</span>#<span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第二部分在握手完成之后，客户端向服务端发送的请求报文<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">></span> GET <span class="token operator">/</span> HTTP<span class="token operator">/</span><span class="token number">1.1</span>
+<span class="token operator">></span> Host<span class="token punctuation">:</span> <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8080</span>
+<span class="token operator">></span> User<span class="token operator">-</span>Agent<span class="token punctuation">:</span> curl<span class="token operator">/</span><span class="token number">7.54</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token operator">></span> Accept<span class="token punctuation">:</span> <span class="token operator">*</span><span class="token operator">/</span><span class="token operator">*</span>
+<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第三部分是服务端处理结束后，向客户端发送的响应内容包括响应头和响应体<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span> HTTP<span class="token operator">/</span><span class="token number">1.1</span> <span class="token number">200</span> OK
+<span class="token operator">&lt;</span> X<span class="token operator">-</span>Powered<span class="token operator">-</span>By<span class="token punctuation">:</span> Express
+<span class="token operator">&lt;</span> Accept<span class="token operator">-</span>Ranges<span class="token punctuation">:</span> bytes
+<span class="token operator">&lt;</span> Content<span class="token operator">-</span>Type<span class="token punctuation">:</span> text<span class="token operator">/</span>html<span class="token punctuation">;</span> charset<span class="token operator">=</span>UTF<span class="token number">-8</span>
+<span class="token operator">&lt;</span> Content<span class="token operator">-</span>Length<span class="token punctuation">:</span> <span class="token number">820</span>
+<span class="token operator">&lt;</span> ETag<span class="token punctuation">:</span> W<span class="token operator">/</span><span class="token string">"334-dKswJvgc24O5QPXd939SLJD+BhM"</span>
+<span class="token operator">&lt;</span> Date<span class="token punctuation">:</span> Thu<span class="token punctuation">,</span> <span class="token number">11</span> Apr <span class="token number">2019</span> <span class="token number">10</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token number">03</span> GMT
+<span class="token operator">&lt;</span> Connection<span class="token punctuation">:</span> keep<span class="token operator">-</span>alive
+<span class="token operator">&lt;</span>
+hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第四部分是结束此会话<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">*</span> Connection #<span class="token number">0</span> to host <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> left intact
+<span class="token operator">*</span> Closing connection #<span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>通过上面的信息中我们可以看出虽然是基于 TCP，但是本身确实基于请求响应式的，一问一答模式并不是会话模式。<br></p>
+<h3 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块<br></h3><p>node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br><br>&lt;img src=/images/request.png’ width=”400px”&gt;<br></p>
+<p>http模块将所有读写抽象为ServerRequest和ServerResponse对象<br><br>&lt;img src=/images/http.png’ width=”400px”&gt;<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'Content-Type'</span> <span class="token punctuation">:</span> <span class="token string">'text/plain'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Hello Word'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理<br></h3><p>http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br><br>http 模块包含一个默认的客户端代理对象http.globalAgent<br><br>通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br><br>&lt;img src=/images/http代理.png’ width=”400px”&gt;<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 可以通过http.Agent修改连接数量，但连接数量过大会影响服务器性能</span>
+<span class="token keyword">var</span> agent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">http<span class="token punctuation">.</span>Agent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  maxSockets<span class="token punctuation">:</span> <span class="token number">10</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> option <span class="token operator">=</span> <span class="token punctuation">{</span>
+  hostname<span class="token punctuation">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+  port<span class="token punctuation">:</span> <span class="token number">1334</span><span class="token punctuation">,</span>
+  path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+  method<span class="token punctuation">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span>
+  agent<span class="token punctuation">:</span> agent
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="构建-WebSocket-服务"><a href="#构建-WebSocket-服务" class="headerlink" title="构建 WebSocket 服务"></a>构建 WebSocket 服务<br></h3><p>Websocket 协议解决了服务器与客户端全双工通信的问题,也就是客户端和服务端之间的长连接<br></p>
+<h3 id="WebSocket协议解析"><a href="#WebSocket协议解析" class="headerlink" title="WebSocket协议解析"></a>WebSocket协议解析<br></h3><p>WebSocket协议主要分为两个部分第一部分 http <strong>握手</strong>连接，第二部分协议升级为 WebSocket 进行<strong>数据传输</strong><br><br>&lt;img src=/images/websocket.png’ width=”400px”&gt;<br></p>
 <h3 id="TCP-UDP-HTTP-WebSocket区别"><a href="#TCP-UDP-HTTP-WebSocket区别" class="headerlink" title="TCP UDP HTTP WebSocket区别"></a>TCP UDP HTTP WebSocket区别</h3><ol>
 <li>TCP UDP HTTP WebSocket都是协议，而TCP/IP是不同协议的组合 <br></li>
 <li>Socket的本质是API，只不过是对TCP/IP协议族的抽象或者说封装<br></li>
@@ -748,8 +758,9 @@ var option = {
                     <div class="summary block-with-text">
                         
                             url模块提供用于URL解析和解析的实用程序
-const url = require(&#39;url&#39;);获取并设置URL的片段部分url.hash
-const myURL = new URL(&#39;https://examp
+const url = require('url');
+获取并设置URL的片段部分url.hash
+const myURL = new URL('https://example.org/foo#
                         
                     </div>
                     <div class="publish-info">
@@ -999,7 +1010,7 @@ const myURL = new URL(&#39;https://examp
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

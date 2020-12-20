@@ -492,82 +492,86 @@ for (let i = 0; i &lt; cpus.length; i++) {
 <p>IPC通道创建、连接<br></p>
 <p>1、父进程在实际创建子进程之前，首先创建IPC通道并监听，然后在创建子进程<br><br>2、通过环境变量（NODE_CHAMMEL_FD）通知子进程 IPC 通道的文件描述符<br><br>3、子进程启动过程中通过文件描述符连接已经存在的 IPC 通道<br><br>4、建立连接后就可以在内核中完成双向通信，不经过网络层<br><br>5、在 Node 中，IPC 被抽象成为 Stream 对象，调用 send（）发送数据，通过 message 事件接收数据<br></p>
 <p><img src="/images/ipc-create.png"><br></p>
-<pre><code>/**
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * 创建父线程
  * master.js
- */
+ */</span>
 
-// 引入核心模块child_process 创建子进程
-let childProcess = require(&#39;child_process&#39;);
+<span class="token comment" spellcheck="true">// 引入核心模块child_process 创建子进程</span>
+<span class="token keyword">let</span> childProcess <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 复制进程
-let n = childProcess.fork(__dirname + &#39;/worker.js&#39;);
+<span class="token comment" spellcheck="true">// 复制进程</span>
+<span class="token keyword">let</span> n <span class="token operator">=</span> childProcess<span class="token punctuation">.</span><span class="token function">fork</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/worker.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 监听message
-n.on(&#39;messge&#39;, function (m) {
-  console.log(m)
-})
+<span class="token comment" spellcheck="true">// 监听message</span>
+n<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'messge'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-// 发送数据
-n.send({hello: &#39;&#39;world});</code></pre><pre><code>/**
+<span class="token comment" spellcheck="true">// 发送数据</span>
+n<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span>hello<span class="token punctuation">:</span> <span class="token string">''</span>world<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * 创建子线程
  * worker.js
- */
+ */</span>
 
-// 监听message
-process.on(&#39;message&#39;, function (m) {
-  console.log(m)
-});
-// 发送数据
-process.send({foo: &#39;bar&#39;});</code></pre><p><strong>句柄传递</strong><br></p>
+<span class="token comment" spellcheck="true">// 监听message</span>
+process<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 发送数据</span>
+process<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span>foo<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>句柄传递</strong><br></p>
 <p>通过上述我们简单的了解到进程之间通信原理，但是我们想要通过监听一个端口，主进程将所有的请求交由子进程处理，上述通信远远不够的，所以可以通过 <strong>Node句柄传递</strong> 来实现<br></p>
 <p>主进程将请求发送给工作进程<br></p>
 <p><img src="/images/process-send.png"><br></p>
 <p>主进程发送完句柄并关闭监听<br></p>
 <p><img src="/images/process-on.png"><br></p>
-<pre><code>/**
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * 创建主进程
  * master.js
- */
+ */</span>
 
-// 引入核心模块child_process 创建子进程
-let cp = require(&#39;child_process&#39;);
+<span class="token comment" spellcheck="true">// 引入核心模块child_process 创建子进程</span>
+<span class="token keyword">let</span> cp <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 复制进程
-let child1 = cp.fork(__dirname + &#39;/worker.js&#39;);
-let child2 = cp.fork(__dirname + &#39;/worker.js&#39;);
+<span class="token comment" spellcheck="true">// 复制进程</span>
+<span class="token keyword">let</span> child1 <span class="token operator">=</span> cp<span class="token punctuation">.</span><span class="token function">fork</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/worker.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> child2 <span class="token operator">=</span> cp<span class="token punctuation">.</span><span class="token function">fork</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/worker.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 打开服务使用得服务对象发送数据
-let server = require(&#39;net&#39;).createServer();
-server.listen(1337 ,function () {
-  child1.send(&#39;server&#39;, server);
-  child2.send(&#39;server&#39;, server);
+<span class="token comment" spellcheck="true">// 打开服务使用得服务对象发送数据</span>
+<span class="token keyword">let</span> server <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">1337</span> <span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  child1<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'server'</span><span class="token punctuation">,</span> server<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  child2<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'server'</span><span class="token punctuation">,</span> server<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  // 主进程发送完成句柄关闭监听
-  server.close();
-});</code></pre><pre><code>/**
+  <span class="token comment" spellcheck="true">// 主进程发送完成句柄关闭监听</span>
+  server<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * 创建子进程
  * worker.js
- */
+ */</span>
 
-// 引入核心模块http
-let http = require(&#39;http&#39;);
+<span class="token comment" spellcheck="true">// 引入核心模块http</span>
+<span class="token keyword">let</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 创建服务
-let server = http.createServer(function (req, res) {
-  res.writeHead(200, {&#39;Content-Type&#39; : &#39;text/plain&#39;});
-  res.end(&#39;pid is&#39; + process.pid)
-});
+<span class="token comment" spellcheck="true">// 创建服务</span>
+<span class="token keyword">let</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'Content-Type'</span> <span class="token punctuation">:</span> <span class="token string">'text/plain'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'pid is'</span> <span class="token operator">+</span> process<span class="token punctuation">.</span>pid<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 子进程监听端口
-process.on(&#39;message&#39;, function (m, tcp) {
-  if (m === &#39;server&#39;) {
-    tcp.on(&#39;connection&#39;, function (socket) {
-      server.emit(&#39;connection&#39;, socket);
-    });
-  }
-}};
-</code></pre><p>通过上述几个例子我们基本基本了解 Node 的进程。当然还有很多需要在事件中摸索例如集群的稳定，包括自动重启，负载均衡，状态共享等等。当然创建 Node 集群也可以用cluster模块，实现起来更轻松方便<br></p>
+<span class="token comment" spellcheck="true">// 子进程监听端口</span>
+process<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> tcp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">===</span> <span class="token string">'server'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tcp<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>socket<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      server<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">,</span> socket<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过上述几个例子我们基本基本了解 Node 的进程。当然还有很多需要在事件中摸索例如集群的稳定，包括自动重启，负载均衡，状态共享等等。当然创建 Node 集群也可以用cluster模块，实现起来更轻松方便<br></p>
 <h2 id="更多方法参考"><a href="#更多方法参考" class="headerlink" title="更多方法参考"></a>更多方法参考<br></h2><p><a href="http://nodejs.cn/api/process.html" target="_blank" rel="noopener">Node Api process</a><br><br><a href="http://nodejs.cn/api/child_process.html" target="_blank" rel="noopener">Node Api child_process</a><br><br><a href="http://nodejs.cn/api/cluster.html" target="_blank" rel="noopener">Node Api cluster</a><br></p>
 
             </div>
@@ -1000,7 +1004,7 @@ CPU
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

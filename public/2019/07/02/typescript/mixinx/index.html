@@ -419,7 +419,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    227
+                    223
                 </div>
                 
 
@@ -443,50 +443,51 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p> 一般情况下，我们已经习惯了用面向对象的继承方式，比如在 JS ES5中用 prototype， 在 ES6 和 TS 中 用extends,然而用 mixinx 也是一种通过可重用组件创建类的方式，来进行混用，混合多个类的方法到一个类上</p>
-<h3 id="应用例子"><a href="#应用例子" class="headerlink" title="应用例子"></a>应用例子</h3><pre><code>// Disposable Mixin
-class Disposable {
-    isDisposed!: boolean;
-    dispose() {
-    console.log(this.isDisposed);
-    }
-}
+<h3 id="应用例子"><a href="#应用例子" class="headerlink" title="应用例子"></a>应用例子</h3><pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// Disposable Mixin</span>
+<span class="token keyword">class</span> <span class="token class-name">Disposable</span> <span class="token punctuation">{</span>
+    isDisposed<span class="token operator">!</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+    <span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>isDisposed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// Activatable Mixin
-class Activatable {
-    isActive!: boolean;
-    activate() {
-       console.log(this.isActive)
-    }
-}
+<span class="token comment" spellcheck="true">// Activatable Mixin</span>
+<span class="token keyword">class</span> <span class="token class-name">Activatable</span> <span class="token punctuation">{</span>
+    isActive<span class="token operator">!</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+    <span class="token function">activate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>isActive<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// 没使用 extends 而是使用 implements
-class SmartObject implements Disposable,Activatable {
-    // Disposable
-    isDisposed: boolean = false;
-    dispose!: () =&gt; void;
-    // Activatable
-    isActive: boolean = false;
-    activate!: () =&gt; void;
-}
+<span class="token comment" spellcheck="true">// 没使用 extends 而是使用 implements</span>
+<span class="token keyword">class</span> <span class="token class-name">SmartObject</span> <span class="token keyword">implements</span> <span class="token class-name">Disposable</span><span class="token punctuation">,</span>Activatable <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Disposable</span>
+    isDisposed<span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+    dispose<span class="token operator">!</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Activatable</span>
+    isActive<span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+    activate<span class="token operator">!</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// mixins混入定义的类，完成全部实现部分
-applyMixins(SmartObject, [Disposable, Activatable]);
+<span class="token comment" spellcheck="true">// mixins混入定义的类，完成全部实现部分</span>
+<span class="token function">applyMixins</span><span class="token punctuation">(</span>SmartObject<span class="token punctuation">,</span> <span class="token punctuation">[</span>Disposable<span class="token punctuation">,</span> Activatable<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-// 创建 applyMixins 混用函数，作用是遍历mixins上的所有属性，并复制到目标上去，把之前的占位属性替换成真正的实现代码。
-function applyMixins(derivedCtor: any, baseCtors: any[]) {
-    baseCtors.forEach(baseCtor =&gt; {
-        Object.getOwnPropertyNames(baseCtor.prototype).forEach(name =&gt; {
-            derivedCtor.prototype[name] = baseCtor.prototype[name];
-        });
-    });
-}
+<span class="token comment" spellcheck="true">// 创建 applyMixins 混用函数，作用是遍历mixins上的所有属性，并复制到目标上去，把之前的占位属性替换成真正的实现代码。</span>
+<span class="token keyword">function</span> <span class="token function">applyMixins</span><span class="token punctuation">(</span>derivedCtor<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">,</span> baseCtors<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    baseCtors<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>baseCtor <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyNames</span><span class="token punctuation">(</span>baseCtor<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>name <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            derivedCtor<span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> baseCtor<span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-let smartObject = new SmartObject()
+<span class="token keyword">let</span> smartObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SmartObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-smartObject.dispose() // false
-smartObject.activate() // false
-</code></pre>
+smartObject<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span>
+smartObject<span class="token punctuation">.</span><span class="token function">activate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -720,7 +721,7 @@ var result = subtract(multipl
 一个或多个赋值语句到window上
 假设DOM原始值像document或window是存在的
 
-&lt;script src=&quot;jque
+&lt;script src="jquery.js
                         
                     </div>
                     <div class="publish-info">
@@ -921,7 +922,7 @@ var result = subtract(multipl
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

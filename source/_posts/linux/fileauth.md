@@ -16,14 +16,14 @@ categories:
 
 ### 三种基本权限
 
-```
+```js
 R  读  数值表示为4
 W  写  数值表示为2
 X  可执行  数值表示为1
 ```
 
 1.执行ls -al命令行会出现<br/>
-```
+```js
 drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-summary
 drwxr-xr-x  41 renbo  staff   1.3K Mar 12 17:05 ant-design-pro
 drwxr-xr-x   7 renbo  staff   224B May 18  2018 canvas
@@ -33,7 +33,7 @@ drwxr-xr-x   4 renbo  staff   128B Nov 21 13:52 express
 drwxr-xr-x   3 renbo  staff    96B Aug 13  2018 flutter
 ```
 2.解释：
-```
+```js
 d ：第一位表示文件类型，d是目录文件、l是链接文件、-是普通文件、p是管道
 
 rwx ：第2-4位表示这个文件的属主拥有的权限。r是读、w是写、x是执行
@@ -51,7 +51,7 @@ x:excute就是执行权限 --数字1表示
 
 ### 更改权限
 
-```
+```js
 sudo chmod [u所属用户  g所属组  o其他用户  a所有用户]  [+增加权限  -减少权限]  [r  w  x]   目录名 
 
 例如：有一个文件filename，权限为“-rw-r----x” ,将权限值改为"-rwxrw-r-x"，用数值表示为765

@@ -423,7 +423,7 @@ Sas">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    416
+                    409
                 </div>
                 
 
@@ -452,85 +452,100 @@ Sas">
 <li>Sass、Stylus 利用缩进、空格和换行来减少需要输入的字符</li>
 </ol>
 <p>Sass</p>
-<pre><code>.header
-  background-color:red</code></pre><p>Less &amp; SCSS</p>
-<pre><code>.header {
-  background-color:red;
-}</code></pre><p>Stylus</p>
-<pre><code>.header
-  background-color:red</code></pre><h3 id="嵌套语法"><a href="#嵌套语法" class="headerlink" title="嵌套语法"></a>嵌套语法</h3><p>嵌套语法都是一致的,区别是 Sass 和 Stylus 可以不用书写大括号</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token number">.</span>header
+  <span class="token property">background-color</span><span class="token punctuation">:</span>red<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Less &amp; SCSS</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.header</span> </span><span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Stylus</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token number">.</span>header
+  <span class="token property">background-color</span><span class="token punctuation">:</span>red<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="嵌套语法"><a href="#嵌套语法" class="headerlink" title="嵌套语法"></a>嵌套语法</h3><p>嵌套语法都是一致的,区别是 Sass 和 Stylus 可以不用书写大括号</p>
 <p>less</p>
-<pre><code>.header {
-  &amp;.title {
-    color: red;
-  }
-}</code></pre><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>为 CSS 增加了一种有效的复用方式，减少CSS书写重复</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.header</span> </span><span class="token punctuation">{</span>
+  <span class="token selector">&amp;<span class="token class">.title</span> </span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>为 CSS 增加了一种有效的复用方式，减少CSS书写重复</p>
 <p>Sass</p>
-<pre><code>$bg: #ccc;
+<pre class="line-numbers language-css"><code class="language-css">$<span class="token property">bg</span><span class="token punctuation">:</span> <span class="token hexcode">#ccc</span><span class="token punctuation">;</span>
 
-.header 
-  background-color:$bg;</code></pre><p>Less</p>
-<pre><code>@bg: #ccc;
+<span class="token number">.</span>header 
+  <span class="token property">background-color</span><span class="token punctuation">:</span>$bg<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Less</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@bg</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span></span>
 
-header {
-  background-color: @bg;
-}</code></pre><p>Stylus</p>
-<pre><code>bg = #ccc
+<span class="token selector">header </span><span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token atrule"><span class="token rule">@bg</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Stylus</p>
+<pre class="line-numbers language-css"><code class="language-css">bg = <span class="token hexcode">#ccc</span>
 
 header
-  background-color: bg</code></pre><h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3><p>Sass 只能使用 url() 表达式引入时进行变量插值</p>
-<pre><code>  $public: public;
+  <span class="token property">background-color</span><span class="token punctuation">:</span> bg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3><p>Sass 只能使用 url() 表达式引入时进行变量插值</p>
+<pre class="line-numbers language-css"><code class="language-css">  $<span class="token property">public</span><span class="token punctuation">:</span> public<span class="token punctuation">;</span>
 
-  @import url(styles.#{$public}.css);</code></pre><p>Less可以在字符串中进行插值：</p>
-<pre><code>  @public: public;
+  <span class="token atrule"><span class="token rule">@import</span> <span class="token function">url</span><span class="token punctuation">(</span>styles.#</span><span class="token punctuation">{</span>$public<span class="token punctuation">}</span><span class="token number">.</span>css<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Less可以在字符串中进行插值：</p>
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token atrule"><span class="token rule">@public</span><span class="token punctuation">:</span> public<span class="token punctuation">;</span></span>
 
-  @import &quot;styles.@{public}.css&quot;;</code></pre><p>Stylus 可以利用其字符串拼接的功能实现</p>
-<pre><code>  public = &quot;public&quot;
+  <span class="token atrule"><span class="token rule">@import</span> "styles.@</span><span class="token punctuation">{</span>public<span class="token punctuation">}</span><span class="token number">.</span>css"<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Stylus 可以利用其字符串拼接的功能实现</p>
+<pre class="line-numbers language-css"><code class="language-css">  public = <span class="token string">"public"</span>
 
-  @import &quot;styles.&quot; + public + &quot;.css&quot;</code></pre><h3 id="混入-Mixins"><a href="#混入-Mixins" class="headerlink" title="混入(Mixins)"></a>混入(Mixins)</h3><p>作用: 样式层面的抽象</p>
+  @import <span class="token string">"styles."</span> + public + <span class="token string">".css"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="混入-Mixins"><a href="#混入-Mixins" class="headerlink" title="混入(Mixins)"></a>混入(Mixins)</h3><p>作用: 样式层面的抽象</p>
 <p>Sass</p>
-<pre><code>  @mixin product-public-text {
-    font: {
-      size: 20px;
-      weight: 600;
-      family: PingFangSC;
-    }
-    color: rgba(72,72,72,1);
-  }
-  .product-header-title {
-    @include product-public-text;
-    padding: 10px;
-  }</code></pre><p>Less</p>
-<pre><code>  .product-public-font-weight {
-    font-weight: 600;
-  }
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token atrule"><span class="token rule">@mixin</span> product-public-text</span> <span class="token punctuation">{</span>
+    <span class="token selector">font: </span><span class="token punctuation">{</span>
+      <span class="token property">size</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+      <span class="token property">weight</span><span class="token punctuation">:</span> <span class="token number">600</span><span class="token punctuation">;</span>
+      <span class="token property">family</span><span class="token punctuation">:</span> PingFangSC<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">72</span>,<span class="token number">72</span>,<span class="token number">72</span>,<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token class">.product-header-title</span> </span><span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@include</span> product-public-text<span class="token punctuation">;</span></span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Less</p>
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token selector"><span class="token class">.product-public-font-weight</span> </span><span class="token punctuation">{</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">600</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  .product-public-font(@color: red) {
-    font-size: 20px;
-    color: @color;
-  }
+  <span class="token number">.</span><span class="token function">product-public-font</span><span class="token punctuation">(</span><span class="token atrule"><span class="token rule">@color</span><span class="token punctuation">:</span> red<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token atrule"><span class="token rule">@color</span><span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span>
 
-  .product-header-title{
-    .product-public-font-weight;
-    .product-public-font(red);
-  }</code></pre><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>Sass</p>
-<pre><code>  .header {
-    background-color: red;
-  }
-  .main.active {
-    @extend .header;
-  }</code></pre><p>less</p>
-<pre><code>  .header {
-    background-color: red;
-  }
-  .main {
-    &amp;:extend(.header);
-  }</code></pre><p>Stylus,Scss</p>
-<pre><code>  .header
-    background-color: red;
+  <span class="token selector"><span class="token class">.product-header-title</span></span><span class="token punctuation">{</span>
+    <span class="token number">.</span>product-public-font-weight<span class="token punctuation">;</span>
+    <span class="token number">.</span><span class="token function">product-public-font</span><span class="token punctuation">(</span>red<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>Sass</p>
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token selector"><span class="token class">.header</span> </span><span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token class">.main.active</span> </span><span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@extend</span> .header<span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>less</p>
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token selector"><span class="token class">.header</span> </span><span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token class">.main</span> </span><span class="token punctuation">{</span>
+    &amp;<span class="token punctuation">:</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token number">.</span>header<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Stylus,Scss</p>
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token number">.</span>header
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 
-  .main
-    @extend .header</code></pre><h3 id="高级用法（函数）"><a href="#高级用法（函数）" class="headerlink" title="高级用法（函数）"></a>高级用法（函数）</h3><p>三种预处理器都自带了诸如色彩处理（darken等）、类型判断（if each for while 等）、数值计算等内置函数</p>
+  <span class="token number">.</span>main
+    @extend <span class="token number">.</span>header<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="高级用法（函数）"><a href="#高级用法（函数）" class="headerlink" title="高级用法（函数）"></a>高级用法（函数）</h3><p>三种预处理器都自带了诸如色彩处理（darken等）、类型判断（if each for while 等）、数值计算等内置函数</p>
 <h3 id="三种预处理器手册"><a href="#三种预处理器手册" class="headerlink" title="三种预处理器手册"></a>三种预处理器手册</h3><ol>
 <li>Sass：<a href="http://sass.bootcss.com/" target="_blank" rel="noopener">http://sass.bootcss.com/</a></li>
 <li>Less： <a href="https://less.bootcss.com/" target="_blank" rel="noopener">https://less.bootcss.com/</a></li>
@@ -716,8 +731,9 @@ header
                             ls显示文件或目录
 ls -F  //显示文件或目录
 ls -l  //列出文件详细信息l(list)
-ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)mkdir创建目录
-mkdir dir  //创建一个dir的目录
+ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)
+mkdir创建目录
+mkdir dir  //创建一个dir的目
                         
                     </div>
                     <div class="publish-info">
@@ -967,7 +983,7 @@ mkdir dir  //创建一个dir的目录
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

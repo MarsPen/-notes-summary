@@ -21,53 +21,55 @@ API的简介及简单动画的实现
 1. 定义向元素应用 2D 或 3D 转换，可以对元素进行移动、缩放、转动、拉长或拉伸
 
   translate(移动) 根据X轴和Y轴位置给定的参数，从当前元素位置移动
-  ```
+
+  ```js
   transform: translate(100px,200px);
   ```
 
   rotate（旋转） 给定度数顺时针旋转的元素。负值则为逆时针旋转
-  ```
+  ```js
   transform: rotate(60deg);
   ```
 
   scale (缩放) 对元素减小或者放大，取决于宽度（X轴）和高度（Y轴）的参数
-  ```
+  ```js
   transform: scale(2,2);
   ```
 
   skew (倾斜) 根据X轴和Y轴位置给定的角度参数，进行倾斜，负数则为反方向倾斜
-  ```
+  ```js
   transform: skew(40deg,50deg);
   ```
 
 2. transform-origin：允许改变被转换元素的位置
-  ```
+  ```js
   transform-origin: x-axis y-axis z-axis;
   ```
 
 3. transform-style：规定被嵌套元素如何在 3D 空间中显示
-  ```
+  ```js
   // preserve-3d所有子元素在3D空间中呈现
   // flat所有子元素在2D平面呈现
   transform-style: flat|preserve-3d;
   ```
 
 4. perspective:设置元素距离视图的距离，以像素计，与 perspective-origin 属性一同使用，能够改变 3D 元素的底部位置
-  ```
+  ```js
   perspective: number|none;
   ``` 
 
 5. backface-visibility:定义当元素不面向屏幕时是否可见，在旋转元素不希望看到其背面时，该属性很有用
-  ```
+  ```js
   backface-visibility: visible|hidden;
   ```
 
 ### CSS3过渡（transition）
 1. 某种效果可以从一种样式转变到另一种样式的效果
-   ```
+   ```js
    transition: property duration timing-function delay;
    ```
-   ```
+
+   ```js
    transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);
    ```
 
@@ -77,7 +79,7 @@ API的简介及简单动画的实现
    - animation
    - @keyframes
    - 语法规则及拆解
-   ```
+   ```js
     animation: animation-name animation-duration animation-timing-function animation-fill-mode animation-delay animation-iteration-count	animation-direction animation-play-state;
 
     animation-name(keyframe名字): keyframename|none;

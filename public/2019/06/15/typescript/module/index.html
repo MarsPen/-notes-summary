@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    796
+                    733
                 </div>
                 
 
@@ -452,74 +452,81 @@
 <li>不使用require关键字</li>
 </ul>
 <p><strong>1.单文件命名空间</strong></p>
-<pre><code>  namespace Validation {
-    export interface StringValidator {
-      isAcceptable(s: string): boolean;
-    }
+<pre class="line-numbers language-ts"><code class="language-ts">  namespace Validation <span class="token punctuation">{</span>
+    <span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+      <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    const lettersRegexp = /^[A-Za-z]+$/;
-    const numberRegexp = /^[0-9]+$/;
+    <span class="token keyword">const</span> lettersRegexp <span class="token operator">=</span> <span class="token regex">/^[A-Za-z]+$/</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> numberRegexp <span class="token operator">=</span> <span class="token regex">/^[0-9]+$/</span><span class="token punctuation">;</span>
 
-    export class LettersOnlyValidator implements StringValidator {
-        isAcceptable(s: string) {
-            return lettersRegexp.test(s);
-        }
-    }
+    <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">LettersOnlyValidator</span> <span class="token keyword">implements</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+        <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> lettersRegexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    export class ZipCodeValidator implements StringValidator {
-        isAcceptable(s: string) {
-            return s.length === 5 &amp;&amp; numberRegexp.test(s);
-        }
-    }
-  }</code></pre><p><strong>2.多文件命名空间及引入</strong></p>
+    <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ZipCodeValidator</span> <span class="token keyword">implements</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+        <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">5</span> <span class="token operator">&amp;&amp;</span> numberRegexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>2.多文件命名空间及引入</strong></p>
 <p>Validation.ts</p>
-<pre><code>namespace Validation {
-  export interface StringValidator {
-    isAcceptable(s: string): boolean;
-  }
-}</code></pre><p>LettersOnlyValidator.ts</p>
-<pre><code>/// &lt;reference path=&quot;Validation.ts&quot; /&gt;
-namespace Validation {
-    const lettersRegexp = /^[A-Za-z]+$/;
-    export class LettersOnlyValidator implements StringValidator {
-        isAcceptable(s: string) {
-            return lettersRegexp.test(s);
-        }
-    }
-}</code></pre><p>ZipCodeValidator.ts</p>
-<pre><code>/// &lt;reference path=&quot;Validation.ts&quot; /&gt;
-namespace Validation {
-    const numberRegexp = /^[0-9]+$/;
-    export class ZipCodeValidator implements StringValidator {
-        isAcceptable(s: string) {
-            return s.length === 5 &amp;&amp; numberRegexp.test(s);
-        }
-    }
-}</code></pre><p>Test.ts</p>
-<pre><code>/// &lt;reference path=&quot;Validation.ts&quot; /&gt;
-/// &lt;reference path=&quot;LettersOnlyValidator.ts&quot; /&gt;
-/// &lt;reference path=&quot;ZipCodeValidator.ts&quot; /&gt;
+<pre class="line-numbers language-ts"><code class="language-ts">namespace Validation <span class="token punctuation">{</span>
+  <span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+    <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>LettersOnlyValidator.ts</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">/// &lt;reference path="Validation.ts" /></span>
+namespace Validation <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> lettersRegexp <span class="token operator">=</span> <span class="token regex">/^[A-Za-z]+$/</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">LettersOnlyValidator</span> <span class="token keyword">implements</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+        <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> lettersRegexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>ZipCodeValidator.ts</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">/// &lt;reference path="Validation.ts" /></span>
+namespace Validation <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> numberRegexp <span class="token operator">=</span> <span class="token regex">/^[0-9]+$/</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ZipCodeValidator</span> <span class="token keyword">implements</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+        <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">5</span> <span class="token operator">&amp;&amp;</span> numberRegexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Test.ts</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">/// &lt;reference path="Validation.ts" /></span>
+<span class="token comment" spellcheck="true">/// &lt;reference path="LettersOnlyValidator.ts" /></span>
+<span class="token comment" spellcheck="true">/// &lt;reference path="ZipCodeValidator.ts" /></span>
 
-// Some samples to try
-let strings = [&quot;Hello&quot;, &quot;98052&quot;, &quot;101&quot;];
+<span class="token comment" spellcheck="true">// Some samples to try</span>
+<span class="token keyword">let</span> strings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"98052"</span><span class="token punctuation">,</span> <span class="token string">"101"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// Validators to use
-let validators: { [s: string]: Validation.StringValidator; } = {};
-validators[&quot;ZIP code&quot;] = new Validation.ZipCodeValidator();
-validators[&quot;Letters only&quot;] = new Validation.LettersOnlyValidator();
+<span class="token comment" spellcheck="true">// Validators to use</span>
+<span class="token keyword">let</span> validators<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> Validation<span class="token punctuation">.</span>StringValidator<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+validators<span class="token punctuation">[</span><span class="token string">"ZIP code"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Validation<span class="token punctuation">.</span>ZipCodeValidator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+validators<span class="token punctuation">[</span><span class="token string">"Letters only"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Validation<span class="token punctuation">.</span>LettersOnlyValidator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// Show whether each string passed each validator
-for (let s of strings) {
-  for (let name in validators) {
-    console.log(`&quot;${ s }&quot; - ${ validators[name].isAcceptable(s) ? &quot;matches&quot; : &quot;does not match&quot; } ${ name }`);
-  }
-}</code></pre><p>涉及多个文件，我们需要确保加载所有已编译的代码。有两种方法可以做到这一点。</p>
+<span class="token comment" spellcheck="true">// Show whether each string passed each validator</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> s of strings<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> name <span class="token keyword">in</span> validators<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`"</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> s <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">" - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> validators<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"matches"</span> <span class="token punctuation">:</span> <span class="token string">"does not match"</span> <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> name <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>涉及多个文件，我们需要确保加载所有已编译的代码。有两种方法可以做到这一点。</p>
 <ol>
-<li><strong>–outFile 编译器将根据文件中存在的引用标记自动排序输出文件</strong><pre><code>tsc --outFile sample.js Test.ts</code></pre></li>
-<li><strong>为每一个文件编译一个 JS 文件利用 Script 按照顺序引入</strong><pre><code>&lt;script src=&quot;Validation.js&quot; type=&quot;text/javascript&quot; /&gt;
-&lt;script src=&quot;LettersOnlyValidator.js&quot; type=&quot;text/javascript&quot; /&gt;
-&lt;script src=&quot;ZipCodeValidator.js&quot; type=&quot;text/javascript&quot; /&gt;
-&lt;script src=&quot;Test.js&quot; type=&quot;text/javascript&quot; /&gt;</code></pre></li>
+<li><strong>–outFile 编译器将根据文件中存在的引用标记自动排序输出文件</strong><pre class="line-numbers language-ts"><code class="language-ts">tsc <span class="token operator">--</span>outFile sample<span class="token punctuation">.</span>js Test<span class="token punctuation">.</span>ts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><strong>为每一个文件编译一个 JS 文件利用 Script 按照顺序引入</strong><pre class="line-numbers language-ts"><code class="language-ts"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"Validation.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"LettersOnlyValidator.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"ZipCodeValidator.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"Test.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> <span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="使用模块"><a href="#使用模块" class="headerlink" title="使用模块 "></a>使用模块 <br></h3><ul>
 <li>模块在自己的范围内执行，而不是在全局范围内执行</li>
@@ -529,33 +536,42 @@ for (let s of strings) {
 </ul>
 <p><strong>1.使用 export 关键字来导出声明</strong></p>
 <p>单模块导出</p>
-<pre><code>export interface StringValidator {
-  isAcceptable(s: string): boolean;
-}</code></pre><p>重命名导出</p>
-<pre><code>class ZipCodeValidator implements StringValidator {
-  isAcceptable(s: string) {
-    return s.length === 5 &amp;&amp; numberRegexp.test(s);
-  }
-}
-export { ZipCodeValidator };
-export { ZipCodeValidator as mainValidator };</code></pre><p>导出所有模块</p>
-<pre><code>export * from &quot;./StringValidator&quot;;
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+  <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>重命名导出</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">ZipCodeValidator</span> <span class="token keyword">implements</span> <span class="token class-name">StringValidator</span> <span class="token punctuation">{</span>
+  <span class="token function">isAcceptable</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> s<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">5</span> <span class="token operator">&amp;&amp;</span> numberRegexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> ZipCodeValidator <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> ZipCodeValidator as mainValidator <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>导出所有模块</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">"./StringValidator"</span><span class="token punctuation">;</span>
 
-export * from &quot;./ZipCodeValidator&quot;;</code></pre><p><strong>2.使用 import 关键字来导入声明</strong></p>
+<span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">"./ZipCodeValidator"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>2.使用 import 关键字来导入声明</strong></p>
 <p>从模块导入单个导出</p>
-<pre><code>import { ZipCodeValidator } from &quot;./ZipCodeValidator&quot;;
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> ZipCodeValidator <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./ZipCodeValidator"</span><span class="token punctuation">;</span>
 
-let myValidator = new ZipCodeValidator();</code></pre><p>重命名导入</p>
-<pre><code>import { ZipCodeValidator as ZCV } from &quot;./ZipCodeValidator&quot;;
-let myValidator = new ZCV();</code></pre><p>将整个模块导入单个变量，并使用它来访问模块导出</p>
-<pre><code>import * as validator from &quot;./ZipCodeValidator&quot;;
+<span class="token keyword">let</span> myValidator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZipCodeValidator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>重命名导入</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> ZipCodeValidator as ZCV <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./ZipCodeValidator"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> myValidator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZCV</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>将整个模块导入单个变量，并使用它来访问模块导出</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token operator">*</span> as validator <span class="token keyword">from</span> <span class="token string">"./ZipCodeValidator"</span><span class="token punctuation">;</span>
 
-let myValidator = new validator.ZipCodeValidator();</code></pre><p>仅使用这个文件</p>
-<pre><code>import &quot;./my-module.js&quot;;</code></pre><p><strong>3.模块的代码生成</strong></p>
+<span class="token keyword">let</span> myValidator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">validator<span class="token punctuation">.</span>ZipCodeValidator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>仅使用这个文件</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token string">"./my-module.js"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>3.模块的代码生成</strong></p>
 <p>编译器将为Node.js（CommonJS），require.js（AMD），UMD，SystemJS或ECMAScript 2015本机模块（ES6）模块加载系统生成适当的代码</p>
 <p>编译 commonjs 规范</p>
-<pre><code>tsc --module commonjs Test.ts</code></pre><p>编译 amd 规范</p>
-<pre><code>tsc --module amd Test.ts</code></pre>
+<pre class="line-numbers language-ts"><code class="language-ts">tsc <span class="token operator">--</span><span class="token keyword">module</span> commonjs Test<span class="token punctuation">.</span>ts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>编译 amd 规范</p>
+<pre class="line-numbers language-ts"><code class="language-ts">tsc <span class="token operator">--</span><span class="token keyword">module</span> amd Test<span class="token punctuation">.</span>ts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -738,7 +754,7 @@ let myValidator = new validator.ZipCodeValidator();</code></pre><p>仅使用这�
 一个或多个赋值语句到window上
 假设DOM原始值像document或window是存在的
 
-&lt;script src=&quot;jque
+&lt;script src="jquery.js
                         
                     </div>
                     <div class="publish-info">
@@ -991,7 +1007,7 @@ Promise 是一个构造函数，接受函数作为参数(resol
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

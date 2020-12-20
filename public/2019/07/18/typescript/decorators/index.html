@@ -426,7 +426,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
                 
@@ -445,81 +445,90 @@
                 <p>装饰器是一种为类声明和成员添加注释和元编程语法的方法，用于在编译时对类、类的方法、类的属性、类的方法的参数进行处理，通俗的讲就是在原有代码外层包装了一层处理逻辑，这样就可以在不改变原方法、函数等逻辑功能的基础上增加额外的处理行为</p>
 <h3 id="使用装饰器"><a href="#使用装饰器" class="headerlink" title="使用装饰器"></a><strong>使用装饰器</strong></h3><p>要启用装饰器功能需要开始experimentalDecorators选项，两种方式</p>
 <p>命令行</p>
-<pre><code>tsc --target ES5 --experimentalDecorators</code></pre><p>tsconfig.json配置</p>
-<pre><code>{
-    &quot;compilerOptions&quot;: {
-        &quot;target&quot;: &quot;ES5&quot;,
-        &quot;experimentalDecorators&quot;: true
-    }
-}</code></pre><h3 id="装饰器的简单应用"><a href="#装饰器的简单应用" class="headerlink" title="装饰器的简单应用"></a><strong>装饰器的简单应用</strong></h3><p>定义一个装饰器</p>
-<pre><code>function people (target) {
-  console.log(target)
-}
-</code></pre><p>在类中使用装饰器（@Decorator的语法是通过 @ 符号后边跟一个装饰器函数的引用）</p>
-<pre><code>@people
-class People {
-  constructor(){}
-} </code></pre><h3 id="装饰器工厂"><a href="#装饰器工厂" class="headerlink" title="装饰器工厂"></a>装饰器工厂</h3><p>解决在类中调用装饰器传参数的场景</p>
-<pre><code>// 装饰器工厂
-function people(name : string) {   
-  // 装饰器
-  return function(target){       
-    console.log(target);
-  }
-}
+<pre class="line-numbers language-ts"><code class="language-ts">tsc <span class="token operator">--</span>target ES5 <span class="token operator">--</span>experimentalDecorators<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>tsconfig.json配置</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token punctuation">{</span>
+    <span class="token string">"compilerOptions"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"target"</span><span class="token punctuation">:</span> <span class="token string">"ES5"</span><span class="token punctuation">,</span>
+        <span class="token string">"experimentalDecorators"</span><span class="token punctuation">:</span> <span class="token keyword">true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="装饰器的简单应用"><a href="#装饰器的简单应用" class="headerlink" title="装饰器的简单应用"></a><strong>装饰器的简单应用</strong></h3><p>定义一个装饰器</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">function</span> people <span class="token punctuation">(</span>target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>在类中使用装饰器（@Decorator的语法是通过 @ 符号后边跟一个装饰器函数的引用）</p>
+<pre class="line-numbers language-ts"><code class="language-ts">@people
+<span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="装饰器工厂"><a href="#装饰器工厂" class="headerlink" title="装饰器工厂"></a>装饰器工厂</h3><p>解决在类中调用装饰器传参数的场景</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 装饰器工厂</span>
+<span class="token keyword">function</span> <span class="token function">people</span><span class="token punctuation">(</span>name <span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   
+  <span class="token comment" spellcheck="true">// 装饰器</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">{</span>       
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// 调用装饰器工厂
-@people(&#39;zhangsan&#39;)
-class People{
-  constructor(){}
-} </code></pre><h3 id="多个装饰器应用"><a href="#多个装饰器应用" class="headerlink" title="多个装饰器应用"></a>多个装饰器应用</h3><p>当在一个类上由多个装饰器调用的时候，类似于<a href="functionalCombination.md">函数组合</a></p>
+<span class="token comment" spellcheck="true">// 调用装饰器工厂</span>
+@<span class="token function">people</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="多个装饰器应用"><a href="#多个装饰器应用" class="headerlink" title="多个装饰器应用"></a>多个装饰器应用</h3><p>当在一个类上由多个装饰器调用的时候，类似于<a href="functionalCombination.md">函数组合</a></p>
 <p>定义多个装饰器</p>
-<pre><code>function decorator1() {
-  console.log(&quot;decorator1(): start&quot;);
-  return function (target) {
-    console.log(&quot;decorator1(): end&quot;);
-  }
-}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">function</span> <span class="token function">decorator1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"decorator1(): start"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"decorator1(): end"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-function decorator2() {
-    console.log(&quot;decorator2(): start&quot;);
-    return function (target) {
-      console.log(&quot;decorator2(): end&quot;);
-    }
-}</code></pre><p>调用装饰器</p>
-<pre><code>class C {
-  @decorator1()
-  @decorator2()
-  method() {}
-}</code></pre><p>输出结果为(可以看作组合函数调用 decorator1(decorator2()))</p>
-<pre><code>decorator1(): start
-decorator2(): start
-decorator2(): end
-decorator1(): end</code></pre><h3 id="类装饰器（Class）"><a href="#类装饰器（Class）" class="headerlink" title="类装饰器（Class）"></a>类装饰器（Class）</h3><ul>
+<span class="token keyword">function</span> <span class="token function">decorator2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"decorator2(): start"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"decorator2(): end"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>调用装饰器</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token punctuation">{</span>
+  @<span class="token function">decorator1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  @<span class="token function">decorator2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果为(可以看作组合函数调用 decorator1(decorator2()))</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token function">decorator1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> start
+<span class="token function">decorator2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> start
+<span class="token function">decorator2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> end
+<span class="token function">decorator1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="类装饰器（Class）"><a href="#类装饰器（Class）" class="headerlink" title="类装饰器（Class）"></a>类装饰器（Class）</h3><ul>
 <li>类装饰器应用于类的构造函数，用于观察，修改或替换类定义 </li>
 <li>类会在class定义前调用，如果函数有返回值，它将使用提供的构造函数替换之前的构造函数</li>
 <li>函数接收一个参数 <code>constructor</code> 之前的构造函数</li>
 <li>如果返回新的构造函数，则必须维护原始原型</li>
 </ul>
 <p>我们定义一个类，继承原有的类并对这个类增加一些属性</p>
-<pre><code>// 定义类装饰器
-function personName&lt;T extends {new(...args:any[]):{}}&gt;(constructor:T){
-  return class extends constructor {
-    name = &quot;zhangsan&quot;;
-  }
-}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 定义类装饰器</span>
+<span class="token keyword">function</span> personName<span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token punctuation">{</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">:</span><span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">constructor</span><span class="token punctuation">:</span>T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> <span class="token keyword">constructor</span> <span class="token punctuation">{</span>
+    name <span class="token operator">=</span> <span class="token string">"zhangsan"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// 使用类装饰器
+<span class="token comment" spellcheck="true">// 使用类装饰器</span>
 @personName
-class Person {
- public name: string;
-  constructor (name: string) {
-    this.name = name
-    console.log(`Hi, my name is ${this.name}`) // Hi, my name is wangwu
-  }
-}
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+ <span class="token keyword">public</span> name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Hi, my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Hi, my name is wangwu</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-console.log(new Person(&#39;wangwu&#39;)) // class_1 {name: &quot;zhangsan&quot;,__proto__:Person}</code></pre><h3 id="方法装饰器"><a href="#方法装饰器" class="headerlink" title="方法装饰器"></a>方法装饰器</h3><p>方法，属性，get、set访问器，都可以认为是类成员。所以被分为了Method Decorator、Accessor Decorator和Property Decorator 这三个参数 </p>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'wangwu'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// class_1 {name: "zhangsan",__proto__:Person}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="方法装饰器"><a href="#方法装饰器" class="headerlink" title="方法装饰器"></a>方法装饰器</h3><p>方法，属性，get、set访问器，都可以认为是类成员。所以被分为了Method Decorator、Accessor Decorator和Property Decorator 这三个参数 </p>
 <p>方法装饰只是一个方法声明之前声明，方法装饰器不能用于声明文件，重载或任何其他环境上下文（例如declare类中）</p>
 <p>方法装饰器的表达式将在运行时作为函数调用，具有以下三个参数：</p>
 <ul>
@@ -529,131 +538,144 @@ console.log(new Person(&#39;wangwu&#39;)) // class_1 {name: &quot;zhangsan&quot;
 </ul>
 <p>所谓的访问器也就是有 get set 前缀的函数，方法是控制属性的赋值及取值，访问器装饰器和方法装饰器一样因为和下面要说到的属性装饰器一样都是类的成员具有三个参数</p>
 <p>Method Decorator、Accessor Decorator和Property Decorator<br>使用方法装饰器</p>
-<pre><code>class Greeter {
-  greeting: string;
-  constructor(message: string) {
-    this.greeting = message;
-  }
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">Greeter</span> <span class="token punctuation">{</span>
+  greeting<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>message<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>greeting <span class="token operator">=</span> message<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @enumerable(false)
-  greet() {
-    return &quot;Hello, &quot; + this.greeting;
-  }
-}</code></pre><pre><code>function enumerable(value: boolean) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor{
-    descriptor.enumerable = value;
-  };
-}</code></pre><p>明确一下静态成员与实例成员在返回值上的区别</p>
-<pre><code>class Func {
+  @<span class="token function">enumerable</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span>
+  <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"Hello, "</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>greeting<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">function</span> <span class="token function">enumerable</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">,</span> propertyKey<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> descriptor<span class="token punctuation">:</span> PropertyDescriptor<span class="token punctuation">{</span>
+    descriptor<span class="token punctuation">.</span>enumerable <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>明确一下静态成员与实例成员在返回值上的区别</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">Func</span> <span class="token punctuation">{</span>
 
-  // 静态成员
-  static method1 () {}
-  static method2 = () =&gt; {}
+  <span class="token comment" spellcheck="true">// 静态成员</span>
+  <span class="token keyword">static</span> method1 <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">static</span> method2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-  // 实例成员
-  method3 () {}
-  method4 = () =&gt; {}
-}
-</code></pre><p>静态成员 method1 和 method2 都是定义在 Func 构造函数上，method3 和 method4 区别在于 method3 定义在原型链之上 method4 只有在 Func 类实例化对象之后才有，转化ES5代码之后的样子</p>
-<pre><code>var Func = /** @class */ (function () {
-    function Func() {
-      this.method4 = function () { };
-    }
-    // 静态成员
-    Func.method1 = function () { };
-    // 实例成员
-    Func.prototype.method3 = function () { };
-    Func.method2 = function () { };
-    return Func;
-}());</code></pre><p>通过函数可以证明上述论点装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型 而且 method4 在实例化之前是一个不存在的属性所以没有 descriptor，就是为什么TS在针对Property Decorator不传递第三个参数的原因</p>
+  <span class="token comment" spellcheck="true">// 实例成员</span>
+  method3 <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  method4 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>静态成员 method1 和 method2 都是定义在 Func 构造函数上，method3 和 method4 区别在于 method3 定义在原型链之上 method4 只有在 Func 类实例化对象之后才有，转化ES5代码之后的样子</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">var</span> Func <span class="token operator">=</span> <span class="token comment" spellcheck="true">/** @class */</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>method4 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 静态成员</span>
+    Func<span class="token punctuation">.</span>method1 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 实例成员</span>
+    Func<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>method3 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    Func<span class="token punctuation">.</span>method2 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> Func<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过函数可以证明上述论点装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型 而且 method4 在实例化之前是一个不存在的属性所以没有 descriptor，就是为什么TS在针对Property Decorator不传递第三个参数的原因</p>
 <h3 id="访问器装饰器（get-set）"><a href="#访问器装饰器（get-set）" class="headerlink" title="访问器装饰器（get set）"></a>访问器装饰器（get set）</h3><p>访问器装饰器就是有get、set前缀的函数，用于控制属性的赋值及取值操作。上面说到和方法装饰器一样有三个参数</p>
 <p>定义装饰器三个参数</p>
-<pre><code>function configurable(value: boolean) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-    descriptor.configurable = value;
-  };
-}
-</code></pre><p>定义带有get，set的类</p>
-<pre><code>class Point {
-  private _x: number;
-  private _y: number;
-  constructor(x: number, y: number) {
-      this._x = x;
-      this._y = y;
-  }
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">function</span> <span class="token function">configurable</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">,</span> propertyKey<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> descriptor<span class="token punctuation">:</span> PropertyDescriptor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    descriptor<span class="token punctuation">.</span>configurable <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>定义带有get，set的类</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> _x<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  <span class="token keyword">private</span> _y<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>_y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @configurable(false)
-  get x() { return this._x; }
+  @<span class="token function">configurable</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span>
+  <span class="token keyword">get</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
-  @configurable(false)
-  get y() { return this._y; }
-}</code></pre><h3 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h3><p>属性装饰器由于没有返回 descriptor 所以只有两个参数，没有方法成员的属性描述对象，如果想要修改某一个静态属性，可以通过 Object.getOwnPropertyDescriptor 获取 descriptor</p>
+  @<span class="token function">configurable</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span>
+  <span class="token keyword">get</span> <span class="token function">y</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_y<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="属性装饰器"><a href="#属性装饰器" class="headerlink" title="属性装饰器"></a>属性装饰器</h3><p>属性装饰器由于没有返回 descriptor 所以只有两个参数，没有方法成员的属性描述对象，如果想要修改某一个静态属性，可以通过 Object.getOwnPropertyDescriptor 获取 descriptor</p>
 <p><em>注意在TypeScript中如何初始化属性修饰符，因此不提供属性描述符作为属性修饰符的参数。这是因为当定义原型的成员时，当前没有机制来描述实例属性，也无法观察或修改属性的初始化器。返回值也被忽略。因此，属性装饰器只能用于观察已为类声明特定名称的属性。</em></p>
 <p>定义类</p>
-<pre><code>class Point {
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
   @configurable
-  static x = 1;
-}</code></pre><p>定义属性装饰器获取类属性上的值进行更改</p>
-<pre><code>function configurable(target,x) {
-  let descriptor = Object.getOwnPropertyDescriptor(target, x)
-  Object.defineProperty(target, x, {
-    ...descriptor,
-    value: 2
-  })
-}
-console.log(Point.x) // 2 </code></pre><p>也可以使用 reflect-metadata 这个库它主要用来在声明的时候添加和读取元数据<br>使用的时候需要安装</p>
-<pre><code>npm i reflect-metadata --save</code></pre><p>之后在tsconfig.json 中配置emitDecoratorMetadata选项</p>
-<pre><code>{
-  &quot;compilerOptions&quot;: {
-    &quot;target&quot;: &quot;ES5&quot;,
-    &quot;experimentalDecorators&quot;: true,
-    &quot;emitDecoratorMetadata&quot;: true
-  }
-}</code></pre><p>定义类</p>
-<pre><code>class Greeter {
-    @format(&quot;Hello, %s&quot;)
-    greeting: string;
+  <span class="token keyword">static</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>定义属性装饰器获取类属性上的值进行更改</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">function</span> <span class="token function">configurable</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> descriptor <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> x<span class="token punctuation">)</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>descriptor<span class="token punctuation">,</span>
+    value<span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Point<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 2 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>也可以使用 reflect-metadata 这个库它主要用来在声明的时候添加和读取元数据<br>使用的时候需要安装</p>
+<pre class="line-numbers language-js"><code class="language-js">npm i reflect<span class="token operator">-</span>metadata <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后在tsconfig.json 中配置emitDecoratorMetadata选项</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token punctuation">{</span>
+  <span class="token string">"compilerOptions"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"target"</span><span class="token punctuation">:</span> <span class="token string">"ES5"</span><span class="token punctuation">,</span>
+    <span class="token string">"experimentalDecorators"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+    <span class="token string">"emitDecoratorMetadata"</span><span class="token punctuation">:</span> <span class="token keyword">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>定义类</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">Greeter</span> <span class="token punctuation">{</span>
+    @<span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"Hello, %s"</span><span class="token punctuation">)</span>
+    greeting<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
 
-    constructor(message: string) {
-        this.greeting = message;
-    }
-    greet() {
-        let formatString = getFormat(this, &quot;greeting&quot;);
-        return formatString.replace(&quot;%s&quot;, this.greeting);
-    }
-}</code></pre><p>// 利用 reflect-metadata 定义装饰器</p>
+    <span class="token keyword">constructor</span><span class="token punctuation">(</span>message<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>greeting <span class="token operator">=</span> message<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> formatString <span class="token operator">=</span> <span class="token function">getFormat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">"greeting"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> formatString<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>// 利用 reflect-metadata 定义装饰器</p>
 <p>Reflect.metadata 当作 Decorator 使用，当修饰类时，在类上添加元数据，当修饰类属性时，在类原型的属性上添加元数据</p>
 <p>Reflect.getMetadata 能获取属性</p>
-<pre><code>import &quot;reflect-metadata&quot;;
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token string">"reflect-metadata"</span><span class="token punctuation">;</span>
 
-const formatMetadataKey = Symbol(&quot;format&quot;);
-function format(formatString: string) {
-  return Reflect.metadata(formatMetadataKey, formatString);
-}
+<span class="token keyword">const</span> formatMetadataKey <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"format"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">format</span><span class="token punctuation">(</span>formatString<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Reflect<span class="token punctuation">.</span><span class="token function">metadata</span><span class="token punctuation">(</span>formatMetadataKey<span class="token punctuation">,</span> formatString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-function getFormat(target: any, propertyKey: string) {
-  return Reflect.getMetadata(formatMetadataKey, target, propertyKey);
-}</code></pre><h3 id="参数装饰器"><a href="#参数装饰器" class="headerlink" title="参数装饰器"></a>参数装饰器</h3><p>参数装饰器和属性装饰器一样都是在函数运行时调用的，它接收3个参数</p>
+<span class="token keyword">function</span> <span class="token function">getFormat</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">,</span> propertyKey<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Reflect<span class="token punctuation">.</span><span class="token function">getMetadata</span><span class="token punctuation">(</span>formatMetadataKey<span class="token punctuation">,</span> target<span class="token punctuation">,</span> propertyKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="参数装饰器"><a href="#参数装饰器" class="headerlink" title="参数装饰器"></a>参数装饰器</h3><p>参数装饰器和属性装饰器一样都是在函数运行时调用的，它接收3个参数</p>
 <ul>
 <li>如果装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型</li>
 <li>参数所处的函数名称</li>
 <li>参数在函数中形参中的位置</li>
 </ul>
-<pre><code>const obj = []
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 
-function require (value : string) {
-  return function (target : any , propertyKey : string ,parameterIndex : number) {
-    obj[parameterIndex] = value
-  }
-}
+<span class="token keyword">function</span> require <span class="token punctuation">(</span>value <span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>target <span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token punctuation">,</span> propertyKey <span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token punctuation">,</span>parameterIndex <span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    obj<span class="token punctuation">[</span>parameterIndex<span class="token punctuation">]</span> <span class="token operator">=</span> value
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-class Hello{
-  method(@require(&#39;lisi&#39;) name : string){
-    console.log(name)
-  }
-}
+<span class="token keyword">class</span> <span class="token class-name">Hello</span><span class="token punctuation">{</span>
+  <span class="token function">method</span><span class="token punctuation">(</span>@<span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lisi'</span><span class="token punctuation">)</span> name <span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-console.log(obj) // [&#39;lisi&#39;]</code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// ['lisi']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1085,7 +1107,7 @@ demo toSlug举例子，想象一
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

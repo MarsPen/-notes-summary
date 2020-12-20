@@ -16,7 +16,7 @@ categories:
 
 ### shutdown
 
-```
+```js
 shutdown -r  关机重启
 shutdown -h  关机不重启
 shutdown now  立刻关机

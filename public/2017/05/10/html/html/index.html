@@ -517,7 +517,8 @@ Doctype含义
 <pre><code>- 缺点只支持get请求
 - 优点简单方便，易理解，兼容性良好
 - 如下示例代码
-```
+
+```js
   //动态创建script，用于跨越操作
   function creatScriptTag(src) {
     var script = document.createElement(&#39;script&#39;);
@@ -536,7 +537,7 @@ Doctype含义
   } 
 ```
 
-```
+```php
   // index.php 
   &lt;?php
   header(&#39;Content-type: application/json&#39;);
@@ -556,8 +557,9 @@ Doctype含义
 <ul>
 <li>在请求头信息中增加Origin字段，用来说明此次请求来自那个源（协议+域名+端口），此字段可以设置相应白名单</li>
 <li>必须设置<code>Access-Control-Allow-Origin</code>字段，值要求是<code>Origin</code>字段的值或者是<em>，</em>的意思是接受任意域名的请求</li>
-<li>CORS请求默认不发送cookie和http认证信息，如果要发送，要在服务器端指<code>Access-Control-Allow-Credentials: true</code>,并且ajax请求必须打开withCredentials属性<pre><code>var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;</code></pre></li>
+<li>CORS请求默认不发送cookie和http认证信息，如果要发送，要在服务器端指<code>Access-Control-Allow-Credentials: true</code>,并且ajax请求必须打开withCredentials属性<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+xhr<span class="token punctuation">.</span>withCredentials <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 <li>如果选择发送cookie,<code>Access-Control-Allow-Origin</code>字段不能设为*，必须指定明确的，与当前网页一致的域名</li>
 </ul>
 
@@ -991,7 +993,7 @@ PHP 中的每个代码行都必须以分号结束，否则输出错误&lt;
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

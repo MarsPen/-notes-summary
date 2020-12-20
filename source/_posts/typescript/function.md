@@ -16,7 +16,7 @@ categories:
 ### 函数的创建 <br/>
 
 在 ts 中函数创建也氛围两种匿名函数和有命名的函数
-```
+```ts
 // 有名字的函数
 function people () {}
 
@@ -28,7 +28,7 @@ const people = function () {}
 - 只要参数类型是匹配的，那么就认为它是有效的函数类型，而不在乎参数名是否正
 - 设定了类型之后必须要返回相对应的类型，否则会报错
 - 如果函数没有返回任何值，也必须指定返回值类型为 void而不能留空
-```
+```ts
 /**
  * 
  * @param {*} x number
@@ -49,7 +49,7 @@ const add: (x: number, y: number) => number = (x: number, y: number):number => x
 - 带默认值的参数如果出现在必须参数**前面**，用户必须明确的传入 undefined 值来获得默认值
 - 当传入的参数个数不固定时，将所有参数收集到一个变量里和 js 中的 arguments 类似，剩余参数会被当做个数不限的可选参数。 可以一个都没有，同样也可以有任意个表达方式为（...）
 
-```
+```ts
 // 上述1
 const add: (x: number, y: number) => number = (x: number, y: number):number => x + y 
 add(1, 2) // 3
@@ -89,7 +89,7 @@ console.log(people('renbo', '28','170'))  // renbo 28 170
 
 重载允许一个函数接受不同数量或类型的参数时，作出不同的处理
 
-```
+```ts
 // 我们来实现一下通过传入不同的 type 来实现函数的加操作和乘法操作并返回相应的类型
 const compute = (type: number, ...resetData: number[]):number | string => {
   if (type === 1 ) {

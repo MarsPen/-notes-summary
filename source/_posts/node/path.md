@@ -20,7 +20,7 @@ path 模块提供用于处理文件路径和目录路径的实用工具<br/>
 path 模块的默认操作因 Node.js 应用程序运行所在的操作系统而异。 具体来说，当在 Windows 操作系统上运行时， path 模块将假定正在使用 Windows 风格的路径。<br/>
 
 ### 获取路径	path.dirname(p) <br/>
-```
+```js
 // 引入 path 模块
 const path = require('path');
 
@@ -30,7 +30,7 @@ console.log(path.dirname('/demo/js/test.js'));
 ```
 
 ### 获取文件名 path.basename(p) <br/>
-```
+```js
 // 引入 path 模块
 const path = require('path');
 
@@ -45,7 +45,7 @@ console.log( path.basename('/demo/js/test') );
 ```
 
 ### 获取文件扩展名 path.extname(p) <br/>
-```
+```js
 // 引入 path 模块
 const path = require('path');
 
@@ -54,7 +54,7 @@ console.log(path.extname('/demo/js/test.js'));
 ```
 
 ### 拼接文件路径 path.join([...paths])<br/>
-```
+```js
 // 引入 path 模块
 const path = require('path');
 
@@ -63,7 +63,7 @@ console.log(path.join('/demo', 'js', 'test.js'));
 ```
 
 ### 获取的绝对路径/文件名 path.reslove([from ...], to)<br/>
-```
+```js
 // 引入 path 模块
 const path = require('path');
 
@@ -81,7 +81,7 @@ console.log(path.resolve('/foo/bar', '/baz/file/');)
 ```
 
 ### 获取路径字符串的对象 path.parse(p)<br/>
-```
+```js
 // 引入 path 模块
 const path = require('path');
 
@@ -97,7 +97,7 @@ path.parse('/home/user/dir/file.txt');
 ```
 
 ### 获取规范化路径 path.normalize(p)<br/>
-```
+```js
 // 引入 path 模块
 const path = require('path');
 

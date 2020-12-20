@@ -419,7 +419,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    638
+                    635
                 </div>
                 
 
@@ -444,48 +444,61 @@
             <div id="articleContent">
                 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>很多时候我们本地生成的只有一个自己的ssh，但是多个ssh配置的场景也是蛮多的，所以想要commit，push等操作需要配置私钥ssh或者http，才能连接远程git仓库</p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>我们假设原来在~/.ssh目录下已经生成了一对密钥,此密钥文件名字是默认生成</p>
-<pre><code>id_rsa
-id_rsa.pub</code></pre><p>生成第二个ssh key</p>
-<pre><code>ssh-keygen -t rsa -C &quot;yourmail@gmail.com&quot;</code></pre><p>这里面不要一路回车，第一步需要我们手动填写保存文件的名字和路径</p>
-<pre><code>Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/renbo/.ssh/id_rsa): /Users/renbo/.ssh/id_rsa_github
-&lt;剩下两个直接回车&gt;</code></pre><p>这里我们用id_rsa_github来区别原有密钥对，避免被覆盖。<br>完成之后，我们可以看到~/.ssh目录下多了两个文件，变成：</p>
-<pre><code>id_rsa
-id_ras.pub
+<pre class="line-numbers language-js"><code class="language-js">id_rsa
+id_rsa<span class="token punctuation">.</span>pub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>生成第二个ssh key</p>
+<pre class="line-numbers language-js"><code class="language-js">ssh<span class="token operator">-</span>keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span>C <span class="token string">"yourmail@gmail.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里面不要一路回车，第一步需要我们手动填写保存文件的名字和路径</p>
+<pre class="line-numbers language-js"><code class="language-js">Generating <span class="token keyword">public</span><span class="token operator">/</span><span class="token keyword">private</span> rsa key pair<span class="token punctuation">.</span>
+Enter file <span class="token keyword">in</span> which to save the key <span class="token punctuation">(</span><span class="token operator">/</span>Users<span class="token regex">/renbo/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token operator">/</span>Users<span class="token regex">/renbo/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa_github
+<span class="token operator">&lt;</span>剩下两个直接回车<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>这里我们用id_rsa_github来区别原有密钥对，避免被覆盖。<br>完成之后，我们可以看到~/.ssh目录下多了两个文件，变成：</p>
+<pre class="line-numbers language-js"><code class="language-js">id_rsa
+id_ras<span class="token punctuation">.</span>pub
 id_rsa_github
-id_rsa_github.pub
-known_hosts</code></pre><p>打开ssh-agent(关于ssh-agent后续介绍)</p>
+id_rsa_github<span class="token punctuation">.</span>pub
+known_hosts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>打开ssh-agent(关于ssh-agent后续介绍)</p>
 <p>这里如果你用的github官方的bash，用：</p>
-<pre><code>ssh-agent -s</code></pre><p>如果是其他的，比如msysgit，用：</p>
-<pre><code>eval $(ssh-agent -s)</code></pre><p>略过这一步的话，下一步会提示这样的错误：Could not open a connection to your authentication agent.</p>
-<h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><pre><code>ssh-add ~/.ssh/id_rsa
-ssh-add ~/.ssh/id_rsa_github</code></pre><h3 id="创建config文件"><a href="#创建config文件" class="headerlink" title="创建config文件"></a>创建config文件</h3><p>在~/.ssh目录下创建名为config的文件。mkdir config</p>
+<pre class="line-numbers language-js"><code class="language-js">ssh<span class="token operator">-</span>agent <span class="token operator">-</span>s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果是其他的，比如msysgit，用：</p>
+<pre class="line-numbers language-js"><code class="language-js">eval <span class="token function">$</span><span class="token punctuation">(</span>ssh<span class="token operator">-</span>agent <span class="token operator">-</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>略过这一步的话，下一步会提示这样的错误：Could not open a connection to your authentication agent.</p>
+<h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><pre class="line-numbers language-js"><code class="language-js">ssh<span class="token operator">-</span>add <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa
+ssh<span class="token operator">-</span>add <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa_github<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="创建config文件"><a href="#创建config文件" class="headerlink" title="创建config文件"></a>创建config文件</h3><p>在~/.ssh目录下创建名为config的文件。mkdir config</p>
 <p>打开文件sudo vim config添加一下内容：</p>
-<pre><code># gitlab
-  Host gitlab.com
-  HostName gitlab.com
+<pre class="line-numbers language-js"><code class="language-js"># gitlab
+  Host gitlab<span class="token punctuation">.</span>com
+  HostName gitlab<span class="token punctuation">.</span>com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa_gitlab
+  IdentityFile <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa_gitlab
 
 # github
-  Host github.com
-  HostName github.com
+  Host github<span class="token punctuation">.</span>com
+  HostName github<span class="token punctuation">.</span>com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa_github</code></pre><p>其中，Host和HostName填写git服务器的域名。</p>
+  IdentityFile <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa_github<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中，Host和HostName填写git服务器的域名。</p>
 <p>IdentityFile指定私钥的路径。</p>
 <p>如果在Linux系统下提示错误：Bad owner or permissions on /home/gary/.ssh/config</p>
 <p>说明config权限过大，chmod命令调整：</p>
-<pre><code>chmod 644 ~/.ssh/config</code></pre><p>然后在github和gitlab上添加公钥即可。githua 在右上角的头像的设置中</p>
+<pre class="line-numbers language-js"><code class="language-js">chmod <span class="token number">644</span> <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后在github和gitlab上添加公钥即可。githua 在右上角的头像的设置中</p>
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>然后用ssh命令分别测试：</p>
-<pre><code>ssh -T git@github.com</code></pre><h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>  如果到这里你没有成功的话，别急，教你解决问题的终极办法–debug</p>
+<pre class="line-numbers language-js"><code class="language-js">ssh <span class="token operator">-</span>T git@github<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>  如果到这里你没有成功的话，别急，教你解决问题的终极办法–debug</p>
 <p>  比如测试github：</p>
-<pre><code>  ssh -vT git@github.com</code></pre><p>  -v 是输出编译信息，然后根据编译信息自己去解决问题吧。</p>
+<pre class="line-numbers language-js"><code class="language-js">  ssh <span class="token operator">-</span>vT git@github<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>  -v 是输出编译信息，然后根据编译信息自己去解决问题吧。</p>
 <h3 id="关于https用户名"><a href="#关于https用户名" class="headerlink" title="关于https用户名"></a>关于https用户名</h3><p>  如果之前有设置全局用户名和邮箱的话，需要unset一下</p>
-<pre><code>  git config --global --unset user.name
-  git config --global --unset user.email</code></pre><p>  然后在不同的仓库下设置局部的用户名和邮箱</p>
+<pre class="line-numbers language-js"><code class="language-js">  git config <span class="token operator">--</span>global <span class="token operator">--</span>unset user<span class="token punctuation">.</span>name
+  git config <span class="token operator">--</span>global <span class="token operator">--</span>unset user<span class="token punctuation">.</span>email<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>  然后在不同的仓库下设置局部的用户名和邮箱</p>
 <p>  比如在公司的repository下</p>
-<pre><code>  git config user.name &quot;yourname&quot; 
-  git config user.email &quot;youremail&quot;</code></pre><p>  在自己的github的仓库在执行刚刚的命令一遍即可。</p>
+<pre class="line-numbers language-js"><code class="language-js">  git config user<span class="token punctuation">.</span>name <span class="token string">"yourname"</span> 
+  git config user<span class="token punctuation">.</span>email <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>  在自己的github的仓库在执行刚刚的命令一遍即可。</p>
 <p>  这样就可以在不同的仓库，已不同的账号登录。</p>
 
             </div>
@@ -918,7 +931,7 @@ https://www.studyfe.cn/login
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

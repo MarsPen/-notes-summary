@@ -18,7 +18,7 @@ categories:
 **数组内置函数**<br/>
 
 1. for、foreach循环输出数组元素<br/>
-```
+````php
 <?php 
   // for循环
   for ($i = 0; $i <= 100; $i++) {
@@ -34,7 +34,7 @@ categories:
 ```
 
 2. count() 获取数组元素的个数 <br/>
-```
+```php
 <?php
   $nameLength = array('zhangsan', 'lisi', 'wangwu');
   echo count($nameLength); // 3
@@ -42,7 +42,7 @@ categories:
 ```
 
 3. 输出数组当前的元素的值，如果当前元素为空或者无值则返回FALSE <br/>
-``` 
+```php
 <?php
   $name = array('zhangsan', 'lisi', 'wangwu');
 
@@ -60,7 +60,7 @@ categories:
 ```
 
 4. 对当前数组进行排序<br/>
-```
+```php
   $numbers = array(1, 2, 3, 3, 4, 5, 6, 2);
 
   // 返回bool
@@ -70,7 +70,7 @@ categories:
 ```
 
 5. 合并数组<br/>
-```
+```php
 $arr = array(1, 2, 3, 3, 4, 5, 6, 2);
 $arr1 = array(10, 20, 30);
 
@@ -78,7 +78,7 @@ array_merge($arr, $arr1 );
 ```
 
 6. 压栈，出栈<br/>
-```
+```php
 $name = 'wang';
 $name1  = array('zhang', 'li');
 
@@ -93,13 +93,13 @@ array_unshift(array，val1，val2,...); //将参数按照顺序加入队列中
 
 7. 统计数组中值为出现的次数<br/>
 
-```
+```php
 $val = array(1, 2, 3, 3, 4, 3, 3, 1, 1);
 print_r(array_count_values($val));
 ```
 
 8. 过滤数组的元素<br/>
-```
+```php
 function func ($var) {
   return($var & 1);
 }
@@ -109,7 +109,7 @@ print_r(array_filter($val, 'func')); // 3
 ```
 
 9. 检查索引是否在数组中<br/>
-```
+```php
 $people = array('name'=>'renbo', 'age'=>'28');
 
 if (array_key_exists('name', $people)) {
@@ -118,7 +118,7 @@ if (array_key_exists('name', $people)) {
 ```
 
 10. 检查数组中是否存在指定的值<br/>
-```
+```php
 $val = array('zhangsan', 'lisi', 'wangwu');
 if (in_array('zhangsan', $val)) {
   echo '存在';
@@ -126,19 +126,19 @@ if (in_array('zhangsan', $val)) {
 ```
 
 11. 返回当前元素的Key<br/>
-```
+```php
 $people = array('name'=>'renbo', 'age'=>'28');
 key($people); //name
 ```
 
 12. 返回当前元素所有的key<br/>
-```
+```php
 $people = array('name'=>'renbo','age'=>'28');
 print_r(array_keys($people)); // name age
 ```
 
 **时间内置函数**<br/>
-```
+```php
 date(format[,timestamp])
 
 mktime(hour,minute,second,month,day,year) //省略的参数将以本地日期和时间代替
@@ -147,7 +147,7 @@ getdate([timestamp])
 ``` 
 
 **URL处理内置函数**<br/>
-```
+```php
 urlencode(str) 返回值字符串中所有的非字母和数字字符变成一个百分号(%) 和一个两位的十六进制数，空格被转换成+,-、_和.不做任何转换
 
 urldecode(str) 

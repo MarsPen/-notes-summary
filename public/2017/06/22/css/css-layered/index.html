@@ -426,14 +426,14 @@ SMACSS
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    774
+                    746
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -466,18 +466,19 @@ SMACSS
 Layout -Page structure 整个网站的「大架构」的外观   
 Module - Re-usable code bloks 不同页面公共模块 
 State - Active/Inactive etc 定义元素不同的状态 
-Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </code></pre><pre><code>.header {}
-.header-top {}
-.header-top__title {}
-.header-top__title--ico {}
+Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </code></pre><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.header</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.header-top</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.header-top__title</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.header-top__title--ico</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-&lt;div class=&quot;header&quot;&gt;
- &lt;div class=&quot;header-top&quot;&gt;
-   &lt;div class=&quot;header-top__title&quot;&gt;
-     &lt;div class=&quot;header-top__title--ico&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;</code></pre></li>
+&lt;div class=<span class="token string">"header"</span>>
+ &lt;div class=<span class="token string">"header-top"</span>>
+   &lt;div class=<span class="token string">"header-top__title"</span>>
+     &lt;div class=<span class="token string">"header-top__title--ico"</span>>&lt;/div>
+   &lt;/div>
+ &lt;/div>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h3><ol>
 <li><p>定义：block：块，Element：元素，Modifier：修饰符 </p>
@@ -485,15 +486,16 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </
 <li><p>设计原则：通过给每个元素添加它的父级block模块作为前缀</p>
 </li>
 <li><p>用途：有助于消除页面和body类对嵌套或者附加样式依赖</p>
-<pre><code>.product-details {}
-.product-details__header {}
-.product-details__header--ico {}
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.product-details</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.product-details__header</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.product-details__header--ico</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-&lt;div class=&quot;product-details&quot;&gt;
- &lt;div class=&quot;product-details__header&quot;&gt;
-   &lt;div class=&quot;product-details__header--ico&quot;&gt;&lt;div&gt; 
- &lt;/div&gt;
-&lt;/div&gt;</code></pre></li>
+&lt;div class=<span class="token string">"product-details"</span>>
+ &lt;div class=<span class="token string">"product-details__header"</span>>
+   &lt;div class=<span class="token string">"product-details__header--ico"</span>>&lt;div> 
+ &lt;/div>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="SUIT"><a href="#SUIT" class="headerlink" title="SUIT"></a>SUIT</h3><ol>
 <li>定义：SUIT起源于BEM，对组件名使用驼峰式和连字号把组件从他们的修饰和子孙后代中区分出来</li>
@@ -937,7 +939,7 @@ Theme - Typography and colour schemes 页面上所有「主视觉」的定义 </
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

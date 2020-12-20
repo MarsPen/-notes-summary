@@ -425,7 +425,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    962
                 </div>
                 
 
@@ -449,25 +449,26 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="自适应两栏布局"><a href="#自适应两栏布局" class="headerlink" title="自适应两栏布局"></a>自适应两栏布局</h3><p>利用BFC实现自适应两栏布局</p>
-<pre><code>/****css****/
-.aside{
-  float: left;
-  width: 180px;
-  height: 500px;
-  background-color: red;
-  opacity: 0.5;
-}
-.main{
-  overflow: hidden;
-  height: 500px;
-  background-color: green;
-}
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/****css****/</span>
+<span class="token selector"><span class="token class">.aside</span></span><span class="token punctuation">{</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">180</span>px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.main</span></span><span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-&lt;!--html--&gt;
-&lt;div class=&quot;box&quot;&gt;
-  &lt;div class=&quot;aside&quot;&gt;左侧&lt;/div&gt;
-  &lt;div class=&quot;main&quot;&gt;右侧&lt;/div&gt;
-&lt;/div&gt;</code></pre><p><img src="/images/%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80.gif" alt></p>
+&lt;!--html-->
+&lt;div class=<span class="token string">"box"</span>>
+  &lt;div class=<span class="token string">"aside"</span>>左侧&lt;/div>
+  &lt;div class=<span class="token string">"main"</span>>右侧&lt;/div>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80.gif" alt></p>
 <h3 id="圣杯布局和双飞翼布局"><a href="#圣杯布局和双飞翼布局" class="headerlink" title="圣杯布局和双飞翼布局"></a>圣杯布局和双飞翼布局</h3><ol>
 <li>解决什么问题：两边定宽，中间自适应的三栏布局，中间栏放在文档流前面以优先渲染</li>
 <li>相同点：三栏全float浮动，左右两栏加上负margin让中间栏div并排，形成三栏</li>
@@ -478,73 +479,75 @@
 </li>
 <li>圣杯布局代码</li>
 </ol>
-<pre><code>/****css****/
-.main{
-  width: 100%;
-  background: green;
-}
-.left{
-  left: -200px;
-  width: 200px;
-  margin-left: -100%;
-  background: yellowgreen;
-}
-.right{
-  right: -200px;
-  width: 200px;
-  margin-left: -200px;
-  background-color: red;
-}
-.main,.left,.right{
-  position: relative;
-  float: left;
-  min-height: 500px;
-}
-.container{
-  padding: 0 200px;
-  overflow: hidden;
-  border: 5px solid #ccc;
-}
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/****css****/</span>
+<span class="token selector"><span class="token class">.main</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.left</span></span><span class="token punctuation">{</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -<span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -<span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> yellowgreen<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.right</span></span><span class="token punctuation">{</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -<span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -<span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.main</span>,<span class="token class">.left</span>,<span class="token class">.right</span></span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.container</span></span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">5</span>px solid <span class="token hexcode">#ccc</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-&lt;!--html--&gt;
-&lt;div class=&quot;container&quot;&gt;
-  &lt;div class=&quot;main&quot;&gt;中间栏目&lt;/div&gt;
-  &lt;div class=&quot;left&quot;&gt;左侧栏目&lt;/div&gt;
-  &lt;div class=&quot;right&quot;&gt;右侧栏目&lt;/div&gt;
-&lt;/div&gt;</code></pre><ol start="5">
+&lt;!--html-->
+&lt;div class=<span class="token string">"container"</span>>
+  &lt;div class=<span class="token string">"main"</span>>中间栏目&lt;/div>
+  &lt;div class=<span class="token string">"left"</span>>左侧栏目&lt;/div>
+  &lt;div class=<span class="token string">"right"</span>>右侧栏目&lt;/div>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
 <li>双飞翼布局代码</li>
 </ol>
-<pre><code>/****css****/
-.main,.left,.right{
-  float: left;
-  min-height: 500px;
-}
-.main{
-  width:100%;
-  background-color: red;
-}
-.left{
-  width: 200px;
-  margin-left: -100%;
-  background-color: yellow;
-}
-.right{
-  width: 200px;
-  background-color: green;
-  margin-left: -200px;
-}
-.content{
-  margin: 0 200px;
-}
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/****css****/</span>
+<span class="token selector"><span class="token class">.main</span>,<span class="token class">.left</span>,<span class="token class">.right</span></span><span class="token punctuation">{</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.main</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.left</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -<span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.right</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -<span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.content</span></span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-&lt;!--html--&gt;
-&lt;div class=&quot;container&quot;&gt; 
-　　&lt;div class=&quot;main&quot;&gt;
-    　　&lt;div class=&quot;content&quot;&gt;中间栏目&lt;/div&gt; 
-    &lt;/div&gt;
-　　&lt;div class=&quot;left&quot;&gt;左侧栏目&lt;/div&gt; 
-　　&lt;div class=&quot;right&quot;&gt;右侧栏目&lt;/div&gt; 
-&lt;/div&gt;</code></pre><ol start="6">
+&lt;!--html-->
+&lt;div class=<span class="token string">"container"</span>> 
+　　&lt;div class=<span class="token string">"main"</span>>
+    　　&lt;div class=<span class="token string">"content"</span>>中间栏目&lt;/div> 
+    &lt;/div>
+　　&lt;div class=<span class="token string">"left"</span>>左侧栏目&lt;/div> 
+　　&lt;div class=<span class="token string">"right"</span>>右侧栏目&lt;/div> 
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="6">
 <li>效果图<br><img src="/images/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80.gif" alt></li>
 </ol>
 <h3 id="flex弹性盒子布局"><a href="#flex弹性盒子布局" class="headerlink" title="flex弹性盒子布局"></a>flex弹性盒子布局</h3><ol>
@@ -566,57 +569,59 @@
 <li><p>三栏布局示例 </p>
 </li>
 </ol>
-<pre><code>/****css****/
-.container{
-  display: flex;
-  min-height: 500px;
-}
-.main{
-  flex-grow:1;
-  background-color: red;
-}
-.left{
-  order: -1;
-  flex-basis: 200px;
-  background-color: yellow;
-}
-.right{
-  flex-basis: 200px;
-  background-color: green;
-}
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/****css****/</span>
+<span class="token selector"><span class="token class">.container</span></span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.main</span></span><span class="token punctuation">{</span>
+  <span class="token property">flex-grow</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.left</span></span><span class="token punctuation">{</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token property">flex-basis</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.right</span></span><span class="token punctuation">{</span>
+  <span class="token property">flex-basis</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-&lt;!--html--&gt;
-&lt;div class=&quot;container&quot;&gt;
-  &lt;div class=&quot;main&quot;&gt;中间内容区域&lt;/div&gt;
-  &lt;div class=&quot;left&quot;&gt;左边栏区域&lt;/div&gt;
-  &lt;div class=&quot;right&quot;&gt;右边栏区域&lt;/div&gt;
-&lt;/div&gt;</code></pre><h3 id="绝对定位布局"><a href="#绝对定位布局" class="headerlink" title="绝对定位布局"></a>绝对定位布局</h3><ol>
+&lt;!--html-->
+&lt;div class=<span class="token string">"container"</span>>
+  &lt;div class=<span class="token string">"main"</span>>中间内容区域&lt;/div>
+  &lt;div class=<span class="token string">"left"</span>>左边栏区域&lt;/div>
+  &lt;div class=<span class="token string">"right"</span>>右边栏区域&lt;/div>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="绝对定位布局"><a href="#绝对定位布局" class="headerlink" title="绝对定位布局"></a>绝对定位布局</h3><ol>
 <li>position:absolute绝对定位使元素脱离文档流，因此不占据当前层级的空间</li>
-<li>三栏布局代码示例<pre><code>/****css****/
-.container{
-position: relative;
-}
-.main,.left,.right{
-min-height: 500px;
-top: 0;
-}
-.main{
-background-color: red;
-margin: 0 200px;
-}
-.left{
-position: absolute;
-left: 0px;
-width: 200px;
-background-color: green;
-}
-.right{
-position:absolute;
-right: 0px;
-width: 200px;
-background: yellow;
-}
-</code></pre></li>
+<li>三栏布局代码示例<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/****css****/</span>
+<span class="token selector"><span class="token class">.container</span></span><span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.main</span>,<span class="token class">.left</span>,<span class="token class">.right</span></span><span class="token punctuation">{</span>
+<span class="token property">min-height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+<span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.main</span></span><span class="token punctuation">{</span>
+<span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.left</span></span><span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span>
+<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.right</span></span><span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+<span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span>
+<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <!--html-->
 <div class="container">
@@ -1074,7 +1079,7 @@ background: yellow;
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

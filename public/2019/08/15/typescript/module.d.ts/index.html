@@ -420,7 +420,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    221
+                    208
                 </div>
                 
 
@@ -443,50 +443,51 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]&gt;
+                <pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]</span>
+<span class="token comment" spellcheck="true">// Project: [~THE PROJECT NAME~]</span>
+<span class="token comment" spellcheck="true">// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]></span>
 
-/*~ This is the module template file. You should rename it to index.d.ts
+<span class="token comment" spellcheck="true">/*~ This is the module template file. You should rename it to index.d.ts
  *~ and place it in a folder with the same name as the module.
- *~ For example, if you were writing a file for &quot;super-greeter&quot;, this
- *~ file should be &#39;super-greeter/index.d.ts&#39;
- */
+ *~ For example, if you were writing a file for "super-greeter", this
+ *~ file should be 'super-greeter/index.d.ts'
+ */</span>
 
-/*~ If this module is a UMD module that exposes a global variable &#39;myLib&#39; when
+<span class="token comment" spellcheck="true">/*~ If this module is a UMD module that exposes a global variable 'myLib' when
  *~ loaded outside a module loader environment, declare that global here.
  *~ Otherwise, delete this declaration.
- */
-export as namespace myLib;
+ */</span>
+<span class="token keyword">export</span> as namespace myLib<span class="token punctuation">;</span>
 
-/*~ If this module has methods, declare them as functions like so.
- */
-export function myMethod(a: string): string;
-export function myOtherMethod(a: number): number;
+<span class="token comment" spellcheck="true">/*~ If this module has methods, declare them as functions like so.
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">myMethod</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">myOtherMethod</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
 
-/*~ You can declare types that are available via importing the module */
-export interface someType {
-    name: string;
-    length: number;
-    extras?: string[];
-}
+<span class="token comment" spellcheck="true">/*~ You can declare types that are available via importing the module */</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">someType</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+    extras<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-/*~ You can declare properties of the module using const, let, or var */
-export const myField: number;
+<span class="token comment" spellcheck="true">/*~ You can declare properties of the module using const, let, or var */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> myField<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
 
-/*~ If there are types, properties, or methods inside dotted names
- *~ of the module, declare them inside a &#39;namespace&#39;.
- */
-export namespace subProp {
-    /*~ For example, given this definition, someone could write:
-     *~   import { subProp } from &#39;yourModule&#39;;
+<span class="token comment" spellcheck="true">/*~ If there are types, properties, or methods inside dotted names
+ *~ of the module, declare them inside a 'namespace'.
+ */</span>
+<span class="token keyword">export</span> namespace subProp <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/*~ For example, given this definition, someone could write:
+     *~   import { subProp } from 'yourModule';
      *~   subProp.foo();
      *~ or
-     *~   import * as yourMod from &#39;yourModule&#39;;
+     *~   import * as yourMod from 'yourModule';
      *~   yourMod.subProp.foo();
-     */
-    export function foo(): void;
-}</code></pre>
+     */</span>
+    <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -651,19 +652,21 @@ export namespace subProp {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/15/typescript/module-class.d.ts/">
+                <a href="/2019/08/15/typescript/module-function.d.ts/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="class.d.ts">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="function.d.ts">
                         
-                        <span class="card-title">class.d.ts</span>
+                        <span class="card-title">function.d.ts</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
+                            // Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions
                         
                     </div>
                     <div class="publish-info">
@@ -918,7 +921,7 @@ export namespace subProp {
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

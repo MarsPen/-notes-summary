@@ -420,7 +420,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    303
+                    269
                 </div>
                 
 
@@ -443,68 +443,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]&gt;
+                <pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]</span>
+<span class="token comment" spellcheck="true">// Project: [~THE PROJECT NAME~]</span>
+<span class="token comment" spellcheck="true">// Definitions by: [~YOUR NAME~] &lt;[~A URL FOR YOU~]></span>
 
-/*~ If this library is callable (e.g. can be invoked as myLib(3)),
+<span class="token comment" spellcheck="true">/*~ If this library is callable (e.g. can be invoked as myLib(3)),
  *~ include those call signatures here.
  *~ Otherwise, delete this section.
- */
-declare function myLib(a: string): string;
-declare function myLib(a: number): number;
+ */</span>
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">myLib</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">myLib</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
 
-/*~ If you want the name of this library to be a valid type name,
+<span class="token comment" spellcheck="true">/*~ If you want the name of this library to be a valid type name,
  *~ you can do so here.
  *~
- *~ For example, this allows us to write &#39;var x: myLib&#39;;
- *~ Be sure this actually makes sense! If it doesn&#39;t, just
+ *~ For example, this allows us to write 'var x: myLib';
+ *~ Be sure this actually makes sense! If it doesn't, just
  *~ delete this declaration and add types inside the namespace below.
- */
-interface myLib {
-    name: string;
-    length: number;
-    extras?: string[];
-}
+ */</span>
+<span class="token keyword">interface</span> <span class="token class-name">myLib</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    length<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+    extras<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-/*~ If your library has properties exposed on a global variable,
+<span class="token comment" spellcheck="true">/*~ If your library has properties exposed on a global variable,
  *~ place them here.
  *~ You should also place types (interfaces and type alias) here.
- */
-declare namespace myLib {
-    //~ We can write &#39;myLib.timeout = 50;&#39;
-    let timeout: number;
+ */</span>
+<span class="token keyword">declare</span> namespace myLib <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//~ We can write 'myLib.timeout = 50;'</span>
+    <span class="token keyword">let</span> timeout<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
 
-    //~ We can access &#39;myLib.version&#39;, but not change it
-    const version: string;
+    <span class="token comment" spellcheck="true">//~ We can access 'myLib.version', but not change it</span>
+    <span class="token keyword">const</span> version<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
 
-    //~ There&#39;s some class we can create via &#39;let c = new myLib.Cat(42)&#39;
-    //~ Or reference e.g. &#39;function f(c: myLib.Cat) { ... }
-    class Cat {
-        constructor(n: number);
+    <span class="token comment" spellcheck="true">//~ There's some class we can create via 'let c = new myLib.Cat(42)'</span>
+    <span class="token comment" spellcheck="true">//~ Or reference e.g. 'function f(c: myLib.Cat) { ... }</span>
+    <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token punctuation">{</span>
+        <span class="token keyword">constructor</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        //~ We can read &#39;c.age&#39; from a &#39;Cat&#39; instance
-        readonly age: number;
+        <span class="token comment" spellcheck="true">//~ We can read 'c.age' from a 'Cat' instance</span>
+        readonly age<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
 
-        //~ We can invoke &#39;c.purr()&#39; from a &#39;Cat&#39; instance
-        purr(): void;
-    }
+        <span class="token comment" spellcheck="true">//~ We can invoke 'c.purr()' from a 'Cat' instance</span>
+        <span class="token function">purr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    //~ We can declare a variable as
-    //~   &#39;var s: myLib.CatSettings = { weight: 5, name: &quot;Maru&quot; };&#39;
-    interface CatSettings {
-        weight: number;
-        name: string;
-        tailLength?: number;
-    }
+    <span class="token comment" spellcheck="true">//~ We can declare a variable as</span>
+    <span class="token comment" spellcheck="true">//~   'var s: myLib.CatSettings = { weight: 5, name: "Maru" };'</span>
+    <span class="token keyword">interface</span> <span class="token class-name">CatSettings</span> <span class="token punctuation">{</span>
+        weight<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+        name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+        tailLength<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    //~ We can write &#39;const v: myLib.VetID = 42;&#39;
-    //~  or &#39;const v: myLib.VetID = &quot;bob&quot;;&#39;
-    type VetID = string | number;
+    <span class="token comment" spellcheck="true">//~ We can write 'const v: myLib.VetID = 42;'</span>
+    <span class="token comment" spellcheck="true">//~  or 'const v: myLib.VetID = "bob";'</span>
+    type VetID <span class="token operator">=</span> <span class="token keyword">string</span> <span class="token operator">|</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
 
-    //~ We can invoke &#39;myLib.checkCat(c)&#39; or &#39;myLib.checkCat(c, v);&#39;
-    function checkCat(c: Cat, s?: VetID);
-}</code></pre>
+    <span class="token comment" spellcheck="true">//~ We can invoke 'myLib.checkCat(c)' or 'myLib.checkCat(c, v);'</span>
+    <span class="token keyword">function</span> <span class="token function">checkCat</span><span class="token punctuation">(</span>c<span class="token punctuation">:</span> Cat<span class="token punctuation">,</span> s<span class="token operator">?</span><span class="token punctuation">:</span> VetID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -731,7 +732,9 @@ declare namespace myLib {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // Type definitions for [THE LIBRARY NAME] [OPTIONAL VERSION NUMBER]// Project: [THE PROJECT NAME]// Definitions by: [YO
+                            // Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
+// Project: [~THE PROJECT NAME~]
+// Definitions
                         
                     </div>
                     <div class="publish-info">
@@ -932,7 +935,7 @@ declare namespace myLib {
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

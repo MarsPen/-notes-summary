@@ -69,7 +69,7 @@ console.log(arrObj); //[1,2,3,4]
 
 该方法用于删除并返回数组的第一个元素,并将原数组的length -1
 
-```
+```js
 arrObj.shift() //1
 console.log(arrObj) //[2,3,4]
 ```

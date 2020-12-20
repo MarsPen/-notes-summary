@@ -18,7 +18,7 @@ categories:
 
 命令用于创建和管理（包括解压缩）
 
-  ```
+  ```js
   -c或——stdout：将压缩与解压缩的结果送到标准输出；
   -d或——decompress：执行解压缩；
   -f或-force：bzip2在压缩或解压缩时，若输出文件与现有文件同名，预设不会覆盖现有文件。若要覆盖。请使用此参数；
@@ -37,7 +37,7 @@ categories:
 
 命令用来解压缩文件
 
-  ```
+  ```js
   -a或——ascii：使用ASCII文字模式；
   -c或--stdout或--to-stdout：把解压后的文件输出到标准输出设备；
   -f或-force：强行解开压缩文件，不理会文件名称或硬连接是否存在以及该文件是否为符号连接；
@@ -58,7 +58,7 @@ categories:
 
 命令用来压缩文件
 
-  ```
+  ```js
   -a或——ascii：使用ASCII文字模式；
   -d或--decompress或----uncompress：解开压缩文件；
   -f或——force：强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接；
@@ -82,7 +82,7 @@ categories:
 
 命令用来解压压缩文件
 
-  ```
+  ```js
   -A或--catenate：新增文件到以存在的备份文件；
   -B：设置区块大小；
   -c或--create：建立新的备份文件；
@@ -107,8 +107,9 @@ categories:
   -N <日期格式> 或 --newer=<日期时间>：只将较指定日期更新的文件保存到备份文件里；
   --exclude=<范本样式>：排除符合范本样式的文件。
   ```
+
   实例<br/>
-  ```
+  ```js
   tar -cvf log.tar log2012.log    仅打包，不压缩！ 
   tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
   tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩 
@@ -118,7 +119,7 @@ categories:
 
 命令可以用来解压缩文件
 
-  ```
+  ```js
   -A：调整可执行的自动解压缩文件；
   -b<工作目录>：指定暂时存放文件的目录；
   -c：替每个被压缩的文件加上注释；
@@ -155,7 +156,7 @@ categories:
   -<压缩效率>：压缩效率是一个介于1~9的数值。
   ```
   实例<br/>
-  ```
+  ```js
   zip file1.zip file1 创建一个zip格式的压缩包 
   zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包 
   unzip file1.zip 解压一个zip格式压缩包 

@@ -10,8 +10,9 @@
   <meta name="description" content="ls显示文件或目录
 ls -F  //显示文件或目录
 ls -l  //列出文件详细信息l(list)
-ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)mkdir创建目录
-mkdir dir  //创建一个dir的目录">
+ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)
+mkdir创建目录
+mkdir dir  //创建一个dir的目">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -422,7 +423,7 @@ mkdir dir  //创建一个dir的目录">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    826
+                    804
                 </div>
                 
 
@@ -446,46 +447,63 @@ mkdir dir  //创建一个dir的目录">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>显示文件或目录</p>
-<pre><code>ls -F  //显示文件或目录
-ls -l  //列出文件详细信息l(list)
-ls -a  //列出当前目录下所有文件及目录，包括隐藏的a(all)</code></pre><h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>创建目录</p>
-<pre><code>mkdir dir  //创建一个dir的目录</code></pre><p>mkdir -p 创建目录，若无父目录，则创建p(parent) <br></p>
+<pre class="line-numbers language-js"><code class="language-js">ls <span class="token operator">-</span>F  <span class="token comment" spellcheck="true">//显示文件或目录</span>
+ls <span class="token operator">-</span>l  <span class="token comment" spellcheck="true">//列出文件详细信息l(list)</span>
+ls <span class="token operator">-</span>a  <span class="token comment" spellcheck="true">//列出当前目录下所有文件及目录，包括隐藏的a(all)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>创建目录</p>
+<pre class="line-numbers language-js"><code class="language-js">mkdir dir  <span class="token comment" spellcheck="true">//创建一个dir的目录</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>mkdir -p 创建目录，若无父目录，则创建p(parent) <br></p>
 <pre><code>mkdir -p /study/dir1/dir2  //创建一个的目录树</code></pre><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>切换目录</p>
-<pre><code>cd ..  //返回上级目录
-cd /home  //进入指定目录
-cd - //返回上次所在的目录 </code></pre><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会建立一个新的文件</p>
-<pre><code>touch temp  //创建名为temp的空文件
-touch temp  //如果temp存在则是修改文件的时间属性 可通过ls -l temp 查看文件属性</code></pre><h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>命令行输出内容</p>
-<pre><code>echo &#39;zhangsan&#39; &gt;&gt; temp //创建名为temp带有zhangsan内容的文件</code></pre><h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>查看文件内容</p>
-<pre><code>cat temp  //查看temp文件中的内容
-cat -n temp  //标示文件的行数</code></pre><h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>拷贝</p>
-<pre><code>cp temp newtemp  //复制temp文件
-cp temp/* .  //复制temp目录下的所有文件到当前工作目录 
-cp -a /temp/dir1 . //复制/temp/dir1目录到当前工作目录 
-cp -a temp newtemp //复制temp目录 </code></pre><h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>移动或重命名</p>
-<pre><code>mv temp newtemp //重命名/移动一个目录 </code></pre><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>删除文件</p>
-<pre><code>rm -f file  //删除file文件&#39; 
-rmdir dir1  //删除dir1的目录&#39; 
-rm -rf dir1 //递归删除dir1目录所有的内容
-rm -rf dir1 dir2 //同时删除两个目录及它们的内容 </code></pre><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>在文件系统中查找某文件</p>
-<pre><code>find / -name file1  //从根文件系统查找文件和目录 
-find / -user renbo  //查找属于用户 &#39;renbo&#39; 的文件和目录 
-find /home/renbo -name \*.bin  // 查找带home/renbo目录中有.bin结尾的文件 
-find / -name \*.rpm -exec chmod 755 &#39;{}&#39; \ //查找以.rpm结尾的文件并定义其权限 
-find / -xdev -name \*.rpm  //查找所有以.rpm结尾的文件</code></pre><h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><p>统计文本中行数、字数、字符数</p>
-<pre><code>wc gitcommit.sh  //3   13  73 gitcommit.sh</code></pre><h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>在文本文件中查找某个字符串</p>
-<pre><code>grep Aug /var/log/messages  //在文件 &#39;/var/log/messages&#39;中查找关键词&quot;Aug&quot; 
-grep ^Aug /var/log/messages  //在文件 &#39;/var/log/messages&#39;中查找以&quot;Aug&quot;开始的词汇 
-grep [0-9] /var/log/messages //选择 &#39;/var/log/messages&#39; 文件中所有包含数字的行 
-grep Aug -R /var/log/*  //在目录 &#39;/var/log&#39; 及随后的目录中搜索字符串&quot;Aug&quot; </code></pre><h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h3><p>树形结构显示目录，需要安装tree包</p>
-<pre><code>tree  //显示文件和目录由根目录开始的树形结构 </code></pre><h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前目录</p>
-<pre><code>pwd 显示当前路径</code></pre><h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><p>创建链接文件</p>
-<pre><code>ln -s file1 lnk1  //创建一个指向文件或目录的软链接 
-ln file1 lnk1  //创建一个指向文件或目录的物理链接 </code></pre><h3 id="more、less"><a href="#more、less" class="headerlink" title="more、less"></a>more、less</h3><p>分页显示文本文件内容</p>
-<pre><code>more file1  //查看一个长文件的内容 
-less file1  //类似于 &#39;more&#39; 命令，但是它允许在文件中和正向操作一样的反向操作 </code></pre><h3 id="head、tail"><a href="#head、tail" class="headerlink" title="head、tail"></a>head、tail</h3><pre><code>head -2 file1 //查看一个文件的前两行 
-tail -2 file1 //查看一个文件的最后两行 
-tail -f /var/log/messages //实时查看被添加到一个文件中的内容 </code></pre>
+<pre class="line-numbers language-js"><code class="language-js">cd <span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token comment" spellcheck="true">//返回上级目录</span>
+cd <span class="token operator">/</span>home  <span class="token comment" spellcheck="true">//进入指定目录</span>
+cd <span class="token operator">-</span> <span class="token comment" spellcheck="true">//返回上次所在的目录 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会建立一个新的文件</p>
+<pre class="line-numbers language-js"><code class="language-js">touch temp  <span class="token comment" spellcheck="true">//创建名为temp的空文件</span>
+touch temp  <span class="token comment" spellcheck="true">//如果temp存在则是修改文件的时间属性 可通过ls -l temp 查看文件属性</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>命令行输出内容</p>
+<pre class="line-numbers language-js"><code class="language-js">echo <span class="token string">'zhangsan'</span> <span class="token operator">></span><span class="token operator">></span> temp <span class="token comment" spellcheck="true">//创建名为temp带有zhangsan内容的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>查看文件内容</p>
+<pre class="line-numbers language-js"><code class="language-js">cat temp  <span class="token comment" spellcheck="true">//查看temp文件中的内容</span>
+cat <span class="token operator">-</span>n temp  <span class="token comment" spellcheck="true">//标示文件的行数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>拷贝</p>
+<pre class="line-numbers language-js"><code class="language-js">cp temp newtemp  <span class="token comment" spellcheck="true">//复制temp文件</span>
+cp temp<span class="token operator">/</span><span class="token operator">*</span> <span class="token punctuation">.</span>  <span class="token comment" spellcheck="true">//复制temp目录下的所有文件到当前工作目录 </span>
+cp <span class="token operator">-</span>a <span class="token operator">/</span>temp<span class="token operator">/</span>dir1 <span class="token punctuation">.</span> <span class="token comment" spellcheck="true">//复制/temp/dir1目录到当前工作目录 </span>
+cp <span class="token operator">-</span>a temp newtemp <span class="token comment" spellcheck="true">//复制temp目录 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>移动或重命名</p>
+<pre class="line-numbers language-js"><code class="language-js">mv temp newtemp <span class="token comment" spellcheck="true">//重命名/移动一个目录 </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>删除文件</p>
+<pre class="line-numbers language-js"><code class="language-js">rm <span class="token operator">-</span>f file  <span class="token comment" spellcheck="true">//删除file文件' </span>
+rmdir dir1  <span class="token comment" spellcheck="true">//删除dir1的目录' </span>
+rm <span class="token operator">-</span>rf dir1 <span class="token comment" spellcheck="true">//递归删除dir1目录所有的内容</span>
+rm <span class="token operator">-</span>rf dir1 dir2 <span class="token comment" spellcheck="true">//同时删除两个目录及它们的内容 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>在文件系统中查找某文件</p>
+<pre class="line-numbers language-js"><code class="language-js">find <span class="token operator">/</span> <span class="token operator">-</span>name file1  <span class="token comment" spellcheck="true">//从根文件系统查找文件和目录 </span>
+find <span class="token operator">/</span> <span class="token operator">-</span>user renbo  <span class="token comment" spellcheck="true">//查找属于用户 'renbo' 的文件和目录 </span>
+find <span class="token operator">/</span>home<span class="token operator">/</span>renbo <span class="token operator">-</span>name \<span class="token operator">*</span><span class="token punctuation">.</span>bin  <span class="token comment" spellcheck="true">// 查找带home/renbo目录中有.bin结尾的文件 </span>
+find <span class="token operator">/</span> <span class="token operator">-</span>name \<span class="token operator">*</span><span class="token punctuation">.</span>rpm <span class="token operator">-</span>exec chmod <span class="token number">755</span> <span class="token string">'{}'</span> \ <span class="token comment" spellcheck="true">//查找以.rpm结尾的文件并定义其权限 </span>
+find <span class="token operator">/</span> <span class="token operator">-</span>xdev <span class="token operator">-</span>name \<span class="token operator">*</span><span class="token punctuation">.</span>rpm  <span class="token comment" spellcheck="true">//查找所有以.rpm结尾的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><p>统计文本中行数、字数、字符数</p>
+<pre class="line-numbers language-js"><code class="language-js">wc gitcommit<span class="token punctuation">.</span>sh  <span class="token comment" spellcheck="true">//3   13  73 gitcommit.sh</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>在文本文件中查找某个字符串</p>
+<pre class="line-numbers language-js"><code class="language-js">grep Aug <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>log<span class="token operator">/</span>messages  <span class="token comment" spellcheck="true">//在文件 '/var/log/messages'中查找关键词"Aug" </span>
+grep <span class="token operator">^</span>Aug <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>log<span class="token operator">/</span>messages  <span class="token comment" spellcheck="true">//在文件 '/var/log/messages'中查找以"Aug"开始的词汇 </span>
+grep <span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>log<span class="token operator">/</span>messages <span class="token comment" spellcheck="true">//选择 '/var/log/messages' 文件中所有包含数字的行 </span>
+grep Aug <span class="token operator">-</span>R <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>log<span class="token operator">/</span><span class="token operator">*</span>  <span class="token comment" spellcheck="true">//在目录 '/var/log' 及随后的目录中搜索字符串"Aug" </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h3><p>树形结构显示目录，需要安装tree包</p>
+<pre class="line-numbers language-js"><code class="language-js">tree  <span class="token comment" spellcheck="true">//显示文件和目录由根目录开始的树形结构 </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>显示当前目录</p>
+<pre class="line-numbers language-js"><code class="language-js">pwd 显示当前路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><p>创建链接文件</p>
+<pre class="line-numbers language-js"><code class="language-js">ln <span class="token operator">-</span>s file1 lnk1  <span class="token comment" spellcheck="true">//创建一个指向文件或目录的软链接 </span>
+ln file1 lnk1  <span class="token comment" spellcheck="true">//创建一个指向文件或目录的物理链接 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="more、less"><a href="#more、less" class="headerlink" title="more、less"></a>more、less</h3><p>分页显示文本文件内容</p>
+<pre class="line-numbers language-js"><code class="language-js">more file1  <span class="token comment" spellcheck="true">//查看一个长文件的内容 </span>
+less file1  <span class="token comment" spellcheck="true">//类似于 'more' 命令，但是它允许在文件中和正向操作一样的反向操作 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="head、tail"><a href="#head、tail" class="headerlink" title="head、tail"></a>head、tail</h3><pre class="line-numbers language-js"><code class="language-js">head <span class="token operator">-</span><span class="token number">2</span> file1 <span class="token comment" spellcheck="true">//查看一个文件的前两行 </span>
+tail <span class="token operator">-</span><span class="token number">2</span> file1 <span class="token comment" spellcheck="true">//查看一个文件的最后两行 </span>
+tail <span class="token operator">-</span>f <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>log<span class="token operator">/</span>messages <span class="token comment" spellcheck="true">//实时查看被添加到一个文件中的内容 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -921,7 +939,7 @@ ps -aux
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

@@ -420,7 +420,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    144
+                    138
                 </div>
                 
 
@@ -445,22 +445,24 @@
             <div id="articleContent">
                 <p>错误处理是所有应用程序的重要组成部分。要抛出异常，请使用 JavaScript 的 throw  关键字。在 JavaScript 中，通常使用 Error 对象和消息来表示错误<br></p>
 <p><strong>捕获异常try/catch</strong><br></p>
-<pre><code>  function fun () {
-    throw new Error(&quot;error!&quot;);
-  }
-  try {
-    fun();
-  } catch (e) {
-    console.log(e.message);
-  }</code></pre><p><strong>finally关键字</strong><br></p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">function</span> fun <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"error!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>finally关键字</strong><br></p>
 <p>catch部分只有在抛出错误时才执行。finally部分仍然执行，尽管在try部分中抛出了任何错误<br></p>
-<pre><code>try { 
-  throw new Error(&quot;throw error&quot;); 
-} catch (e) { 
-  console.log(e.message); 
-} finally { 
-  console.log(&quot;不论抛出什么错误，我依然会执行&quot;); 
-} </code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">try</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"throw error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"不论抛出什么错误，我依然会执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -892,7 +894,7 @@ let obj
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

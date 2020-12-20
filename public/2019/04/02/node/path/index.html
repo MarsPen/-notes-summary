@@ -419,14 +419,14 @@ path使用特点path 模块的默认操作因 Node.js 应用程序运行所在�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    442
+                    384
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -444,58 +444,65 @@ path使用特点path 模块的默认操作因 Node.js 应用程序运行所在�
             <div id="articleContent">
                 <p>path 模块提供用于处理文件路径和目录路径的实用工具<br></p>
 <h3 id="path使用特点"><a href="#path使用特点" class="headerlink" title="path使用特点"></a>path使用特点</h3><p>path 模块的默认操作因 Node.js 应用程序运行所在的操作系统而异。 具体来说，当在 Windows 操作系统上运行时， path 模块将假定正在使用 Windows 风格的路径。<br></p>
-<h3 id="获取路径-path-dirname-p"><a href="#获取路径-path-dirname-p" class="headerlink" title="获取路径    path.dirname(p) "></a>获取路径    path.dirname(p) <br></h3><pre><code>// 引入 path 模块
-const path = require(&#39;path&#39;);
+<h3 id="获取路径-path-dirname-p"><a href="#获取路径-path-dirname-p" class="headerlink" title="获取路径    path.dirname(p) "></a>获取路径    path.dirname(p) <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 path 模块</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出 /demo/js/test.js
-console.log(path.dirname(&#39;/demo/js/test.js&#39;));
-</code></pre><h3 id="获取文件名-path-basename-p"><a href="#获取文件名-path-basename-p" class="headerlink" title="获取文件名 path.basename(p) "></a>获取文件名 path.basename(p) <br></h3><pre><code>// 引入 path 模块
-const path = require(&#39;path&#39;);
+<span class="token comment" spellcheck="true">// 输出 /demo/js/test.js</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">dirname</span><span class="token punctuation">(</span><span class="token string">'/demo/js/test.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="获取文件名-path-basename-p"><a href="#获取文件名-path-basename-p" class="headerlink" title="获取文件名 path.basename(p) "></a>获取文件名 path.basename(p) <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 path 模块</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-/ 输出：test.js
-console.log( path.basename(&#39;/demo/js/test.js&#39;) );
+<span class="token operator">/</span> 输出：test<span class="token punctuation">.</span>js
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> path<span class="token punctuation">.</span><span class="token function">basename</span><span class="token punctuation">(</span><span class="token string">'/demo/js/test.js'</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出：test
-console.log( path.basename(&#39;/demo/js/test/&#39;) );
+<span class="token comment" spellcheck="true">// 输出：test</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> path<span class="token punctuation">.</span><span class="token function">basename</span><span class="token punctuation">(</span><span class="token string">'/demo/js/test/'</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出：test
-console.log( path.basename(&#39;/demo/js/test&#39;) );</code></pre><h3 id="获取文件扩展名-path-extname-p"><a href="#获取文件扩展名-path-extname-p" class="headerlink" title="获取文件扩展名 path.extname(p) "></a>获取文件扩展名 path.extname(p) <br></h3><pre><code>// 引入 path 模块
-const path = require(&#39;path&#39;);
+<span class="token comment" spellcheck="true">// 输出：test</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> path<span class="token punctuation">.</span><span class="token function">basename</span><span class="token punctuation">(</span><span class="token string">'/demo/js/test'</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="获取文件扩展名-path-extname-p"><a href="#获取文件扩展名-path-extname-p" class="headerlink" title="获取文件扩展名 path.extname(p) "></a>获取文件扩展名 path.extname(p) <br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 path 模块</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出 .js
-console.log(path.extname(&#39;/demo/js/test.js&#39;));</code></pre><h3 id="拼接文件路径-path-join-…paths"><a href="#拼接文件路径-path-join-…paths" class="headerlink" title="拼接文件路径 path.join([…paths])"></a>拼接文件路径 path.join([…paths])<br></h3><pre><code>// 引入 path 模块
-const path = require(&#39;path&#39;);
+<span class="token comment" spellcheck="true">// 输出 .js</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">extname</span><span class="token punctuation">(</span><span class="token string">'/demo/js/test.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="拼接文件路径-path-join-…paths"><a href="#拼接文件路径-path-join-…paths" class="headerlink" title="拼接文件路径 path.join([…paths])"></a>拼接文件路径 path.join([…paths])<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 path 模块</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// /demo/js/test.js
-console.log(path.join(&#39;/demo&#39;, &#39;js&#39;, &#39;test.js&#39;));</code></pre><h3 id="获取的绝对路径-文件名-path-reslove-from-…-to"><a href="#获取的绝对路径-文件名-path-reslove-from-…-to" class="headerlink" title="获取的绝对路径/文件名 path.reslove([from …], to)"></a>获取的绝对路径/文件名 path.reslove([from …], to)<br></h3><pre><code>// 引入 path 模块
-const path = require(&#39;path&#39;);
+<span class="token comment" spellcheck="true">// /demo/js/test.js</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/demo'</span><span class="token punctuation">,</span> <span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token string">'test.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="获取的绝对路径-文件名-path-reslove-from-…-to"><a href="#获取的绝对路径-文件名-path-reslove-from-…-to" class="headerlink" title="获取的绝对路径/文件名 path.reslove([from …], to)"></a>获取的绝对路径/文件名 path.reslove([from …], to)<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 path 模块</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出当前项目的绝对路径
-console.log(path.reslove(&#39;&#39;));
+<span class="token comment" spellcheck="true">// 输出当前项目的绝对路径</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">reslove</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出当前项目的绝对路径
-console.log(path.reslove(&#39;.&#39;));
+<span class="token comment" spellcheck="true">// 输出当前项目的绝对路径</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">reslove</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出 /foo/bar/baz
-console.log( path.resolve(&#39;/foo/bar&#39;, &#39;./baz&#39;) );
+<span class="token comment" spellcheck="true">// 输出 /foo/bar/baz</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'./baz'</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出 /baz/file
-console.log(path.resolve(&#39;/foo/bar&#39;, &#39;/baz/file/&#39;);)</code></pre><h3 id="获取路径字符串的对象-path-parse-p"><a href="#获取路径字符串的对象-path-parse-p" class="headerlink" title="获取路径字符串的对象 path.parse(p)"></a>获取路径字符串的对象 path.parse(p)<br></h3><pre><code>// 引入 path 模块
-const path = require(&#39;path&#39;);
+<span class="token comment" spellcheck="true">// 输出 /baz/file</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'/baz/file/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="获取路径字符串的对象-path-parse-p"><a href="#获取路径字符串的对象-path-parse-p" class="headerlink" title="获取路径字符串的对象 path.parse(p)"></a>获取路径字符串的对象 path.parse(p)<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 path 模块</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-path.parse(&#39;/home/user/dir/file.txt&#39;);
+path<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">'/home/user/dir/file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 返回:
-// { root: &#39;/&#39;,
-//   dir: &#39;/home/user/dir&#39;,
-//   base: &#39;file.txt&#39;,
-//   ext: &#39;.txt&#39;,
-//   name: &#39;file&#39; }
-</code></pre><h3 id="获取规范化路径-path-normalize-p"><a href="#获取规范化路径-path-normalize-p" class="headerlink" title="获取规范化路径 path.normalize(p)"></a>获取规范化路径 path.normalize(p)<br></h3><pre><code>// 引入 path 模块
-const path = require(&#39;path&#39;);
+<span class="token comment" spellcheck="true">// 返回:</span>
+<span class="token comment" spellcheck="true">// { root: '/',</span>
+<span class="token comment" spellcheck="true">//   dir: '/home/user/dir',</span>
+<span class="token comment" spellcheck="true">//   base: 'file.txt',</span>
+<span class="token comment" spellcheck="true">//   ext: '.txt',</span>
+<span class="token comment" spellcheck="true">//   name: 'file' }</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="获取规范化路径-path-normalize-p"><a href="#获取规范化路径-path-normalize-p" class="headerlink" title="获取规范化路径 path.normalize(p)"></a>获取规范化路径 path.normalize(p)<br></h3><pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入 path 模块</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 输出 &#39;/foo/bar/baz/asdf&#39;
-path.normalize(&#39;/foo/bar//baz/asdf/quux/..&#39;);</code></pre><p><a href="https://nodejs.org/docs/latest-v9.x/api/path.html" target="_blank" rel="noopener">其他方法请参考 Node Api </a><br></p>
+<span class="token comment" spellcheck="true">// 输出 '/foo/bar/baz/asdf'</span>
+path<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token string">'/foo/bar//baz/asdf/quux/..'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://nodejs.org/docs/latest-v9.x/api/path.html" target="_blank" rel="noopener">其他方法请参考 Node Api </a><br></p>
 
             </div>
             <hr />
@@ -926,7 +933,7 @@ fs使用特点1、同步的版本将阻塞整个进程，直到它们完成（�
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

@@ -22,14 +22,14 @@ CSS 预处理器赋予我们很多css强大的功能，能够很清晰地实现�
 
 Sass
 
-```
+```css
 .header
   background-color:red
 ```
 
 Less & SCSS
 
-```
+```css
 .header {
   background-color:red;
 }
@@ -37,7 +37,7 @@ Less & SCSS
 
 Stylus
 
-```
+```css
 .header
   background-color:red
 ```
@@ -48,7 +48,7 @@ Stylus
 
 less
 
-```
+```css
 .header {
   &.title {
     color: red;
@@ -62,7 +62,7 @@ less
 
 Sass
 
-```
+```css
 $bg: #ccc;
 
 .header 
@@ -70,7 +70,7 @@ $bg: #ccc;
 ```
 
 Less
-```
+```css
 @bg: #ccc;
 
 header {
@@ -80,7 +80,7 @@ header {
 
 Stylus
 
-```
+```css
 bg = #ccc
 
 header
@@ -90,21 +90,21 @@ header
 ### @import
 
 Sass 只能使用 url() 表达式引入时进行变量插值
-  ```
+  ```css
   $public: public;
 
   @import url(styles.#{$public}.css);
   ```
 
 Less可以在字符串中进行插值：
-  ```
+  ```css
   @public: public;
 
   @import "styles.@{public}.css";
   ```
 
 Stylus 可以利用其字符串拼接的功能实现
-  ```
+  ```css
   public = "public"
 
   @import "styles." + public + ".css"
@@ -116,7 +116,7 @@ Stylus 可以利用其字符串拼接的功能实现
 作用: 样式层面的抽象
 
 Sass
-  ```
+  ```css
   @mixin product-public-text {
     font: {
       size: 20px;
@@ -132,7 +132,7 @@ Sass
   ```
 
 Less
-  ```
+  ```css
   .product-public-font-weight {
     font-weight: 600;
   }
@@ -151,7 +151,7 @@ Less
 ### 继承
 
 Sass
-  ```
+  ```css
   .header {
     background-color: red;
   }
@@ -161,7 +161,7 @@ Sass
   ```
 
 less
-  ```
+  ```css
   .header {
     background-color: red;
   }
@@ -171,7 +171,7 @@ less
   ```
 
 Stylus,Scss
-  ```
+  ```css
   .header
     background-color: red;
 

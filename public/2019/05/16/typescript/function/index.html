@@ -12,8 +12,9 @@
 function people () {}
 
 // 匿名函数
-const people = function () {}函数的参数类型和返回值类型 
-只要">
+const people = function () {}
+函数的参数类型和返回值类型 
+只">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -424,7 +425,7 @@ const people = function () {}函数的参数类型和返回值类型
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    827
+                    871
                 </div>
                 
 
@@ -448,20 +449,22 @@ const people = function () {}函数的参数类型和返回值类型
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="函数的创建"><a href="#函数的创建" class="headerlink" title="函数的创建 "></a>函数的创建 <br></h3><p>在 ts 中函数创建也氛围两种匿名函数和有命名的函数</p>
-<pre><code>// 有名字的函数
-function people () {}
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 有名字的函数</span>
+<span class="token keyword">function</span> people <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-// 匿名函数
-const people = function () {}</code></pre><h3 id="函数的参数类型和返回值类型"><a href="#函数的参数类型和返回值类型" class="headerlink" title="函数的参数类型和返回值类型 "></a>函数的参数类型和返回值类型 <br></h3><ul>
+<span class="token comment" spellcheck="true">// 匿名函数</span>
+<span class="token keyword">const</span> people <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="函数的参数类型和返回值类型"><a href="#函数的参数类型和返回值类型" class="headerlink" title="函数的参数类型和返回值类型 "></a>函数的参数类型和返回值类型 <br></h3><ul>
 <li>只要参数类型是匹配的，那么就认为它是有效的函数类型，而不在乎参数名是否正</li>
 <li>设定了类型之后必须要返回相对应的类型，否则会报错</li>
-<li>如果函数没有返回任何值，也必须指定返回值类型为 void而不能留空<pre><code>/**
+<li>如果函数没有返回任何值，也必须指定返回值类型为 void而不能留空<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">/**
 * 
 * @param {*} x number
 * @param {*} y number
 *  return add number 
-*/
-</code></pre></li>
+*/</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <p>const add = (x: number, y: number): number =&gt; x + y;<br>// 书写完整的函数类型<br>const add: (x: number, y: number) =&gt; number = (x: number, y: number):number =&gt; x + y </p>
 <pre><code>
@@ -472,24 +475,68 @@ const people = function () {}</code></pre><h3 id="函数的参数类型和返回
 - 所有必须参数**后面**的带默认初始化的参数都是可选的，调用时可省略
 - 带默认值的参数如果出现在必须参数**前面**，用户必须明确的传入 undefined 值来获得默认值
 - 当传入的参数个数不固定时，将所有参数收集到一个变量里和 js 中的 arguments 类似，剩余参数会被当做个数不限的可选参数。 可以一个都没有，同样也可以有任意个表达方式为（...）
-</code></pre><p>// 上述1<br>const add: (x: number, y: number) =&gt; number = (x: number, y: number):number =&gt; x + y<br>add(1, 2) // 3<br>add(1) // 报错<br>add(1,2,3) // 报错</p>
-<p>// 上述2<br>const yourName = (firstName: string, lastName?: string): string =&gt; <code>${firstName}+${lastName}</code>;<br>console.log(yourName(‘ren’, ‘bo’)) //ren+bo<br>console.log(yourName(‘ren’)) // ren+undefined</p>
-<p>// 上述3<br>const yourName = (firstName: string, lastName?: string): string =&gt; <code>${firstName}+${lastName}</code>;<br>console.log(yourName(‘ren’, ‘bo’)) //ren+bo<br>console.log(yourName(‘ren’, undefined)) // ren+undefined</p>
-<p>//上述4<br>const yourName = (firstName: string, lastName=’bo’): string =&gt; <code>${firstName}+${lastName}</code>;<br>console.log(yourName(‘ren’, ‘bo’)) //ren+bo<br>console.log(yourName(‘ren’)) // ren+bo</p>
-<p>// 上述5<br>const yourName = ( lastName=’bo’, firstName: string): string =&gt; <code>${firstName}+${lastName}</code>;<br>console.log(yourName(‘ren’, ‘bo’)) //bo+ren<br>console.log(yourName(undefined, ‘ren’)) // ren+bo</p>
-<p>// 上述6<br>const people = ( name: string, …otherProperty: string[]): string =&gt; {<br>  return name + “ “ + otherProperty.join(“ “);<br>}<br>console.log(people(‘renbo’, ‘28’,’170’))  // renbo 28 170 </p>
-<pre><code>
-### 函数的重载 &lt;br/&gt;
 
-重载允许一个函数接受不同数量或类型的参数时，作出不同的处理
-</code></pre><p>// 我们来实现一下通过传入不同的 type 来实现函数的加操作和乘法操作并返回相应的类型<br>const compute = (type: number, …resetData: number[]):number | string =&gt; {<br>  if (type === 1 ) {<br>    return resetData.reduce((a:number, b:number):number =&gt; a + b);<br>  } else if (type === 2) {<br>    return String(resetData.reduce((a:number, b:number):number =&gt; a * b));<br>  }<br>}<br>console.log(compute(1, 3, 4, 5, 6)) // 18<br>console.log(compute(2, 3, 4, 5, 6)) // ‘360’</p>
-<p>// 通过上面的实现唯一的缺点就是不能明确通过type返回的相对应的计算的值和类型</p>
-<p>const compute = (type: number, …resetData: number[]):number;<br>const compute = (type: number, …resetData: number[]):string;<br>const compute = (type: number, …resetData: number[]):number | string =&gt; {<br>  if (type === 1 ) {<br>    return resetData.reduce((a:number, b:number):number =&gt; a + b);<br>  } else if (type === 2) {<br>    return String(resetData.reduce((a:number, b:number):number =&gt; a * b));<br>  }<br>}<br>console.log(compute(1, 3, 4, 5, 6)) // 18<br>console.log(compute(2, 3, 4, 5, 6)) // ‘360’</p>
-<p>// 上例中，我们重复定义了多次函数 compute，前几次都是函数定义，最后一次是函数实现。</p>
-<pre><code>
+```ts
+// 上述1
+const add: (x: number, y: number) =&gt; number = (x: number, y: number):number =&gt; x + y 
+add(1, 2) // 3
+add(1) // 报错
+add(1,2,3) // 报错
+
+// 上述2
+const yourName = (firstName: string, lastName?: string): string =&gt; `${firstName}+${lastName} `;
+console.log(yourName(&#39;ren&#39;, &#39;bo&#39;)) //ren+bo
+console.log(yourName(&#39;ren&#39;)) // ren+undefined
 
 
-</code></pre>
+// 上述3
+const yourName = (firstName: string, lastName?: string): string =&gt; `${firstName}+${lastName} `;
+console.log(yourName(&#39;ren&#39;, &#39;bo&#39;)) //ren+bo
+console.log(yourName(&#39;ren&#39;, undefined)) // ren+undefined
+
+//上述4
+const yourName = (firstName: string, lastName=&#39;bo&#39;): string =&gt; `${firstName}+${lastName} `;
+console.log(yourName(&#39;ren&#39;, &#39;bo&#39;)) //ren+bo
+console.log(yourName(&#39;ren&#39;)) // ren+bo
+
+// 上述5
+const yourName = ( lastName=&#39;bo&#39;, firstName: string): string =&gt; `${firstName}+${lastName} `;
+console.log(yourName(&#39;ren&#39;, &#39;bo&#39;)) //bo+ren
+console.log(yourName(undefined, &#39;ren&#39;)) // ren+bo
+
+
+// 上述6
+const people = ( name: string, ...otherProperty: string[]): string =&gt; {
+  return name + &quot; &quot; + otherProperty.join(&quot; &quot;);
+}
+console.log(people(&#39;renbo&#39;, &#39;28&#39;,&#39;170&#39;))  // renbo 28 170 </code></pre><h3 id="函数的重载"><a href="#函数的重载" class="headerlink" title="函数的重载 "></a>函数的重载 <br></h3><p>重载允许一个函数接受不同数量或类型的参数时，作出不同的处理</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// 我们来实现一下通过传入不同的 type 来实现函数的加操作和乘法操作并返回相应的类型</span>
+<span class="token keyword">const</span> compute <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> <span class="token operator">...</span>resetData<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">number</span> <span class="token operator">|</span> <span class="token keyword">string</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token number">1</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> resetData<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">number</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">String</span><span class="token punctuation">(</span>resetData<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">number</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">*</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">compute</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 18</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">compute</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// '360'</span>
+
+<span class="token comment" spellcheck="true">// 通过上面的实现唯一的缺点就是不能明确通过type返回的相对应的计算的值和类型</span>
+
+<span class="token keyword">const</span> compute <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> <span class="token operator">...</span>resetData<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> compute <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> <span class="token operator">...</span>resetData<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> compute <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> <span class="token operator">...</span>resetData<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">number</span> <span class="token operator">|</span> <span class="token keyword">string</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token number">1</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> resetData<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">number</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">String</span><span class="token punctuation">(</span>resetData<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span><span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">number</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">*</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">compute</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 18</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">compute</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// '360'</span>
+
+<span class="token comment" spellcheck="true">// 上例中，我们重复定义了多次函数 compute，前几次都是函数定义，最后一次是函数实现。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -918,7 +965,7 @@ TypeScript的
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

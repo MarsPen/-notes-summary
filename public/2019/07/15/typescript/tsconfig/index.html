@@ -420,7 +420,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    618
+                    560
                 </div>
                 
 
@@ -446,44 +446,48 @@
                 <p>## </p>
 <p>如果一个目录下存在一个tsconfig.json文件，它会把一个文件夹转换为项目，也意味着这个目录是TypeScript项目的根目录</p>
 <h3 id="使用tsconfig-json"><a href="#使用tsconfig-json" class="headerlink" title="使用tsconfig.json"></a>使用tsconfig.json</h3><p>初始化 tsconfig.json 或者手动建立文件tsconfig.json</p>
-<pre><code>tsc --init</code></pre><p>如果项目配置了tsconfig.json，那么在进行转换的时候可以在命令行直接输入</p>
-<pre><code>tsc </code></pre><p>编译器会从当前目录开始去查找tsconfig.json文件，逐级向上搜索父目录</p>
+<pre class="line-numbers language-ts"><code class="language-ts">tsc <span class="token operator">--</span>init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果项目配置了tsconfig.json，那么在进行转换的时候可以在命令行直接输入</p>
+<pre class="line-numbers language-ts"><code class="language-ts">tsc <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>编译器会从当前目录开始去查找tsconfig.json文件，逐级向上搜索父目录</p>
 <p>否则就需要在编译时加上文件及目录</p>
-<pre><code>tsc test.ts</code></pre><p>默认在当前目录生成test.js</p>
+<pre class="line-numbers language-ts"><code class="language-ts">tsc test<span class="token punctuation">.</span>ts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>默认在当前目录生成test.js</p>
 <h3 id="编写需要的配置项"><a href="#编写需要的配置项" class="headerlink" title="编写需要的配置项"></a>编写需要的配置项</h3><p>下面这个例子是列举了在项目中经常用到的配置，当前根据项目的不同会有区别</p>
-<pre><code>{
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token punctuation">{</span>
 
-  &quot;compileOnSave&quot;: true, //让IDE在保存文件的时候根据tsconfig.json重新生成文件
-  &quot;compilerOptions&quot;: {
-    &quot;target&quot;: &quot;ES5&quot;, // 目标代码类型版本
-    &quot;outDir&quot;:&quot;build/&quot;, // 重定向输出目录
-    &quot;baseUrl&quot;:  &quot;https://test.file.com&quot;, // 解析非相对模块名的基准目录
-    &quot;noImplicitAny&quot;:true, // 在表达式和声明上有隐含的&#39;any&#39;类型时报错
-    &quot;removeComments&quot;:true, //编译 js 的时候，删除掉注释
-    &quot;preserveConstEnums&quot;:true, // 保留const和enum声明
-    &quot;experimentalDecorators&quot;: true, // 使用装饰器要开始此选项
-    &quot;emitDecoratorMetadata&quot;: true, // 在使用reflect-metadata库时候需要添加，给源码里的装饰器声明加上设计类型元数据
-    &quot;declaration&quot;: true, // 编译时候是否同时产生一份 声明文件
-    &quot;strict&quot;: true, // 编译时开启严格模式
-    &quot;sourceMap&quot;: true, // 生成相应的.map文件
-    &quot;module&quot;: &quot;commonjs&quot;, //生成哪种模块系统代码
-    &quot;watch&quot;: true, //会在文件改变时候监视输出文件，重新进行编译
+  <span class="token string">"compileOnSave"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//让IDE在保存文件的时候根据tsconfig.json重新生成文件</span>
+  <span class="token string">"compilerOptions"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"target"</span><span class="token punctuation">:</span> <span class="token string">"ES5"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 目标代码类型版本</span>
+    <span class="token string">"outDir"</span><span class="token punctuation">:</span><span class="token string">"build/"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 重定向输出目录</span>
+    <span class="token string">"baseUrl"</span><span class="token punctuation">:</span>  <span class="token string">"https://test.file.com"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 解析非相对模块名的基准目录</span>
+    <span class="token string">"noImplicitAny"</span><span class="token punctuation">:</span><span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 在表达式和声明上有隐含的'any'类型时报错</span>
+    <span class="token string">"removeComments"</span><span class="token punctuation">:</span><span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//编译 js 的时候，删除掉注释</span>
+    <span class="token string">"preserveConstEnums"</span><span class="token punctuation">:</span><span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 保留const和enum声明</span>
+    <span class="token string">"experimentalDecorators"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 使用装饰器要开始此选项</span>
+    <span class="token string">"emitDecoratorMetadata"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 在使用reflect-metadata库时候需要添加，给源码里的装饰器声明加上设计类型元数据</span>
+    <span class="token string">"declaration"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 编译时候是否同时产生一份 声明文件</span>
+    <span class="token string">"strict"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 编译时开启严格模式</span>
+    <span class="token string">"sourceMap"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 生成相应的.map文件</span>
+    <span class="token string">"module"</span><span class="token punctuation">:</span> <span class="token string">"commonjs"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//生成哪种模块系统代码</span>
+    <span class="token string">"watch"</span><span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//会在文件改变时候监视输出文件，重新进行编译</span>
 
-  },
-  &quot;include&quot;: [ // 编译时包含的目录及文件
-    &quot;test.ts&quot; 
-  ],
-  &quot;exclude&quot;: [ // 编译时排除的目录及文件
-    &quot;node_modules&quot;, 
-    &quot;dist&quot;,  
-    &quot;mock&quot;
-    &quot;build&quot;
-  ],
-  &quot;lib&quot;: [ // 需编译过程中需要引入的库文件的列表，不然编译器识别错误报错
-    &quot;es2017&quot;,
-    &quot;dom&quot;
-  ]
-}</code></pre><p><em>注意使用”include”引入的文件可以使用”exclude”属性过滤。 然而，通过 “files”属性明确指定的文件不管”exclude”如何设置却总是会被包含在内。 如果没有特殊指定， “exclude”默认情况下会排除node_modules，bower_components，jspm_packages和outDir目录。</em></p>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"include"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token comment" spellcheck="true">// 编译时包含的目录及文件</span>
+    <span class="token string">"test.ts"</span> 
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"exclude"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token comment" spellcheck="true">// 编译时排除的目录及文件</span>
+    <span class="token string">"node_modules"</span><span class="token punctuation">,</span> 
+    <span class="token string">"dist"</span><span class="token punctuation">,</span>  
+    <span class="token string">"mock"</span>
+    <span class="token string">"build"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"lib"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token comment" spellcheck="true">// 需编译过程中需要引入的库文件的列表，不然编译器识别错误报错</span>
+    <span class="token string">"es2017"</span><span class="token punctuation">,</span>
+    <span class="token string">"dom"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>注意使用”include”引入的文件可以使用”exclude”属性过滤。 然而，通过 “files”属性明确指定的文件不管”exclude”如何设置却总是会被包含在内。 如果没有特殊指定， “exclude”默认情况下会排除node_modules，bower_components，jspm_packages和outDir目录。</em></p>
 <p>更多参数请参考官网<a href="https://www.tslang.cn/docs/handbook/compiler-options.html" target="_blank" rel="noopener"> tsconfig配置列表 </a></p>
 
             </div>
@@ -920,7 +924,7 @@
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

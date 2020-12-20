@@ -9,8 +9,9 @@
   <meta name="google-site-verification" content>
   <meta name="description" content="三种基本权限R  读  数值表示为4
 W  写  数值表示为2
-X  可执行  数值表示为11.执行ls -al命令行会出现
-drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-su">
+X  可执行  数值表示为1
+1.执行ls -al命令行会出现
+drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-s">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -421,7 +422,7 @@ drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-su">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    381
+                    382
                 </div>
                 
 
@@ -444,39 +445,43 @@ drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-su">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="三种基本权限"><a href="#三种基本权限" class="headerlink" title="三种基本权限"></a>三种基本权限</h3><pre><code>R  读  数值表示为4
-W  写  数值表示为2
-X  可执行  数值表示为1</code></pre><p>1.执行ls -al命令行会出现<br></p>
-<pre><code>drwxr-xr-x  19 renbo  staff   608B Mar 27 11:31 -notes-summary
-drwxr-xr-x  41 renbo  staff   1.3K Mar 12 17:05 ant-design-pro
-drwxr-xr-x   7 renbo  staff   224B May 18  2018 canvas
-drwxr-xr-x   8 renbo  staff   256B Sep 11  2017 doT-demo
-drwxr-xr-x  19 renbo  staff   608B May 24  2018 egg-example
-drwxr-xr-x   4 renbo  staff   128B Nov 21 13:52 express
-drwxr-xr-x   3 renbo  staff    96B Aug 13  2018 flutter</code></pre><p>2.解释：</p>
-<pre><code>d ：第一位表示文件类型，d是目录文件、l是链接文件、-是普通文件、p是管道
+                <h3 id="三种基本权限"><a href="#三种基本权限" class="headerlink" title="三种基本权限"></a>三种基本权限</h3><pre class="line-numbers language-js"><code class="language-js">R  读  数值表示为<span class="token number">4</span>
+W  写  数值表示为<span class="token number">2</span>
+X  可执行  数值表示为<span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>1.执行ls -al命令行会出现<br></p>
+<pre class="line-numbers language-js"><code class="language-js">drwxr<span class="token operator">-</span>xr<span class="token operator">-</span>x  <span class="token number">19</span> renbo  staff   608B Mar <span class="token number">27</span> <span class="token number">11</span><span class="token punctuation">:</span><span class="token number">31</span> <span class="token operator">-</span>notes<span class="token operator">-</span>summary
+drwxr<span class="token operator">-</span>xr<span class="token operator">-</span>x  <span class="token number">41</span> renbo  staff   <span class="token number">1</span><span class="token punctuation">.</span>3K Mar <span class="token number">12</span> <span class="token number">17</span><span class="token punctuation">:</span><span class="token number">05</span> ant<span class="token operator">-</span>design<span class="token operator">-</span>pro
+drwxr<span class="token operator">-</span>xr<span class="token operator">-</span>x   <span class="token number">7</span> renbo  staff   224B May <span class="token number">18</span>  <span class="token number">2018</span> canvas
+drwxr<span class="token operator">-</span>xr<span class="token operator">-</span>x   <span class="token number">8</span> renbo  staff   256B Sep <span class="token number">11</span>  <span class="token number">2017</span> doT<span class="token operator">-</span>demo
+drwxr<span class="token operator">-</span>xr<span class="token operator">-</span>x  <span class="token number">19</span> renbo  staff   608B May <span class="token number">24</span>  <span class="token number">2018</span> egg<span class="token operator">-</span>example
+drwxr<span class="token operator">-</span>xr<span class="token operator">-</span>x   <span class="token number">4</span> renbo  staff   128B Nov <span class="token number">21</span> <span class="token number">13</span><span class="token punctuation">:</span><span class="token number">52</span> express
+drwxr<span class="token operator">-</span>xr<span class="token operator">-</span>x   <span class="token number">3</span> renbo  staff    96B Aug <span class="token number">13</span>  <span class="token number">2018</span> flutter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.解释：</p>
+<pre class="line-numbers language-js"><code class="language-js">d ：第一位表示文件类型，d是目录文件、l是链接文件、<span class="token operator">-</span>是普通文件、p是管道
 
-rwx ：第2-4位表示这个文件的属主拥有的权限。r是读、w是写、x是执行
+rwx ：第<span class="token number">2</span><span class="token operator">-</span><span class="token number">4</span>位表示这个文件的属主拥有的权限。r是读、w是写、x是执行
 
-r-x ：第5-7位表示和这个文件属主所在同一个组的用户所具有的权限
+r<span class="token operator">-</span>x ：第<span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>位表示和这个文件属主所在同一个组的用户所具有的权限
 
-r-x ：第8-10位表示其他用户所具有的权限
+r<span class="token operator">-</span>x ：第<span class="token number">8</span><span class="token operator">-</span><span class="token number">10</span>位表示其他用户所具有的权限
 
-r:read就是读权限     --数字4表示
+r<span class="token punctuation">:</span>read就是读权限     <span class="token operator">--</span>数字<span class="token number">4</span>表示
 
-w:write就是写权限    --数字2表示
+w<span class="token punctuation">:</span>write就是写权限    <span class="token operator">--</span>数字<span class="token number">2</span>表示
 
-x:excute就是执行权限 --数字1表示</code></pre><h3 id="更改权限"><a href="#更改权限" class="headerlink" title="更改权限"></a>更改权限</h3><pre><code>sudo chmod [u所属用户  g所属组  o其他用户  a所有用户]  [+增加权限  -减少权限]  [r  w  x]   目录名 
+x<span class="token punctuation">:</span>excute就是执行权限 <span class="token operator">--</span>数字<span class="token number">1</span>表示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="更改权限"><a href="#更改权限" class="headerlink" title="更改权限"></a>更改权限</h3><pre class="line-numbers language-js"><code class="language-js">sudo chmod <span class="token punctuation">[</span>u所属用户  g所属组  o其他用户  a所有用户<span class="token punctuation">]</span>  <span class="token punctuation">[</span><span class="token operator">+</span>增加权限  <span class="token operator">-</span>减少权限<span class="token punctuation">]</span>  <span class="token punctuation">[</span>r  w  x<span class="token punctuation">]</span>   目录名 
 
-例如：有一个文件filename，权限为“-rw-r----x” ,将权限值改为&quot;-rwxrw-r-x&quot;，用数值表示为765
+例如：有一个文件filename，权限为“<span class="token operator">-</span>rw<span class="token operator">-</span>r<span class="token operator">--</span><span class="token operator">--</span>x” <span class="token punctuation">,</span>将权限值改为<span class="token string">"-rwxrw-r-x"</span>，用数值表示为<span class="token number">765</span>
 
-sudo chmod u+x g+w o+r  filename
+sudo chmod u<span class="token operator">+</span>x g<span class="token operator">+</span>w o<span class="token operator">+</span>r  filename
 
 上面的例子可以用数值表示
 
-sudo chmod 765 filename
+sudo chmod <span class="token number">765</span> filename
 
-一般超级权限为sudo chmod 777 filename</code></pre>
+一般超级权限为sudo chmod <span class="token number">777</span> filename<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -716,9 +721,9 @@ sudo chmod 765 filename
                             查看存储用户账号cat /etc/passwd
 
 输出的结构
-用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell查看存储组账号cat /etc/group  查看存储用户账号的密码cat /etc/shadow   
-
-
+用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell
+查看存储组账号cat /etc/group  
+查看存储用户账号的密码cat /etc/shadow   
                         
                     </div>
                     <div class="publish-info">
@@ -919,7 +924,7 @@ sudo chmod 765 filename
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

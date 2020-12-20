@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2019-12-24T14:49:40.721Z</updated>
+  <updated>2020-12-20T07:23:21.765Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,174 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://www.studyfe.cn/2020/12/20/mini/wcsc/"/>
+    <id>https://www.studyfe.cn/2020/12/20/mini/wcsc/</id>
+    <published>2020-12-20T07:22:14.945Z</published>
+    <updated>2020-12-20T07:23:21.765Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; BASE_DEVICE_WIDTH &lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://www.studyfe.cn/2020/12/20/mini/wcss/"/>
+    <id>https://www.studyfe.cn/2020/12/20/mini/wcss/</id>
+    <published>2020-12-20T07:19:59.109Z</published>
+    <updated>2020-12-20T07:22:43.677Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://www.studyfe.cn/2020/12/20/mini/waservice/"/>
+    <id>https://www.studyfe.cn/2020/12/20/mini/waservice/</id>
+    <published>2020-12-20T06:18:37.599Z</published>
+    <updated>2020-12-20T10:32:50.615Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; __wxLibrary &lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://www.studyfe.cn/2020/12/20/mini/wawebview/"/>
+    <id>https://www.studyfe.cn/2020/12/20/mini/wawebview/</id>
+    <published>2020-12-20T06:15:46.967Z</published>
+    <updated>2020-12-20T10:32:35.795Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;// WAWebview.js
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序之启动流程</title>
+    <link href="https://www.studyfe.cn/2020/12/20/mini/principle03/"/>
+    <id>https://www.studyfe.cn/2020/12/20/mini/principle03/</id>
+    <published>2020-12-20T04:35:09.000Z</published>
+    <updated>2020-12-20T10:27:52.002Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;待更新&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序之启动流程</title>
+    <link href="https://www.studyfe.cn/2020/12/20/mini/principle02/"/>
+    <id>https://www.studyfe.cn/2020/12/20/mini/principle02/</id>
+    <published>2020-12-20T04:32:09.000Z</published>
+    <updated>2020-12-20T10:27:46.413Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;待更新&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序架构原理</title>
+    <link href="https://www.studyfe.cn/2020/12/12/mini/principle01/"/>
+    <id>https://www.studyfe.cn/2020/12/12/mini/principle01/</id>
+    <published>2020-12-12T04:32:09.000Z</published>
+    <updated>2020-12-20T10:32:40.436Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;hr&gt;&lt;/h3&gt;&lt;p&gt;​小程序的主要开发语言是 JavaScript
+        
+      
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>flutter 之 dart 基础语法</title>
@@ -48,7 +216,7 @@
     <link href="https://www.studyfe.cn/2019/11/25/datastructure/library-array/"/>
     <id>https://www.studyfe.cn/2019/11/25/datastructure/library-array/</id>
     <published>2019-11-25T13:20:12.000Z</published>
-    <updated>2019-12-25T04:18:54.632Z</updated>
+    <updated>2020-12-14T15:35:31.211Z</updated>
     
     <summary type="html">
     
@@ -354,195 +522,6 @@
         
         
           &lt;h2 id=&quot;编译入口&quot;&gt;&lt;a href=&quot;#编译入口&quot; class=&quot;headerlink&quot; title=&quot;编译入口&quot;&gt;&lt;/a&gt;编译入口&lt;/h2&gt;&lt;p&gt;还记得我们在第一篇文章介绍整理的执行过程的时候通过，在 $mount 这个函数内调用 compileToFunctions
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理之组件更新</title>
-    <link href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/"/>
-    <id>https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/</id>
-    <published>2019-09-18T02:50:28.000Z</published>
-    <updated>2019-09-19T06:45:00.363Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;上一篇文章我们对响应式原理进行了梳理，知道了当数据发生变化会触发 watcher 的回调，进行组件更新，那么接下来我们看看更新的操作是怎么进行了。&lt;code&gt;src/core/instance/lifecycle.js&lt;/code&gt; 中
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理之 v-model</title>
-    <link href="https://www.studyfe.cn/2019/09/12/vue/vuevmodel/"/>
-    <id>https://www.studyfe.cn/2019/09/12/vue/vuevmodel/</id>
-    <published>2019-09-12T12:20:12.000Z</published>
-    <updated>2019-09-22T10:51:06.876Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在日常开发中我们使用 v-model 来实现数据的双向绑定，那么接下来我们通过一张流程图来大概的看看它实现的流程。具体源码解析请参考&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理之异步组件</title>
-    <link href="https://www.studyfe.cn/2019/09/10/vue/vueasync-component/"/>
-    <id>https://www.studyfe.cn/2019/09/10/vue/vueasync-component/</id>
-    <published>2019-09-10T10:06:25.000Z</published>
-    <updated>2019-09-22T09:15:23.124Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在我们平时的开发工作中，为了减少首屏代码体积，往往会把一些非首屏的组件设计成异步组件，按需加载。Vue 也原生支持了异步组件的能力，有三种实现方式&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;普通的异步组件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class=&quot;line-numbers
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理之组件注册</title>
-    <link href="https://www.studyfe.cn/2019/09/08/vue/vuecomponentregister/"/>
-    <id>https://www.studyfe.cn/2019/09/08/vue/vuecomponentregister/</id>
-    <published>2019-09-08T04:08:25.000Z</published>
-    <updated>2019-09-22T08:29:53.948Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在日常开发中我们经常会用到许多自定义的组件，除了内置组件自定义组件用的时候必须注册，否则会提示如下信息&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-md&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;&#39;Unknown custom
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>computed 和 watcher</title>
-    <link href="https://www.studyfe.cn/2019/09/07/vue/vuecomputedwatcher/"/>
-    <id>https://www.studyfe.cn/2019/09/07/vue/vuecomputedwatcher/</id>
-    <published>2019-09-07T14:25:12.000Z</published>
-    <updated>2019-09-29T04:05:34.477Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;vue 的 computed 和 watch 是我们在开发中经常用的方法，从而实现数据的响应与监听，下面我们从使用和源码来分析一下这两个属性的实现原理是什么。&lt;/p&gt;
-&lt;h3 id=&quot;computed-和-watch-使用&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理解析之响应式</title>
-    <link href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/"/>
-    <id>https://www.studyfe.cn/2019/09/05/vue/vueobserve/</id>
-    <published>2019-09-05T08:45:09.000Z</published>
-    <updated>2019-09-10T08:06:43.348Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;响应式对象&quot;&gt;&lt;a href=&quot;#响应式对象&quot; class=&quot;headerlink&quot; title=&quot;响应式对象&quot;&gt;&lt;/a&gt;响应式对象&lt;/h2&gt;&lt;p&gt;提到 vue 的双向数据绑定原理，我们都知道是利用了
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理解析之主线流程</title>
-    <link href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/"/>
-    <id>https://www.studyfe.cn/2019/08/27/vue/vueprinciple/</id>
-    <published>2019-08-27T15:12:09.000Z</published>
-    <updated>2019-09-10T09:42:18.047Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;div align=&quot;middle&quot;&gt;
-  &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
         
       
     

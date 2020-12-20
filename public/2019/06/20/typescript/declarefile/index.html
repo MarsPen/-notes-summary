@@ -13,7 +13,7 @@
 一个或多个赋值语句到window上
 假设DOM原始值像document或window是存在的
 
-&amp;lt;script src=&amp;quot;jque">
+&amp;lt;script src=&#34;jquery.js">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    619
+                    577
                 </div>
                 
 
@@ -453,62 +453,74 @@
 <li>一个或多个赋值语句到window上</li>
 <li>假设DOM原始值像document或window是存在的</li>
 </ul>
-<pre><code>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"jquery.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 
-window.test = function(){
-    console.log(&#39;1111&#39;)
-}
-</code></pre><p>模块化库（只能工作在模块加载器的环境下）</p>
+window<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'1111'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>模块化库（只能工作在模块加载器的环境下）</p>
 <ul>
 <li>无条件的调用require或define</li>
 <li>像import * as a from ‘b’; or export c;这样的声明</li>
 <li>赋值给exports或module.exports</li>
 </ul>
 <p>UMD模块是指那些既可以作为模块使用（通过导入）又可以作为全局（在没有模块加载器的环境里）使用的模块</p>
-<pre><code>import moment = require(&quot;moment&quot;);
-console.log(moment.format());
-</code></pre><p>在浏览器环境内也可以这样使用</p>
-<pre><code>console.log(moment.format());</code></pre><p>识别UMD库</p>
-<pre><code>(function (root, factory) {
-    if (typeof define === &quot;function&quot; &amp;&amp; define.amd) {
-        define([&quot;libName&quot;], factory);
-    } else if (typeof module === &quot;object&quot; &amp;&amp; module.exports) {
-        module.exports = factory(require(&quot;libName&quot;));
-    } else {
-        root.returnExports = factory(root.libName);
-    }
-}(this, function (b) {}))</code></pre><h3 id="使用依赖"><a href="#使用依赖" class="headerlink" title="使用依赖"></a>使用依赖</h3><p>依赖全局库</p>
-<pre><code>/// &lt;reference types=&quot;someLib&quot; /&gt;
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"moment"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>moment<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在浏览器环境内也可以这样使用</p>
+<pre class="line-numbers language-ts"><code class="language-ts">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>moment<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>识别UMD库</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>root<span class="token punctuation">,</span> factory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> define <span class="token operator">===</span> <span class="token string">"function"</span> <span class="token operator">&amp;&amp;</span> define<span class="token punctuation">.</span>amd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">define</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"libName"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> factory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">module</span> <span class="token operator">===</span> <span class="token string">"object"</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">module</span><span class="token punctuation">.</span>exports<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">module</span><span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">factory</span><span class="token punctuation">(</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"libName"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        root<span class="token punctuation">.</span>returnExports <span class="token operator">=</span> <span class="token function">factory</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>libName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用依赖"><a href="#使用依赖" class="headerlink" title="使用依赖"></a>使用依赖</h3><p>依赖全局库</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">/// &lt;reference types="someLib" /></span>
 
-function getThing(): someLib.thing;</code></pre><p>依赖模块</p>
-<pre><code>import * as moment from &quot;moment&quot;;
+<span class="token keyword">function</span> <span class="token function">getThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> someLib<span class="token punctuation">.</span>thing<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>依赖模块</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token operator">*</span> as moment <span class="token keyword">from</span> <span class="token string">"moment"</span><span class="token punctuation">;</span>
 
-function getThing(): moment;</code></pre><p>依赖UMD库</p>
-<pre><code>// &lt;reference types=&quot;moment&quot; /&gt;
+<span class="token keyword">function</span> <span class="token function">getThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> moment<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>依赖UMD库</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token comment" spellcheck="true">// &lt;reference types="moment" /></span>
 
-function getThing(): moment;</code></pre><p>如果你的模块或UMD库依赖于一个UMD库</p>
+<span class="token keyword">function</span> <span class="token function">getThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> moment<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>如果你的模块或UMD库依赖于一个UMD库</p>
 <p>不要使用/// &lt;reference指令去声明UMD库的依赖！</p>
-<pre><code>import * as someLib from &#39;someLib&#39;;
-</code></pre><h3 id="防止命名冲突"><a href="#防止命名冲突" class="headerlink" title="防止命名冲突"></a>防止命名冲突</h3><p>在书写全局声明文件时，使用库定义的全局变量名来声明命名空间类型</p>
-<pre><code>declare namespace cats {
-    interface KittySettings { }
-}</code></pre><h3 id="定义全局库模版"><a href="#定义全局库模版" class="headerlink" title="定义全局库模版"></a>定义全局库模版</h3><p>模版文件<a href="global.d.ts.md"> global.d.ts </a>定义了myLib库作为例子</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token operator">*</span> as someLib <span class="token keyword">from</span> <span class="token string">'someLib'</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="防止命名冲突"><a href="#防止命名冲突" class="headerlink" title="防止命名冲突"></a>防止命名冲突</h3><p>在书写全局声明文件时，使用库定义的全局变量名来声明命名空间类型</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">declare</span> namespace cats <span class="token punctuation">{</span>
+    <span class="token keyword">interface</span> <span class="token class-name">KittySettings</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="定义全局库模版"><a href="#定义全局库模版" class="headerlink" title="定义全局库模版"></a>定义全局库模版</h3><p>模版文件<a href="global.d.ts.md"> global.d.ts </a>定义了myLib库作为例子</p>
 <h3 id="定义模块化库模版"><a href="#定义模块化库模版" class="headerlink" title="定义模块化库模版"></a>定义模块化库模版</h3><p>针对模块有三种可用的模块， module.d.ts, module-class.d.ts and module-fun</p>
 <p><a href="module.d.ts.md"> module.d.ts </a> 作为函数调用</p>
-<pre><code>var x = require(&quot;foo&quot;);
-// Note: calling &#39;x&#39; as a function
-var y = x(42);
-</code></pre><p><a href="module-class.d.ts.md">module-class.d.ts </a>使用new来构造调用</p>
-<pre><code>var x = require(&quot;bar&quot;);
-// Note: using &#39;new&#39; operator on the imported variable
-var y = new x(&quot;hello&quot;);
-</code></pre><p>如果模块不能被调用或构造，使用<a href="module.d.ts.md"> module.d.ts </a>文件</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Note: calling 'x' as a function</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><a href="module-class.d.ts.md">module-class.d.ts </a>使用new来构造调用</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Note: using 'new' operator on the imported variable</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">x</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>如果模块不能被调用或构造，使用<a href="module.d.ts.md"> module.d.ts </a>文件</p>
 <h3 id="使用库"><a href="#使用库" class="headerlink" title="使用库"></a>使用库</h3><p>在TypeScript 2.0以上的版本，获取类型声明文件只需要使用npm。</p>
-<pre><code>npm install --save @types/lodash
+<pre class="line-numbers language-ts"><code class="language-ts">npm install <span class="token operator">--</span>save @types<span class="token operator">/</span>lodash
 
-import * as _ from &quot;lodash&quot;;
+<span class="token keyword">import</span> <span class="token operator">*</span> as _ <span class="token keyword">from</span> <span class="token string">"lodash"</span><span class="token punctuation">;</span>
 
-_.padStart(&quot;Hello TypeScript!&quot;, 20, &quot; &quot;);</code></pre><p>如果npm包没有包含它的声明文件，那就必须下载相应的@types包</p>
+_<span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token string">"Hello TypeScript!"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果npm包没有包含它的声明文件，那就必须下载相应的@types包</p>
 <p>大多数类型声明包的名字总是与它们在npm上的包的名字相同，但是有@types/前缀</p>
 <p>查找更多typeScript 库请前往 <a href="https://aka.ms/types" target="_blank" rel="noopener">https://aka.ms/types</a></p>
 
@@ -942,7 +954,7 @@ _.padStart(&quot;Hello TypeScript!&quot;, 20, &quot; &quot;);</code></pre><p>如
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

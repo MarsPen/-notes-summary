@@ -15,10 +15,10 @@ categories:
 
 ### 构建TCP服务<br/>
  tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br/>
- <image src=/images/tcp.png' width="300px"></image><br/>
+ <img src=/images/tcp.png' width="300px"></img><br/>
 
  tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br/>
- <image src=/images/ack.png' width="300px"></image><br/>
+ <img src=/images/ack.png' width="300px"></img><br/>
 
   第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认<br/>
   第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态<br/>
@@ -30,7 +30,7 @@ categories:
 1、创建TCP服务端接受网络请求<br/>
 1.1服务器事件<br/>
 
-```
+```js
 var net = require('net');
 var server = net.createServer(function(socket) {
   // 开始新连接
@@ -56,7 +56,7 @@ server.listen(8124, function() {
 
 1.2连接事件<br/>
 
-```
+```js
 var net = require('net');
 var client = net.connect({ port: 8124 }, function () {
   console.log('client connected !');
@@ -86,7 +86,7 @@ client.on('end', function () {
 UDP用户数据包协议，和TCP一样属于网络传输层<br/>
 
 ### 创建UDP服务端<br/>
-```
+```js
 var dgram = require('dgram');
 // 创建server对象
 var server  = dgram.createSocket('udp4');
@@ -105,7 +105,7 @@ server.bind(41234);
 
 ```
 ### 创建UDP客户端<br/>
-```
+```js
 var dgram = require('dgram');
 
 var message = new Buffer('hello');
@@ -123,7 +123,7 @@ HTTP是超文本传输协议，是构建在TCP之上的，属于应用层协议�
 我们可以在命令行利用curl -v http://localhost:8080/ 来模拟请求，产生如下报文信息<br/>
 
 第一部分其实就是标准的TCP3次握手过程<br/>
-```
+```js
 * About to connect() to localhost (127.0.0.1) port 8080 (#0)
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -131,7 +131,7 @@ HTTP是超文本传输协议，是构建在TCP之上的，属于应用层协议�
 ```
 
 第二部分在握手完成之后，客户端向服务端发送的请求报文<br/>
-```
+```js
 > GET / HTTP/1.1
 > Host: 127.0.0.1:8080
 > User-Agent: curl/7.54.0
@@ -140,7 +140,7 @@ HTTP是超文本传输协议，是构建在TCP之上的，属于应用层协议�
 ```
 
 第三部分是服务端处理结束后，向客户端发送的响应内容包括响应头和响应体<br/>
-```
+```js
 < HTTP/1.1 200 OK
 < X-Powered-By: Express
 < Accept-Ranges: bytes
@@ -154,7 +154,8 @@ hello
 ```
 
 第四部分是结束此会话<br/>
-```
+
+```js
 * Connection #0 to host 127.0.0.1 left intact
 * Closing connection #0
 ```
@@ -164,11 +165,12 @@ hello
 ### HTTP模块<br/>
 
 node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br/>
-<image src=/images/request.png' width="400px"></image><br/>
+<img src=/images/request.png' width="400px"></img><br/>
 
 http模块将所有读写抽象为ServerRequest和ServerResponse对象<br/>
-<image src=/images/http.png' width="400px"></image><br/>
-```
+<img src=/images/http.png' width="400px"></img><br/>
+
+```js
 function (req, res) {
   res.writeHead(200, {'Content-Type' : 'text/plain'});
   res.end('Hello Word');
@@ -180,8 +182,9 @@ function (req, res) {
 http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br/>
 http 模块包含一个默认的客户端代理对象http.globalAgent<br/>
 通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br/>
-<image src=/images/http代理.png' width="400px"></image><br/>
-```
+<img src=/images/http代理.png' width="400px"></img><br/>
+
+```js
 // 可以通过http.Agent修改连接数量，但连接数量过大会影响服务器性能
 var agent = new http.Agent({
   maxSockets: 10
@@ -201,7 +204,7 @@ Websocket 协议解决了服务器与客户端全双工通信的问题,也就是
 ### WebSocket协议解析<br/>
 
 WebSocket协议主要分为两个部分第一部分 http **握手**连接，第二部分协议升级为 WebSocket 进行**数据传输**<br/>
-<image src=/images/websocket.png' width="400px"></image><br/>
+<img src=/images/websocket.png' width="400px"></img><br/>
 
 
 

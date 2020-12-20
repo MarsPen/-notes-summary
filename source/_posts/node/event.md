@@ -90,7 +90,7 @@ categories:
 
 
 **内置事件(举例)**<br/>
-```
+```js
 // 引入 events 模块
 let events = require('events');
 

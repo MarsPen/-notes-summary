@@ -15,7 +15,7 @@ categories:
 
 ### tar
 
-```
+```js
 tar -cvf log.tar log2012.log    仅打包，不压缩！ 
 
 tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
@@ -27,7 +27,7 @@ tar -zxvf /opt/soft/test/log.tar.gz 解压缩
 
 ### dump
 
-```
+```js
 dump -0aj -f /tmp/home0.bak /home  制作一个 '/home' 目录的完整备份
 
 dump -1aj -f /tmp/home0.bak /home  制作一个 '/home' 目录的交互式备份
@@ -35,13 +35,13 @@ dump -1aj -f /tmp/home0.bak /home  制作一个 '/home' 目录的交互式备份
 
 ### restore
 
-```
+```js
 restore -if /tmp/home0.bak  还原备份
 ```
 
 ### rsync
 
-```
+```js
 rsync -rogpav --delete /home /tmp  同步两边的目录 
 
 rsync -rogpav -e ssh --delete /home ip_address:/tmp  通过SSH通道rsync 

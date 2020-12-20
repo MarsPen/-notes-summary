@@ -91,7 +91,7 @@ IPC通道创建、连接<br/>
 
 <img src="/images/ipc-create.png"><br/>
 
-```
+```js
 /**
  * 创建父线程
  * master.js
@@ -112,7 +112,7 @@ n.on('messge', function (m) {
 n.send({hello: ''world});
 ```
 
-```
+```js
 /**
  * 创建子线程
  * worker.js
@@ -138,7 +138,7 @@ process.send({foo: 'bar'});
 
 <img src="/images/process-on.png"><br/>
 
-```
+```js
 /**
  * 创建主进程
  * master.js
@@ -162,7 +162,7 @@ server.listen(1337 ,function () {
 });
 ```
 
-```
+```js
 /**
  * 创建子进程
  * worker.js

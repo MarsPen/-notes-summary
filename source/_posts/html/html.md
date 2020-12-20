@@ -82,7 +82,8 @@ html5不是基于SGML，所以不需要对DTD进行引用，但是它需要对�
     - 缺点只支持get请求
     - 优点简单方便，易理解，兼容性良好
     - 如下示例代码
-    ```
+
+    ```js
       //动态创建script，用于跨越操作
       function creatScriptTag(src) {
         var script = document.createElement('script');
@@ -101,7 +102,7 @@ html5不是基于SGML，所以不需要对DTD进行引用，但是它需要对�
       } 
     ```
 
-    ```
+    ```php
       // index.php 
       <?php
       header('Content-type: application/json');
@@ -125,7 +126,7 @@ html5不是基于SGML，所以不需要对DTD进行引用，但是它需要对�
    - 在请求头信息中增加Origin字段，用来说明此次请求来自那个源（协议+域名+端口），此字段可以设置相应白名单
    - 必须设置`Access-Control-Allow-Origin`字段，值要求是`Origin`字段的值或者是*，*的意思是接受任意域名的请求
    - CORS请求默认不发送cookie和http认证信息，如果要发送，要在服务器端指`Access-Control-Allow-Credentials: true`,并且ajax请求必须打开withCredentials属性
-   ```
+   ```js
    var xhr = new XMLHttpRequest();
    xhr.withCredentials = true;
    ```

@@ -444,15 +444,17 @@ CommonJS 规范CommonJS（http://www.commonjs.org）规范的出">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。前端模块化组件化也是在这几年逐渐的流行，在 web2.0 发展过程如下<br></p>
-<p><image src="/images/module.png" width="300"></image><br></p>
+<p><img src="/images/module.png" width="300"><br></p>
 <h3 id="CommonJS-规范"><a href="#CommonJS-规范" class="headerlink" title="CommonJS 规范"></a>CommonJS 规范<br></h3><p>CommonJS（<a href="http://www.commonjs.org" target="_blank" rel="noopener">http://www.commonjs.org</a>）规范的出现解决了JavaScript 没有模块系统，标准库等等问题，而 Node.js 自身实现了 require 作为其引入模块的方法，同时 NPM 也基于 CommonJS 定义的包规范，实现了依赖管理和模块自动安装等功能。下图展现Node与浏览器以及W3C组织、CommonJS组织、ECMAScript之间的关系<br></p>
-<p><image src="/images/commonjs.png" width="550"></image><br></p>
+<p><img src="/images/commonjs.png" width="550"><br></p>
 <h3 id="CommonJS-模块"><a href="#CommonJS-模块" class="headerlink" title="CommonJS 模块"></a>CommonJS 模块</h3><p>1、模块引用 require 关键字 <br></p>
-<pre><code>const math = require(&#39;math&#39;); </code></pre><p>2、模块定义导出 exports 关键字<br></p>
-<pre><code>exports.area = function (r) {
-    return Math.PI * r * r;
-};
-</code></pre><p>3、模块标识<br><br>模块标识其实就是传递给require()方法的参数，它必须是符合小驼峰命名的字符串，或者以.、..开头的相对路径，或者绝对路径，每个模块都有独立的空间。防止虑变量污染。<br></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> math <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'math'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2、模块定义导出 exports 关键字<br></p>
+<pre class="line-numbers language-js"><code class="language-js">exports<span class="token punctuation">.</span>area <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Math<span class="token punctuation">.</span>PI <span class="token operator">*</span> r <span class="token operator">*</span> r<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3、模块标识<br><br>模块标识其实就是传递给require()方法的参数，它必须是符合小驼峰命名的字符串，或者以.、..开头的相对路径，或者绝对路径，每个模块都有独立的空间。防止虑变量污染。<br></p>
 <h3 id="Node-模块实现"><a href="#Node-模块实现" class="headerlink" title="Node 模块实现"></a>Node 模块实现<br></h3><p>1、引入模块三个步骤(分为核心模块和文件模块)<br></p>
 <pre><code>(1) 路径分析
 (2) 文件定位
@@ -475,40 +477,41 @@ CommonJS 规范CommonJS（http://www.commonjs.org）规范的出">
 如果文件不是 .js 可以在加载的时候写上文件的扩展名，可以加快文件定位速度，
 
 配合缓存，可以大幅度缓解 Node 单线程中阻塞式调用的缺陷</code></pre><p>3、模块编译</p>
-<pre><code>function Module(id, parent) {
-  this.id = id;
-  this.exports = {};
-  this.parent = parent;
-  if (parent &amp;&amp; parent.children) {
-    parent.children.push(this);
-  }
-  this.filename = null;
-  this.loaded = false;
-  this.children = [];
-} 
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Module</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> parent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> parent<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>parent <span class="token operator">&amp;&amp;</span> parent<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    parent<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>filename <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>loaded <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
 
 对于不同的文件扩展名，其载入方法也有所不同
 
-.js 文件
+<span class="token punctuation">.</span>js 文件
   通过fs模块同步读取文件后编译执行。在编译过程中进行了头尾包装。在头部添加了
-  (function (exports, require, module, __filename, __dirname) {
+  <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>exports<span class="token punctuation">,</span> require<span class="token punctuation">,</span> module<span class="token punctuation">,</span> __filename<span class="token punctuation">,</span> __dirname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     \n，在尾部添加了\n
-  });。
-  通过vm原生模块的runInThisContext()方法执行（类似eval，只是具有明确上下文，不污染全局），返回一个具体的
-  function对象。最后，将当前模块对象的exports属性、require()方法、module（模块对象自身），
-  以及在文件定位中得到的完整文件路径和文件目录作为参数传递给这个function()执行。
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>。
+  <span class="token function">通过vm原生模块的runInThisContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法执行（类似eval，只是具有明确上下文，不污染全局），返回一个具体的
+  <span class="token keyword">function</span><span class="token function">对象。最后，将当前模块对象的exports属性、require</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法、module（模块对象自身），
+  以及在文件定位中得到的完整文件路径和文件目录作为参数传递给这个<span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>执行。
 
-.node 文件。用C/C++编写的扩展文件，通过dlopen()方法加载最后编译生成的文件。
-  Node调用process.dlopen()方法进行加载和执行。在Node的架构下，dlopen()方法在Windows
-  和*nix平台下分别有不同的实现，通过libuv兼容层进行了封装
+<span class="token punctuation">.</span>node 文件。用C<span class="token operator">/</span>C<span class="token operator">++</span><span class="token function">编写的扩展文件，通过dlopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法加载最后编译生成的文件。
+  Node调用process<span class="token punctuation">.</span><span class="token function">dlopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token function">方法进行加载和执行。在Node的架构下，dlopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法在Windows
+  和<span class="token operator">*</span>nix平台下分别有不同的实现，通过libuv兼容层进行了封装
 
-.json 文件。通过fs模块同步读取文件后，用JSON.parse()解析返回结果。
+<span class="token punctuation">.</span>json 文件。通过fs模块同步读取文件后，用JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>解析返回结果。
 
 
-其余扩展名文件。它们都被当做.js文件载入。
-每一个编译成功的模块都会将其文件路径作为索引缓存在Module._cache对象上，以提高二次引入的性能。</code></pre><h3 id="Node-核心模块的编译、引入、加载过程"><a href="#Node-核心模块的编译、引入、加载过程" class="headerlink" title="Node 核心模块的编译、引入、加载过程"></a>Node 核心模块的编译、引入、加载过程<br></h3><p><strong>模块调用栈</strong><br></p>
+其余扩展名文件。它们都被当做<span class="token punctuation">.</span>js文件载入。
+每一个编译成功的模块都会将其文件路径作为索引缓存在Module<span class="token punctuation">.</span>_cache对象上，以提高二次引入的性能。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Node-核心模块的编译、引入、加载过程"><a href="#Node-核心模块的编译、引入、加载过程" class="headerlink" title="Node 核心模块的编译、引入、加载过程"></a>Node 核心模块的编译、引入、加载过程<br></h3><p><strong>模块调用栈</strong><br></p>
 <p>1、C/C++内建模块属于最底层的模块，它属于核心模块，主要提供API给JavaScript核心模块和第三方JavaScript文件模块调用。<br><br>2、JavaScript核心模块主要扮演的职责有两类：一类是作为C/C++内建模块的封装层和桥接层，供文件模块调用；一类是纯粹的功能模块，它不需要跟底层打交道，但是又十分重要<br></p>
-<p><image src="/images/module-p.png" width="350"></image><br></p>
+<p><img src="/images/module-p.png" width="350"><br></p>
 <p><strong>核心模块调用流程</strong><br></p>
 <p>1、 JavaScript 核心模块编译过程<br></p>
 <ul>
@@ -517,36 +520,37 @@ CommonJS 规范CommonJS（http://www.commonjs.org）规范的出">
 <li><p>启动 node 进程 JavaScript 代码直接加载进内存中<br></p>
 </li>
 <li><p>编译 JavaScript 核心模块（lib目录下的所有模块文件也没有定义require、module、exports这些变量。上面说过在引入 JavaScript 核心模块过程进行头尾包装，才可以执行exports对象）<br></p>
-<pre><code>// node_natives.h 头文件代码
-namespace node {
-const char node_native[] = { 47, 47, ..};
-const char dgram_native[] = { 47, 47, ..};
-const char console_native[] = { 47, 47, ..};
-const char buffer_native[] = { 47, 47, ..};
-const char querystring_native[] = { 47, 47, ..};
-const char punycode_native[] = { 47, 42, ..};
-...
-struct _native {
-  const char* name;
-  const char* source;
-  size_t source_len;
-};
-static const struct _native natives[] = {
-  { &quot;node&quot;, node_native, sizeof(node_native)-1 },
-  { &quot;dgram&quot;, dgram_native, sizeof(dgram_native)-1 },
-  ...
-};
-}
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// node_natives.h 头文件代码</span>
+namespace node <span class="token punctuation">{</span>
+<span class="token keyword">const</span> char node_native<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> char dgram_native<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> char console_native<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> char buffer_native<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> char querystring_native<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> char punycode_native<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">47</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+struct _native <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> char<span class="token operator">*</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> char<span class="token operator">*</span> source<span class="token punctuation">;</span>
+  size_t source_len<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">const</span> struct _native natives<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">{</span> <span class="token string">"node"</span><span class="token punctuation">,</span> node_native<span class="token punctuation">,</span> <span class="token function">sizeof</span><span class="token punctuation">(</span>node_native<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token string">"dgram"</span><span class="token punctuation">,</span> dgram_native<span class="token punctuation">,</span> <span class="token function">sizeof</span><span class="token punctuation">(</span>dgram_native<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// JavaScript 核心模块通过process.binding(&#39;natives&#39;)取出，编译成功的模块缓存到 NativeModule._cache 对象上，文件模块则缓存到 Module._cache 对象上
-function NativeModule(id) {
-this.filename = id + &#39;.js&#39;;
-this.id = id;
-this.exports = {};
-this.loaded = false;
-}
-NativeModule._source = process.binding(&#39;natives&#39;);
-NativeModule._cache = {}; </code></pre></li>
+<span class="token comment" spellcheck="true">// JavaScript 核心模块通过process.binding('natives')取出，编译成功的模块缓存到 NativeModule._cache 对象上，文件模块则缓存到 Module._cache 对象上</span>
+<span class="token keyword">function</span> <span class="token function">NativeModule</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>filename <span class="token operator">=</span> id <span class="token operator">+</span> <span class="token string">'.js'</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>loaded <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+NativeModule<span class="token punctuation">.</span>_source <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">binding</span><span class="token punctuation">(</span><span class="token string">'natives'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+NativeModule<span class="token punctuation">.</span>_cache <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <p>2、 C/C++核心模块的编译过程<br></p>
 <ul>
@@ -557,27 +561,28 @@ NativeModule._cache = {}; </code></pre></li>
 <li><p>node_extensions.h文件将这些散列的内建模块统一放进了一个叫node_module_list的数组中<br></p>
 </li>
 <li><p>Node 通过 get_builtin_module() 方法从 node_module_list 数组中取出这些模块<br></p>
-<pre><code>// 内建模块的内部结构定义
-struct node_module_struct {
-int version;
-void *dso_handle;
-const char *filename;
-void (*register_func) (v8::Handle&lt;v8::Object&gt; target);
-const char *modname;
-};
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 内建模块的内部结构定义</span>
+struct node_module_struct <span class="token punctuation">{</span>
+int version<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token operator">*</span>dso_handle<span class="token punctuation">;</span>
+<span class="token keyword">const</span> char <span class="token operator">*</span>filename<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>register_func<span class="token punctuation">)</span> <span class="token punctuation">(</span>v8<span class="token punctuation">:</span><span class="token punctuation">:</span>Handle<span class="token operator">&lt;</span>v8<span class="token punctuation">:</span><span class="token punctuation">:</span>Object<span class="token operator">></span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> char <span class="token operator">*</span>modname<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-// 挂载为结构的register_func成员
-#define NODE_MODULE(modname, regfunc) 
-extern &quot;C&quot; { 
- NODE_MODULE_EXPORT node::node_module_struct modname ## _module = 
- { 
-   NODE_STANDARD_MODULE_STUFF, 
-   regfunc, 
-   NODE_STRINGIFY(modname) 
- }; 
-} </code></pre></li>
+<span class="token comment" spellcheck="true">// 挂载为结构的register_func成员</span>
+#define <span class="token function">NODE_MODULE</span><span class="token punctuation">(</span>modname<span class="token punctuation">,</span> regfunc<span class="token punctuation">)</span> 
+extern <span class="token string">"C"</span> <span class="token punctuation">{</span> 
+ NODE_MODULE_EXPORT node<span class="token punctuation">:</span><span class="token punctuation">:</span>node_module_struct modname ## _module <span class="token operator">=</span> 
+ <span class="token punctuation">{</span> 
+   NODE_STANDARD_MODULE_STUFF<span class="token punctuation">,</span> 
+   regfunc<span class="token punctuation">,</span> 
+   <span class="token function">NODE_STRINGIFY</span><span class="token punctuation">(</span>modname<span class="token punctuation">)</span> 
+ <span class="token punctuation">}</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
-<p>3、核心模块的引入流程<br><br>如 os 原生模块的引入流程<br><br><image src="/images/module-os.png" width="350"></image><br></p>
+<p>3、核心模块的引入流程<br><br>如 os 原生模块的引入流程<br><br><img src="/images/module-os.png" width="350"><br></p>
 <p>通过以上我们大致了解了 Node 中模块的编译、加载、引入流程。当然还有核心模块的编写，在这里就不过多的阐述了。更多请参考朴灵老师编著的《深入浅出 node》，相信会有更多的收获。<br></p>
 
             </div>
@@ -1009,7 +1014,7 @@ const querystring =
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

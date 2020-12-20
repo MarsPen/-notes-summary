@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.3k
                 </div>
                 
 
@@ -450,17 +450,18 @@
 <li>盒子模型分为w3c标准盒子模型和IE标准盒子模型；当不对Doctype进行定义时，会触发怪异模式。</li>
 <li>盒子模型</li>
 </ul>
-<pre><code>/****css****/
-.box{
-  width:100px;
-  height:100px;
-  border:10px;
-  background-color:red;
-  padding:20px;
-  margin:20px;
-}
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/****css****/</span>
+<span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span><span class="token number">10</span>px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">20</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span><span class="token number">20</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</code></pre><p><img src="/images/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.png" alt></p>
+&lt;div class=<span class="token string">"box"</span>>&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.png" alt></p>
 <h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><ul>
 <li><p>定义（Block fomatting context）：块级格式化上下文(每一个元素盒子从上向下排列)</p>
 </li>
@@ -497,65 +498,68 @@
 <li><p>例子说明</p>
 </li>
 <li><p>根据以上BFC布局规则第3条、第4条来触发main生成BFC，来实现自适应两栏布局</p>
-<pre><code>  /****css****/
-  .main{
-    overflow: hidden;
-    height: 500px;
-    background: yellow;
-  }
-  .aside{
-    float: left;
-    width: 200px;
-    height: 500px;
-    background-color: red;
-  }
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token comment" spellcheck="true">/****css****/</span>
+  <span class="token selector"><span class="token class">.main</span></span><span class="token punctuation">{</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token class">.aside</span></span><span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  &lt;!--html--&gt;
-  &lt;div class=&quot;box&quot;&gt;
-    &lt;div class=&quot;aside&quot;&gt;侧边栏区域&lt;/div&gt;
-    &lt;div class=&quot;main&quot;&gt;内容区域&lt;/div&gt;
-  &lt;/div&gt;</code></pre></li>
+  &lt;!--html-->
+  &lt;div class=<span class="token string">"box"</span>>
+    &lt;div class=<span class="token string">"aside"</span>>侧边栏区域&lt;/div>
+    &lt;div class=<span class="token string">"main"</span>>内容区域&lt;/div>
+  &lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>根据BFC布局规则第6条，解决float元素使其父元素高度塌陷问题</p>
-<pre><code>  /****css****/
-  .parent{
-    border: 1px solid red;
-    width: 400px;
-    overflow: hidden;
-    padding: 10px;
-  }
-  .child{
-    float: left;
-    height: 300px;
-    width: 198px;
-    border: 1px solid green;
-  }
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token comment" spellcheck="true">/****css****/</span>
+  <span class="token selector"><span class="token class">.parent</span></span><span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid red<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">400</span>px<span class="token punctuation">;</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token class">.child</span></span><span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">198</span>px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid green<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  &lt;!--html--&gt;
-  &lt;div class=&quot;parent&quot;&gt;
-    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;</code></pre></li>
+  &lt;!--html-->
+  &lt;div class=<span class="token string">"parent"</span>>
+    &lt;div class=<span class="token string">"child"</span>>&lt;/div>
+    &lt;div class=<span class="token string">"child"</span>>&lt;/div>
+  &lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>防止margin重叠,根据生成BFC第4条规则</p>
-<pre><code>  /****css****/
-  .box{
-    width: 300px;
-    height: auto;
-  }
-  .content{
-    width: 300px;
-    height: 200px;
-    margin: 100px;
-    background: red;
-  }
-  .warp{
-    display: inline-block;
-  }
+<pre class="line-numbers language-css"><code class="language-css">  <span class="token comment" spellcheck="true">/****css****/</span>
+  <span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token class">.content</span></span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token class">.warp</span></span><span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  &lt;!--html--&gt;
-  &lt;div class=&quot;box&quot;&gt;
-    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;content warp&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;</code></pre></li>
+  &lt;!--html-->
+  &lt;div class=<span class="token string">"box"</span>>
+    &lt;div class=<span class="token string">"content"</span>>&lt;/div>
+    &lt;div class=<span class="token string">"content warp"</span>>&lt;/div>
+  &lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <h3 id="IFC"><a href="#IFC" class="headerlink" title="IFC"></a>IFC</h3><ol>
 <li><p>布局规则</p>
@@ -577,47 +581,50 @@
 <li><p>示例</p>
 <ul>
 <li><p>根据布局规则第4条</p>
-<pre><code>/****css****/
-.break{
- border: 1px solid red;
- background: yellow;
-}
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/****css****/</span>
+<span class="token selector"><span class="token class">.break</span></span><span class="token punctuation">{</span>
+ <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid red<span class="token punctuation">;</span>
+ <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-&lt;!--html--&gt;
-&lt;span class=&quot;break&quot;&gt;这是一个行内盒子这是一个行内盒子这是一个行内盒子&lt;/span&gt;</code></pre><p><img src="/images/css-IFC.jpg" alt></p>
+&lt;!--html-->
+&lt;span class=<span class="token string">"break"</span>>这是一个行内盒子这是一个行内盒子这是一个行内盒子&lt;/span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/css-IFC.jpg" alt></p>
 </li>
 </ul>
 </li>
 <li><p>根据作用第1条,设置span为inline-block,则会在box上产生ifc,在box上设置text-align使span元素水平居中。</p>
-<pre><code> /****css****/
- .box{text-align: center;}
- .content{
-   display: inline-block;
-   border: 1px solid red;
- }
+<pre class="line-numbers language-css"><code class="language-css"> <span class="token comment" spellcheck="true">/****css****/</span>
+ <span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span><span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token punctuation">}</span>
+ <span class="token selector"><span class="token class">.content</span></span><span class="token punctuation">{</span>
+   <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid red<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 
- &lt;!--html--&gt;
- &lt;div class=&quot;box&quot;&gt;
-   &lt;span class=&quot;content&quot;&gt;内容区域&lt;/span&gt;
- &lt;/div&gt;</code></pre></li>
+ &lt;!--html-->
+ &lt;div class=<span class="token string">"box"</span>>
+   &lt;span class=<span class="token string">"content"</span>>内容区域&lt;/span>
+ &lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>根据作用第2条，设置盒子2为inline-block，则会在box上产生ifc，设置其vertical-align:middle，盒子1垂直居中。</p>
-<pre><code> /****css****/
- .box{
-   text-align: center;
-   border: 1px solid red;
- }
- .label{
-   display: inline-block;
-   height: 100px;
-   width: 100px;
-   vertical-align: middle;
- }
+<pre class="line-numbers language-css"><code class="language-css"> <span class="token comment" spellcheck="true">/****css****/</span>
+ <span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
+   <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid red<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token selector"><span class="token class">.label</span></span><span class="token punctuation">{</span>
+   <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+   <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+   <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
 
- &lt;!--html--&gt;
- &lt;div class=&quot;box&quot;&gt;
-   &lt;span class=&quot;content&quot;&gt;盒子1&lt;/span&gt;
-   &lt;span class=&quot;label&quot;&gt;盒子2&lt;/span&gt;
- &lt;/div&gt;</code></pre></li>
+ &lt;!--html-->
+ &lt;div class=<span class="token string">"box"</span>>
+   &lt;span class=<span class="token string">"content"</span>>盒子<span class="token number">1</span>&lt;/span>
+   &lt;span class=<span class="token string">"label"</span>>盒子<span class="token number">2</span>&lt;/span>
+ &lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="FFC"><a href="#FFC" class="headerlink" title="FFC"></a>FFC</h3><ol>
 <li>定义(Flex Formatting Contexts)：自适应格式化上下文</li>
@@ -1062,7 +1069,7 @@
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

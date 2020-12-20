@@ -55,7 +55,7 @@ Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把�
 ## 代码解析上述概念
 
 **PHP中类的定义**<br/>
-```
+```php
   <?php
     class People {
       // 公有成员属性
@@ -70,7 +70,7 @@ Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把�
 
 ```
 **PHP中对象的创建**<br/>
-```
+```php
   class People {
     // 公有成员属性
     public $name = 'zhangsan';
@@ -87,7 +87,7 @@ Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把�
 ```
 **PHP中构造函数**<br/>
 构造函数是一种特殊的方法。主要用来在创建对象时初始化对象和JS中构造函数中的constructor相似<br/>
-```
+```php
   class People {
     // 通过构造方法为成员变量赋初始值
     function __construct( $name, $age ) {
@@ -110,7 +110,7 @@ Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把�
 ```
 **PHP中析构函数**<br/>
 析构函数 (destructor) 与构造函数相反，当对象结束其生命周期时，系统自动执行析构函数，常用场景例如连接数据库在__construct中,处理完数据断开连接在__destruct方法中<br/>
-```
+```php
   class People {
     // 通过构造方法为成员变量赋初始值
     function __construct ($name, $age) {
@@ -142,7 +142,7 @@ Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把�
 
 **PHP中继承实现**<br/>
 PHP 使用关键字 extends 来继承一个类<br/>
-```
+```php
   // 父类
   class People {
     var $name;
@@ -171,7 +171,7 @@ PHP 使用关键字 extends 来继承一个类<br/>
   $boy->sayName();
 ```
 **PHP中方法重写**
-```
+```php
   class People {
     var $name;
     var $age;
@@ -206,7 +206,7 @@ protected（受保护）：受保护的类成员则可以被其自身以及其�
 
 private（私有）：私有的类成员则只能被其定义所在的类访问<br/>
 
-```
+```php
   /**
    * 基类
    * Define People
@@ -282,7 +282,7 @@ private（私有）：私有的类成员则只能被其定义所在的类访问<
 
 继承一个抽象类，子类必须定义父类中的所有抽象方法并且必须要和父类的声明访问级别保持一致或者更宽松<br/>
 
-```
+```php
   /**
    * 定义抽象类People
    */
@@ -337,7 +337,7 @@ private（私有）：私有的类成员则只能被其定义所在的类访问<
 场景：在很多类里面很多的方法都是在重复。这里就可以去用抽象类，当然也可以重写一个类，每个公共类实例化实例化一次，调用相同的方法。但是abstract可以省去实例化的步骤，而且可以重载这个方法,这样不是更方便简单嘛<br/>
 **PHP中接口的使用**<br/>
 interface主要对类名，类所拥有的方法，以及所传参数起约束和规范作用，和abstract类似。在多人协同开发项目时起重要作用<br/>
-```
+```php
 // 定义接口类
 interface People  
 {
@@ -356,7 +356,7 @@ $apple->eat();
 ```
 
 参数约束，如果参数名字不一样会报错<br/>
-```
+```php
 // 定义接口类
 interface People  
 {
@@ -389,7 +389,7 @@ $grape->eat('紫');
 ```
 
 接口继承<br/>
-```
+```php
   // 定义People接口类
   interface People  
   {  
@@ -442,7 +442,7 @@ $grape->eat('紫');
 __wakeup() 经常用在反序列化操作中，例如重新建立数据库连接，或执行其它初始化操作<br/>
 
 引入php手册中的例子<br/>
-```
+```php
   class Connection 
   {
       protected $link;
@@ -476,7 +476,7 @@ __wakeup() 经常用在反序列化操作中，例如重新建立数据库连接
 ```
 
 2. 属性重载__set,__get,__isset,__unset<br/>
-```
+```php
 public __set ( string $name , mixed $value ) : void // 设置私有属性值的时候调用
 public __get ( string $name ) : mixed  // 获取私有属性值的时候调用
 public __isset ( string $name ) : bool // 当判断一个私有成员属性是否被设置过时调用

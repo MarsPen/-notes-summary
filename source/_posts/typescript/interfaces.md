@@ -18,7 +18,7 @@ categories:
 在面向对象语言中接口 (Interfaces) 是对类的行为的抽象，在TypeScript中也常用于定义结构子类型，方便进行类型检查
 
 ### 定义一个简单的接口<br/>
-```
+```ts
 interface IPeople {
   name: string;
   age: number
@@ -33,7 +33,7 @@ let zhangsan: IPeople = {
 
 上面的例子我定义了一个接口 IPeople，并且定义了一个变量 zhangsan，它的类型是 IPerson，zhangsan的数据结构类型必须与 IPeople 一致否则会报错例如下面
 
-```
+```ts
 interface IPeople {
   name: string;
   age: number
@@ -50,7 +50,7 @@ Property 'age' is missing in type '{ name: string; }' but required in type 'IPeo
 
 当我们定义接口属性的时候不是必须的那么可选属性就起到了作用
 
-```
+```ts
 interface IPeople {
   name: string;
   age?: number
@@ -64,7 +64,7 @@ let zhangsan: IPeople = {
 
 当我们需要定义或增加一些未知的属性，那么任意属性就起到了作用
 
-```
+```ts
 interface IPeople {
   name: string;
   age?: number
@@ -79,7 +79,7 @@ let zhangsan: IPeople = {
 ```
 上述例子中需要注意的是一旦定义了任意属性，那么可选属性和确定属性的类型必须是它的的类型的子集，否则会报错，例如
 
-```
+```ts
 interface IPeople {
   name: string;
   age?: number
@@ -101,7 +101,7 @@ Type 'number' is not assignable to type 'string'.
 
 当我们需要对象中字段只能在创建的时候被赋值，那么只读属性就起到了作用
 
-```
+```ts
 interface IPerson {
   readonly id: number;
   name: string;
@@ -122,7 +122,7 @@ Cannot assign to 'id' because it is a read-only property.
 
 ### 可以为接口定义函数类型<br/>
 
-```
+```ts
 interface IPeople {
   (name: string, age: number): string;
 }
@@ -143,7 +143,7 @@ hello('zhangsan', 28) //my name is zhangsan I,m years old 28
 用类实现接口主要应用的场景就是类与类之间有一些公有的功能及特性，要实现高度抽象这也是面向对象的基本。在 TypeScript 中用关键字 implements 去实现。
 
 
-```
+```ts
 // 定义接口，接口中有一个公共的方法eat
 interface People{
   eat(food: string)
@@ -172,7 +172,7 @@ console.log(girl.eat('banana'))
 ```
 
 一个类也可以实现多个接口
-```
+```ts
 interface Eat{
   food (food: string)
 }
@@ -198,7 +198,7 @@ console.log(people.drink())
 
 在 JS ECMA6 中类的继承用 extends 关键字， 那么在 TS 中我们依然同样用这个关键字
 
-```
+```ts
 interface Eat {
   eat ()
 }
@@ -214,7 +214,7 @@ interface People extends Eat {
 
 混合类型实际上就是在接口中存在多种规则，利用这种规则去实现自己的属性和方法
 
-```
+```ts
 // 定义规则
 interface Counter {
   (start: number): string;

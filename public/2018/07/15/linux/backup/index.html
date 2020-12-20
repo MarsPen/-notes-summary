@@ -422,7 +422,7 @@ tar -jcvf log.tar.bz2 l">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    186
+                    182
                 </div>
                 
 
@@ -445,21 +445,25 @@ tar -jcvf log.tar.bz2 l">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><pre><code>tar -cvf log.tar log2012.log    仅打包，不压缩！ 
+                <h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><pre class="line-numbers language-js"><code class="language-js">tar <span class="token operator">-</span>cvf log<span class="token punctuation">.</span>tar log2012<span class="token punctuation">.</span>log    仅打包，不压缩！ 
 
-tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
+tar <span class="token operator">-</span>zcvf log<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz log2012<span class="token punctuation">.</span>log   打包后，以 gzip 压缩 
 
-tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩 
+tar <span class="token operator">-</span>jcvf log<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>bz2 log2012<span class="token punctuation">.</span>log  打包后，以 bzip2 压缩 
 
-tar -zxvf /opt/soft/test/log.tar.gz 解压缩</code></pre><h3 id="dump"><a href="#dump" class="headerlink" title="dump"></a>dump</h3><pre><code>dump -0aj -f /tmp/home0.bak /home  制作一个 &#39;/home&#39; 目录的完整备份
+tar <span class="token operator">-</span>zxvf <span class="token operator">/</span>opt<span class="token operator">/</span>soft<span class="token operator">/</span>test<span class="token operator">/</span>log<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz 解压缩<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="dump"><a href="#dump" class="headerlink" title="dump"></a>dump</h3><pre class="line-numbers language-js"><code class="language-js">dump <span class="token operator">-</span>0aj <span class="token operator">-</span>f <span class="token operator">/</span>tmp<span class="token operator">/</span>home0<span class="token punctuation">.</span>bak <span class="token operator">/</span>home  制作一个 <span class="token string">'/home'</span> 目录的完整备份
 
-dump -1aj -f /tmp/home0.bak /home  制作一个 &#39;/home&#39; 目录的交互式备份</code></pre><h3 id="restore"><a href="#restore" class="headerlink" title="restore"></a>restore</h3><pre><code>restore -if /tmp/home0.bak  还原备份</code></pre><h3 id="rsync"><a href="#rsync" class="headerlink" title="rsync"></a>rsync</h3><pre><code>rsync -rogpav --delete /home /tmp  同步两边的目录 
+dump <span class="token operator">-</span>1aj <span class="token operator">-</span>f <span class="token operator">/</span>tmp<span class="token operator">/</span>home0<span class="token punctuation">.</span>bak <span class="token operator">/</span>home  制作一个 <span class="token string">'/home'</span> 目录的交互式备份<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="restore"><a href="#restore" class="headerlink" title="restore"></a>restore</h3><pre class="line-numbers language-js"><code class="language-js">restore <span class="token operator">-</span><span class="token keyword">if</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>home0<span class="token punctuation">.</span>bak  还原备份<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="rsync"><a href="#rsync" class="headerlink" title="rsync"></a>rsync</h3><pre class="line-numbers language-js"><code class="language-js">rsync <span class="token operator">-</span>rogpav <span class="token operator">--</span><span class="token keyword">delete</span> <span class="token operator">/</span>home <span class="token operator">/</span>tmp  同步两边的目录 
 
-rsync -rogpav -e ssh --delete /home ip_address:/tmp  通过SSH通道rsync 
+rsync <span class="token operator">-</span>rogpav <span class="token operator">-</span>e ssh <span class="token operator">--</span><span class="token keyword">delete</span> <span class="token operator">/</span>home ip_address<span class="token punctuation">:</span><span class="token operator">/</span>tmp  通过SSH通道rsync 
 
-rsync -az -e ssh --delete ip_addr:/home/public /home/local  通过ssh和压缩将一个远程目录同步到本地目录 
+rsync <span class="token operator">-</span>az <span class="token operator">-</span>e ssh <span class="token operator">--</span><span class="token keyword">delete</span> ip_addr<span class="token punctuation">:</span><span class="token operator">/</span>home<span class="token operator">/</span><span class="token keyword">public</span> <span class="token operator">/</span>home<span class="token operator">/</span>local  通过ssh和压缩将一个远程目录同步到本地目录 
 
-rsync -az -e ssh --delete /home/local ip_addr:/home/public  通过ssh和压缩将本地目录同步到远程目录 </code></pre>
+rsync <span class="token operator">-</span>az <span class="token operator">-</span>e ssh <span class="token operator">--</span><span class="token keyword">delete</span> <span class="token operator">/</span>home<span class="token operator">/</span>local ip_addr<span class="token punctuation">:</span><span class="token operator">/</span>home<span class="token operator">/</span><span class="token keyword">public</span>  通过ssh和压缩将本地目录同步到远程目录 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -639,6 +643,7 @@ rsync -az -e ssh --delete /home/local ip_addr:/home/public  通过ssh和压缩�
                             shutdownshutdown -r  关机重启
 shutdown -h  关机不重启
 shutdown now  立刻关机
+
 halt关机
 reboot重启
 
@@ -896,7 +901,7 @@ sudo dpkg -l
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125.5k</span>
+                <span class="white-color">133.8k</span>
                
             
              

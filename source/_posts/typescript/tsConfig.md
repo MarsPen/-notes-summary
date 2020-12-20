@@ -20,18 +20,18 @@ categories:
 ### 使用tsconfig.json
 
 初始化 tsconfig.json 或者手动建立文件tsconfig.json
-```
+```ts
 tsc --init
 ```
 
 如果项目配置了tsconfig.json，那么在进行转换的时候可以在命令行直接输入
-```
+```ts
 tsc 
 ```
 编译器会从当前目录开始去查找tsconfig.json文件，逐级向上搜索父目录
 
 否则就需要在编译时加上文件及目录
-```
+```ts
 tsc test.ts
 ```
 默认在当前目录生成test.js
@@ -41,7 +41,7 @@ tsc test.ts
 
 下面这个例子是列举了在项目中经常用到的配置，当前根据项目的不同会有区别
 
-```
+```ts
 {
 
   "compileOnSave": true, //让IDE在保存文件的时候根据tsconfig.json重新生成文件
