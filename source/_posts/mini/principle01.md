@@ -100,7 +100,7 @@ document.getElementsByTagName('webview')[0].showDevTools(true,null)
   fs.writeFileSync("wxcss.js", cssCompiler);
   ```
 2、执行 `npm install miniprogram-compiler`
-3、执行 `node compiler.js`,会在同目录生成 <a href=""> wxml</a> 和 <a href="">wxcss</a> 两个 JS 文件
+3、执行 `node compiler.js`,会在同目录生成 <a href="https://github.com/MarsPen/-notes-summary/blob/master/source/_posts/mini/wcss.md"> wxml</a> 和 <a href="https://github.com/MarsPen/-notes-summary/blob/master/source/_posts/mini/wcsc.md">wxcss</a> 两个 JS 文件
 4、新建 index.wxml 并写入如下代码
   ```js
   <view class="box">
@@ -183,7 +183,7 @@ wcc的作用就是：
 ```
 
 其他文件先忽略，我们先看一下 webview 引用的两个基础文件源码概览 
-<a href="WAWebview.js">WAWebview</a> 和 <a href="WAService.js">WAService</a>
+<a href="https://github.com/MarsPen/-notes-summary/blob/master/source/_posts/mini/WAWebview.md">WAWebview</a> 和 <a href="https://github.com/MarsPen/-notes-summary/blob/master/source/_posts/mini/WAService.md">WAService</a>
 
 其中，WAWebview 最主要的几个部分：
 
