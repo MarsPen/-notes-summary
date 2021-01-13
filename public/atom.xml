@@ -105,11 +105,11 @@
   </entry>
   
   <entry>
-    <title>微信小程序之启动流程</title>
+    <title>小程序框架对比</title>
     <link href="https://www.studyfe.cn/2020/12/20/mini/principle03/"/>
     <id>https://www.studyfe.cn/2020/12/20/mini/principle03/</id>
     <published>2020-12-20T04:35:09.000Z</published>
-    <updated>2020-12-20T10:27:52.002Z</updated>
+    <updated>2021-01-13T13:42:34.892Z</updated>
     
     <summary type="html">
     
@@ -136,7 +136,7 @@
     <link href="https://www.studyfe.cn/2020/12/20/mini/principle02/"/>
     <id>https://www.studyfe.cn/2020/12/20/mini/principle02/</id>
     <published>2020-12-20T04:32:09.000Z</published>
-    <updated>2020-12-20T10:27:46.413Z</updated>
+    <updated>2021-01-13T13:41:32.874Z</updated>
     
     <summary type="html">
     
@@ -144,8 +144,8 @@
       
         
         
-          &lt;p&gt;待更新&lt;/p&gt;
-
+          &lt;p&gt;在说小程序启动流程分析之前我们先来了解下其他相关相关知识，也是官方文档提到的&lt;/p&gt;
+&lt;h3 id=&quot;运行机制&quot;&gt;&lt;a href=&quot;#运行机制&quot; class=&quot;headerlink&quot;
         
       
     

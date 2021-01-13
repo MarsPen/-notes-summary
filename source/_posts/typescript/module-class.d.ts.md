@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2019-09-05 11:41:37
- * @LastEditTime: 2020-12-19 15:58:54
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /-notes-summary/source/_posts/typescript/module-class.d.ts.md
--->
+
 ---
 title: class.d.ts
 date:  2019-8-15 18:20:27

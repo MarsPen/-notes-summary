@@ -15,10 +15,10 @@ categories:
 
 ### 构建TCP服务<br/>
  tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br/>
- <img src=/images/tcp.png' width="300px"></img><br/>
+ <img src='/images/tcp.png' width="300px"></img><br/>
 
  tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br/>
- <img src=/images/ack.png' width="300px"></img><br/>
+ <img src='/images/ack.png' width="300px"></img><br/>
 
   第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认<br/>
   第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态<br/>
@@ -165,10 +165,10 @@ hello
 ### HTTP模块<br/>
 
 node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br/>
-<img src=/images/request.png' width="400px"></img><br/>
+<img src='/images/request.png' width="400px"></img><br/>
 
 http模块将所有读写抽象为ServerRequest和ServerResponse对象<br/>
-<img src=/images/http.png' width="400px"></img><br/>
+<img src='/images/http.png' width="400px"></img><br/>
 
 ```js
 function (req, res) {
@@ -182,7 +182,7 @@ function (req, res) {
 http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br/>
 http 模块包含一个默认的客户端代理对象http.globalAgent<br/>
 通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br/>
-<img src=/images/http代理.png' width="400px"></img><br/>
+<img src='/images/http代理.png' width="400px"></img><br/>
 
 ```js
 // 可以通过http.Agent修改连接数量，但连接数量过大会影响服务器性能
@@ -204,7 +204,7 @@ Websocket 协议解决了服务器与客户端全双工通信的问题,也就是
 ### WebSocket协议解析<br/>
 
 WebSocket协议主要分为两个部分第一部分 http **握手**连接，第二部分协议升级为 WebSocket 进行**数据传输**<br/>
-<img src=/images/websocket.png' width="400px"></img><br/>
+<img src='/images/websocket.png' width="400px"></img><br/>
 
 
 

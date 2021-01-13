@@ -7,8 +7,9 @@
   <meta name="keywords" content="tcp udp http, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="构建TCP服务 tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图 &amp;lt;img src=/images/tcp.png’ width=”300px”&amp;gt;
- tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图">
+  <meta name="description" content="构建TCP服务 tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图 
+ tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图 
+  第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -419,14 +420,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    7 分
                 </div>
                 
                 
@@ -442,8 +443,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务<br></h3><p> tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br><br> &lt;img src=/images/tcp.png’ width=”300px”&gt;<br></p>
-<p> tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br><br> &lt;img src=/images/ack.png’ width=”300px”&gt;<br></p>
+                <h3 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务<br></h3><p> tcp全名为传输控制协议，在OSI模型中属于传输层协议如下图<br><br> <img src="/images/tcp.png" width="300px"><br></p>
+<p> tcp是面向连接的协议，特点是在传输之前需要3次握手形成会话如下图<br><br> <img src="/images/ack.png" width="300px"><br></p>
 <p>  第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认<br><br>  第二次握手：服务器收到syn包，必须确认客户的SYN(ack=j+1)，同时自己也发送一个SYN包(syn=k)，即SYN+ACK包，此时服务器进入SYN_RECV状态<br><br>  第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手<br></p>
 <p>  当然tcp也会有四次挥手，在这里就不具体说明了<br></p>
 <h3 id="创建TCP服务端"><a href="#创建TCP服务端" class="headerlink" title="创建TCP服务端"></a>创建TCP服务端<br></h3><p>1、创建TCP服务端接受网络请求<br><br>1.1服务器事件<br></p>
@@ -547,13 +548,13 @@ hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
 <pre class="line-numbers language-js"><code class="language-js"><span class="token operator">*</span> Connection #<span class="token number">0</span> to host <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span> left intact
 <span class="token operator">*</span> Closing connection #<span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>通过上面的信息中我们可以看出虽然是基于 TCP，但是本身确实基于请求响应式的，一问一答模式并不是会话模式。<br></p>
-<h3 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块<br></h3><p>node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br><br>&lt;img src=/images/request.png’ width=”400px”&gt;<br></p>
-<p>http模块将所有读写抽象为ServerRequest和ServerResponse对象<br><br>&lt;img src=/images/http.png’ width=”400px”&gt;<br></p>
+<h3 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块<br></h3><p>node http 模块承继 tcp 服务器（ net 模块）它能够与多个客户端保持连接，采用事件驱动，不会为每个连接创建额外的线程或进程。占用内存低，所以能实现高并发，tcp 服务以connection进行服务，http以request进行服务。node http 模块将connection和request进行封装<br><br><img src="/images/request.png" width="400px"><br></p>
+<p>http模块将所有读写抽象为ServerRequest和ServerResponse对象<br><br><img src="/images/http.png" width="400px"><br></p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'Content-Type'</span> <span class="token punctuation">:</span> <span class="token string">'text/plain'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Hello Word'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理<br></h3><p>http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br><br>http 模块包含一个默认的客户端代理对象http.globalAgent<br><br>通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br><br>&lt;img src=/images/http代理.png’ width=”400px”&gt;<br></p>
+<h3 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理<br></h3><p>http 提供的 ClientRequest 是基于 tcp 层实现的，在keepalive情况下，一个底层会话能够连接多个请求。<br><br>http 模块包含一个默认的客户端代理对象http.globalAgent<br><br>通过 ClientRequest 对象对用一个服务器发起的 http 最多可以创建5个连接，实际上是一个连接池。如果 http 客户端同时对一个服务器发起超过5个请求，其实也只有5个处于并发状态。<br><br><img src="/images/http代理.png" width="400px"><br></p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 可以通过http.Agent修改连接数量，但连接数量过大会影响服务器性能</span>
 <span class="token keyword">var</span> agent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">http<span class="token punctuation">.</span>Agent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   maxSockets<span class="token punctuation">:</span> <span class="token number">10</span>
@@ -566,7 +567,7 @@ hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
   agent<span class="token punctuation">:</span> agent
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="构建-WebSocket-服务"><a href="#构建-WebSocket-服务" class="headerlink" title="构建 WebSocket 服务"></a>构建 WebSocket 服务<br></h3><p>Websocket 协议解决了服务器与客户端全双工通信的问题,也就是客户端和服务端之间的长连接<br></p>
-<h3 id="WebSocket协议解析"><a href="#WebSocket协议解析" class="headerlink" title="WebSocket协议解析"></a>WebSocket协议解析<br></h3><p>WebSocket协议主要分为两个部分第一部分 http <strong>握手</strong>连接，第二部分协议升级为 WebSocket 进行<strong>数据传输</strong><br><br>&lt;img src=/images/websocket.png’ width=”400px”&gt;<br></p>
+<h3 id="WebSocket协议解析"><a href="#WebSocket协议解析" class="headerlink" title="WebSocket协议解析"></a>WebSocket协议解析<br></h3><p>WebSocket协议主要分为两个部分第一部分 http <strong>握手</strong>连接，第二部分协议升级为 WebSocket 进行<strong>数据传输</strong><br><br><img src="/images/websocket.png" width="400px"><br></p>
 <h3 id="TCP-UDP-HTTP-WebSocket区别"><a href="#TCP-UDP-HTTP-WebSocket区别" class="headerlink" title="TCP UDP HTTP WebSocket区别"></a>TCP UDP HTTP WebSocket区别</h3><ol>
 <li>TCP UDP HTTP WebSocket都是协议，而TCP/IP是不同协议的组合 <br></li>
 <li>Socket的本质是API，只不过是对TCP/IP协议族的抽象或者说封装<br></li>
@@ -1010,7 +1011,7 @@ const myURL = new URL('https://example.org/foo#
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">133.8k</span>
+                <span class="white-color">135.7k</span>
                
             
              

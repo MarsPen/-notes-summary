@@ -7,8 +7,9 @@
   <meta name="keywords" content="微信小程序之启动流程, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="待更新
-">
+  <meta name="description" content="在说小程序启动流程分析之前我们先来了解下其他相关相关知识，也是官方文档提到的
+运行机制
+小程序启动会有两种情况，一种是「冷启动」，一种是「热启动」。假如用户已经打开过某小程序，然后在一定时间内再次打开该小程序，此时无需重新启动，只需将后台状">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -419,14 +420,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
                 
@@ -442,7 +443,159 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>待更新</p>
+                <p>在说小程序启动流程分析之前我们先来了解下其他相关相关知识，也是官方文档提到的</p>
+<h3 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h3><blockquote>
+<p>小程序启动会有两种情况，一种是「冷启动」，一种是「热启动」。假如用户已经打开过某小程序，然后在一定时间内再次打开该小程序，此时无需重新启动，只需将后台状态的小程序切换到前台，这个过程就是热启动；冷启动指的是用户首次打开或小程序被微信主动销毁后再次打开的情况，此时小程序需要重新加载启</p>
+</blockquote>
+<ul>
+<li>小程序没有重启的概念</li>
+<li>当小程序进入后台，客户端会维持一段时间的运行状态，超过一定时间后（目前是5分钟）会被微信主动销毁</li>
+<li>当短时间内（5s）连续收到两次以上收到系统内存告警，会进行小程序的销毁</li>
+</ul>
+<img src="/images/mini13.png">
+
+<h3 id="更新机制"><a href="#更新机制" class="headerlink" title="更新机制"></a>更新机制</h3><p>小程序冷启动时如果发现有新版本，将会异步下载新版本的代码包，并同时用客户端本地的包进行启动，即新版本的小程序需要等下一次冷启动才会应用上。 如果需要马上应用最新版本，可以使用 <a href="https://developers.weixin.qq.com/miniprogram/dev/api/base/update/wx.getUpdateManager.html" target="_blank" rel="noopener">wx.getUpdateManager API</a> 进行处理</p>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>小程序的生命周期分为冷启动和热启动，执行顺序如下图（无卸载销毁阶段）<br><img src="/images/mini14.jpg"></p>
+<h3 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h3><p>在微信开发者工具命令行中输入 <code>document</code> 打开逻辑层的的代码可以看到大致流程如下：<br><img src="/images/mini15.png"></p>
+<p><strong>第一步：初始化全局变量</strong></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 指向当前正在加载的页面路径</span>
+<span class="token keyword">var</span> __wxRoute<span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">// 标志 Page 的正确注册</span>
+  __wxRouteBegin<span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">// 指向当前正在加载的 JS 文件</span>
+  __wxAppCurrentFile__<span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">// 小程序每个页面的 data 域对象</span>
+  __wxAppData <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">// 分为两类.json 和 .wxml 结尾，</span>
+<span class="token comment" spellcheck="true">// .wxml 结尾的，其 key 值为通过调用 $gwx('./pages/index/index.wxml')() 得到一个节点树</span>
+  __wxAppCode__ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  __vd_version_info__ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">// 自定义组件构造器</span>
+  Component <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">// 自定义组件 behavior 构造器</span>
+  Behavior <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">// 自定义插件的构造器</span>
+  definePlugin <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requirePlugin <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// global</span>
+global <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> $gwx<span class="token punctuation">,</span>
+  __workerVendorCode__ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  __workersCode__ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 多线程构造器</span>
+  __WeixinWorker <span class="token operator">=</span> <span class="token punctuation">(</span>WeixinWorker <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 根据全局配置和页面配置生成的配置对象</span>
+<span class="token keyword">var</span> __wxConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>第二步：加载框架（WAService.js）</strong></p>
+<p>我们调用的 API 主要是 <code>__waServiceInit__</code>部分定义的，如以下方法</p>
+<ul>
+<li><code>__appServiceEngine__</code>： 提供了框架最基本的对外接口，如 <code>App</code>、<code>Page</code>、<code>Component</code>、<code>Behavior</code>、<code>getApp</code>、<code>getCurrentPages</code> 等方法</li>
+<li><code>exparser</code>：提供了框架底层的能力，如实例化组件，数据变化监听，<code>View</code> 层与逻辑层的交互等</li>
+<li><code>__virtualDOM__</code>：着连接 <code>__appServiceEngine__</code>和 <code>exparser</code> 的作用</li>
+</ul>
+<p><strong>第三步：业务代码的加载</strong></p>
+<p>require 和 define</p>
+<ul>
+<li>小程序中，开发者的 JavaScript 代码会被打包为 AMD 规范的 JS 模块</li>
+<li>require 和 define 两个方法是在 WAService 中定义的</li>
+<li>define 限制了模块可使用的其他模块，如 window，document在小程序中是不可使用的</li>
+</ul>
+<p>代码的加载顺序是</p>
+<ul>
+<li>加载项目中其他 js 文件（非注册程序和注册页面的 js 文件）</li>
+<li>注册程序的 app.js</li>
+<li>注册自定义组件 js 文件</li>
+<li>注册页面的 js 代码</li>
+</ul>
+<p>对于在 app.js 以及注册页面的 js 代码都会加载完成后立即使用 require 方法执行模块中的程序。其他的代码则需要在程序中使用 require 方法才会被执行</p>
+<p><strong>第四步：加载 app.js 与注册程序</strong></p>
+<p>在 app.js 加载完成后，小程序会使用 require(‘app.js’) 注册程序，即对 App 方法进行调用。App 方法是对<code>__appServiceEngine__.App</code>方法的引用， App() 函数用来注册一个小程序，接收一个 object 对象参数，其指定小程序的生命周期函数等，getApp() 函数可以用来获取到小程序实例</p>
+<pre class="line-numbers language-js"><code class="language-js">
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"app.js"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">!</span>error<span class="token punctuation">.</span><span class="token keyword">from</span> <span class="token operator">&amp;&amp;</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'app.js错误:\\n'</span><span class="token punctuation">,</span>error<span class="token punctuation">)</span>
+  <span class="token keyword">throw</span> error
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> decodePathName <span class="token operator">=</span> <span class="token function">decodeURI</span><span class="token punctuation">(</span><span class="token string">"component/hello"</span><span class="token punctuation">)</span>
+__wxAppCode__<span class="token punctuation">[</span>decodePathName <span class="token operator">+</span> <span class="token string">".json"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">"component"</span><span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">"usingComponents"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+__wxAppCode__<span class="token punctuation">[</span>decodePathName <span class="token operator">+</span> <span class="token string">".wxml"</span><span class="token punctuation">]</span><span class="token operator">=</span>\<span class="token function">$gwx</span><span class="token punctuation">(</span><span class="token string">"./"</span> <span class="token operator">+</span> decodePathName <span class="token operator">+</span> <span class="token string">".wxml"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> decodePathName <span class="token operator">=</span> <span class="token function">decodeURI</span><span class="token punctuation">(</span><span class="token string">"pages/index/index"</span><span class="token punctuation">)</span>
+__wxAppCode__<span class="token punctuation">[</span>decodePathName <span class="token operator">+</span> <span class="token string">".json"</span><span class="token punctuation">]</span><span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">"usingComponents"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"hello"</span><span class="token punctuation">:</span><span class="token string">"/component/hello"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+__wxAppCode__<span class="token punctuation">[</span>decodePathName <span class="token operator">+</span> <span class="token string">".wxml"</span><span class="token punctuation">]</span><span class="token operator">=</span>\<span class="token function">$gwx</span><span class="token punctuation">(</span><span class="token string">"./"</span> <span class="token operator">+</span> decodePathName <span class="token operator">+</span> <span class="token string">".wxml"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> decodePathName <span class="token operator">=</span> <span class="token function">decodeURI</span><span class="token punctuation">(</span><span class="token string">"pages/logs/logs"</span><span class="token punctuation">)</span>
+__wxAppCode__<span class="token punctuation">[</span>decodePathName <span class="token operator">+</span> <span class="token string">".json"</span><span class="token punctuation">]</span><span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">"navigationBarTitleText"</span><span class="token punctuation">:</span><span class="token string">"查看启动日志"</span><span class="token punctuation">,</span>
+  <span class="token string">"usingComponents"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+__wxAppCode__<span class="token punctuation">[</span>decodePathName <span class="token operator">+</span> <span class="token string">".wxml"</span><span class="token punctuation">]</span><span class="token operator">=</span>\<span class="token function">$gwx</span><span class="token punctuation">(</span><span class="token string">"./"</span> <span class="token operator">+</span> decodePathName <span class="token operator">+</span> <span class="token string">".wxml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> decodePathName <span class="token operator">=</span> <span class="token function">decodeURI</span><span class="token punctuation">(</span><span class="token string">"component/hello"</span><span class="token punctuation">)</span>
+__wxRoute <span class="token operator">=</span> decodePathName
+__wxRouteBegin <span class="token operator">=</span> <span class="token boolean">true</span>
+__wxAppCurrentFile__ <span class="token operator">=</span> decodePathName <span class="token operator">+</span> <span class="token string">".js"</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token function">require</span><span class="token punctuation">(</span>__wxAppCurrentFile__<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 插件项目不能hack define和require，走这里，异常只能精准到页面，内部的多层依赖的报错无法精准</span>
+  <span class="token operator">!</span>error<span class="token punctuation">.</span><span class="token keyword">from</span> <span class="token operator">&amp;&amp;</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'页面【'</span> <span class="token operator">+</span> decodePathName <span class="token operator">+</span> <span class="token string">']错误:\\n'</span><span class="token punctuation">,</span>error<span class="token punctuation">)</span>
+  <span class="token keyword">throw</span> error
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>APP 方法调用时的处理流程</p>
+<ul>
+<li>deprecated：getCurrentPage</li>
+<li>绑定生命周期函数如 “onLaunch”、”onShow”等</li>
+<li>绑定其他属性并判断是不是 getCurrentPage，然后绑定当前的 APP 实例</li>
+<li>根据是否有 onError 属性判断是不是注册错误</li>
+<li>检查启动参数<ul>
+<li>调用 onLaunch 参数使用 __wxConfig.appLaunchInfo，然后 JSBridge 调用 getAppConfig</li>
+<li>调用 onShow 参数可能和 onLaunch 不同</li>
+</ul>
+</li>
+<li>注册前后台切换回调</li>
+<li>注册找不到页面的回调</li>
+<li>返回实例给 APP 缓存</li>
+</ul>
+<p><strong>第五步：加载自定义组件代码以及注册自定义组件</strong><br>在 app.js 加载完之后，会加载自定义组件，每个自定义组件都是加载完自动注册。直到所有组件注册完毕。执行的步骤如下</p>
+<ul>
+<li>设置 <code>__wxRouteBegin</code> 为 false</li>
+<li>执行 <code>__virtualDOM__.Component(com)</code>：<ul>
+<li>获取当前加载路径</li>
+<li>标准化 com 配置（生命周期、插槽、通讯参数等）</li>
+<li>缓存 com 配置，缓存到 exparser.component.__list 中</li>
+</ul>
+</li>
+<li>缓存组件：以 path 为 key 值为 exparser.component.__list[comPath]</li>
+</ul>
+<p><strong>第六步：加载页面代码和注册页面</strong></p>
+<p>和加载自定义组件处理流程一样，都是每一个加载完后先注册在加载下一个</p>
+<p>处理 Page 的流程如下</p>
+<ul>
+<li>检查 <code>__wxRouteBegin</code> 是否为 false，</li>
+<li>设置 <code>__wxRouteBegin</code> 为 false</li>
+<li>检查是否在 app.json 中定义，如果未定义则抛出错误</li>
+<li>获取.json 中的定义信息</li>
+<li>检查 page 是否为对象，如果不是则抛出错误</li>
+<li>检查是否使用自定义组件<ul>
+<li>使用：执行 <code>__virtualDOM__.Page(page)</code>，缓存 page 的配置信息以 path 为 key 值为 exparser.Component.__list[pagePath]`</li>
+<li>未使用： 缓存 page 的配置信息以 path 为 key 值为 page 对象</li>
+</ul>
+</li>
+</ul>
+<p><strong>第七步：等待页面 Ready 和 Page 实例化</strong></p>
+<p>在小程序中切换页面或打开页面时会触发 onAppRoute 事件，通过 wx.onAppRoute 注册页面切换的处理程序，在所有程序就绪后，以 entryPagePath 作为入口使用 appLaunch 的方式进入页面。而 Ready 生命周期才页面真正的渲染完成</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结<hr></h3><p>上述就是小程序的启动流程，小程序不论是组件还是页面加载过后都会缓存一方面主要是为了提高性能，另一方面小程序还主要是 web 程序要等到 web 都执行完毕之后才 Ready。由于小程序插件在实际开发中应用很少所以就不再这里介绍了。我们记住这个流程（加载APP –&gt; 加载组件 –&gt; 加载页面）就可以了。</p>
 
             </div>
             <hr />
@@ -612,9 +765,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="微信小程序之启动流程">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="小程序框架对比">
                         
-                        <span class="card-title">微信小程序之启动流程</span>
+                        <span class="card-title">小程序框架对比</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -874,7 +1027,7 @@
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">133.8k</span>
+                <span class="white-color">135.7k</span>
                
             
              

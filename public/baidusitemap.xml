@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.studyfe.cn/2020/12/20/mini/principle03/</loc>
+    <lastmod>2021-01-13</lastmod>
+  </url>  <url>
+    <loc>https://www.studyfe.cn/2020/12/20/mini/principle02/</loc>
+    <lastmod>2021-01-13</lastmod>
+  </url>  <url>
+    <loc>https://www.studyfe.cn/2019/03/23/node/http/</loc>
+    <lastmod>2021-01-13</lastmod>
+  </url>  <url>
+    <loc>https://www.studyfe.cn/2019/08/15/typescript/module-class.d.ts/</loc>
+    <lastmod>2021-01-13</lastmod>
+  </url>  <url>
     <loc>https://www.studyfe.cn/2020/12/12/mini/principle01/</loc>
     <lastmod>2020-12-20</lastmod>
   </url>  <url>
@@ -8,12 +20,6 @@
     <lastmod>2020-12-20</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2020/12/20/mini/wawebview/</loc>
-    <lastmod>2020-12-20</lastmod>
-  </url>  <url>
-    <loc>https://www.studyfe.cn/2020/12/20/mini/principle03/</loc>
-    <lastmod>2020-12-20</lastmod>
-  </url>  <url>
-    <loc>https://www.studyfe.cn/2020/12/20/mini/principle02/</loc>
     <lastmod>2020-12-20</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2020/12/20/mini/wcsc/</loc>
@@ -128,9 +134,6 @@
     <lastmod>2020-12-19</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/04/01/node/fs/</loc>
-    <lastmod>2020-12-19</lastmod>
-  </url>  <url>
-    <loc>https://www.studyfe.cn/2019/03/23/node/http/</loc>
     <lastmod>2020-12-19</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/04/05/node/module/</loc>
