@@ -1,0 +1,1220 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="小程序框架跨端框架, 前端 typescript php js node html html5 css linux vue react">
+  <meta name="baidu-site-verification" content>
+  <meta name="google-site-verification" content>
+  <meta name="description" content="跨端框架到2021年前端的跨端项目已经达到一个瓶颈期，从原生的 RN、Weex、Flutter 到小程序生态的各平台跨端框架已经百花齐放。除了Flutter 实现的自渲染以外，其他的都脱离不了 web。而小程序跨端框架虽然很多，但可以从两">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>小程序框架跨端框架 | </title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+  <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/matery.css">
+  <link rel="stylesheet" type="text/css" href="/css/my.css">
+  <style type="text/css">
+    
+  </style>
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span"></span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name"></div>
+        <div class="logo-desc">
+            
+            前端工程师
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/marspen" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/marspen" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        小程序框架跨端框架
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/小程序/" target="_blank">
+                            <span class="chip bg-color">小程序</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/小程序/" class="post-category" target="_blank">
+                            小程序
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-01-14
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    任博
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="跨端框架"><a href="#跨端框架" class="headerlink" title="跨端框架"></a>跨端框架<hr></h3><p>到2021年前端的跨端项目已经达到一个瓶颈期，从原生的 RN、Weex、Flutter 到小程序生态的各平台跨端框架已经百花齐放。除了Flutter 实现的自渲染以外，其他的都脱离不了 web。而小程序跨端框架虽然很多，但可以从两个纬度来进行分类</p>
+<ul>
+<li>从框架的语法来说<ul>
+<li>Vue 语法</li>
+<li>React 语法</li>
+</ul>
+</li>
+<li>从实现原理来说<ul>
+<li>编译时 compile time 框架约定了一套自己的<a href="https://zhuanlan.zhihu.com/p/107947462" target="_blank" rel="noopener"> DSL</a>，在编译打包过程中，利用 babel 工具通过 AST 进行转译，生成符合小程序规则的代码。</li>
+<li>运行时 runtime，这种框架是在小程序逻辑层中运行 React 和 Vue，然后通过适配层，实现自定义渲染器</li>
+</ul>
+</li>
+</ul>
+<p>实现原理上运行时比编译时更消耗性能，但是编译时不够灵活，需要 case by case 的进行语法转换，需要按照框架规定的语法进行开发。<br>到 2021 年一些跨端框架其实已经放弃了维护，下面列举了一些小程序框架按照 github 上 star 数量从左到右</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>uniapp</th>
+<th>Taro</th>
+<th>wepy</th>
+<th>chameloen</th>
+<th>Remax</th>
+<th>megalo</th>
+<th>mpvue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>语法</td>
+<td>vue</td>
+<td>react/vue</td>
+<td>类vue</td>
+<td>类vue</td>
+<td>react</td>
+<td>vue</td>
+<td>vue</td>
+</tr>
+<tr>
+<td>厂家</td>
+<td>Hbuilder</td>
+<td>京东</td>
+<td>腾讯</td>
+<td>滴滴</td>
+<td>蚂蚁</td>
+<td>网易</td>
+<td>美团</td>
+</tr>
+</tbody></table>
+<h3 id="vue-核心流程"><a href="#vue-核心流程" class="headerlink" title="vue 核心流程"></a>vue 核心流程<hr></h3><p>从实现的语法上可以看出一种是 vue 一种是 react，本文只从 vue 的角度上分析其核心原理。<br>在开发中写的是 vue 代码然后经过打包编译之后就可以在小程序中运行。那这些框架背后做了什么呢？</p>
+<p>其实从根本上都属于 vue 的基本能力，没发生改变（双向绑定、虚拟DOM、diff算法等）。只是在最后更新数据的时候vue 是操作DOM，而跨端框架交给小程序setData。</p>
+<p>在了解跨端框架原理之前，我们先来看看 vue。一个 .vue 单文件由三个部分 <code>template</code>、<code>script</code>、<code>style</code> 构成，如下图</p>
+<img src="/images/mini16.jpg">
+
+<p>template 模板部分会在编译打包的过程中，被 vue-loader 调用 compile 方法通过词法分析生成一个 ast 对象，然后调用代码生成器，经过遍历 AST 树递归的拼接字符串操作，最终生成一段 render 函数。而 render 函数会在第一次 mount 时，或者 data 更新的时候才会被执行，执行后，会创建不同类型的 vnode 节点，最后会生成 vnode tree （虚拟 DOM 树）,vue 在拿到 vnode tree 之后就去和上次老的 vnode tree 做 patch diff 找出最小更新策略，patch 之后就会更新真实的视图DOM</p>
+<p>script 中我们会 new Vue，在 vue 初始化的时候会利用 Object.defineproperty 对数据进行劫持做响应式，当数据发生变化的时候，最终会调用上下文 render 函数，生成最新的 vnode tree，接着对比老的 vnode tree 然后进行 patch</p>
+<p>以上是 vue 的核心流程如果想要了解的更多可查看另外几篇文章 </p>
+<ul>
+<li><a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue 主线流程</a></li>
+<li><a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue 响应式</a></li>
+<li><a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue 编译部分</a></li>
+</ul>
+<h3 id="mpvue-核心流程"><a href="#mpvue-核心流程" class="headerlink" title="mpvue 核心流程"></a>mpvue 核心流程<hr></h3><p>由于小程序不支持 DOM，所以小程序这些跨端框架也不可能操作DOM，那是如何更新小程序的视图呢。<br>我们先来看一下 mpvue 框架，从源码架构、运行时、编译时三个方面说明</p>
+<p><strong>源码架构 🚩</strong><br>通过下图可以看出，mpvue 实际上是将 vue 的源码拿过来在 platforms 跨平台上增加了自己的源码，然后强行改了一波兼容，实现的方案。<br><img src="/images/mini21.png"></p>
+<p><strong>mpvue编译时🚩</strong><br>在编译阶段实际上就是 case by case 的过程</p>
+<ul>
+<li>template 主要是使用了 ast 来解析转化将两侧的语法对齐的过程。</li>
+<li>script 实际上就是将 vue 的 script 移动到小程序的 js 文件中，然后在引入 vue.js，具体如何执行的下面介绍。</li>
+<li>style 大部分可以直接挪到 wxss 中剔除小程序不支持的<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html" target="_blank" rel="noopener">选择器</a>最后做 rpx 转换。<img src="/images/mini20.png">
+
+</li>
+</ul>
+<p><strong>mpvue运行时 🚩</strong></p>
+<p>下面的图和 vue 的原理图很类似 vue 的编译、双向绑定、虚拟dom、diff 算法都没有发生改变，只是在 patch 更新 dom 的地方替换成了小程序的 setData。<br><img src="/images/mini22.png"></p>
+<p>因为小程序框架要求页面在页面调用 Page 方法否则就会报错。所以一些 vue 框架的做法实际上是在初始化的时候调用 Page()，这样小程序进行扫描的时候页面就不会出错</p>
+<pre class="line-numbers language-js"><code class="language-js">Vue<span class="token punctuation">.</span>init <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样在小程序容器中就会出现两个实例，Page 和 Vue。在页面初始化的时候，先实例化一个 Vue，然后在 Vue.init 中调用小程序的 Page()，生成小程序 page 实例，最后在 Vue 的 mounted 中把数据同步到小程序 page 实例上。</p>
+<img src="/images/mini18.png">
+
+<p>在 vue 数据发生变化的时候<br>🌟 先进行 vue 的流程</p>
+<ul>
+<li>触发响应式</li>
+<li>执行 render 生成新的 vnode</li>
+<li>diff 新旧 vnode，得到修改数据最优解</li>
+</ul>
+<p>🌟 后进行小程序的流程</p>
+<ul>
+<li>调用 setData 方法修改小程序实例的数据，触发小程序视图层，重新渲染</li>
+</ul>
+<p><strong>小结 🚩</strong></p>
+<ul>
+<li>数据归 vue 管，当数据放生变化后，通过框架的 runtime 进行中间桥接同步到小程序中</li>
+<li>事件及渲染由小程序管，用户在小程序触发各种事件后，先触发小程序的事件函数，然后通过框架的 runtime 运行事件代理，触发 vue 函数</li>
+</ul>
+<h3 id="taro-vue-核心流程"><a href="#taro-vue-核心流程" class="headerlink" title="taro/vue 核心流程"></a>taro/vue 核心流程<hr></h3><p>Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发，Taro3.x 版本相对与 1/2 采用了重运行时的架构，下图为它的实现架构<br><img src="/images/mini28.jpg"><br>Taro 代码编译之后分为两个大部分左侧 App Service(逻辑层)、右侧 View 视图层，和其他类 vue 框架一样 数据层是 taro管理，而事件层为小程序管理<br><img src="/images/mini23.jpg"></p>
+<blockquote>
+<p>App Service(逻辑层) 🚩 - 参见源码 <code>taro-runtime &gt; src &gt; dsl &gt; vue.ts</code> </p>
+</blockquote>
+<p>🌟 vue：提供基础能力，这部分就没有好说的了<br>🌟 taro-runtime：核心底层 DOM、BOM 的实现、各平台实现代码、工具类等</p>
+<p>在 runtime 的 DSL vue.ts 中主要有<code>createVueApp</code>、 <code>connectVuePage</code> 方法，源码如下</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token keyword">export</span> <span class="token keyword">function</span> createVueApp <span class="token punctuation">(</span>App<span class="token punctuation">:</span> VueInstance<span class="token punctuation">,</span> vue<span class="token punctuation">:</span> V<span class="token punctuation">,</span> config<span class="token punctuation">:</span> AppConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// ....</span>
+    <span class="token keyword">const</span> wrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token punctuation">(</span>Vue <span class="token keyword">as</span> VueConstructor<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      render <span class="token punctuation">(</span>h<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>pages<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> page <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">!</span>
+          elements<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">page</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">.</span>$options<span class="token punctuation">,</span> <span class="token punctuation">{</span> ref<span class="token punctuation">:</span> <span class="token string">'app'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> elements<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        mount <span class="token punctuation">(</span>component<span class="token punctuation">:</span> ComponentOptions<span class="token operator">&lt;</span>VueCtor<span class="token operator">></span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> string<span class="token punctuation">,</span> cb<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          pages<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">h</span><span class="token punctuation">(</span>component<span class="token punctuation">,</span> <span class="token punctuation">{</span> key<span class="token punctuation">:</span> id <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateSync</span><span class="token punctuation">(</span>cb<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        updateSync <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> VueInstance<span class="token punctuation">,</span> cb<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_update</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> VueInstance<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> child<span class="token punctuation">.</span><span class="token function">_update</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> app<span class="token punctuation">:</span> AppInstance <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      mount <span class="token punctuation">(</span>component<span class="token punctuation">:</span> ComponentOptions<span class="token operator">&lt;</span>VueCtor<span class="token operator">></span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> string<span class="token punctuation">,</span> cb<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token function">connectVuePage</span><span class="token punctuation">(</span>Vue<span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span>
+        wrapper<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> id<span class="token punctuation">,</span> cb<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    Current<span class="token punctuation">.</span>app <span class="token operator">=</span> app
+
+    <span class="token keyword">return</span> Current<span class="token punctuation">.</span>app
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的代码主要的流程就是 </p>
+<ul>
+<li>new Vue 创建 vue 实例 wrapper</li>
+<li>render 时，循环 pages，每个 page 实际就是通过 Vue.CreateElement创建的 vnode</li>
+<li>调用 vue 的实例方法 mount 生成 pages</li>
+<li>调用 vue 的实例方法 updateSync 进行 render，最后合并默认配置生成如下 json 结构</li>
+</ul>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  config<span class="token operator">:</span> <span class="token punctuation">{</span>
+    pages<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"pages/index/index"</span><span class="token punctuation">,</span><span class="token string">"pages/my/index"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    permission<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    subpackages<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        pages<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        root<span class="token operator">:</span> <span class="token string">""</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        pages<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        root<span class="token operator">:</span> <span class="token string">""</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    tabBar<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    window<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    onHide<span class="token operator">:</span> function (<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    onLaunch<span class="token operator">:</span> function (<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    onShow<span class="token operator">:</span> function (<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>🌟 实现 render 函数 创建 Taro DOM Tree</p>
+<ul>
+<li>DOM/BOM API 主要包含几个方法<ul>
+<li>TaroRootElement</li>
+<li>TaroElement、TaroText</li>
+<li>TaroNode</li>
+<li>TaroEventTarget</li>
+</ul>
+</li>
+</ul>
+<p>下面的 UML 图反映了几个主要的类的结构和关系<br><img src="/images/mini30.jpg"></p>
+<blockquote>
+<p>View（视图层）🚩 - 参见源码 <code>taro-runtime &gt; src &gt; dom &gt; html</code></p>
+</blockquote>
+<p>将小程序的所有组件进行模版化处理从而得到小程序组件对应的模版，如下图：</p>
+<img src="/images/mini32.jpg">
+
+<p>然后基于组件的 template，动态 “递归” 渲染整棵树</p>
+<ul>
+<li>先去遍历 Taro DOM Tree 根节点的子元素</li>
+<li>根据每个子元素的类型选择对应的模板来渲染子元素</li>
+<li>在每个模板中又会去遍历当前元素的子元素，以此把整个节点树递归遍历出来。<img src="/images/mini27.jpg">
+
+</li>
+</ul>
+<blockquote>
+<p>Taro 事件 🚩 - 参见源码 <code>taro-runtime &gt; src &gt; dom &gt; event.ts</code></p>
+</blockquote>
+<p>Taro Next 事件，具体的实现方式如下：</p>
+<ul>
+<li>在小程序组件的模版化过程中，将所有事件方法全部指定为其平台（ev）函数，如：bindtap、bindchange、bindsubmit 等</li>
+<li>在运行时实现 eventHandler 函数，和 eh 方法绑定，收集所有的小程序事件</li>
+<li>通过 document.getElementById() 方法获取触发事件对应的 TaroNode</li>
+<li>通过 createEvent() 创建符合规范的 TaroEvent</li>
+<li>调用 TaroNode.dispatchEvent 重新触发事件</li>
+</ul>
+<img src="/images/mini24.jpg">
+
+<blockquote>
+<p>更新 🚩 - 参见源码 <code>taro-runtime &gt; src &gt; dom &gt; root.ts</code></p>
+</blockquote>
+<p>最终都会调用 Taro DOM 方法，如：appendChild、insertChild 等。</p>
+<p>这些方法在修改 Taro DOM Tree 的同时，还会调用 enqueueUpdate 方法，这个方法能获取到每一个 DOM 方法最终修改的节点路径和值，如：<code>{root.cn.[0].cn.[4].value: &quot;1&quot;}</code>，并通过 setData 方法更新到视图层。</p>
+<img src="/images/mini25.jpg">
+
+<blockquote>
+<p>生命周期 🚩 - 参见源码 <code>taro-runtime &gt; src &gt; dsl &gt; instance.ts</code></p>
+</blockquote>
+<p>生命周期的实现是在运行时维护的 App 实例 / Page 实例进行了生命周期方法的一一对应。</p>
+<img src="/images/mini26.jpg">
+
+<blockquote>
+<p>路由系统 🚩 - 参见源码 <code>taro-router &gt; src &gt; router.ts</code></p>
+</blockquote>
+<p>taro 的路由系统主要是引用了 <code>universal-router</code> 和 <code>history</code> 两个库，然后读取 config 中的配置，通过 createRouter 方法中 LocationListener 监听路由发生变化的时候， 页面具体的表现是 showPage、hidePage、loadPage还是 unloadPage 等</p>
+<blockquote>
+<p>小结 🚩 </p>
+</blockquote>
+<ul>
+<li>Taro Next 的版本无 DSL 限制，用 React 还是 Vue 技术栈都可以开发</li>
+<li>模版是固定的，然后基于组件的 template，动态 “递归” 渲染整棵 Taro DOM 树</li>
+<li>虽然几乎全运行时框架优点很多，但是由于是运行时框架，所以会有一些性能问题</li>
+</ul>
+<img src="/images/mini33.jpg">
+
+<p>从上图可以看到相比于原生引入了 Vue 和 React包，这样无形之中对于小程序的拉包阶段来说就体积增大了.在加上运行时的耗时，Taro DOM Tree 的构建和更新，DOM data 的初始化和更新等一系列的时间成本。首次加载的性能数据跟原生比相对较低。但选择本身选择跨端框架就是一种则中的手段。具体性能可使用 <a href="https://github.com/NervJS/taro-benchmark" target="_blank" rel="noopener">taro-benchmark</a> 和自己的项目进行对比。也可以看看<a href="https://my.oschina.net/o2team/blog/4450465" target="_blank" rel="noopener">京东小程序 Taro 开发对比原生开发测评</a></p>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">客官能否赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/01/14/mini/principle03/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="小程序框架跨端框架">
+                        
+                        <span class="card-title">小程序框架跨端框架</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            跨端框架到2021年前端的跨端项目已经达到一个瓶颈期，从原生的 RN、Weex、Flutter 到小程序生态的各平台跨端框架已经百花齐放。除了Flutter 实现的自渲染以外，其他的都脱离不了 web。而小程序跨端框架虽然很多，但可以从两
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/小程序/" class="post-category" target="_blank">
+                                    小程序
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/小程序/" target="_blank">
+                        <span class="chip bg-color">小程序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/12/20/mini/wcsc/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            var BASE_DEVICE_WIDTH = 750;
+var isIOS = navigator.userAgent.match("iPhone");
+var deviceWidth = window.screen.width || 3
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-20
+                            </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: <br />'
+            + '作者: 任博<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-22 11:58:45
+ * @LastEditTime: 2020-02-28 12:47:27
+ * @LastEditors: Please set LastEditors
+ -->
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2018-2019 studyfe.cn 版权所有 <a href="http://www.beian.miit.gov.cn/">京ICP备18061270号</a>
+            
+            <br>
+
+            
+            
+              <br>
+              
+              <span id="busuanzi_container_site_pv" style='display:none'>
+                  <i class="fa fa-heart-o"></i>
+                  本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+              </span>
+              
+              
+              <span id="busuanzi_container_site_uv" style='display:none'>
+                  人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+              </span>
+              
+              
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">138.3k</span>
+               
+            
+             
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MarsPen" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:15210713603@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/ren-bo-Lonely-City/activities" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+  <a href="https://juejin.im/user/5b6406966fb9a04fd73a67c8" class="tooltipped" target="_blank" data-tooltip="访问我的掘金" data-position="top" data-delay="50">
+      <i class="fa fa-inverse">掘</i>
+  </a>
+
+
+
+
+    <a href="https://user.qzone.qq.com/1605275889" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1f60d415b3aae195d5c5d31c2126fc6e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 800;
+        var uvcountOffset = 200;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+  setTimeout(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+  },5000)
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

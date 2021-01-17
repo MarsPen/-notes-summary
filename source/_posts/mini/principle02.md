@@ -1,5 +1,5 @@
 ---
-title: 微信小程序之启动流程
+title: 小程序之启动流程
 date: 2020-12-20 12:32:09
 top: false
 cover: false

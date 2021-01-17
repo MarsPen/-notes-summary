@@ -106,7 +106,7 @@ https://www.studyfe.cn/
 > 微信小程序
 - <a href="https://www.studyfe.cn/2020/12/12/mini/principle01/">微信小程序架构原理</a>
 - <a href="https://www.studyfe.cn/2020/12/20/mini/principle02/">微信小程序之启动流程</a>
-- <a href="https://www.studyfe.cn/2020/12/12/mini/principle03/">小程序之框架对比</a>
+- <a href="https://www.studyfe.cn/2021/01/14/mini/principle03/">小程序之框架跨端框架</a>
 
 > Flutter
 - <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">flutter 之 dart 基础语法</a>

@@ -1,5 +1,5 @@
 ---
-title: 微信小程序架构原理
+title: 小程序架构原理
 date: 2020-12-12 12:32:09
 top: false
 cover: false

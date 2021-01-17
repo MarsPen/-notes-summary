@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2020-12-20T07:23:21.765Z</updated>
+  <updated>2021-01-17T16:17:00.474Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小程序框架跨端框架</title>
+    <link href="https://www.studyfe.cn/2021/01/14/mini/principle03/"/>
+    <id>https://www.studyfe.cn/2021/01/14/mini/principle03/</id>
+    <published>2021-01-14T15:35:09.000Z</published>
+    <updated>2021-01-17T16:17:00.474Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;跨端框架&quot;&gt;&lt;a href=&quot;#跨端框架&quot; class=&quot;headerlink&quot; title=&quot;跨端框架&quot;&gt;&lt;/a&gt;跨端框架&lt;hr&gt;&lt;/h3&gt;&lt;p&gt;到2021年前端的跨端项目已经达到一个瓶颈期，从原生的 RN、Weex、Flutter
+        
+      
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://www.studyfe.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -105,38 +131,11 @@
   </entry>
   
   <entry>
-    <title>小程序框架对比</title>
-    <link href="https://www.studyfe.cn/2020/12/20/mini/principle03/"/>
-    <id>https://www.studyfe.cn/2020/12/20/mini/principle03/</id>
-    <published>2020-12-20T04:35:09.000Z</published>
-    <updated>2021-01-13T13:42:34.892Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;待更新&lt;/p&gt;
-
-        
-      
-    
-    </summary>
-    
-      <category term="小程序" scheme="https://www.studyfe.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="https://www.studyfe.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序之启动流程</title>
+    <title>小程序之启动流程</title>
     <link href="https://www.studyfe.cn/2020/12/20/mini/principle02/"/>
     <id>https://www.studyfe.cn/2020/12/20/mini/principle02/</id>
     <published>2020-12-20T04:32:09.000Z</published>
-    <updated>2021-01-13T13:41:32.874Z</updated>
+    <updated>2021-01-17T16:17:09.011Z</updated>
     
     <summary type="html">
     
@@ -159,11 +158,11 @@
   </entry>
   
   <entry>
-    <title>微信小程序架构原理</title>
+    <title>小程序架构原理</title>
     <link href="https://www.studyfe.cn/2020/12/12/mini/principle01/"/>
     <id>https://www.studyfe.cn/2020/12/12/mini/principle01/</id>
     <published>2020-12-12T04:32:09.000Z</published>
-    <updated>2020-12-20T10:51:54.299Z</updated>
+    <updated>2021-01-17T16:17:22.256Z</updated>
     
     <summary type="html">
     
