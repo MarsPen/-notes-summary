@@ -28,9 +28,9 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/05/11/javascript/json/">JSON.stringify 和 JSON.parse 的实现</a>
 - <a href="https://www.studyfe.cn/2019/04/27/javascript/new/">new 运算符的实现</a>
 - <a href="https://www.studyfe.cn/2019/04/22/javascript/call/">call 和 apply 函数的实现</a>
-- <a href="https://www.studyfe.cn/2019/05/15/javascript/debounce/">函数节流与抖动</a>
 - <a href="https://www.studyfe.cn/2019/04/21/javascript/bind/">bind 函数的实现</a>
 - <a href="https://www.studyfe.cn/2019/06/11/javascript/promise/">promise 的实现</a>
+- <a href="https://www.studyfe.cn/2019/05/15/javascript/debounce/">函数节流与抖动</a>
 - <a href="https://www.studyfe.cn/2019/08/26/javascript/generator-async/">generator 与 async</a>
 
 **| 函数式编程**
@@ -43,18 +43,18 @@ https://www.studyfe.cn/
 
 **| TypeScript**
 
-- <a href="https://www.studyfe.cn/2019/05/15/typescript/envconfig/">基础之概述和环境配置</a>
-- <a href="https://www.studyfe.cn/2019/05/23/typescript/basedatatype/">基本数据类型</a>
-- <a href="https://www.studyfe.cn/2019/05/16/typescript/function/">函数</a>
-- <a href="https://www.studyfe.cn/2019/05/17/typescript/class/">类</a>
-- <a href="https://www.studyfe.cn/2019/05/18/typescript/interfaces/">接口</a>
-- <a href="https://www.studyfe.cn/2019/05/22/typescript/generics/">泛型</a>
-- <a href="https://www.studyfe.cn/2019/06/15/typescript/module/">模块与命名空间</a>
-- <a href="https://www.studyfe.cn/2019/06/20/typescript/declarefile/">声明文件</a>
-- <a href="https://www.studyfe.cn/2019/07/02/typescript/mixinx/">Mixinx</a>
-- <a href="https://www.studyfe.cn/2019/07/15/typescript/tsconfig/">tsconfig.json</a>
-- <a href="https://www.studyfe.cn/2019/07/18/typescript/decorators/">装饰器</a>
-- <a href="https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/">TypeScript 编译原理</a>
+- <a href="https://www.studyfe.cn/2019/05/15/typescript/envconfig/">ts基础-环境配置</a>
+- <a href="https://www.studyfe.cn/2019/05/23/typescript/basedatatype/">ts基础-数据类型</a>
+- <a href="https://www.studyfe.cn/2019/05/16/typescript/function/">ts基础-函数</a>
+- <a href="https://www.studyfe.cn/2019/05/17/typescript/class/">ts基础-类</a>
+- <a href="https://www.studyfe.cn/2019/05/18/typescript/interfaces/">ts基础-接口</a>
+- <a href="https://www.studyfe.cn/2019/05/22/typescript/generics/">ts基础-泛型</a>
+- <a href="https://www.studyfe.cn/2019/06/15/typescript/module/">ts基础-模块与命名空间</a>
+- <a href="https://www.studyfe.cn/2019/06/20/typescript/declarefile/">ts基础-声明文件</a>
+- <a href="https://www.studyfe.cn/2019/07/02/typescript/mixinx/">ts基础-Mixinx</a>
+- <a href="https://www.studyfe.cn/2019/07/15/typescript/tsconfig/">ts基础-tsconfig.json</a>
+- <a href="https://www.studyfe.cn/2019/07/18/typescript/decorators/">ts基础-装饰器</a>
+- <a href="https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/">编译原理</a>
 
 **| Node**
 
@@ -87,52 +87,44 @@ https://www.studyfe.cn/
 **| 前端框架**
 
 > Vue
-- <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue2.0 原理之主线流程</a>
-- <a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue2.0 原理之响应式</a>
-- <a href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/">vue2.0 原理之组件更新</a>
-- <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue2.0 原理之编译（parse、optimize、codegen)</a>
-- <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue2.0 原理之组件化</a>
-- <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2.0 原理之 vue-router</a>
-- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2.0 原理之 vue-vuex</a>
+- <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue2原理系列-主线流程</a>
+- <a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue2原理系列-响应式</a>
+- <a href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/">vue2原理系列-组件更新</a>
+- <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue2原理系列-编译（parse、optimize、codegen)</a>
+- <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue2原理系列-组件件化</a>
+- <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2原理系列-vue-router</a>
+- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2原理系列-vue-vuex</a>
 
 > React
-- <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react16.9 原理之 jsx 转换</a>
-- <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react16.9 生命周期使用</a>
-- <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react16.9 原理之 fiberRoot 构建过程</a>
-- <a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">react16.9 原理之 riber 调度过程</a>
-- <a href="https://www.studyfe.cn/2019/10/09/react/library-react-state/">react16.9 原理之 setState</a>
-- <a href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/">react 原理之 react hooks</a>
+- <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react原理系列-jsx 转换</a>
+- <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react原理系列-生命周期使用</a>
+- <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react原理系列-fiberRoot 构建过程</a>
+- <a href="https://www.studyfe.cn/2019/10/06/react/library-react-fiber02/">react原理系列-riber 调度过程</a>
+- <a href="https://www.studyfe.cn/2019/10/09/react/library-react-state/">react原理系列-setState</a>
+- <a href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/">react原理系列-hooks</a>
 
 > 微信小程序
-- <a href="https://www.studyfe.cn/2020/12/12/mini/principle01/">微信小程序架构原理</a>
-- <a href="https://www.studyfe.cn/2020/12/20/mini/principle02/">微信小程序之启动流程</a>
-- <a href="https://www.studyfe.cn/2021/01/14/mini/principle03/">小程序之框架跨端框架</a>
+- <a href="https://www.studyfe.cn/2020/12/12/mini/principle01/">微信小程序-架构原理</a>
+- <a href="https://www.studyfe.cn/2020/12/20/mini/principle02/">微信小程序-启动流程</a>
+- <a href="https://www.studyfe.cn/2021/01/14/mini/principle03/">小程序-框架跨端框架</a>
 
 > Flutter
-- <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">flutter 之 dart 基础语法</a>
-- <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">flutter 之 dart 基础语法</a>
+- <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">dart 基础语法</a>
 
 **| 打包工具** 
-- <a href="https://www.studyfe.cn/2019/11/20/webpack/library-webpack01/">打包工具对比及 webpack 使用总结</a>
-- <a href="javascript:void(0)">手写模块解析器之 webpack(正在整理)</a>
-- <a href="javascript:void(0)">整体流程分析之 webpack </a>
+- <a href="https://www.studyfe.cn/2019/11/20/webpack/library-webpack01/">webpack 使用总结及打包工具对比</a>
+- <a href="javascript:void(0)">webpack-手写模块解析器</a>
+- <a href="javascript:void(0)">webpack-整体流程分析 </a>
+
+**| 浏览器相关**
+- <a href="">彻底搞懂浏览器与 Node 中的 EventLoop </a>
+- <a href="">浏览器原理系列-组成 </a>
+- <a href="">浏览器原理系列-渲染流程</a>
+- <a href="">浏览器原理系列-内存机制和垃圾回收</a>
+- <a href="">浏览器原理系列-网络请求</a>
 
 **| 前端常用数据结构及算法**
-- <a href="javascript:void(0)">数组、栈、队列</a>
-- <a href="javascript:void(0)">链表</a>
-- <a href="javascript:void(0)">集合</a>
-- <a href="javascript:void(0)">字典和散列表</a>
-- <a href="javascript:void(0)">树</a>
-- <a href="javascript:void(0)">排列和搜索方法</a>
+- <a href="javascript:void(0)">堆、栈、队列</a>
 
-**| 前端性能优化**
-- 包含常用分析工具、性能指标、前端加载优化手段、服务端请求优化手段等。未完待续...
-
-**| 前端常用面试题目汇总**
-- 包含前端高频出现的面试题汇总。未完待续...
-
-
-**| 自动化部署**
-- 包含 jenkins 安装、配置、自动化测试、监控日志系统等。未完待续...
 
 
