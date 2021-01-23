@@ -1,14 +1,10 @@
 日常知识梳理、总结、写博客的地方。欢迎 star 共同进步 😊😊😊
-https://www.studyfe.cn/
-
-<hr>
+https://www.studyfe.cn/ <hr>
 
 **| HTML**
-
 - <a href="https://www.studyfe.cn/2017/05/10/html/html/">HTML 系列总结</a>
 
 **| CSS**
-
 - <a href="https://www.studyfe.cn/2017/06/11/css/base-concepts/">css 基础知识概念</a>
 - <a href="https://www.studyfe.cn/2017/06/15/css/base-layout/">css 基本布局</a>
 - <a href="https://www.studyfe.cn/2017/06/20/css/css-animation/">css 动画</a>
@@ -16,7 +12,6 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2017/07/01/css/css-preprocessor/">css 预处理器</a>
 
 **| JavaScript**<br>
-
 - <a href="https://www.studyfe.cn/2019/02/12/javascript/type/">基本数据类型</a>
 - <a href="https://www.studyfe.cn/2019/02/20/javascript/variableascension/">变量提升</a>
 - <a href="https://www.studyfe.cn/2019/02/25/javascript/closure/">执行上下文</a>
@@ -34,7 +29,6 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/08/26/javascript/generator-async/">generator 与 async</a>
 
 **| 函数式编程**
-
 - <a href="https://www.studyfe.cn/2019/07/12/javascript/functionalbase/">基本概念</a>
 - <a href="https://www.studyfe.cn/2019/07/15/javascript/functionalpurity/">纯函数</a>
 - <a href="https://www.studyfe.cn/2019/07/17/javascript/functioncurrying/">偏应用函数、函数的柯里化</a>
@@ -42,7 +36,6 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/07/25/javascript/functionalpoint/">Point Free</a>
 
 **| TypeScript**
-
 - <a href="https://www.studyfe.cn/2019/05/15/typescript/envconfig/">ts基础-环境配置</a>
 - <a href="https://www.studyfe.cn/2019/05/23/typescript/basedatatype/">ts基础-数据类型</a>
 - <a href="https://www.studyfe.cn/2019/05/16/typescript/function/">ts基础-函数</a>
@@ -57,7 +50,6 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/08/05/typescript/compilationprinciple/">编译原理</a>
 
 **| Node**
-
 - <a href="https://www.studyfe.cn/2019/03/23/node/http/">tcp udp http</a>
 - <a href="https://www.studyfe.cn/2019/03/28/node/url/">url</a>
 - <a href="https://www.studyfe.cn/2019/04/01/node/fs/">fs 文件操作</a>
@@ -86,16 +78,16 @@ https://www.studyfe.cn/
 
 **| 前端框架**
 
-> Vue
+🌟 Vue
 - <a href="https://www.studyfe.cn/2019/08/27/vue/vueprinciple/">vue2原理系列-主线流程</a>
 - <a href="https://www.studyfe.cn/2019/09/05/vue/vueobserve/">vue2原理系列-响应式</a>
 - <a href="https://www.studyfe.cn/2019/09/18/vue/vuecomupdate/">vue2原理系列-组件更新</a>
-- <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue2原理系列-编译（parse、optimize、codegen)</a>
+- <a href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/">vue2原理系列-编译解析</a>
 - <a href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/">vue2原理系列-组件件化</a>
-- <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2原理系列-vue-router</a>
-- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2原理系列-vue-vuex</a>
+- <a href="https://www.studyfe.cn/2018/08/10/vue/vuerouter/">vue2原理系列-路由</a>
+- <a href="https://www.studyfe.cn/2018/09/10/vue/vuex/">vue2原理系列-vuex</a>
 
-> React
+🌟 React
 - <a href="https://www.studyfe.cn/2019/10/01/react/library-react-jsx/">react原理系列-jsx 转换</a>
 - <a href="https://www.studyfe.cn/2019/10/02/react/library-react-lifecycle/">react原理系列-生命周期使用</a>
 - <a href="https://www.studyfe.cn/2019/10/04/react/library-react-fiber01/">react原理系列-fiberRoot 构建过程</a>
@@ -103,12 +95,12 @@ https://www.studyfe.cn/
 - <a href="https://www.studyfe.cn/2019/10/09/react/library-react-state/">react原理系列-setState</a>
 - <a href="https://www.studyfe.cn/2019/11/09/react/library-react-hook/">react原理系列-hooks</a>
 
-> 微信小程序
+🌟 微信小程序
 - <a href="https://www.studyfe.cn/2020/12/12/mini/principle01/">微信小程序-架构原理</a>
 - <a href="https://www.studyfe.cn/2020/12/20/mini/principle02/">微信小程序-启动流程</a>
 - <a href="https://www.studyfe.cn/2021/01/14/mini/principle03/">小程序-框架跨端框架</a>
 
-> Flutter
+🌟 Flutter
 - <a href="https://www.studyfe.cn/2019/12/15/flutter/library-flutter-dart/">dart 基础语法</a>
 
 **| 打包工具** 
