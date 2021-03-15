@@ -800,7 +800,7 @@ btn<span class="token punctuation">.</span>onclick <span class="token operator">
 <li>如果想每一轮的 event loop 都进行更新可使用 requestAnimationFrame</li>
 <li>由于 setTimeout 有最小时间 4ms 所以大多数宏任务的优先级都比它高包括 postMessage，而用户交互相关优先级是最高的</li>
 </ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><img src="/images/eventloop11.jpg">
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结<hr></h3><img src="/images/eventloop11.jpg">
 
 <p>在主线程中首先会执行同步代码，也就是说会向执行栈中加入所要执行的方法的执行环境（ec），在这个执行环境中还可以调用其他方法，或者自己。这样就会在执行栈中再加入一个执行环境，可一直调用下去，除非超出了内存的最大值发生栈溢出。</p>
 <p>当 JS 引擎遇到一个异步事件后并不会一直等待其返回结果，而是会将这个事件挂起，继续执行执行栈中的其他任务。</p>

@@ -436,7 +436,7 @@ btn.onclick = function () {
 4. 由于 setTimeout 有最小时间 4ms 所以大多数宏任务的优先级都比它高包括 postMessage，而用户交互相关优先级是最高的
 
 
-### 总结
+### 总结<hr>
 
 
 <img src="/images/eventloop11.jpg">
