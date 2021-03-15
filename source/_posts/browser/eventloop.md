@@ -488,7 +488,7 @@ console.log('end')
 - <a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/?utm_source=html5weekly">Jake 的博客</a>
 - <a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loops">whatwg HTML 标准</a>
 - <a href="https://w3c.github.io/longtasks/#report-long-tasks">report-long-tasks</a>
-- <a href="https://tc39.es/ecma262/#sec-execution-contexts">ecma可执行上线文</a>
+- <a href="https://tc39.es/ecma262/#sec-execution-contexts">可执行上下文</a>
 - <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth">深入微任务与Javascript运行时环境</a>
 - <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide">在 JavaScript 中通过 queueMicrotask() 使用微任务</a>
 - <a href="https://w3c.github.io/requestidlecallback/#start-an-idle-period-algorithm">后台任务协同调度 requestidlecallback
