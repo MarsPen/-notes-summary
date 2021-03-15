@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.studyfe.cn/2021/01/25/browser/eventloop/</loc>
+    <lastmod>2021-03-15</lastmod>
+  </url>  <url>
+    <loc>https://www.studyfe.cn/2019/11/25/datastructure/library-array/</loc>
+    <lastmod>2021-01-30</lastmod>
+  </url>  <url>
     <loc>https://www.studyfe.cn/2020/12/12/mini/principle01/</loc>
     <lastmod>2021-01-17</lastmod>
   </url>  <url>
@@ -150,9 +156,6 @@
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/03/28/node/url/</loc>
     <lastmod>2020-12-19</lastmod>
-  </url>  <url>
-    <loc>https://www.studyfe.cn/2019/11/25/datastructure/library-array/</loc>
-    <lastmod>2020-12-14</lastmod>
   </url>  <url>
     <loc>https://www.studyfe.cn/2019/05/23/typescript/basedatatype/</loc>
     <lastmod>2020-12-12</lastmod>

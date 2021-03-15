@@ -109,7 +109,7 @@ https://www.studyfe.cn/ <hr>
 - <a href="javascript:void(0)">webpack-整体流程分析 </a>
 
 **| 浏览器相关**
-- <a href="javascript:void(0)">彻底搞懂浏览器与 Node 中的 EventLoop </a>
+- <a href="https://www.studyfe.cn/2021/01/25/browser/eventloop">浏览器中的 EventLoop </a>
 - <a href="javascript:void(0)">浏览器原理系列-组成 </a>
 - <a href="javascript:void(0)">浏览器原理系列-渲染流程</a>
 - <a href="javascript:void(0)">浏览器原理系列-内存机制和垃圾回收</a>

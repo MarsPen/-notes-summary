@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2021-01-17T16:17:00.474Z</updated>
+  <updated>2021-03-15T04:15:08.620Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浏览器中的 Event Loop</title>
+    <link href="https://www.studyfe.cn/2021/01/25/browser/eventloop/"/>
+    <id>https://www.studyfe.cn/2021/01/25/browser/eventloop/</id>
+    <published>2021-01-25T13:20:12.000Z</published>
+    <updated>2021-03-15T04:15:08.620Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言 &quot;&gt;&lt;/a&gt;前言 &lt;hr&gt;&lt;/h3&gt;&lt;p&gt;网上很多文章都在讨论事件循环 (Event Loop)，但是看了很多文章之后还是不知道 Event Loop
+        
+      
+    
+    </summary>
+    
+      <category term="浏览器中的 Event Loop" scheme="https://www.studyfe.cn/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84-Event-Loop/"/>
+    
+    
+      <category term="浏览器" scheme="https://www.studyfe.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>小程序框架跨端框架</title>
@@ -211,11 +237,11 @@
   </entry>
   
   <entry>
-    <title>数组、栈、队列</title>
+    <title>基本概念</title>
     <link href="https://www.studyfe.cn/2019/11/25/datastructure/library-array/"/>
     <id>https://www.studyfe.cn/2019/11/25/datastructure/library-array/</id>
     <published>2019-11-25T13:20:12.000Z</published>
-    <updated>2020-12-14T15:35:31.211Z</updated>
+    <updated>2021-01-30T10:56:13.617Z</updated>
     
     <summary type="html">
     
@@ -223,8 +249,7 @@
       
         
         
-          &lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;p&gt;数组是最简单的内存数据结构了，在前端也有数组类型下面我们看看关于数组的知识&lt;/p&gt;
-&lt;h3 id=&quot;什么是数组&quot;&gt;&lt;a
+          &lt;h3 id=&quot;基本概念和术语-🚩&quot;&gt;&lt;a href=&quot;#基本概念和术语-🚩&quot; class=&quot;headerlink&quot; title=&quot;基本概念和术语 🚩&quot;&gt;&lt;/a&gt;基本概念和术语 🚩&lt;hr&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;数据🍎&lt;/strong&gt;
         
       
     
@@ -495,32 +520,6 @@
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理之编译</title>
-    <link href="https://www.studyfe.cn/2019/09/19/vue/vuecompile/"/>
-    <id>https://www.studyfe.cn/2019/09/19/vue/vuecompile/</id>
-    <published>2019-09-19T07:02:12.000Z</published>
-    <updated>2019-09-19T12:39:44.440Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;编译入口&quot;&gt;&lt;a href=&quot;#编译入口&quot; class=&quot;headerlink&quot; title=&quot;编译入口&quot;&gt;&lt;/a&gt;编译入口&lt;/h2&gt;&lt;p&gt;还记得我们在第一篇文章介绍整理的执行过程的时候通过，在 $mount 这个函数内调用 compileToFunctions
         
       
     

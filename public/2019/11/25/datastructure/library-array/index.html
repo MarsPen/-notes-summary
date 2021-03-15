@@ -4,11 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta name="keywords" content="数组、栈、队列, 前端 typescript php js node html html5 css linux vue react">
+  <meta name="keywords" content="基本概念, 前端 typescript php js node html html5 css linux vue react">
   <meta name="baidu-site-verification" content>
   <meta name="google-site-verification" content>
-  <meta name="description" content="数组数组是最简单的内存数据结构了，在前端也有数组类型下面我们看看关于数组的知识
-什么是数组数组是存储一系列同一种类型的值（js 中可以是不同类型的值）。定义的时候为其分配存储单元，此存储单元在内存中是一块连续的区域，在使用前要先申请占用的内">
+  <meta name="description" content="基本概念和术语 🚩数据🍎 
+在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称，是对客观事物的符合表示。
+数据元素🍎
+数据的基本单位，一个数据元素可由若干个数据项组成,数据项是数据不可分割的最小单位。
+数据单位🍎
+">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +20,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>数组、栈、队列 | </title>
+  <title>基本概念 | </title>
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        数组、栈、队列
+                        基本概念
                     </div>
                 </div>
             </div>
@@ -419,14 +423,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    13 分
                 </div>
                 
                 
@@ -442,7 +446,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组是最简单的内存数据结构了，在前端也有数组类型下面我们看看关于数组的知识</p>
+                <h3 id="基本概念和术语-🚩"><a href="#基本概念和术语-🚩" class="headerlink" title="基本概念和术语 🚩"></a>基本概念和术语 🚩<hr></h3><p><strong>数据🍎</strong> </p>
+<p>在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号的总称，是对客观事物的符合表示。</p>
+<p><strong>数据元素🍎</strong></p>
+<p>数据的基本单位，一个数据元素可由若干个<code>数据项</code>组成,<code>数据项</code>是数据不可分割的最小单位。</p>
+<p><strong>数据单位🍎</strong></p>
+<p>是性质相同的数据元素的集合，是数据的一个子集</p>
+<p><strong>数据结构🍎</strong></p>
+<p>相互间存在一种或多种特定关系的数据元素的集合，通常由4类基本结构 <code>集合</code>，<code>线性结构</code>、<code>树形结构</code>、<code>图状结构或网状结构</code>，如下图</p>
+<img src="/images/shuju01.jpg">
+
+<ul>
+<li>计算机中的数据结构表现形式称为数据的 <code>物理结构</code>，又称为存储结构。包括数据元素的表示和关系的表示。</li>
+<li>计算机中表示信息的最小单位是二进制数的一<code>位（bit）</code>。</li>
+<li>若干个位组合起来形成的一个位串表示一个<code>数据元素</code>，通常称这个位串为<code>元素（element）</code>，或者<code>节点（node）</code>。</li>
+<li>当 <code>数据元素</code> 有若干个 <code>数据项</code> 组成时为，位串中对应的各个数据项的子位串称为 <code>数据域</code>。</li>
+<li><code>数据元素</code> 之间的关系有两种不同的表示方法 <code>顺序映像（相邻的元素）</code> 和 <code>非顺序映像</code>（不一定相邻），因此得到两种不同的存储结构 <code>顺序存储结构</code> 和 <code>链式存储结构</code></li>
+<li><code>顺序存储结构</code> 的特点是借助元素在存储器中相对位置来表示数据元素之间的逻辑关系。</li>
+<li><code>链式存储结构</code> 的特点是借助指示元素存储地址的<code>指针</code>表示数据元素之间的逻辑关系。</li>
+<li>算法的设计取决于选定的逻辑结构，而实现则依赖于采用的存储结构。</li>
+</ul>
+<p><strong>数据类型🍎</strong></p>
+<p><strong>抽象数据类型🍎</strong></p>
+<ul>
+<li><p>原子类型</p>
+</li>
+<li><p>固定聚合类型</p>
+</li>
+<li><p>可变聚合类型</p>
+</li>
+</ul>
+<p><strong>多形数据类型🍎</strong></p>
+<h3 id="算法和算法分析"><a href="#算法和算法分析" class="headerlink" title="算法和算法分析"></a>算法和算法分析</h3><p><strong>什么是算法🍎</strong></p>
+<p><strong>算法的设计要求🍎</strong><br><strong>算法的效率🍎</strong></p>
+<ul>
+<li>时间复杂度</li>
+<li>空间复杂度</li>
+</ul>
+<p>栈(stack)是简单的数据结构，但在计算机中使用广泛。它是有序的元素集合</p>
+<p>内存的区域，以后进先出（LIFO）的方式添加或删除数据。<br>在计算机系统中，每个线程都有一个保留的内存区域称其为栈，当函数执行时，它可能会将其一些局部状态数据添加到堆栈的顶部；当函数退出时，它负责从堆栈中删除该数据。至少，线程的堆栈用于存储调用方提供的返回地址的位置，以便允许return语句返回正确的位置。堆栈通常用于存储当前活动函数本地固定长度的变量。</p>
+<p>优缺点：</p>
+<p>因为数据是以先进先出的方式添加和删除的，所以栈的内存分配非常简单，并且通常比通过动态（malloc）内存分配内存快得多。</p>
+<p>另一个功能是，当函数退出时，栈上的内存会自动高效地回收，如果数据需要以某种形式保存，则必须在函数退出之前将其从堆、栈复制到堆中。因此，基于栈的分配适用于临时数据或在当前函数退出后不再需要的数据。</p>
+<p>在某些小型CPU上，线程分配的堆栈大小可能只有几个字节。在堆栈上分配的内存多于可用内存，可能由于堆栈溢出而导致崩溃。</p>
+<p>基于栈的分配也会导致较小的性能问题：导致可变大小的堆栈帧，因此需要管理堆栈指针和帧指针（对于固定大小的堆栈帧，其中之一是冗余的）。通常，这比调用 malloc 和 free 无论如何都要便宜得多。特别是，如果当前函数同时包含对alloca的调用和包含可变长度的本地数据的块，则alloca尝试增加当前堆栈帧直到当前函数退出与编译器需要将可变长度的局部变量放入其中之间会发生冲突。堆栈框架中的相同位置。通常通过为每个alloca调用创建一个单独的堆存储链来解决此冲突（请参阅：<a href="https://code.woboq.org/gcc/libiberty/alloca.c.html）。该链记录发生每次分配的堆栈深度，随后在任何函数中对alloca的调用都会将该链修剪到当前堆栈深度，以最终（但不是立即）释放该链上的任何存储空间。对参数为零的alloca的调用也可以用于触发释放内存，而无需分配更多此类内存。由于alloca和局部变量存储之间的这种冲突，使用alloca可能不会比使用malloc更有效。" target="_blank" rel="noopener">https://code.woboq.org/gcc/libiberty/alloca.c.html）。该链记录发生每次分配的堆栈深度，随后在任何函数中对alloca的调用都会将该链修剪到当前堆栈深度，以最终（但不是立即）释放该链上的任何存储空间。对参数为零的alloca的调用也可以用于触发释放内存，而无需分配更多此类内存。由于alloca和局部变量存储之间的这种冲突，使用alloca可能不会比使用malloc更有效。</a></p>
+<p>子例程<br>某个主程序的一部分代码，该代码执行特定的任务并且与主程序中的其他代码相对独立。<br>子例程又被称为子程序、过程、方法、函数等。在主程序中可以调用子例程来执行。<br>　　函数，是一种子程序，利用函数名称，可以接收回传值。</p>
+<p>调用栈<br>在计算机科学中调用栈是一种栈数据结构，用于存储有关计算机活动的子例程的信息。</p>
+<p>有调用栈的主要原因<br>1要跟踪每个活动子例程在完成执行后应返回控制的点。已被调用但尚未完成执行的子例程，应将控制权交还给调用点。</p>
+<p>2本地数据存储<br>另请参阅：基于堆栈的内存分配<br>子例程经常需要存储空间来存储局部变量的值，这些局部变量仅在活动子例程中是已知的，并且在返回后不会保留值。通过简单地将堆栈顶部移动足够的空间来提供空间，通常可以方便地分配空间。与使用堆空间的动态内存分配相比，这非常快。请注意，子例程的每次单独激活都会在堆栈中为本地变量获得其自己的单独空间。</p>
+<p>由于调用栈是作为一个栈组织的，因此调用方将返回地址压入堆栈，并且被调用子例程完成后，将返回地址从调用堆栈中拉出或弹出，并将控制权转移到该地址。如果被调用子例程又调用另一个子例程，它将把另一个返回地址压入调用堆栈，依此类推，信息将按照程序的指示进行堆积和堆积。如果推入消耗了为调用堆栈分配的所有空间，则会发生称为堆栈溢出的错误，通常会导致程序崩溃。将子例程的条目添加到调用堆栈有时被称为“缠绕”。相反，删除条目是“结束”。</p>
+<p>一个典型的堆栈，用于存储本地数据和用于嵌套过程调用（不一定是嵌套过程）的调用信息。该堆栈从其原始位置开始向下生长。堆栈指针指向堆栈上的当前最上面的基准。推操作使指针递减并将数据复制到堆栈；弹出操作会从堆栈中复制数据，然后递增指针。程序中调用的每个过程通过将过程返回信息（以黄色显示）和本地数据（以其他颜色显示）存储到堆栈中来存储它们。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组是最简单的内存数据结构了，在前端也有数组类型下面我们看看关于数组的知识</p>
 <h3 id="什么是数组"><a href="#什么是数组" class="headerlink" title="什么是数组"></a>什么是数组<hr></h3><p>数组是存储一系列同一种类型的值（js 中可以是不同类型的值）。定义的时候为其分配存储单元，此存储单元在内存中是一块连续的区域，在使用前要先申请占用的内存大小。</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// js 中声明数组的一种方式，也可以使用 new Array</span>
 <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -569,9 +623,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newFriends<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结<hr></h3><p>数组是最常用的数据结构，我们在上面举例说明了什么是数组、数组的创建、以及一些操作数组的常用API。虽然过于简单，但有助于我们在后续编写自己的算法时能够更好的深入和理解。当然有很多优秀的库供我们使用例如 <a href="https://www.lodashjs.com/" target="_blank" rel="noopener">Lodash</a>。</p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>数组是最常用的数据结构，可以在数组的任意位置上进行删除和添加元素，然而我们需要在添加和删除时有更多控制的数据结构，其中一个就是栈。</p>
-<h3 id="什么是栈"><a href="#什么是栈" class="headerlink" title="什么是栈"></a>什么是栈<hr></h3><h3 id="栈的创建"><a href="#栈的创建" class="headerlink" title="栈的创建"></a>栈的创建<hr></h3><h3 id="使用栈"><a href="#使用栈" class="headerlink" title="使用栈"></a>使用栈<hr></h3><h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结<hr></h3><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p> 上一小结说我们需要在添加和删除时有更多控制的数组结构，除了栈另一个就是队列</p>
-<h3 id="什么是队列"><a href="#什么是队列" class="headerlink" title="什么是队列"></a>什么是队列<hr></h3><h3 id="队列的创建"><a href="#队列的创建" class="headerlink" title="队列的创建"></a>队列的创建<hr></h3><h3 id="队列的使用"><a href="#队列的使用" class="headerlink" title="队列的使用"></a>队列的使用<hr></h3><h3 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列<hr></h3><h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列<hr></h3><h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结<hr></h3>
+
             </div>
             <hr />
 
@@ -999,7 +1051,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">138.3k</span>
+                <span class="white-color">145.4k</span>
                
             
              
