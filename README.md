@@ -109,11 +109,11 @@ https://www.studyfe.cn/ <hr>
 - <a href="javascript:void(0)">webpack-整体流程分析 </a>
 
 **| 浏览器相关**
-- <a href="https://www.studyfe.cn/2021/01/25/browser/eventloop">浏览器中的 EventLoop </a>
-- <a href="javascript:void(0)">浏览器原理系列-组成 </a>
-- <a href="javascript:void(0)">浏览器原理系列-渲染流程</a>
-- <a href="javascript:void(0)">浏览器原理系列-内存机制和垃圾回收</a>
+ <a href="https://www.studyfe.cn/2021/01/25/browser/eventloop">浏览器中的 EventLoop </a>
+- <a href="https://www.studyfe.cn/2021/02/20/browser/architecture">浏览器原理系列-架构</a>
 - <a href="javascript:void(0)">浏览器原理系列-网络请求</a>
+- <a href="javascript:void(0)">浏览器原理系列-解析渲染合成</a>
+- <a href="javascript:void(0)">浏览器原理系列-内存机制和垃圾回收</a>
 
 **| 前端常用数据结构及算法**
 - <a href="javascript:void(0)">堆、栈、队列</a>

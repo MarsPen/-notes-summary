@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.studyfe.cn/"/>
-  <updated>2021-03-15T05:25:40.144Z</updated>
+  <updated>2021-03-17T12:40:27.183Z</updated>
   <id>https://www.studyfe.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>浏览器中的架构</title>
+    <link href="https://www.studyfe.cn/2021/02/20/browser/architecture/"/>
+    <id>https://www.studyfe.cn/2021/02/20/browser/architecture/</id>
+    <published>2021-02-20T12:12:24.000Z</published>
+    <updated>2021-03-17T12:40:27.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;hr&gt;&lt;/h3&gt;&lt;p&gt;由于市面上浏览器众多并且每个浏览器厂商实现有一定的区别。也是由于本人开发和搜索都是用的
+        
+      
+    
+    </summary>
+    
+      <category term="浏览器" scheme="https://www.studyfe.cn/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    
+      <category term="浏览器" scheme="https://www.studyfe.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>浏览器中的 Event Loop</title>
     <link href="https://www.studyfe.cn/2021/01/25/browser/eventloop/"/>
     <id>https://www.studyfe.cn/2021/01/25/browser/eventloop/</id>
     <published>2021-01-25T13:20:12.000Z</published>
-    <updated>2021-03-15T05:25:40.144Z</updated>
+    <updated>2021-03-15T10:31:07.335Z</updated>
     
     <summary type="html">
     
@@ -35,7 +61,7 @@
     
     </summary>
     
-      <category term="浏览器中的 Event Loop" scheme="https://www.studyfe.cn/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84-Event-Loop/"/>
+      <category term="浏览器" scheme="https://www.studyfe.cn/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
     
     
       <category term="浏览器" scheme="https://www.studyfe.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
@@ -490,36 +516,6 @@
         
           &lt;p&gt;每一个 vue 的实例在创建的时候都经过一系列的初始化操作，在每一个阶段都会有相对应的生命周期钩子函数，来在特定的场景实现一些功能&lt;/p&gt;
 &lt;h3 id=&quot;生命周期方法&quot;&gt;&lt;a href=&quot;#生命周期方法&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="vue" scheme="https://www.studyfe.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://www.studyfe.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue 原理之组件化</title>
-    <link href="https://www.studyfe.cn/2019/09/21/vue/vuecomponents/"/>
-    <id>https://www.studyfe.cn/2019/09/21/vue/vuecomponents/</id>
-    <published>2019-09-21T02:50:28.000Z</published>
-    <updated>2019-09-29T04:06:29.855Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.studyfe.cn/2019/09/21/vue/vuelifecycle/&quot;&gt;生命周期&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a
         
       
     

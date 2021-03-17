@@ -10,7 +10,7 @@ summary:
 tags:
   - 浏览器
 categories:
-  - 浏览器中的 Event Loop
+  - 浏览器
 ---
 
 ### 前言 <hr>

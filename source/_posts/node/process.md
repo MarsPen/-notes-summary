@@ -25,7 +25,7 @@ process 对象是一个全局变量，它提供有关当前 Node.js 进程的信
 
 <img src="/images/master-worker.png"><br/>
 
-```
+```js
 /**
  * 创建工作进程
  * worker.js
@@ -50,7 +50,7 @@ let port = Math.round((1 + Math.random()) * 1000);
 server.listen(port, domain)
 ```
 
-```
+```js
 /**
  * 创建主进程
  * master.js

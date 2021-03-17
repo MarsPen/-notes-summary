@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.studyfe.cn/2021/02/20/browser/architecture/</loc>
+    
+    <lastmod>2021-03-17T12:40:27.183Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.studyfe.cn/2019/04/12/node/process/</loc>
+    
+    <lastmod>2021-03-15T12:56:28.319Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.studyfe.cn/2021/01/25/browser/eventloop/</loc>
     
-    <lastmod>2021-03-15T05:25:40.144Z</lastmod>
+    <lastmod>2021-03-15T10:31:07.335Z</lastmod>
     
   </url>
   
@@ -352,13 +366,6 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/2019/04/12/node/process/</loc>
-    
-    <lastmod>2020-12-19T07:40:16.817Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.studyfe.cn/2019/04/04/node/querystring/</loc>
     
     <lastmod>2020-12-19T07:40:02.241Z</lastmod>
@@ -674,14 +681,14 @@
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/archives/index.html</loc>
+    <loc>https://www.studyfe.cn/categories/index.html</loc>
     
     <lastmod>2019-09-05T03:41:37.961Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.studyfe.cn/categories/index.html</loc>
+    <loc>https://www.studyfe.cn/archives/index.html</loc>
     
     <lastmod>2019-09-05T03:41:37.961Z</lastmod>
     
