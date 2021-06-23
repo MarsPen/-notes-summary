@@ -418,14 +418,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    17 分
                 </div>
                 
                 
@@ -646,6 +646,20 @@ module<span class="token punctuation">.</span>exports <span class="token operato
    <span class="token comment" spellcheck="true">// ...</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="HMR-原理"><a href="#HMR-原理" class="headerlink" title="HMR 原理"></a>HMR 原理</h3><img src="/images/webpack-hmr.jpg">
+
+<ul>
+<li>webpack 对文件系统进行 watch 打包到内存中：（webpack-dev-middleware 调用 webpack 的 api 对文件系统 watch，当文件发生变化的时候重新进行打包，然后保存到内存中），dev 环境不生成不生成文件的原因就在于访问内存中的代码比访问文件系统中的文件更快，而且也减少了代码写入文件的开销，这一切都归功于memory-fs，memory-fs 是 webpack-dev-middleware 的一个依赖库</li>
+<li>devServer 通知浏览器端文件发生改变 (sockjs 是桥梁)： webpack-dev-server 调用 webpack api 监听 compile的 done 事件，当compile 完成后，webpack-dev-server通过 _sendStatus 方法将编译打包后的新模块 hash 值发送到浏览器端。</li>
+<li>webpack-dev-server/client 接收到服务端消息做出响应：当接收到 type 为 hash 消息后会将 hash 值暂存起来，当接收到 type 为 ok 的消息后对应用执行 reload 操作，在 reload 操作中，会根据 hot 配置决定是刷新浏览器还是对代码进行热更新（HMR）</li>
+<li>webpack 接收到最新 hash 值验证并请求模块代码： 首先是 webpack/hot/dev-server 监听第三步 webpack-dev-server/client 发送的 webpackHotUpdate 消息，调用 webpack/lib/HotModuleReplacement.runtime 中的 check 方法，检测是否有新的更新，在 check 过程中会利用 webpack/lib/JsonpMainTemplate.runtime 中的两个方法 hotDownloadUpdateChunk 和 hotDownloadManifest ， 第二个方法是调用 AJAX 向服务端请求是否有更新的文件，如果有将发更新的文件列表返回浏览器端，而第一个方法是通过 jsonp 请求最新的模块代码，然后将代码返回给 HMR runtime，HMR runtime 会根据返回的新模块代码做进一步处理，可能是刷新页面，也可能是对模块进行热更新。</li>
+<li>HotModuleReplacement.runtime 对模块进行热更新： <ul>
+<li>第一个阶段是找出 outdatedModules 和 outdatedDependencies</li>
+<li>第二个阶段从缓存中删除过期的模块和依赖</li>
+<li>第三个阶段是将新的模块添加到 modules 中，当下次调用 <strong>webpack_require</strong> 方法的时候，就是获取到了新的模块代码了。</li>
+</ul>
+</li>
+</ul>
 <h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程 "></a>运行流程 <hr></h3><p>webpack 就像一条生产线，要经过一系列处理流程后才能将源文件转换成输出结果。 这条生产线上的每个处理流程的职责都是单一的，多个流程之间有存在依赖关系，只有完成当前处理后才能交给下一个流程去处理。 插件就像是一个插入到生产线中的一个功能，在特定的时机对生产线上的资源做处理。</p>
 <p>webpack 通过 Tapable 来组织这条复杂的生产线。 webpack 在运行过程中会广播事件，插件只需要监听它所关心的事件，就能加入到这条生产线中，去改变生产线的运作。 webpack 的事件流机制保证了插件的有序性，使得整个系统扩展性很好。  –吴浩麟《深入浅出webpack》</p>
 <p>上面这段话把 webapck 做的事情解释的很清楚，实际上就是在构建的时候通过一系列的事件处理和回调来处理不同的功能。那么这种事件流是通过 Tapable 来管理的，关于 <a href="https://github.com/Pein892/learn-webpack-tapable" target="_blank" rel="noopener">Tapable</a>请移步大佬的源码分析。</p>
@@ -833,6 +847,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上就是在 webpack 开发中常用的配置，更多配置及优化请参考官网。</p>
+<h2 id="webpack-优化"><a href="#webpack-优化" class="headerlink" title="webpack 优化"></a>webpack 优化</h2><img src="/images/webpack.jpg">
+
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://github.com/gwuhaolin/dive-into-webpack/" target="_blank" rel="noopener">深入浅出 webpack </a></p>
 
             </div>
@@ -1267,7 +1283,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">147.9k</span>
+                <span class="white-color">148.8k</span>
                
             
              

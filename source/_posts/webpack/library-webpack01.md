@@ -227,6 +227,7 @@ Parcel 适用于经验不同的开发者。它利用多核处理提供了极快�
 
 那么接下来我来了解一下 webpack 的原理
 
+
 ## webpack 原理
 
 在了解原理之前我们先认识基本的构建概念和构建流程
@@ -265,6 +266,19 @@ const webpackConfig = {
   }
 };
 ```
+
+### HMR 原理 <hr>
+
+<img src="/images/webpack-hmr.jpg">
+
+- webpack 对文件系统进行 watch 打包到内存中：（webpack-dev-middleware 调用 webpack 的 api 对文件系统 watch，当文件发生变化的时候重新进行打包，然后保存到内存中），dev 环境不生成不生成文件的原因就在于访问内存中的代码比访问文件系统中的文件更快，而且也减少了代码写入文件的开销，这一切都归功于memory-fs，memory-fs 是 webpack-dev-middleware 的一个依赖库
+- devServer 通知浏览器端文件发生改变 (sockjs 是桥梁)： webpack-dev-server 调用 webpack api 监听 compile的 done 事件，当compile 完成后，webpack-dev-server通过 _sendStatus 方法将编译打包后的新模块 hash 值发送到浏览器端。
+- webpack-dev-server/client 接收到服务端消息做出响应：当接收到 type 为 hash 消息后会将 hash 值暂存起来，当接收到 type 为 ok 的消息后对应用执行 reload 操作，在 reload 操作中，会根据 hot 配置决定是刷新浏览器还是对代码进行热更新（HMR）
+- webpack 接收到最新 hash 值验证并请求模块代码： 首先是 webpack/hot/dev-server 监听第三步 webpack-dev-server/client 发送的 webpackHotUpdate 消息，调用 webpack/lib/HotModuleReplacement.runtime 中的 check 方法，检测是否有新的更新，在 check 过程中会利用 webpack/lib/JsonpMainTemplate.runtime 中的两个方法 hotDownloadUpdateChunk 和 hotDownloadManifest ， 第二个方法是调用 AJAX 向服务端请求是否有更新的文件，如果有将发更新的文件列表返回浏览器端，而第一个方法是通过 jsonp 请求最新的模块代码，然后将代码返回给 HMR runtime，HMR runtime 会根据返回的新模块代码做进一步处理，可能是刷新页面，也可能是对模块进行热更新。
+- HotModuleReplacement.runtime 对模块进行热更新： 
+  - 第一个阶段是找出 outdatedModules 和 outdatedDependencies
+  - 第二个阶段从缓存中删除过期的模块和依赖
+  - 第三个阶段是将新的模块添加到 modules 中，当下次调用 __webpack_require__ 方法的时候，就是获取到了新的模块代码了。
 
 ### 运行流程 <hr>
 
@@ -524,6 +538,10 @@ const webpackConfig = {
 ```
 
 以上就是在 webpack 开发中常用的配置，更多配置及优化请参考官网。
+
+## webpack 优化
+
+<img src="/images/webpack.jpg">
 
 ## 参考文章
 <a href="https://github.com/gwuhaolin/dive-into-webpack/">深入浅出 webpack </a>

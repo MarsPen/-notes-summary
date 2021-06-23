@@ -418,14 +418,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
                 
@@ -542,6 +542,12 @@
 
 <p>另一个好处是，借助操作系统对进程安全的控制，浏览器可以将页面放置在沙箱中，站点的代码可以运行在隔离的环境中，保证核心进程的安全。</p>
 <p>虽然多进程的架构优于单进程架构，但由于进程独享自己的私有内存，以渲染进程为例，虽然渲染的站点不同，但工作内容大体相似，为了完成渲染工作它们会在自己的内存中包含相同的功能，例如 V8 引擎（用于解析和运行Javascript），这意味着这部分相同的功能需要占用每个进程的内存空间。为了节省内存，Chrome 限制了最大进程数，最大进程数取决于硬件的能力，同时当使用多个页签访问相同的站点时浏览器不会创建新的渲染进程。</p>
+<blockquote>
+<p>Chrome 中的服务化</p>
+</blockquote>
+<p>虽然多进程模型提升了浏览器的稳定性、流畅性和安全性。但是同时也带来了一些问题，如：更高的资源内存占用和更加复杂的架构体系，所以为了解决这些问题，2016 年Chrome 团队使用了 “面向服务的架构”（Services Oriented Architecture，简称SOA）的思想设计了新的 Chrome 架构。将浏览器程序的每一个部分作为一项服务运行。访问服务必须使用定义好接口，通过 IPC 进行通讯。如果在强大的硬件中运行，它可能将每一个服务拆分为不同的进程，从而提高稳定性，如果在资源受限的设备上，Chrome会将服务整合到一个进程中，从而节省内存。 </p>
+<img src="/images/architecture12.png">
+
 <blockquote>
 <p>基于站点隔离的渲染进程</p>
 </blockquote>
@@ -713,50 +719,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/20/browser/architecture/">
+                <a href="/2021/03/27/browser/network/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="浏览器中的架构">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">浏览器中的架构</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言由于市面上浏览器众多并且每个浏览器厂商实现有一定的区别。也是由于本人开发和搜索都是用的 Chrome，所以本文和后续关于浏览器的文章都是以 Chrome 为准。本文主要从几个角度概括的介绍浏览器的架构，更多的细节包括浏览器引擎Blink
+                            
+title: 从输入 URL 到页面在展示，中间发生了什么？date: 2021-03-27 14:12:24top: falsecover: falsepassword:toc: truemathjax: falsesummary:ta
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-27
+                        </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/浏览器/" class="post-category" target="_blank">
-                                    浏览器
-                                </a>
-                            
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/浏览器/" target="_blank">
-                        <span class="chip bg-color">浏览器</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -982,7 +972,7 @@
               
               
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">147.9k</span>
+                <span class="white-color">148.8k</span>
                
             
              
